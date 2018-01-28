@@ -100,7 +100,7 @@ clean: tidy
 	$(RM) $(ALL_OBJECTS)
 	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.rl' \) -exec rm {} +
 
-ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug
+ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug ruby_debug sapphire_debug
 tidy:
 	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
 	$(RM) -r build
@@ -139,7 +139,8 @@ sapphire_rev2: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISI
 ruby_de:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
 sapphire_de:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
 ruby_de_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
-
+ruby_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY DEBUG=1
+sapphire_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE DEBUG=1
 
 #### Graphics Rules ####
 
