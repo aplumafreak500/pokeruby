@@ -1,7 +1,7 @@
 	.align 2
 
 gSongTable:: @ 86B49F0
-	song mus_dummy, 0, 0
+	song se_stop, 0, 0
 	song se_kaifuku, 1, 1           @ Healing Item
 	song se_pc_login, 1, 1          @ PC Logon
 	song se_pc_off, 1, 1            @ PC Shutdown

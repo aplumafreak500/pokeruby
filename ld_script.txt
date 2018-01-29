@@ -1282,7 +1282,7 @@ SECTIONS {
         src/libs/libisagbprn.o(.rodata);
     } =0
 
-    . = 0x8D00000;
+    /* . = 0x8D00000; */
 
     gfx_data :
     ALIGN(4)
