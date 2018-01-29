@@ -287,14 +287,14 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
             if (gTasks[taskId].tSeIndex > 0)
                 gTasks[taskId].tSeIndex--;
             else
-                gTasks[taskId].tSeIndex = 247;
+                gTasks[taskId].tSeIndex = 269;
         }
         else
         {
             if (gTasks[taskId].tBgmIndex > 0)
                 gTasks[taskId].tBgmIndex--;
             else
-                gTasks[taskId].tBgmIndex = 117;
+                gTasks[taskId].tBgmIndex = 211;
         }
         return TRUE;
     }
@@ -302,14 +302,14 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
     {
         if (gTasks[taskId].tWindowSelected != 0)
         {
-            if (gTasks[taskId].tSeIndex < 247)
+            if (gTasks[taskId].tSeIndex < 269)
                 gTasks[taskId].tSeIndex++;
             else
                 gTasks[taskId].tSeIndex = 0;
         }
         else
         {
-            if (gTasks[taskId].tBgmIndex < 117)
+            if (gTasks[taskId].tBgmIndex < 211)
                 gTasks[taskId].tBgmIndex++;
             else
                 gTasks[taskId].tBgmIndex = 0;
@@ -981,7 +981,7 @@ void sub_80BB1D4(void)
 	X(MUS_RG_LOAD03, "RG-LOAD03") \
 	X(MUS_RG_CHAMP_R, "RG-CHAMP-R") \
 	X(MUS_RG_VS_GYM, "RS-VS-GYM") \
-	X(MUS_RG_VS_TORE, "RG-VS-GYM") \
+	X(MUS_RG_VS_TORE, "RG-VS-TORE") \
 	X(MUS_RG_VS_YASEI, "VS-YASEI") \
 	X(MUS_RG_VS_LAST, "RG-VS-LAST") \
 	X(MUS_RG_MASARA, "RG-MASARA") \
