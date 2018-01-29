@@ -685,7 +685,7 @@ SECTIONS {
     {
         sound/songs/se_stop.o(.rodata);
         sound/songs/se_kaifuku.o(.rodata);
-        sound/songs/se_pc_logon.o(.rodata);
+        sound/songs/se_pc_login.o(.rodata);
         sound/songs/se_pc_off.o(.rodata);
         sound/songs/se_pc_on.o(.rodata);
         sound/songs/se_select.o(.rodata);
@@ -734,7 +734,7 @@ SECTIONS {
         sound/songs/se_hi_turun.o(.rodata);
         sound/songs/se_track_move.o(.rodata);
         sound/songs/se_track_stop.o(.rodata);
-        sound/songs/se_track_haik.o(.rodata);
+        sound/songs/se_track_haiki.o(.rodata);
         sound/songs/se_track_door.o(.rodata);
         sound/songs/se_moter.o(.rodata);
         sound/songs/se_card.o(.rodata);
