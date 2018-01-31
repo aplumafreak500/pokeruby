@@ -5624,4 +5624,9 @@ const u16 gChimechoLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
+const u16 gVictiniLevelUpLearnset[] = {
+	LEVEL_UP_MOVE(1,MOVE_POUND),
+	LEVEL_UP_END
+};
+
 #endif //POKERUBY_LEVEL_UP_LEARNSETS_H

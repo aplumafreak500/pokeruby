@@ -9387,6 +9387,11 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(TM48_SKILL_SWAP)
                                         | TMHM(TM49_SNATCH)
                                         | TMHM(HM05_FLASH)),
+                                        
+	[SPECIES_VICTINI] = TMHM_LEARNSET(TMHM(TM11_SUNNY_DAY)
+| TMHM(TM35_FLAMETHROWER)
+| TMHM(TM43_SECRET_POWER)
+| TMHM(HM05_FLASH))
 
 };
 

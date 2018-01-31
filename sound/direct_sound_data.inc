@@ -1937,6 +1937,10 @@ Cry_Deoxys:: @ 88D2B34
 	.align 2
 Cry_Chimecho:: @ 88D4008
 	.incbin "sound/direct_sound_samples/cry_chimecho.bin"
+	
+	.align 2
+Cry_Victini::
+	.incbin "sound/direct_sound_samples/cry_victini.bin";
 
 	.align 2
 DirectSoundWaveData_88D4A18:: @ 88D4A18
