@@ -25,6 +25,11 @@ struct WallpaperTable {
 // Static RAM declarations
 
 EWRAM_DATA struct Pokemon gUnknown_02038480 = {};
+#if DEBUG
+EWRAM_DATA u32 unk_2038790 = 0;
+EWRAM_DATA u32 unk_2038794 = 0;
+EWRAM_DATA u32 unk_2038798 = 0;
+#endif
 EWRAM_DATA s8 gUnknown_020384E4 = 0;
 EWRAM_DATA s8 gUnknown_020384E5 = 0;
 EWRAM_DATA bool8 gUnknown_020384E6 = FALSE;
@@ -2096,7 +2101,7 @@ void sub_809C04C(void *pokemon, u8 a1)
             buf[1] = 0x06; // size
             buf[2] = 0x04;
             buf = gPokemonStorageSystemPtr->unk_127a + 8;
-            buf = StringCopy(buf, ItemId_GetItem(gPokemonStorageSystemPtr->unk_11f2)->name);
+            buf = StringCopy(buf, ItemId_GetName(gPokemonStorageSystemPtr->unk_11f2));
             buf[0] = EXT_CTRL_CODE_BEGIN;
             buf[1] = 0x07; // UNKNOWN_7;
             buf += 2;

@@ -84,9 +84,7 @@ SECTIONS {
         src/field/field_camera.o(.text);
         src/field/field_door.o(.text);
         src/field/field_player_avatar.o(.text);
-        src/field/field_map_obj.o(.text);
-        src/field/field_ground_effect.o(.text);
-        src/field/field_map_obj_helpers.o(.text);
+        src/field/event_object_movement.o(.text);
         src/field/field_message_box.o(.text);
         src/field/map_obj_lock.o(.text);
         src/engine/text_window.o(.text);
@@ -134,7 +132,7 @@ SECTIONS {
         src/engine/trainer_card.o(.text);
         src/engine/save_menu_util.o(.text);
         src/battle/battle_party_menu.o(.text);
-        asm/unk_text_8095904.o(.text);
+        src/unk_text_8095904.o(.text);
         src/pokemon/pokemon_storage_system.o(.text);
         src/pokemon/pokemon_storage_system_2.o(.text);
         src/pokemon/pokemon_storage_system_3.o(.text);
@@ -303,16 +301,15 @@ SECTIONS {
         src/battle/anim/shock.o(.text);
         asm/current.o(.text);
         asm/ice.o(.text);
-        asm/fight.o(.text);
+        src/battle/anim/fight.o(.text);
         src/battle/anim/poison.o(.text);
         asm/flying.o(.text);
-        asm/psychic.o(.text);
+        src/battle/anim/psychic.o(.text);
         src/battle/anim/bug.o(.text);
         src/battle/anim/rock.o(.text);
         asm/ghost.o(.text);
         src/battle/anim/dragon.o(.text);
         src/battle/anim/dark.o(.text);
-        asm/dark.o(.text);
         asm/ground.o(.text);
         asm/normal.o(.text);
         src/battle/anim/battle_intro.o(.text);
@@ -530,9 +527,7 @@ SECTIONS {
         src/field/metatile_behavior.o(.rodata);
         src/field/field_door.o(.rodata);
         src/field/field_player_avatar.o(.rodata);
-        src/field/field_map_obj.o(.rodata);
-        src/field/field_ground_effect.o(.rodata);
-        src/field/field_map_obj_helpers.o(.rodata);
+        src/field/event_object_movement.o(.rodata);
         src/engine/text_window.o(.rodata);
         src/engine/script.o(.rodata);
         src/field/scrcmd.o(.rodata);
@@ -672,7 +667,7 @@ SECTIONS {
         src/field/diploma.o(.rodata);
         src/strings.o(.rodata);
         src/field/berry_tag_screen.o(.rodata);
-        data/debug_mystery_event_menu.o(.rodata);
+        src/engine/mystery_event_menu.o(.rodata);
         src/engine/save_failed_screen.o(.rodata);
         src/pokemon/pokeblock_feed.o(.rodata);
         src/debug/nakamura_debug_menu.o(.rodata);
