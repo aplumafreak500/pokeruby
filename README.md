@@ -33,4 +33,4 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 [Discord]: https://discord.gg/cJxDDVP
 [irc]: https://kiwiirc.com/client/irc.freenode.net/?#pret
 [travis]: https://travis-ci.org/aplumafreak500/pokeruby
-[travis-badge]: https://travis-ci.org/aplumafreak500/pokeruby.svg?branch=master
+[travis-badge]: https://travis-ci.org/aplumafreak500/pokeruby.svg?branch=victini_try1
