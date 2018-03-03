@@ -3,7 +3,7 @@
 #include "data2.h"
 #include "graphics.h"
 #include "field_effect.h"
-#include "field_map_obj.h"
+#include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "main.h"
 #include "menu.h"
@@ -25,8 +25,6 @@
 #elif GERMAN
 #define COLUMN_COUNT 10
 #endif
-
-extern u16 gKeyRepeatStartDelay;
 
 extern u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality);
 

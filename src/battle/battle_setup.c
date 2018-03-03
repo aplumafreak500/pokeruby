@@ -6,7 +6,6 @@
 #include "event_data.h"
 #include "field_control_avatar.h"
 #include "field_fadetransition.h"
-#include "field_map_obj_helpers.h"
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_weather.h"
@@ -475,7 +474,7 @@ static void Task_BattleStart(u8 taskId)
     switch (tState)
     {
     case 0:
-        if (!FieldPoisonEffectIsRunning()) // is poison not active?
+        if (!FldeffPoison_IsActive()) // is poison not active?
         {
             BattleTransition_StartOnField(tTransition);
             tState++; // go to case 1.
