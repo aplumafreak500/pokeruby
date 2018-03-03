@@ -9277,30 +9277,6 @@ gMonIcon_Chimecho:: @ 8E3B098
 	.align 2
 gMonFootprint_Chimecho:: @ 8E3B498
 	.incbin "graphics/pokemon/chimecho/footprint.1bpp"
-	
-	.align 2
-gMonFrontPic_Victini:: @ 8E3AB88
-	.incbin "graphics/pokemon/victini/front.4bpp.lz"
-
-	.align 2
-gMonPalette_Victini:: @ 8E3ADD4
-	.incbin "graphics/pokemon/victini/normal.gbapal.lz"
-
-	.align 2
-gMonBackPic_Victini:: @ 8E3ADFC
-	.incbin "graphics/pokemon/victini/back.4bpp.lz"
-
-	.align 2
-gMonShinyPalette_Victini:: @ 8E3B070
-	.incbin "graphics/pokemon/victini/shiny.gbapal.lz"
-
-	.align 2
-gMonIcon_Victini:: @ 8E3B098
-	.incbin "graphics/pokemon/victini/icon.4bpp"
-
-	.align 2
-gMonFootprint_Victini:: @ 8E3B498
-	.incbin "graphics/pokemon/victini/footprint.1bpp"
 
 	.align 2
 gMonPic_Egg:: @ 8E3B4B8

@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 
-	.equ	se_basabasa_grp, voicegroup_869D6F4
+	.equ	se_basabasa_grp, voicegroup_8451F90
 	.equ	se_basabasa_pri, 5
 	.equ	se_basabasa_rev, reverb_set+50
 	.equ	se_basabasa_mvl, 127

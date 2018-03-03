@@ -189,65 +189,70 @@ void sub_8096848(void)
 
 void sub_8096874(void)
 {
-    REG_DISPCNT = DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON;
+    REG_DISPCNT = DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON;
 }
+
+extern u8 unk_2038790;
 
 void sub_8096884(void)
 {
     switch (gMain.state)
     {
-        case 0:
-            SetVBlankCallback(NULL);
-            REG_DISPCNT = 0;
-            sub_8096804();
-            gMain.state++;
-            break;
-        case 1:
-            Text_LoadWindowTemplate(&gWindowTemplate_81E6D00);
-            gMain.state++;
-            break;
-        case 2:
-            InitMenuWindow(&gWindowTemplate_81E6D00);
-            Menu_EraseScreen();
-            gMain.state++;
-            break;
-        case 3:
-            sub_80967DC();
-            sub_8096848();
-            gMain.state++;
-            break;
-        case 4:
-            ResetPSSMonIconSprites();
-            sub_809AA24();
-            gMain.state++;
-            break;
-        case 5:
-            sub_8097DE0();
-            gMain.state++;
-            break;
-        case 6:
-            sub_8097E70();
-            gMain.state++;
-            break;
-        case 7:
-            sub_8098400();
-            gMain.state++;
-            break;
-        case 8:
-            sub_8099BF8(gPokemonStorage.currentBox);
-            gPokemonStorageSystemPtr->unk_12bc.baseTileTag = 0x000a;
-            gPokemonStorageSystemPtr->unk_12bc.basePaletteTag = 0xdacb;
-            sub_80F727C(&gPokemonStorageSystemPtr->unk_12bc);
-            sub_80F7404();
-            gMain.state++;
-            break;
-        case 9:
-            sub_8096874();
-            SetPSSCallback(sub_8096BF0);
-            SetMainCallback2(sub_8096B38);
-            SetVBlankCallback(sub_8096AFC);
-            gMain.state++;
-            break;
+    case 0:
+        SetVBlankCallback(NULL);
+        REG_DISPCNT = 0;
+        sub_8096804();
+#if DEBUG
+        unk_2038790 = 0;
+#endif
+        gMain.state++;
+        break;
+    case 1:
+        Text_LoadWindowTemplate(&gWindowTemplate_81E6D00);
+        gMain.state++;
+        break;
+    case 2:
+        InitMenuWindow(&gWindowTemplate_81E6D00);
+        Menu_EraseScreen();
+        gMain.state++;
+        break;
+    case 3:
+        sub_80967DC();
+        sub_8096848();
+        gMain.state++;
+        break;
+    case 4:
+        ResetPSSMonIconSprites();
+        sub_809AA24();
+        gMain.state++;
+        break;
+    case 5:
+        sub_8097DE0();
+        gMain.state++;
+        break;
+    case 6:
+        sub_8097E70();
+        gMain.state++;
+        break;
+    case 7:
+        sub_8098400();
+        gMain.state++;
+        break;
+    case 8:
+        sub_8099BF8(gPokemonStorage.currentBox);
+        gPokemonStorageSystemPtr->unk_12bc.baseTileTag = 0x000a;
+        gPokemonStorageSystemPtr->unk_12bc.basePaletteTag = 0xdacb;
+        sub_80F727C(&gPokemonStorageSystemPtr->unk_12bc);
+        sub_80F7404();
+        gMain.state++;
+        break;
+    case 9:
+        sub_8096874();
+        SetPSSCallback(sub_8096BF0);
+        SetMainCallback2(sub_8096B38);
+        SetVBlankCallback(sub_8096AFC);
+        gMain.state++;
+        break;
     }
 }
 
@@ -255,68 +260,109 @@ void sub_80969A0(void)
 {
     switch (gMain.state)
     {
-        case 0:
-            SetVBlankCallback(NULL);
-            REG_DISPCNT = 0x0000;
-            gPokemonStorageSystemPtr->unk_0005 = gUnknown_0203847D;
-            sub_8096804();
-            if (gUnknown_0203847F == 1)
-                sub_809BBC0();
-            if (gUnknown_0203847F == 0)
-                sub_809BD14();
-            gMain.state++;
-            break;
-        case 1:
-            Text_LoadWindowTemplate(&gWindowTemplate_81E6D00);
-            gMain.state++;
-            break;
-        case 2:
-            InitMenuWindow(&gWindowTemplate_81E6D00);
-            Menu_EraseScreen();
-            gMain.state++;
-            break;
-        case 3:
-            sub_80967DC();
-            gMain.state++;
-            break;
-        case 4:
-            ResetPSSMonIconSprites();
-            sub_809AA98();
-            gMain.state++;
-            break;
-        case 5:
-            sub_8097DE0();
-            gMain.state++;
-            break;
-        case 6:
-            sub_8097E70();
-            gMain.state++;
-            break;
-        case 7:
-            sub_8098400();
-            gMain.state++;
-            break;
-        case 8:
-            sub_8099BF8(gPokemonStorage.currentBox);
-            gPokemonStorageSystemPtr->unk_12bc.baseTileTag = 0x000a;
-            gPokemonStorageSystemPtr->unk_12bc.basePaletteTag = 0xdacb;
-            sub_80F727C(&gPokemonStorageSystemPtr->unk_12bc);
-            sub_80F7404();
-            gMain.state++;
-            break;
-        case 9:
-            BeginNormalPaletteFade(0xffffffff, 0, 16, 0, 0);
-            SetVBlankCallback(sub_8096AFC);
-            gMain.state++;
-            break;
-        case 10:
-            sub_8096874();
-            SetPSSCallback(sub_8096C68);
-            SetMainCallback2(sub_8096B38);
-            gMain.state++;
-            break;
+    case 0:
+        SetVBlankCallback(NULL);
+        REG_DISPCNT = 0;
+        gPokemonStorageSystemPtr->unk_0005 = gUnknown_0203847D;
+        sub_8096804();
+        if (gUnknown_0203847F == 1)
+            sub_809BBC0();
+        if (gUnknown_0203847F == 0)
+            sub_809BD14();
+        gMain.state++;
+        break;
+    case 1:
+        Text_LoadWindowTemplate(&gWindowTemplate_81E6D00);
+        gMain.state++;
+        break;
+    case 2:
+        InitMenuWindow(&gWindowTemplate_81E6D00);
+        Menu_EraseScreen();
+        gMain.state++;
+        break;
+    case 3:
+        sub_80967DC();
+        gMain.state++;
+        break;
+    case 4:
+        ResetPSSMonIconSprites();
+        sub_809AA98();
+        gMain.state++;
+        break;
+    case 5:
+        sub_8097DE0();
+        gMain.state++;
+        break;
+    case 6:
+        sub_8097E70();
+        gMain.state++;
+        break;
+    case 7:
+        sub_8098400();
+        gMain.state++;
+        break;
+    case 8:
+        sub_8099BF8(gPokemonStorage.currentBox);
+        gPokemonStorageSystemPtr->unk_12bc.baseTileTag = 0x000a;
+        gPokemonStorageSystemPtr->unk_12bc.basePaletteTag = 0xdacb;
+        sub_80F727C(&gPokemonStorageSystemPtr->unk_12bc);
+        sub_80F7404();
+        gMain.state++;
+        break;
+    case 9:
+        BeginNormalPaletteFade(0xffffffff, 0, 16, 0, 0);
+        SetVBlankCallback(sub_8096AFC);
+        gMain.state++;
+        break;
+    case 10:
+        sub_8096874();
+        SetPSSCallback(sub_8096C68);
+        SetMainCallback2(sub_8096B38);
+        gMain.state++;
+        break;
     }
 }
+
+#if DEBUG
+
+void debug_sub_80A4300(void)
+{
+    gUnknown_0203847D = 0;
+    gPokemonStorageSystemPtr->unk_0005 = 0;
+    sub_8096884();
+    if (gMain.callback2 == sub_8096B38)
+        unk_2038790 = 1;
+}
+
+extern void (*unk_2038794)(void);
+extern u32 unk_2038798;
+
+extern void unref_sub_809CB94();
+
+void debug_sub_80A433C(u32 a, void (*b)(void))
+{
+    unk_2038794 = b;
+    unk_2038798 = a;
+    SetMainCallback2(debug_sub_80A4300);
+}
+
+void debug_sub_80A435C(void)
+{
+    switch (gPokemonStorageSystemPtr->unk_0004)
+    {
+    case 0:
+        unref_sub_809CB94(unk_2038798);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, 0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!UpdatePaletteFade())
+            unk_2038794();
+        break;
+    }
+}
+
+#endif
 
 void sub_8096AFC(void)
 {
@@ -342,12 +388,12 @@ void sub_8096B5C(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0006)
     {
-        case 0:
-            ShowPokemonSummaryScreen(gPokemonStorageSystemPtr->unk_2690.pokemon, gPokemonStorageSystemPtr->unk_268d, gPokemonStorageSystemPtr->unk_268c, sub_80969A0, gPokemonStorageSystemPtr->unk_268e);
-            break;
-        case 1:
-            DoNamingScreen(1, gPokemonStorage.boxNames[gPokemonStorage.currentBox], 0, 0, 0, sub_80969A0);
-            break;
+    case 0:
+        ShowPokemonSummaryScreen(gPokemonStorageSystemPtr->unk_2690.pokemon, gPokemonStorageSystemPtr->unk_268d, gPokemonStorageSystemPtr->unk_268c, sub_80969A0, gPokemonStorageSystemPtr->unk_268e);
+        break;
+    case 1:
+        DoNamingScreen(1, gPokemonStorage.boxNames[gPokemonStorage.currentBox], 0, 0, 0, sub_80969A0);
+        break;
     }
 }
 
@@ -361,24 +407,24 @@ void sub_8096BF0(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            BlendPalettes(0xffffffff, 16, 0);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            PlaySE(SE_PC_LOGON);
-            gPokemonStorageSystemPtr->unk_000c.tileTag = 14;
-            gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
-            gPokemonStorageSystemPtr->unk_000c.unk04 = 0;
-            gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
-            sub_80C5CD4(&gPokemonStorageSystemPtr->unk_000c);
-            BlendPalettes(0xffffffff, 0, 0);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 2:
-            if (sub_80C5DCC())
-                SetPSSCallback(sub_8096C84);
-            break;
+    case 0:
+        BlendPalettes(0xffffffff, 16, 0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        PlaySE(SE_PC_LOGON);
+        gPokemonStorageSystemPtr->unk_000c.tileTag = 14;
+        gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
+        gPokemonStorageSystemPtr->unk_000c.unk04 = 0;
+        gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
+        sub_80C5CD4(&gPokemonStorageSystemPtr->unk_000c);
+        BlendPalettes(0xffffffff, 0, 0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 2:
+        if (sub_80C5DCC())
+            SetPSSCallback(sub_8096C84);
+        break;
     }
 }
 
@@ -392,166 +438,170 @@ void sub_8096C84(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            switch (sub_809CA40())
-            {
-                case 1:
-                    PlaySE(SE_SELECT);
-                    gPokemonStorageSystemPtr->unk_0004 = 1;
-                    break;
-                case 5:
-                    if (gPokemonStorageSystemPtr->unk_0005 != 2)
-                    {
-                        PrintStorageActionText(PC_TEXT_WHICH_ONE_WILL_TAKE);
-                        gPokemonStorageSystemPtr->unk_0004 = 3;
-                    }
-                    else
-                    {
-                        sub_809B0D4();
-                        SetPSSCallback(sub_8096FC8);
-                    }
-                    break;
-                case 6:
-                    if (gPokemonStorageSystemPtr->unk_0005 == 2)
-                    {
-                        if (sub_809BF20() && ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
-                        {
-                            gPokemonStorageSystemPtr->unk_0004 = 5;
-                        }
-                        else
-                        {
-                            SetPSSCallback(sub_8097004);
-                        }
-                    }
-                    break;
-                case 4:
-                    SetPSSCallback(sub_8097BA0);
-                    break;
-                case 16:
-                    SetPSSCallback(sub_8097CC0);
-                    break;
-                case 7:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_809789C);
-                    break;
-                case 8:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_8097078);
-                    break;
-                case 9:
-                    PlaySE(SE_SELECT);
-                    gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox + 1;
-                    if (gPokemonStorageSystemPtr->unk_08b2 > 13)
-                        gPokemonStorageSystemPtr->unk_08b2 = 0;
-                    sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
-                    gPokemonStorageSystemPtr->unk_0004 = 2;
-                    break;
-                case 10:
-                    PlaySE(SE_SELECT);
-                    gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox - 1;
-                    if (gPokemonStorageSystemPtr->unk_08b2 < 0)
-                        gPokemonStorageSystemPtr->unk_08b2 = 13;
-                    sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
-                    gPokemonStorageSystemPtr->unk_0004 = 2;
-                    break;
-                case 11:
-                    if (!sub_809BE80())
-                    {
-                        if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
-                        {
-                            gPokemonStorageSystemPtr->unk_0004 = 5;
-                        }
-                        else
-                        {
-                            PlaySE(SE_SELECT);
-                            SetPSSCallback(sub_809746C);
-                        }
-                    }
-                    else
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 4;
-                    }
-                    break;
-                case 13:
-                    if (sub_809BE80())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 4;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        SetPSSCallback(sub_80972A8);
-                    }
-                    break;
-                case 14:
-                    if (!sub_809BEBC())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 4;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        SetPSSCallback(c3_0808DC50);
-                    }
-                    break;
-                case 12:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_8097390);
-                    break;
-                case 15:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_80972FC);
-                    break;
-            }
-            break;
+    case 0:
+        switch (sub_809CA40())
+        {
         case 1:
-            if (!sub_809AC00())
+            PlaySE(SE_SELECT);
+            gPokemonStorageSystemPtr->unk_0004 = 1;
+            break;
+        case 5:
+            if (gPokemonStorageSystemPtr->unk_0005 != 2)
             {
-                if (sub_809BF48())
-                    sub_80986E8();
+                PrintStorageActionText(PC_TEXT_WHICH_ONE_WILL_TAKE);
+                gPokemonStorageSystemPtr->unk_0004 = 3;
+            }
+            else
+            {
+                sub_809B0D4();
+                SetPSSCallback(sub_8096FC8);
+            }
+            break;
+        case 6:
+            if (gPokemonStorageSystemPtr->unk_0005 == 2)
+            {
+                if (sub_809BF20() && ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
+                    gPokemonStorageSystemPtr->unk_0004 = 5;
                 else
-                    sub_8098710();
-                if (gPokemonStorageSystemPtr->unk_11f6)
-                    BoxSetMosaic();
-                gPokemonStorageSystemPtr->unk_0004 = 0;
-            }
-            break;
-        case 2:
-            if (!sub_8099D34())
-            {
-                gPokemonStorage.currentBox = gPokemonStorageSystemPtr->unk_08b2;
-                if (!gUnknown_0203847C && !sub_809BF20())
-                {
-                    sub_809B440();
-                    BoxSetMosaic();
-                }
-                gPokemonStorageSystemPtr->unk_0004 = 0;
-            }
-            break;
-        case 3:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
-            {
-                sub_8098A5C();
-                gPokemonStorageSystemPtr->unk_0004 = 0;
+                    SetPSSCallback(sub_8097004);
             }
             break;
         case 4:
-            PlaySE(SE_HAZURE);
-            PrintStorageActionText(PC_TEXT_LAST_POKE);
-            gPokemonStorageSystemPtr->unk_0004 = 6;
+#if DEBUG
+            if (unk_2038790 != 0)
+                break;
+#endif
+            SetPSSCallback(sub_8097BA0);
             break;
-        case 5:
-            PlaySE(SE_HAZURE);
-            PrintStorageActionText(PC_TEXT_PLEASE_REMOVE_MAIL);
-            gPokemonStorageSystemPtr->unk_0004 = 6;
+        case 16:
+#if DEBUG
+            if (unk_2038790 != 0)
+                break;
+#endif
+            SetPSSCallback(sub_8097CC0);
             break;
-        case 6:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        case 7:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_809789C);
+            break;
+        case 8:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_8097078);
+            break;
+        case 9:
+            PlaySE(SE_SELECT);
+            gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox + 1;
+            if (gPokemonStorageSystemPtr->unk_08b2 > 13)
+                gPokemonStorageSystemPtr->unk_08b2 = 0;
+            sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
+            gPokemonStorageSystemPtr->unk_0004 = 2;
+            break;
+        case 10:
+            PlaySE(SE_SELECT);
+            gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox - 1;
+            if (gPokemonStorageSystemPtr->unk_08b2 < 0)
+                gPokemonStorageSystemPtr->unk_08b2 = 13;
+            sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
+            gPokemonStorageSystemPtr->unk_0004 = 2;
+            break;
+        case 11:
+            if (!sub_809BE80())
             {
-                sub_8098A5C();
-                SetPSSCallback(sub_8096C84);
+                if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
+                {
+                    gPokemonStorageSystemPtr->unk_0004 = 5;
+                }
+                else
+                {
+                    PlaySE(SE_SELECT);
+                    SetPSSCallback(sub_809746C);
+                }
+            }
+            else
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 4;
             }
             break;
+        case 13:
+            if (sub_809BE80())
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 4;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                SetPSSCallback(sub_80972A8);
+            }
+            break;
+        case 14:
+            if (!sub_809BEBC())
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 4;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                SetPSSCallback(c3_0808DC50);
+            }
+            break;
+        case 12:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_8097390);
+            break;
+        case 15:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_80972FC);
+            break;
+        }
+        break;
+    case 1:
+        if (!sub_809AC00())
+        {
+            if (sub_809BF48())
+                sub_80986E8();
+            else
+                sub_8098710();
+            if (gPokemonStorageSystemPtr->unk_11f6)
+                BoxSetMosaic();
+            gPokemonStorageSystemPtr->unk_0004 = 0;
+        }
+        break;
+    case 2:
+        if (!sub_8099D34())
+        {
+            gPokemonStorage.currentBox = gPokemonStorageSystemPtr->unk_08b2;
+            if (!gUnknown_0203847C && !sub_809BF20())
+            {
+                sub_809B440();
+                BoxSetMosaic();
+            }
+            gPokemonStorageSystemPtr->unk_0004 = 0;
+        }
+        break;
+    case 3:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            gPokemonStorageSystemPtr->unk_0004 = 0;
+        }
+        break;
+    case 4:
+        PlaySE(SE_HAZURE);
+        PrintStorageActionText(PC_TEXT_LAST_POKE);
+        gPokemonStorageSystemPtr->unk_0004 = 6;
+        break;
+    case 5:
+        PlaySE(SE_HAZURE);
+        PrintStorageActionText(PC_TEXT_PLEASE_REMOVE_MAIL);
+        gPokemonStorageSystemPtr->unk_0004 = 6;
+        break;
+    case 6:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -601,120 +651,127 @@ void sub_8097078(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_IS_SELECTED);
-            sub_809CE84();
-            gPokemonStorageSystemPtr->unk_0004 = 1;
+    case 0:
+        PrintStorageActionText(PC_TEXT_IS_SELECTED);
+        sub_809CE84();
+        gPokemonStorageSystemPtr->unk_0004 = 1;
+        break;
+    case 1:
+        switch (sub_809CF30())
+        {
+        case -1:
+        case  0:
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
             break;
-        case 1:
-            switch (sub_809CF30())
+        case 3:
+            if (sub_809BE80())
             {
-                case -1:
-                case  0:
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case 3:
-                    if (sub_809BE80())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 2;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        sub_8098A5C();
-                        SetPSSCallback(sub_80972A8);
-                    }
-                    break;
-                case 5:
-                    PlaySE(SE_SELECT);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_80972FC);
-                    break;
-                case 4:
-                    if (!sub_809BEBC())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 2;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        sub_8098A5C();
-                        SetPSSCallback(c3_0808DC50);
-                    }
-                    break;
-                case 2:
-                    PlaySE(SE_SELECT);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8097390);
-                    break;
-                case 1:
-                    if (sub_809BE80())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 2;
-                    }
-                    else if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 3;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        sub_8098A5C();
-                        SetPSSCallback(sub_809746C);
-                    }
-                    break;
-                case 7:
-                    if (sub_809BE80())
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 2;
-                    }
-                    else if (gPokemonStorageSystemPtr->unk_11f9)
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 4;
-                    }
-                    else if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 3;
-                    }
-                    else
-                    {
-                        PlaySE(SE_SELECT);
-                        SetPSSCallback(sub_8097594);
-                    }
-                    break;
-                case 6:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_8097788);
-                    break;
-                case 8:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_80977E4);
-                    break;
+                gPokemonStorageSystemPtr->unk_0004 = 2;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                sub_8098A5C();
+                SetPSSCallback(sub_80972A8);
+            }
+            break;
+        case 5:
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            SetPSSCallback(sub_80972FC);
+            break;
+        case 4:
+            if (!sub_809BEBC())
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 2;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                sub_8098A5C();
+                SetPSSCallback(c3_0808DC50);
             }
             break;
         case 2:
-            PlaySE(SE_HAZURE);
-            PrintStorageActionText(PC_TEXT_LAST_POKE);
-            gPokemonStorageSystemPtr->unk_0004 = 5;
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            SetPSSCallback(sub_8097390);
             break;
-        case 4:
-            PlaySE(SE_HAZURE);
-            PrintStorageActionText(PC_TEXT_CANT_RELEASE_EGG);
-            gPokemonStorageSystemPtr->unk_0004 = 5;
-            break;
-        case 3:
-            PlaySE(SE_HAZURE);
-            PrintStorageActionText(PC_TEXT_PLEASE_REMOVE_MAIL);
-            gPokemonStorageSystemPtr->unk_0004 = 5;
-            break;
-        case 5:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        case 1:
+            if (sub_809BE80())
             {
+                gPokemonStorageSystemPtr->unk_0004 = 2;
+            }
+            else if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 3;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
                 sub_8098A5C();
-                SetPSSCallback(sub_8096C84);
+                SetPSSCallback(sub_809746C);
             }
             break;
+        case 7:
+            if (sub_809BE80())
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 2;
+            }
+            else if (gPokemonStorageSystemPtr->unk_11f9)
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 4;
+            }
+            else if (ItemIsMail(gPokemonStorageSystemPtr->unk_11f2))
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 3;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                SetPSSCallback(sub_8097594);
+            }
+            break;
+        case 6:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_8097788);
+            break;
+        case 8:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_80977E4);
+            break;
+#if DEBUG
+        case 32:
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            SetPSSCallback(debug_sub_80A435C);
+            break;
+#endif
+        }
+        break;
+    case 2:
+        PlaySE(SE_HAZURE);
+        PrintStorageActionText(PC_TEXT_LAST_POKE);
+        gPokemonStorageSystemPtr->unk_0004 = 5;
+        break;
+    case 4:
+        PlaySE(SE_HAZURE);
+        PrintStorageActionText(PC_TEXT_CANT_RELEASE_EGG);
+        gPokemonStorageSystemPtr->unk_0004 = 5;
+        break;
+    case 3:
+        PlaySE(SE_HAZURE);
+        PrintStorageActionText(PC_TEXT_PLEASE_REMOVE_MAIL);
+        gPokemonStorageSystemPtr->unk_0004 = 5;
+        break;
+    case 5:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -722,19 +779,19 @@ void sub_80972A8(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_809B100(0);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!sub_809B130())
-            {
-                if (gUnknown_0203847C)
-                    SetPSSCallback(sub_8097858);
-                else
-                    SetPSSCallback(sub_8096C84);
-            }
-            break;
+    case 0:
+        sub_809B100(0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!sub_809B130())
+        {
+            if (gUnknown_0203847C)
+                SetPSSCallback(sub_8097858);
+            else
+                SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -742,19 +799,19 @@ void sub_80972FC(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_809B100(1);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!sub_809B130())
-            {
-                if (gUnknown_0203847C)
-                    SetPSSCallback(sub_8097858);
-                else
-                    SetPSSCallback(sub_8096C84);
-            }
-            break;
+    case 0:
+        sub_809B100(1);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!sub_809B130())
+        {
+            if (gUnknown_0203847C)
+                SetPSSCallback(sub_8097858);
+            else
+                SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -762,17 +819,17 @@ void c3_0808DC50(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_809B100(2);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!sub_809B130())
-            {
-                BoxSetMosaic();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
+    case 0:
+        sub_809B100(2);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!sub_809B130())
+        {
+            BoxSetMosaic();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -780,50 +837,50 @@ void sub_8097390(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            if (CalculatePlayerPartyCount() == 6)
-            {
-                PrintStorageActionText(PC_TEXT_PARTY_FULL);
-                gPokemonStorageSystemPtr->unk_0004 = 1;
-            }
-            else
-            {
-                sub_809B0E0();
-                sub_809B100(0);
-                gPokemonStorageSystemPtr->unk_0004 = 2;
-            }
-            break;
-        case 1:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
-            {
-                sub_8098A5C();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
-        case 2:
-            if (!sub_809B130())
-            {
-                sub_809880C();
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 3:
-            if (!sub_8098830())
-            {
-                sub_809B100(1);
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 4:
-            if (!sub_809B130())
-            {
-                sub_80987DC();
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 5:
-            SetPSSCallback(sub_8097004);
-            break;
+    case 0:
+        if (CalculatePlayerPartyCount() == 6)
+        {
+            PrintStorageActionText(PC_TEXT_PARTY_FULL);
+            gPokemonStorageSystemPtr->unk_0004 = 1;
+        }
+        else
+        {
+            sub_809B0E0();
+            sub_809B100(0);
+            gPokemonStorageSystemPtr->unk_0004 = 2;
+        }
+        break;
+    case 1:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
+    case 2:
+        if (!sub_809B130())
+        {
+            sub_809880C();
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 3:
+        if (!sub_8098830())
+        {
+            sub_809B100(1);
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 4:
+        if (!sub_809B130())
+        {
+            sub_80987DC();
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 5:
+        SetPSSCallback(sub_8097004);
+        break;
     }
 }
 
@@ -833,60 +890,60 @@ void sub_809746C(void)
 
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_DEPOSIT_IN_WHICH_BOX);
-            sub_8096264(&gPokemonStorageSystemPtr->unk_2370, 0x0007, 0xdaca, 3);
-            sub_809634C(gUnknown_0203847E);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            r4 = sub_8096368();
-            if (r4 == 200);
-            else if (r4 == 201)
+    case 0:
+        PrintStorageActionText(PC_TEXT_DEPOSIT_IN_WHICH_BOX);
+        sub_8096264(&gPokemonStorageSystemPtr->unk_2370, 0x0007, 0xdaca, 3);
+        sub_809634C(gUnknown_0203847E);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        r4 = sub_8096368();
+        if (r4 == 200);
+        else if (r4 == 201)
+        {
+            sub_8098A5C();
+            sub_809635C();
+            sub_8096310();
+            SetPSSCallback(sub_8096C84);
+        }
+        else
+        {
+            if (sub_809B62C(r4))
             {
                 sub_8098A5C();
                 sub_809635C();
                 sub_8096310();
-                SetPSSCallback(sub_8096C84);
+                gPokemonStorageSystemPtr->unk_0004 = 2;
             }
             else
             {
-                if (sub_809B62C(r4))
-                {
-                    sub_8098A5C();
-                    sub_809635C();
-                    sub_8096310();
-                    gPokemonStorageSystemPtr->unk_0004 = 2;
-                }
-                else
-                {
-                    PrintStorageActionText(PC_TEXT_BOX_IS_FULL);
-                    gPokemonStorageSystemPtr->unk_0004 = 4;
-                }
-                gUnknown_0203847E = r4;
+                PrintStorageActionText(PC_TEXT_BOX_IS_FULL);
+                gPokemonStorageSystemPtr->unk_0004 = 4;
             }
-            break;
-        case 2:
-            party_compaction();
-            sub_8099310();
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 3:
-            if (sub_8099374() == 0)
-            {
-                sub_809B6BC();
-                BoxSetMosaic();
-                sub_80987DC();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
-        case 4:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                PrintStorageActionText(PC_TEXT_DEPOSIT_IN_WHICH_BOX);
-                gPokemonStorageSystemPtr->unk_0004 = 1;
-            }
-            break;
+            gUnknown_0203847E = r4;
+        }
+        break;
+    case 2:
+        party_compaction();
+        sub_8099310();
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 3:
+        if (sub_8099374() == 0)
+        {
+            sub_809B6BC();
+            BoxSetMosaic();
+            sub_80987DC();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
+    case 4:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            PrintStorageActionText(PC_TEXT_DEPOSIT_IN_WHICH_BOX);
+            gPokemonStorageSystemPtr->unk_0004 = 1;
+        }
+        break;
     }
 }
 
@@ -894,129 +951,129 @@ void sub_8097594(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_RELEASE_POKE);
-            sub_8098A38(1);
-            gPokemonStorageSystemPtr->unk_0004++;
-            // fallthrough
-        case 1:
-            switch (Menu_ProcessInputNoWrap())
-            {
-                case -1:
-                case  1:
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case  0:
-                    sub_8098A5C();
-                    sub_809B7D4();
-                    sub_809B6DC();
-                    gPokemonStorageSystemPtr->unk_0004++;
-                    break;
-            }
-            break;
-        case 2:
-            sub_809B960();
-            if (!sub_809B734())
-            {
-                while (1)
-                {
-                    s8 r0 = sub_809B960();
-                    if (r0 == 1)
-                    {
-                        gPokemonStorageSystemPtr->unk_0004++;
-                        break;
-                    }
-                    if (r0 == 0)
-                    {
-                        gPokemonStorageSystemPtr->unk_0004 = 8;
-                        break;
-                    }
-                }
-            }
-            break;
-        case 3:
-            sub_809B760();
-            sub_809801C();
-            PrintStorageActionText(PC_TEXT_WAS_RELEASED);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 4:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                PrintStorageActionText(PC_TEXT_BYE_BYE);
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 5:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                sub_8098A5C();
-                if (gUnknown_0203847C)
-                {
-                    party_compaction();
-                    sub_8099310();
-                    gPokemonStorageSystemPtr->unk_0004++;
-                }
-                else
-                {
-                    gPokemonStorageSystemPtr->unk_0004 = 7;
-                }
-            }
-            break;
-        case 6:
-            if (sub_8099374() == 0)
-            {
-                sub_809B440();
-                BoxSetMosaic();
-                sub_80987DC();
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 7:
-            SetPSSCallback(sub_8096C84);
-            break;
-        case 8:
-            PrintStorageActionText(PC_TEXT_WAS_RELEASED);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 9:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                PrintStorageActionText(PC_TEXT_SURPRISE);
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 10:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                sub_8098A5C();
-                sub_8099958();
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 11:
-            if (!sub_8099990())
-            {
-                sub_809B7AC();
-                PrintStorageActionText(PC_TEXT_CAME_BACK);
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 12:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
-                PrintStorageActionText(PC_TEXT_WORRIED);
-                gPokemonStorageSystemPtr->unk_0004++;
-            }
-            break;
-        case 13:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-            {
+    case 0:
+        PrintStorageActionText(PC_TEXT_RELEASE_POKE);
+        sub_8098A38(1);
+        gPokemonStorageSystemPtr->unk_0004++;
+        // fallthrough
+    case 1:
+        switch (Menu_ProcessInputNoWrap())
+        {
+            case -1:
+            case  1:
                 sub_8098A5C();
                 SetPSSCallback(sub_8096C84);
+                break;
+            case  0:
+                sub_8098A5C();
+                sub_809B7D4();
+                sub_809B6DC();
+                gPokemonStorageSystemPtr->unk_0004++;
+                break;
+        }
+        break;
+    case 2:
+        sub_809B960();
+        if (!sub_809B734())
+        {
+            while (1)
+            {
+                s8 r0 = sub_809B960();
+                if (r0 == 1)
+                {
+                    gPokemonStorageSystemPtr->unk_0004++;
+                    break;
+                }
+                if (r0 == 0)
+                {
+                    gPokemonStorageSystemPtr->unk_0004 = 8;
+                    break;
+                }
             }
-            break;
+        }
+        break;
+    case 3:
+        sub_809B760();
+        sub_809801C();
+        PrintStorageActionText(PC_TEXT_WAS_RELEASED);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 4:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            PrintStorageActionText(PC_TEXT_BYE_BYE);
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 5:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            sub_8098A5C();
+            if (gUnknown_0203847C)
+            {
+                party_compaction();
+                sub_8099310();
+                gPokemonStorageSystemPtr->unk_0004++;
+            }
+            else
+            {
+                gPokemonStorageSystemPtr->unk_0004 = 7;
+            }
+        }
+        break;
+    case 6:
+        if (sub_8099374() == 0)
+        {
+            sub_809B440();
+            BoxSetMosaic();
+            sub_80987DC();
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 7:
+        SetPSSCallback(sub_8096C84);
+        break;
+    case 8:
+        PrintStorageActionText(PC_TEXT_WAS_RELEASED);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 9:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            PrintStorageActionText(PC_TEXT_SURPRISE);
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 10:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            sub_8098A5C();
+            sub_8099958();
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 11:
+        if (!sub_8099990())
+        {
+            sub_809B7AC();
+            PrintStorageActionText(PC_TEXT_CAME_BACK);
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 12:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            PrintStorageActionText(PC_TEXT_WORRIED);
+            gPokemonStorageSystemPtr->unk_0004++;
+        }
+        break;
+    case 13:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -1024,19 +1081,19 @@ void sub_8097788(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_809BC18();
-            BeginNormalPaletteFade(0xffffffff, 0, 0, 16, 0);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!UpdatePaletteFade())
-            {
-                gUnknown_0203847F = 0;
-                gPokemonStorageSystemPtr->unk_0006 = 0;
-                SetMainCallback2(sub_8096B5C);
-            }
-            break;
+    case 0:
+        sub_809BC18();
+        BeginNormalPaletteFade(0xffffffff, 0, 0, 16, 0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!UpdatePaletteFade())
+        {
+            gUnknown_0203847F = 0;
+            gPokemonStorageSystemPtr->unk_0006 = 0;
+            SetMainCallback2(sub_8096B5C);
+        }
+        break;
     }
 }
 
@@ -1044,22 +1101,22 @@ void sub_80977E4(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_MARK_POKE);
-            gPokemonStorageSystemPtr->unk_12bc.markings = gPokemonStorageSystemPtr->unk_11f7;
-            sub_80F7418(gPokemonStorageSystemPtr->unk_11f7, 0xb0, 0x10);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!sub_80F7500())
-            {
-                sub_80F7470();
-                sub_8098A5C();
-                sub_809BDD8(gPokemonStorageSystemPtr->unk_12bc.markings);
-                sub_809801C();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
+    case 0:
+        PrintStorageActionText(PC_TEXT_MARK_POKE);
+        gPokemonStorageSystemPtr->unk_12bc.markings = gPokemonStorageSystemPtr->unk_11f7;
+        sub_80F7418(gPokemonStorageSystemPtr->unk_11f7, 0xb0, 0x10);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!sub_80F7500())
+        {
+            sub_80F7470();
+            sub_8098A5C();
+            sub_809BDD8(gPokemonStorageSystemPtr->unk_12bc.markings);
+            sub_809801C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -1067,18 +1124,18 @@ void sub_8097858(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            party_compaction();
-            sub_8099310();
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (sub_8099374() == 0)
-            {
-                sub_80987DC();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
+    case 0:
+        party_compaction();
+        sub_8099310();
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (sub_8099374() == 0)
+        {
+            sub_80987DC();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -1086,36 +1143,36 @@ void sub_809789C(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_WHAT_YOU_DO);
-            sub_809CE84();
-            gPokemonStorageSystemPtr->unk_0004++;
+    case 0:
+        PrintStorageActionText(PC_TEXT_WHAT_YOU_DO);
+        sub_809CE84();
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        switch (sub_809CF30())
+        {
+        case -1:
+        case  0:
+            sub_809A860(TRUE);
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
             break;
-        case 1:
-            switch (sub_809CF30())
-            {
-                case -1:
-                case  0:
-                    sub_809A860(TRUE);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case 11:
-                    PlaySE(SE_SELECT);
-                    SetPSSCallback(sub_8097B44);
-                    break;
-                case 10:
-                    PlaySE(SE_SELECT);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8097974);
-                    break;
-                case 9:
-                    PlaySE(SE_SELECT);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8097A64);
-                    break;
-            }
+        case 11:
+            PlaySE(SE_SELECT);
+            SetPSSCallback(sub_8097B44);
             break;
+        case 10:
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            SetPSSCallback(sub_8097974);
+            break;
+        case 9:
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            SetPSSCallback(sub_8097A64);
+            break;
+        }
+        break;
     }
 }
 
@@ -1123,55 +1180,55 @@ void sub_8097974(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_8098A80();
-            PrintStorageActionText(PC_TEXT_PICK_A_THEME);
+    case 0:
+        sub_8098A80();
+        PrintStorageActionText(PC_TEXT_PICK_A_THEME);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        gPokemonStorageSystemPtr->unk_0d5e = sub_809CF30();
+        switch (gPokemonStorageSystemPtr->unk_0d5e)
+        {
+        case -1:
+            sub_809A860(TRUE);
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+            break;
+        case 12 ... 15:
+            PlaySE(SE_SELECT);
+            gPokemonStorageSystemPtr->unk_0d5e -= 12;
+            sub_8098AA8(gPokemonStorageSystemPtr->unk_0d5e);
+            PrintStorageActionText(PC_TEXT_PICK_A_WALLPAPER);
             gPokemonStorageSystemPtr->unk_0004++;
             break;
-        case 1:
-            gPokemonStorageSystemPtr->unk_0d5e = sub_809CF30();
-            switch (gPokemonStorageSystemPtr->unk_0d5e)
-            {
-                case -1:
-                    sub_809A860(TRUE);
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case 12 ... 15:
-                    PlaySE(SE_SELECT);
-                    gPokemonStorageSystemPtr->unk_0d5e -= 12;
-                    sub_8098AA8(gPokemonStorageSystemPtr->unk_0d5e);
-                    PrintStorageActionText(PC_TEXT_PICK_A_WALLPAPER);
-                    gPokemonStorageSystemPtr->unk_0004++;
-                    break;
-            }
+        }
+        break;
+    case 2:
+        gPokemonStorageSystemPtr->unk_0d60 = sub_809CF30();
+        switch (gPokemonStorageSystemPtr->unk_0d60)
+        {
+        case -1:
+            sub_8098A5C();
+            gPokemonStorageSystemPtr->unk_0004 = 0;
             break;
-        case 2:
-            gPokemonStorageSystemPtr->unk_0d60 = sub_809CF30();
-            switch (gPokemonStorageSystemPtr->unk_0d60)
-            {
-                case -1:
-                    sub_8098A5C();
-                    gPokemonStorageSystemPtr->unk_0004 = 0;
-                    break;
-                case -2:
-                    break;
-                default:
-                    PlaySE(SE_SELECT);
-                    sub_8098A5C();
-                    gPokemonStorageSystemPtr->unk_0d60 -= 16;
-                    sub_8099DCC(gPokemonStorageSystemPtr->unk_0d60);
-                    gPokemonStorageSystemPtr->unk_0004++;
-                    break;
-            }
+        case -2:
             break;
-        case 3:
-            if (!sub_8099E08())
-            {
-                sub_809A860(TRUE);
-                SetPSSCallback(sub_8096C84);
-            }
+        default:
+            PlaySE(SE_SELECT);
+            sub_8098A5C();
+            gPokemonStorageSystemPtr->unk_0d60 -= 16;
+            sub_8099DCC(gPokemonStorageSystemPtr->unk_0d60);
+            gPokemonStorageSystemPtr->unk_0004++;
             break;
+        }
+        break;
+    case 3:
+        if (!sub_8099E08())
+        {
+            sub_809A860(TRUE);
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -1179,45 +1236,45 @@ void sub_8097A64(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            PrintStorageActionText(PC_TEXT_JUMP_TO_WHICH_BOX);
-            sub_8096264(&gPokemonStorageSystemPtr->unk_2370, 0x0007, 0xdaca, 3);
-            sub_809634C(gPokemonStorage.currentBox);
-            gPokemonStorageSystemPtr->unk_0004++;
+    case 0:
+        PrintStorageActionText(PC_TEXT_JUMP_TO_WHICH_BOX);
+        sub_8096264(&gPokemonStorageSystemPtr->unk_2370, 0x0007, 0xdaca, 3);
+        sub_809634C(gPokemonStorage.currentBox);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        gPokemonStorageSystemPtr->unk_08b2 = sub_8096368();
+        switch (gPokemonStorageSystemPtr->unk_08b2)
+        {
+        case 200:
             break;
-        case 1:
-            gPokemonStorageSystemPtr->unk_08b2 = sub_8096368();
-            switch (gPokemonStorageSystemPtr->unk_08b2)
+        default:
+            sub_8098A5C();
+            sub_809635C();
+            sub_8096310();
+            if (gPokemonStorageSystemPtr->unk_08b2 == 201 || gPokemonStorageSystemPtr->unk_08b2 == gPokemonStorage.currentBox)
             {
-                case 200:
-                    break;
-                default:
-                    sub_8098A5C();
-                    sub_809635C();
-                    sub_8096310();
-                    if (gPokemonStorageSystemPtr->unk_08b2 == 201 || gPokemonStorageSystemPtr->unk_08b2 == gPokemonStorage.currentBox)
-                    {
-                        sub_809A860(TRUE);
-                        SetPSSCallback(sub_8096C84);
-                    }
-                    else
-                    {
-                        gPokemonStorageSystemPtr->unk_0004++;
-                    }
-                    break;
-            }
-            break;
-        case 2:
-            sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 3:
-            if (!sub_8099D34())
-            {
-                gPokemonStorage.currentBox = gPokemonStorageSystemPtr->unk_08b2;
+                sub_809A860(TRUE);
                 SetPSSCallback(sub_8096C84);
             }
+            else
+            {
+                gPokemonStorageSystemPtr->unk_0004++;
+            }
             break;
+        }
+        break;
+    case 2:
+        sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 3:
+        if (!sub_8099D34())
+        {
+            gPokemonStorage.currentBox = gPokemonStorageSystemPtr->unk_08b2;
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
     }
 }
 
@@ -1225,19 +1282,19 @@ void sub_8097B44(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            sub_809BB90();
-            BeginNormalPaletteFade(0xffffffff, 0, 0, 16, 0);
-            gPokemonStorageSystemPtr->unk_0004++;
-            break;
-        case 1:
-            if (!UpdatePaletteFade())
-            {
-                gUnknown_0203847F = 1;
-                gPokemonStorageSystemPtr->unk_0006 = 1;
-                SetMainCallback2(sub_8096B5C);
-            }
-            break;
+    case 0:
+        sub_809BB90();
+        BeginNormalPaletteFade(0xffffffff, 0, 0, 16, 0);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 1:
+        if (!UpdatePaletteFade())
+        {
+            gUnknown_0203847F = 1;
+            gPokemonStorageSystemPtr->unk_0006 = 1;
+            SetMainCallback2(sub_8096B5C);
+        }
+        break;
     }
 }
 
@@ -1245,110 +1302,117 @@ void sub_8097BA0(void)
 {
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
-        case 0:
-            if (sub_809BF20())
-            {
-                PlaySE(SE_HAZURE);
-                PrintStorageActionText(PC_TEXT_HOLDING_POKE);
-                gPokemonStorageSystemPtr->unk_0004 = 1;
-            }
-            else
-            {
-                PlaySE(SE_SELECT);
-                PrintStorageActionText(PC_TEXT_EXIT_BOX);
-                sub_8098A38(0);
-                gPokemonStorageSystemPtr->unk_0004 = 2;
-            }
-            break;
+    case 0:
+        if (sub_809BF20())
+        {
+            PlaySE(SE_HAZURE);
+            PrintStorageActionText(PC_TEXT_HOLDING_POKE);
+            gPokemonStorageSystemPtr->unk_0004 = 1;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            PrintStorageActionText(PC_TEXT_EXIT_BOX);
+            sub_8098A38(0);
+            gPokemonStorageSystemPtr->unk_0004 = 2;
+        }
+        break;
+    case 1:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
+    case 2:
+        switch (Menu_ProcessInputNoWrap())
+        {
         case 1:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
-            {
-                sub_8098A5C();
-                SetPSSCallback(sub_8096C84);
-            }
+        case -1:
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
             break;
-        case 2:
-            switch (Menu_ProcessInputNoWrap())
-            {
-                case 1:
-                case -1:
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case 0:
-                    PlaySE(SE_PC_OFF);
-                    sub_8098A5C();
-                    gPokemonStorageSystemPtr->unk_0004++;
-                    break;
-            }
-            break;
-        case 3:
-            gPokemonStorageSystemPtr->unk_000c.tileTag = 0x000e;
-            gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
-            gPokemonStorageSystemPtr->unk_000c.unk04 = 20;
-            gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
-            sub_80C5E38(&gPokemonStorageSystemPtr->unk_000c);
+        case 0:
+            PlaySE(SE_PC_OFF);
+            sub_8098A5C();
             gPokemonStorageSystemPtr->unk_0004++;
             break;
-        case 4:
-            if (sub_80C5F98())
-            {
-                gPlayerPartyCount = CalculatePlayerPartyCount();
-                SetMainCallback2(sub_80961A8);
-            }
-            break;
+        }
+        break;
+    case 3:
+        gPokemonStorageSystemPtr->unk_000c.tileTag = 0x000e;
+        gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
+        gPokemonStorageSystemPtr->unk_000c.unk04 = 20;
+        gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
+        sub_80C5E38(&gPokemonStorageSystemPtr->unk_000c);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 4:
+        if (sub_80C5F98())
+        {
+            gPlayerPartyCount = CalculatePlayerPartyCount();
+            SetMainCallback2(sub_80961A8);
+        }
+        break;
     }
 }
 
-void sub_8097CC0(void) {
-    switch (gPokemonStorageSystemPtr->unk_0004) {
+void sub_8097CC0(void)
+{
+    switch (gPokemonStorageSystemPtr->unk_0004)
+    {
+    case 0:
+        if (sub_809BF20())
+        {
+            PlaySE(SE_HAZURE);
+            PrintStorageActionText(PC_TEXT_HOLDING_POKE);
+            gPokemonStorageSystemPtr->unk_0004 = 1;
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            PrintStorageActionText(PC_TEXT_CONTINUE_BOX);
+            sub_8098A38(0);
+            gPokemonStorageSystemPtr->unk_0004 = 2;
+        }
+        break;
+    case 1:
+        if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY))
+        {
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
+        }
+        break;
+    case 2:
+        switch (Menu_ProcessInputNoWrap())
+        {
         case 0:
-            if (sub_809BF20()) {
-                PlaySE(SE_HAZURE);
-                PrintStorageActionText(PC_TEXT_HOLDING_POKE);
-                gPokemonStorageSystemPtr->unk_0004 = 1;
-            }
-            else {
-                PlaySE(SE_SELECT);
-                PrintStorageActionText(PC_TEXT_CONTINUE_BOX);
-                sub_8098A38(0);
-                gPokemonStorageSystemPtr->unk_0004 = 2;
-            }
+            sub_8098A5C();
+            SetPSSCallback(sub_8096C84);
             break;
+        case -1:
         case 1:
-            if (gMain.newKeys & (A_BUTTON | B_BUTTON | DPAD_ANY)) {
-                sub_8098A5C();
-                SetPSSCallback(sub_8096C84);
-            }
-            break;
-        case 2:
-            switch (Menu_ProcessInputNoWrap()) {
-                case 0:
-                    sub_8098A5C();
-                    SetPSSCallback(sub_8096C84);
-                    break;
-                case -1:
-                case 1:
-                    PlaySE(SE_PC_OFF);
-                    sub_8098A5C();
-                    gPokemonStorageSystemPtr->unk_0004++;
-                    break;
-            }
-            break;
-        case 3:
-            gPokemonStorageSystemPtr->unk_000c.tileTag = 0x000e;
-            gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
-            gPokemonStorageSystemPtr->unk_000c.unk04 = 20;
-            gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
-            sub_80C5E38(&gPokemonStorageSystemPtr->unk_000c);
+            PlaySE(SE_PC_OFF);
+            sub_8098A5C();
             gPokemonStorageSystemPtr->unk_0004++;
             break;
-        case 4:
-            if (sub_80C5F98()) {
-                gPlayerPartyCount = CalculatePlayerPartyCount();
-                SetMainCallback2(sub_80961A8);
-            }
-            break;
+        }
+        break;
+    case 3:
+        gPokemonStorageSystemPtr->unk_000c.tileTag = 0x000e;
+        gPokemonStorageSystemPtr->unk_000c.paletteTag = 0xdad0;
+        gPokemonStorageSystemPtr->unk_000c.unk04 = 20;
+        gPokemonStorageSystemPtr->unk_000c.unk06 = 0;
+        sub_80C5E38(&gPokemonStorageSystemPtr->unk_000c);
+        gPokemonStorageSystemPtr->unk_0004++;
+        break;
+    case 4:
+        if (sub_80C5F98())
+        {
+            gPlayerPartyCount = CalculatePlayerPartyCount();
+            SetMainCallback2(sub_80961A8);
+        }
+        break;
     }
 }
 
@@ -1831,28 +1895,29 @@ bool8 sub_8098830(void)
 {
     switch (gPokemonStorageSystemPtr->unk_08ae)
     {
-        case 0:
-            if (!sub_8098520())
-            {
-                sub_809B068();
-                gPokemonStorageSystemPtr->unk_08ae++;
-            }
-            break;
-        case 1:
-            if (!sub_809AC00())
-            {
-                if (gPokemonStorageSystemPtr->unk_11f6)
-                    BoxSetMosaic();
-                gPokemonStorageSystemPtr->unk_08ae++;
-            }
-            break;
-        case 2:
-            return FALSE;
+    case 0:
+        if (!sub_8098520())
+        {
+            sub_809B068();
+            gPokemonStorageSystemPtr->unk_08ae++;
+        }
+        break;
+    case 1:
+        if (!sub_809AC00())
+        {
+            if (gPokemonStorageSystemPtr->unk_11f6)
+                BoxSetMosaic();
+            gPokemonStorageSystemPtr->unk_08ae++;
+        }
+        break;
+    case 2:
+        return FALSE;
     }
     return TRUE;
 }
 
-const struct StorageAction gPCStorageActionTexts[] = {
+const struct StorageAction gPCStorageActionTexts[] =
+{
     {PCText_ExitBox, 0},
     {PCText_WhatYouDo, 0},
     {PCText_PickATheme, 0},
@@ -1878,41 +1943,37 @@ const struct StorageAction gPCStorageActionTexts[] = {
     {PCText_PleaseRemoveMail, 0}
 };
 
-void PrintStorageActionText(u8 index) {
+void PrintStorageActionText(u8 index)
+{
     u8 *ptr;
 
     Menu_DrawStdWindowFrame(10, 16, 29, 19);
 
     switch (gPCStorageActionTexts[index].format)
     {
-
-        case PC_TEXT_FMT_UNK_02:
-            ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
-            ptr = StringCopy(ptr, gPokemonStorageSystemPtr->unk_11fa);
-            break;
-
-        case PC_TEXT_FMT_UNK_05:
-            ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
-            ptr = StringCopy(ptr, gPokemonStorageSystemPtr->unk_26e4);
-            break;
-
-        case PC_TEXT_FMT_MON_NAME:
-            // {var} + " is selected."
-            ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPokemonStorageSystemPtr->unk_11fa);
-            ptr = StringCopy(ptr, gPCStorageActionTexts[index].text);
-            break;
-
-        case PC_TEXT_FMT_MON_NAME_2:
-            // {var} + " was released."
-            ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPokemonStorageSystemPtr->unk_26e4);
+    case PC_TEXT_FMT_UNK_02:
+        ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
+        ptr = StringCopy(ptr, gPokemonStorageSystemPtr->unk_11fa);
+        break;
+    case PC_TEXT_FMT_UNK_05:
+        ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
+        ptr = StringCopy(ptr, gPokemonStorageSystemPtr->unk_26e4);
+        break;
+    case PC_TEXT_FMT_MON_NAME:
+        // {var} + " is selected."
+        ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPokemonStorageSystemPtr->unk_11fa);
+        ptr = StringCopy(ptr, gPCStorageActionTexts[index].text);
+        break;
+    case PC_TEXT_FMT_MON_NAME_2:
+        // {var} + " was released."
+        ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPokemonStorageSystemPtr->unk_26e4);
 #if ENGLISH
-            ptr = StringCopy(ptr, gPCStorageActionTexts[index].text);
+        ptr = StringCopy(ptr, gPCStorageActionTexts[index].text);
 #elif GERMAN
-            ptr = de_sub_8073174(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
+        ptr = de_sub_8073174(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
 #endif
-            break;
-
-        case PC_TEXT_FMT_UNK_03:
+        break;
+    case PC_TEXT_FMT_UNK_03:
         {
             const u8 *stringLength;
             const u8 *text;
@@ -1924,10 +1985,8 @@ void PrintStorageActionText(u8 index) {
             ptr = StringCopy(ptr, gPokemonStorageSystemPtr->unk_11fa);
             ptr = StringCopy(ptr, stringLength);
         }
-            break;
-
-        case PC_TEXT_FMT_MON_NAME_AFTER_EXCL_MARK:
-            // "Bye-bye, ".substr(0, -1) + {var} + "Bye-bye, !".substr(-1, 1)
+        break;
+    case PC_TEXT_FMT_MON_NAME_AFTER_EXCL_MARK:
         {
             const u8 *stringLength;
             const u8 *text;
@@ -1939,12 +1998,11 @@ void PrintStorageActionText(u8 index) {
             ptr = StringCopy(ptr - 1, gPokemonStorageSystemPtr->unk_26e4);
             ptr = StringCopy(ptr, stringLength);
         }
-            break;
-
-        case PC_TEXT_FMT_NORMAL:
-        default:
-            ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
-            break;
+        break;
+    case PC_TEXT_FMT_NORMAL:
+    default:
+        ptr = StringCopy(gPokemonStorageSystemPtr->unk_2694, gPCStorageActionTexts[index].text);
+        break;
     }
 
     while (ptr < gPokemonStorageSystemPtr->unk_26a6)
@@ -2034,30 +2092,30 @@ void sub_8098AA8(u8 a0)
     sub_809CDCC();
     switch (a0)
     {
-        case 0:
-            sub_809CDEC(16);
-            sub_809CDEC(17);
-            sub_809CDEC(18);
-            sub_809CDEC(19);
-            break;
-        case 1:
-            sub_809CDEC(20);
-            sub_809CDEC(21);
-            sub_809CDEC(22);
-            sub_809CDEC(23);
-            break;
-        case 2:
-            sub_809CDEC(24);
-            sub_809CDEC(25);
-            sub_809CDEC(26);
-            sub_809CDEC(27);
-            break;
-        case 3:
-            sub_809CDEC(28);
-            sub_809CDEC(29);
-            sub_809CDEC(30);
-            sub_809CDEC(31);
-            break;
+    case 0:
+        sub_809CDEC(16);
+        sub_809CDEC(17);
+        sub_809CDEC(18);
+        sub_809CDEC(19);
+        break;
+    case 1:
+        sub_809CDEC(20);
+        sub_809CDEC(21);
+        sub_809CDEC(22);
+        sub_809CDEC(23);
+        break;
+    case 2:
+        sub_809CDEC(24);
+        sub_809CDEC(25);
+        sub_809CDEC(26);
+        sub_809CDEC(27);
+        break;
+    case 3:
+        sub_809CDEC(28);
+        sub_809CDEC(29);
+        sub_809CDEC(30);
+        sub_809CDEC(31);
+        break;
     }
     sub_809CE84();
 }

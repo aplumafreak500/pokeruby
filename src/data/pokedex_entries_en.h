@@ -5389,11 +5389,6 @@ static const u8 DexDescription_Deoxys_2[] = _(
   "chest appears to be its brain.");
 #endif
 
-static const u8 DexDescription_Victini_1[] = _(
-  "");
-static const u8 DexDescription_Victini_2[] = _(
-  "");
-
 const struct PokedexEntry gPokedexEntries[] =
 {
     {  //Dummy
@@ -9652,16 +9647,5 @@ const struct PokedexEntry gPokedexEntries[] =
         .pokemonOffset = 0,
         .trainerScale = 290,
         .trainerOffset = 2,
-    },
-    { //Victini
-        .categoryName = _(""),
-        .height = 0,
-        .weight = 0,
-        .descriptionPage1 = DexDescription_Victini_1,
-        .descriptionPage2 = DexDescription_Victini_2,
-        .pokemonScale = 256,
-        .pokemonOffset = 0,
-        .trainerScale = 256,
-        .trainerOffset = 0,
     },
 };

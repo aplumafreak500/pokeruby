@@ -140,8 +140,7 @@ const u16 gSpeciesIdToCryId[] = {
     384, // LATIOS
     385, // JIRACHI
     386, // DEOXYS
-    387,  // CHIMECHO
-    388 // Victini
+    387  // CHIMECHO
 };
 
 #endif //POKERUBY_CRY_IDS_H

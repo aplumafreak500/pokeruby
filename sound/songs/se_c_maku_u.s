@@ -1,6 +1,6 @@
 	.include "MPlayDef.s"
 
-	.equ	se_c_maku_u_grp, voicegroup_869D6F4
+	.equ	se_c_maku_u_grp, voicegroup_8451F90
 	.equ	se_c_maku_u_pri, 5
 	.equ	se_c_maku_u_rev, reverb_set+50
 	.equ	se_c_maku_u_mvl, 127

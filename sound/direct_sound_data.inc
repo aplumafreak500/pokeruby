@@ -1813,10 +1813,6 @@ Cry_Deoxys:: @ 86379B4
 	.align 2
 Cry_Chimecho:: @ 8638E88
 	.incbin "sound/direct_sound_samples/cries/cry_chimecho.bin"
-	
-	.align 2
-Cry_Victini:: @ 8638E88
-	.incbin "sound/direct_sound_samples/cries/cry_victini.bin"
 
 	.align 2
 DirectSoundWaveData_Phoneme_Vowel7:: @ 8639898
