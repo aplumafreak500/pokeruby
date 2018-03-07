@@ -440,3 +440,4 @@ gMonBackPicCoords:: @ 81E9114
 	.byte  70, 10, 0, 0
 	.byte  55,  6, 0, 0
 	.byte  71,  6, 0, 0
+	.byte  0, 0, 0, 0

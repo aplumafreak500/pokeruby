@@ -5388,6 +5388,14 @@ static const u8 DexDescription_Deoxys_2[] = _(
   "The crystalline organ on this POKéMON’s\n"
   "chest appears to be its brain.");
 #endif
+static const u8 DexDescription_Victini_1[] = _(
+  "This Pokémon brings victory. It is said\n"
+  "that Trainers with Victini always win,\n"
+  "regardless of the type of encounter.");
+static const u8 DexDescription_Victini_2[] = _(
+  "When it shares the infinite energy it\n"
+  "creates, that being's entire body will\n"
+  "be overflowing with power.");
 
 const struct PokedexEntry gPokedexEntries[] =
 {
@@ -9647,5 +9655,16 @@ const struct PokedexEntry gPokedexEntries[] =
         .pokemonOffset = 0,
         .trainerScale = 290,
         .trainerOffset = 2,
+    },
+    {
+        .categoryName = _("Victory"),
+        .height = 255,
+        .weight = 255,
+        .descriptionPage1 = DexDescription_Victini_1,
+        .descriptionPage2 = DexDescription_Victini_2,
+        .pokemonScale = 255,
+        .pokemonOffset = 0,
+        .trainerScale = 255,
+        .trainerOffset = 0,
     },
 };
