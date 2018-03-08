@@ -28,6 +28,7 @@ CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef -Werror -Wno
 
 ROM := poke$(BUILD_NAME).gba
 MAP := $(ROM:%.gba=%.map)
+ELF := poke$(BUILD_NAME).elf
 
 SUBDIRS := \
   sound \
@@ -100,15 +101,15 @@ clean: tidy
 	$(RM) $(ALL_OBJECTS)
 	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.rl' \) -exec rm {} +
 
-ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug
+ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_debug ruby_rev1_debug ruby_rev1_debug sapphire_debug sapphire_rev1_debug sapphire_rev2_debug ruby_de_debug sapphire_de_debug
 tidy:
 	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
 	$(RM) -r build
 
 $(ROM): %.gba: %.elf
-	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0x9000000 $< $@
+	$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
 
-%.elf: $(LD_SCRIPT) $(ALL_OBJECTS)
+$(ELF): $(LD_SCRIPT) $(ALL_OBJECTS)
 	cd $(BUILD_DIR) && $(LD) -T ld_script.ld -Map ../../$(MAP) ../../$(LIBGCC) ../../$(LIBC) -o ../../$@
 
 $(LD_SCRIPT): ld_script.txt $(BUILD_DIR)/sym_common.ld $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_bss.ld
@@ -138,8 +139,14 @@ sapphire_rev1: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISI
 sapphire_rev2: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2
 ruby_de:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
 sapphire_de:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
-ruby_de_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
-
+ruby_debug:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY
+ruby_rev1_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
+ruby_rev2_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
+sapphire_debug:      ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE
+sapphire_rev1_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
+sapphire_rev2_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
+ruby_de_debug:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
+sapphire_de_debug:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
 
 #### Graphics Rules ####
 
