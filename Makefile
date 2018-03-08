@@ -28,6 +28,7 @@ CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef -Werror -Wno
 
 ROM := poke$(BUILD_NAME).gba
 MAP := $(ROM:%.gba=%.map)
+ELF := poke$(BUILD_NAME).elf
 
 SUBDIRS := \
   sound \
@@ -108,7 +109,7 @@ tidy:
 $(ROM): %.gba: %.elf
 	$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
 
-%.elf: $(LD_SCRIPT) $(ALL_OBJECTS)
+$(ELF): $(LD_SCRIPT) $(ALL_OBJECTS)
 	cd $(BUILD_DIR) && $(LD) -T ld_script.ld -Map ../../$(MAP) ../../$(LIBGCC) ../../$(LIBC) -o ../../$@
 
 $(LD_SCRIPT): ld_script.txt $(BUILD_DIR)/sym_common.ld $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_bss.ld
