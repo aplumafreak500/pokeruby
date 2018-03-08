@@ -785,14 +785,14 @@ void sub_80BB038(u8 taskId)
     if (gMain.newAndRepeatedKeys & DPAD_RIGHT) // _080BB192
     {
         sSoundTestParams[CRY_TEST_VOICE]++;
-        if (sSoundTestParams[CRY_TEST_VOICE] > 247)
+        if (sSoundTestParams[CRY_TEST_VOICE] > 269)
             sSoundTestParams[CRY_TEST_VOICE] = 0;
     }
     else if (gMain.newAndRepeatedKeys & DPAD_LEFT) // _080BB1B0
     {
         sSoundTestParams[CRY_TEST_VOICE]--;
         if (sSoundTestParams[CRY_TEST_VOICE] < 0)
-            sSoundTestParams[CRY_TEST_VOICE] = 247;
+            sSoundTestParams[CRY_TEST_VOICE] = 269;
     }
 }
 
