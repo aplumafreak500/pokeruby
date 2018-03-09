@@ -131,22 +131,22 @@ $(BUILD_DIR)/%.o: %.s $$(ASM_DEP)
 	$(AS) $(ASFLAGS) $< -o $@
 
 # "friendly" target names for convenience sake
-ruby:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY
-ruby_rev1:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=1
-ruby_rev2:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=2
-sapphire:      ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE
-sapphire_rev1: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=1
-sapphire_rev2: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2
-ruby_de:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
-sapphire_de:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
-ruby_debug:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY DEBUG=1
-ruby_rev1_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
-ruby_rev2_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
-sapphire_debug:      ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE DEBUG=1
-sapphire_rev1_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
-sapphire_rev2_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
-ruby_de_debug:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
-sapphire_de_debug:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
+ruby:          ; @$(MAKE) GAME_VERSION=RUBY
+ruby_rev1:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1
+ruby_rev2:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2
+sapphire:      ; @$(MAKE) GAME_VERSION=SAPPHIRE
+sapphire_rev1: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1
+sapphire_rev2: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2
+ruby_de:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
+sapphire_de:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
+ruby_debug:          ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1
+ruby_rev1_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
+ruby_rev2_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
+sapphire_debug:      ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1
+sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
+sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
+ruby_de_debug:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
+sapphire_de_debug:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
 
 #### Graphics Rules ####
 
