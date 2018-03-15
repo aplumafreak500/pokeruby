@@ -5394,7 +5394,7 @@ static const u8 DexDescription_Victini_1[] = _(
   "regardless of the type of encounter.");
 static const u8 DexDescription_Victini_2[] = _(
   "When it shares the infinite energy it\n"
-  "creates, that being's entire body will\n"
+  "creates, that being’s entire body will\n"
   "be overflowing with power.");
 
 const struct PokedexEntry gPokedexEntries[] =
