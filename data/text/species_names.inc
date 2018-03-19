@@ -411,3 +411,4 @@ gSpeciesNames:: @ 81F716C
 	.string "JIRACHI$", 11
 	.string "DEOXYS$", 11
 	.string "CHIMECHO$", 11
+	.string "Victini$", 11
