@@ -586,9 +586,9 @@ void AdjustSelectedDriverParam(s8 delta)
     // also ideally should be a MinMax struct, but any attempt to make this into a struct causes it to not match due to the weird multi dim access.
     int paramRanges[] =
     {
-        0, 387,         // Voice
+        0, 388,         // Voice
         0, 127,         // Volume
-        -127, 127,      // Panpot
+        -64, 63,      // Panpot
         -128, 32639,    // Pitch
         0, 65535,       // Length
         0, 255,         // Release
@@ -1390,12 +1390,12 @@ void Task_ProcessCryTestInput(u8 taskId)
     if (gMain.newAndRepeatedKeys & DPAD_UP)
     {
         if(--gSoundTestCryNum == 0)
-            gSoundTestCryNum = 384; // total species
+            gSoundTestCryNum = 385; // total species
         PrintCryNumber();
     }
     if (gMain.newAndRepeatedKeys & DPAD_DOWN)
     {
-        if(++gSoundTestCryNum > 384)
+        if(++gSoundTestCryNum > 385)
             gSoundTestCryNum = 1;
         PrintCryNumber();
     }
