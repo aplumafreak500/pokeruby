@@ -42,10 +42,10 @@ const char BuildDateTime[] = "$Name: debug-Euro-2003-05-09-A $";
 #endif
 
 
-#if defined(VERSION)
-const char GitBuildString[] = VERSION;
+#ifdef GAME_VERSION
+const char GitBuildString[] = "Git Rev: " GAME_VERSION;
 #else
-const char GitBuildString[] = "";
+const char GitBuildString[] = "$";
 #endif
 
 const IntrFunc gIntrTableTemplate[] =

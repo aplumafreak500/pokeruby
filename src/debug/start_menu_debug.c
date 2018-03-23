@@ -319,7 +319,7 @@ void debug_sub_8076B68(void)
     Menu_PrintText(gUnknown_Debug_0839BBB6, 1, 1);
     Menu_PrintText(gUnknown_Debug_0839BBC1, 1, 3);
     Menu_PrintText(gUnknown_Debug_0839BBA4, 1, 9);
-#ifdef VERSION
+#ifdef VERSION_NUMBER
     Menu_PrintText(GitBuildString, 1, 15);
 #endif
     debug_sub_8077CF4(4, 11);
