@@ -35,8 +35,9 @@ GPIOPortReadEnable: @ 80000C8
 @ 80000D0
 
 @ TODO: figure out what this data is
-
-	.ifdef GERMAN
+	.global RomInfo
+RomInfo:
+@	.ifdef GERMAN
 	.4byte 0xFFFFFFFF
 	.4byte 0xFFFFFFFF
 	.4byte 0xFFFFFFFF
@@ -112,8 +113,14 @@ GPIOPortReadEnable: @ 80000C8
 	.4byte          0
 	.4byte          0
 	.4byte          0
+@	.4byte 0xFFFFFFFF
+@	.endif
+	.global RomInfoString
+RomInfoString:
+	.ascii "aplumafreak500's Pokeruby Victini Experimental Branch\n"
+	.2byte 0xFFFF
 	.4byte 0xFFFFFFFF
-	.endif
+	.4byte 0xFFFFFFFF
 
 	.arm
 	.align 2, 0
