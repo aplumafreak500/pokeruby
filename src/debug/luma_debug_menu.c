@@ -14,9 +14,9 @@ extern u8 DebugScript_New0;
 
 const u8 Str_AddNewPKMN[] = _("Add Victini to party");
 #ifdef VERSION_NUMBER
-const char GitBuildString[] = "Git Rev: " VERSION_NUMBER;
+const u8 GitBuildString[] = _("Git Rev: " VERSION_NUMBER);
 #else
-const char GitBuildString[] = "$";
+const u8 GitBuildString[] = _("$");
 #endif
 
 const struct MenuAction LumaDebugMenuItems[] =
