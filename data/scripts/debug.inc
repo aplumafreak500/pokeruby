@@ -534,3 +534,7 @@ DebugScript_081C2528:: @ 81C2528
 	end
 
 .endif
+
+DebugScript_New0::
+	givemon SPECIES_VICTINI, 1, 0, 0, 0, 0
+	end
