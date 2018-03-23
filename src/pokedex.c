@@ -26,7 +26,7 @@
 #include "scanline_effect.h"
 #include "ewram.h"
 
-#define NATIONAL_DEX_COUNT 386
+#define NATIONAL_DEX_COUNT 387
 
 struct PokedexListItem
 {
@@ -521,7 +521,7 @@ static const u8 gUnknown_083A05F8[] = _("");
 static const u16 gUnknown_083B4EC4[16] = {0};
 static const u8 *const sMonFootprintTable[] =
 {
-    gMonFootprint_Bulbasaur,
+    gMonFootprint_QuestionMark,
     gMonFootprint_Bulbasaur,
     gMonFootprint_Ivysaur,
     gMonFootprint_Venusaur,
@@ -933,7 +933,8 @@ static const u8 *const sMonFootprintTable[] =
     gMonFootprint_Jirachi,
     gMonFootprint_Deoxys,
     gMonFootprint_Chimecho,
-    gMonFootprint_Bulbasaur,
+    gMonFootprint_Victini,
+    gMonFootprint_QuestionMark,
 };
 static const u8 gUnknown_083B5558[] = _("{CLEAR_TO 0}");
 const u8 gUnknown_083B555C[] = INCBIN_U8("graphics/unknown/unknown_3B555C.bin");

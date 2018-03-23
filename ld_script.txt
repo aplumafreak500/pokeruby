@@ -403,6 +403,7 @@ SECTIONS {
         src/debug/unknown_debug_menu.o(.text);
         src/name_string_util.o(.text);
         src/menu_cursor.o(.text);
+	src/debug/luma_debug_menu.o(.text);
     } =0
 
     script_data :
@@ -675,6 +676,7 @@ SECTIONS {
         src/evolution_graphics.o(.rodata);
         src/bard_music.o(.rodata);
         src/debug/unknown_debug_menu.o(.rodata);
+	src/debug/luma_debug_menu.o(.rodata);
         data/strings2.o(.rodata);
         src/menu_cursor.o(.rodata);
         src/mystery_event_msg.o(.rodata);
