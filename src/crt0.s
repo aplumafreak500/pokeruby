@@ -118,7 +118,7 @@ RomInfo:
 	.global RomInfoString
 RomInfoString:
 	.ascii "aplumafreak500's Pokeruby Victini Experimental Branch\n"
-	.space 8
+	.space 0x18
 
 	.arm
 	.align 2, 0

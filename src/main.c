@@ -41,13 +41,6 @@ const char BuildDateTime[] = "$$Name: debug-USA-2002-10-15-U $";
 const char BuildDateTime[] = "$Name: debug-Euro-2003-05-09-A $";
 #endif
 
-
-#ifdef VERSION_NUMBER
-const char GitBuildString[] = "Git Rev: " VERSION_NUMBER;
-#else
-const char GitBuildString[] = "$";
-#endif
-
 const IntrFunc gIntrTableTemplate[] =
 {
     SerialIntr, // Serial interrupt

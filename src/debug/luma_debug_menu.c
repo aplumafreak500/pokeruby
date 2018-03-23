@@ -13,6 +13,11 @@ extern u8 (*gMenuCallback)(void);
 extern u8 DebugScript_New0;
 
 const u8 Str_AddNewPKMN[] = _("Add Victini to party");
+#ifdef VERSION_NUMBER
+const char GitBuildString[] = "Git Rev: " VERSION_NUMBER;
+#else
+const char GitBuildString[] = "$";
+#endif
 
 const struct MenuAction LumaDebugMenuItems[] =
 {
@@ -54,7 +59,6 @@ u8 LumaDebugMenu_AddNewPKMN(void)
     ScriptContext1_SetupScript(&DebugScript_New0);
     PlaySE(SE_EXPMAX);
     CloseMenu();
-    gMenuCallback = debug_sub_new0;
-    return 0;
+    return 1;
 }
 
