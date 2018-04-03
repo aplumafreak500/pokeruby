@@ -5,7 +5,7 @@ ContestString_DescStartled1:
 ContestString_DescGreatLock:
 	.string "Makes a great appeal, but\nallows no more to the end.$"
 ContestString_DescRepeatable:
-	.string "Can be repeatedly used\nwithout boring the JUDGE.$"
+	.string "Can be repeatedly used\nwithout boring the Judge.$"
 ContestString_DescStartled2:
 	.string "Can avoid being startled\nby others once.$"
 ContestString_DescStartled3:
@@ -15,47 +15,47 @@ ContestString_DescStartled4:
 ContestString_DescStartled5:
 	.string "After this move, the user is\nless likely to be startled.$"
 ContestString_DescStartled6:
-	.string "Slightly startles the\nPOKéMON in front.$"
+	.string "Slightly startles the\nPokémon in front.$"
 ContestString_DescStartled7:
 	.string "Slightly startles those\nthat have made appeals.$"
 ContestString_DescStartled8:
-	.string "Startles the POKéMON that\nappealed before the user.$"
+	.string "Startles the Pokémon that\nappealed before the user.$"
 ContestString_DescStartled9:
-	.string "Startles all POKéMON that\nhave done their appeals.$"
+	.string "Startles all Pokémon that\nhave done their appeals.$"
 ContestString_DescStartled10:
-	.string "Badly startles the\nPOKéMON in front.$"
+	.string "Badly startles the\nPokémon in front.$"
 ContestString_DescStartled11:
 	.string "Badly startles those that\nhave made appeals.$"
 ContestString_DescStartled12:
-	.string "Startles the POKéMON that\nappealed before the user.$"
+	.string "Startles the Pokémon that\nappealed before the user.$"
 ContestString_DescStartled13:
-	.string "Startles all POKéMON that\nappealed before the user.$"
+	.string "Startles all Pokémon that\nappealed before the user.$"
 ContestString_DescAttentionShift:
-	.string "Shifts the JUDGE’s\nattention from others.$"
+	.string "Shifts the Judge’s\nattention from others.$"
 ContestString_DescStartled14:
-	.string "Startles the POKéMON that\nhas the JUDGE’s attention.$"
+	.string "Startles the Pokémon that\nhas the Judge’s attention.$"
 ContestString_DescJamOthersMissTurn:
 	.string "Jams the others, and misses\none turn of appeals.$"
 ContestString_DescStartled15:
-	.string "Startles POKéMON that\nmade a same-type appeal.$"
+	.string "Startles Pokémon that\nmade a same-type appeal.$"
 ContestString_DescStartled16:
-	.string "Badly startles POKéMON\nthat made COOL appeals.$"
+	.string "Badly startles Pokémon\nthat made Cool appeals.$"
 ContestString_DescStartled17:
-	.string "Badly startles POKéMON\nthat made BEAUTY appeals.$"
+	.string "Badly startles Pokémon\nthat made Beauty appeals.$"
 ContestString_DescStartled18:
-	.string "Badly startles POKéMON\nthat made CUTE appeals.$"
+	.string "Badly startles Pokémon\nthat made Cute appeals.$"
 ContestString_DescStartled19:
-	.string "Badly startles POKéMON\nthat made SMART appeals.$"
+	.string "Badly startles Pokémon\nthat made Smart appeals.$"
 ContestString_DescStartled20:
-	.string "Badly startles POKéMON\nthat made TOUGH appeals.$"
+	.string "Badly startles Pokémon\nthat made Tough appeals.$"
 ContestString_DescNervousOne:
-	.string "Makes one POKéMON after\nthe user nervous.$"
+	.string "Makes one Pokémon after\nthe user nervous.$"
 ContestString_DescNervousAllAfter:
-	.string "Makes all POKéMON after\nthe user nervous.$"
+	.string "Makes all Pokémon after\nthe user nervous.$"
 ContestString_DescConditionWorseBefore:
 	.string "Worsens the condition of\nthose that made appeals.$"
 ContestString_DescStartled21:
-	.string "Badly startles POKéMON in\ngood condition.$"
+	.string "Badly startles Pokémon in\ngood condition.$"
 ContestString_DescGreatWhenFirst:
 	.string "The appeal works great if\nperformed first.$"
 ContestString_DescGreatWhenLast:
@@ -87,9 +87,9 @@ ContestString_DescRandomOrderEasier:
 ContestString_DescRandomOrder:
 	.string "Scrambles the order of\nappeals on the next turn.$"
 ContestString_DescAnyExcitement:
-	.string "An appeal that excites the\naudience in any CONTEST.$"
+	.string "An appeal that excites the\naudience in any Contest.$"
 ContestString_DescStartled22:
-	.string "Badly startles all POKéMON\nthat made good appeals.$"
+	.string "Badly startles all Pokémon\nthat made good appeals.$"
 ContestString_DescScaleWithExcitement:
 	.string "The appeal works best the\nmore the crowd is excited.$"
 ContestString_DescStopExcitement:
@@ -147,31 +147,31 @@ gContestEffectStrings:: @ 83CADD4
 	.4byte ContestString_DescStopExcitement
 
 ContestString_MoveRainDance:
-	.string "RAIN DANCE$"
+	.string "Rain Dance$"
 ContestString_MoveRage:
-	.string "RAGE$"
+	.string "Rage$"
 ContestString_MoveFocusEnergy:
-	.string "FOCUS ENERGY$"
+	.string "Focus Energy$"
 ContestString_MoveHypnosis:
-	.string "HYPNOSIS$"
+	.string "Hypnosis$"
 ContestString_MoveSoftboiled:
-	.string "SOFTBOILED$"
+	.string "Softboiled$"
 ContestString_MoveHornAttack:
-	.string "HORN ATTACK$"
+	.string "Horn Attack$"
 ContestString_MoveSwordsDance:
-	.string "SWORDS DANCE$"
+	.string "Swords Dance$"
 ContestString_MoveConversion:
-	.string "CONVERSION$"
+	.string "Conversion$"
 ContestString_MoveSunnyDay:
-	.string "SUNNY DAY$"
+	.string "Sunny Day$"
 ContestString_MoveRest:
-	.string "REST$"
+	.string "Rest$"
 ContestString_MoveVicegrip:
-	.string "VICEGRIP$"
+	.string "Vicegrip$"
 ContestString_MoveDefenseCurl:
-	.string "DEFENSE CURL$"
+	.string "Defense Curl$"
 ContestString_MoveLockOn:
-	.string "LOCK-ON$"
+	.string "Lock-On$"
 
 	.align 2
 	.4byte ContestString_MoveRainDance
@@ -190,15 +190,15 @@ ContestString_MoveLockOn:
 	.4byte ContestString_MoveLockOn
 
 ContestString_Cool:
-	.string "COOL$"
+	.string "Cool$"
 ContestString_Beauty:
-	.string "BEAUTY$"
+	.string "Beauty$"
 ContestString_Cute:
-	.string "CUTE$"
+	.string "Cute$"
 ContestString_Smart:
-	.string "SMART$"
+	.string "Smart$"
 ContestString_Tough:
-	.string "TOUGH$"
+	.string "Tough$"
 
 	.align 2
 gUnknown_083CAF70:: @ 83CAF70
@@ -216,7 +216,7 @@ gText_Contest_ButItCantParticipate:: @ 83CAFAE
 
 gUnknown_083CAFD7:: @ 83CAFD7
 	.string "{STR_VAR_1} appealed with\n{STR_VAR_2}!$"
-	.string "The other POKéMON\nmade moves.{PAUSE 60}$"
+	.string "The other Pokémon\nmade moves.{PAUSE 60}$"
 
 gUnknown_083CB00D:: @ 83CB00D
 	.string "{STR_VAR_1} was watching\nthe others.{PAUSE 60}$"
@@ -229,13 +229,13 @@ gUnknown_083CB02C:: @ 83CB02C
 ContestString_AppealJammed:
 	.string "But the appeal was\njammed.$"
 ContestString_FollowLead:
-	.string "It followed another\nPOKéMON’s lead.$"
+	.string "It followed another\nPokémon’s lead.$"
 ContestString_MessedUp:
 	.string "But it messed up.$"
 ContestString_BetterUsual:
 	.string "It went better than\nusual.$"
 ContestString_JudgeLookAway:
-	.string "The JUDGE looked away\nfor some reason.$"
+	.string "The Judge looked away\nfor some reason.$"
 ContestString_WorkHard:
 	.string "It worked hard to build on\npast mistakes.$"
 ContestString_NoMoreMoves:
@@ -243,9 +243,9 @@ ContestString_NoMoreMoves:
 ContestString_WorkReallyWell:
 	.string "It worked frighteningly\nwell.$"
 ContestString_WorkHardStandout:
-	.string "It worked as hard as the\nstandout POKéMON.$"
+	.string "It worked as hard as the\nstandout Pokémon.$"
 ContestString_JudgeExpectantly:
-	.string "The JUDGE looked on\nexpectantly.$"
+	.string "The Judge looked on\nexpectantly.$"
 ContestString_WorkRatherWell:
 	.string "It worked rather well.$"
 ContestString_WorkBetter:
@@ -291,11 +291,11 @@ gContestStandOutStrings:: @ 83CB2F0
 ContestString_AppealAnticipation3:
 	.string "Anticipation swelled for\n{STR_VAR_1}’s appeal next.$"
 ContestString_JudgeSatisfied:
-	.string "The JUDGE was very\nsatisfied.$"
+	.string "The Judge was very\nsatisfied.$"
 ContestString_Terminator:
 	.string "$"
 ContestString_JudgeHeldFirm:
-	.string "The JUDGE ’s views on\n{STR_VAR_1} held firm.$"
+	.string "The Judge ’s views on\n{STR_VAR_1} held firm.$"
 ContestString_ChangedPerceptions:
 	.string "{STR_VAR_1}’s {STR_VAR_3}\nchanged perceptions.$"
 ContestString_AppealWoreOff:
@@ -319,7 +319,7 @@ ContestString_AppealAnticipation:
 ContestString_AppealCheapened5:
 	.string "It cheapened the appeal\nof those ahead.$"
 ContestString_AppealCheapened6:
-	.string "It cheapened the JUDGE’s\nfavorite appeal.$"
+	.string "It cheapened the Judge’s\nfavorite appeal.$"
 ContestString_AppealCheapened7:
 	.string "The appeals of others\nwere cheapened by half.$"
 ContestString_JammedStoodOut:
@@ -327,7 +327,7 @@ ContestString_JammedStoodOut:
 ContestString_AppealNoMore:
 	.string "It can’t participate in\nappeals any more.$"
 ContestString_AppealTouched:
-	.string "It touched the JUDGE for\na fantastic appeal.$"
+	.string "It touched the Judge for\na fantastic appeal.$"
 ContestString_AppealAnticipation2:
 	.string "Anticipation rose for\nupcoming appeals.$"
 ContestString_AppealStoodOut2:
@@ -369,45 +369,45 @@ ContestString_AppealFullWorse:
 	.4byte ContestString_JammedAppealsNotice
 	.4byte ContestString_AppealSame
 ContestString_MoreConscious:
-	.string "It became more conscious\nof the other POKéMON.{PAUSE 60}$"
+	.string "It became more conscious\nof the other Pokémon.{PAUSE 60}$"
 ContestString_NoAppeal:
 	.string "{STR_VAR_1} can’t make an\nappeal after this.{PAUSE 60}$"
 ContestString_SettleDown:
 	.string "It settled down just a\nlittle bit.{PAUSE 60}$"
 ContestString_ObliviousToOthers:
-	.string "It became oblivious to\nthe other POKéMON.{PAUSE 60}$"
+	.string "It became oblivious to\nthe other Pokémon.{PAUSE 60}$"
 ContestString_LessAware:
-	.string "It became less aware of\nthe other POKéMON.{PAUSE 60}$"
+	.string "It became less aware of\nthe other Pokémon.{PAUSE 60}$"
 ContestString_StoppedCaring:
-	.string "It stopped caring about\nother POKéMON much.{PAUSE 60}$"
+	.string "It stopped caring about\nother Pokémon much.{PAUSE 60}$"
 ContestString_StartleAttempt:
-	.string "It tried to startle the\nother POKéMON.{PAUSE 60}$"
+	.string "It tried to startle the\nother Pokémon.{PAUSE 60}$"
 ContestString_DazzleAttempt:
 	.string "It tried to dazzle the\nothers.{PAUSE 60}$"
 ContestString_JudgeLookAway2:
-	.string "The JUDGE looked away\nfrom {STR_VAR_1}.{PAUSE 60}$"
+	.string "The Judge looked away\nfrom {STR_VAR_1}.{PAUSE 60}$"
 ContestString_UnnerveAttempt:
-	.string "It tried to unnerve the\nnext POKéMON.{PAUSE 60}$"
+	.string "It tried to unnerve the\nnext Pokémon.{PAUSE 60}$"
 ContestString_Nervous:
 	.string "{STR_VAR_1} became\nnervous.{PAUSE 60}$"
 ContestString_UnnerveWaiting:
-	.string "The appeal tried to\nunnerve waiting POKéMON.{PAUSE 60}$"
+	.string "The appeal tried to\nunnerve waiting Pokémon.{PAUSE 60}$"
 ContestString_TauntWell:
-	.string "It taunted POKéMON\ndoing well.{PAUSE 60}$"
+	.string "It taunted Pokémon\ndoing well.{PAUSE 60}$"
 ContestString_RegainedForm:
 	.string "{STR_VAR_1} regained its\nform.{PAUSE 60}$"
 ContestString_JamWell:
-	.string "It tried to jam POKéMON\ndoing well.{PAUSE 60}$"
+	.string "It tried to jam Pokémon\ndoing well.{PAUSE 60}$"
 ContestString_HustleStandout:
 	.string "The standout {STR_VAR_1}\nhustled even more.{PAUSE 60}$"
 ContestString_WorkHardUnnoticed:
 	.string "The largely unnoticed\n{STR_VAR_1} worked hard.{PAUSE 60}$"
 ContestString_WorkBefore:
-	.string "It worked as much as\nPOKéMON before it.{PAUSE 60}$"
+	.string "It worked as much as\nPokémon before it.{PAUSE 60}$"
 ContestString_AppealNotWell:
 	.string "{STR_VAR_1}’s appeal did\nnot go well.{PAUSE 60}$"
 ContestString_WorkPreceding:
-	.string "It worked as much as the\npreceding POKéMON.{PAUSE 60}$"
+	.string "It worked as much as the\npreceding Pokémon.{PAUSE 60}$"
 ContestString_AppealNotWell2:
 	.string "{STR_VAR_1}’s appeal did\nnot go well.{PAUSE 60}$"
 ContestString_AppealNotShownWell:
@@ -431,13 +431,13 @@ ContestString_AppealVeryWell:
 ContestString_AppealExcellently2:
 	.string "{STR_VAR_1}’s appeal\nwent excellently.{PAUSE 60}$"
 ContestString_SameTypeGood:
-	.string "It’s the same type as the\nPOKéMON before - good!{PAUSE 60}$"
+	.string "It’s the same type as the\nPokémon before - good!{PAUSE 60}$"
 ContestString_DiffTypeGood:
 	.string "It’s not the same type as\nthe one before - good!{PAUSE 60}$"
 ContestString_StoodOutAsMuch:
-	.string "It stood out much more\nthan the POKéMON before.{PAUSE 60}$"
+	.string "It stood out much more\nthan the Pokémon before.{PAUSE 60}$"
 ContestString_NotAsWell:
-	.string "It didn’t do as well as the\nPOKéMON before.{PAUSE 60}$"
+	.string "It didn’t do as well as the\nPokémon before.{PAUSE 60}$"
 ContestString_ConditionRose:
 	.string "{STR_VAR_1}’s condition\nrose above usual.{PAUSE 60}$"
 ContestString_HotStatus:
@@ -451,7 +451,7 @@ ContestString_ScrambleOrder:
 
 gUnknown_083CBD52:: @ 83CBD52
 ContestString_JudgeExpectantly2::
-	.string "The JUDGE looked at\n{STR_VAR_1} expectantly.{PAUSE 60}$"
+	.string "The Judge looked at\n{STR_VAR_1} expectantly.{PAUSE 60}$"
 
 gUnknown_083CBD79:: @ 83CBD79
 ContestString_WentOverWell::
@@ -473,7 +473,7 @@ ContestString_NotFazed:
 ContestString_LittleDistracted:
 	.string "{STR_VAR_1} became a\nlittle distracted.{PAUSE 60}$"
 ContestString_AttemptStartle:
-	.string "It tried to startle the\nother POKéMON.{PAUSE 60}$"
+	.string "It tried to startle the\nother Pokémon.{PAUSE 60}$"
 ContestString_LookedDown:
 	.string "{STR_VAR_1} looked down\nout of distraction.{PAUSE 60}$"
 ContestString_TurnedBack:
@@ -633,22 +633,22 @@ gContestCategoryStrings:: @ 83CC2D8
 	.4byte ContestString_Toughness
 
 gUnknown_083CC2EC:: @ 83CC2EC
-	.string "TENSION:$"
+	.string "Tension:$"
 
 ContestString_CoolMove:
-	.string "COOL Move$"
+	.string "Cool Move$"
 
 ContestString_BeautyMove:
-	.string "BEAUTY Move$"
+	.string "Beauty Move$"
 
 ContestString_CuteMove:
-	.string "CUTE Move$"
+	.string "Cute Move$"
 
 ContestString_SmartMove:
-	.string "SMART Move$"
+	.string "Smart Move$"
 
 ContestString_ToughMove:
-	.string "TOUGH Move$"
+	.string "Tough Move$"
 
 ContestString_UnknownMoveType:
 	.string "???$"
@@ -664,6 +664,6 @@ gUnknown_083CC330:: @ 83CC330
 
 @ unused?
 ContestString_Rank:
-	.string "RANK$"
+	.string "Rank$"
 
 	.string "{HIGHLIGHT TRANSPARENT}{COLOR MAGENTA} $"
