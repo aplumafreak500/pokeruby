@@ -1,8 +1,8 @@
 gTextBard_BardTesting: @ 81B0A83
-	.string "BARD testing!$"
+	.string "Bard testing!$"
 
 gTextBard_HiImTheBard:: @ 81B0A91
-	.string "Hi, I’m the BARD.\n"
+	.string "Hi, I’m the Bard.\n"
 	.string "Would you like to hear my song?$"
 
 gTextBard_OhYouveLeftMe:: @ 81B0AC3

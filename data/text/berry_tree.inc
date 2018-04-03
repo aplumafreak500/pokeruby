@@ -3,14 +3,14 @@ Route102_Text_1A16B6:: @ 81A16B6
 
 Route102_Text_1A16CD:: @ 81A16CD
 	.string "It’s soft, loamy soil.\n"
-	.string "Want to plant a BERRY?$"
+	.string "Want to plant a Berry?$"
 
 Route102_Text_1A16FB:: @ 81A16FB
-	.string "{PLAYER} planted one {STR_VAR_1} BERRY in\n"
+	.string "{PLAYER} planted one {STR_VAR_1} Berry in\n"
 	.string "the soft, loamy soil.$"
 
 Route102_Text_1A172C:: @ 81A172C
-	.string "One {STR_VAR_1} BERRY was planted here.$"
+	.string "One {STR_VAR_1} Berry was planted here.$"
 
 Route102_Text_1A174B:: @ 81A174B
 	.string "{STR_VAR_1} has sprouted.$"
@@ -32,30 +32,30 @@ Route102_Text_1A17B7:: @ 81A17B7
 	.string "prettily$"
 
 Route102_Text_1A17C0:: @ 81A17C0
-	.string "There are {STR_VAR_2} {STR_VAR_1} BERRIES!\p"
+	.string "There are {STR_VAR_2} {STR_VAR_1} Berries!\p"
 	.string "Do you want to pick the\n"
-	.string "{STR_VAR_1} BERRIES?$"
+	.string "{STR_VAR_1} Berries?$"
 
 Route102_Text_1A17FD:: @ 81A17FD
-	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1} BERRIES.$"
+	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1} Berries.$"
 
 Route102_Text_1A181A:: @ 81A181A
-	.string "{PLAYER} put away the {STR_VAR_1} BERRIES\n"
-	.string "in the BAG’s BERRIES POCKET.\p"
+	.string "{PLAYER} put away the {STR_VAR_1} Berries\n"
+	.string "in the Bag’s Berries Pocket.\p"
 	.string "The soil returned to its soft and\n"
 	.string "loamy state.$"
 
 Route102_Text_1A1881:: @ 81A1881
-	.string "The BAG’s BERRIES POCKET is full.\p"
-	.string "The {STR_VAR_1} BERRIES couldn’t be taken.$"
+	.string "The Bag’s Berries Pocket is full.\p"
+	.string "The {STR_VAR_1} Berries couldn’t be taken.$"
 
 Route102_Text_1A18C5:: @ 81A18C5
-	.string "{PLAYER} left the {STR_VAR_1} BERRIES\n"
+	.string "{PLAYER} left the {STR_VAR_1} Berries\n"
 	.string "unpicked.$"
 
 Route102_Text_1A18E6:: @ 81A18E6
 	.string "Want to water the {STR_VAR_1} with the\n"
-	.string "WAILMER PAIL?$"
+	.string "Wailmer Pail?$"
 
 Route102_Text_1A1912:: @ 81A1912
 	.string "{PLAYER} watered the {STR_VAR_1}.$"

@@ -15,7 +15,7 @@ UnknownString_81C432C: @ 81C432C
 
 UnknownString_81C4340: @ 81C4340
 	.string "Hunh?\n"
-	.string "Your BAG is crammed full.$"
+	.string "Your Bag is crammed full.$"
 
 UnknownString_81C4360: @ 81C4360
 	.string "Hmm... I’ve seen a bigger {STR_VAR_1}\n"
