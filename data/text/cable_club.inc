@@ -1,40 +1,40 @@
 OldaleTown_PokemonCenter_2F_Text_1A4510:: @ 81A4510
-	.string "Welcome to the POKéMON CABLE CLUB\n"
-	.string "COLOSSEUM.\p"
+	.string "Welcome to the Pokémon Cable Club\n"
+	.string "Colosseum.\p"
 	.string "You may battle with your friends here.\p"
 	.string "Would you like to battle?$"
 
 OldaleTown_PokemonCenter_2F_Text_1A457E:: @ 81A457E
-	.string "Welcome to the POKéMON CABLE CLUB\n"
-	.string "TRADE CENTER.\p"
-	.string "You may trade your POKéMON here\n"
+	.string "Welcome to the Pokémon Cable Club\n"
+	.string "Trade Center.\p"
+	.string "You may trade your Pokémon here\n"
 	.string "with a friend.\p"
-	.string "Would you like to trade POKéMON?$"
+	.string "Would you like to trade Pokémon?$"
 
 OldaleTown_PokemonCenter_2F_Text_1A45FE:: @ 81A45FE
-	.string "Welcome to the POKéMON CABLE CLUB\n"
+	.string "Welcome to the Pokémon Cable Club\n"
 	.if REVISION >= 1
-	.string "RECORD CORNER.\p"
+	.string "Record Corner.\p"
 	.else
-	.string "RECORD CENTER.\p"
+	.string "Record Center.\p"
 	.endif
-	.string "You may mix your records as a TRAINER\n"
+	.string "You may mix your records as a Trainer\n"
 	.string "with the records of your friends.\p"
 	.string "Would you like to mix records?$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4696:: @ 81A4696
 	.string "There are three link battle modes.\p"
-	.string "SINGLE BATTLE is for two TRAINERS\n"
-	.string "with one or more POKéMON each.\p"
-	.string "Each TRAINER can have one POKéMON\n"
+	.string "Single Battle is for two Trainers\n"
+	.string "with one or more Pokémon each.\p"
+	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.\p"
-	.string "DOUBLE BATTLE is for two TRAINERS\n"
-	.string "with two or more POKéMON each.\p"
-	.string "Each TRAINER will send out two\n"
-	.string "POKéMON in battle at a time.\p"
-	.string "MULTI BATTLE is for four TRAINERS\n"
-	.string "with one or more POKéMON each.\p"
-	.string "Each TRAINER can have one POKéMON\n"
+	.string "Double Battle is for two Trainers\n"
+	.string "with two or more Pokémon each.\p"
+	.string "Each Trainer will send out two\n"
+	.string "Pokémon in battle at a time.\p"
+	.string "Multi Battle is for four Trainers\n"
+	.string "with one or more Pokémon each.\p"
+	.string "Each Trainer can have one Pokémon\n"
 	.string "in battle at a time.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4826:: @ 81A4826
@@ -45,15 +45,15 @@ OldaleTown_PokemonCenter_2F_Text_1A4840:: @ 81A4840
 	.string "to play?$"
 
 OldaleTown_PokemonCenter_2F_Text_1A486A:: @ 81A486A
-	.string "For a DOUBLE BATTLE, you must have\n"
-	.string "at least two POKéMON.$"
+	.string "For a Double Battle, you must have\n"
+	.string "at least two Pokémon.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A48A3:: @ 81A48A3
 	.string "For trading, you must have at least\n"
-	.string "two POKéMON with you.$"
+	.string "two Pokémon with you.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A48DD:: @ 81A48DD
-	.string "Your {STR_VAR_1} BERRY-holding POKéMON\n"
+	.string "Your {STR_VAR_1} Berry-holding Pokémon\n"
 	.string "can’t be traded.$"
 
 gUnknown_081A490C:: @ 81A490C
@@ -112,11 +112,11 @@ OldaleTown_PokemonCenter_2F_Text_1A4B6C:: @ 81A4B6C
 	.string "incorrect.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4B95:: @ 81A4B95
-	.string "The SINGLE Battle Mode cannot be\n"
+	.string "The Single Battle Mode cannot be\n"
 	.string "played by {STR_VAR_1} players.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4BCC:: @ 81A4BCC
-	.string "The DOUBLE Battle Mode cannot be\n"
+	.string "The Double Battle Mode cannot be\n"
 	.string "played by {STR_VAR_1} players.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4C03:: @ 81A4C03
@@ -136,15 +136,15 @@ TradeRoom_TerminatingLink: @ 81A4CAF
 	.string "escorted out of the room. Please wait.$"
 
 CableClub_TooBusyToNotice: @ 81A4CF6
-	.string "This TRAINER is too busy to notice...$"
+	.string "This Trainer is too busy to notice...$"
 
 CableClub_LookAtTrainerCard1: @ 81A4D1C
 	.string "Score! Got to look at {STR_VAR_1}’s\n"
-	.string "TRAINER CARD!$"
+	.string "Trainer Card!$"
 
 CableClub_LookAtTrainerCard2: @ 81A4D45
 	.string "Score! Got to look at {STR_VAR_1}’s\n"
-	.string "TRAINER CARD! It’s a {STR_VAR_2} card!$"
+	.string "Trainer Card! It’s a {STR_VAR_2} card!$"
 
 SingleBattleColosseum_Text_1A4D7E:: @ 81A4D7E
 	.string "Please take your seat and start\n"
@@ -161,15 +161,15 @@ RecordCorner_Text_1A4DF7:: @ 81A4DF7
 	.string "Thanks for coming.$"
 
 UnknownString_81A4E0A: @ 81A4E0A
-	.string "Please choose your POKéMON for the\n"
-	.string "MULTI BATTLE.$"
+	.string "Please choose your Pokémon for the\n"
+	.string "Multi Battle.$"
 
 RecordCorner_Text_1A4E3B:: @ 81A4E3B
 	.string "{STR_VAR_1} sent over one\n"
 	.string "{STR_VAR_2}.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4E50:: @ 81A4E50
-	.string "The TRAINER CARD data will\n"
+	.string "The Trainer Card data will\n"
 	.string "be rewritten.$"
 
 OldaleTown_PokemonCenter_2F_Text_1A4E79:: @ 81A4E79
