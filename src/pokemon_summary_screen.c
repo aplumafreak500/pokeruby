@@ -292,27 +292,32 @@ static const union AnimCmd sSpriteAnim_83C112C[] = {
 };
 
 static const union AnimCmd sSpriteAnim_83C1134[] = {
-    ANIMCMD_FRAME(144, 0),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sSpriteAnim_83C113C[] = {
     ANIMCMD_FRAME(152, 0),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sSpriteAnim_83C1144[] = {
+static const union AnimCmd sSpriteAnim_83C113C[] = {
     ANIMCMD_FRAME(160, 0),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sSpriteAnim_83C114C[] = {
+static const union AnimCmd sSpriteAnim_83C1144[] = {
     ANIMCMD_FRAME(168, 0),
     ANIMCMD_END,
 };
 
-static const union AnimCmd sSpriteAnim_83C1154[] = {
+static const union AnimCmd sSpriteAnim_83C114C[] = {
     ANIMCMD_FRAME(176, 0),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sSpriteAnim_83C1154[] = {
+    ANIMCMD_FRAME(184, 0),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sSpriteAnim_TypeFairy[] = {
+    ANIMCMD_FRAME(144, 0),
     ANIMCMD_END,
 };
 
@@ -335,6 +340,7 @@ static const union AnimCmd *const sSpriteAnimTable_83C115C[] = {
     sSpriteAnim_83C111C,
     sSpriteAnim_83C1124,
     sSpriteAnim_83C112C,
+    sSpriteAnim_TypeFairy,
     sSpriteAnim_83C1134,
     sSpriteAnim_83C113C,
     sSpriteAnim_83C1144,
@@ -354,7 +360,7 @@ static const struct SpriteTemplate sSpriteTemplate_83C11C0 = {
     .callback = SpriteCallbackDummy,
 };
 
-static const u8 sUnknown_PaletteNums[] = { 0x5, 0x5, 0x6, 0x6, 0x5, 0x5, 0x7, 0x6, 0x5, 0x7, 0x5, 0x6, 0x7, 0x5, 0x6, 0x6, 0x7, 0x5, 0x5, 0x6, 0x6, 0x7, 0x5 };
+static const u8 sUnknown_PaletteNums[] = { 0x5, 0x5, 0x6, 0x6, 0x5, 0x5, 0x7, 0x6, 0x5, 0x7, 0x5, 0x6, 0x7, 0x5, 0x6, 0x6, 0x7, 0x5, 0x8, 0x5, 0x6, 0x6, 0x7, 0x5 };
 
 static const struct OamData sOamData_83C11F0 = {
     .y = 0,
@@ -904,7 +910,7 @@ static bool8 LoadPokemonSummaryScreenGraphics(void)
         LoadCompressedObjectPalette(&sUnknown_083C1278);
         break;
     case 12:
-        LoadCompressedPalette(gMoveTypes_Pal, 336, 96); // 128 once I'm done with it
+        LoadCompressedPalette(gMoveTypes_Pal, 336, 128);
         pssData.loadGfxState = 0;
         return TRUE;
     }
