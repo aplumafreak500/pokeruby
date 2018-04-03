@@ -2254,7 +2254,7 @@ gBattleMoves:: @ 81FB12C
 @ CHARM
 	.byte EFFECT_ATTACK_DOWN_2
 	.byte 0 @ power
-	.byte TYPE_NORMAL
+	.byte TYPE_FAIRY
 	.byte 100 @ accuracy
 	.byte 20 @ PP
 	.byte 0 @ secondary effect chance
