@@ -27,9 +27,9 @@ const struct MenuAction LumaDebugMenuItems[] =
 u8 InitLumaDebugMenu(void)
 {
     Menu_EraseScreen();
-    Menu_DrawStdWindowFrame(0, 0, 14, 7);
+    Menu_DrawStdWindowFrame(0, 0, 15, 3);
     Menu_PrintItems(2, 1, 1, LumaDebugMenuItems);
-    InitMenu(0, 1, 1, 1, 0, 13);
+    InitMenu(0, 1, 1, 1, 0, 14);
     gMenuCallback = debug_sub_new0;
     return 0;
 }
