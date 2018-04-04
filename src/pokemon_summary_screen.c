@@ -2681,7 +2681,7 @@ static void sub_80A029C(struct Pokemon *mon)
     if (pssData.page == PSS_PAGE_BATTLE_MOVES)
         sub_80A198C(gBattleMoves[move].type, 87, 96, 4);
     else
-        sub_80A198C(gContestMoves[move].contestCategory + 18, 87, 96, 4);
+        sub_80A198C(gContestMoves[move].contestCategory + 19, 87, 96, 4);
 
     if (pssData.page == PSS_PAGE_BATTLE_MOVES)
         sub_80A1FF8(gMoveNames[move], 10, 15, 12);
