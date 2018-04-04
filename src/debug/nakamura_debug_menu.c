@@ -24,6 +24,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "pokeblock.h"
+#include "pokemon.h"
 
 static bool8 TopMenu_HandleJoypad(void);
 static bool8 SwitchToPkmnListMenu(void);
