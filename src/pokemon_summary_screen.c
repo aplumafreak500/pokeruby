@@ -2647,7 +2647,7 @@ static void sub_80A015C(struct Pokemon *mon)
             if (pssData.page == PSS_PAGE_BATTLE_MOVES)
                 sub_80A198C(gBattleMoves[move].type, 87, ((2 * i) + 4) * 8, i);
             else
-                sub_80A198C(gContestMoves[move].contestCategory + 18, 87, ((2 * i) + 4) * 8, i);
+                sub_80A198C(gContestMoves[move].contestCategory + 19, 87, ((2 * i) + 4) * 8, i);
 
             sub_80A1FF8(gMoveNames[move], 13, 15, (2 * i) + 4);
             GetStringCenterAlignXOffset(1, 24, (2 * i) + 4);
