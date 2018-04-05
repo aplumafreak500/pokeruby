@@ -3971,10 +3971,10 @@ static void PicTest_SelectPokemon(void)
     }
     if (gMain.newAndRepeatedKeys & R_BUTTON)
     {
-        if (sPicTest_Species <= SPECIES_CHIMECHO - 10)
+        if (sPicTest_Species <= SPECIES_VICTINI - 10)
             sPicTest_Species += 10;
         else
-            sPicTest_Species = SPECIES_CHIMECHO;
+            sPicTest_Species = SPECIES_VICTINI;
     }
 }
 
