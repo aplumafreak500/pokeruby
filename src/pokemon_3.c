@@ -388,10 +388,10 @@ u16 HoennPokedexNumToSpecies(u16 hoennNum)
 
     species = 0;
 
-    while (species < 411 && gSpeciesToHoennPokedexNum[species] != hoennNum)
+    while (species < 412 && gSpeciesToHoennPokedexNum[species] != hoennNum)
         species++;
 
-    if (species == 411)
+    if (species == 412)
         return 0;
 
     return species + 1;
@@ -406,10 +406,10 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
 
     species = 0;
 
-    while (species < 411 && gSpeciesToNationalPokedexNum[species] != nationalNum)
+    while (species < 412 && gSpeciesToNationalPokedexNum[species] != nationalNum)
         species++;
 
-    if (species == 411)
+    if (species == 412)
         return 0;
 
     return species + 1;
