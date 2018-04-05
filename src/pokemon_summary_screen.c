@@ -348,7 +348,7 @@ static const union AnimCmd *const sSpriteAnimTable_83C115C[] = {
     sSpriteAnim_83C1154,
 };
 
-static const struct CompressedSpriteSheet sUnknown_083C11B8 = { gMoveTypes_Gfx, 0x1700, 30002 };
+static const struct CompressedSpriteSheet sUnknown_083C11B8 = { gMoveTypes_Gfx, 0x1800, 30002 };
 
 static const struct SpriteTemplate sSpriteTemplate_83C11C0 = {
     .tileTag = 30002,
