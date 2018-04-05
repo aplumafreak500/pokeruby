@@ -1189,6 +1189,7 @@ static const struct UnknownStruct2 gUnknown_083B59C8[] =
     {DexText_Terminator5, gTypeNames[TYPE_ICE]},
     {DexText_Terminator5, gTypeNames[TYPE_DRAGON]},
     {DexText_Terminator5, gTypeNames[TYPE_DARK]},
+    {DexText_Terminator5, gTypeNames[TYPE_FAIRY]},
     {NULL, NULL},
 };
 static const u8 gUnknown_083B5A60[] = {0, 1};
