@@ -640,7 +640,7 @@ static const struct MenuAction gUnknown_Debug_083C1712[] = {
 static const u8 gUnknown_Debug_083C175C[] = _("National {POKE}dex");
 static const u8 gUnknown_Debug_083C176E[] = _("Shoal Cave high tide");
 static const u8 gUnknown_Debug_083C177D[] = _("Received Ribbon (dupe)");
-static const u8 gUnknown_Debug_083C178C[] = _("Lanette's PC");
+static const u8 gUnknown_Debug_083C178C[] = _("Lanette’s PC");
 static const u8 gUnknown_Debug_083C179C[] = _("Mystery Gift enabled");
 static const u8 gUnknown_Debug_083C17AE[] = _("Dig puzzle solved");
 static const u8 gUnknown_Debug_083C17C2[] = _("Strength puzzle solved");
@@ -944,8 +944,8 @@ static const u8 gUnknown_Debug_083C23B8[] = _("Mom (Littleroot)");
 static const u8 gUnknown_Debug_083C23CE[] = _("Mom (2F)");
 static const u8 gUnknown_Debug_083C23E8[] = _("Mom (1F) (Brendan)");
 static const u8 gUnknown_Debug_083C23FE[] = _("Mom (1F) (May)");
-static const u8 gUnknown_Debug_083C2414[] = _("Brendan's Mom");
-static const u8 gUnknown_Debug_083C242A[] = _("May's Mom");
+static const u8 gUnknown_Debug_083C2414[] = _("Brendan’s Mom");
+static const u8 gUnknown_Debug_083C242A[] = _("May’s Mom");
 static const u8 gUnknown_Debug_083C2440[] = _("Rival (R110)");
 static const u8 gUnknown_Debug_083C2459[] = _("Rival (R119)");
 static const u8 gUnknown_Debug_083C2472[] = _("Rival (Lavaridge)");
@@ -1182,7 +1182,7 @@ static const u8 gUnknown_Debug_083C2F58[] = _("Yellow Scarf");
 static const u8 gUnknown_Debug_083C2F70[] = _("Petalburg 1");
 static const u8 gUnknown_Debug_083C2F8C[] = _("Petalburg 2");
 static const u8 gUnknown_Debug_083C2FA8[] = _("Contest room ball");
-static const u8 gUnknown_Debug_083C2FC2[] = _("Met rival's mom");
+static const u8 gUnknown_Debug_083C2FC2[] = _("Met rival’s mom");
 
 static const struct MenuAction gUnknown_Debug_083C2FE0[] = {
     {gUnknown_Debug_083C2EF8, DummyMenuAction},
@@ -1218,7 +1218,7 @@ static const struct MenuAction gUnknown_Debug_083C3100[] = {
     {gUnknown_Debug_083C30EB, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C3148[] = _("Met Birch's Aide");
+static const u8 gUnknown_Debug_083C3148[] = _("Met Birch’s Aide");
 static const u8 gUnknown_Debug_083C3164[] = _("Declined Bike");
 static const u8 gUnknown_Debug_083C317E[] = _("Secret Power TM");
 static const u8 gUnknown_Debug_083C318D[] = _("");
@@ -1449,7 +1449,7 @@ static const u8 gUnknown_Debug_083C3901[] = _("Trick House puzzle 7");
 static const u8 gUnknown_Debug_083C3915[] = _("Trick House puzzle 8");
 static const u8 gUnknown_Debug_083C3929[] = _("Trick House puzzle 7 (2)");
 
-static const u8 gUnknown_Debug_083C3940[] = _("Briney's house");
+static const u8 gUnknown_Debug_083C3940[] = _("Briney’s house");
 static const u8 gUnknown_Debug_083C3954[] = _("R113 Soot Sack");
 static const u8 gUnknown_Debug_083C3968[] = _("");
 static const u8 gUnknown_Debug_083C3969[] = _("");
@@ -1640,11 +1640,11 @@ static const u8 sString_WK_SCENE_FIELD_R132[] = _("R132");
 static const u8 sString_WK_SCENE_FIELD_R133[] = _("R133");
 static const u8 sString_WK_SCENE_FIELD_R134[] = _("R134");
 
-static const u8 sString_WK_SCENE_T101_R0101[] = _("Brendan's house");
-static const u8 sString_WK_SCENE_T101_R0102[] = _("Brendan's house 2");
-static const u8 sString_WK_SCENE_T101_R0301[] = _("Birch's lab");
-static const u8 sString_WK_SCENE_T101_R0201[] = _("May's house");
-static const u8 sString_WK_SCENE_T101_R0202[] = _("May's house 2");
+static const u8 sString_WK_SCENE_T101_R0101[] = _("Brendan’s house");
+static const u8 sString_WK_SCENE_T101_R0102[] = _("Brendan’s house 2");
+static const u8 sString_WK_SCENE_T101_R0301[] = _("Birch’s lab");
+static const u8 sString_WK_SCENE_T101_R0201[] = _("May’s house");
+static const u8 sString_WK_SCENE_T101_R0202[] = _("May’s house 2");
 static const u8 sString_WK_SCENE_T107_R0201[] = _("Pacifidlog 1"); // unused string
 
 static const u8 sString_WK_SCENE_C101_R0201[] = _("Petalburg Gym");
@@ -1655,7 +1655,7 @@ static const u8 sString_WK_SCENE_C106_R0401[] = _("Lillycove Fan Club");
 static const u8 sString_WK_SCENE_C101_R0601[] = _("Slateport Harbor");
 static const u8 sString_WK_SCENE_C102_R0501[] = _("Slateport Museum");
 static const u8 sString_WK_SCENE_C104_R0102[] = _("Devon Corp 2");
-static const u8 sString_WK_SCENE_C107_R0501[] = _("Steven's house");
+static const u8 sString_WK_SCENE_C107_R0501[] = _("Steven’s house");
 
 static const u8 sString_WK_SCENE_CAVE_D0601[] = _("Petalburg Woods");
 static const u8 sString_WK_SCENE_CAVE_D0201[] = _("Rustarf Tunnel");
