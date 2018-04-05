@@ -162,12 +162,12 @@ void CB2_StartSoundCheckMenu(void)
 
 void Task_InitSoundCheckMenu(u8 taskId)
 {
-    u8 soundcheckStr[] = _("サウンドチェック");
+    u8 soundcheckStr[] = _("Sound Test");
     u8 bgmStr[] = _("BGM");
     u8 seStr[] = _("SE ");
-    u8 abDescStr[] = _("A‥さいせい　B‥おわり");
-    u8 upDownStr[] = _("L‥UP R‥DOWN");
-    u8 driverStr[] = _("R‥DRIVER-TEST");
+    u8 abDescStr[] = _("A: Play　B: Exit");
+    u8 upDownStr[] = _("{LEFT_ARROW}: Up {RIGHT_ARROW}: Down");
+    u8 driverStr[] = _("R: Cry Test");
 
     if (!gPaletteFade.active)
     {
@@ -405,20 +405,20 @@ void sub_80BA79C(const u8 *const string, u16 x, u16 y)
 
 void Task_DrawDriverTestMenu(u8 taskId) // Task_DrawDriverTestMenu
 {
-    u8 bbackStr[] = _("Bぼたんで　もどる");
-    u8 aplayStr[] = _("Aぼたんで　さいせい");
-    u8 voiceStr[] = _("VOICE‥‥‥‥");
-    u8 volumeStr[] = _("VOLUME‥‥‥");
-    u8 panpotStr[] = _("PANPOT‥‥‥");
-    u8 pitchStr[] = _("PITCH‥‥‥‥");
-    u8 lengthStr[] = _("LENGTH‥‥‥");
-    u8 releaseStr[] = _("RELEASE‥‥");
-    u8 progressStr[] = _("PROGRESS‥");
-    u8 chorusStr[] = _("CHORUS‥‥‥");
-    u8 priorityStr[] = _("PRIORITY‥");
-    u8 playingStr[] = _("さいせいちゆう‥"); // 再生中 (playing)
-    u8 reverseStr[] = _("はんてん‥‥‥‥"); // 反転 (reverse)
-    u8 stereoStr[] = _("すてれお‥‥‥‥"); // stereo
+    u8 bbackStr[] = _("B: Back");
+    u8 aplayStr[] = _("A: Play");
+    u8 voiceStr[] = _("Voice");
+    u8 volumeStr[] = _("Volume");
+    u8 panpotStr[] = _("Pan");
+    u8 pitchStr[] = _("Pitch");
+    u8 lengthStr[] = _("Length");
+    u8 releaseStr[] = _("Release");
+    u8 progressStr[] = _("Progress");
+    u8 chorusStr[] = _("Chorus");
+    u8 priorityStr[] = _("Priority");
+    u8 playingStr[] = _("Playing");
+    u8 reverseStr[] = _("Reverse");
+    u8 stereoStr[] = _("Stereo");
 
     REG_DISPCNT = 0x3140;
     Menu_DrawStdWindowFrame(0, 0, 29, 19);
@@ -594,7 +594,7 @@ void AdjustSelectedDriverParam(s8 delta)
         0, 255,         // Release
         0, 65535,       // Progress
         -64, 63         // Chorus
-                        // Priority??? Why is it missing?
+        -1, 15           // Priority
     };
 
     sSoundTestParams[sDriverTestSelection] += delta;
@@ -685,8 +685,8 @@ static const s8 gUnknown_083D03F8[5] = { 0x3F, 0x00, 0xC0, 0x7F, 0x80 };
 void sub_80BAF84(u8 taskId)
 {
     u8 seStr[] = _("SE");
-    u8 panStr[] = _("PAN");
-    u8 playingStr[] = _("さいせいちゆう‥");
+    u8 panStr[] = _("Pan");
+    u8 playingStr[] = _("Playing");
 
     REG_DISPCNT = 0x3140;
     Menu_DrawStdWindowFrame(0, 0, 29, 19);
@@ -982,7 +982,7 @@ void sub_80BB1D4(void)
 	X(MUS_RG_CHAMP_R, "RG-CHAMP-R") \
 	X(MUS_RG_VS_GYM, "RS-VS-GYM") \
 	X(MUS_RG_VS_TORE, "RG-VS-TORE") \
-	X(MUS_RG_VS_YASEI, "VS-YASEI") \
+	X(MUS_RG_VS_YASEI, "RG-VS-YASEI") \
 	X(MUS_RG_VS_LAST, "RG-VS-LAST") \
 	X(MUS_RG_MASARA, "RG-MASARA") \
 	X(MUS_RG_KENKYU, "RG-KENKYU") \
@@ -992,7 +992,7 @@ void sub_80BB1D4(void)
 	X(MUS_RG_NAMINORI, "RG-NAMINORI") \
 	X(MUS_RG_P_TOWER, "RG-P-TOWER") \
 	X(MUS_RG_SHIRUHU, "RG-SHIRUHU") \
-	X(MUS_RG_HANADA, "HANADA") \
+	X(MUS_RG_HANADA, "RG-HANADA") \
 	X(MUS_RG_TAMAMUSI, "RG-TAMAMUSI") \
 	X(MUS_RG_WIN_TRE, "RG-WIN-TRE") \
 	X(MUS_RG_WIN_YASEI, "RG-WIN-YASEI") \
@@ -1390,12 +1390,12 @@ void Task_ProcessCryTestInput(u8 taskId)
     if (gMain.newAndRepeatedKeys & DPAD_UP)
     {
         if(--gSoundTestCryNum == 0)
-            gSoundTestCryNum = 385; // total species
+            gSoundTestCryNum = 412; // total species
         PrintCryNumber();
     }
     if (gMain.newAndRepeatedKeys & DPAD_DOWN)
     {
-        if(++gSoundTestCryNum > 385)
+        if(++gSoundTestCryNum > 412)
             gSoundTestCryNum = 1;
         PrintCryNumber();
     }

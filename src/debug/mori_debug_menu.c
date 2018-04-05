@@ -31,22 +31,22 @@ const u8 gUnknown_0839B22C[][3] =
 };
 
 const u8 gUnknown_0839B24A[] = _("ND");
-const u8 gUnknown_0839B24D[] = _("の　こどもは\n"); // "'s child <topic-particle>"=
+const u8 gUnknown_0839B24D[] = _(" {RIGHT_ARROW}");
 const u8 gUnknown_0839B255[] = _(" ");
-const u8 gUnknown_0839B257[] = _("ながいなまえぽけもん"); // "long name pokemon" (used as test name)
+const u8 gUnknown_0839B257[] = _("Long name {PKMN}"); // used as test name
 const u8 Text_39B262[] = _("Search a child");
 const u8 Text_39B271[] = _("Egg");
 const u8 Text_39B275[] = _("Egg (male)");
-const u8 Text_39B280[] = _("1000 steps");
-const u8 Text_39B28B[] = _("10000 steps");
-const u8 Text_39B297[] = _("MOVE TUTOR");
+const u8 Text_39B280[] = _("Add 1000 steps");
+const u8 Text_39B28B[] = _("Add 10000 steps");
+const u8 Text_39B297[] = _("Move Tutor");
 const u8 Text_39B2A2[] = _("Breed an egg");
 const u8 Text_39B2AF[] = _("Long name");
-#ifdef GERMAN
+// #ifdef GERMAN
 const u8 Text_39B2B9[] = _("Delete {POKEBLOCK}");
-#else
-const u8 Text_39B2B9[] = _("ポロックけす");
-#endif
+// #else
+// const u8 Text_39B2B9[] = _("ポロックけす");
+// #endif
 
 const struct MenuAction gMoriDebugMenuActions[] =
 {

@@ -228,10 +228,10 @@ extern const u8 DebugScript_081C2507[];
 static const u8 sString_ContestGraphics[] = _("Contest graphics");
 static const u8 sString_ArtMuseumGraphics[] = _("Art Mus. graphics");
 static const u8 sString_PreviewData[] = _("Preview data");
-static const u8 sString_TrickHouse[] = _("TRICK HOUSE");
+static const u8 sString_TrickHouse[] = _("Trick House");
 static const u8 sString_ControlEvents[] = _("Control events");
 static const u8 sString_ControlFlags[] = _("Control flags");
-static const u8 sString_ControlWORK[] = _("Control WORK");
+static const u8 sString_ControlWORK[] = _("Control vars");
 
 static const struct MenuAction sMenuActions_TopMenu[] = {
     {sString_ContestGraphics, ContestGraphics},
@@ -295,19 +295,19 @@ static const struct MenuAction sMenuActions_TrickRelated[] = {
     {sString_TrickRelated_TrickMaster, TrickRelated_TrickMaster_InitSubmenu}
 };
 
-static const u8 sString_Event1[] = _("パート1");
-static const u8 sString_Event2[] = _("パート2");
+static const u8 sString_Event1[] = _("Event 1");
+static const u8 sString_Event2[] = _("Event 2");
 
 static const struct MenuAction sMenuActions_ControlEvents[] = {
     {sString_Event1, ControlEvents_InitSubmenu1},
     {sString_Event2, ControlEvents_InitSubmenu2}
 };
 
-static const u8 sString_EventFlag[] = _("イベントFLAG");
-static const u8 sString_VanishFlag[] = _("バニシュFLAG");
-static const u8 sString_TrainerFlag[] = _("トレーナーFLAG");
-static const u8 sString_SysFlag[] = _("SYSFLAG");
-static const u8 sString_BallVanishFlag[] = _("BALLバニシュFLAG");
+static const u8 sString_EventFlag[] = _("Event flags");
+static const u8 sString_VanishFlag[] = _("Sprite flags");
+static const u8 sString_TrainerFlag[] = _("Trainer flags");
+static const u8 sString_SysFlag[] = _("System flags");
+static const u8 sString_BallVanishFlag[] = _("{POKE}ball flags");
 static const u8 sString_FH[] = _("FH");
 static const u8 sString_FH_OBJ[] = _("FH-OBJ");
 
@@ -321,31 +321,31 @@ static const struct MenuAction sMenuActions_ControlFlags[] = {
     {sString_FH_OBJ, ControlFlags_FH_OBJ_InitSubmenu}
 };
 
-static const u8 sString_SaveWork[] = _("SAVEWORK");
-static const u8 sString_SysWork[] = _("SYSWORK");
-static const u8 sString_LocalWork[] = _("LOCALWORK");
-static const u8 sString_ObjWork[] = _("OBJWORK");
-static const u8 sString_AnsWork[] = _("ANSWORK");
-static const u8 sString_SaveWorkPart2[] = _("SAVEWORK　パート2");
+static const u8 sString_SaveWork[] = _("Event vars");
+static const u8 sString_SysWork[] = _("Sys vars");
+static const u8 sString_LocalWork[] = _("Temp vars");
+static const u8 sString_ObjWork[] = _("Sprite vars");
+static const u8 sString_AnsWork[] = _("Last result");
+static const u8 sString_SaveWorkPart2[] = _("Event vars 2");
 
 static const struct MenuAction sMenuActions_ControlWorks[] = {
     {sString_SaveWork, ControlWorks_SaveWork_InitSubmenu},
+    {sString_SaveWorkPart2, ControlWorks_SaveWorkPart2_InitSubmenu},
     {sString_SysWork, ControlWorks_SysWork_InitSubmenu},
     {sString_LocalWork, ControlWorks_LocalWork_InitSubmenu},
     {sString_ObjWork, ControlWorks_ObjWork_InitSubmenu},
-    {sString_AnsWork, ControlWorks_AnsWork_InitSubmenu},
-    {sString_SaveWorkPart2, ControlWorks_SaveWorkPart2_InitSubmenu}
+    {sString_AnsWork, ControlWorks_AnsWork_InitSubmenu}
 };
 
-static const u8 sString_Clear_go[] = _("クリアご");
-static const u8 sString_Coin_kounyuuka[] = _("コインこうにゅうかのう");
-static const u8 sString_Oldale_supporter_set[] = _("コトキサポーターセット");
-static const u8 sString_New_Mauville_open[] = _("ニューキンセツOPEN");
-static const u8 sString_Renrakusen_ni_noreru[] = _("れんらくせんにのれる");
-static const u8 sString_Egg_tsuika[] = _("タマゴついか");
-static const u8 sString_Item_ippai[] = _("アイテムいっぱい");
-static const u8 sString_Gezzu_ippai[] = _("グッズいっぱい");
-static const u8 sString_Coin_ippai[] = _("COINいっぱい");
+static const u8 sString_Clear_go[] = _("Hall of fame");
+static const u8 sString_Coin_kounyuuka[] = _("Coin case");
+static const u8 sString_Oldale_supporter_set[] = _("After R103 rival");
+static const u8 sString_New_Mauville_open[] = _("New Mauville");
+static const u8 sString_Renrakusen_ni_noreru[] = _("SS Ticket");
+static const u8 sString_Egg_tsuika[] = _("Kyogre egg");
+static const u8 sString_Item_ippai[] = _("All items");
+static const u8 sString_Gezzu_ippai[] = _("All decorations");
+static const u8 sString_Coin_ippai[] = _("Max coins");
 
 static const struct MenuAction sMenuActions_ControlEvents_Events1[] = {
     {sString_Clear_go, CallScript_DoHallOfFame},
@@ -359,12 +359,12 @@ static const struct MenuAction sMenuActions_ControlEvents_Events1[] = {
     {sString_Coin_ippai, CallScript_GiveAllCoins}
 };
 
-static const u8 sString_SootpolisGymOpen[] = _("ムロジムOPEN");
-static const u8 sString_MoneyTo0[] = _("おかねを0へ");
-static const u8 sString_BarboachFull[] = _("ドジョッチ　FULL");
-static const u8 sString_ShroomishFull[] = _("キノココ　FULL");
-static const u8 sString_BarboachEgg[] = _("ドジョッチ　タマゴ");
-static const u8 sString_ShroomishEgg[] = _("キノココ　タマゴ");
+static const u8 sString_SootpolisGymOpen[] = _("Open gym 8");
+static const u8 sString_MoneyTo0[] = _("Set to ¥0");
+static const u8 sString_BarboachFull[] = _("All Barboach");
+static const u8 sString_ShroomishFull[] = _("All Shroomish");
+static const u8 sString_BarboachEgg[] = _("Barboach Egg");
+static const u8 sString_ShroomishEgg[] = _("Shroomish Egg");
 
 static const struct MenuAction sMenuActions_ControlEvents_Events2[] = {
     {sString_SootpolisGymOpen, CallScript_OpenSootopolisGym},
@@ -375,7 +375,7 @@ static const struct MenuAction sMenuActions_ControlEvents_Events2[] = {
     {sString_ShroomishEgg, CallScript_GiveShroomishEgg}
 };
 
-static const u8 sString_Answork_Mikansei[] = _("ANSWORK　みかんせい");
+static const u8 sString_Answork_Mikansei[] = _("Last Result");
 
 static const struct MenuAction sMenuActions_ControlEvents_AnsWork[] = {
     {sString_Answork_Mikansei, DummyMenuAction}
@@ -499,36 +499,36 @@ static const u16 gUnknown_Debug_083C12D2[][9] = {
     {0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0x10}
 };
 
-static const u8 gUnknown_Debug_083C12F6[] = _("BATCH");
-static const u8 gUnknown_Debug_083C12FC[] = _("タウンとうちゃく");
-static const u8 gUnknown_Debug_083C1305[] = _("シティとうちゃく");
+static const u8 gUnknown_Debug_083C12F6[] = _("Badges");
+static const u8 gUnknown_Debug_083C12FC[] = _("Town flags");
+static const u8 gUnknown_Debug_083C1305[] = _("City flags");
 static const u8 gUnknown_Debug_083C130E[] = _("GET");
-static const u8 gUnknown_Debug_083C1312[] = _("そのた1");
-static const u8 gUnknown_Debug_083C1317[] = _("そのた2");
-static const u8 gUnknown_Debug_083C131C[] = _("そのた3");
-static const u8 gUnknown_Debug_083C1321[] = _("そのた4");
-static const u8 gUnknown_Debug_083C1326[] = _("そのた　とうちゃく");
+static const u8 gUnknown_Debug_083C1312[] = _("Sys 1");
+static const u8 gUnknown_Debug_083C1317[] = _("Sys 2");
+static const u8 gUnknown_Debug_083C131C[] = _("Sys 3");
+static const u8 gUnknown_Debug_083C1321[] = _("Sys 4");
+static const u8 gUnknown_Debug_083C1326[] = _("Landmark flags");
 
 static const struct MenuAction gUnknown_Debug_083C1330[] = {
     {gUnknown_Debug_083C12F6, debug_sub_808CFA4},
     {gUnknown_Debug_083C12FC, debug_sub_808CFFC},
     {gUnknown_Debug_083C1305, debug_sub_808D054},
+    {gUnknown_Debug_083C1326, debug_sub_808D264},
     {gUnknown_Debug_083C130E, debug_sub_808D0AC},
     {gUnknown_Debug_083C1312, debug_sub_808D104},
     {gUnknown_Debug_083C1317, debug_sub_808D15C},
     {gUnknown_Debug_083C131C, debug_sub_808D1B4},
-    {gUnknown_Debug_083C1321, debug_sub_808D20C},
-    {gUnknown_Debug_083C1326, debug_sub_808D264}
+    {gUnknown_Debug_083C1321, debug_sub_808D20C}
 };
 
-static const u8 gUnknown_Debug_083C1378[] = _("BATCH01ーGET");
-static const u8 gUnknown_Debug_083C1384[] = _("BATCH02ーGET");
-static const u8 gUnknown_Debug_083C1390[] = _("BATCH03ーGET");
-static const u8 gUnknown_Debug_083C139C[] = _("BATCH04ーGET");
-static const u8 gUnknown_Debug_083C13A8[] = _("BATCH05ーGET");
-static const u8 gUnknown_Debug_083C13B4[] = _("BATCH06ーGET");
-static const u8 gUnknown_Debug_083C13C0[] = _("BATCH07ーGET");
-static const u8 gUnknown_Debug_083C13CC[] = _("BATCH08ーGET");
+static const u8 gUnknown_Debug_083C1378[] = _("Rustboro");
+static const u8 gUnknown_Debug_083C1384[] = _("Dewford");
+static const u8 gUnknown_Debug_083C1390[] = _("Mauville");
+static const u8 gUnknown_Debug_083C139C[] = _("Lavaridge");
+static const u8 gUnknown_Debug_083C13A8[] = _("Petalburg");
+static const u8 gUnknown_Debug_083C13B4[] = _("Fortree");
+static const u8 gUnknown_Debug_083C13C0[] = _("Mossdeep");
+static const u8 gUnknown_Debug_083C13CC[] = _("Sootopolis");
 
 static const struct MenuAction gUnknown_Debug_083C13D8[] = {
     {gUnknown_Debug_083C1378, DummyMenuAction},
@@ -541,13 +541,13 @@ static const struct MenuAction gUnknown_Debug_083C13D8[] = {
     {gUnknown_Debug_083C13CC, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1418[] = _("T101ARRIVE");
-static const u8 gUnknown_Debug_083C1423[] = _("T102ARRIVE");
-static const u8 gUnknown_Debug_083C142E[] = _("T103ARRIVE");
-static const u8 gUnknown_Debug_083C1439[] = _("T104ARRIVE");
-static const u8 gUnknown_Debug_083C1444[] = _("T105ARRIVE");
-static const u8 gUnknown_Debug_083C144F[] = _("T106ARRIVE");
-static const u8 gUnknown_Debug_083C145A[] = _("T107ARRIVE");
+static const u8 gUnknown_Debug_083C1418[] = _("Littleroot");
+static const u8 gUnknown_Debug_083C1423[] = _("Odale");
+static const u8 gUnknown_Debug_083C142E[] = _("Dewford");
+static const u8 gUnknown_Debug_083C1439[] = _("Lavaridge");
+static const u8 gUnknown_Debug_083C1444[] = _("Fallarbor");
+static const u8 gUnknown_Debug_083C144F[] = _("Verdanturf");
+static const u8 gUnknown_Debug_083C145A[] = _("Pacifidlog");
 
 static const struct MenuAction gUnknown_Debug_083C1465[] = {
     {gUnknown_Debug_083C1418, DummyMenuAction},
@@ -559,15 +559,15 @@ static const struct MenuAction gUnknown_Debug_083C1465[] = {
     {gUnknown_Debug_083C145A, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C14A0[] = _("C101ARRIVE");
-static const u8 gUnknown_Debug_083C14AB[] = _("C102ARRIVE");
-static const u8 gUnknown_Debug_083C14B6[] = _("C103ARRIVE");
-static const u8 gUnknown_Debug_083C14C1[] = _("C104ARRIVE");
-static const u8 gUnknown_Debug_083C14CC[] = _("C105ARRIVE");
-static const u8 gUnknown_Debug_083C14D7[] = _("C106ARRIVE");
-static const u8 gUnknown_Debug_083C14E2[] = _("C107ARRIVE");
-static const u8 gUnknown_Debug_083C14ED[] = _("C108ARRIVE");
-static const u8 gUnknown_Debug_083C14F8[] = _("C109ARRIVE");
+static const u8 gUnknown_Debug_083C14A0[] = _("Petalburg");
+static const u8 gUnknown_Debug_083C14AB[] = _("Slateport");
+static const u8 gUnknown_Debug_083C14B6[] = _("Mauville");
+static const u8 gUnknown_Debug_083C14C1[] = _("Rustboro");
+static const u8 gUnknown_Debug_083C14CC[] = _("Fortree");
+static const u8 gUnknown_Debug_083C14D7[] = _("Lillycove");
+static const u8 gUnknown_Debug_083C14E2[] = _("Mossdeep");
+static const u8 gUnknown_Debug_083C14ED[] = _("Sootopolis");
+static const u8 gUnknown_Debug_083C14F8[] = _("Evergrande");
 
 static const struct MenuAction gUnknown_Debug_083C1503[] = {
     {gUnknown_Debug_083C14A0, DummyMenuAction},
@@ -581,10 +581,10 @@ static const struct MenuAction gUnknown_Debug_083C1503[] = {
     {gUnknown_Debug_083C14F8, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C154C[] = _("SYSーPOKEMONーGET");
-static const u8 gUnknown_Debug_083C155C[] = _("SYSーZUKANーGET");
-static const u8 gUnknown_Debug_083C156A[] = _("SYSーPOKEGEARーGET");
-static const u8 gUnknown_Debug_083C157B[] = _("SYSーRIBBONーGET");
+static const u8 gUnknown_Debug_083C154C[] = _("Pokémon");
+static const u8 gUnknown_Debug_083C155C[] = _("Pokédex");
+static const u8 gUnknown_Debug_083C156A[] = _("Pokénav");
+static const u8 gUnknown_Debug_083C157B[] = _("Ribbon");
 
 static const struct MenuAction gUnknown_Debug_083C158A[] = {
     {gUnknown_Debug_083C154C, DummyMenuAction},
@@ -593,15 +593,15 @@ static const struct MenuAction gUnknown_Debug_083C158A[] = {
     {gUnknown_Debug_083C157B, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C15AC[] = _("SYSーGAMEーCLEAR");
-static const u8 gUnknown_Debug_083C15BB[] = _("SYSーKAIWAーUSED");
-static const u8 gUnknown_Debug_083C15CA[] = _("SYSーNOWーOYAJIーMEET");
-static const u8 gUnknown_Debug_083C15DD[] = _("SYSーUSEーWAZAーFLASH");
-static const u8 gUnknown_Debug_083C15F0[] = _("SYSーUSEーWAZAーKAIRIKI");
-static const u8 gUnknown_Debug_083C1605[] = _("SYSーWEATHERーCTRL");
-static const u8 gUnknown_Debug_083C1616[] = _("SYSーCYCLINGーROAD");
-static const u8 gUnknown_Debug_083C1627[] = _("SYSーSAFARIーMODE");
-static const u8 gUnknown_Debug_083C1637[] = _("SYSーCRUISEーMODE");
+static const u8 gUnknown_Debug_083C15AC[] = _("Cleared game");
+static const u8 gUnknown_Debug_083C15BB[] = _("Used chat");
+static const u8 gUnknown_Debug_083C15CA[] = _("Met Hipster");
+static const u8 gUnknown_Debug_083C15DD[] = _("Used Flash");
+static const u8 gUnknown_Debug_083C15F0[] = _("Used Strength");
+static const u8 gUnknown_Debug_083C1605[] = _("{EVIL_LEGENDARY} awakened");
+static const u8 gUnknown_Debug_083C1616[] = _("Cycling Road");
+static const u8 gUnknown_Debug_083C1627[] = _("Safari Zone");
+static const u8 gUnknown_Debug_083C1637[] = _("SS Tidal");
 
 static const struct MenuAction gUnknown_Debug_083C1647[] = {
     {gUnknown_Debug_083C15AC, DummyMenuAction},
@@ -615,15 +615,15 @@ static const struct MenuAction gUnknown_Debug_083C1647[] = {
     {gUnknown_Debug_083C1637, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1690[] = _("SYSーTVーHOME");
-static const u8 gUnknown_Debug_083C169C[] = _("SYSーTVーWATCH");
-static const u8 gUnknown_Debug_083C16A9[] = _("SYSーTVSTART");
-static const u8 gUnknown_Debug_083C16B5[] = _("SYSーPOPWORDーINPUT");
-static const u8 gUnknown_Debug_083C16C7[] = _("SYSーMIXーRECORD");
-static const u8 gUnknown_Debug_083C16D6[] = _("SYSーCLOCKーSET");
-static const u8 gUnknown_Debug_083C16E4[] = _("SYSーCAVEーSHIP");
-static const u8 gUnknown_Debug_083C16F2[] = _("SYSーCAVEーWONDER");
-static const u8 gUnknown_Debug_083C1702[] = _("SYSーCAVEーBATTLE");
+static const u8 gUnknown_Debug_083C1690[] = _("TV home");
+static const u8 gUnknown_Debug_083C169C[] = _("TV watch");
+static const u8 gUnknown_Debug_083C16A9[] = _("TV start");
+static const u8 gUnknown_Debug_083C16B5[] = _("Pop word input");
+static const u8 gUnknown_Debug_083C16C7[] = _("Mixed records");
+static const u8 gUnknown_Debug_083C16D6[] = _("Clock set");
+static const u8 gUnknown_Debug_083C16E4[] = _("Cave Ship");
+static const u8 gUnknown_Debug_083C16F2[] = _("Cave Wonder");
+static const u8 gUnknown_Debug_083C1702[] = _("Cave Battle");
 
 static const struct MenuAction gUnknown_Debug_083C1712[] = {
     {gUnknown_Debug_083C1690, DummyMenuAction},
@@ -637,15 +637,15 @@ static const struct MenuAction gUnknown_Debug_083C1712[] = {
     {gUnknown_Debug_083C1702, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C175C[] = _("SYSーSPECIALーZUKAN");
-static const u8 gUnknown_Debug_083C176E[] = _("SYSーASASEーTIDE");
-static const u8 gUnknown_Debug_083C177D[] = _("SYSーRIBBONーGET");
-static const u8 gUnknown_Debug_083C178C[] = _("SYSーPASOーMAYUMI");
-static const u8 gUnknown_Debug_083C179C[] = _("SYSーEXDATAーENABLE");
-static const u8 gUnknown_Debug_083C17AE[] = _("SYSーTENJIーANAWOHORU");
-static const u8 gUnknown_Debug_083C17C2[] = _("SYSーTENJIーKAIRIKI");
-static const u8 gUnknown_Debug_083C17D4[] = _("SYSーTENJIーWAIT");
-static const u8 gUnknown_Debug_083C17E3[] = _("SYSーTENJIーSORAWOTOBU");
+static const u8 gUnknown_Debug_083C175C[] = _("National {POKE}dex");
+static const u8 gUnknown_Debug_083C176E[] = _("Shoal Cave high tide");
+static const u8 gUnknown_Debug_083C177D[] = _("Received Ribbon (dupe)");
+static const u8 gUnknown_Debug_083C178C[] = _("Lanette's PC");
+static const u8 gUnknown_Debug_083C179C[] = _("Mystery Gift enabled");
+static const u8 gUnknown_Debug_083C17AE[] = _("Dig puzzle solved");
+static const u8 gUnknown_Debug_083C17C2[] = _("Strength puzzle solved");
+static const u8 gUnknown_Debug_083C17D4[] = _("Wait puzzle solved");
+static const u8 gUnknown_Debug_083C17E3[] = _("Fly puzzle solved");
 
 static const struct MenuAction gUnknown_Debug_083C17F8[] = {
     {gUnknown_Debug_083C175C, DummyMenuAction},
@@ -659,13 +659,13 @@ static const struct MenuAction gUnknown_Debug_083C17F8[] = {
     {gUnknown_Debug_083C17E3, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1840[] = _("SYSーENCーUPーITEM");
-static const u8 gUnknown_Debug_083C1850[] = _("SYSーENEーDOWNーITEM");
-static const u8 gUnknown_Debug_083C1862[] = _("SYSーKOKOROーEVENT");
-static const u8 gUnknown_Debug_083C1873[] = _("SYSーMOVEーPOKEーNEWS");
-static const u8 gUnknown_Debug_083C1886[] = _("SYSーASASEーITEM");
-static const u8 gUnknown_Debug_083C1895[] = _("SYSーBーDASH");
-static const u8 gUnknown_Debug_083C18A0[] = _("SYSーCTRLーOBJーDELETE");
+static const u8 gUnknown_Debug_083C1840[] = _("White Flute");
+static const u8 gUnknown_Debug_083C1850[] = _("Black Flute");
+static const u8 gUnknown_Debug_083C1862[] = _("Eon roamer news");
+static const u8 gUnknown_Debug_083C1873[] = _("Roamer active");
+static const u8 gUnknown_Debug_083C1886[] = _("Has Eon Ticket");
+static const u8 gUnknown_Debug_083C1895[] = _("Running Shoes");
+static const u8 gUnknown_Debug_083C18A0[] = _("Ctrl-Obj-Delete");
 static const u8 gUnknown_Debug_083C18B4[] = _("");
 static const u8 gUnknown_Debug_083C18B5[] = _("");
 
@@ -681,11 +681,11 @@ static const struct MenuAction gUnknown_Debug_083C18B8[] = {
     {gUnknown_Debug_083C18B5, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1900[] = _("SYSーARRIVEーSUBMARINECAVE");
-static const u8 gUnknown_Debug_083C1919[] = _("SYSーARRIVEーBATTLETOWER");
-static const u8 gUnknown_Debug_083C1930[] = _("SYSーARRIVEーISLAND");
-static const u8 gUnknown_Debug_083C1942[] = _("SYSーARRIVEーLEAGUE");
-static const u8 gUnknown_Debug_083C1954[] = _("SYSーARRIVEーSORANOHASHIRA");
+static const u8 gUnknown_Debug_083C1900[] = _("Seafloor Cavern");
+static const u8 gUnknown_Debug_083C1919[] = _("Battle Tower");
+static const u8 gUnknown_Debug_083C1930[] = _("Southern Island");
+static const u8 gUnknown_Debug_083C1942[] = _("{PKMN} League");
+static const u8 gUnknown_Debug_083C1954[] = _("Sky Pillar");
 static const u8 gUnknown_Debug_083C196D[] = _("");
 static const u8 gUnknown_Debug_083C196E[] = _("");
 static const u8 gUnknown_Debug_083C196F[] = _("");
@@ -717,14 +717,14 @@ static const u16 gUnknown_Debug_083C19C6[][9] = {
     {FLAG_LANDMARK_SEAFLOOR_CAVERN, FLAG_LANDMARK_BATTLE_TOWER, FLAG_LANDMARK_SOUTHERN_ISLAND, FLAG_SYS_POKEMON_LEAGUE_FLY, FLAG_LANDMARK_SKY_PILLAR}
 };
 
-static const u8 gDebug_0x83C1A68[] = _("FVーBALL　パート1");
+static const u8 gDebug_0x83C1A68[] = _("{POKE}ball Flags 1");
 
 static const struct MenuAction gUnknown_Debug_083C1A78[] = {
 	{gDebug_0x83C1A68, debug_sub_808D8D8}
 };
 
-static const u8 gUnknown_Debug_083C1A80[] = _("FVーBALL1ー78");
-static const u8 gUnknown_Debug_083C1A8C[] = _("FVーBALL1ー133");
+static const u8 gUnknown_Debug_083C1A80[] = _("Scanner");
+static const u8 gUnknown_Debug_083C1A8C[] = _("Mossdeep");
 
 static const struct MenuAction gUnknown_Debug_083C1A9C[] = {
 	{gUnknown_Debug_083C1A80, DummyMenuAction},
@@ -737,9 +737,9 @@ static const u16 gUnknown_Debug_083C1AAE[][9] = {
     {FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS_2, FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_1}
 };
 
-static const u8 gUnknown_Debug_083C1AC0[] = _("ジムリーダー");
-static const u8 gUnknown_Debug_083C1AC7[] = _("してんのう");
-static const u8 gUnknown_Debug_083C1ACD[] = _("みつる/Champロード");
+static const u8 gUnknown_Debug_083C1AC0[] = _("Gym Leaders");
+static const u8 gUnknown_Debug_083C1AC7[] = _("Elite Four");
+static const u8 gUnknown_Debug_083C1ACD[] = _("Wally/Victory Road");
 
 static const struct MenuAction gUnknown_Debug_083C1ADC[] = {
 	{gUnknown_Debug_083C1AC0, debug_sub_808CD08},
@@ -747,14 +747,14 @@ static const struct MenuAction gUnknown_Debug_083C1ADC[] = {
 	{gUnknown_Debug_083C1ACD, debug_sub_808CDB8}
 };
 
-static const u8 gUnknown_Debug_083C1AF4[] = _("FTーGYMー01ーLEADER");
-static const u8 gUnknown_Debug_083C1B05[] = _("FTーGYMー02ーLEADER");
-static const u8 gUnknown_Debug_083C1B16[] = _("FTーGYMー03ーLEADER");
-static const u8 gUnknown_Debug_083C1B27[] = _("FTーGYMー04ーLEADER");
-static const u8 gUnknown_Debug_083C1B38[] = _("FTーGYMー05ーLEADER");
-static const u8 gUnknown_Debug_083C1B49[] = _("FTーGYMー06ーLEADER");
-static const u8 gUnknown_Debug_083C1B5A[] = _("FTーGYMー07ーLEADER");
-static const u8 gUnknown_Debug_083C1B6B[] = _("FTーGYMー08ーLEADER");
+static const u8 gUnknown_Debug_083C1AF4[] = _("Rustboro");
+static const u8 gUnknown_Debug_083C1B05[] = _("Dewford");
+static const u8 gUnknown_Debug_083C1B16[] = _("Mauville");
+static const u8 gUnknown_Debug_083C1B27[] = _("Fallarbor");
+static const u8 gUnknown_Debug_083C1B38[] = _("Petalburg");
+static const u8 gUnknown_Debug_083C1B49[] = _("Fortree");
+static const u8 gUnknown_Debug_083C1B5A[] = _("Mossdeep");
+static const u8 gUnknown_Debug_083C1B6B[] = _("Sootopolis");
 
 static const struct MenuAction gUnknown_Debug_083C1B7C[] = {
 	{gUnknown_Debug_083C1AF4, DummyMenuAction},
@@ -767,10 +767,10 @@ static const struct MenuAction gUnknown_Debug_083C1B7C[] = {
 	{gUnknown_Debug_083C1B6B, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1BBC[] = _("FTーSHITENー01");
-static const u8 gUnknown_Debug_083C1BC9[] = _("FTーSHITENー02");
-static const u8 gUnknown_Debug_083C1BD6[] = _("FTーSHITENー03");
-static const u8 gUnknown_Debug_083C1BE3[] = _("FTーSHITENー04");
+static const u8 gUnknown_Debug_083C1BBC[] = _("Elite Four 1");
+static const u8 gUnknown_Debug_083C1BC9[] = _("Elite Four 2");
+static const u8 gUnknown_Debug_083C1BD6[] = _("Elite Four 3");
+static const u8 gUnknown_Debug_083C1BE3[] = _("Elite Four 4");
 
 static const struct MenuAction gUnknown_Debug_083C1BF0[] = {
 	{gUnknown_Debug_083C1BBC, DummyMenuAction},
@@ -779,7 +779,7 @@ static const struct MenuAction gUnknown_Debug_083C1BF0[] = {
 	{gUnknown_Debug_083C1BE3, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1C10[] = _("FTーMITSURUー01ーCAVEーD1301");
+static const u8 gUnknown_Debug_083C1C10[] = _("Wally");
 
 static const struct MenuAction gUnknown_Debug_083C1C2C[] = {
 	{gUnknown_Debug_083C1C10, DummyMenuAction}
@@ -792,15 +792,15 @@ static const u16 gUnknown_Debug_083C1C38[][9] = {
     {0x04E1}
 };
 
-static const u8 gUnknown_Debug_083C1C6E[] = _("120/119ばんどうろカクレオン");
-static const u8 gUnknown_Debug_083C1C80[] = _("そのた1　/　SUPPORTM/W");
-static const u8 gUnknown_Debug_083C1C92[] = _("ODAMAKI/FIGHTER1");
-static const u8 gUnknown_Debug_083C1CA3[] = _("MITSURU/TENKI");
-static const u8 gUnknown_Debug_083C1CB1[] = _("そのた2　/DAIGO");
-static const u8 gUnknown_Debug_083C1CBD[] = _("POKE/POKEMON");
-static const u8 gUnknown_Debug_083C1CCA[] = _("MAMA/SUPPORT02");
-static const u8 gUnknown_Debug_083C1CD9[] = _("HAGI");
-static const u8 gUnknown_Debug_083C1CDE[] = _("SUPPORT01");
+static const u8 gUnknown_Debug_083C1C6E[] = _("Kecleon");
+static const u8 gUnknown_Debug_083C1C80[] = _("Beldum / Obj / Rival");
+static const u8 gUnknown_Debug_083C1C92[] = _("Birch / Digger");
+static const u8 gUnknown_Debug_083C1CA3[] = _("Wally / R119");
+static const u8 gUnknown_Debug_083C1CB1[] = _("Steven");
+static const u8 gUnknown_Debug_083C1CBD[] = _("{PKMN}");
+static const u8 gUnknown_Debug_083C1CCA[] = _("Mom / Rival");
+static const u8 gUnknown_Debug_083C1CD9[] = _("Mr. Briney");
+static const u8 gUnknown_Debug_083C1CDE[] = _("Rival 2");
 
 static const struct MenuAction gUnknown_Debug_083C1CE8[] = {
 	{gUnknown_Debug_083C1C6E, debug_sub_808C85C},
@@ -814,15 +814,15 @@ static const struct MenuAction gUnknown_Debug_083C1CE8[] = {
 	{gUnknown_Debug_083C1CDE, debug_sub_808CB1C}
 };
 
-static const u8 gUnknown_Debug_083C1D30[] = _("FVーKAKUREONBー01ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1D4B[] = _("FVーKAKUREー01ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1D63[] = _("FVーKAKUREー02ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1D7B[] = _("FVーKAKUREー03ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1D93[] = _("FVーKAKUREー04ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1DAB[] = _("FVーKAKUREー05ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1DC3[] = _("FVーKAKUREー06ーFIELDーR120");
-static const u8 gUnknown_Debug_083C1DDB[] = _("FVーKAKUREー01ーFIELDーR119");
-static const u8 gUnknown_Debug_083C1DF3[] = _("FVーKAKUREー02ーFIELDーR119");
+static const u8 gUnknown_Debug_083C1D30[] = _("Kecleon 1");
+static const u8 gUnknown_Debug_083C1D4B[] = _("Kecleon 2");
+static const u8 gUnknown_Debug_083C1D63[] = _("Kecleon 3");
+static const u8 gUnknown_Debug_083C1D7B[] = _("Kecleon 4");
+static const u8 gUnknown_Debug_083C1D93[] = _("Kecleon 5");
+static const u8 gUnknown_Debug_083C1DAB[] = _("Kecleon 6");
+static const u8 gUnknown_Debug_083C1DC3[] = _("Kecleon 7");
+static const u8 gUnknown_Debug_083C1DDB[] = _("Kecleon 8");
+static const u8 gUnknown_Debug_083C1DF3[] = _("Kecleon 9");
 
 static const struct MenuAction gUnknown_Debug_083C1E0C[] = {
 	{gUnknown_Debug_083C1D30, DummyMenuAction},
@@ -836,15 +836,15 @@ static const struct MenuAction gUnknown_Debug_083C1E0C[] = {
 	{gUnknown_Debug_083C1DF3, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1E54[] = _("FVーBALLー01ーC107ーR0501");
-static const u8 gUnknown_Debug_083C1E6A[] = _("FVーWORKERM1ー04ーFIELDーC104");
-static const u8 gUnknown_Debug_083C1E84[] = _("FVーSUBMARINEー06ーCAVEーD1101");
-static const u8 gUnknown_Debug_083C1E9F[] = _("FVーGUESTーALLーC106ーR0102");
-static const u8 gUnknown_Debug_083C1EB7[] = _("FVーHORIDASIー01ーC106ーR1106");
-static const u8 gUnknown_Debug_083C1ED1[] = _("FVーMIDDLEM1ー01ーR110ーR0101");
-static const u8 gUnknown_Debug_083C1EEB[] = _("FVーFUNEー01ーC102ーR0601");
-static const u8 gUnknown_Debug_083C1F01[] = _("FVーSUPPORTWー01ーT101ーR0202");
-static const u8 gUnknown_Debug_083C1F1B[] = _("FVーSUPPORTMー01ーT101ーR0102");
+static const u8 gUnknown_Debug_083C1E54[] = _("Beldum");
+static const u8 gUnknown_Debug_083C1E6A[] = _("Devon (Rustboro)");
+static const u8 gUnknown_Debug_083C1E84[] = _("Submarine");
+static const u8 gUnknown_Debug_083C1E9F[] = _("Cove Lilly Motel");
+static const u8 gUnknown_Debug_083C1EB7[] = _("Lillycove Lady");
+static const u8 gUnknown_Debug_083C1ED1[] = _("Trick Master");
+static const u8 gUnknown_Debug_083C1EEB[] = _("Sludge Bomb TM");
+static const u8 gUnknown_Debug_083C1F01[] = _("May (Littleroot)");
+static const u8 gUnknown_Debug_083C1F1B[] = _("Brendan (Littleroot)");
 
 static const struct MenuAction gUnknown_Debug_083C1F38[] = {
 	{gUnknown_Debug_083C1E54, DummyMenuAction},
@@ -858,15 +858,15 @@ static const struct MenuAction gUnknown_Debug_083C1F38[] = {
 	{gUnknown_Debug_083C1F1B, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C1F80[] = _("FVーODAMAKIー01ーFIELDーR101");
-static const u8 gUnknown_Debug_083C1F99[] = _("FVーODAMAKIー01ーT101ーR0301");
-static const u8 gUnknown_Debug_083C1FB2[] = _("FVーODAMAKIーHYOKAーT101ーR0301");
-static const u8 gUnknown_Debug_083C1FCE[] = _("FVーODAMAKIーHYOKAーFIELDーR101");
-static const u8 gUnknown_Debug_083C1FEA[] = _("FVーODAMAKIーHYOKAーFIELDーR103");
-static const u8 gUnknown_Debug_083C2006[] = _("FVーODAMAKIー01ーC109ーR0105");
-static const u8 gUnknown_Debug_083C201F[] = _("FVーFIGHTERー01ーCAVEーD0201");
-static const u8 gUnknown_Debug_083C2038[] = _("FVーFIGHTERー01ーT106ーR0201");
-static const u8 gUnknown_Debug_083C2051[] = _("FVーFIGHTERー01ーFIELDーR116");
+static const u8 gUnknown_Debug_083C1F80[] = _("Birch (Intro)");
+static const u8 gUnknown_Debug_083C1F99[] = _("Birch (Lab)");
+static const u8 gUnknown_Debug_083C1FB2[] = _("Birch (Lab 2)");
+static const u8 gUnknown_Debug_083C1FCE[] = _("Birch (R101)");
+static const u8 gUnknown_Debug_083C1FEA[] = _("Birch (R103)");
+static const u8 gUnknown_Debug_083C2006[] = _("Birch (Evergrande)");
+static const u8 gUnknown_Debug_083C201F[] = _("Digger (Tunnel)");
+static const u8 gUnknown_Debug_083C2038[] = _("Digger (Verdanturf)");
+static const u8 gUnknown_Debug_083C2051[] = _("Digger (R116)");
 
 static const struct MenuAction gUnknown_Debug_083C206C[] = {
 	{gUnknown_Debug_083C1F80, DummyMenuAction},
@@ -880,15 +880,15 @@ static const struct MenuAction gUnknown_Debug_083C206C[] = {
 	{gUnknown_Debug_083C2051, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C20B4[] = _("FVーMITSURUー01ーFIELDーC101");
-static const u8 gUnknown_Debug_083C20CD[] = _("FVーMITSURUー02ーCAVEーD1301");
-static const u8 gUnknown_Debug_083C20E6[] = _("FVーMITSURUー01ーFIELDーC103");
-static const u8 gUnknown_Debug_083C20FF[] = _("FVーMITSURUー01ーT106ーR0201");
-static const u8 gUnknown_Debug_083C2118[] = _("FVーMITSURUー01ーCAVEーD1301");
-static const u8 gUnknown_Debug_083C2131[] = _("FVーMITSURUー01ーC101ーR0201");
-static const u8 gUnknown_Debug_083C214A[] = _("FVーMITSURUー01ーFIELDーR102");
-static const u8 gUnknown_Debug_083C2163[] = _("FVーTENKIー01ーR119ーR101");
-static const u8 gUnknown_Debug_083C2179[] = _("FVーTENKIー01ーR119ーR102");
+static const u8 gUnknown_Debug_083C20B4[] = _("Wally (Petalburg)");
+static const u8 gUnknown_Debug_083C20CD[] = _("Wally (Victory Road)");
+static const u8 gUnknown_Debug_083C20E6[] = _("Wally (Mauville)");
+static const u8 gUnknown_Debug_083C20FF[] = _("Wally (Verdanturf)");
+static const u8 gUnknown_Debug_083C2118[] = _("Wally (Victory Road 2)");
+static const u8 gUnknown_Debug_083C2131[] = _("Wally (Petalburg Gym)");
+static const u8 gUnknown_Debug_083C214A[] = _("Wally (R102)");
+static const u8 gUnknown_Debug_083C2163[] = _("Weather Institute 1");
+static const u8 gUnknown_Debug_083C2179[] = _("Weather Institute 2");
 
 static const struct MenuAction gUnknown_Debug_083C2190[] = {
 	{gUnknown_Debug_083C20B4, DummyMenuAction},
@@ -902,12 +902,12 @@ static const struct MenuAction gUnknown_Debug_083C2190[] = {
 	{gUnknown_Debug_083C2179, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C21D8[] = _("FVーDAIGOー01ーCAVEーD0504");
-static const u8 gUnknown_Debug_083C21EF[] = _("FVーDAIGOー01ーFIELDーR128");
-static const u8 gUnknown_Debug_083C2206[] = _("FVーDAIGOー01ーFIELDーR118");
-static const u8 gUnknown_Debug_083C221D[] = _("FVーDAIGOー01ーC107ーR0501");
-static const u8 gUnknown_Debug_083C2234[] = _("FVーDAIGOー01ーFIELDーR120");
-static const u8 gUnknown_Debug_083C224B[] = _("FVーDAIGOー01ーFIELDーR108");
+static const u8 gUnknown_Debug_083C21D8[] = _("Steven (Granite Cave)");
+static const u8 gUnknown_Debug_083C21EF[] = _("Steven (R128)");
+static const u8 gUnknown_Debug_083C2206[] = _("Steven (R118)");
+static const u8 gUnknown_Debug_083C221D[] = _("Steven (Mossdeep)");
+static const u8 gUnknown_Debug_083C2234[] = _("Steven (R120)");
+static const u8 gUnknown_Debug_083C224B[] = _("Steven (Sootopolis)");
 
 static const struct MenuAction gUnknown_Debug_083C2264[] = {
 	{gUnknown_Debug_083C21D8, DummyMenuAction},
@@ -918,15 +918,15 @@ static const struct MenuAction gUnknown_Debug_083C2264[] = {
 	{gUnknown_Debug_083C224B, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2294[] = _("FVーPOKE1ー02ーCAVEーD1111");
-static const u8 gUnknown_Debug_083C22AB[] = _("FVーPOKE1ー01ーCAVEーD0601");
-static const u8 gUnknown_Debug_083C22C2[] = _("FVーPOKE1ー02ーCAVEーD0601");
-static const u8 gUnknown_Debug_083C22D9[] = _("FVーPOKE1ー01ーFIELDーR101");
-static const u8 gUnknown_Debug_083C22F0[] = _("FVーPOKE1ー01ーOPENINGーROOM01");
-static const u8 gUnknown_Debug_083C230B[] = _("FVーPOKE1ー02ーOPENINGーROOM01");
-static const u8 gUnknown_Debug_083C2326[] = _("FVーPOKE1ー01ーCAVEーD2308");
-static const u8 gUnknown_Debug_083C233D[] = _("FVーPOKEMONー01ーCAVEーD0201");
-static const u8 gUnknown_Debug_083C2356[] = _("FVーPOKEMONー01ーR104ーR0101");
+static const u8 gUnknown_Debug_083C2294[] = _("{EVIL_LEGENDARY} (Undersea Cavern)");
+static const u8 gUnknown_Debug_083C22AB[] = _("{EVIL_LEGENDARY} (Cave of Origin) (?)");
+static const u8 gUnknown_Debug_083C22C2[] = _("{EVIL_LEGENDARY} 2 (Cave of Origin) (?)");
+static const u8 gUnknown_Debug_083C22D9[] = _("Poochyena (R101)");
+static const u8 gUnknown_Debug_083C22F0[] = _("Machoke 1 (Littleroot)");
+static const u8 gUnknown_Debug_083C230B[] = _("Machoke 2 (Littleroot)");
+static const u8 gUnknown_Debug_083C2326[] = _("Raquayza (?)");
+static const u8 gUnknown_Debug_083C233D[] = _("Peeko (Rustarf Tunnel)");
+static const u8 gUnknown_Debug_083C2356[] = _("Peeko (R104)");
 
 static const struct MenuAction gUnknown_Debug_083C2370[] = {
 	{gUnknown_Debug_083C2294, DummyMenuAction},
@@ -940,15 +940,15 @@ static const struct MenuAction gUnknown_Debug_083C2370[] = {
 	{gUnknown_Debug_083C2356, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C23B8[] = _("FVーMAMAー01ーFIELDーT101");
-static const u8 gUnknown_Debug_083C23CE[] = _("FVーMAMAー01ーOPENINGーROOM02");
-static const u8 gUnknown_Debug_083C23E8[] = _("FVーMAMAー01ーT101ーR0101");
-static const u8 gUnknown_Debug_083C23FE[] = _("FVーMAMAー01ーT101ーR0201");
-static const u8 gUnknown_Debug_083C2414[] = _("FVーMAMAー02ーT101ーR0101");
-static const u8 gUnknown_Debug_083C242A[] = _("FVーMAMAー02ーT101ーR0201");
-static const u8 gUnknown_Debug_083C2440[] = _("FVーSUPPORTー02ーFIELDーR110");
-static const u8 gUnknown_Debug_083C2459[] = _("FVーSUPPORTー02ーFIELDーR119");
-static const u8 gUnknown_Debug_083C2472[] = _("FVーSUPPORTー02ーFIELDーT104");
+static const u8 gUnknown_Debug_083C23B8[] = _("Mom (Littleroot)");
+static const u8 gUnknown_Debug_083C23CE[] = _("Mom (2F)");
+static const u8 gUnknown_Debug_083C23E8[] = _("Mom (1F) (Brendan)");
+static const u8 gUnknown_Debug_083C23FE[] = _("Mom (1F) (May)");
+static const u8 gUnknown_Debug_083C2414[] = _("Brendan's Mom");
+static const u8 gUnknown_Debug_083C242A[] = _("May's Mom");
+static const u8 gUnknown_Debug_083C2440[] = _("Rival (R110)");
+static const u8 gUnknown_Debug_083C2459[] = _("Rival (R119)");
+static const u8 gUnknown_Debug_083C2472[] = _("Rival (Lavaridge)");
 
 static const struct MenuAction gUnknown_Debug_083C248C[] = {
 	{gUnknown_Debug_083C23B8, DummyMenuAction},
@@ -962,15 +962,15 @@ static const struct MenuAction gUnknown_Debug_083C248C[] = {
 	{gUnknown_Debug_083C2472, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C24D4[] = _("FVーHAGIー01ーFIELDーR104");
-static const u8 gUnknown_Debug_083C24EA[] = _("FVーHAGIー01ーR104ーR0101");
-static const u8 gUnknown_Debug_083C2500[] = _("FVーHAGIー01ーFIELDーT103");
-static const u8 gUnknown_Debug_083C2516[] = _("FVーHAGIー01ーFIELDーR109");
-static const u8 gUnknown_Debug_083C252C[] = _("FVーHAGIー01ーC102ーR0601");
-static const u8 gUnknown_Debug_083C2542[] = _("FVーHAGIー01ーC102ーR0101");
-static const u8 gUnknown_Debug_083C2558[] = _("FVーHAGIー01ーCAVEーD0201");
-static const u8 gUnknown_Debug_083C256E[] = _("FVーHAGIー01ーFIELDーR116");
-static const u8 gUnknown_Debug_083C2584[] = _("FVーHAGIー01ーSPーSHIP01");
+static const u8 gUnknown_Debug_083C24D4[] = _("Briney (R104) (Sailing)");
+static const u8 gUnknown_Debug_083C24EA[] = _("Briney (R104)");
+static const u8 gUnknown_Debug_083C2500[] = _("Briney (Dewford)");
+static const u8 gUnknown_Debug_083C2516[] = _("Briney (Slateport)");
+static const u8 gUnknown_Debug_083C252C[] = _("Briney (Slateport 2)");
+static const u8 gUnknown_Debug_083C2542[] = _("Briney (Shipyard)");
+static const u8 gUnknown_Debug_083C2558[] = _("Briney (Rustarf Tunnel)");
+static const u8 gUnknown_Debug_083C256E[] = _("Briney (R116)");
+static const u8 gUnknown_Debug_083C2584[] = _("Briney (SS Tidal)");
 
 static const struct MenuAction gUnknown_Debug_083C259C[] = {
 	{gUnknown_Debug_083C24D4, DummyMenuAction},
@@ -984,15 +984,15 @@ static const struct MenuAction gUnknown_Debug_083C259C[] = {
 	{gUnknown_Debug_083C2584, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C25E4[] = _("FVーSUPPORTー01ーT101ーR0301");
-static const u8 gUnknown_Debug_083C25FD[] = _("FVーSUPPORTー01ーC109ーR0105");
-static const u8 gUnknown_Debug_083C2616[] = _("FVーSUPPORTー01ーFIELDーC104");
-static const u8 gUnknown_Debug_083C262F[] = _("FVーSUPPORTー01ーFIELDーC106");
-static const u8 gUnknown_Debug_083C2648[] = _("FVーSUPPORTー01ーFIELDーR103");
-static const u8 gUnknown_Debug_083C2661[] = _("FVーSUPPORTー01ーFIELDーR110");
-static const u8 gUnknown_Debug_083C267A[] = _("FVーSUPPORTー01ーFIELDーR119");
-static const u8 gUnknown_Debug_083C2693[] = _("FVーSUPPORTー01ーFIELDーT104");
-static const u8 gUnknown_Debug_083C26AC[] = _("FVーSUPPORTー01ーFIELDーT102");
+static const u8 gUnknown_Debug_083C25E4[] = _("Rival (Lab)");
+static const u8 gUnknown_Debug_083C25FD[] = _("Rival (Evergrade)");
+static const u8 gUnknown_Debug_083C2616[] = _("Rival (Rustboro)");
+static const u8 gUnknown_Debug_083C262F[] = _("Rival (Lillycove)");
+static const u8 gUnknown_Debug_083C2648[] = _("Rival (R103)");
+static const u8 gUnknown_Debug_083C2661[] = _("Rival (R110)");
+static const u8 gUnknown_Debug_083C267A[] = _("Rival (R119)");
+static const u8 gUnknown_Debug_083C2693[] = _("Rival (Lavaridge)");
+static const u8 gUnknown_Debug_083C26AC[] = _("Rival (Oldale)");
 
 static const struct MenuAction gUnknown_Debug_083C26C8[] = {
 	{gUnknown_Debug_083C25E4, DummyMenuAction},
@@ -1020,15 +1020,15 @@ static const u16 gUnknown_Debug_083C271A[][9] = {
     {FLAG_HIDE_RIVAL_BIRCH_LAB, FLAG_HIDE_RIVAL_CHAMPIONS_ROOM, FLAG_HIDE_RIVAL_RUSTBORO, FLAG_HIDE_RIVAL_LILYCOVE_MART, FLAG_HIDE_RIVAL_ROUTE103, FLAG_HIDE_RIVAL_ROUTE110, FLAG_HIDE_RIVAL_ROUTE119, FLAG_HIDE_RIVAL_LAVARIDGE_1, FLAG_HIDE_RIVAL_OLDALE_TOWN}
 };
 
-static const u8 gUnknown_Debug_083C27BC[] = _("FEひでんわざ/デボンかんれん");
-static const u8 gUnknown_Debug_083C27CC[] = _("FEだいじなアイテムPART1");
-static const u8 gUnknown_Debug_083C27DC[] = _("そのた1");
-static const u8 gUnknown_Debug_083C27E1[] = _("MITSURU/DOOR");
-static const u8 gUnknown_Debug_083C27EE[] = _("カラクリやしき10のやじるし/GYM07");
-static const u8 gUnknown_Debug_083C2803[] = _("SUPPORT/そのた4");
-static const u8 gUnknown_Debug_083C2810[] = _("DAISUKI/そのた5");
-static const u8 gUnknown_Debug_083C281D[] = _("そのた2");
-static const u8 gUnknown_Debug_083C2822[] = _("そのた6");
+static const u8 gUnknown_Debug_083C27BC[] = _("HM / Devon Goods");
+static const u8 gUnknown_Debug_083C27CC[] = _("Key Items");
+static const u8 gUnknown_Debug_083C27DC[] = _("Key Items 2 / Team {EVIL_TEAM} (Cavern)");
+static const u8 gUnknown_Debug_083C27E1[] = _("Wally / Abandoned Ship Keys");
+static const u8 gUnknown_Debug_083C27EE[] = _("Mossdeep Gym / Trick House");
+static const u8 gUnknown_Debug_083C2803[] = _("Rival / Intro");
+static const u8 gUnknown_Debug_083C2810[] = _("Contest");
+static const u8 gUnknown_Debug_083C281D[] = _("Key Items 3 / Misc. 1");
+static const u8 gUnknown_Debug_083C2822[] = _("Misc. 2");
 
 static const struct MenuAction gUnknown_Debug_083C2828[] = {
 	{gUnknown_Debug_083C27BC, debug_sub_808C3B0},
@@ -1042,15 +1042,15 @@ static const struct MenuAction gUnknown_Debug_083C2828[] = {
 	{gUnknown_Debug_083C2822, debug_sub_808C670}
 };
 
-static const u8 gUnknown_Debug_083C2870[] = _("FEーHWAZA01ーGET");
-static const u8 gUnknown_Debug_083C287F[] = _("FEーHWAZA02ー01ーFIELDR119");
-static const u8 gUnknown_Debug_083C2897[] = _("FEーHWAZA03ーGET");
-static const u8 gUnknown_Debug_083C28A6[] = _("FEーHWAZA04ー01ーT106ーR0201");
-static const u8 gUnknown_Debug_083C28BF[] = _("FEーHWAZA05ー01ーCAVEーD0502");
-static const u8 gUnknown_Debug_083C28D8[] = _("FEーHWAZA04ー01ーC103ーR0301");
-static const u8 gUnknown_Debug_083C28F1[] = _("FEーDEBONーNIMOTSUーRETURN");
-static const u8 gUnknown_Debug_083C2909[] = _("FEーDEBONー01ーFIELDーC104");
-static const u8 gUnknown_Debug_083C2920[] = _("FEーDEBONー02ーFIELDーC104");
+static const u8 gUnknown_Debug_083C2870[] = _("Cut");
+static const u8 gUnknown_Debug_083C287F[] = _("Fly");
+static const u8 gUnknown_Debug_083C2897[] = _("Surf");
+static const u8 gUnknown_Debug_083C28A6[] = _("Strength");
+static const u8 gUnknown_Debug_083C28BF[] = _("Flash");
+static const u8 gUnknown_Debug_083C28D8[] = _("Rock Smash");
+static const u8 gUnknown_Debug_083C28F1[] = _("Devon Goods returned");
+static const u8 gUnknown_Debug_083C2909[] = _("Devon Goods stolen");
+static const u8 gUnknown_Debug_083C2920[] = _("Devon Goods returned");
 
 static const struct MenuAction gUnknown_Debug_083C2938[] = {
     {gUnknown_Debug_083C2870, DummyMenuAction},
@@ -1064,15 +1064,15 @@ static const struct MenuAction gUnknown_Debug_083C2938[] = {
     {gUnknown_Debug_083C2920, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2980[] = _("FEーCYCLEー01ーP01ーP01ーC103ーR0201");
-static const u8 gUnknown_Debug_083C299F[] = _("FEーSCOOPー01ーP01ーFIELDーR115");
-static const u8 gUnknown_Debug_083C29BA[] = _("FEーROPEー01ーP01ーFIELDーR114");
-static const u8 gUnknown_Debug_083C29D4[] = _("FEーKAMAー01ーP01ーFIELDーR119");
-static const u8 gUnknown_Debug_083C29EE[] = _("FEーZYOUROーGET");
-static const u8 gUnknown_Debug_083C29FC[] = _("FEーCUBECASEーGET");
-static const u8 gUnknown_Debug_083C2A0C[] = _("FEーBORONOTURIZAOーGET");
-static const u8 gUnknown_Debug_083C2A21[] = _("FEーIITURIZAOーGET");
-static const u8 gUnknown_Debug_083C2A32[] = _("FEーSUGOITURIZAOーGET");
+static const u8 gUnknown_Debug_083C2980[] = _("Bike");
+static const u8 gUnknown_Debug_083C299F[] = _("0x5B (unused?)");
+static const u8 gUnknown_Debug_083C29BA[] = _("Roar TM (?)");
+static const u8 gUnknown_Debug_083C29D4[] = _("Castform (?)");
+static const u8 gUnknown_Debug_083C29EE[] = _("Wailmer Pail");
+static const u8 gUnknown_Debug_083C29FC[] = _("{POKEBLOCK} Case");
+static const u8 gUnknown_Debug_083C2A0C[] = _("Old Rod");
+static const u8 gUnknown_Debug_083C2A21[] = _("Good Rod");
+static const u8 gUnknown_Debug_083C2A32[] = _("Super Rod");
 
 static const struct MenuAction gUnknown_Debug_083C2A48[] = {
     {gUnknown_Debug_083C2980, DummyMenuAction},
@@ -1086,15 +1086,15 @@ static const struct MenuAction gUnknown_Debug_083C2A48[] = {
     {gUnknown_Debug_083C2A32, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2A90[] = _("FEーBOSSー01ーCAVEーD0701");
-static const u8 gUnknown_Debug_083C2AA6[] = _("FEーTANTIKIーRETURN");
-static const u8 gUnknown_Debug_083C2AB8[] = _("FEーPOKE1ー01ーCAVEーD1111");
-static const u8 gUnknown_Debug_083C2ACF[] = _("FEーPOKE1ー01ーCAVEーD1206");
-static const u8 gUnknown_Debug_083C2AE6[] = _("FEーSHOPー01ーC104ーFS01");
-static const u8 gUnknown_Debug_083C2AFB[] = _("FEーHUNENOTIKETTーGET");
-static const u8 gUnknown_Debug_083C2B0F[] = _("FEーKAKUREー01ーFIELDーC105");
-static const u8 gUnknown_Debug_083C2B27[] = _("FEーKASEKIーRETURN");
-static const u8 gUnknown_Debug_083C2B38[] = _("FEーWINー01ーSPーSHIP01");
+static const u8 gUnknown_Debug_083C2A90[] = _("Team {EVIL_TEAM} defeated (Chimney)");
+static const u8 gUnknown_Debug_083C2AA6[] = _("Gave Scanner");
+static const u8 gUnknown_Debug_083C2AB8[] = _("{EVIL_LEGENDARY} awakened");
+static const u8 gUnknown_Debug_083C2ACF[] = _("{EVIL_LEGENDARY} defeated");
+static const u8 gUnknown_Debug_083C2AE6[] = _("Repeat Ball");
+static const u8 gUnknown_Debug_083C2AFB[] = _("SS Ticket");
+static const u8 gUnknown_Debug_083C2B0F[] = _("Fortree Gym open");
+static const u8 gUnknown_Debug_083C2B27[] = _("Fossil");
+static const u8 gUnknown_Debug_083C2B38[] = _("Cleared SS Tidal battles");
 
 static const struct MenuAction gUnknown_Debug_083C2B4C[] = {
     {gUnknown_Debug_083C2A90, DummyMenuAction},
@@ -1108,15 +1108,15 @@ static const struct MenuAction gUnknown_Debug_083C2B4C[] = {
     {gUnknown_Debug_083C2B38, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2B94[] = _("FEーMITSURUー01ーT106ーR0201");
-static const u8 gUnknown_Debug_083C2BAD[] = _("FEーMITSURUー01ーCAVEーD1301");
-static const u8 gUnknown_Debug_083C2BC6[] = _("FEーMITSURUー02ーFIELDーC103");
-static const u8 gUnknown_Debug_083C2BDF[] = _("FEーMITSURUー02ーT106ーR0201");
-static const u8 gUnknown_Debug_083C2BF8[] = _("FEーMITSURUー01ーFIELDーC103");
-static const u8 gUnknown_Debug_083C2C11[] = _("FEーDOORーOPENー01ーCAVEーD1712");
-static const u8 gUnknown_Debug_083C2C2C[] = _("FEーDOORーOPENー02ーCAVEーD1712");
-static const u8 gUnknown_Debug_083C2C47[] = _("FEーDOORーOPENー04ーCAVEーD1712");
-static const u8 gUnknown_Debug_083C2C62[] = _("FEーDOORーOPENー06ーCAVEーD1712");
+static const u8 gUnknown_Debug_083C2B94[] = _("Wally (Verdanturf) (?)");
+static const u8 gUnknown_Debug_083C2BAD[] = _("Beat Wally (Victory Road)");
+static const u8 gUnknown_Debug_083C2BC6[] = _("Beat Wally (Mauville)");
+static const u8 gUnknown_Debug_083C2BDF[] = _("Listened to Wally (Verdanturf)");
+static const u8 gUnknown_Debug_083C2BF8[] = _("Not ready for Wally (Mauville)");
+static const u8 gUnknown_Debug_083C2C11[] = _("Room 1 Key");
+static const u8 gUnknown_Debug_083C2C2C[] = _("Room 2 Key");
+static const u8 gUnknown_Debug_083C2C47[] = _("Room 4 Key");
+static const u8 gUnknown_Debug_083C2C62[] = _("Room 6 Key");
 
 static const struct MenuAction gUnknown_Debug_083C2C80[] = {
     {gUnknown_Debug_083C2B94, DummyMenuAction},
@@ -1130,15 +1130,15 @@ static const struct MenuAction gUnknown_Debug_083C2C80[] = {
     {gUnknown_Debug_083C2C62, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2CC8[] = _("FEーKARAKURI10ーSWITCHー01");
-static const u8 gUnknown_Debug_083C2CE0[] = _("FEーKARAKURI10ーSWITCHー02");
-static const u8 gUnknown_Debug_083C2CF8[] = _("FEーKARAKURI10ーSWITCHー03");
-static const u8 gUnknown_Debug_083C2D10[] = _("FEーKARAKURI10ーSWITCHー04");
-static const u8 gUnknown_Debug_083C2D28[] = _("FEーKARAKURI10ーSWITCHー05");
-static const u8 gUnknown_Debug_083C2D40[] = _("FEーGYM07ーSWITCHー01");
-static const u8 gUnknown_Debug_083C2D53[] = _("FEーGYM07ーSWITCHー02");
-static const u8 gUnknown_Debug_083C2D66[] = _("FEーGYM07ーSWITCHー03");
-static const u8 gUnknown_Debug_083C2D79[] = _("FEーGYM07ーSWITCHー04");
+static const u8 gUnknown_Debug_083C2CC8[] = _("Trick House 1");
+static const u8 gUnknown_Debug_083C2CE0[] = _("Trick House 2");
+static const u8 gUnknown_Debug_083C2CF8[] = _("Trick House 3");
+static const u8 gUnknown_Debug_083C2D10[] = _("Trick House 4");
+static const u8 gUnknown_Debug_083C2D28[] = _("Trick House 5");
+static const u8 gUnknown_Debug_083C2D40[] = _("Mossdeep Gym 1");
+static const u8 gUnknown_Debug_083C2D53[] = _("Mossdeep Gym 2");
+static const u8 gUnknown_Debug_083C2D66[] = _("Mossdeep Gym 3");
+static const u8 gUnknown_Debug_083C2D79[] = _("Mossdeep Gym 4");
 
 static const struct MenuAction gUnknown_Debug_083C2D8C[] = {
     {gUnknown_Debug_083C2CC8, DummyMenuAction},
@@ -1152,15 +1152,15 @@ static const struct MenuAction gUnknown_Debug_083C2D8C[] = {
     {gUnknown_Debug_083C2D79, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2DD4[] = _("FEーSUPPORTー01ーFIELDーR103");
-static const u8 gUnknown_Debug_083C2DED[] = _("FEーSUPPORTー01ーFIELDーC106");
-static const u8 gUnknown_Debug_083C2E06[] = _("FEーSUPPORTー01ーFIELDーR104");
-static const u8 gUnknown_Debug_083C2E1F[] = _("FEーSUPPORTー02ーFIELDーC106");
-static const u8 gUnknown_Debug_083C2E38[] = _("FEーSUPPORTー01ーT101ーR0202");
-static const u8 gUnknown_Debug_083C2E51[] = _("FEーMAMAー01ーP01ーT101ーR0101");
-static const u8 gUnknown_Debug_083C2E6B[] = _("FEーCLOCKーSET");
-static const u8 gUnknown_Debug_083C2E78[] = _("FEーODAMAKIー01ーP01ーT101ーR03");
-static const u8 gUnknown_Debug_083C2E93[] = _("FEーPAPAー01ーP01ーC101ーR0201");
+static const u8 gUnknown_Debug_083C2DD4[] = _("Defeated rival (R103)");
+static const u8 gUnknown_Debug_083C2DED[] = _("Not ready for rival (Lillycove)");
+static const u8 gUnknown_Debug_083C2E06[] = _("Talked to rival (Rustboro)");
+static const u8 gUnknown_Debug_083C2E1F[] = _("Talked to rival (Lillycove)");
+static const u8 gUnknown_Debug_083C2E38[] = _("Talked to rival (after Lillycove)");
+static const u8 gUnknown_Debug_083C2E51[] = _("Amulet Coin");
+static const u8 gUnknown_Debug_083C2E6B[] = _("Set clock");
+static const u8 gUnknown_Debug_083C2E78[] = _("Rescued Birch");
+static const u8 gUnknown_Debug_083C2E93[] = _("Enigma Berry?");
 
 static const struct MenuAction gUnknown_Debug_083C2EB0[] = {
     {gUnknown_Debug_083C2DD4, DummyMenuAction},
@@ -1174,15 +1174,15 @@ static const struct MenuAction gUnknown_Debug_083C2EB0[] = {
     {gUnknown_Debug_083C2E93, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C2EF8[] = _("FEーDAISUKIーGOODSーFLAG01");
-static const u8 gUnknown_Debug_083C2F10[] = _("FEーDAISUKIーGOODSーFLAG02");
-static const u8 gUnknown_Debug_083C2F28[] = _("FEーDAISUKIーGOODSーFLAG03");
-static const u8 gUnknown_Debug_083C2F40[] = _("FEーDAISUKIーGOODSーFLAG04");
-static const u8 gUnknown_Debug_083C2F58[] = _("FEーDAISUKIーGOODSーFLAG05");
-static const u8 gUnknown_Debug_083C2F70[] = _("FEーBASHAー01ーP01ーFIELDーC101ー");
-static const u8 gUnknown_Debug_083C2F8C[] = _("FEーBASHAー01ーP02ーFIELDーC101ー");
-static const u8 gUnknown_Debug_083C2FA8[] = _("FEーBALLー01ーP01ーSPーCONTEST");
-static const u8 gUnknown_Debug_083C2FC2[] = _("FEーWOMAN2ー01ーP01ーT101ーR0201");
+static const u8 gUnknown_Debug_083C2EF8[] = _("Red Scarf");
+static const u8 gUnknown_Debug_083C2F10[] = _("Blue Scarf");
+static const u8 gUnknown_Debug_083C2F28[] = _("Pink Scarf");
+static const u8 gUnknown_Debug_083C2F40[] = _("Green Scarf");
+static const u8 gUnknown_Debug_083C2F58[] = _("Yellow Scarf");
+static const u8 gUnknown_Debug_083C2F70[] = _("Petalburg 1");
+static const u8 gUnknown_Debug_083C2F8C[] = _("Petalburg 2");
+static const u8 gUnknown_Debug_083C2FA8[] = _("Contest room ball");
+static const u8 gUnknown_Debug_083C2FC2[] = _("Met rival's mom");
 
 static const struct MenuAction gUnknown_Debug_083C2FE0[] = {
     {gUnknown_Debug_083C2EF8, DummyMenuAction},
@@ -1196,15 +1196,15 @@ static const struct MenuAction gUnknown_Debug_083C2FE0[] = {
     {gUnknown_Debug_083C2FC2, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C3028[] = _("FEーSOUKOーOPENーCAVEーD1704");
-static const u8 gUnknown_Debug_083C3041[] = _("FEーSORAISIー01ーCAVEーD0101");
-static const u8 gUnknown_Debug_083C305A[] = _("FEーMAYUMIー01ーーR114ーR0201");
-static const u8 gUnknown_Debug_083C3073[] = _("FEーKUSUNOKIー01ーC102ーR0601");
-static const u8 gUnknown_Debug_083C308D[] = _("FEーOLDWOMAN1ー01ーCAVEーD0808");
-static const u8 gUnknown_Debug_083C30A8[] = _("FEーTRAINERM1ー01ーC109ーR0206");
-static const u8 gUnknown_Debug_083C30C3[] = _("FEーSOONANOーTAMAGOーGET");
-static const u8 gUnknown_Debug_083C30D9[] = _("FEーDASHーSHOESーGET");
-static const u8 gUnknown_Debug_083C30EB[] = _("FEーDEBONSUKOOPUーGET");
+static const u8 gUnknown_Debug_083C3028[] = _("Used Storage Key");
+static const u8 gUnknown_Debug_083C3041[] = _("Met Prof. Cosmo");
+static const u8 gUnknown_Debug_083C305A[] = _("Recieved doll from Lanette");
+static const u8 gUnknown_Debug_083C3073[] = _("Team {EVIL_TEAM} stole sub");
+static const u8 gUnknown_Debug_083C308D[] = _("Returned orb");
+static const u8 gUnknown_Debug_083C30A8[] = _("Entered Elite Four");
+static const u8 gUnknown_Debug_083C30C3[] = _("Wynaut Egg");
+static const u8 gUnknown_Debug_083C30D9[] = _("Running Shoes");
+static const u8 gUnknown_Debug_083C30EB[] = _("Devon Scope");
 
 static const struct MenuAction gUnknown_Debug_083C3100[] = {
     {gUnknown_Debug_083C3028, DummyMenuAction},
@@ -1218,9 +1218,9 @@ static const struct MenuAction gUnknown_Debug_083C3100[] = {
     {gUnknown_Debug_083C30EB, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C3148[] = _("FEーSTUDYM1ー01ーP01ーT101R0301");
-static const u8 gUnknown_Debug_083C3164[] = _("FEーWORKERM1ー01ーC103ーR0201");
-static const u8 gUnknown_Debug_083C317E[] = _("FEーHIMITSUーGET");
+static const u8 gUnknown_Debug_083C3148[] = _("Met Birch's Aide");
+static const u8 gUnknown_Debug_083C3164[] = _("Declined Bike");
+static const u8 gUnknown_Debug_083C317E[] = _("Secret Power TM");
 static const u8 gUnknown_Debug_083C318D[] = _("");
 static const u8 gUnknown_Debug_083C318E[] = _("");
 static const u8 gUnknown_Debug_083C318F[] = _("");
@@ -1254,11 +1254,11 @@ static const u16 gUnknown_Debug_83C31E6[][9] = {
     {FLAG_BIRCH_AIDE_MET, FLAG_DECLINED_BIKE, FLAG_RECEIVED_SECRET_POWER}
 };
 
-static const u8 gUnknown_Debug_083C3288[] = _("CYCLEかんれん");
-static const u8 gUnknown_Debug_083C3292[] = _("おおきさくらべ");
-static const u8 gUnknown_Debug_083C329A[] = _("カウンタ");
-static const u8 gUnknown_Debug_083C329F[] = _("そのた1");
-static const u8 gUnknown_Debug_083C32A4[] = _("そのた2");
+static const u8 gUnknown_Debug_083C3288[] = _("Cycling Road Records");
+static const u8 gUnknown_Debug_083C3292[] = _("Size Records");
+static const u8 gUnknown_Debug_083C329A[] = _("Step Counts");
+static const u8 gUnknown_Debug_083C329F[] = _("Sys 1");
+static const u8 gUnknown_Debug_083C32A4[] = _("Sys 2");
 
 static const struct MenuAction gUnknown_Debug_083C32AC[] = {
     {gUnknown_Debug_083C3288, debug_sub_808E400},
@@ -1268,35 +1268,35 @@ static const struct MenuAction gUnknown_Debug_083C32AC[] = {
     {gUnknown_Debug_083C32A4, debug_sub_808E560}
 };
 
-static const u8 gUnknown_Debug_083C32D4[] = _("WKーCYCLEーROADーHIT");
-static const u8 gUnknown_Debug_083C32E6[] = _("WKーCYCLEーROADーTIMエ1");
-static const u8 gUnknown_Debug_083C32FA[] = _("WKーCYCLEーROADーTIMエ2");
+static const u8 gUnknown_Debug_083C32D4[] = _("Collisions");
+static const u8 gUnknown_Debug_083C32E6[] = _("Time (sec)");
+static const u8 gUnknown_Debug_083C32FA[] = _("Time (min)");
 
-static const u8 gUnknown_Debug_083C330E[] = _("WKーSIZEーKINOKOKOーOYAJI");
-static const u8 gUnknown_Debug_083C3325[] = _("WKーSIZEーNAMAZOーOYAJI");
+static const u8 gUnknown_Debug_083C330E[] = _("Shroomish");
+static const u8 gUnknown_Debug_083C3325[] = _("Barboach");
 
-static const u8 gUnknown_Debug_083C333A[] = _("WKーSPRAYーCOUNT");
-static const u8 gUnknown_Debug_083C3349[] = _("WKーICEーCOUNT");
-static const u8 gUnknown_Debug_083C3356[] = _("WKーASHーGATHERーCOUNT");
-static const u8 gUnknown_Debug_083C336A[] = _("WKーCRUISEーCOUNT");
-static const u8 gUnknown_Debug_083C337A[] = _("WKーFRIENDLYーSTEPーCOUNT");
-static const u8 gUnknown_Debug_083C3391[] = _("WKーPOISONーSTEPーCOUNT");
+static const u8 gUnknown_Debug_083C333A[] = _("Repel");
+static const u8 gUnknown_Debug_083C3349[] = _("Ice");
+static const u8 gUnknown_Debug_083C3356[] = _("Soot Sack");
+static const u8 gUnknown_Debug_083C336A[] = _("SS Tidal");
+static const u8 gUnknown_Debug_083C337A[] = _("Friendship");
+static const u8 gUnknown_Debug_083C3391[] = _("Poison");
 
-static const u8 gUnknown_Debug_083C33A6[] = _("WKRECYCLEーGOODS");
-static const u8 gUnknown_Debug_083C33B6[] = _("WKーFIRSTーPOKE");
-static const u8 gUnknown_Debug_083C33C4[] = _("WKーMABOROSIRNDーH");
-static const u8 gUnknown_Debug_083C33D5[] = _("WKーMABOROSIRNDーL");
-static const u8 gUnknown_Debug_083C33E6[] = _("EVーONEーDAYーWORK");
-static const u8 gUnknown_Debug_083C33F6[] = _("EVーFANWORK");
-static const u8 gUnknown_Debug_083C3401[] = _("EVーFANTIME");
-static const u8 gUnknown_Debug_083C340C[] = _("WKーKARAKURIーLEVEL");
-static const u8 gUnknown_Debug_083C341E[] = _("WKーPOKELOTーPRIZE");
+static const u8 gUnknown_Debug_083C33A6[] = _("Recycle goods");
+static const u8 gUnknown_Debug_083C33B6[] = _("Starter");
+static const u8 gUnknown_Debug_083C33C4[] = _("Mirage Island 16-31");
+static const u8 gUnknown_Debug_083C33D5[] = _("Mirage Island 0-15");
+static const u8 gUnknown_Debug_083C33E6[] = _("Days");
+static const u8 gUnknown_Debug_083C33F6[] = _("Fan Club 1");
+static const u8 gUnknown_Debug_083C3401[] = _("Fan Club 2");
+static const u8 gUnknown_Debug_083C340C[] = _("Trick House progress");
+static const u8 gUnknown_Debug_083C341E[] = _("Lottery Prize");
 
-static const u8 gUnknown_Debug_083C342F[] = _("WKーSPECIALーZUKN");
-static const u8 gUnknown_Debug_083C343F[] = _("WKーHYOUKAーDAYS");
-static const u8 gUnknown_Debug_083C344E[] = _("WKーPOKELOTーRND1");
-static const u8 gUnknown_Debug_083C345E[] = _("WKーPOKELOTーRND2");
-static const u8 gUnknown_Debug_083C346E[] = _("WKーBASEーMAPNO");
+static const u8 gUnknown_Debug_083C342F[] = _("National Dex");
+static const u8 gUnknown_Debug_083C343F[] = _("Birch location");
+static const u8 gUnknown_Debug_083C344E[] = _("Lottery 16-31");
+static const u8 gUnknown_Debug_083C345E[] = _("Lottery 0-15");
+static const u8 gUnknown_Debug_083C346E[] = _("Secret Base location");
 
 static const struct MenuAction gUnknown_Debug_083C347C[] = {
     {gUnknown_Debug_083C32D4, DummyMenuAction},
@@ -1348,8 +1348,8 @@ static const u16 gUnknown_Debug_083C354A[][9] = {
     {VAR_NATIONAL_DEX, VAR_BIRCH_STATE, VAR_LOTTERY_RND_L, VAR_LOTTERY_RND_H, VAR_SECRET_BASE_MAP}
 };
 
-static const u8 gUnknown_Debug_083C35A4[] = _("OBJCHRWORK0ー8");
-static const u8 gUnknown_Debug_083C35B2[] = _("OBJCHRWORK9ー15");
+static const u8 gUnknown_Debug_083C35A4[] = _("Obj 0-8");
+static const u8 gUnknown_Debug_083C35B2[] = _("Obj 9-15");
 
 static const struct MenuAction gUnknown_Debug_083C35C4[] = {
     {gUnknown_Debug_083C35A4, debug_sub_808E9A0},
@@ -1403,12 +1403,12 @@ static const u16 gUnknown_Debug_083C371E[][9] = {
     {VAR_OBJ_GFX_ID_9, VAR_OBJ_GFX_ID_A, VAR_OBJ_GFX_ID_B, VAR_OBJ_GFX_ID_C, VAR_OBJ_GFX_ID_D, VAR_OBJ_GFX_ID_E, VAR_OBJ_GFX_ID_F}
 };
 
-static const u8 gUnknown_Debug_083C3742[] = _("SP");
-static const u8 gUnknown_Debug_083C3745[] = _("ルーム　R110　PART1/カラクリ");
-static const u8 gUnknown_Debug_083C3759[] = _("ルーム　R110　PART2");
-static const u8 gUnknown_Debug_083C3768[] = _("ルーム　ロード");
-static const u8 gUnknown_Debug_083C3770[] = _("ソノタ1");
-static const u8 gUnknown_Debug_083C3775[] = _("ソノタ2");
+static const u8 gUnknown_Debug_083C3742[] = _("Link Status");
+static const u8 gUnknown_Debug_083C3745[] = _("Trick House 1");
+static const u8 gUnknown_Debug_083C3759[] = _("Trick House 2");
+static const u8 gUnknown_Debug_083C3768[] = _("Briney / R113");
+static const u8 gUnknown_Debug_083C3770[] = _("Briney / Misc. 1");
+static const u8 gUnknown_Debug_083C3775[] = _("Misc. 2");
 
 static const struct MenuAction sMenuActions_ControlWorks_SaveWorkPart2[] = {
     {gUnknown_Debug_083C3742, ControlWorks_SaveWorkPart2_SP_InitSubsubmenu},
@@ -1419,38 +1419,38 @@ static const struct MenuAction sMenuActions_ControlWorks_SaveWorkPart2[] = {
     {gUnknown_Debug_083C3775, debug_sub_808E20C}
 };
 
-static const u8 gUnknown_Debug_083C37AC[] = _("WKーSCENEーSPーCONTEST");
-static const u8 gUnknown_Debug_083C37C0[] = _("WKーSCENEーSPーPC");
-static const u8 gUnknown_Debug_083C37CF[] = _("WKーSCENEーSPーCONTEST03");
-static const u8 gUnknown_Debug_083C37E5[] = _("WKーSCENEーSPーCONTESTITEM");
-static const u8 gUnknown_Debug_083C37FD[] = _("WKーSCENEーSPーOPENING");
-static const u8 gUnknown_Debug_083C3811[] = _("WKーSCENEーSPーSHIP01");
+static const u8 gUnknown_Debug_083C37AC[] = _("Contest room");
+static const u8 gUnknown_Debug_083C37C0[] = _("Cable Club");
+static const u8 gUnknown_Debug_083C37CF[] = _("Contest Location");
+static const u8 gUnknown_Debug_083C37E5[] = _("Contest prize");
+static const u8 gUnknown_Debug_083C37FD[] = _("Intro");
+static const u8 gUnknown_Debug_083C3811[] = _("SS Tidal");
 static const u8 gUnknown_Debug_083C3824[] = _("");
 static const u8 gUnknown_Debug_083C3825[] = _("");
 static const u8 gUnknown_Debug_083C3826[] = _("");
 
-static const u8 gUnknown_Debug_083C3827[] = _("WKーSCENEーR110ーR0101");
-static const u8 gUnknown_Debug_083C383B[] = _("WKーSCENEーR110ーR0102");
-static const u8 gUnknown_Debug_083C384F[] = _("WKーSCENEーR110ーR0103");
-static const u8 gUnknown_Debug_083C3863[] = _("WKーKARAKURIーDAIOU");
-static const u8 gUnknown_Debug_083C3875[] = _("WKーSCENEーSHISEN");
+static const u8 gUnknown_Debug_083C3827[] = _("Trick House");
+static const u8 gUnknown_Debug_083C383B[] = _("Trick House prize");
+static const u8 gUnknown_Debug_083C384F[] = _("Trick House 2");
+static const u8 gUnknown_Debug_083C3863[] = _("Trick House 3");
+static const u8 gUnknown_Debug_083C3875[] = _("Trick House 4");
 static const u8 gUnknown_Debug_083C3885[] = _("");
 static const u8 gUnknown_Debug_083C3886[] = _("");
 static const u8 gUnknown_Debug_083C3887[] = _("");
 static const u8 gUnknown_Debug_083C3888[] = _("");
 
-static const u8 gUnknown_Debug_083C3889[] = _("WKーSCENEーR110ーR0104");
-static const u8 gUnknown_Debug_083C389D[] = _("WKーSCENEーR110ーR0105");
-static const u8 gUnknown_Debug_083C38B1[] = _("WKーSCENEーR110ーR0106");
-static const u8 gUnknown_Debug_083C38C5[] = _("WKーSCENEーR110ーR0107");
-static const u8 gUnknown_Debug_083C38D9[] = _("WKーSCENEーR110ーR0108");
-static const u8 gUnknown_Debug_083C38ED[] = _("WKーSCENEーR110ーR0109");
-static const u8 gUnknown_Debug_083C3901[] = _("WKーSCENEーR110ーR0110");
-static const u8 gUnknown_Debug_083C3915[] = _("WKーSCENEーR110ーR0111");
-static const u8 gUnknown_Debug_083C3929[] = _("WKーSCENEー02ーR110ーR0110");
+static const u8 gUnknown_Debug_083C3889[] = _("Trick House puzzle 1");
+static const u8 gUnknown_Debug_083C389D[] = _("Trick House puzzle 2");
+static const u8 gUnknown_Debug_083C38B1[] = _("Trick House puzzle 3");
+static const u8 gUnknown_Debug_083C38C5[] = _("Trick House puzzle 4");
+static const u8 gUnknown_Debug_083C38D9[] = _("Trick House puzzle 5");
+static const u8 gUnknown_Debug_083C38ED[] = _("Trick House puzzle 6");
+static const u8 gUnknown_Debug_083C3901[] = _("Trick House puzzle 7");
+static const u8 gUnknown_Debug_083C3915[] = _("Trick House puzzle 8");
+static const u8 gUnknown_Debug_083C3929[] = _("Trick House puzzle 7 (2)");
 
-static const u8 gUnknown_Debug_083C3940[] = _("WKーSCENEーR104ーR0101");
-static const u8 gUnknown_Debug_083C3954[] = _("WKーSCENEーR113ーR0101");
+static const u8 gUnknown_Debug_083C3940[] = _("Briney's house");
+static const u8 gUnknown_Debug_083C3954[] = _("R113 Soot Sack");
 static const u8 gUnknown_Debug_083C3968[] = _("");
 static const u8 gUnknown_Debug_083C3969[] = _("");
 static const u8 gUnknown_Debug_083C396A[] = _("");
@@ -1459,22 +1459,22 @@ static const u8 gUnknown_Debug_083C396C[] = _("");
 static const u8 gUnknown_Debug_083C396D[] = _("");
 static const u8 gUnknown_Debug_083C396E[] = _("");
 
-static const u8 gUnknown_Debug_083C396F[] = _("WKーSCENEーBASEーGDOODS");
-static const u8 gUnknown_Debug_083C3984[] = _("WKーSCENEーHAGIーFUNE");
-static const u8 gUnknown_Debug_083C3997[] = _("WKーSCENEーFUNEーPOS");
-static const u8 gUnknown_Debug_083C39A9[] = _("WKーSCENEーBASEーMAKE");
-static const u8 gUnknown_Debug_083C39BC[] = _("WKーSCENEーARTISTーC106ーR");
-static const u8 gUnknown_Debug_083C39D3[] = _("WKーSCENEーPOKEーLEAGUE");
-static const u8 gUnknown_Debug_083C39E8[] = _("WKーSCENEーROPEWAY");
-static const u8 gUnknown_Debug_083C39F9[] = _("WKーSCENEーSAFARIーZONE");
-static const u8 gUnknown_Debug_083C3A0E[] = _("WKーSCENEーCYCLEーROAD");
+static const u8 gUnknown_Debug_083C396F[] = _("Base goods");
+static const u8 gUnknown_Debug_083C3984[] = _("R104 Briney sailing");
+static const u8 gUnknown_Debug_083C3997[] = _("Briney location");
+static const u8 gUnknown_Debug_083C39A9[] = _("Base make");
+static const u8 gUnknown_Debug_083C39BC[] = _("Lillycove Contest Lobby");
+static const u8 gUnknown_Debug_083C39D3[] = _("Elite Four");
+static const u8 gUnknown_Debug_083C39E8[] = _("Cable Car");
+static const u8 gUnknown_Debug_083C39F9[] = _("Safari Zone");
+static const u8 gUnknown_Debug_083C3A0E[] = _("Cycling Road");
 
-static const u8 gUnknown_Debug_083C3A22[] = _("WKーSCENEーR119ーTENKI");
-static const u8 gUnknown_Debug_083C3A36[] = _("WKーSCENEー01ーC102ーR0401");
-static const u8 gUnknown_Debug_083C3A4D[] = _("WKーFUTAGOー01ーFIELDーR104");
-static const u8 gUnknown_Debug_083C3A65[] = _("WKーSCENEーBATTLEーTOWER");
-static const u8 gUnknown_Debug_083C3A7B[] = _("WKーSCENEーTRーHOUSE");
-static const u8 gUnknown_Debug_083C3A8D[] = _("WKーKASEKIーTYPE");
+static const u8 gUnknown_Debug_083C3A22[] = _("Weather Institute");
+static const u8 gUnknown_Debug_083C3A36[] = _("Slateport Fan Club");
+static const u8 gUnknown_Debug_083C3A4D[] = _("Beta R104");
+static const u8 gUnknown_Debug_083C3A65[] = _("Battle Tower");
+static const u8 gUnknown_Debug_083C3A7B[] = _("Game Corner");
+static const u8 gUnknown_Debug_083C3A8D[] = _("Fossil type");
 static const u8 gUnknown_Debug_083C3A9C[] = _("");
 static const u8 gUnknown_Debug_083C3A9D[] = _("");
 static const u8 gUnknown_Debug_083C3A9E[] = _("");
@@ -1561,15 +1561,15 @@ static const u16 sControlWorks_SaveWork_ItemArrays[][9] = {
     {VAR_WEATHER_INSTITUTE_STATE, VAR_SLATEPORT_FAN_CLUB_STATE, 0x40BB, VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, VAR_GAME_CORNER_STATE, VAR_WHICH_FOSSIL_REVIVED}
 };
 
-static const u8 sString_Town[] = _("タウン");
-static const u8 sString_City[] = _("シティ");
-static const u8 sString_Route_101_to_109[] = _("ロード101ー109");
-static const u8 sString_Route_110_to_118[] = _("ロード110ー118");
-static const u8 sString_Route_119_to_127[] = _("ロード119ー127");
-static const u8 sString_Route_128_to_134[] = _("ロード128ー134");
-static const u8 sString_Room_Town[] = _("ルーム　タウン");
-static const u8 sString_Room_City[] = _("ルーム　シティ");
-static const u8 sString_Dungeon_nai[] = _("ダンジョンない");
+static const u8 sString_Town[] = _("Towns");
+static const u8 sString_City[] = _("Cities");
+static const u8 sString_Route_101_to_109[] = _("R101-109");
+static const u8 sString_Route_110_to_118[] = _("R110-118");
+static const u8 sString_Route_119_to_127[] = _("R119-127");
+static const u8 sString_Route_128_to_134[] = _("R128-134");
+static const u8 sString_Room_Town[] = _("Town rooms");
+static const u8 sString_Room_City[] = _("City rooms");
+static const u8 sString_Dungeon_nai[] = _("Caves");
 
 static const struct MenuAction sMenuAction_ControlWorks_SaveWork[] = {
     {sString_Town, ControlWorks_SaveWork_Town_InitSubsubmenu},
@@ -1583,89 +1583,89 @@ static const struct MenuAction sMenuAction_ControlWorks_SaveWork[] = {
     {sString_Dungeon_nai, ControlWorks_SaveWork_Dungeon_InitSubsubmenu}
 };
 
-static const u8 sString_WK_SCENE_FIELD_T101[] = _("WKーSCENEーFIELDーT101");
-static const u8 sString_WK_SCENE_FIELD_T102[] = _("WKーSCENEーFIELDーT102");
-static const u8 sString_WK_SCENE_FIELD_T103[] = _("WKーSCENEーFIELDーT103");
-static const u8 sString_WK_SCENE_FIELD_T104[] = _("WKーSCENEーFIELDーT104");
-static const u8 sString_WK_BASE_POSNO[] = _("WKーBASEーPOSNO");
-static const u8 sString_WK_SCENE_FIELD_T106[] = _("WKーSCENEーFIELDーT106");
-static const u8 sString_WK_SCENE_FIELD_T107[] = _("WKーSCENEーFIELDーT107");
-static const u8 sString_WK_SCENE_2_FIELD_T102[] = _("WKーSCENEー02ーFIELDーT102");
+static const u8 sString_WK_SCENE_FIELD_T101[] = _("Lillycove");
+static const u8 sString_WK_SCENE_FIELD_T102[] = _("Oldale");
+static const u8 sString_WK_SCENE_FIELD_T103[] = _("Dewford");
+static const u8 sString_WK_SCENE_FIELD_T104[] = _("Lavaridge");
+static const u8 sString_WK_BASE_POSNO[] = _("Current secret base");
+static const u8 sString_WK_SCENE_FIELD_T106[] = _("Verdanturf");
+static const u8 sString_WK_SCENE_FIELD_T107[] = _("Pacifidlog");
+static const u8 sString_WK_SCENE_2_FIELD_T102[] = _("Oldale 2");
 
-static const u8 sString_WK_SCENE_FIELD_C101[] = _("WKーSCENEーFIELDーC101");
-static const u8 sString_WK_SCENE_FIELD_C102[] = _("WKーSCENEーFIELDーC102");
-static const u8 sString_WK_SCENE_FIELD_C103[] = _("WKーSCENEーFIELDーC103");
-static const u8 sString_WK_SCENE_FIELD_C104[] = _("WKーSCENEーFIELDーC104");
-static const u8 sString_WK_SCENE_FIELD_C105[] = _("WKーSCENEーFIELDーC105");
-static const u8 sString_WK_SCENE_FIELD_C106[] = _("WKーSCENEーFIELDーC106");
-static const u8 sString_WK_SCENE_FIELD_C107[] = _("WKーSCENEーFIELDーC107");
-static const u8 sString_WK_SCENE_FIELD_C108[] = _("WKーSCENEーFIELDーC108");
-static const u8 sString_WK_SCENE_FIELD_C109[] = _("WKーSCENEーFIELDーC109");
+static const u8 sString_WK_SCENE_FIELD_C101[] = _("Petalburg");
+static const u8 sString_WK_SCENE_FIELD_C102[] = _("Slateport");
+static const u8 sString_WK_SCENE_FIELD_C103[] = _("Mauville");
+static const u8 sString_WK_SCENE_FIELD_C104[] = _("Rustboro");
+static const u8 sString_WK_SCENE_FIELD_C105[] = _("Fortree");
+static const u8 sString_WK_SCENE_FIELD_C106[] = _("Lillycove");
+static const u8 sString_WK_SCENE_FIELD_C107[] = _("Mossdeep");
+static const u8 sString_WK_SCENE_FIELD_C108[] = _("Sootopolis");
+static const u8 sString_WK_SCENE_FIELD_C109[] = _("Evergrande");
 
-static const u8 sString_WK_SCENE_FIELD_R101[] = _("WKーSCENEーFIELDーR101");
-static const u8 sString_WK_SCENE_FIELD_R102[] = _("WKーSCENEーFIELDーR102");
-static const u8 sString_WK_SCENE_FIELD_R103[] = _("WKーSCENEーFIELDーR103");
-static const u8 sString_WK_SCENE_FIELD_R104[] = _("WKーSCENEーFIELDーR104");
-static const u8 sString_WK_SCENE_FIELD_R105[] = _("WKーSCENEーFIELDーR105");
-static const u8 sString_WK_SCENE_FIELD_R106[] = _("WKーSCENEーFIELDーR106");
-static const u8 sString_WK_SCENE_FIELD_R107[] = _("WKーSCENEーFIELDーR107");
-static const u8 sString_WK_SCENE_FIELD_R108[] = _("WKーSCENEーFIELDーR108");
-static const u8 sString_WK_SCENE_FIELD_R109[] = _("WKーSCENEーFIELDーR109");
+static const u8 sString_WK_SCENE_FIELD_R101[] = _("R101");
+static const u8 sString_WK_SCENE_FIELD_R102[] = _("R102");
+static const u8 sString_WK_SCENE_FIELD_R103[] = _("R103");
+static const u8 sString_WK_SCENE_FIELD_R104[] = _("R104");
+static const u8 sString_WK_SCENE_FIELD_R105[] = _("R105");
+static const u8 sString_WK_SCENE_FIELD_R106[] = _("R106");
+static const u8 sString_WK_SCENE_FIELD_R107[] = _("R107");
+static const u8 sString_WK_SCENE_FIELD_R108[] = _("R108");
+static const u8 sString_WK_SCENE_FIELD_R109[] = _("R109");
 
-static const u8 sString_WK_SCENE_FIELD_R110[] = _("WKーSCENEーFIELDーR110");
-static const u8 sString_WK_SCENE_FIELD_R111[] = _("WKーSCENEーFIELDーR111");
-static const u8 sString_WK_SCENE_FIELD_R112[] = _("WKーSCENEーFIELDーR112");
-static const u8 sString_WK_SCENE_FIELD_R113[] = _("WKーSCENEーFIELDーR113");
-static const u8 sString_WK_SCENE_FIELD_R114[] = _("WKーSCENEーFIELDーR114");
-static const u8 sString_WK_SCENE_FIELD_R115[] = _("WKーSCENEーFIELDーR115");
-static const u8 sString_WK_SCENE_FIELD_R116[] = _("WKーSCENEーFIELDーR116");
-static const u8 sString_WK_SCENE_FIELD_R117[] = _("WKーSCENEーFIELDーR117");
-static const u8 sString_WK_SCENE_FIELD_R118[] = _("WKーSCENEーFIELDーR118");
+static const u8 sString_WK_SCENE_FIELD_R110[] = _("R110");
+static const u8 sString_WK_SCENE_FIELD_R111[] = _("R111");
+static const u8 sString_WK_SCENE_FIELD_R112[] = _("R112");
+static const u8 sString_WK_SCENE_FIELD_R113[] = _("R113");
+static const u8 sString_WK_SCENE_FIELD_R114[] = _("R114");
+static const u8 sString_WK_SCENE_FIELD_R115[] = _("R115");
+static const u8 sString_WK_SCENE_FIELD_R116[] = _("R116");
+static const u8 sString_WK_SCENE_FIELD_R117[] = _("R117");
+static const u8 sString_WK_SCENE_FIELD_R118[] = _("R118");
 
-static const u8 sString_WK_SCENE_FIELD_R119[] = _("WKーSCENEーFIELDーR119");
-static const u8 sString_WK_SCENE_FIELD_R120[] = _("WKーSCENEーFIELDーR120");
-static const u8 sString_WK_SCENE_FIELD_R121[] = _("WKーSCENEーFIELDーR121");
-static const u8 sString_WK_SCENE_FIELD_R122[] = _("WKーSCENEーFIELDーR122");
-static const u8 sString_WK_SCENE_FIELD_R123[] = _("WKーSCENEーFIELDーR123");
-static const u8 sString_WK_SCENE_FIELD_R124[] = _("WKーSCENEーFIELDーR124");
-static const u8 sString_WK_SCENE_FIELD_R125[] = _("WKーSCENEーFIELDーR125");
-static const u8 sString_WK_SCENE_FIELD_R126[] = _("WKーSCENEーFIELDーR126");
-static const u8 sString_WK_SCENE_FIELD_R127[] = _("WKーSCENEーFIELDーR127");
+static const u8 sString_WK_SCENE_FIELD_R119[] = _("R119");
+static const u8 sString_WK_SCENE_FIELD_R120[] = _("R120");
+static const u8 sString_WK_SCENE_FIELD_R121[] = _("R121");
+static const u8 sString_WK_SCENE_FIELD_R122[] = _("R122");
+static const u8 sString_WK_SCENE_FIELD_R123[] = _("R123");
+static const u8 sString_WK_SCENE_FIELD_R124[] = _("R124");
+static const u8 sString_WK_SCENE_FIELD_R125[] = _("R125");
+static const u8 sString_WK_SCENE_FIELD_R126[] = _("R126");
+static const u8 sString_WK_SCENE_FIELD_R127[] = _("R127");
 
-static const u8 sString_WK_SCENE_FIELD_R128[] = _("WKーSCENEーFIELDーR128");
-static const u8 sString_WK_SCENE_FIELD_R129[] = _("WKーSCENEーFIELDーR129");
-static const u8 sString_WK_SCENE_FIELD_R130[] = _("WKーSCENEーFIELDーR130");
-static const u8 sString_WK_SCENE_FIELD_R131[] = _("WKーSCENEーFIELDーR131");
-static const u8 sString_WK_SCENE_FIELD_R132[] = _("WKーSCENEーFIELDーR132");
-static const u8 sString_WK_SCENE_FIELD_R133[] = _("WKーSCENEーFIELDーR133");
-static const u8 sString_WK_SCENE_FIELD_R134[] = _("WKーSCENEーFIELDーR134");
+static const u8 sString_WK_SCENE_FIELD_R128[] = _("R128");
+static const u8 sString_WK_SCENE_FIELD_R129[] = _("R129");
+static const u8 sString_WK_SCENE_FIELD_R130[] = _("R130");
+static const u8 sString_WK_SCENE_FIELD_R131[] = _("R131");
+static const u8 sString_WK_SCENE_FIELD_R132[] = _("R132");
+static const u8 sString_WK_SCENE_FIELD_R133[] = _("R133");
+static const u8 sString_WK_SCENE_FIELD_R134[] = _("R134");
 
-static const u8 sString_WK_SCENE_T101_R0101[] = _("WKーSCENEーT101ーR0101");
-static const u8 sString_WK_SCENE_T101_R0102[] = _("WKーSCENEーT101ーR0102");
-static const u8 sString_WK_SCENE_T101_R0301[] = _("WKーSCENEーT101ーR0301");
-static const u8 sString_WK_SCENE_T101_R0201[] = _("WKーSCENEーT101ーR0201");
-static const u8 sString_WK_SCENE_T101_R0202[] = _("WKーSCENEーT101ーR0202");
-static const u8 sString_WK_SCENE_T107_R0201[] = _("WKーSCENEーT107ーR0201"); // unused string
+static const u8 sString_WK_SCENE_T101_R0101[] = _("Brendan's house");
+static const u8 sString_WK_SCENE_T101_R0102[] = _("Brendan's house 2");
+static const u8 sString_WK_SCENE_T101_R0301[] = _("Birch's lab");
+static const u8 sString_WK_SCENE_T101_R0201[] = _("May's house");
+static const u8 sString_WK_SCENE_T101_R0202[] = _("May's house 2");
+static const u8 sString_WK_SCENE_T107_R0201[] = _("Pacifidlog 1"); // unused string
 
-static const u8 sString_WK_SCENE_C101_R0201[] = _("WKーSCENEーC101ーR0201");
-static const u8 sString_WK_SCENE_C104_R0103[] = _("WKーSCENEーC104ーR0103");
-static const u8 sString_WK_SCENE_C103_R0101[] = _("WKーSCENEーC103ーR0101");
-static const u8 sString_WK_SCENE_C106_R0202[] = _("WKーSCENEーC106ーR0202");
-static const u8 sString_WK_SCENE_C106_R0401[] = _("WKーSCENEーC106ーR0401");
-static const u8 sString_WK_SCENE_C101_R0601[] = _("WKーSCENEーC102ーR0601");
-static const u8 sString_WK_SCENE_C102_R0501[] = _("WKーSCENEーC102ーR0501");
-static const u8 sString_WK_SCENE_C104_R0102[] = _("WKーSCENEーC104ーR0102");
-static const u8 sString_WK_SCENE_C107_R0501[] = _("WKーSCENEーC107ーR0501");
+static const u8 sString_WK_SCENE_C101_R0201[] = _("Petalburg Gym");
+static const u8 sString_WK_SCENE_C104_R0103[] = _("Devon Corp");
+static const u8 sString_WK_SCENE_C103_R0101[] = _("Mauville Gym");
+static const u8 sString_WK_SCENE_C106_R0202[] = _("Lillycove Museum");
+static const u8 sString_WK_SCENE_C106_R0401[] = _("Lillycove Fan Club");
+static const u8 sString_WK_SCENE_C101_R0601[] = _("Slateport Harbor");
+static const u8 sString_WK_SCENE_C102_R0501[] = _("Slateport Museum");
+static const u8 sString_WK_SCENE_C104_R0102[] = _("Devon Corp 2");
+static const u8 sString_WK_SCENE_C107_R0501[] = _("Steven's house");
 
-static const u8 sString_WK_SCENE_CAVE_D0601[] = _("WKーSCENEーCAVEーD0601");
-static const u8 sString_WK_SCENE_CAVE_D0201[] = _("WKーSCENEーCAVEーD0201");
-static const u8 sString_WK_SCENE_CAVE_D1206[] = _("WKーSCENEーCAVEーD1206");
-static const u8 sString_WK_SCENE_CAVE_D1111[] = _("WKーSCENEーCAVEーD1111");
-static const u8 sString_WK_SCENE_CAVE_D0701[] = _("WKーSCENEーCAVEーD0701");
-static const u8 sString_WK_SCENE_CAVE_D0808[] = _("WKーSCENEーCAVEーD0808");
-static const u8 sString_WK_SCENE_CAVE_D1602[] = _("WKーSCENEーCAVEーD1602");
-static const u8 sString_WK_SCENE_CAVE_D0101[] = _("WKーSCENEーCAVEーD0101");
-static const u8 sString_WK_SCENE_CAVE_D1301[] = _("WKーSCENEーCAVEーD1301");
+static const u8 sString_WK_SCENE_CAVE_D0601[] = _("Petalburg Woods");
+static const u8 sString_WK_SCENE_CAVE_D0201[] = _("Rustarf Tunnel");
+static const u8 sString_WK_SCENE_CAVE_D1206[] = _("Cave of Origin");
+static const u8 sString_WK_SCENE_CAVE_D1111[] = _("Seafloor Cavern");
+static const u8 sString_WK_SCENE_CAVE_D0701[] = _("Mt. Chimney");
+static const u8 sString_WK_SCENE_CAVE_D0808[] = _("Mt. Pyre");
+static const u8 sString_WK_SCENE_CAVE_D1602[] = _("New Mauville");
+static const u8 sString_WK_SCENE_CAVE_D0101[] = _("Meteor Falls");
+static const u8 sString_WK_SCENE_CAVE_D1301[] = _("Victory Road");
 
 static const struct MenuAction sMenuActions_SaveWork_Town[] = {
     {sString_WK_SCENE_FIELD_T101, DummyMenuAction},
@@ -1860,11 +1860,11 @@ static const struct MenuAction gUnknown_Debug_083C47F0[] = {
 
 static const u8 gUnknown_Debug_083C4830[] = _("Trick　Master");
 
-static const u8 gUnknown_Debug_083C483D[] = _("Hidden　MASTER");
-static const u8 gUnknown_Debug_083C484B[] = _("Inside　the　HOUSE");
+static const u8 gUnknown_Debug_083C483D[] = _("Hidden　Master");
+static const u8 gUnknown_Debug_083C484B[] = _("Inside　the　house");
 static const u8 gUnknown_Debug_083C485C[] = _("Pass　a　reward");
 static const u8 gUnknown_Debug_083C486A[] = _("Rig　a　trick");
-static const u8 gUnknown_Debug_083C4876[] = _("MASTER　is　gone");
+static const u8 gUnknown_Debug_083C4876[] = _("Master　is　gone");
 
 static const struct MenuAction gUnknown_Debug_083C4888[] = {
     {gUnknown_Debug_083C483D, DummyMenuAction},
@@ -1874,8 +1874,8 @@ static const struct MenuAction gUnknown_Debug_083C4888[] = {
     {gUnknown_Debug_083C4876, DummyMenuAction}
 };
 
-static const u8 sDummyNickname[] = _("PMNICKNAME");
-static const u8 sDummyTrainerName[] = _("BREEDER");
+static const u8 sDummyNickname[] = _("{PKMN}NICKNAME");
+static const u8 sDummyTrainerName[] = _("Breeder");
 
 bool8 InitTomomichiDebugWindow(void)
 {

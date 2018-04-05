@@ -117,8 +117,8 @@ const u8 Str_839B7D8[] = _("Transport");
 const u8 Str_839B7E2[] = _("See portraits");
 const u8 Str_839B7F0[] = _("Time records");
 const u8 Str_839B7FD[] = _("Set time");
-const u8 Str_839B806[] = _("National オカDex");
-const u8 Str_839B815[] = _("Hoenn オカDex");
+const u8 Str_839B806[] = _("National {POKE}Dex");
+const u8 Str_839B815[] = _("Hoenn {POKE}Dex");
 const u8 Str_839B821[] = _("Create {PKMN}");
 const u8 Str_839B82B[] = _("See {PKMN} graphics");
 const u8 Str_839B83B[] = _("See trainers");
@@ -271,15 +271,15 @@ const u8 gMenuOrders_839BD14[][10] =
 
 const u8 Str_839BD26[] = {2, 0, 0, 0};  // doesn't appear to be referenced
 
-const u8 Str_839BD2C[] = _("RTCを　リセット　します\n"         // Reset RTC
-                           "Aで　じっこう　　　Bでキャンセル");
+const u8 Str_839BD2C[] = _("Reset RTC\n"
+                           "A: Accept　　　B: Cancel");
 
-const u8 Str_839BD4C[] = _("RTCを　リセット　した！");
+const u8 Str_839BD4C[] = _("RTC reset!");
 
-const u8 Str_839BD5A[] = _("セーブデータを　コンバートします\n"
-                           "Aで　けってい　　Bで　キャンセル");
+const u8 Str_839BD5A[] = _("Convert save data?\n"
+                           "A: Yes　　B: Cancel");
 
-const u8 Str_839BD7D[] = _("へんかんが　しゅうりょう　しました！");
+const u8 Str_839BD7D[] = _("Save data has been converted!");
 
 
 extern const u8 Str_839BD2C[];
@@ -6055,7 +6055,7 @@ u8 DebugMenu_OpenKiwa()
         "\n"
     );
 }
-
+/*
 __attribute__((naked))
 u8 DebugMenu_OpenLuma()
 {
@@ -6068,6 +6068,12 @@ u8 DebugMenu_OpenLuma()
         "	bx	r1\n"
         "\n"
     );
+}
+*/
+
+u8 DebugMenu_OpenLuma() {
+    CloseMenu();
+    return 1;
 }
 
 #endif

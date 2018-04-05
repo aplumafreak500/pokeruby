@@ -52,13 +52,13 @@ static void sub_80AA614(u8, u8);
 static void sub_80AAD08(struct Sprite *, s8);
 
 // unused
-const u8 gText_Unused83C9150[] = _("テストです"); // "test"
+const u8 gText_Unused83C9150[] = _("Test");
 const u8 gMatsudaDebugMenu_ActionContestText[] = _("Contest");
 const u8 gMatsudaDebugMenu_ActionContestResultsText[] = _("Contest results");
 // unused
-const u8 gMatsudaDebugMenu_ActionChangePerimeterText[] = _("パラメータへんこう"); // "Change parameter"
+const u8 gMatsudaDebugMenu_ActionChangePerimeterText[] = _("Change parameter");
 // unused
-const u8 gMatsudaDebugMenu_ActionChangeMoveText[] = _("わざ へんこう"); // "Change move"
+const u8 gMatsudaDebugMenu_ActionChangeMoveText[] = _("Change move");
 const u8 gMatsudaDebugMenu_ActionContestCommText[] = _("Contest (comm.)");
 const u8 gMatsudaDebugMenu_ActionCommTestText[] = _("Init comm. data");
 const u8 gMatsudaDebugMenu_ActionSetHighScoreText[] = _("Set highest score");
