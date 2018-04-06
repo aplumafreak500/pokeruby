@@ -3959,7 +3959,7 @@ static void PicTest_SelectPokemon(void)
     }
     if (gMain.newAndRepeatedKeys & DPAD_RIGHT)
     {
-        if (sPicTest_Species != SPECIES_CHIMECHO)
+        if (sPicTest_Species != SPECIES_VICTINI)
             sPicTest_Species++;
     }
     if (gMain.newAndRepeatedKeys & L_BUTTON)
