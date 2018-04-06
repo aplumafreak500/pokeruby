@@ -6055,7 +6055,6 @@ u8 DebugMenu_OpenKiwa()
         "\n"
     );
 }
-/*
 __attribute__((naked))
 u8 DebugMenu_OpenLuma()
 {
@@ -6069,11 +6068,10 @@ u8 DebugMenu_OpenLuma()
         "\n"
     );
 }
-*/
-
+/*
 u8 DebugMenu_OpenLuma() {
     CloseMenu();
     return 1;
 }
-
+*/
 #endif
