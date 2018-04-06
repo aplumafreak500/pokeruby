@@ -232,6 +232,9 @@ gAbilityDescription_Cacophony: @ 81FA0DC
 gAbilityDescription_AirLock: @ 81FA0F6
 	.string "Negates weather effects.$"
 
+gAbilityDescription_SnowWarning: @ 81FA0DC
+	.string "Summons hail in battle.$"
+
 	.align 2
 gAbilityDescriptions:: @ 81FA110
 	.4byte gAbilityDescription_None
@@ -310,5 +313,5 @@ gAbilityDescriptions:: @ 81FA110
 	.4byte gAbilityDescription_WhiteSmoke
 	.4byte gAbilityDescription_PurePower
 	.4byte gAbilityDescription_ShellArmor
-	.4byte gAbilityDescription_Cacophony
+	.4byte gAbilityDescription_SnowWarning
 	.4byte gAbilityDescription_AirLock

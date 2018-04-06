@@ -4471,3 +4471,11 @@ BattleScript_ActionSelectionItemsCantBeUsed:: @ 81D9B29
 gUnknown_081D9B2D:: @ 81D9B2D
 	printstring BATTLE_TEXT_Terminator2
 	return
+
+BattleScript_SnowWarningActivates::
+	pause 32
+	printstring BATTLE_TEXT_HailMade
+	waitstate
+	playanimation 7, B_ANIM_HAIL_CONTINUES, NULL
+	call BattleScript_WeatherFormChanges
+	end3

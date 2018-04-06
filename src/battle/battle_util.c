@@ -202,6 +202,8 @@ extern u8 BattleScript_IgnoresAndUsesRandomMove[]; //disobedient, uses a random 
 extern u8 BattleScript_IgnoresAndFallsAsleep[]; //disobedient, went to sleep
 extern u8 gUnknown_081D99A0[]; //disobedient, hits itself
 
+extern u8 BattleScript_SnowWarningActivates[];
+
 //array entries for battle communication
 #define MOVE_EFFECT_BYTE    0x3
 #define MULTISTRING_CHOOSER 0x5
@@ -822,11 +824,11 @@ u8 UpdateTurnCounters(void)
             gBattleStruct->turncountersTracker++;
             break;
         case 9:
-            if (gBattleWeather & WEATHER_HAIL)
+            if (gBattleWeather & WEATHER_HAIL_TEMPORARY)
             {
-                if (--gWishFutureKnock.weatherDuration == 0)
+                if (!(gBattleWeather & WEATHER_HAIL_PERMANENT) && --gWishFutureKnock.weatherDuration == 0)
                 {
-                    gBattleWeather &= ~WEATHER_HAIL;
+                    gBattleWeather &= ~WEATHER_HAIL_TEMPORARY;
                     gBattlescriptCurrInstr = BattleScript_SandStormHailEnds;
                 }
                 else
@@ -1658,7 +1660,7 @@ u8 CastformDataTypeChange(u8 bank)
     }
     if (!WEATHER_HAS_EFFECT)
         return CASTFORM_NO_CHANGE;
-    if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_SUN_ANY | WEATHER_HAIL)) && gBattleMons[bank].type1 != TYPE_NORMAL && gBattleMons[bank].type2 != TYPE_NORMAL)
+    if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_SUN_ANY | WEATHER_HAIL_ANY)) && gBattleMons[bank].type1 != TYPE_NORMAL && gBattleMons[bank].type2 != TYPE_NORMAL)
     {
         gBattleMons[bank].type1 = TYPE_NORMAL;
         gBattleMons[bank].type2 = TYPE_NORMAL;
@@ -1676,7 +1678,7 @@ u8 CastformDataTypeChange(u8 bank)
         gBattleMons[bank].type2 = TYPE_WATER;
         formChange = CASTFORM_TO_WATER;
     }
-    if (gBattleWeather & WEATHER_HAIL && gBattleMons[bank].type1 != TYPE_ICE && gBattleMons[bank].type2 != TYPE_ICE)
+    if (gBattleWeather & WEATHER_HAIL_ANY && gBattleMons[bank].type1 != TYPE_ICE && gBattleMons[bank].type2 != TYPE_ICE)
     {
         gBattleMons[bank].type1 = TYPE_ICE;
         gBattleMons[bank].type2 = TYPE_ICE;
@@ -1849,6 +1851,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
                             break;
                         }
                     }
+                }
+                break;
+            case ABILITY_SNOW_WARNING:
+                if (!(gBattleWeather & WEATHER_HAIL_PERMANENT))
+                {
+                    gBattleWeather = (WEATHER_HAIL_PERMANENT | WEATHER_HAIL_TEMPORARY);
+                    BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivates);
+                    gBattleStruct->scriptingActive = bank;
+                    effect++;
                 }
                 break;
             }
