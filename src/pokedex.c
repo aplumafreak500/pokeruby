@@ -1199,8 +1199,8 @@ static const struct UnknownStruct1 gUnknown_083B5A7C[] =
 {
     {gUnknown_083B5910,  6,  7, 10},
     {gUnknown_083B5968,  8,  9, 11},
-    {gUnknown_083B59C8, 10, 11, 18},
-    {gUnknown_083B59C8, 12, 13, 18},
+    {gUnknown_083B59C8, 10, 11, 19},
+    {gUnknown_083B59C8, 12, 13, 19},
     {gUnknown_083B58D8,  4,  5,  6},
     {gUnknown_083B58C0,  2,  3,  2},
 };
