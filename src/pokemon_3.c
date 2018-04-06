@@ -424,10 +424,10 @@ u16 NationalToHoennOrder(u16 nationalNum)
 
     hoennNum = 0;
 
-    while (hoennNum < 411 && gHoennToNationalOrder[hoennNum] != nationalNum)
+    while (hoennNum < 412 && gHoennToNationalOrder[hoennNum] != nationalNum)
         hoennNum++;
 
-    if (hoennNum == 411)
+    if (hoennNum == 412)
         return 0;
 
     return hoennNum + 1;
