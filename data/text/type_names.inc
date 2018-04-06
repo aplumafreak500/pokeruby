@@ -13,7 +13,7 @@ gTypeNames:: @ 81F9870
 	.string "Water$", 7
 	.string "Grass$", 7
 	.string "Electr$", 7
-	.string "Psychic$", 7
+	.string "Psychc$", 7
 	.string "Ice$", 7
 	.string "Dragon$", 7
 	.string "Dark$", 7
