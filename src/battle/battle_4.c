@@ -12385,7 +12385,7 @@ static void atk96_weatherdamage(void)
                 gBattleMoveDamage = 0;
             }
         }
-        if (gBattleWeather & WEATHER_HAIL)
+        if (gBattleWeather & WEATHER_HAIL_ANY)
         {
             if (gBattleMons[gBankAttacker].type1 != TYPE_ICE && gBattleMons[gBankAttacker].type2 != TYPE_ICE && !(gStatuses3[gBankAttacker] & STATUS3_UNDERGROUND) && !(gStatuses3[gBankAttacker] & STATUS3_UNDERWATER))
             {
@@ -14530,14 +14530,14 @@ static void atkC7_setminimize(void)
 
 static void atkC8_sethail(void)
 {
-    if (gBattleWeather & WEATHER_HAIL)
+    if (gBattleWeather & WEATHER_HAIL_ANY)
     {
         gBattleMoveFlags |= MOVESTATUS_MISSED;
         gBattleCommunication[MULTISTRING_CHOOSER] = 2;
     }
     else
     {
-        gBattleWeather = WEATHER_HAIL;
+        gBattleWeather = WEATHER_HAIL_TEMPORARY;
         gBattleCommunication[MULTISTRING_CHOOSER] = 5;
         gWishFutureKnock.weatherDuration = 5;
     }
