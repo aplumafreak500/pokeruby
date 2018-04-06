@@ -1584,7 +1584,7 @@ static void BattleAICmd_get_weather(void)
         AI_THINKING_STRUCT->funcResult = WEATHER_TYPE_SANDSTORM;
     if (gBattleWeather & WEATHER_SUN_ANY)
         AI_THINKING_STRUCT->funcResult = WEATHER_TYPE_SUN;
-    if (gBattleWeather & WEATHER_HAIL)
+    if (gBattleWeather & WEATHER_HAIL_ANY)
         AI_THINKING_STRUCT->funcResult = WEATHER_TYPE_HAIL;
 
     gAIScriptPtr += 1;
