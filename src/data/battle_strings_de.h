@@ -840,6 +840,8 @@ const u8 BattleText_Psychic[] = _("eine PSYCHO-Att.");
 const u8 BattleText_Ice[] = _("eine EIS-Att.");
 const u8 BattleText_Dragon[] = _("eine DRACHEN-Att.");
 const u8 BattleText_Dark[] = _("eine UNLICHT-Att.");
+const u8 BattleText_Fairy[] = _("$");
+const u8 BattleText_HailStart[] = _("{STRING 16}’s {STRING 23}\nmade it hail!");
 
 const u8 *const gUnknown_08400F58[] =
 {
@@ -1215,6 +1217,7 @@ const u8 *const gBattleStringsTable[] =
     BattleText_Obtained3,
     BattleText_NoEffect,
     BattleText_NoEffectOn,
+    BattleText_HailStart,
 };
 
 // below are lists of battle string enums and NOT pointers to the strings.
@@ -1609,4 +1612,5 @@ const u8 *const gUnknown_08401674[] =
     BattleText_Ice,
     BattleText_Dragon,
     BattleText_Dark,
+    BattleText_Fairy,
 };
