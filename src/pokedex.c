@@ -1194,7 +1194,7 @@ static const struct UnknownStruct2 gUnknown_083B59C8[] =
 };
 static const u8 gUnknown_083B5A60[] = {0, 1};
 static const u8 gUnknown_083B5A62[] = {0, 1, 2, 3, 4, 5};
-static const u8 gUnknown_083B5A68[] = {0xFF, 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17};
+static const u8 gUnknown_083B5A68[] = {0xFF, 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18};
 static const struct UnknownStruct1 gUnknown_083B5A7C[] =
 {
     {gUnknown_083B5910,  6,  7, 10},
