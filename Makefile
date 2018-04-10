@@ -39,11 +39,7 @@ SUBDIRS := \
   src \
   src/battle \
   src/battle/anim \
-  src/field \
   src/debug \
-  src/scene \
-  src/pokemon \
-  src/engine \
   src/libs
 BUILD_DIR := build/$(BUILD_NAME)
 
