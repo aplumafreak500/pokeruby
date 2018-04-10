@@ -192,10 +192,10 @@ include fonts.mk
 include misc.mk
 include override.mk
 
-%.1bpp: %.png:
+%.1bpp: %.png
 	@echo $<
 	@$(GBAGFX) $< $@ $(GFX_OPTS)
-%.4bpp: %.png:
+%.4bpp: %.png
 	@echo $<
 	@$(GBAGFX) $< $@ $(GFX_OPTS)
 %.8bpp: %.png
@@ -204,7 +204,7 @@ include override.mk
 %.gbapal: %.pal
 	@echo $<
 	@$(GBAGFX) $< $@ $(GFX_OPTS)
-%.gbapal: %.png:
+%.gbapal: %.png
 	@echo $<
 	$(GBAGFX) $< $@ $(GFX_OPTS)
 %.lz: %     
