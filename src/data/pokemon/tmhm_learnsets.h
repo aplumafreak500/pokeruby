@@ -9387,7 +9387,52 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(TM48_SKILL_SWAP)
                                         | TMHM(TM49_SNATCH)
                                         | TMHM(HM05_FLASH)),
-      [SPECIES_VICTINI]        = TMHM_LEARNSET(0)
+      [SPECIES_VICTINI]        = TMHM_LEARNSET( // TMHM(TM03_WATER_PULSE) Psyshock in Gen 5
+                                        | TMHM(TM06_TOXIC)
+                                        | TMHM(TM10_HIDDEN_POWER)
+                                        | TMHM(TM11_SUNNY_DAY)
+                                        | TMHM(TM12_TAUNT)
+                                        | TMHM(TM15_HYPER_BEAM)
+                                        | TMHM(TM16_LIGHT_SCREEN)
+                                        | TMHM(TM17_PROTECT)
+                                        // | TMHM(TM19_GIGA_DRAIN) Telekinesis in Gen 5
+                                        | TMHM(TM20_SAFEGUARD)
+                                        | TMHM(TM21_FRUSTRATION)
+                                        | TMHM(TM22_SOLARBEAM)
+                                        | TMHM(TM24_THUNDERBOLT)
+                                        | TMHM(TM25_THUNDER)
+                                        | TMHM(TM27_RETURN)
+                                        | TMHM(TM29_PSYCHIC)
+                                        | TMHM(TM30_SHADOW_BALL)
+                                        | TMHM(TM31_BRICK_BREAK)
+                                        | TMHM(TM32_DOUBLE_TEAM)
+                                        | TMHM(TM35_FLAMETHROWER)
+                                        | TMHM(TM38_FIRE_BLAST)
+                                        | TMHM(TM42_FACADE)
+                                        | TMHM(TM43_SECRET_POWER) // Flame Charge in Gen 5; maybe still best if it's enabled here
+                                        | TMHM(TM44_REST)
+                                        | TMHM(TM48_SKILL_SWAP) // Round in Gen 5
+                                        | TMHM(TM50_OVERHEAT)
+                                        // Post-Gen 5 TMs
+                                        // 52: Focus Blast
+                                        // 53: Energy Ball
+                                        // 56: Fling
+                                        // 57: Charge Beam
+                                        // 59: Incinerate
+                                        // 61: Will-O-Wisp
+                                        // 63: Embargo
+                                        // 68: Giga Impact
+                                        // 73: Thunder Wave
+                                        // 77: Psych Up
+                                        // 83: Work Up
+                                        // 86: Grass Knot
+                                        // 87: Swagger
+                                        // 89: U-Turn
+                                        // 90: Substitute
+                                        // 92: Trick Room (PRChase)
+                                        // 93: Wild Charge
+                                        | TMHM(HM05_FLASH) // TM70 in Gen 5
+                                        | TMHM(HM06_ROCK_SMASH)) // TM94 in Gen 5
 
 };
 
