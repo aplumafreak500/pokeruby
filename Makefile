@@ -158,11 +158,11 @@ $(C_OBJECTS): $(BUILD_DIR)/%.o: %.c $$(C_DEP)
 # Only .s files in data need preproc
 $(BUILD_DIR)/data/%.o: data/%.s $$(ASM_DEP)
 	@echo $<
-	$(PREPROC) $< charmap.txt | $(CPP) -I include | $(AS) $(ASFLAGS) -o $@
+	@$(PREPROC) $< charmap.txt | $(CPP) -I include | $(AS) $(ASFLAGS) -o $@
 
 $(BUILD_DIR)/%.o: %.s $$(ASM_DEP)
 	@echo $<
-	$(AS) $(ASFLAGS) $< -o $@
+	@$(AS) $(ASFLAGS) $< -o $@
 
 # "friendly" target names for convenience sake
 ruby:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY
