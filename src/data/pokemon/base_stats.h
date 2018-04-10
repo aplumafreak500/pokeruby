@@ -13582,7 +13582,7 @@ const struct BaseStats gBaseStats[] =
         .type1 = TYPE_FIRE,
         .type2 = TYPE_PSYCHIC,
         .catchRate = 3,
-        .expYield = 255,
+        .expYield = 270,
         .evYield_HP        = 3,
         .evYield_Attack    = 0,
         .evYield_Defense   = 0,
@@ -13601,7 +13601,7 @@ const struct BaseStats gBaseStats[] =
         .ability2 = ABILITY_NONE,
         .safariZoneFleeRate = 0,
         .bodyColor = BODY_COLOR_YELLOW,
-        .noFlip = FALSE,
+        .noFlip = TRUE,
     }
 };
 
