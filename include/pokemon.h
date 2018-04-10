@@ -378,16 +378,16 @@ enum
 struct BaseStats
 {
 // Offsets are for unmodified game
-    /*0x00*/ u8 baseHP;
-    /*0x01*/ u8 baseAttack;
-    /*0x02*/ u8 baseDefense;
-    /*0x03*/ u8 baseSpeed;
-    /*0x04*/ u8 baseSpAttack;
-    /*0x05*/ u8 baseSpDefense;
+    /*0x00*/ u8 baseHP:7;
+    /*0x01*/ u8 baseAttack:7;
+    /*0x02*/ u8 baseDefense:7;
+    /*0x03*/ u8 baseSpeed:7;
+    /*0x04*/ u8 baseSpAttack:7;
+    /*0x05*/ u8 baseSpDefense:7;
     /*0x06*/ u8 type1:5;
     /*0x07*/ u8 type2:5;
     /*0x08*/ u8 catchRate;
-    /*0x09*/ u16 expYield;
+    /*0x09*/ u16 expYield:9;
     /*0x0A*/ u16 evYield_HP:2;
     /*0x0A*/ u16 evYield_Attack:2;
     /*0x0A*/ u16 evYield_Defense:2;
