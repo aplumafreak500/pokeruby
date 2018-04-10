@@ -51,39 +51,51 @@ $(TILESETDIR)/secondary/elite_four/tiles.4bpp: GFX_OPTS := -num_tiles 505
 
 # reproduce overflow quirk
 $(TILESETDIR)/secondary/pokemon_school/tiles.4bpp.lz: $(TILESETDIR)/secondary/pokemon_school/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 10
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 10
 
 $(TILESETDIR)/secondary/pokemon_fan_club/tiles.4bpp.lz: $(TILESETDIR)/secondary/pokemon_fan_club/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 12
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 12
 
 $(TILESETDIR)/secondary/pretty_petal_flower_shop/tiles.4bpp.lz: $(TILESETDIR)/secondary/pretty_petal_flower_shop/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 8
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 8
 
 $(TILESETDIR)/secondary/pokemon_day_care/tiles.4bpp.lz: $(TILESETDIR)/secondary/pokemon_day_care/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 14
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 14
 
 $(TILESETDIR)/secondary/inside_of_truck/tiles.4bpp.lz: $(TILESETDIR)/secondary/inside_of_truck/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 10
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 10
 
 $(TILESETDIR)/secondary/battle_tower/tiles.4bpp.lz: $(TILESETDIR)/secondary/battle_tower/tiles.4bpp
-	$(GBAGFX) $< $@ -overflow 16
+	@echo $<
+	@$(GBAGFX) $< $@ -overflow 16
 
 # unused copies of secret base tiles
 
 $(TILESETDIR)/secondary/secret_base/brown_cave/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/brown_cave/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82
 
 $(TILESETDIR)/secondary/secret_base/tree/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/tree/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82
 
 $(TILESETDIR)/secondary/secret_base/shrub/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/shrub/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82
 
 $(TILESETDIR)/secondary/secret_base/blue_cave/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/blue_cave/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82
 
 $(TILESETDIR)/secondary/secret_base/yellow_cave/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/yellow_cave/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82
 
 $(TILESETDIR)/secondary/secret_base/red_cave/unused_tiles.4bpp: $(TILESETDIR)/secondary/secret_base/red_cave/tiles.png
-	$(GBAGFX) $< $@ -num_tiles 82
+	@echo $<
+	@$(GBAGFX) $< $@ -num_tiles 82

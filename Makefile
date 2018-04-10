@@ -107,9 +107,10 @@ ifeq ($(COMPARE),1)
 endif
 
 clean: tidy
-	find sound/direct_sound_samples \( -iname '*.bin' \) -exec rm {} +
-	$(RM) $(ALL_OBJECTS)
-	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.rl' \) -exec rm {} +
+	@echo clean
+	@find sound/direct_sound_samples \( -iname '*.bin' \) -exec rm {} +
+	@$(RM) $(ALL_OBJECTS)
+	@find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.rl' \) -exec rm {} +
 	$(MAKE) clean -C tools/gbagfx
 	$(MAKE) clean -C tools/scaninc
 	$(MAKE) clean -C tools/preproc
@@ -128,31 +129,39 @@ tools:
 	$(MAKE) -C tools/ramscrgen
 
 tidy:
-	$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
-	$(RM) -r build
+	@echo tidy
+	@$(RM) $(ALL_BUILDS:%=poke%{.gba,.elf,.map})
+	@$(RM) -r build
 
 $(ROM): %.gba: %.elf
-	$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
+	@echo Output: $@
+	@$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
 
 $(ELF): $(LD_SCRIPT) $(ALL_OBJECTS)
-	cd $(BUILD_DIR) && $(LD) -T ld_script.ld -Map ../../$(MAP) ../../$(LIBGCC) ../../$(LIBC) -o ../../$@
+	@echo Linking $@
+	@cd $(BUILD_DIR) && $(LD) -T ld_script.ld -Map ../../$(MAP) ../../$(LIBGCC) ../../$(LIBC) -o ../../$@
 
 $(LD_SCRIPT): ld_script.txt $(BUILD_DIR)/sym_common.ld $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_bss.ld
-	cd $(BUILD_DIR) && sed -e "s#tools/#../../tools/#g" ../../ld_script.txt >ld_script.ld
+	@echo $<
+	@cd $(BUILD_DIR) && sed -e "s#tools/#../../tools/#g" ../../ld_script.txt >ld_script.ld
 $(BUILD_DIR)/sym_%.ld: sym_%.txt
-	$(CPP) -P $(CPPFLAGS) $< | sed -e "s#tools/#../../tools/#g" > $@
+	@echo $<
+	@$(CPP) -P $(CPPFLAGS) $< | sed -e "s#tools/#../../tools/#g" > $@
 
 $(C_OBJECTS): $(BUILD_DIR)/%.o: %.c $$(C_DEP)
+	@echo $<
 	$(CPP) $(CPPFLAGS) $< -o $(BUILD_DIR)/$*.i
-	$(PREPROC) $(BUILD_DIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(BUILD_DIR)/$*.s
+	@$(PREPROC) $(BUILD_DIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(BUILD_DIR)/$*.s
 	@printf ".text\n\t.align\t2, 0\n" >> $(BUILD_DIR)/$*.s
 	@$(AS) $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
 
 # Only .s files in data need preproc
 $(BUILD_DIR)/data/%.o: data/%.s $$(ASM_DEP)
+	@echo $<
 	$(PREPROC) $< charmap.txt | $(CPP) -I include | $(AS) $(ASFLAGS) -o $@
 
 $(BUILD_DIR)/%.o: %.s $$(ASM_DEP)
+	@echo $<
 	$(AS) $(ASFLAGS) $< -o $@
 
 # "friendly" target names for convenience sake
@@ -183,21 +192,38 @@ include fonts.mk
 include misc.mk
 include override.mk
 
-%.1bpp:   %.png ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.4bpp:   %.png ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.8bpp:   %.png ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.gbapal: %.pal ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.gbapal: %.png ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.lz:     %     ; $(GBAGFX) $< $@ $(GFX_OPTS)
-%.rl:     %     ; $(GBAGFX) $< $@ $(GFX_OPTS)
+%.1bpp: %.png:
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
+%.4bpp: %.png:
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
+%.8bpp: %.png
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
+%.gbapal: %.pal
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
+%.gbapal: %.png:
+	@echo $<
+	$(GBAGFX) $< $@ $(GFX_OPTS)
+%.lz: %     
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
+%.rl: %
+	@echo $<
+	@$(GBAGFX) $< $@ $(GFX_OPTS)
 
 #### Sound Rules ####
 
 sound/direct_sound_samples/cries/cry_%.bin: sound/direct_sound_samples/cries/cry_%.aif
-	$(AIF2PCM) $< $@ --compress
+	@echo $<
+	@$(AIF2PCM) $< $@ --compress
 
 sound/%.bin: sound/%.aif
-	$(AIF2PCM) $< $@
+	@echo $<
+	@$(AIF2PCM) $< $@
 
 sound/songs/%.s: sound/songs/%.mid
-	cd $(@D) && ../../$(MID2AGB) $(<F)
+	@echo $<
+	@cd $(@D) && ../../$(MID2AGB) $(<F)

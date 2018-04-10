@@ -289,7 +289,7 @@ struct Pokemon
 struct UnknownPokemonStruct
 {
     /*0x00*/u16 species;
-    /*0x02*/u16 heldItem:9;
+    /*0x02*/u16 heldItem;
     /*0x04*/u16 moves[4];
     /*0x0C*/u8 level:7;
     /*0x0D*/u8 ppBonuses;
@@ -397,8 +397,8 @@ struct BaseStats
     /*0x0C*/ u16 item1:9;
     /*0x0E*/ u16 item2:9;
     /*0x10*/ u8 genderRatio;
-    /*0x11*/ u8 eggCycles:7;
-    /*0x12*/ u8 friendship:7;
+    /*0x11*/ u8 eggCycles;
+    /*0x12*/ u8 friendship;
     /*0x13*/ u8 growthRate:2;
     /*0x14*/ u8 eggGroup1:3;
     /*0x15*/ u8 eggGroup2:3;
