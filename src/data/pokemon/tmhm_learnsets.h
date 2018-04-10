@@ -9387,7 +9387,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(TM48_SKILL_SWAP)
                                         | TMHM(TM49_SNATCH)
                                         | TMHM(HM05_FLASH)),
-      [SPECIES_VICTINI]        = TMHM_LEARNSET( // TMHM(TM03_WATER_PULSE) Psyshock in Gen 5
+      [SPECIES_VICTINI]        = TMHM_LEARNSET(0 // TMHM(TM03_WATER_PULSE) Psyshock in Gen 5
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM10_HIDDEN_POWER)
                                         | TMHM(TM11_SUNNY_DAY)
