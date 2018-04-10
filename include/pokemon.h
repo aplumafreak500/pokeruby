@@ -275,7 +275,7 @@ struct Pokemon
 {
     /*0x00*/ struct BoxPokemon box;
     /*0x50*/ u32 status;
-    /*0x54*/ u8 level;
+    /*0x54*/ u8 level:7;
     /*0x55*/ u8 mail;
     /*0x56*/ u16 hp;
     /*0x58*/ u16 maxHP;
@@ -291,7 +291,7 @@ struct UnknownPokemonStruct
     /*0x00*/u16 species;
     /*0x02*/u16 heldItem;
     /*0x04*/u16 moves[4];
-    /*0x0C*/u8 level;
+    /*0x0C*/u8 level:7;
     /*0x0D*/u8 ppBonuses;
     /*0x0E*/u8 hpEV;
     /*0x0F*/u8 attackEV;
@@ -332,12 +332,12 @@ struct BattlePokemon
     /*0x17*/ u32 altAbility:1;
     /*0x18*/ s8 statStages[8];
     /*0x20*/ u8 ability;
-    /*0x21*/ u8 type1;
-    /*0x22*/ u8 type2;
+    /*0x21*/ u8 type1:5;
+    /*0x22*/ u8 type2:5;
     /*0x23*/ u8 unknown;
     /*0x24*/ u8 pp[4];
     /*0x28*/ u16 hp;
-    /*0x2A*/ u8 level;
+    /*0x2A*/ u8 level:7;
     /*0x2B*/ u8 friendship;
     /*0x2C*/ u16 maxHP;
     /*0x2E*/ u16 item;
@@ -386,7 +386,6 @@ struct BaseStats
     /*0x05*/ u8 baseSpDefense;
     /*0x06*/ u8 type1:5;
     /*0x07*/ u8 type2:5;
-             u8 :0;
     /*0x08*/ u8 catchRate;
     /*0x09*/ u16 expYield;
     /*0x0A*/ u16 evYield_HP:2;
