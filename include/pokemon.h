@@ -117,7 +117,6 @@
 #define TYPE_ICE      0x0f
 #define TYPE_DRAGON   0x10
 #define TYPE_DARK     0x11
-#define TYPE_FAIRY    0x12
 
 #define PARTY_SIZE 6
 #define MAX_TOTAL_EVS 510
@@ -174,7 +173,7 @@ enum {
 struct PokemonSubstruct0
 {
     u16 species;
-    u16 heldItem:9;
+    u16 heldItem;
     u32 experience;
     u8 ppBonuses;
     u8 friendship;
@@ -275,7 +274,7 @@ struct Pokemon
 {
     /*0x00*/ struct BoxPokemon box;
     /*0x50*/ u32 status;
-    /*0x54*/ u8 level:7;
+    /*0x54*/ u8 level;
     /*0x55*/ u8 mail;
     /*0x56*/ u16 hp;
     /*0x58*/ u16 maxHP;
@@ -291,7 +290,7 @@ struct UnknownPokemonStruct
     /*0x00*/u16 species;
     /*0x02*/u16 heldItem;
     /*0x04*/u16 moves[4];
-    /*0x0C*/u8 level:7;
+    /*0x0C*/u8 level;
     /*0x0D*/u8 ppBonuses;
     /*0x0E*/u8 hpEV;
     /*0x0F*/u8 attackEV;
@@ -313,6 +312,8 @@ struct UnknownPokemonStruct
     /*0x2B*/u8 friendship;
 };
 
+#define BATTLE_STATS_NO 8
+
 struct BattlePokemon
 {
     /*0x00*/ u16 species;
@@ -330,10 +331,10 @@ struct BattlePokemon
     /*0x17*/ u32 spDefenseIV:5;
     /*0x17*/ u32 isEgg:1;
     /*0x17*/ u32 altAbility:1;
-    /*0x18*/ s8 statStages[8];
+    /*0x18*/ s8 statStages[BATTLE_STATS_NO];
     /*0x20*/ u8 ability;
-    /*0x21*/ u8 type1:5;
-    /*0x22*/ u8 type2:5;
+    /*0x21*/ u8 type1;
+    /*0x22*/ u8 type2;
     /*0x23*/ u8 unknown;
     /*0x24*/ u8 pp[4];
     /*0x28*/ u16 hp;
@@ -377,17 +378,16 @@ enum
 
 struct BaseStats
 {
-// Offsets are for unmodified game
-    /*0x00*/ u8 baseHP:7;
-    /*0x01*/ u8 baseAttack:7;
-    /*0x02*/ u8 baseDefense:7;
-    /*0x03*/ u8 baseSpeed:7;
-    /*0x04*/ u8 baseSpAttack:7;
-    /*0x05*/ u8 baseSpDefense:7;
-    /*0x06*/ u8 type1:5;
-    /*0x07*/ u8 type2:5;
+    /*0x00*/ u8 baseHP;
+    /*0x01*/ u8 baseAttack;
+    /*0x02*/ u8 baseDefense;
+    /*0x03*/ u8 baseSpeed;
+    /*0x04*/ u8 baseSpAttack;
+    /*0x05*/ u8 baseSpDefense;
+    /*0x06*/ u8 type1;
+    /*0x07*/ u8 type2;
     /*0x08*/ u8 catchRate;
-    /*0x09*/ u16 expYield:9;
+    /*0x09*/ u8 expYield;
     /*0x0A*/ u16 evYield_HP:2;
     /*0x0A*/ u16 evYield_Attack:2;
     /*0x0A*/ u16 evYield_Defense:2;
@@ -399,11 +399,11 @@ struct BaseStats
     /*0x10*/ u8 genderRatio;
     /*0x11*/ u8 eggCycles;
     /*0x12*/ u8 friendship;
-    /*0x13*/ u8 growthRate:2;
-    /*0x14*/ u8 eggGroup1:3;
-    /*0x15*/ u8 eggGroup2:3;
-    /*0x16*/ u8 ability1:7;
-    /*0x17*/ u8 ability2:7;
+    /*0x13*/ u8 growthRate;
+    /*0x14*/ u8 eggGroup1;
+    /*0x15*/ u8 eggGroup2;
+    /*0x16*/ u8 ability1;
+    /*0x17*/ u8 ability2;
     /*0x18*/ u8 safariZoneFleeRate;
     /*0x19*/ u8 bodyColor:7;
              u8 noFlip:1;
@@ -413,8 +413,8 @@ struct BattleMove
 {
     u8 effect;
     u8 power;
-    u8 type:5;
-    u8 accuracy:7;
+    u8 type;
+    u8 accuracy;
     u8 pp;
     u8 secondaryEffectChance;
     u8 target;
@@ -632,6 +632,7 @@ struct Sprite *sub_80F7920(u16, u16, const u16 *);
 void BoxMonRestorePP(struct BoxPokemon *);
 
 bool8 HealStatusConditions(struct Pokemon *mon, u32 unused, u32 healMask, u8 battleId);
+u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit);
 
 #if DEBUG
 void Nakamura_NakaGenderTest_RecalcStats(struct Pokemon *);
