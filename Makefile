@@ -31,24 +31,16 @@ ROM := poke$(BUILD_NAME).gba
 MAP := $(ROM:%.gba=%.map)
 ELF := poke$(BUILD_NAME).elf
 
-SUBDIRS := \
-  sound \
-  sound/songs \
-  asm \
-  data \
-  src \
-  src/battle \
-  src/battle/anim \
-  src/debug \
-  src/libs
 BUILD_DIR := build/$(BUILD_NAME)
 
-C_SOURCES    := $(foreach dir, $(SUBDIRS), $(wildcard $(dir)/*.c))
-ASM_SOURCES  := $(foreach dir, $(SUBDIRS), $(wildcard $(dir)/*.s))
+C_SOURCES    := $(wildcard src/*.c src/*/*.c src/*/*/*.c)
+ASM_SOURCES  := $(wildcard src/*.s src/*/*.s asm/*.s data/*.s sound/*.s sound/*/*.s)
 
 C_OBJECTS    := $(addprefix $(BUILD_DIR)/, $(C_SOURCES:%.c=%.o))
 ASM_OBJECTS  := $(addprefix $(BUILD_DIR)/, $(ASM_SOURCES:%.s=%.o))
 ALL_OBJECTS  := $(C_OBJECTS) $(ASM_OBJECTS)
+
+SUBDIRS      := $(sort $(dir $(ALL_OBJECTS)))
 
 LIBC   := tools/agbcc/lib/libc.a
 LIBGCC := tools/agbcc/lib/libgcc.a
@@ -73,10 +65,12 @@ ALL_BUILDS := ruby ruby_rev1 ruby_rev2 sapphire sapphire_rev1 sapphire_rev2 ruby
 # Available targets
 .PHONY: all clean tidy tools $(ALL_BUILDS)
 
+infoshell = $(foreach line, $(shell $1 | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
+
 # Build tools when building the rom
 # Disable dependency scanning for clean/tidy/tools
 ifeq (,$(filter-out all,$(MAKECMDGOALS)))
-$(info $(shell $(MAKE) tools))
+$(call infoshell, $(MAKE) tools)
 else
 NODEP := 1
 endif
@@ -89,6 +83,7 @@ ifeq ($(NODEP),)
   $(BUILD_DIR)/data/%.o: ASM_DEP = $(shell $(SCANINC) data/$(*F).s)
 endif
 
+MAKEFLAGS += --no-print-directory
 # Secondary expansion is required for dependency variables in object rules.
 .SECONDEXPANSION:
 # Clear the default suffixes
@@ -99,7 +94,7 @@ endif
 .DELETE_ON_ERROR:
 
 # Create build subdirectories
-$(shell mkdir -p $(addprefix $(BUILD_DIR)/, $(SUBDIRS)))
+$(shell mkdir -p $(SUBDIRS))
 
 all: $(ROM)
 ifeq ($(COMPARE),1)
@@ -120,13 +115,13 @@ clean: tidy
 	$(MAKE) clean -C tools/ramscrgen
 
 tools:
-	$(MAKE) -C tools/gbagfx
-	$(MAKE) -C tools/scaninc
-	$(MAKE) -C tools/preproc
-	$(MAKE) -C tools/bin2c
-	$(MAKE) -C tools/rsfont
-	$(MAKE) -C tools/aif2pcm
-	$(MAKE) -C tools/ramscrgen
+	@$(MAKE) -C tools/gbagfx
+	@$(MAKE) -C tools/scaninc
+	@$(MAKE) -C tools/preproc
+	@$(MAKE) -C tools/bin2c
+	@$(MAKE) -C tools/rsfont
+	@$(MAKE) -C tools/aif2pcm
+	@$(MAKE) -C tools/ramscrgen
 
 tidy:
 	@echo tidy
@@ -153,7 +148,7 @@ $(C_OBJECTS): $(BUILD_DIR)/%.o: %.c $$(C_DEP)
 	@$(CPP) $(CPPFLAGS) $< -o $(BUILD_DIR)/$*.i
 	@$(PREPROC) $(BUILD_DIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(BUILD_DIR)/$*.s
 	@printf ".text\n\t.align\t2, 0\n" >> $(BUILD_DIR)/$*.s
-	@$(AS) $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
+	@$(AS) $(ASFLAGS) -W -o $@ $(BUILD_DIR)/$*.s
 
 # Only .s files in data need preproc
 $(BUILD_DIR)/data/%.o: data/%.s $$(ASM_DEP)
@@ -165,22 +160,22 @@ $(BUILD_DIR)/%.o: %.s $$(ASM_DEP)
 	@$(AS) $(ASFLAGS) $< -o $@
 
 # "friendly" target names for convenience sake
-ruby:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY
-ruby_rev1:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=1
-ruby_rev2:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=2
-sapphire:      ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE
-sapphire_rev1: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=1
-sapphire_rev2: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2
-ruby_de:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
-sapphire_de:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
-ruby_debug:          ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY DEBUG=1
-ruby_rev1_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
-ruby_rev2_debug:     ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
-sapphire_debug:      ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE DEBUG=1
-sapphire_rev1_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
-sapphire_rev2_debug: ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
-ruby_de_debug:       ; @$(MAKE) --no-print-directory GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
-sapphire_de_debug:   ; @$(MAKE) --no-print-directory GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
+ruby:          ; @$(MAKE) GAME_VERSION=RUBY
+ruby_rev1:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1
+ruby_rev2:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2
+sapphire:      ; @$(MAKE) GAME_VERSION=SAPPHIRE
+sapphire_rev1: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1
+sapphire_rev2: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2
+ruby_de:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
+sapphire_de:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
+ruby_debug:          ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1
+ruby_rev1_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
+ruby_rev2_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
+sapphire_debug:      ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1
+sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
+sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
+ruby_de_debug:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
+sapphire_de_debug:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
 
 #### Graphics Rules ####
 

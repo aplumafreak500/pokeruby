@@ -72,7 +72,7 @@ const u8 gHoldEffectToType[][2] =
     {HOLD_EFFECT_NORMAL_POWER,   TYPE_NORMAL}
 };
 
-u8 GetBankSide(u8 bank);
+u8 GetBattlerSide(u8 bank);
 
 #define APPLY_STAT_MOD(var, mon, stat, statIndex)                                   \
 {                                                                                   \
@@ -138,7 +138,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             && gTrainerBattleOpponent != 1024
             && FlagGet(FLAG_BADGE01_GET)
-            && !GetBankSide(bankAtk))
+            && !GetBattlerSide(bankAtk))
             attack = (110 * attack) / 100;
     }
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_EREADER_TRAINER)))
@@ -146,7 +146,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             && gTrainerBattleOpponent != 1024
             && FlagGet(FLAG_BADGE05_GET)
-            && !GetBankSide(bankDef))
+            && !GetBattlerSide(bankDef))
             defense = (110 * defense) / 100;
     }
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_EREADER_TRAINER)))
@@ -154,7 +154,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             && gTrainerBattleOpponent != 1024
             && FlagGet(FLAG_BADGE07_GET)
-            && !GetBankSide(bankAtk))
+            && !GetBattlerSide(bankAtk))
             spAttack = (110 * spAttack) / 100;
     }
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_EREADER_TRAINER)))
@@ -162,7 +162,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
             && gTrainerBattleOpponent != 1024
             && FlagGet(FLAG_BADGE07_GET)
-            && !GetBankSide(bankDef))
+            && !GetBattlerSide(bankDef))
             spDefense = (110 * spDefense) / 100;
     }
 
