@@ -54,4 +54,7 @@ bool8 InitTayaDebugWindow(void);
 // nakamura_debug_menu
 bool8 InitNakamuraDebugMenu(void);
 
+// Luma Debug Menu
+u8 InitLumaDebugMenu(void);
+
 #endif // GUARD_DEBUG_H
