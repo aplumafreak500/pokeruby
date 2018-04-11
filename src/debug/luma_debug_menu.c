@@ -5,7 +5,6 @@
 #include "sound.h"
 #include "constants/songs.h"
 
-// void InitLumaDebugMenu(void);
 u8 debug_sub_new0(void);
 u8 LumaDebugMenu_AddNewPKMN(void);
 
@@ -13,16 +12,13 @@ extern u8 (*gMenuCallback)(void);
 extern u8 DebugScript_New0;
 
 const u8 Str_AddNewPKMN[] = _("Add Victini to party");
-#ifdef VERSION_NUMBER
-const u8 GitBuildString[] = _("Git Rev: " VERSION_NUMBER);
-#else
-const u8 GitBuildString[] = _("$");
-#endif
 
 const struct MenuAction LumaDebugMenuItems[] =
 {
 	{ Str_AddNewPKMN, LumaDebugMenu_AddNewPKMN },
 };
+
+#include "data/git.h"
 
 u8 InitLumaDebugMenu(void)
 {
