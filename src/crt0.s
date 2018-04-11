@@ -117,8 +117,10 @@ RomInfo:
 @	.endif
 	.global RomInfoString
 RomInfoString:
-	.ascii "aplumafreak500's Pokeruby Victini Experimental Branch\n"
-	.space 0x18
+	.ascii "aplumafreak500's Experimental Branch\n"
+	.2byte 0xFFFF
+	.byte 0xFF
+	.4byte gSongTable
 
 	.arm
 	.align 2, 0
