@@ -18,7 +18,7 @@ const struct MenuAction LumaDebugMenuItems[] =
 	{ Str_AddNewPKMN, LumaDebugMenu_AddNewPKMN },
 };
 
-#include "data/git.h"
+#include "../data/git.h"
 
 u8 InitLumaDebugMenu(void)
 {
