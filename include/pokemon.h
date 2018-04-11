@@ -117,6 +117,7 @@
 #define TYPE_ICE      0x0f
 #define TYPE_DRAGON   0x10
 #define TYPE_DARK     0x11
+#define TYPE_FAIRY     0x12
 
 #define PARTY_SIZE 6
 #define MAX_TOTAL_EVS 510
