@@ -1,6 +1,6 @@
 #include "global.h"
 #include "contest_painting.h"
-#include "cute_sketch.h"
+#include "contest_painting_effects.h"
 #include "data2.h"
 #include "decompress.h"
 #include "main.h"
@@ -104,7 +104,7 @@ static void VBlankCB_ContestPainting(void);
 void sub_8106B90();  //should be static
 static void sub_8107090(u8 arg0, u8 arg1);
 
-__attribute__((naked))
+NAKED
 void sub_8106630(u32 arg0)
 {
     asm(".syntax unified\n\
@@ -364,7 +364,7 @@ static void sub_8106AC4(u16 species, u8 arg1)
     }
 }
 #else
-__attribute__((naked))
+NAKED
 static void sub_8106AC4(u16 arg0, u8 arg2)
 {
     asm(".syntax unified\n\
@@ -497,7 +497,7 @@ void sub_8106B90(u8 a[][8][8][4], u16 b[], u16 c[][8][8][8])
     }
 }
 #else
-__attribute__((naked))
+NAKED
 void sub_8106B90()
 {
     asm(".syntax unified\n\
