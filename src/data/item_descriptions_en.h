@@ -1390,3 +1390,8 @@ static const u8 gItemDescription_HM08[] = _(
     "attacks next turn.");
 
 static const u8 gItemDescription_Dummy[] = _("");
+
+static const u8 gItemDescription_FairyBow[] = _(
+    "A hold item that\n"
+    "raises the power of\n"
+    "Fairy-type moves.");
