@@ -2056,7 +2056,7 @@ gBattleMoves:: @ 81FB12C
 @ SWEET_KISS
 	.byte EFFECT_CONFUSE
 	.byte 0 @ power
-	.byte TYPE_NORMAL
+	.byte TYPE_FAIRY
 	.byte 75 @ accuracy
 	.byte 10 @ PP
 	.byte 0 @ secondary effect chance
@@ -2606,7 +2606,7 @@ gBattleMoves:: @ 81FB12C
 @ MOONLIGHT
 	.byte EFFECT_MOONLIGHT
 	.byte 0 @ power
-	.byte TYPE_NORMAL
+	.byte TYPE_FAIRY
 	.byte 0 @ accuracy
 	.byte 5 @ PP
 	.byte 0 @ secondary effect chance
