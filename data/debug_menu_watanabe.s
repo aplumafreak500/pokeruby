@@ -9,7 +9,10 @@ gUnknown_Debug_083F7FD4:: @ 0x83F7FD4
 	.string "▶$"
 
 gUnknown_Debug_083F7FD6:: @ 0x83F7FD6
-	.string "ゆみあくひりつ$"
+	.string "ゆみあく"
+
+gUnknown_Debug_083F7FDA::
+	.string "ひりつ$"
 
 gUnknown_Debug_083F7FDE:: @ 0x83F7FDE
 	.string "たかさ$"
@@ -53,12 +56,23 @@ gUnknown_Debug_083F8048:: @ 0x83F8048
 gUnknown_Debug_083F8058:: @ 0x83F8058
 	.string "{COLOR BLUE}2VS2つうしんたいせん$"
 
+	.align 2
 gUnknown_Debug_083F8068:: @ 0x83F8068
-	.4byte gUnknown_Debug_083F802E, 0x100
-	.4byte gUnknown_Debug_083F8036, 0x108
-	.4byte gUnknown_Debug_083F803F, 0x209
-	.4byte gUnknown_Debug_083F8048, 0x10A
-	.4byte gUnknown_Debug_083F8058, 0x20B
+	.4byte gUnknown_Debug_083F802E
+	.byte 0x00, 0x01
+	.align 2
+	.4byte gUnknown_Debug_083F8036
+	.byte 0x08, 0x01
+	.align 2
+	.4byte gUnknown_Debug_083F803F
+	.byte 0x09, 0x02
+	.align 2
+	.4byte gUnknown_Debug_083F8048
+	.byte 0x0A, 0x01
+	.align 2
+	.4byte gUnknown_Debug_083F8058
+	.byte 0x0B, 0x02
+	.align 2
 
 gUnknown_Debug_083F8090:: @ 0x83F8090
 	.string "きほんタイプ$"
@@ -701,44 +715,5 @@ gUnknown_Debug_083F8815::
     .byte 0x20
     .byte 0x20
     .byte 0x21
-
-	.align 2
-stru_83F8828::
-	obj_tiles byte_83F88EC, 0x800, 0x1000
-	null_obj_tiles
-
-stru_83F8838::
-	obj_pal word_83F888C, 0x1000
-	null_obj_pal
-
-gOamData_83F8848:
-	.2byte 0x00a0
-	.2byte 0x0000
-	.2byte 0x0000
-
-	.align 2
-gSpriteAnim_83F8850:
-    obj_image_anim_frame 38, 30
-    obj_image_anim_end
-
-gSpriteAnim_83F8858:
-    obj_image_anim_frame 39, 30
-    obj_image_anim_end
-
-gSpriteAnim_83F8860:
-    obj_image_anim_frame 40, 30
-    obj_image_anim_end
-
-gSpriteAnimTable_83F8868::
-	.4byte gSpriteAnim_83F8850, gSpriteAnim_83F8858, gSpriteAnim_83F8860
-
-gSpriteTemplate_83F8874::
-	spr_template 0x1000, 0x1000, gOamData_83F8848, gSpriteAnimTable_83F8868, 0, gDummySpriteAffineAnimTable, debug_80C7584
-
-word_83F888C::
-	.incbin "graphics/debug/sprite_browser.gbapal"
-
-byte_83F88EC::
-	.incbin "graphics/debug/sprite_browser.4bpp"
 
 	.endif
