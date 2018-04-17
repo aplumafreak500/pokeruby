@@ -166,7 +166,7 @@ void Task_InitSoundCheckMenu(u8 taskId)
     u8 bgmStr[] = _("BGM");
     u8 seStr[] = _("SE ");
     u8 abDescStr[] = _("A: Play　B: Exit");
-    u8 upDownStr[] = _("{LEFT_ARROW}: Up {RIGHT_ARROW}: Down");
+    u8 upDownStr[] = _("{LEFT_ARROW}{RIGHT_ARROW}: Edit");
     u8 driverStr[] = _("R: Cry Test");
 
     if (!gPaletteFade.active)
@@ -593,7 +593,7 @@ void AdjustSelectedDriverParam(s8 delta)
         0, 65535,       // Length
         0, 255,         // Release
         0, 65535,       // Progress
-        -64, 63         // Chorus
+        -64, 63,         // Chorus
         -1, 15           // Priority
     };
 

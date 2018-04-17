@@ -143,7 +143,6 @@ extern u8 gLeveledUpInBattle;
 extern void (*gBattleBankFunc[])(void);
 extern u8 gHealthboxIDs[];
 extern u16 gBattleTypeFlags;
-extern s8 gBattleTerrain;  // I'm not sure if this is supposed to be s8 or u8. Regardless, it must have the same type as the return value of BattleSetup_GetTerrain.
 extern u8 gReservedSpritePaletteCount;
 extern u16 gTrainerBattleOpponent;
 extern struct BattleEnigmaBerry gEnigmaBerries[];
