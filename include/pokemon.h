@@ -434,7 +434,9 @@ struct BattleMove
 {
     u8 effect;
     u8 power;
-    u8 type;
+    u8 type:5;
+    u8 paddingFlag:1;
+    u8 damageEffect:2;
     u8 accuracy;
     u8 pp;
     u8 secondaryEffectChance;
