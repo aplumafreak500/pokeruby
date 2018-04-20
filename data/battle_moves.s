@@ -3911,3 +3911,14 @@ gBattleMoves:: @ 81FB12C
 	.byte TARGET_SELECTED_POKEMON
 	.byte 0 @ priority
 	.4byte F_AFFECTED_BY_KINGS_ROCK | F_MIRROR_MOVE_COMPATIBLE | F_AFFECTED_BY_PROTECT @ misc. flags
+
+@ FAIRY_WIND
+	.byte EFFECT_HIT
+	.byte 40 @ power
+	.byte TYPE_FAIRY
+	.byte 10 @ accuracy
+	.byte 30 @ PP
+	.byte 100 @ secondary effect chance
+	.byte TARGET_SELECTED_POKEMON
+	.byte 0 @ priority
+	.4byte F_AFFECTED_BY_KINGS_ROCK | F_MIRROR_MOVE_COMPATIBLE | F_AFFECTED_BY_PROTECT @ misc. flags
