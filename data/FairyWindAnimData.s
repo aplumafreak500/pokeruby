@@ -4,5 +4,5 @@
 	.section .rodata
 
 	.align 2
-FairyWindSpriteTemplate:
+FairyWindSpriteTemplate::
 	spr_template 10242, 10242, gOamData_837DF94, gDummySpriteAnimTable, NULL, gSpriteAffineAnimTable_83D650C, AnimTranslateLinearSingleSineWave
