@@ -370,6 +370,7 @@ gBattleAnims_Moves:: @ 81C7168
 	.4byte Move_WATER_PULSE
 	.4byte Move_DOOM_DESIRE
 	.4byte Move_PSYCHO_BOOST
+	.4byte Move_FairyWind
 	.4byte PoundCopy
 
 	.align 2
@@ -10745,3 +10746,38 @@ Special_SubstituteToMon: @ 81D6BA6
 Special_MonToSubstitute: @ 81D6BB0
 	createvisualtask sub_814151C, 2, 0
 	end
+
+Move_FairyWind:
+	createsprite gBattleAnimSpriteTemplate_83DB3DC, 2, 1, 1, 0, 8, 0x6D7E
+	waitforvisualfinish
+	loadspritegfx 10242
+	loadspritegfx 10135
+	monbg 3
+	setalpha 12, 8
+	playsewithpan SE_W202, -64
+	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 20, 1
+	delay 5
+	playsewithpan SE_W202, -64
+	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 5, 22, 0xFFEE, 1
+	delay 5
+	playsewithpan SE_W202, -64
+	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0xFFF6, 22, 15, 1
+	createvisualtask AnimTask_ShakeMon2, 2, 1, 2, 0, 18, 1
+	createvisualtask AnimTask_ShakeMon2, 2, 3, 2, 0, 18, 1
+	delay 5
+	playsewithpan SE_W202, -64
+	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 0xFFEC, 1
+	delay 5
+	playsewithpan SE_W202, -64
+	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 12, 1
+	delay 5
+	waitforvisualfinish
+	clearmonbg 3
+	blendoff
+	createsprite gBattleAnimSpriteTemplate_83DB3DC, 2, 1, 1, 8, 0, 0x6E7D
+	waitforvisualfinish
+	clearmonbg 3
+	blendoff
+	end
+	end
+
