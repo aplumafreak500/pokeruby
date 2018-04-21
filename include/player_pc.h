@@ -4,7 +4,7 @@
 // local task defines
 #define PAGE_INDEX data[0]
 #define ITEMS_ABOVE_TOP data[1]
-#define NUM_ITEMS data[2]
+#define NUM_PC_ITEMS data[2]
 #define NUM_QUANTITY_ROLLER data[3]
 #define NUM_PAGE_ITEMS data[4]
 // not used

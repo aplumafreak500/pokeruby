@@ -380,9 +380,9 @@ static void ItemStorage_Withdraw(u8 taskId)
 
     Menu_DestroyCursor();
     Menu_EraseWindowRect(0, 0, 11, 9);
-    NUM_ITEMS = CountUsedPCItemSlots();
+    NUM_PC_ITEMS = CountUsedPCItemSlots();
 
-    if (NUM_ITEMS != 0)
+    if (NUM_PC_ITEMS != 0)
     {
         Menu_EraseWindowRect(0, 14, 29, 19);
         CURRENT_ITEM_STORAGE_MENU = ITEMPC_MENU_WITHDRAW;
@@ -402,9 +402,9 @@ static void ItemStorage_Toss(u8 taskId)
 
     Menu_DestroyCursor();
     Menu_EraseWindowRect(0, 0, 11, 9);
-    NUM_ITEMS = CountUsedPCItemSlots();
+    NUM_PC_ITEMS = CountUsedPCItemSlots();
 
-    if (NUM_ITEMS)
+    if (NUM_PC_ITEMS)
     {
         Menu_EraseWindowRect(0, 14, 29, 19);
         CURRENT_ITEM_STORAGE_MENU = ITEMPC_MENU_TOSS;
@@ -429,10 +429,10 @@ static void ItemStorage_SetItemAndMailCount(u8 taskId)
 {
     s16 *data = TASK.data;
 
-    if (NUM_ITEMS > 7) // we have a full page, so set the num of page items appropriately.
+    if (NUM_PC_ITEMS > 7) // we have a full page, so set the num of page items appropriately.
         NUM_PAGE_ITEMS = 8;
     else
-        NUM_PAGE_ITEMS = NUM_ITEMS + 1; // there are not enough items to fill a full page; take the # of items and add 1 for the cancel button.
+        NUM_PAGE_ITEMS = NUM_PC_ITEMS + 1; // there are not enough items to fill a full page; take the # of items and add 1 for the cancel button.
 
     if (eMailboxInfo.count > 7)
         eMailboxInfo.pageItems = 8;
@@ -454,7 +454,7 @@ static void ItemStorage_ProcessInput(u8 taskId)
             trueIndex = ITEMS_ABOVE_TOP + PAGE_INDEX;
             if (SWITCH_MODE_ACTIVE == FALSE) // are we not currently switching items?
             {
-                if (trueIndex == NUM_ITEMS) // if the cursor is on top of cancel, print the go back to prev description.
+                if (trueIndex == NUM_PC_ITEMS) // if the cursor is on top of cancel, print the go back to prev description.
                 {
                     ItemStorage_PrintItemPcResponse(ITEMPC_GO_BACK_TO_PREV);
                 }
@@ -488,12 +488,12 @@ static void ItemStorage_ProcessInput(u8 taskId)
             if(SWITCH_MODE_ACTIVE != FALSE)
                 return;
 
-            if (trueIndex == NUM_ITEMS)
+            if (trueIndex == NUM_PC_ITEMS)
                 ItemStorage_PrintItemPcResponse(ITEMPC_GO_BACK_TO_PREV); // probably further down
             else
                 ItemStorage_PrintItemPcResponse(gSaveBlock1.pcItems[trueIndex].itemId);
         }
-        else if(ITEMS_ABOVE_TOP + PAGE_INDEX != NUM_ITEMS)
+        else if(ITEMS_ABOVE_TOP + PAGE_INDEX != NUM_PC_ITEMS)
         {
             PlaySE(SE_SELECT);
             ITEMS_ABOVE_TOP++;
@@ -507,7 +507,7 @@ static void ItemStorage_ProcessInput(u8 taskId)
     {
         if (SWITCH_MODE_ACTIVE == FALSE)
         {
-            if (PAGE_INDEX + ITEMS_ABOVE_TOP != NUM_ITEMS) // you cannot swap the Cancel button.
+            if (PAGE_INDEX + ITEMS_ABOVE_TOP != NUM_PC_ITEMS) // you cannot swap the Cancel button.
             {
                 PlaySE(SE_SELECT);
                 SWITCH_MODE_ACTIVE = TRUE;
@@ -529,7 +529,7 @@ static void ItemStorage_ProcessInput(u8 taskId)
         PlaySE(SE_SELECT);
         if(SWITCH_MODE_ACTIVE == FALSE)
         {
-            if(ITEMS_ABOVE_TOP + PAGE_INDEX != NUM_ITEMS)
+            if(ITEMS_ABOVE_TOP + PAGE_INDEX != NUM_PC_ITEMS)
             {
                 ItemStorage_DoItemAction(taskId);
             }
@@ -738,10 +738,10 @@ static void ItemStorage_HandleRemoveItem(u8 taskId)
     if(gMain.newKeys & A_BUTTON || gMain.newKeys == B_BUTTON)
     {
         RemovePCItem(PAGE_INDEX + ITEMS_ABOVE_TOP, NUM_QUANTITY_ROLLER);
-        oldNumItems = NUM_ITEMS;
-        NUM_ITEMS = CountUsedPCItemSlots();
+        oldNumItems = NUM_PC_ITEMS;
+        NUM_PC_ITEMS = CountUsedPCItemSlots();
 
-        if(oldNumItems != NUM_ITEMS && oldNumItems < NUM_PAGE_ITEMS + ITEMS_ABOVE_TOP && ITEMS_ABOVE_TOP != 0)
+        if(oldNumItems != NUM_PC_ITEMS && oldNumItems < NUM_PAGE_ITEMS + ITEMS_ABOVE_TOP && ITEMS_ABOVE_TOP != 0)
             ITEMS_ABOVE_TOP--;
 
         ItemStorage_SetItemAndMailCount(taskId);
@@ -779,7 +779,7 @@ static void ItemStorage_DoItemSwap(u8 taskId, bool8 switchModeDisabled)
 
     SWITCH_MODE_ACTIVE = FALSE;
 
-    if((u8)NUM_ITEMS > trueIndex && (u8)SWAP_ITEM_INDEX != trueIndex && switchModeDisabled == FALSE)
+    if((u8)NUM_PC_ITEMS > trueIndex && (u8)SWAP_ITEM_INDEX != trueIndex && switchModeDisabled == FALSE)
     {
         struct ItemSlot itemSlot = gSaveBlock1.pcItems[SWAP_ITEM_INDEX]; // backup the itemSlot before swapping the two.
 
@@ -787,7 +787,7 @@ static void ItemStorage_DoItemSwap(u8 taskId, bool8 switchModeDisabled)
         gSaveBlock1.pcItems[trueIndex] = itemSlot;
         return;
     }
-    else if(trueIndex == NUM_ITEMS)
+    else if(trueIndex == NUM_PC_ITEMS)
     {
         ItemStorage_PrintItemPcResponse(ITEMPC_GO_BACK_TO_PREV);
     }
@@ -870,7 +870,7 @@ static void ItemStorage_DrawItemList(u8 taskId)
     {
         yCoord = (i - ITEMS_ABOVE_TOP) * 2;
 
-        if (i == NUM_ITEMS)
+        if (i == NUM_PC_ITEMS)
         {
             sub_8072A18(gOtherText_CancelNoTerminator, 0x80, (yCoord + 2) * 8, 0x68, 1);
             break;
@@ -907,7 +907,7 @@ static void ItemStorage_DrawItemList(u8 taskId)
     else
         DestroyVerticalScrollIndicator(TOP_ARROW);
 
-    if (ITEMS_ABOVE_TOP + NUM_PAGE_ITEMS <= NUM_ITEMS)
+    if (ITEMS_ABOVE_TOP + NUM_PAGE_ITEMS <= NUM_PC_ITEMS)
         CreateVerticalScrollIndicators(BOTTOM_ARROW, 0xB8, 0x98);
     else
         DestroyVerticalScrollIndicator(BOTTOM_ARROW);
@@ -963,7 +963,7 @@ static void ItemStorage_DrawBothListAndDescription(u8 taskId)
 
     if(SWITCH_MODE_ACTIVE == FALSE)
     {
-        if(trueIndex == NUM_ITEMS)
+        if(trueIndex == NUM_PC_ITEMS)
             ItemStorage_PrintItemPcResponse(ITEMPC_GO_BACK_TO_PREV);
         else
             ItemStorage_PrintItemPcResponse(gSaveBlock1.pcItems[trueIndex].itemId);
