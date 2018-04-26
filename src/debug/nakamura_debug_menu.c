@@ -949,10 +949,10 @@ static void NakaGenderTest_AdjustSpecies(u8 i, s8 dirn)
     if (sNakaGenderTestData[i].species == SPECIES_NONE && sNakaGenderTestData[i].unk3 == 0 && dirn == 1)
         sNakaGenderTestData[i].species = SPECIES_TREECKO - 1;
     sNakaGenderTestData[i].species += dirn;
-    if (sNakaGenderTestData[i].species > SPECIES_VICTINI)
-        sNakaGenderTestData[i].species -= SPECIES_VICTINI;
+    if (sNakaGenderTestData[i].species >= NUM_SPECIES)
+        sNakaGenderTestData[i].species -= NUM_SPECIES;
     if (sNakaGenderTestData[i].species < 0)
-        sNakaGenderTestData[i].species += SPECIES_VICTINI;
+        sNakaGenderTestData[i].species += NUM_SPECIES;
     CreateMon(gPlayerParty + i, sNakaGenderTestData[i].species, sNakaGenderTestData[i].level, 0x20, FALSE, 0, FALSE, 0);
     sNakaGenderTestData[i].unk3 = 1;
 }

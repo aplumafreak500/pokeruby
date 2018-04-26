@@ -2807,7 +2807,7 @@ void debug_sub_8012688(void)
 	u8 spriteId;
 	u8 taskId;
 
-	for (i = 0; i < 412; i++)
+	for (i = 0; i < NUM_SPECIES; i++)
 		gUnknown_Debug_2023B62[i] = 0;
 	SetHBlankCallback(NULL);
 	SetVBlankCallback(NULL);
@@ -2917,8 +2917,8 @@ void debug_sub_8012AC0(s8 a, u8 taskId)
     {
         gCurrentMove += a;
         if (gCurrentMove == 0)
-            gCurrentMove = 412;
-        if (gCurrentMove == 412)
+            gCurrentMove = NUM_SPECIES;
+        if (gCurrentMove == NUM_SPECIES)
             gCurrentMove = 1;
     } while (gBaseStats[gCurrentMove].type1 != 2 && gBaseStats[gCurrentMove].type2 != 2);
     debug_sub_80128B4();
@@ -3042,7 +3042,7 @@ void debug_sub_8012D10(u8 taskId)
                 debug_sub_8012AC0(1, taskId);
                 break;
             case 2:
-                if (gCurrentMove < 412)
+                if (gCurrentMove < NUM_SPECIES)
                     gCurrentMove++;
                 else
                     gCurrentMove = 1;
@@ -3074,7 +3074,7 @@ void debug_sub_8012D10(u8 taskId)
                 if (gCurrentMove > 1)
                     gCurrentMove--;
                 else
-                    gCurrentMove = 412;
+                    gCurrentMove = NUM_SPECIES;
                 debug_sub_80128B4();
                 debug_sub_8012938(taskId);
                 debug_sub_80129F8(taskId);
@@ -3102,10 +3102,10 @@ void debug_sub_8012D10(u8 taskId)
                 debug_sub_8012AC0(1, taskId);
                 break;
             case 2:
-                if (gCurrentMove + 10 < 412)
+                if (gCurrentMove + 10 < NUM_SPECIES)
                     gCurrentMove += 10;
                 else
-                    gCurrentMove -= 400;
+                    gCurrentMove -= NUM_SPECIES - 10;
                 debug_sub_80128B4();
                 debug_sub_8012938(taskId);
                 debug_sub_80129F8(taskId);
@@ -3194,7 +3194,7 @@ void debug_sub_8012D10(u8 taskId)
         {
             PlaySE(SE_SELECT);
             if (gTasks[taskId].data[3] == 0)
-                debug_sub_80132C8(31, gUnknown_Debug_2023B62, 412);
+                debug_sub_80132C8(31, gUnknown_Debug_2023B62, NUM_SPECIES);
             debug_sub_8012B70(taskId, 1);
         }
         else if (gMain.newKeys & B_BUTTON)
@@ -3222,7 +3222,7 @@ void debug_sub_8012D10(u8 taskId)
         {
             PlaySE(SE_SELECT);
             if (gTasks[taskId].data[3] == 0)
-                debug_sub_8013294(31, gUnknown_Debug_2023B62, 412);
+                debug_sub_8013294(31, gUnknown_Debug_2023B62, NUM_SPECIES);
             debug_sub_8012B70(taskId, 1);
         }
         else if (gMain.newKeys & B_BUTTON)
