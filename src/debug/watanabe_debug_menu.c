@@ -887,7 +887,7 @@ void debug_80C3D2C(u8 taskId)
     }
     else if (gMain.newAndRepeatedKeys & START_BUTTON)
     {
-        if (gTasks[taskId].data[0] < 0x182)
+        if (gTasks[taskId].data[0] < 387)
             gTasks[taskId].data[0]++;
         else
             gTasks[taskId].data[0] = 1;
@@ -900,7 +900,7 @@ void debug_80C3D2C(u8 taskId)
         if (gTasks[taskId].data[0] > 1)
             gTasks[taskId].data[0]--;
         else
-            gTasks[taskId].data[0] = 0x182;
+            gTasks[taskId].data[0] = 387;
         DestroySprite(gSprites + gTasks[taskId].data[2]);
         DestroySprite(gSprites + gTasks[taskId].data[3]);
         gTasks[taskId].func = debug_80C3A50;
@@ -1622,7 +1622,7 @@ bool8 debug_80C527C(struct Pokemon *pokemon)
 }
 
 const u8 Str_83F8237[] = _("Kind");
-const struct WatanabeDebugMenuItemSubstruct _83F823C = {1, 0x00000182, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F823C = {1, 387, 0x00, 0x03};
 
 const u8 Str_83F8248[] = _("Level");
 const struct WatanabeDebugMenuItemSubstruct _83F8250 = {1, 0x00000064, 0x00, 0x03};
@@ -1643,16 +1643,16 @@ const u8 Str_83F82AC[] = _("Character");
 const struct WatanabeDebugMenuItemSubstruct _83F82B8 = {0, 0x00000018, 0x00, 0xFF};
 
 const u8 Str_83F82C4[] = _("Move1");
-const struct WatanabeDebugMenuItemSubstruct _83F82CC = {0, 0x00000162, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F82CC = {0, NUM_MOVES, 0x00, 0x03};
 
 const u8 Str_83F82D8[] = _("Move2");
-const struct WatanabeDebugMenuItemSubstruct _83F82E0 = {0, 0x00000162, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F82E0 = {0, NUM_MOVES, 0x00, 0x03};
 
 const u8 Str_83F82EC[] = _("Move3");
-const struct WatanabeDebugMenuItemSubstruct _83F82F4 = {0, 0x00000162, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F82F4 = {0, NUM_MOVES, 0x00, 0x03};
 
 const u8 Str_83F8300[] = _("Move4");
-const struct WatanabeDebugMenuItemSubstruct _83F8308 = {0, 0x00000162, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F8308 = {0, NUM_MOVES, 0x00, 0x03};
 
 const u8 Str_83F8314[] = _("Hold");
 const struct WatanabeDebugMenuItemSubstruct _83F831C = {0, 0x000000FF, 0x00, 0x03};
