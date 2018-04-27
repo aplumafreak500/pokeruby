@@ -345,7 +345,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
         }
         break;
     case 1:
-        for (i = 0; i < 5; i++)
+        for (i = 0; i < 10; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
@@ -365,7 +365,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
         break;
     case 2:
     case 3:
-        for (i = 0; i < 5; i++)
+        for (i = 0; i < 10; i++)
         {
             if (gEvolutionTable[species][i].method == EVO_ITEM
              && gEvolutionTable[species][i].param == evolutionItem)
