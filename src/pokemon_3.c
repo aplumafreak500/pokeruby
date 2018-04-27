@@ -288,7 +288,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
         level = GetMonData(mon, MON_DATA_LEVEL, 0);
         friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
 
-        for (i = 0; i < 5; i++)
+        for (i = 0; i < 10; i++)
         {
             switch (gEvolutionTable[species][i].method)
             {
