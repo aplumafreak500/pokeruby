@@ -268,6 +268,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
     u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
+    u16 move1 = GetMonData(mon, MON_DATA_MOVE1, 0);
+    u16 move2 = GetMonData(mon, MON_DATA_MOVE2, 0);
+    u16 move3 = GetMonData(mon, MON_DATA_MOVE3, 0);
+    u16 move4 = GetMonData(mon, MON_DATA_MOVE4, 0);
     u8 level;
     u16 friendship;
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, 0);
@@ -339,6 +343,10 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
                 break;
             case EVO_BEAUTY:
                 if (gEvolutionTable[species][i].param <= beauty)
+                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_LEVEL_WITH_MOVE:
+                if (gEvolutionTable[species][i].param == move1 || gEvolutionTable[species][i].param == move2 || gEvolutionTable[species][i].param == move3 || gEvolutionTable[species][i].param == move4)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             }
