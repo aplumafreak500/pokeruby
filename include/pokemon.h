@@ -523,7 +523,7 @@ extern const u8 *const gItemEffectTable[];
 extern const struct BaseStats gBaseStats[];
 extern const u32 gExperienceTables[][101];
 extern const u16 *gLevelUpLearnsets[];
-extern struct Evolution gEvolutionTable[][5];
+extern struct Evolution gEvolutionTable[][10];
 extern struct PokemonStorage gPokemonStorage;
 
 void ZeroBoxMonData(struct BoxPokemon *boxMon);
