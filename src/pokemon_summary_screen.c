@@ -30,6 +30,7 @@
 #include "task.h"
 #include "tv.h"
 #include "scanline_effect.h"
+#include "daycare.h"
 
 static void sub_809FC0C(void);
 static void sub_809FEB8(void);
@@ -935,7 +936,7 @@ static void sub_809E044(void)
 static void SummaryScreenExit(u8 taskId)
 {
     PlaySE(SE_SELECT);
-    BeginNormalPaletteFade(-1, 0, 0, 16, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
     gTasks[taskId].func = sub_809E13C;
 }
 
@@ -3052,7 +3053,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 
         if (GetMonData(mon, MON_DATA_MET_LEVEL) == 0)
         {
-            ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, 5);
+            ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
             *ptr = CHAR_NEWLINE;
             ptr++;
 

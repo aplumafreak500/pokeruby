@@ -42,6 +42,10 @@
 #define TYPE_FORESIGHT  0xFE
 #define TYPE_ENDTABLE   0xFF
 
+// physical/special types
+#define TYPE_IS_PHYSICAL(type) ((type) < TYPE_MYSTERY)
+#define TYPE_IS_SPECIAL(type) ((type) > TYPE_MYSTERY)
+
 enum
 {
     BATTLE_TERRAIN_GRASS,
@@ -721,6 +725,10 @@ void MarkBufferBankForExecution(u8 bank);
 
 extern u8 gBattleTextBuff1[];
 
+extern u16 gBattleTypeFlags;
+extern u8 gUnknown_02023A14_50;
+extern u16 gTrainerBattleOpponent;
+
 // src/battle_bg.o
 void sub_800D6D4();
 void ApplyPlayerChosenFrameToBattleMenu();
@@ -807,7 +815,7 @@ void sub_802E424(void);
 void move_anim_start_t4(u8 a, u8 b, u8 c, u8 d);
 void nullsub_9(u16);
 void nullsub_10(int);
-void load_gfxc_health_bar();
+void load_gfxc_health_bar(u8);
 u8 battle_load_something();
 void sub_8031F88(u8);
 void HandleLowHpMusicChange(struct Pokemon *, u8);

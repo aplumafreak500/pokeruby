@@ -56,7 +56,6 @@ struct Struct_2017810
 #define BG2CNT (*(vBgCnt *)REG_ADDR_BG2CNT)
 #define BG3CNT (*(vBgCnt *)REG_ADDR_BG3CNT)
 
-extern struct OamData gOamData_837DF9C[];
 extern const union AnimCmd *const gDummySpriteAnimTable[];
 extern const union AffineAnimCmd *const gDummySpriteAffineAnimTable[];
 
@@ -129,7 +128,7 @@ const struct SpriteTemplate gSpriteTemplate_837F5B0[] =
     {
         .tileTag = 55125,
         .paletteTag = 55125,
-        .oam = gOamData_837DF9C,
+        .oam = &gOamData_837DF9C,
         .anims = gDummySpriteAnimTable,
         .images = NULL,
         .affineAnims = gDummySpriteAffineAnimTable,
@@ -138,7 +137,7 @@ const struct SpriteTemplate gSpriteTemplate_837F5B0[] =
     {
         .tileTag = 55126,
         .paletteTag = 55126,
-        .oam = gOamData_837DF9C,
+        .oam = &gOamData_837DF9C,
         .anims = gDummySpriteAnimTable,
         .images = NULL,
         .affineAnims = gDummySpriteAffineAnimTable,
@@ -2253,7 +2252,7 @@ void sub_807A69C(u8 taskId)
     else
         task->data[6] = 3;
     CpuCopy32(&gPlttBufferUnfaded[src], &gPlttBufferFaded[dest], 0x20);
-    BlendPalette(dest, 0x10, gBattleAnimArgs[1], gBattleAnimArgs[0]);
+    BlendPalette(dest, 16, gBattleAnimArgs[1], gBattleAnimArgs[0]);
     task->func = sub_807A784;
 }
 

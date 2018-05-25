@@ -38,7 +38,7 @@ extern u16 gBattlerPartyIndexes[];
 extern u8 gHealthboxIDs[];
 extern u16 gBattleTypeFlags;
 extern u16 gAnimMovePower;
-extern u32 gAnimMoveDmg;
+extern s32 gAnimMoveDmg;
 extern u8 gAnimFriendship;
 extern u16 gWeatherMoveAnim;
 extern u32 gTransformedPersonalities[];
@@ -1312,7 +1312,7 @@ void WallyHandlecmd20(void)
 
 void WallyHandleOpenBag(void)
 {
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
     gBattleBankFunc[gActiveBattler] = sub_81374C4;
     gBankInMenu = gActiveBattler;
 }
