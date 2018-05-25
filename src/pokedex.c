@@ -1512,7 +1512,7 @@ void Task_PokedexMainScreen(u8 taskId)
             sub_808E6BC();
             BeginNormalPaletteFade(
               ~(1 << (gSprites[gPokedexView->selectedMonSpriteId].oam.paletteNum + 16)),
-              0, 0, 0x10, 0);
+              0, 0, 16, RGB(0, 0, 0));
             gSprites[gPokedexView->selectedMonSpriteId].callback = sub_808EDB8;
             gTasks[taskId].func = sub_808CA64;
             PlaySE(SE_PIN);
@@ -1529,7 +1529,7 @@ void Task_PokedexMainScreen(u8 taskId)
         else if (gMain.newKeys & SELECT_BUTTON)
         {
             PlaySE(SE_SELECT);
-            BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].data[0] = sub_8091E3C();
             gPokedexView->unk64F = 0;
             gPokedexView->unk62A = gPokedexView->unk62C;
@@ -1541,7 +1541,7 @@ void Task_PokedexMainScreen(u8 taskId)
         }
         else if (gMain.newKeys & B_BUTTON)
         {
-            BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].func = Task_ClosePokedex;
             PlaySE(SE_PC_OFF);
         }
@@ -1594,7 +1594,7 @@ static void Task_PokedexMainScreenMenu(u8 taskId)
                 gMain.newKeys |= START_BUTTON;  //Exit menu
                 break;
             case 3: //CLOSE POKEDEX
-                BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
                 gTasks[taskId].func = Task_ClosePokedex;
                 PlaySE(SE_PC_OFF);
                 break;
@@ -1705,12 +1705,12 @@ static void Task_PokedexResultsScreen(u8 taskId)
     {
         if ((gMain.newKeys & A_BUTTON) && gPokedexView->unk0[gPokedexView->selectedPokemon].seen)
         {
-            u32 a;
+            u32 excludedPalettes;
 
             sub_808E6BC();
-            a = (1 << (gSprites[gPokedexView->selectedMonSpriteId].oam.paletteNum + 16));
+            excludedPalettes = (1 << (gSprites[gPokedexView->selectedMonSpriteId].oam.paletteNum + 16));
             gSprites[gPokedexView->selectedMonSpriteId].callback = sub_808EDB8;
-            BeginNormalPaletteFade(~a, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(~excludedPalettes, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].func = sub_808D118;
             PlaySE(SE_PIN);
         }
@@ -1724,7 +1724,7 @@ static void Task_PokedexResultsScreen(u8 taskId)
         }
         else if (gMain.newKeys & SELECT_BUTTON)
         {
-            BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].data[0] = sub_8091E3C();
             gPokedexView->unk64F = 0;
             gTasks[taskId].func = sub_808CB8C;
@@ -1732,7 +1732,7 @@ static void Task_PokedexResultsScreen(u8 taskId)
         }
         else if (gMain.newKeys & B_BUTTON)
         {
-            BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].func = Task_PokedexResultsScreenReturnToMainScreen;
             PlaySE(SE_PC_OFF);
         }
@@ -1785,12 +1785,12 @@ static void Task_PokedexResultsScreenMenu(u8 taskId)
                 gMain.newKeys |= START_BUTTON;
                 break;
             case 3: //BACK TO POKEDEX
-                BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
                 gTasks[taskId].func = Task_PokedexResultsScreenReturnToMainScreen;
                 PlaySE(SE_TRACK_DOOR);
                 break;
             case 4: //CLOSE POKEDEX
-                BeginNormalPaletteFade(-1, 0, 0, 0x10, 0);
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
                 gTasks[taskId].func = Task_PokedexResultsScreenExitPokedex;
                 PlaySE(SE_PC_OFF);
                 break;
@@ -1921,7 +1921,7 @@ static bool8 sub_808D344(u8 a)
         gMain.state++;
         break;
     case 4:
-        BeginNormalPaletteFade(-1, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB(0, 0, 0));
         SetVBlankCallback(sub_808C0B8);
         gMain.state++;
         break;
@@ -2959,13 +2959,13 @@ static void Task_InitPageScreenMultistep(u8 taskId)
         break;
     case 6:
         {
-            u32 r3 = 0;
+            u32 excludedPalettes = 0;
 
             if (gTasks[taskId].data[2] != 0)
-                r3 = 0x14;
+                excludedPalettes = 0x14;
             if (gTasks[taskId].data[1] != 0)
-                r3 |= (1 << (gSprites[gTasks[taskId].data[4]].oam.paletteNum + 16));
-            BeginNormalPaletteFade(~r3, 0, 16, 0, 0);
+                excludedPalettes |= (1 << (gSprites[gTasks[taskId].data[4]].oam.paletteNum + 16));
+            BeginNormalPaletteFade(~excludedPalettes, 0, 16, 0, RGB(0, 0, 0));
             SetVBlankCallback(gUnknown_03005CEC);
             gMain.state++;
         }
@@ -3013,14 +3013,14 @@ static void Task_PageScreenProcessInput(u8 taskId)
 {
     if (gTasks[taskId].data[0] != 0)
     {
-        BeginNormalPaletteFade(-1, 0, 0, 16, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
         gTasks[taskId].func = sub_808F888;
         PlaySE(SE_Z_SCROLL);
         return;
     }
     if (gMain.newKeys & B_BUTTON)
     {
-        BeginNormalPaletteFade(-1, 0, 0, 16, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
         gTasks[taskId].func = Task_ClosePageScreen;
         PlaySE(SE_PC_OFF);
         return;
@@ -3033,12 +3033,12 @@ static void Task_PageScreenProcessInput(u8 taskId)
             sub_8090C68();
             break;
         case AREA_SCREEN:
-            BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].func = Task_InitAreaScreenMultistep;
             PlaySE(SE_PIN);
             break;
         case CRY_SCREEN:
-            BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
             gTasks[taskId].func = Task_InitCryScreenMultistep;
             PlaySE(SE_PIN);
             break;
@@ -3049,7 +3049,7 @@ static void Task_PageScreenProcessInput(u8 taskId)
             }
             else
             {
-                BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+                BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
                 gTasks[taskId].func = Task_InitSizeScreenMultistep;
                 PlaySE(SE_PIN);
             }
@@ -3221,7 +3221,7 @@ static void Task_InitCryScreenMultistep(u8 taskId)
         }
         break;
     case 8:
-        BeginNormalPaletteFade(-0x15, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 16, 0, RGB(0, 0, 0));
         SetVBlankCallback(gUnknown_03005CEC);
         gMain.state++;
         break;
@@ -3262,7 +3262,7 @@ static void Task_CryScreenProcessInput(u8 taskId)
     {
         if (gMain.newKeys & B_BUTTON)
         {
-            BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
             m4aMPlayContinue(&gMPlay_BGM);
             gPokedexView->unk64F = 1;
             gTasks[taskId].func = sub_808FFBC;
@@ -3272,7 +3272,7 @@ static void Task_CryScreenProcessInput(u8 taskId)
         if ((gMain.newKeys & DPAD_LEFT)
          || ((gMain.newKeys & L_BUTTON) && gSaveBlock2.optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
         {
-            BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+            BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
             m4aMPlayContinue(&gMPlay_BGM);
             gPokedexView->unk64F = 2;
             gTasks[taskId].func = sub_808FFBC;
@@ -3288,7 +3288,7 @@ static void Task_CryScreenProcessInput(u8 taskId)
             }
             else
             {
-                BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+                BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
                 m4aMPlayContinue(&gMPlay_BGM);
                 gPokedexView->unk64F = 3;
                 gTasks[taskId].func = sub_808FFBC;
@@ -3398,7 +3398,7 @@ static void Task_InitSizeScreenMultistep(u8 taskId)
         gMain.state++;
         break;
     case 7:
-        BeginNormalPaletteFade(-0x15, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 16, 0, RGB(0, 0, 0));
         SetVBlankCallback(gUnknown_03005CEC);
         gMain.state++;
         break;
@@ -3425,7 +3425,7 @@ static void Task_SizeScreenProcessInput(u8 taskId)
 {
     if (gMain.newKeys & B_BUTTON)
     {
-        BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
         gPokedexView->unk64F = 1;
         gTasks[taskId].func = sub_8090498;
         PlaySE(SE_PC_OFF);
@@ -3433,7 +3433,7 @@ static void Task_SizeScreenProcessInput(u8 taskId)
     else if ((gMain.newKeys & DPAD_LEFT)
      || ((gMain.newKeys & L_BUTTON) && gSaveBlock2.optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
     {
-        BeginNormalPaletteFade(-0x15, 0, 0, 0x10, 0);
+        BeginNormalPaletteFade(0xFFFFFFEB, 0, 0, 16, RGB(0, 0, 0));
         gPokedexView->unk64F = 2;
         gTasks[taskId].func = sub_8090498;
         PlaySE(SE_Z_PAGE);
@@ -3836,7 +3836,7 @@ static void sub_8090750(u8 taskId)
     case 4:
         spriteId = sub_80918EC(dexNum, 0x30, 0x38, 0);
         gSprites[spriteId].oam.priority = 0;
-        BeginNormalPaletteFade(-1, 0, 0x10, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB(0, 0, 0));
         SetVBlankCallback(gUnknown_03005CEC);
         gTasks[taskId].data[3] = spriteId;
         gTasks[taskId].data[0]++;
@@ -3865,7 +3865,7 @@ static void sub_8090A3C(u8 taskId)
 {
     if (gMain.newKeys & B_BUTTON)
     {
-        BeginNormalPaletteFade(0x0000FFFC, 0, 0, 16, 0);
+        BeginNormalPaletteFade(0xFFFC, 0, 0, 16, RGB(0, 0, 0));
         gSprites[gTasks[taskId].data[3]].callback = sub_8090C28;
         gTasks[taskId].func = sub_8090B8C;
         return;
@@ -3885,7 +3885,7 @@ static void sub_8090A3C(u8 taskId)
         }
         else
         {
-            BeginNormalPaletteFade(0x0000FFFC, 0, 0, 16, 0);
+            BeginNormalPaletteFade(0xFFFC, 0, 0, 16, RGB(0, 0, 0));
             gSprites[gTasks[taskId].data[3]].callback = sub_8090C28;
             gTasks[taskId].func = sub_8090B8C;
             return;
@@ -4762,7 +4762,7 @@ static void sub_8091E54(u8 taskId)
         gMain.state++;
         break;
     case 2:
-        BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, 0);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB(0, 0, 0));
         gMain.state++;
         break;
     case 3:
@@ -5082,7 +5082,7 @@ static void sub_8092644(u8 taskId)
 
 static void sub_80927B8(u8 taskId)
 {
-    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, 0);
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
     gTasks[taskId].func = sub_80927F0;
 }
 
