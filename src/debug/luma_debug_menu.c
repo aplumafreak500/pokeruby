@@ -7,6 +7,7 @@
 
 u8 debug_sub_new0(void);
 u8 LumaDebugMenu_AddNewPKMN(void);
+void DS_Adjust_Task(u8 taskId);
 
 extern u8 (*gMenuCallback)(void);
 extern u8 DebugScript_New0;
@@ -20,7 +21,7 @@ const struct MenuAction LumaDebugMenuItems[] =
 
 #include "../data/git.h"
 
-u8 InitLumaDebugMenu(void)
+bool8 InitLumaDebugMenu(void)
 {
     Menu_EraseScreen();
     Menu_DrawStdWindowFrame(0, 0, 16, 3);
@@ -56,5 +57,48 @@ u8 LumaDebugMenu_AddNewPKMN(void)
     PlaySE(SE_EXPMAX);
     CloseMenu();
     return 1;
+}
+
+// Sound test
+
+void DS_Adjust_Num(u8 taskId)
+{
+    u8 dsStr[] = _("DS #");
+
+    REG_DISPCNT = 0x3140;
+    Menu_DrawStdWindowFrame(0, 0, 29, 19);
+    Menu_PrintText(dsStr, 3, 2);
+    REG_WIN0H = WIN_RANGE(0, DISPLAY_WIDTH);
+    REG_WIN0V = WIN_RANGE(0, DISPLAY_HEIGHT);
+    gTasks[taskId].func = sub_80BB038;
+}
+
+void DS_Adjust_Task(u8 taskId)
+{
+    u8 DS_Sound_Count=5;
+    if (gMain.newKeys & B_BUTTON)
+    {
+        REG_DISPCNT = 0x7140;
+        REG_WIN0H = WIN_RANGE(17, 223);
+        REG_WIN0V = WIN_RANGE(1, 31);
+        Menu_EraseWindowRect(0, 0, 29, 19);
+        gTasks[taskId].func = Task_InitSoundCheckMenu;
+        return;
+    }
+    if (gMain.newAndRepeatedKeys & DPAD_RIGHT)
+    {
+        DS_Sound_Count++;
+        if (DS_Sound_Count > 10)
+            DS_Sound_Count = 0;
+        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
+    }
+    else if (gMain.newAndRepeatedKeys & DPAD_LEFT)
+    {
+        DS_Sound_Count--;
+        if (DS_Sound_Count < 0)
+           DS_Sound_Count = 10;
+        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
+    }
+    PrintSignedNumber(DS_Sound_Count, 7, 2, 3);
 }
 

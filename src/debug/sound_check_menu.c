@@ -10,6 +10,7 @@
 #include "title_screen.h"
 #include "sound.h"
 #include "pokedex_cry_screen.h"
+#include "debug.h"
 
 // local task defines
 #define tWindowSelected data[0]
@@ -211,7 +212,8 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
     }
     else if (gMain.newKeys & L_BUTTON)
     {
-        gTasks[taskId].func = sub_80BAF84;
+        // gTasks[taskId].func = sub_80BAF84;
+        gTasks[taskId].func = DS_Adjust_Num;
     }
     else if (gMain.newKeys & START_BUTTON)
     {
@@ -268,6 +270,7 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
     {
         m4aSongNumStart(SE_SELECT);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
+        m4aSoundMode(5 << SOUND_MODE_MAXCHN_SHIFT);
         gTasks[taskId].func = sub_80BA68C;
     }
     else if (gMain.newAndRepeatedKeys & DPAD_UP)

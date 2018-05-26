@@ -20,6 +20,7 @@ bool8 InitTomomichiDebugWindow(void);
 
 // sound_check_menu
 void CB2_StartSoundCheckMenu(void);
+void PrintSignedNumber(int n, u16 x, u16 y, u8 digits);
 
 // nakamura_debug_menu
 void NakaGenderTest(void);
@@ -55,6 +56,7 @@ bool8 InitTayaDebugWindow(void);
 bool8 InitNakamuraDebugMenu(void);
 
 // Luma Debug Menu
-u8 InitLumaDebugMenu(void);
+bool8 InitLumaDebugMenu(void);
+void DS_Adjust_Num(u8 taskId);
 
 #endif // GUARD_DEBUG_H
