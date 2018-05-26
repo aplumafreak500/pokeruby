@@ -63,7 +63,7 @@ u8 LumaDebugMenu_AddNewPKMN(void)
 
 void DS_Adjust_Num(u8 taskId)
 {
-    u8 dsStr[] = _("DS #");
+    u8 dsStr[] = _("DS Num");
 
     REG_DISPCNT = 0x3140;
     Menu_DrawStdWindowFrame(0, 0, 29, 19);
