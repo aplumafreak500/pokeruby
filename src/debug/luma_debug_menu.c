@@ -77,7 +77,7 @@ void DS_Adjust_Num(u8 taskId)
 
 void DS_Adjust_Task(u8 taskId)
 {
-    u8 DS_Sound_Count=5;
+    s8 DS_Sound_Count=5;
     if (gMain.newKeys & B_BUTTON)
     {
         REG_DISPCNT = 0x7140;
