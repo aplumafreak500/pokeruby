@@ -19,6 +19,7 @@ void debug_nullsub_66(void);
 bool8 InitTomomichiDebugWindow(void);
 
 // sound_check_menu
+void Task_InitSoundCheckMenu(u8 taskId);
 void CB2_StartSoundCheckMenu(void);
 void PrintSignedNumber(int n, u16 x, u16 y, u8 digits);
 

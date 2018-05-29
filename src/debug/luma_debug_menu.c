@@ -4,6 +4,7 @@
 #include "script.h"
 #include "sound.h"
 #include "constants/songs.h"
+#include "debug.h"
 
 u8 debug_sub_new0(void);
 u8 LumaDebugMenu_AddNewPKMN(void);
@@ -70,7 +71,7 @@ void DS_Adjust_Num(u8 taskId)
     Menu_PrintText(dsStr, 3, 2);
     REG_WIN0H = WIN_RANGE(0, DISPLAY_WIDTH);
     REG_WIN0V = WIN_RANGE(0, DISPLAY_HEIGHT);
-    gTasks[taskId].func = sub_80BB038;
+    gTasks[taskId].func = DS_Adjust_Task;
 }
 
 void DS_Adjust_Task(u8 taskId)
@@ -90,14 +91,14 @@ void DS_Adjust_Task(u8 taskId)
         DS_Sound_Count++;
         if (DS_Sound_Count > 10)
             DS_Sound_Count = 0;
-        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
+        m4aSoundMode(DS_Sound_Count << 8);
     }
     else if (gMain.newAndRepeatedKeys & DPAD_LEFT)
     {
         DS_Sound_Count--;
         if (DS_Sound_Count < 0)
            DS_Sound_Count = 10;
-        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
+        m4aSoundMode(DS_Sound_Count << 8);
     }
     PrintSignedNumber(DS_Sound_Count, 7, 2, 3);
 }
