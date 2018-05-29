@@ -5,6 +5,7 @@
 #include "sound.h"
 #include "constants/songs.h"
 #include "debug.h"
+#include "gba/m4a_internal.h"
 
 u8 debug_sub_new0(void);
 u8 LumaDebugMenu_AddNewPKMN(void);
@@ -91,14 +92,14 @@ void DS_Adjust_Task(u8 taskId)
         DS_Sound_Count++;
         if (DS_Sound_Count > 10)
             DS_Sound_Count = 0;
-        m4aSoundMode(DS_Sound_Count << 8);
+        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
     }
     else if (gMain.newAndRepeatedKeys & DPAD_LEFT)
     {
         DS_Sound_Count--;
         if (DS_Sound_Count < 0)
            DS_Sound_Count = 10;
-        m4aSoundMode(DS_Sound_Count << 8);
+        m4aSoundMode(DS_Sound_Count << SOUND_MODE_MAXCHN_SHIFT);
     }
     PrintSignedNumber(DS_Sound_Count, 7, 2, 3);
 }
