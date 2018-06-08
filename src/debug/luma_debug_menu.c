@@ -63,9 +63,12 @@ u8 LumaDebugMenu_AddNewPKMN(void)
 
 // Sound test
 
+const u8 dsStr[] = _("DS Num");
+
+s8 DS_Sound_Count = 5;
+
 void DS_Adjust_Num(u8 taskId)
 {
-    u8 dsStr[] = _("DS Num");
 
     REG_DISPCNT = 0x3140;
     Menu_DrawStdWindowFrame(0, 0, 29, 19);
@@ -77,7 +80,6 @@ void DS_Adjust_Num(u8 taskId)
 
 void DS_Adjust_Task(u8 taskId)
 {
-    s8 DS_Sound_Count=5;
     if (gMain.newKeys & B_BUTTON)
     {
         REG_DISPCNT = 0x7140;

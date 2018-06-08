@@ -365,6 +365,9 @@ SYMBOL(gUnknown_03005FA0, 32)
 SYMBOL(gUnknown_03005FA0, 48)
 #endif
 
+// Luma Debug Menu
+SYMBOL(DS_Sound_Count, 0x10)
+
 // m4a_2.c
 #if DEBUG
 . += 0x10;
