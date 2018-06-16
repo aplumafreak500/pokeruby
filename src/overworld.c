@@ -62,8 +62,8 @@ struct UnkTVStruct
 };
 
 extern u8 gUnknown_020297ED;
-extern u16 gUnknown_03004898;
-extern u16 gUnknown_0300489C;
+extern u16 gTotalCameraPixelOffsetY;
+extern u16 gTotalCameraPixelOffsetX;
 
 extern u8 S_WhiteOut[];
 extern u8 gUnknown_0819FC9F[];
@@ -1124,8 +1124,8 @@ void CB2_InitTestMenu(void)
     ResetSpriteData();
     ResetTasks();
     ScanlineEffect_Stop();
-    Text_LoadWindowTemplate(&gWindowTemplate_81E6CE4);
-    InitMenuWindow(&gWindowTemplate_81E6CE4);
+    Text_LoadWindowTemplate(&gMenuTextWindowTemplate);
+    InitMenuWindow(&gMenuTextWindowTemplate);
     debug_sub_8076B68();
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB(0, 0, 0));
     REG_IE |= 1;
@@ -1550,7 +1550,7 @@ bool32 sub_805483C(u8 *a1)
         sub_8054814();
         sub_8054C54();
         Text_LoadWindowTemplate(&gWindowTemplate_81E6C3C);
-        InitMenuWindow(&gWindowTemplate_81E6CE4);
+        InitMenuWindow(&gMenuTextWindowTemplate);
         (*a1)++;
         break;
     case 5:
@@ -1616,7 +1616,7 @@ bool32 sub_805493C(u8 *a1, u32 a2)
         sub_8054814();
         sub_8054C54();
         Text_LoadWindowTemplate(&gWindowTemplate_81E6C3C);
-        InitMenuWindow(&gWindowTemplate_81E6CE4);
+        InitMenuWindow(&gMenuTextWindowTemplate);
         (*a1)++;
         break;
     case 5:
@@ -1706,7 +1706,7 @@ bool32 sub_8054A9C(u8 *a1)
         sub_8054814();
         sub_8054C54();
         Text_LoadWindowTemplate(&gWindowTemplate_81E6C3C);
-        InitMenuWindow(&gWindowTemplate_81E6CE4);
+        InitMenuWindow(&gMenuTextWindowTemplate);
         (*a1)++;
         break;
     case 4:
@@ -1772,7 +1772,7 @@ void sub_8054C2C(void)
     sub_8054814();
     sub_8054C54();
     Text_LoadWindowTemplate(&gWindowTemplate_81E6C3C);
-    InitMenuWindow(&gWindowTemplate_81E6CE4);
+    InitMenuWindow(&gMenuTextWindowTemplate);
     mapdata_load_assets_to_gpu_and_full_redraw();
 }
 
@@ -1822,8 +1822,8 @@ void sub_8054D4C(u32 a1)
 
 void sub_8054D90(void)
 {
-    gUnknown_0300489C = 0;
-    gUnknown_03004898 = 0;
+    gTotalCameraPixelOffsetX = 0;
+    gTotalCameraPixelOffsetY = 0;
     sub_805AA98();
     TrySpawnEventObjects(0, 0);
     mapheader_run_first_tag4_script_list_match();
@@ -1833,8 +1833,8 @@ void mli4_mapscripts_and_other(void)
 {
     s16 x, y;
     struct UnkPlayerStruct *player;
-    gUnknown_0300489C = 0;
-    gUnknown_03004898 = 0;
+    gTotalCameraPixelOffsetX = 0;
+    gTotalCameraPixelOffsetY = 0;
     sub_805AA98();
     sav1_camera_get_focus_coords(&x, &y);
     player = sub_8053AA8();

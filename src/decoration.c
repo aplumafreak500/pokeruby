@@ -19,6 +19,7 @@
 #include "event_data.h"
 #include "field_weather.h"
 #include "decoration.h"
+#include "decoration_inventory.h"
 #include "shop.h"
 #include "ewram.h"
 
@@ -1410,7 +1411,7 @@ const struct MenuAction2 gUnknown_083EC604[] = {
     {SecretBaseText_Decorate, sub_80FF160},
     {SecretBaseText_PutAway, sub_8100A0C},
     {SecretBaseText_Toss, sub_8101700},
-    {gUnknownText_Exit, gpu_pal_decompress_alloc_tag_and_upload}
+    {gOtherText_Exit, gpu_pal_decompress_alloc_tag_and_upload}
 };
 
 const u8 *const gUnknown_083EC624[] = {
@@ -1555,9 +1556,9 @@ void sub_80FE470(u8 decoCat, u8 left, u8 top, u8 palIdx) // PrintDecorationCateg
     strptr[2] = palIdx;
     strptr += 3;
     strptr = StringCopy(strptr, gUnknown_083EC5E4[decoCat]);
-    strptr = sub_8072C14(strptr, sub_8134194(decoCat), 0x56, 1);
+    strptr = AlignInt1InMenuWindow(strptr, GetNumDecorationsInInventoryCategory(decoCat), 0x56, 1);
     *strptr++ = 0xba;
-    strptr = sub_8072C14(strptr, gDecorationInventories[decoCat].size, 0x68, 1);
+    strptr = AlignInt1InMenuWindow(strptr, gDecorationInventories[decoCat].size, 0x68, 1);
     strptr[0] = EXT_CTRL_CODE_BEGIN;
     strptr[1] = 5;
     strptr[2] = v0;
@@ -1579,7 +1580,7 @@ void sub_80FE528(u8 taskId) // PrintDecorationCategorySelectionMenuStrings
             sub_80FE470(decoCat, 1, 2 * decoCat + 1, 255); // Unselectable
         }
     }
-    Menu_PrintText(gUnknownText_Exit, 1, 17);
+    Menu_PrintText(gOtherText_Exit, 1, 17);
 }
 
 void sub_80FE5AC(u8 taskId)
@@ -1609,10 +1610,10 @@ void sub_80FE604(u8 taskId)
             gUnknown_020388F6 = Menu_GetCursorPos();
             if (gUnknown_020388F6 != 8)
             {
-                gUnknown_020388D5 = sub_8134194(gUnknown_020388F6);
+                gUnknown_020388D5 = GetNumDecorationsInInventoryCategory(gUnknown_020388F6);
                 if (gUnknown_020388D5)
                 {
-                    sub_8134104(gUnknown_020388F6);
+                    SortDecorationInventory(gUnknown_020388F6);
                     gUnknown_020388D0 = gDecorationInventories[gUnknown_020388F6].items;
                     sub_80FEF50(taskId);
                     ClearVerticalScrollIndicatorPalettes();
@@ -1805,7 +1806,7 @@ void sub_80FEABC(u8 taskId, u8 dummy1)
         }
         if (i == gUnknown_020388D5)
         {
-            sub_8072A18(gUnknownText_Exit, 0x08, 8 * ni, 0x68, 1);
+            sub_8072A18(gOtherText_Exit, 0x08, 8 * ni, 0x68, 1);
             break;
         }
         if (gUnknown_020388D0[i])
@@ -2022,7 +2023,7 @@ void sub_80FF098(u8 taskId)
     {
         gUnknown_020388F4--;
     }
-    sub_8134104(gUnknown_020388F6);
+    SortDecorationInventory(gUnknown_020388F6);
     sub_80FED90(taskId);
     sub_80FEF28();
 }
@@ -2042,7 +2043,7 @@ void sub_80FF114(u8 taskId)
 }
 void sub_80FF160(u8 taskId)
 {
-    if (!sub_81341D4())
+    if (!GetNumDecorationsInInventory())
     {
         DisplayItemMessageOnField(taskId, gSecretBaseText_NoDecors, sub_80FE428, 0);
     } else
@@ -2272,13 +2273,13 @@ void AddDecorationIconObjectFromEventObject(struct UnkStruct_02038900 * unk_0203
         sub_8100874(unk_02038900);
         sub_810070C(unk_02038900->palette, ((u16 *)gMapHeader.mapData->secondaryTileset->metatiles + 8 * unk_02038900->decoration->tiles[0])[7] >> 12);
         LoadSpritePalette(&gUnknown_083EC954);
-        gUnknown_020391A8 = gSprites[gUnknown_03004880.unk4].data[0];
-        gUnknown_03004880.unk4 = CreateSprite(&gSpriteTemplate_83EC93C, gUnknown_083EC900[unk_02038900->decoration->shape].x,  gUnknown_083EC900[unk_02038900->decoration->shape].y, 0);
+        gUnknown_020391A8 = gSprites[gFieldCamera.trackedSpriteId].data[0];
+        gFieldCamera.trackedSpriteId = CreateSprite(&gSpriteTemplate_83EC93C, gUnknown_083EC900[unk_02038900->decoration->shape].x,  gUnknown_083EC900[unk_02038900->decoration->shape].y, 0);
     } else
     {
-        gUnknown_020391A8 = gSprites[gUnknown_03004880.unk4].data[0];
-        gUnknown_03004880.unk4 = AddPseudoEventObject(unk_02038900->decoration->tiles[0], sub_81009A8, gUnknown_083EC900[unk_02038900->decoration->shape].x,  gUnknown_083EC900[unk_02038900->decoration->shape].y, 1);
-        gSprites[gUnknown_03004880.unk4].oam.priority = 1;
+        gUnknown_020391A8 = gSprites[gFieldCamera.trackedSpriteId].data[0];
+        gFieldCamera.trackedSpriteId = AddPseudoEventObject(unk_02038900->decoration->tiles[0], sub_81009A8, gUnknown_083EC900[unk_02038900->decoration->shape].x,  gUnknown_083EC900[unk_02038900->decoration->shape].y, 1);
+        gSprites[gFieldCamera.trackedSpriteId].oam.priority = 1;
     }
 }
 
@@ -2299,7 +2300,7 @@ void SetUpPlacingDecorationPlayerAvatar(u8 taskId, struct UnkStruct_02038900 *un
     }
     gSprites[gUnknown_020391A9].oam.priority = 1;
     DestroySprite(&gSprites[gUnknown_020391A8]);
-    gUnknown_020391A8 = gUnknown_03004880.unk4;
+    gUnknown_020391A8 = gFieldCamera.trackedSpriteId;
 }
 
 void sub_80FF960(u8 taskId)
@@ -3723,9 +3724,9 @@ void SetUpPuttingAwayDecorationPlayerAvatar(void)
 {
     GetPlayerFacingDirection();
     Menu_EraseWindowRect(0, 0, 29, 19);
-    gUnknown_020391A8 = gSprites[gUnknown_03004880.unk4].data[0];
+    gUnknown_020391A8 = gSprites[gFieldCamera.trackedSpriteId].data[0];
     sub_81016C8();
-    gUnknown_03004880.unk4 = CreateSprite(&gSpriteTemplate_83ECA88, 0x78, 0x50, 0);
+    gFieldCamera.trackedSpriteId = CreateSprite(&gSpriteTemplate_83ECA88, 0x78, 0x50, 0);
     if (gSaveBlock2.playerGender == MALE)
     {
         gUnknown_020391A9 = AddPseudoEventObject(0xc1, SpriteCallbackDummy, 0x88, 0x48, 0);
@@ -3735,7 +3736,7 @@ void SetUpPuttingAwayDecorationPlayerAvatar(void)
     }
     gSprites[gUnknown_020391A9].oam.priority = 1;
     DestroySprite(&gSprites[gUnknown_020391A8]);
-    gUnknown_020391A8 = gUnknown_03004880.unk4;
+    gUnknown_020391A8 = gFieldCamera.trackedSpriteId;
     gSprites[gUnknown_020391A8].oam.priority = 1;
 }
 
@@ -4190,7 +4191,7 @@ void sub_81016F4(void)
 
 void sub_8101700(u8 taskId)
 {
-    if (!sub_81341D4())
+    if (!GetNumDecorationsInInventory())
     {
         DisplayItemMessageOnField(taskId, gSecretBaseText_NoDecors, sub_80FE428, 0);
     } else
@@ -4203,7 +4204,7 @@ void sub_8101700(u8 taskId)
 
 void sub_8101750(u8 taskId)
 {
-    if (!sub_81341D4())
+    if (!GetNumDecorationsInInventory())
     {
         DisplayItemMessageOnField(taskId, gSecretBaseText_NoDecors, sub_80FE428, 0);
     } else
