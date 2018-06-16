@@ -1849,4 +1849,7 @@ const u8 gSystemText_SaveFailed[] = _("Speichern fehlgeschlagen.");
 const u8 gSystemText_NoSaveFileNoTime[] = _("Es existiert kein Speicherstand. Uhr-\nzeit kann nicht eingestellt werden.");
 const u8 gSystemText_ClockAdjustmentUsable[] = _("Das spielinterne Zeiteingabe-\nSystem ist jetzt verfügbar.");
 const u8 gSystemText_Saving[] = _("SPEICHERVORGANG...\nGERÄT NICHT AUSSCHALTEN!");
+
 #endif
+
+const u8 gOtherText_MetDistantLand[] = _("met in a distant land.");

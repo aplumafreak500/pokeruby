@@ -120,6 +120,7 @@ static void sub_80A1FF8(const u8 *, u8, u8, u8);
 
 extern u8 ball_number_to_ball_processing_index(u16);
 extern u8 StorageSystemGetNextMonIndex(struct BoxPokemon *, u8, u8, u8);
+extern u8* DetermineOrreMetLocation(struct Pokemon *);
 
 extern struct MusicPlayerInfo gMPlay_BGM;
 extern u8 gUnknown_08208238[];
@@ -3041,6 +3042,8 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     u8 gameMet;
     u8 *ptr = gStringVar4;
     u8 nature = GetNature(mon);
+    u8 *orreMetLocationString; //receives the string pointer returned from DetermineOrreMetLocation
+    u16 species; //needed to check for starter Eeveelutions and Plusle, which are special cases
 
 #if ENGLISH
     ptr = sub_80A1E9C(ptr, gNatureNames[nature], 14);
@@ -3067,7 +3070,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
             ptr = sub_80A1E9C(ptr, gStringVar1, 14);
             StringCopy(ptr, gOtherText_Egg2);
         }
-        else if (locationMet >= 88)
+        else if (locationMet >= 214)
         {
             *ptr = CHAR_NEWLINE;
             ptr++;
@@ -3090,8 +3093,30 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     else
     {
         gameMet = GetMonData(mon, MON_DATA_MET_GAME);
+        
+                if(gameMet == VERSION_GC) //Colosseum and XD Location Handling
+        {
+        	 u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
 
-        if (!(gameMet == VERSION_RUBY || gameMet == VERSION_SAPPHIRE || gameMet == VERSION_EMERALD))
+        	 ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+        	 *ptr = CHAR_NEWLINE;
+        	 ptr++;
+
+        	 orreMetLocationString = DetermineOrreMetLocation(mon);
+        	 species = GetMonData(mon, MON_DATA_SPECIES);
+        	 if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
+        	 {
+            	 GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
+        		 StringCopy(ptr, orreMetLocationString);
+        	 }
+        	 else
+        	 {
+        		 ptr = sub_80A1E9C(ptr, orreMetLocationString, 14);
+        		 StringCopy(ptr, gOtherText_Met);
+        	 }
+        }
+
+        else if (!(gameMet == VERSION_RUBY || gameMet == VERSION_SAPPHIRE || gameMet == VERSION_EMERALD || gameMet == VERSION_FIRERED || gameMet == VERSION_LEAFGREEN))
         {
             *ptr = CHAR_NEWLINE;
             ptr++;
@@ -3111,7 +3136,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 
                 StringCopy(ptr, gOtherText_FatefulEncounter);
             }
-            else if (locationMet >= 88)
+            else if (locationMet >= 214)
             {
                 *ptr = CHAR_NEWLINE;
                 ptr++;

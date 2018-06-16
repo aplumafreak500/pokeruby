@@ -136,6 +136,7 @@ SECTIONS {
         src/pokemon_storage_system_5.o(.text);
         asm/pokemon_storage_system.o(.text);
         src/pokemon_icon.o(.text);
+        src/orre_met_location_handler.o(.text);
         src/pokemon_summary_screen.o(.text);
         src/script_movement.o(.text);
         src/fldeff_cut.o(.text);

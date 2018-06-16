@@ -78,6 +78,9 @@ enum
     VERSION_SAPPHIRE = 1,
     VERSION_RUBY = 2,
     VERSION_EMERALD = 3,
+    VERSION_FIRERED = 4,
+    VERSION_LEAFGREEN = 5,
+    VERSION_GC = 15,
 };
 
 enum LanguageId
