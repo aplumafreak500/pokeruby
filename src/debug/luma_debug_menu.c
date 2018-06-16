@@ -65,7 +65,7 @@ u8 LumaDebugMenu_AddNewPKMN(void)
 
 const u8 dsStr[] = _("DS Num");
 
-s8 DS_Sound_Count = 5;
+s8 DS_Sound_Count;
 
 void DS_Adjust_Num(u8 taskId)
 {

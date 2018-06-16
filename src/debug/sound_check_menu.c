@@ -64,6 +64,7 @@ static EWRAM_DATA u8 gUnknown_020387D9 = 0;
 
 u16 gSoundTestCryNum;
 extern u8 gUnknown_03005E98;
+extern s8 DS_Sound_Count;
 
 struct MusicPlayerInfo *gUnknown_03005D30;
 
@@ -158,6 +159,7 @@ void CB2_StartSoundCheckMenu(void)
     gTasks[taskId].data[3] = 0;
     gUnknown_020387B0 = 0;
     gTasks[taskId].data[3] = 0; // why?
+    DS_Sound_Count=5;
     m4aSoundInit();
 }
 
