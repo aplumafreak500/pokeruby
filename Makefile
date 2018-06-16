@@ -1,4 +1,5 @@
-include $(DEVKITARM)/base_tools
+# include $(DEVKITARM)/base_tools
+PREFIX=$(DEVKITARM)/bin/arm-none-eabi-
 include config.mk
 
 ifeq ($(OS),Windows_NT)
