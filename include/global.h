@@ -73,6 +73,8 @@ enum
     f;                       \
 })
 
+// most of this is taken from PKHex
+
 enum
 {
     VERSION_SAPPHIRE = 1,
@@ -80,14 +82,56 @@ enum
     VERSION_EMERALD = 3,
     VERSION_FIRERED = 4,
     VERSION_LEAFGREEN = 5,
-    VERSION_GC = 15,
+    VERSION_BLUE_GBA = 6, // for a future pokefirered hack
+    VERSION_HEARTGOLD = 7,
+    VERSION_SOULSILVER = 8,
+    VERSION_CRYSTAL_DS = 9, // for a future HG/SS hack
+    VERSION_DIAMOND = 10,
+    VERSION_PEARL = 11,
+    VERSION_PLATINUM = 12,
+    // 13
+    // 14
+    VERSION_GC = 15, // coll/xd
+    // 16
+    // 17
+    // 18
+    // 19
+    VERSION_WHITE = 20,
+    VERSION_BLACK = 21,
+    VERSION_WHITE2 = 22,
+    VERSION_BLACK2 = 23,
+    VERSION_X = 24,
+    VERSION_Y = 25,
+    VERSION_ALPHA = 26,
+    VERSION_OMEGA = 27,
+    VERSION_THETA = 28, // theta emerald
+    VERSION_Z = 29,
+    VERSION_SUN = 30,
+    VERSION_MOON = 31,
+    VERSION_ULTRASUN = 32,
+    VERSION_ULTRAMOON = 33,
+    VERSION_GO = 34,
+    VERSION_RED_BANK = 35,
+    VERSION_GREEN_BANK = 36, // blue JP
+    VERSION_BLUE_BANK = 37,  // green US
+    VERSION_YELLOW_BANK = 38,
+    VERSION_GOLD_BANK = 39,
+    VERSION_SILVER_BANK = 40,
+    VERSION_CRYSTAL_BANK = 41,
 };
 
 enum LanguageId
 {
     LANGUAGE_JAPANESE = 1,
     LANGUAGE_ENGLISH = 2,
+    LANGUAGE_FRENCH = 3,
+    LANGUAGE_ITALIAN = 4,
     LANGUAGE_GERMAN = 5,
+    LANGUAGE_DUTCH = 6, // unofficial
+    LANGUAGE_SPANISH = 7,
+    LANGUAGE_KOREAN = 8,
+    LANGUAGE_CHINESE_SIMPLIFIED = 9,
+    LANGUAGE_CHINESE_TRADITIONAL = 10,
 };
 
 #if defined(ENGLISH)
