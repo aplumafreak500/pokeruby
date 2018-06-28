@@ -64,7 +64,7 @@ LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
 
 #### Main Rules ####
 
-ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug sapphire_de_debug ruby_debug sapphire_debug ruby_rev1_debug ruby_rev2_debug sapphire_rev1_debug sapphire_rev2_debug
+ALL_BUILDS := ruby ruby_rev1 ruby_rev1 sapphire sapphire_rev1 sapphire_rev2 ruby_de sapphire_de ruby_de_debug
 
 # Available targets
 .PHONY: all clean tidy tools $(ALL_BUILDS)
@@ -164,13 +164,7 @@ sapphire_rev2: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2
 ruby_de:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN
 sapphire_de:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
 ruby_de_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
-sapphire_de_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=0
-ruby_debug: ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1 COMPARE=0
-ruby_rev1_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1 COMPARE=0
-ruby_rev2_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1 COMPARE=0
-sapphire_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1 COMPARE=0
-sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1 COMPARE=0
-sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1 COMPARE=0
+
 
 #### Graphics Rules ####
 
