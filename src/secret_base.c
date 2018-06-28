@@ -110,7 +110,6 @@ const u8 gUnknown_083D13EC[] = {
     0x23,0x24,0xF,0x1F,0x21,0x2F,0xE,0x14,0x20,0x22,0x0,0x0
 };
 
-extern void *gUnknown_0300485C;
 extern u8 gUnknown_081A2E14[];
 extern u8 UnknownString_81A1BB2[];
 extern u8 UnknownString_81A1F67[];
@@ -241,11 +240,11 @@ void sub_80BB764(s16 *arg1, s16 *arg2, u16 arg3)
 {
     s16 x, y;
 
-    for (y=0; y<gMapHeader.mapData->height; y++)
+    for (y=0; y<gMapHeader.mapLayout->height; y++)
     {
-        for (x=0; x<gMapHeader.mapData->width; x++)
+        for (x=0; x<gMapHeader.mapLayout->width; x++)
         {
-            if ((gMapHeader.mapData->map[y * gMapHeader.mapData->width + x] & 0x3ff) == arg3)
+            if ((gMapHeader.mapLayout->map[y * gMapHeader.mapLayout->width + x] & 0x3ff) == arg3)
             {
                 *arg1 = x;
                 *arg2 = y;
@@ -363,7 +362,7 @@ void sub_80BBA48(u8 taskid)
         if (gSaveBlock1.secretBases[curbaseid].sbr_field_10 < 0xff)
             gSaveBlock1.secretBases[curbaseid].sbr_field_10++;
         sub_80BBA14();
-        warp_in();
+        WarpIntoMap();
         gFieldCallback = sub_8080990;
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskid);
@@ -416,7 +415,7 @@ void sub_80BBBEC(u8 taskid)
     {
         idx = 4 * (gCurrentSecretBaseId / 10);
         Overworld_SetWarpDestination(gSaveBlock1.location.mapGroup, gSaveBlock1.location.mapNum, -1, gUnknown_083D1374[idx + 2], gUnknown_083D1374[idx + 3]);
-        warp_in();
+        WarpIntoMap();
         gFieldCallback = sub_80BBB90;
         SetMainCallback2(CB2_LoadMap);
         DestroyTask(taskid);
@@ -578,7 +577,7 @@ void sub_80BC074(u8 taskid)
         break;
     case 2:
         copy_saved_warp2_bank_and_enter_x_to_warp1(0x7E);
-        warp_in();
+        WarpIntoMap();
         gFieldCallback = mapldr_default;
         SetMainCallback2(CB2_LoadMap);
         ScriptContext2_Disable();
