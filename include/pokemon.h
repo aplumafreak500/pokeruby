@@ -92,6 +92,8 @@
 #define MON_DATA_SPEED2            86
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
+#define MON_DATA_HAS_HIDDEN_ABILITY 89
+#define MON_DATA_RIBBON2           90
 
 #define MAX_LEVEL 100
 
