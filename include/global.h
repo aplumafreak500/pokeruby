@@ -127,7 +127,7 @@ enum LanguageId
     LANGUAGE_FRENCH = 3,
     LANGUAGE_ITALIAN = 4,
     LANGUAGE_GERMAN = 5,
-    LANGUAGE_DUTCH = 6, // unofficial
+    LANGUAGE_DUTCH = 6, // Korean in Gen 3, unused anyways
     LANGUAGE_SPANISH = 7,
     LANGUAGE_KOREAN = 8,
     LANGUAGE_CHINESE_SIMPLIFIED = 9,

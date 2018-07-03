@@ -123,19 +123,19 @@ void ZeroEnemyPartyMons(void)
         ZeroMonData(&gEnemyParty[i]);
 }
 
-void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
+void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId, u8 hasHiddenAbility)
 {
     u32 arg;
 
     ZeroMonData(mon);
-    CreateBoxMon(&mon->box, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
+    CreateBoxMon(&mon->box, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId, hasHiddenAbility);
     SetMonData(mon, MON_DATA_LEVEL, &level);
     arg = 255;
     SetMonData(mon, MON_DATA_MAIL, &arg);
     CalculateMonStats(mon);
 }
 
-void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
+void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId, u8 hasHiddenAbility)
 {
     u8 speciesName[POKEMON_NAME_LENGTH + 1];
     u32 personality;
@@ -147,7 +147,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     if (hasFixedPersonality)
         personality = fixedPersonality;
     else
-        personality = Random32();
+        personality = Random32(); // Method 1?
 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
 
@@ -159,7 +159,16 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         {
             value = Random32();
             shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-        } while (shinyValue < 8);
+        } while !(shinyValue >= 16); // G6/7 shiny odds - 8 in prior games
+    }
+    if (otIdType == 3) //Pokemon always shiny
+    {
+        u32 shinyValue;
+        do
+        {
+            value = Random32();
+            shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
+        } while !(shinyValue < 16); // G6/7 shiny odds - 8 in prior games
     }
     else if (otIdType == 1) //Pokemon has a preset OT ID
     {
@@ -229,11 +238,16 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ALT_ABILITY, &value);
     }
+    
+    if (gBaseStats[species].hiddenAbility && hasHiddenAbility) // only give dw ability if one is set in base stats
+    {
+        SetBoxMonData(boxMon, MON_DATA_HAS_HIDDEN_ABILITY, 1);
+    }
 
     GiveBoxMonInitialMoveset(boxMon);
 }
 
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
+void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature) // Method 2?
 {
     u32 personality;
 
@@ -243,7 +257,7 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
     }
     while (nature != GetNatureFromPersonality(personality));
 
-    CreateMon(mon, species, level, fixedIV, 1, personality, 0, 0);
+    CreateMon(mon, species, level, fixedIV, 1, personality, 0, 0, 0);
 }
 
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
@@ -273,11 +287,11 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
             || gender != GetGenderFromSpeciesAndPersonality(species, personality));
     }
 
-    CreateMon(mon, species, level, fixedIV, 1, personality, 0, 0);
+    CreateMon(mon, species, level, fixedIV, 1, personality, 0, 0, 0);
 }
 
 // This is only used to create Wally's Ralts.
-void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level)
+void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level) // Method 3?
 {
     u32 personality;
     u32 otId;
@@ -288,19 +302,51 @@ void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level)
         personality = Random32();
     }
     while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_MALE);
-    CreateMon(mon, species, level, 32, 1, personality, 1, otId);
+    CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
+}
+
+// Opposite of the above function.
+void CreateFemaleMon(struct Pokemon *mon, u16 species, u8 level)
+{
+    u32 personality;
+    u32 otId;
+
+    do
+    {
+        otId = Random32();
+        personality = Random32();
+    }
+    while (GetGenderFromSpeciesAndPersonality(species, personality) != MON_FEMALE);
+    CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
+}
+
+void CreateMonWithHiddenAbility(struct Pokemon *mon, u16 species, u8 level)
+{
+    CreateMon(mon, species, level, 32, 0, 0, 0, 0, 1);
+}
+
+// These are helper functions
+
+void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level)
+{
+    CreateMon(mon, species, level, 32, 0, 0, 1, 0, 0);
+}
+
+void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level)
+{
+    CreateMon(mon, species, level, 32, 0, 0, 2, 0, 0);
 }
 
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality)
 {
-    CreateMon(mon, species, level, 0, 1, personality, 0, 0);
+    CreateMon(mon, species, level, 0, 1, personality, 0, 0, 0);
     SetMonData(mon, MON_DATA_IVS, &ivs);
     CalculateMonStats(mon);
 }
 
-void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId)
+void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId) // trades? Method 4?
 {
-    CreateMon(mon, species, level, 0, 0, 0, 1, otId);
+    CreateMon(mon, species, level, 0, 0, 0, 1, otId, 0);
     SetMonData(mon, MON_DATA_HP_IV, &ivs[0]);
     SetMonData(mon, MON_DATA_ATK_IV, &ivs[1]);
     SetMonData(mon, MON_DATA_DEF_IV, &ivs[2]);
@@ -317,7 +363,7 @@ void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedI
     u16 evAmount;
     u8 temp;
 
-    CreateMon(mon, species, level, fixedIV, 0, 0, 0, 0);
+    CreateMon(mon, species, level, fixedIV, 0, 0, 0, 0, 0);
 
     temp = evSpread;
 
@@ -349,7 +395,7 @@ void sub_803ADE8(struct Pokemon *mon, struct UnknownPokemonStruct *src)
     u8 language;
     u8 value;
 
-    CreateMon(mon, src->species, src->level, 0, 1, src->personality, 1, src->otId);
+    CreateMon(mon, src->species, src->level, 0, 1, src->personality, 1, src->otId, 0);
 
     for (i = 0; i < 4; i++)
         SetMonMoveSlot(mon, src->moves[i], i);
@@ -435,6 +481,7 @@ u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     union PokemonSubstruct *substruct1 = GetSubstruct(boxMon, boxMon->personality, 1);
     union PokemonSubstruct *substruct2 = GetSubstruct(boxMon, boxMon->personality, 2);
     union PokemonSubstruct *substruct3 = GetSubstruct(boxMon, boxMon->personality, 3);
+    union PokemonSubstruct *substruct4 = GetSubstruct(boxMon, boxMon->personality, 4);
     s32 i;
 
     for (i = 0; i < 6; i++)
@@ -448,6 +495,9 @@ u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 
     for (i = 0; i < 6; i++)
         checksum += substruct3->raw[i];
+
+    for (i = 0; i < 6; i++)
+        checksum += substruct4->raw[i];
 
     return checksum;
 }
