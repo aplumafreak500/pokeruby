@@ -684,7 +684,7 @@ static void _GiveEggFromDaycare(struct DayCare *daycare) // give_egg
 }
 
 
-void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation)
+void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation, u8 shinyMode, bool8 hasHiddenAbility)
 {
     u8 metLevel;
     u16 ball;
@@ -692,7 +692,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation)
     u8 metLocation;
     u8 isEgg;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, shinyMode, FALSE, hasHiddenAbility);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;

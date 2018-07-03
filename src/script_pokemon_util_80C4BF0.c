@@ -409,8 +409,10 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     int sentToPc;
     u8 heldItem[2];
     struct Pokemon mon;
+    
+    u8 shinyMode = unused1 & 0xF;
 
-    CreateMon(&mon, species, level, 32, 0, 0, 0, 0);
+    CreateMon(&mon, species, level, 32, 0, 0, shinyMode, 0, unused3); // unused3 = has hidden ability
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
@@ -428,12 +430,12 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     return sentToPc;
 }
 
-u8 ScriptGiveEgg(u16 species)
+u8 ScriptGiveEgg(u16 species, u8 shinyMode, u8 hasHiddenAbility)
 {
     struct Pokemon mon;
     u8 isEgg;
 
-    CreateEgg(&mon, species, TRUE);
+    CreateEgg(&mon, species, TRUE, shinyMode, hasHiddenAbility);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
 
@@ -481,12 +483,12 @@ bool8 GetNameOfEnigmaBerryInPlayerParty(void)
     return hasItem;
 }
 
-void CreateScriptedWildMon(u16 species, u8 level, u16 item)
+void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 shinyMode, u8 hasHiddenAbility)
 {
     u8 heldItem[2];
 
     ZeroEnemyPartyMons();
-    CreateMon(&gEnemyParty[0], species, level, 0x20, 0, 0, 0, 0);
+    CreateMon(&gEnemyParty[0], species, level, 0x20, 0, 0, shinyMode, 0, hasHiddenAbility);
 
     if(item)
     {

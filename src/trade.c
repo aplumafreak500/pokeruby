@@ -62,6 +62,7 @@ struct InGameTrade {
     /*0x36*/ u8 otGender;
     /*0x37*/ u8 sheen;
     /*0x38*/ u16 playerSpecies;
+             bool8 hasHiddenAbility;
 };
 
 struct UnkStructC {
@@ -872,7 +873,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x9C40,
         ITEM_X_ATTACK, -1,
         _("ELYSSA"), MALE, 10,
-        SPECIES_SLAKOTH
+        SPECIES_SLAKOTH, 0
     }, {
         _("SKITIT"), SPECIES_SKITTY,
         5, 4, 4, 5, 4, 4,
@@ -881,7 +882,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x498A2E17,
         ITEM_GLITTER_MAIL, 0,
         _("DARRELL"), FEMALE, 10,
-        SPECIES_PIKACHU
+        SPECIES_PIKACHU, 0
     }, {
         _("COROSO"),
         SPECIES_CORSOLA,
@@ -891,7 +892,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x4C970B7F,
         ITEM_TROPIC_MAIL, 1,
         _("LANE"), FEMALE, 10,
-        SPECIES_BELLOSSOM
+        SPECIES_BELLOSSOM, 0
     }
 #elif GERMAN
     {
@@ -902,7 +903,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x9C40,
         ITEM_X_ATTACK, -1,
         _("MAIK"), MALE, 10,
-        SPECIES_SLAKOTH
+        SPECIES_SLAKOTH, 0
     }, {
         _("CONEC"), SPECIES_SKITTY,
         5, 4, 4, 5, 4, 4,
@@ -911,7 +912,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x498A2E17,
         ITEM_GLITTER_MAIL, 0,
         _("MADINA"), FEMALE, 10,
-        SPECIES_PIKACHU
+        SPECIES_PIKACHU, 0
     }, {
         _("CORASO"),
         SPECIES_CORSOLA,
@@ -921,7 +922,7 @@ const struct InGameTrade gIngameTrades[] = {
         0x4C970B7F,
         ITEM_TROPIC_MAIL, 1,
         _("LIANA"), FEMALE, 10,
-        SPECIES_BELLOSSOM
+        SPECIES_BELLOSSOM, 0
     }
 #endif
 };
@@ -1115,7 +1116,7 @@ static void sub_8047EC0(void)
             gLinkType = 0x1122;
             OpenLink();
             for (i = 0; i < PARTY_SIZE; i ++)
-                CreateMon(&gEnemyParty[i], 0, 0, 0x20, FALSE, 0, FALSE, 0);
+                CreateMon(&gEnemyParty[i], 0, 0, 0x20, FALSE, 0, FALSE, 0, 0);
             gMain.state ++;
             gUnknown_03004824->unk_00b4 = 0;
             CreateTask(sub_8083C50, 1);
@@ -5405,7 +5406,7 @@ static void _CreateInGameTradePokemon(u8 whichPlayerMon, u8 whichInGameTrade)
     u8 isMail;
     struct Pokemon *pokemon = &gEnemyParty[0];
 
-    CreateMon(pokemon, inGameTrade->species, level, 32, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId);
+    CreateMon(pokemon, inGameTrade->species, level, 32, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId, inGameTrade->hasHiddenAbility);
 
     SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);

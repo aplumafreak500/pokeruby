@@ -1357,6 +1357,22 @@
 	.byte \a
 	.4byte \value
 	.endm
+	
+	.macro giveegg2 species, shinyMode, hasHiddenAbility
+	.byte 0xcd
+	.2byte \species
+	.byte \shinyMode
+	.byte \hasHiddenAbility
+	.endm
+	
+	.macro setwildbattle2 species, level, item, shinyMode, hasHiddenAbility
+	.byte 0xce
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.byte \shinyMode
+	.byte \hasHiddenAbility
+	.endm
 
 @ Supplementary
 
