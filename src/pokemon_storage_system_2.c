@@ -491,7 +491,7 @@ void sub_8096C84(void)
         case 9:
             PlaySE(SE_SELECT);
             gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox + 1;
-            if (gPokemonStorageSystemPtr->unk_08b2 > 13)
+            if (gPokemonStorageSystemPtr->unk_08b2 > 11)
                 gPokemonStorageSystemPtr->unk_08b2 = 0;
             sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
             gPokemonStorageSystemPtr->unk_0004 = 2;
@@ -500,7 +500,7 @@ void sub_8096C84(void)
             PlaySE(SE_SELECT);
             gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox - 1;
             if (gPokemonStorageSystemPtr->unk_08b2 < 0)
-                gPokemonStorageSystemPtr->unk_08b2 = 13;
+                gPokemonStorageSystemPtr->unk_08b2 = 11;
             sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
             gPokemonStorageSystemPtr->unk_0004 = 2;
             break;
