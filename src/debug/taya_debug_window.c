@@ -742,6 +742,7 @@ bool8 TayaDebugMenu_PokenavD(void)
             u32 otId = Random() + 1;
             u16 level = (Random() % 100) + 1;
             u16 species = (Random() % 386) + 1;
+            u8 dwAbility = Random() % 1;
             if (species >= SPECIES_OLD_UNOWN_B)
             {
                 species += SPECIES_TREECKO - SPECIES_OLD_UNOWN_B;
@@ -749,7 +750,7 @@ bool8 TayaDebugMenu_PokenavD(void)
                     species = SPECIES_BULBASAUR;
             }
             boxPokemon = gPokemonStorage.boxes[i] + j;
-            CreateBoxMon(boxPokemon, species, level, 32, FALSE, 0, TRUE, otId);
+            CreateBoxMon(boxPokemon, species, level, 32, FALSE, 0, TRUE, otId, dwAbility);
 
             otId = Random() & 0xff;
             SetBoxMonData(boxPokemon, MON_DATA_COOL, &otId);

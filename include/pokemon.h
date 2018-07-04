@@ -93,7 +93,7 @@
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
 #define MON_DATA_HAS_HIDDEN_ABILITY 89
-#define MON_DATA_RIBBON2           90
+#define MON_DATA_RIBBONS2           90
 
 #define MAX_LEVEL 100
 
@@ -606,7 +606,7 @@ u8 SendMonToPC(struct Pokemon *mon);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
 u8 sub_803DAA0(void);
-u8 GetAbilityBySpecies(u16 species, bool8 altAbility);
+u8 GetAbilityBySpecies(u16 species, bool8 altAbility, bool8 hAbility);
 u8 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBaseRecord *secretBaseRecord);
 u8 GetSecretBaseTrainerPicIndex(void);

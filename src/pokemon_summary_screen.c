@@ -2514,7 +2514,7 @@ static void sub_809FC34(struct Pokemon *mon)
         if (gBaseStats[species].type1 != gBaseStats[species].type2)
             sub_80A198C(gBaseStats[species].type2, 160, 48, 1);
 
-        ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ALT_ABILITY));
+        ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ALT_ABILITY), GetMonData(mon, MON_DATA_HAS_HIDDEN_ABILITY));
         sub_80A1FF8(gAbilityNames[ability], 13, 11, 9);
         Menu_PrintText(gAbilityDescriptions[ability], 11, 11);
 

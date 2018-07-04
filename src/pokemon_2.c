@@ -999,9 +999,11 @@ u8 sub_803DAA0(void)
     return (aliveCount > 1) ? 0 : 2;
 }
 
-u8 GetAbilityBySpecies(u16 species, bool8 altAbility)
+u8 GetAbilityBySpecies(u16 species, bool8 altAbility, bool8 hAbility)
 {
-    if (altAbility)
+    if (hAbility)
+        gLastUsedAbility = gBaseStats[species].hiddenAbility;
+    else if (altAbility)
         gLastUsedAbility = gBaseStats[species].ability2;
     else
         gLastUsedAbility = gBaseStats[species].ability1;
@@ -1035,7 +1037,7 @@ void CreateSecretBaseEnemyParty(struct SecretBaseRecord *secretBaseRecord)
                 1,
                 eSecretBaseRecord->partyPersonality[i],
                 2,
-                0);
+                0, 0);
 
             // these two SetMonData calls require the (u8 *) cast since SetMonData is declared in this function.
             SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, (u8 *)&eSecretBaseRecord->partyHeldItems[i]);
@@ -1168,11 +1170,11 @@ void CopyPlayerPartyMonToBattleData(u8 battleIndex, u8 partyIndex)
     gBattleMons[battleIndex].spDefense = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPDEF, NULL);
     gBattleMons[battleIndex].isEgg = GetMonData(&gPlayerParty[partyIndex], MON_DATA_IS_EGG, NULL);
     gBattleMons[battleIndex].altAbility = GetMonData(&gPlayerParty[partyIndex], MON_DATA_ALT_ABILITY, NULL);
-    gBattleMons[battleIndex].hAbility = GetMonData(&gPlayerParty[partyIndex], MON_DATA_HAS_HIDDEN_ABILITY, NULL);
+    gBattleMons[battleIndex].hasHiddenAbility = GetMonData(&gPlayerParty[partyIndex], MON_DATA_HAS_HIDDEN_ABILITY, NULL);
     gBattleMons[battleIndex].otId = GetMonData(&gPlayerParty[partyIndex], MON_DATA_OT_ID, NULL);
     gBattleMons[battleIndex].type1 = gBaseStats[gBattleMons[battleIndex].species].type1;
     gBattleMons[battleIndex].type2 = gBaseStats[gBattleMons[battleIndex].species].type2;
-    gBattleMons[battleIndex].ability = GetAbilityBySpecies(gBattleMons[battleIndex].species, gBattleMons[battleIndex].altAbility, gBattleMons[battleIndex].hAbility);
+    gBattleMons[battleIndex].ability = GetAbilityBySpecies(gBattleMons[battleIndex].species, gBattleMons[battleIndex].altAbility, gBattleMons[battleIndex].hasHiddenAbility);
     GetMonData(&gPlayerParty[partyIndex], MON_DATA_NICKNAME, nickname);
     StringCopy10(gBattleMons[battleIndex].nickname, nickname);
     GetMonData(&gPlayerParty[partyIndex], MON_DATA_OT_NAME, gBattleMons[battleIndex].otName);

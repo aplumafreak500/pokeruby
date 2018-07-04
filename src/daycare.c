@@ -692,7 +692,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation, u8 shinyM
     u8 metLocation;
     u8 isEgg;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, shinyMode, FALSE, hasHiddenAbility);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, shinyMode, 0, hasHiddenAbility);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
@@ -719,7 +719,7 @@ static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *
     u8 language;
 
     personality = daycare->misc.countersEtc.pendingEggPersonality | (Random() << 16);
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, TRUE, personality, FALSE, 0);
+    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, TRUE, personality, FALSE, 0, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
