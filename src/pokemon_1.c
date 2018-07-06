@@ -325,16 +325,42 @@ void CreateMonWithHiddenAbility(struct Pokemon *mon, u16 species, u8 level)
     CreateMon(mon, species, level, 32, 0, 0, 0, 0, 1);
 }
 
-// These are helper functions
-
-void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level)
+void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level, u32 otId)
 {
-    CreateMon(mon, species, level, 32, 0, 0, 1, 0, 0);
+    u32 personality;
+    
+    if (!otId) {
+	    u32 otId = gSaveBlock2.playerTrainerId[0]
+	      | (gSaveBlock2.playerTrainerId[1] << 8)
+	      | (gSaveBlock2.playerTrainerId[2] << 16)
+	      | (gSaveBlock2.playerTrainerId[3] << 24);
+    }
+    do
+    {
+        personality = Random32();
+    }
+    while (IsShinyOtIdPersonality(personality, otId));
+
+    CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
 }
 
 void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level)
 {
-    CreateMon(mon, species, level, 32, 0, 0, 2, 0, 0);
+    u32 personality;
+    
+    if (!otId) {
+	    u32 otId = gSaveBlock2.playerTrainerId[0]
+	      | (gSaveBlock2.playerTrainerId[1] << 8)
+	      | (gSaveBlock2.playerTrainerId[2] << 16)
+	      | (gSaveBlock2.playerTrainerId[3] << 24);
+    }
+    do
+    {
+        personality = Random32();
+    }
+    while (!IsShinyOtIdPersonality(personality, otId));
+
+    CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
 }
 
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality)

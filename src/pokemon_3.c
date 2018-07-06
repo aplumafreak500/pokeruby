@@ -1346,8 +1346,6 @@ void SetWildMonHeldItem(void)
     }
 }
 
-bool8 IsShinyOtIdPersonality(u32, u32);
-
 bool8 IsShiny(struct Pokemon *mon)
 {
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);

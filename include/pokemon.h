@@ -555,8 +555,8 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
 void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateFemaleMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateMonWithHiddenAbility(struct Pokemon *mon, u16 species, u8 level);
-void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level);
-void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level);
+void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level, u32 otId);
+void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level, u32 otId);
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality);
 void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId);
 void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread);
@@ -665,6 +665,7 @@ bool8 IsPokeSpriteNotFlipped(u16);
 u8 GetLevelUpMovesBySpecies(u16, u16 *);
 u8 TryIncrementMonLevel(struct Pokemon *);
 bool8 IsShiny(struct Pokemon *mon);
+bool8 IsShinyOtIdPersonality(u32, u32);
 void RandomlyGivePartyPokerus(struct Pokemon *party);
 void PartySpreadPokerus(struct Pokemon *party);
 

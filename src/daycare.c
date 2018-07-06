@@ -691,8 +691,17 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation, u8 shinyM
     u8 language;
     u8 metLocation;
     u8 isEgg;
-
-    CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, shinyMode, 0, hasHiddenAbility);
+    // We need to be sure that the Pokemon will be shiny when hatched, not just when it's generated
+    u32 otId = gSaveBlock2.playerTrainerId[0]
+      | (gSaveBlock2.playerTrainerId[1] << 8)
+      | (gSaveBlock2.playerTrainerId[2] << 16)
+      | (gSaveBlock2.playerTrainerId[3] << 24);
+    if (shinyMode=2)
+    	CreateShinyLockedMon(mon, species, EGG_HATCH_LEVEL, otId);
+    else if (shinyMode=3)
+    	CreateShinyMon(mon, species, EGG_HATCH_LEVEL, otId);
+    else
+    	CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, 0, 0, 0);
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;
@@ -701,6 +710,10 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation, u8 shinyM
     SetMonData(mon, MON_DATA_FRIENDSHIP, &gBaseStats[species].eggCycles);
     SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
     SetMonData(mon, MON_DATA_LANGUAGE, &language);
+    if(hasHiddenAbility)
+    {
+        SetMonData(mon, MON_DATA_HAS_HIDDEN_ABILITY, hasHiddenAbility);
+    }
     if (setMetLocation)
     {
         metLocation = 253; // hot springs; see PokemonSummaryScreen_PrintEggTrainerMemo
