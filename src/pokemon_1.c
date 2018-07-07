@@ -330,7 +330,7 @@ void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level, u32 otId)
     u32 personality;
     
     if (!otId) {
-	    u32 otId = gSaveBlock2.playerTrainerId[0]
+	    otId = gSaveBlock2.playerTrainerId[0]
 	      | (gSaveBlock2.playerTrainerId[1] << 8)
 	      | (gSaveBlock2.playerTrainerId[2] << 16)
 	      | (gSaveBlock2.playerTrainerId[3] << 24);
@@ -344,12 +344,12 @@ void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level, u32 otId)
     CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
 }
 
-void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level)
+void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level, u32 otId)
 {
     u32 personality;
     
     if (!otId) {
-	    u32 otId = gSaveBlock2.playerTrainerId[0]
+	    otId = gSaveBlock2.playerTrainerId[0]
 	      | (gSaveBlock2.playerTrainerId[1] << 8)
 	      | (gSaveBlock2.playerTrainerId[2] << 16)
 	      | (gSaveBlock2.playerTrainerId[3] << 24);
