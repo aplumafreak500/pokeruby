@@ -138,9 +138,9 @@ SYMBOL(gUnknown_0300434C, 4)
 
 // pokemon_1.c
 SYMBOL(gPlayerPartyCount, 4)
-SYMBOL(gPlayerParty, 600)
+SYMBOL(gPlayerParty, 704)
 SYMBOL(gEnemyPartyCount, 4)
-SYMBOL(gEnemyParty, 600)
+SYMBOL(gEnemyParty, 704)
 
 // random.c
 SYMBOL(gRngValue, 4)
