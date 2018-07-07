@@ -696,9 +696,9 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setMetLocation, u8 shinyM
       | (gSaveBlock2.playerTrainerId[1] << 8)
       | (gSaveBlock2.playerTrainerId[2] << 16)
       | (gSaveBlock2.playerTrainerId[3] << 24);
-    if (shinyMode=2)
+    if (shinyMode==2)
     	CreateShinyLockedMon(mon, species, EGG_HATCH_LEVEL, otId);
-    else if (shinyMode=3)
+    else if (shinyMode==3)
     	CreateShinyMon(mon, species, EGG_HATCH_LEVEL, otId);
     else
     	CreateMon(mon, species, EGG_HATCH_LEVEL, 0x20, FALSE, 0, 0, 0, 0);

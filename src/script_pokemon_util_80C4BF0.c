@@ -416,9 +416,9 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
       | (gSaveBlock2.playerTrainerId[1] << 8)
       | (gSaveBlock2.playerTrainerId[2] << 16)
       | (gSaveBlock2.playerTrainerId[3] << 24);
-    if (shinyMode=2)
+    if (shinyMode==2)
     	CreateShinyLockedMon(&mon, species, level, otId);
-    else if (shinyMode=3)
+    else if (shinyMode==3)
     	CreateShinyMon(&mon, species, level, otId);
     else
     	CreateMon(&mon, species, level, 32, 0, 0, 0, 0, 0);
@@ -505,9 +505,9 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 shinyMode, u8 has
       | (gSaveBlock2.playerTrainerId[2] << 16)
       | (gSaveBlock2.playerTrainerId[3] << 24);
     ZeroEnemyPartyMons();
-    if (shinyMode=2)
+    if (shinyMode==2)
     	CreateShinyLockedMon(&gEnemyParty[0], species, level, otId);
-    else if (shinyMode=3)
+    else if (shinyMode==3)
     	CreateShinyMon(&gEnemyParty[0], species, level, otId);
     else
     	CreateMon(&gEnemyParty[0], species, level, 32, 0, 0, 0, 0, 0);
