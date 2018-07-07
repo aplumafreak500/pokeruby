@@ -199,7 +199,7 @@ union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 personality,
 
    // We are NOT going to loop through 120 different cases here!
    // So we are just going to return the unshuffled data.
-    return boxMon->secure.substructs[substructType];
+    return &boxMon->secure.substructs[substructType];
 }
 
 u32 GetMonData(struct Pokemon *mon, s32 field, u8 *data)
