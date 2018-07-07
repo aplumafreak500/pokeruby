@@ -3059,40 +3059,40 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     gameMet = GetMonData(mon, MON_DATA_MET_GAME);
     
     switch (gameMet) {
-       case VERSION_GC: //Colosseum and XD Location Handling
-         u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
-	 if (levelMet==0) {
-	    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
-	 }
-	 else {
-	        ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-         }
-         *ptr = CHAR_NEWLINE;
-         ptr++;
-	 orreMetLocationString = DetermineOrreMetLocation(mon);
-	 species = GetMonData(mon, MON_DATA_SPECIES);
-	 if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
-	 {
-    	 	 GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
-		 StringCopy(ptr, orreMetLocationString);
-	 }
-	 else
-	 {
-		 if (levelMet==0) {
-		 	ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-		 	StringCopy(ptr, gOtherText_Egg2);
-		 }
-		 else {
-		 	ptr = sub_80A1E9C(ptr, orreMetLocationString, 14);
-		 	StringCopy(ptr, gOtherText_Met2);
-		 }
-	 }
-        case VERSION_RUBY:
-        case VERSION_SAPPHIRE:
-        case VERSION_EMERALD:
-        case VERSION_FIRERED:
-        case VERSION_LEAFGREEN:
+	case VERSION_GC:
+		//Colosseum and XD Location Handling
+		u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
+		if (levelMet==0) {
+			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+		}
+		else {
+			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+		}
+		*ptr = CHAR_NEWLINE;
+		ptr++;
+		orreMetLocationString = DetermineOrreMetLocation(mon);
+		species = GetMonData(mon, MON_DATA_SPECIES);
+		if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
+		{
+	    	 	GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
+			StringCopy(ptr, orreMetLocationString);
+		}
+		else
+		{
+			if (levelMet==0) {
+				ptr = sub_80A1E58(ptr, gStringVar1, 14);
+				StringCopy(ptr, gOtherText_Egg2);
+			}
+			else {
+				ptr = sub_80A1E9C(ptr, orreMetLocationString, 14);
+				StringCopy(ptr, gOtherText_Met2);
+			}
+		}
+	case VERSION_RUBY:
+	case VERSION_SAPPHIRE:
+	case VERSION_EMERALD:
+	case VERSION_FIRERED:
+	case VERSION_LEAFGREEN:
             if (locationMet == 0xFF)
             {
                 u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
@@ -3119,7 +3119,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		    	*ptr = CHAR_NEWLINE;
 		    	ptr++;
 			CopyLocationName(gStringVar1, locationMet);
-			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+			ptr = sub_80A1E58(ptr, gStringVar1, 14);
 			StringCopy(ptr, gOtherText_Egg2);
 		}
 		else {
@@ -3131,8 +3131,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		        StringCopy(ptr, gOtherText_Met2);
                 }
             }
-        }
-        default:
+	default:
 		*ptr = CHAR_NEWLINE;
 		ptr++;
 
