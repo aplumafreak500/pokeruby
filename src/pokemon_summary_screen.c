@@ -3029,7 +3029,7 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
 	    }
 	    Menu_PrintText(gOtherText_EggDayCare, left, top);
 	    break;
-	case default:
+	default:
 	    Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
             break;
     }
@@ -3132,6 +3132,11 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
                 }
             }
         }
+        default:
+		*ptr = CHAR_NEWLINE;
+		ptr++;
+
+		StringCopy(ptr, gOtherText_ObtainedInTrade);
     }
 
     Menu_PrintText(gStringVar4, left++, top++);
