@@ -458,6 +458,9 @@ struct Struct2017840
     u8 filler2[6];
     u8 unk8;
     u8 unk9_0:1;
+    u8 unk9_1:1;
+    u8 unkA;
+    u16 unkC;
 };
 
 struct Struct20238C8
@@ -725,6 +728,21 @@ void MarkBufferBankForExecution(u8 bank);
 
 extern u8 gBattleTextBuff1[];
 
+extern u16 gBattle_BG0_X;
+extern u16 gBattle_BG0_Y;
+extern u16 gBattle_BG1_X;
+extern u16 gBattle_BG1_Y;
+extern u16 gBattle_BG2_X;
+extern u16 gBattle_BG2_Y;
+extern u16 gBattle_BG3_X;
+extern u16 gBattle_BG3_Y;
+extern u16 gBattle_WIN0H;
+extern u16 gBattle_WIN0V;
+extern u16 gBattle_WIN1H;
+extern u16 gBattle_WIN1V;
+
+extern u8 gDisplayedStringBattle[];
+
 extern u16 gBattleTypeFlags;
 extern u8 gUnknown_02023A14_50;
 extern u16 gTrainerBattleOpponent;
@@ -823,6 +841,10 @@ void sub_8032638();
 void sub_8032AA8(u8, u8);
 void SetBankFuncToOpponentBufferRunCommand(void);
 void BattleStopLowHpSound(void);
+void sub_8031FC4(u8, u8, bool8);
+void sub_8032984(u8, u16);
+void refresh_graphics_maybe(u8, u8, u8);
+void sub_80324E0(u8 a);
 
 void SetBankFuncToLinkOpponentBufferRunCommand(void);
 
