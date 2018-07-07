@@ -14,15 +14,6 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 
-struct EWRAM_19348_Struct
-{
-    /*0x00*/ u8 filler0[0x2];
-    /*0x02*/ u16 species;
-    /*0x04*/ u8 filler4[0x8];
-    /*0x0C*/ u32 otId;
-    /*0x10*/ u32 personality;
-};
-
 extern s16 gBattleAnimArgs[];
 extern u8 gAnimBankAttacker;
 extern u8 gAnimBankTarget;
@@ -178,7 +169,7 @@ void sub_812C2BC(struct Sprite *sprite)
     sprite->data[0] = gBattleAnimArgs[2];
     sprite->data[2] = x;
     sprite->data[4] = y;
-    sprite->callback = StartTranslateAnimSpriteByDeltas;
+    sprite->callback = StartAnimLinearTranslation;
     StoreSpriteCallbackInData(sprite, DestroyAnimSprite);
 }
 
@@ -358,13 +349,13 @@ void sub_812C720(struct Sprite *sprite)
     sprite->data[4] = y + gBattleAnimArgs[3];
     sprite->data[5] = -50;
 
-    InitAnimSpriteTranslationOverDuration(sprite);
+    InitAnimArcTranslation(sprite);
     sprite->callback = sub_812C798;
 }
 
 static void sub_812C798(struct Sprite *sprite)
 {
-    if (TranslateAnimSpriteLinearAndSine(sprite))
+    if (TranslateAnimArc(sprite))
     {
         sprite->data[0] = 30;
         sprite->data[1] = 0;
@@ -959,7 +950,7 @@ void sub_812D294(struct Sprite *sprite)
         sprite->data[0] = 20;
         sprite->data[2] = GetBattlerSpriteCoord(gAnimBankTarget, 2);
         sprite->data[4] = GetBattlerSpriteCoord(gAnimBankTarget, 3);
-        sprite->callback = StartTranslateAnimSpriteByDeltas;
+        sprite->callback = StartAnimLinearTranslation;
     }
 }
 
