@@ -216,11 +216,12 @@ static const union AnimCmd sSpriteAnim_83C1114[] = { ANIMCMD_FRAME(112, 0), ANIM
 static const union AnimCmd sSpriteAnim_83C111C[] = { ANIMCMD_FRAME(120, 0), ANIMCMD_END, };
 static const union AnimCmd sSpriteAnim_83C1124[] = { ANIMCMD_FRAME(128, 0), ANIMCMD_END, };
 static const union AnimCmd sSpriteAnim_83C112C[] = { ANIMCMD_FRAME(136, 0), ANIMCMD_END, };
-static const union AnimCmd sSpriteAnim_83C1134[] = { ANIMCMD_FRAME(144, 0), ANIMCMD_END, };
-static const union AnimCmd sSpriteAnim_83C113C[] = { ANIMCMD_FRAME(152, 0), ANIMCMD_END, };
-static const union AnimCmd sSpriteAnim_83C1144[] = { ANIMCMD_FRAME(160, 0), ANIMCMD_END, };
-static const union AnimCmd sSpriteAnim_83C114C[] = { ANIMCMD_FRAME(168, 0), ANIMCMD_END, };
-static const union AnimCmd sSpriteAnim_83C1154[] = { ANIMCMD_FRAME(176, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_TypeFairy[] = { ANIMCMD_FRAME(144, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_83C1134[] = { ANIMCMD_FRAME(152, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_83C113C[] = { ANIMCMD_FRAME(160, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_83C1144[] = { ANIMCMD_FRAME(168, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_83C114C[] = { ANIMCMD_FRAME(176, 0), ANIMCMD_END, };
+static const union AnimCmd sSpriteAnim_83C1154[] = { ANIMCMD_FRAME(184, 0), ANIMCMD_END, };
 
 static const union AnimCmd *const sSpriteAnimTable_83C115C[] = {
     sSpriteAnim_83C10A4,
