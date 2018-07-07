@@ -2849,6 +2849,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     u8 *ptr = gStringVar4;
     u8 nature = GetNature(mon);
     u8 *orreMetLocationString; //receives the string pointer returned from DetermineOrreMetLocation
+    u8 levelMet;
     u16 species; //needed to check for starter Eeveelutions and Plusle, which are special cases
 
 #if ENGLISH
@@ -2863,11 +2864,10 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 #endif
     locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
     gameMet = GetMonData(mon, MON_DATA_MET_GAME);
-    
+    levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
     switch (gameMet) {
 	case VERSION_GC:
 		//Colosseum and XD Location Handling
-		u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
 		if (levelMet==0) {
 			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
 		}
@@ -2886,7 +2886,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		else
 		{
 			if (levelMet==0) {
-				ptr = sub_80A1E58(ptr, gStringVar1, 14);
+				ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
 				StringCopy(ptr, gOtherText_Egg2);
 			}
 			else {
@@ -2901,8 +2901,6 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 	case VERSION_LEAFGREEN:
             if (locationMet == 0xFF)
             {
-                u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
                 ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
                 *ptr = CHAR_NEWLINE;
                 ptr++;
@@ -2918,14 +2916,12 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
             }
             else
             {
-                u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
 		if (levelMet==0) {
 		    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
 		    	*ptr = CHAR_NEWLINE;
 		    	ptr++;
 			CopyLocationName(gStringVar1, locationMet);
-			ptr = sub_80A1E58(ptr, gStringVar1, 14);
+			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
 			StringCopy(ptr, gOtherText_Egg2);
 		}
 		else {
