@@ -142,7 +142,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     if (hasFixedPersonality)
         personality = fixedPersonality;
     else
-        personality = Random32(); // Method 1?
+        personality = Random32();
 
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
 
@@ -196,6 +196,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     value = 4;
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2.playerGender);
+    
+    // If the above SetBoxMonData calls take long enough, or are called close to a vblank interval, pkm is Method 2 instead of 1
 
     if (fixedIV < 32)
     {
@@ -217,6 +219,8 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
         iv = (value & 0x7C00) >> 10;
         SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
+
+	// If the above SetBoxMonData calls take long enough, or are called close to a vblank interval, pkm is Method 4 instead of 2 (or 3 instead of 1, but such an encounter is extremely rare)
 
         value = Random();
 
@@ -242,7 +246,10 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     GiveBoxMonInitialMoveset(boxMon);
 }
 
-void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature) // Method 2?
+// Standard wild Pokemon encounter
+// Nature can be preset here (Safari Zone pokeblock feeder)
+
+void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature)
 {
     u32 personality;
 
@@ -254,6 +261,8 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
 
     CreateMon(mon, species, level, fixedIV, 1, personality, 0, 0, 0);
 }
+
+// Unused (except in debug rom)
 
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
 {
@@ -286,7 +295,7 @@ void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level,
 }
 
 // This is only used to create Wally's Ralts.
-void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level) // Method 3?
+void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level)
 {
     u32 personality;
     u32 otId;
@@ -358,6 +367,9 @@ void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level, u32 otId)
     CreateMon(mon, species, level, 32, 1, personality, 1, otId, 0);
 }
 
+// "Method 1 Roamer"
+// if BUGFIX_SETMONIVS, then normal Method 1
+
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality)
 {
     CreateMon(mon, species, level, 0, 1, personality, 0, 0, 0);
@@ -365,7 +377,7 @@ void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32
     CalculateMonStats(mon);
 }
 
-void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId) // trades? Method 4?
+void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId) // Unused? Intended for trades?
 {
     CreateMon(mon, species, level, 0, 0, 0, 1, otId, 0);
     SetMonData(mon, MON_DATA_HP_IV, &ivs[0]);
