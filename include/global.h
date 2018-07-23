@@ -118,6 +118,9 @@ enum
     VERSION_GOLD_BANK = 39,
     VERSION_SILVER_BANK = 40,
     VERSION_CRYSTAL_BANK = 41,
+    // todo: verify once the games release
+    VERSION_LETS_GO_PIKACHU = 42,
+    VERSION_LETS_GO_EEVEE = 43,
 };
 
 enum LanguageId
