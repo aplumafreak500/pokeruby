@@ -143,7 +143,7 @@ SYMBOL(gEnemyPartyCount, 4)
 SYMBOL(gEnemyParty, 944)
 
 // random.c
-SYMBOL(gRngValue, 4)
+SYMBOL(gRngValues, 16)
 
 // egg_hatch.c
 SYMBOL(gEggHatchData, 4)

@@ -480,7 +480,7 @@ void sub_80AB6B4(u8 taskId)
         GetMultiplayerId();  // unused return value
         DestroyTask(taskId);
         gTasks[sContest.mainTaskId].func = sub_80AB960;
-        gRngValue = gContestRngValue;
+        gRngValues[RNG_VALUE_LCRNG] = gContestRngValue;
     }
 }
 
@@ -1055,7 +1055,7 @@ void sub_80AC284(u8 taskId)
     if (++gTasks[taskId].data[0] > 19)
     {
         sContest.unk19214 = 0;
-        sContest.unk1921C = gRngValue;
+        sContest.unk1921C = gRngValues[RNG_VALUE_LCRNG];
         gTasks[taskId].data[0] = 0;
         gTasks[taskId].func = sub_80AC2CC;
     }
@@ -1985,7 +1985,7 @@ void sub_80ADDA4(u8 taskId)
     sub_80AF668();
     sub_80AF138();
     sub_80BE23C(sContestantStatus[gContestPlayerMonIndex].prevMove);
-    gContestRngValue = gRngValue;
+    gContestRngValue = gRngValues[RNG_VALUE_LCRNG];
     StringExpandPlaceholders(gStringVar4, gUnknown_083CB02C);
     Text_InitWindow8002EB0(&gMenuWindow, gStringVar4, 776, 1, 15);
     gTasks[taskId].data[2] = 0;

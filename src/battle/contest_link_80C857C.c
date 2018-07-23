@@ -308,7 +308,7 @@ void sub_80C88AC(u8 taskId)
             {
                 if (IsLinkTaskFinished())
                 {
-                    SendBlockToAllOpponents(&gRngValue, sizeof(u32));
+                    SendBlockToAllOpponents(&gRngValues[RNG_VALUE_LCRNG], sizeof(u32));
                     gTasks[taskId].data[0]++;
                 }
             }
@@ -320,7 +320,7 @@ void sub_80C88AC(u8 taskId)
         case 1:
             if (HasPlayerReceivedBlock(0))
             {
-                memcpy(&gRngValue, gBlockRecvBuffer[0], sizeof(u32));
+                memcpy(&gRngValues[RNG_VALUE_LCRNG], gBlockRecvBuffer[0], sizeof(u32));
                 memcpy(&gContestRngValue, gBlockRecvBuffer[0], sizeof(u32));
                 gTasks[taskId].data[0]++;
             }
