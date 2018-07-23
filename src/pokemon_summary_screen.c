@@ -2917,7 +2917,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
         	 }
         	 else
         	 {
-        		 ptr = sub_80A1E9C(ptr, orreMetLocationString, 14);
+        		 ptr = SummaryScreen_CopyColoredString(ptr, orreMetLocationString, 14);
         		 StringCopy(ptr, gOtherText_Met);
         	 }
         }
