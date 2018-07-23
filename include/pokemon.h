@@ -466,10 +466,10 @@ struct BattleMove
 
 struct PokemonStorage
 {
-    /*0x0000*/ u8 currentBox;
-    /*0x0004*/ struct BoxPokemon boxes[12][30];
-    /*0x8344*/ u8 boxNames[12][9];
-    /*0x83c2*/ u8 wallpaper[12];
+	u8 currentBox;
+	u8 boxNames[12][9];
+	u8 wallpaper[12];
+	struct BoxPokemon boxes[12][30];
 };
 
 struct SpindaSpot
