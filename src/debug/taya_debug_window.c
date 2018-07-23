@@ -731,7 +731,7 @@ bool8 TayaDebugMenu_PokenavD(void)
     
     Menu_DisplayDialogueFrame();
     
-    for (i = 0; i < 14; i++)
+    for (i = 0; i < 12; i++)
     {
         StringCopy(gSharedMem, gUnknown_Debug_083C4F94);
         gSharedMem[i + 1] = EOS;
@@ -769,6 +769,15 @@ bool8 TayaDebugMenu_PokenavD(void)
 
             otId = Random() & 0xff;
             SetBoxMonData(boxPokemon, MON_DATA_SHEEN, &otId);
+            
+            otId = Random();
+            SetBoxMonData(boxPokemon, MON_DATA_MET_LOCATION, &otId);
+            
+            otId = Random() & 0xff;
+            SetBoxMonData(boxPokemon, MON_DATA_MET_GAME, &otId);
+            
+            otId = Random() & 0x7f;
+            SetBoxMonData(boxPokemon, MON_DATA_FORM, &otId);
 
             otId = (Random() & 3) + 1;
             SetBoxMonData(boxPokemon, MON_DATA_COOL_RIBBON, &otId);
