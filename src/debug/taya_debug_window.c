@@ -770,7 +770,7 @@ bool8 TayaDebugMenu_PokenavD(void)
             otId = Random() & 0xff;
             SetBoxMonData(boxPokemon, MON_DATA_SHEEN, &otId);
             
-            otId = Random();
+            otId = Random()&0x3fff;
             SetBoxMonData(boxPokemon, MON_DATA_MET_LOCATION, &otId);
             
             otId = Random() & 0xff;
