@@ -93,7 +93,8 @@
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
 #define MON_DATA_HAS_HIDDEN_ABILITY 89
-#define MON_DATA_RIBBONS2           90
+#define MON_DATA_RIBBONS2          90
+#define MON_DATA_FORM              91
 
 #define MAX_LEVEL 100
 
@@ -269,9 +270,9 @@ struct PokemonSubstruct4
     /*0x00*/ u16 metLocation;
     /*0x02*/ u32 ribbon2;
     /*0x06*/ u8 hasHiddenAbility:1;
-    /*0x06*/ u8 padding:7;
-    /*0x07*/ u8 padding2;
-    /*0x08*/ u32 padding3[2];
+    /*0x06*/ u8 Form:7;
+    /*0x07*/ u8 padding;
+    /*0x08*/ u32 padding2[2];
     
 };
 
@@ -369,7 +370,7 @@ struct BattlePokemon
     /*0x17*/ u32 isEgg:1;
     /*0x17*/ u32 altAbility:1;
     /*0x18*/ s8 statStages[BATTLE_STATS_NO];
-    /*0x20*/ u8 ability;
+    /*0x20*/ u16 ability;
     /*0x21*/ u8 type1;
     /*0x22*/ u8 type2;
     /*0x23*/ u8 unknown;

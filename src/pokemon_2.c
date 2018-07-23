@@ -565,6 +565,9 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_RIBBONS2:
         retVal = substruct4->ribbon2;
         break;
+    case MON_DATA_FORM:
+        retVal = substruct4->Form;
+        break;
     default:
         break;
     }
@@ -890,6 +893,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
         break;
     case MON_DATA_RIBBONS2:
         SET32(substruct4->ribbon2);
+        break;
+    case MON_DATA_FORM:
+        SET8(substruct4->Form);
         break;
     default:
         break;
