@@ -56,7 +56,7 @@ struct Unk201B000
 
 struct Struct201B000
 {
-    u8 filler0[0x259];
+    u8 filler0[0x3b1];
     u8 promptTextId;
     u8 filler25A[6];
     u8 menuHandlerTaskId;
