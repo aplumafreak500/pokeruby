@@ -148,6 +148,7 @@ const struct RegionMapLocation gRegionMapLocations[] =
     { 0,  0, 1, 1, gMapName_InsideOfTruck},
     {19, 10, 1, 1, gMapName_SkyPillar},
     { 0,  0, 1, 1, gMapName_SecretBase},
+    { 0,  0, 1, 1, gMapName_None},
 	{ 0,  0, 1, 1, gMapName_PalletTown},
 	{ 0,  0, 1, 1, gMapName_ViridianCity},
 	{ 0,  0, 1, 1, gMapName_PewterCity},
