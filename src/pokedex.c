@@ -26,8 +26,6 @@
 #include "scanline_effect.h"
 #include "ewram.h"
 
-#define NATIONAL_DEX_COUNT 387
-
 struct PokedexListItem
 {
     u16 dexNum;
@@ -1973,7 +1971,7 @@ static void SortPokedex(u8 dexMode, u8 sortMode)
     {
     default:
     case DEX_MODE_HOENN:
-        vars[0] = 202;
+        vars[0] = HOENN_DEX_COUNT;
         vars[1] = 1;
         break;
     case DEX_MODE_NATIONAL:
@@ -1984,7 +1982,7 @@ static void SortPokedex(u8 dexMode, u8 sortMode)
         }
         else
         {
-            vars[0] = 202;
+            vars[0] = HOENN_DEX_COUNT;
             vars[1] = 1;
         }
         break;
@@ -2030,7 +2028,7 @@ static void SortPokedex(u8 dexMode, u8 sortMode)
         }
         break;
     case 1:
-        for (i = 0; i < 411; i++)
+        for (i = 0; i < POKEMON_SLOTS_NUMBER - 1; i++)
         {
             vars[2] = gPokedexOrder_Alphabetical[i];
 
@@ -4062,7 +4060,7 @@ u16 GetHoennPokedexCount(u8 caseID)
     u16 count = 0;
     u16 i;
 
-    for (i = 0; i < 202; i++)
+    for (i = 0; i < HOENN_DEX_COUNT; i++)
     {
         switch (caseID)
         {
