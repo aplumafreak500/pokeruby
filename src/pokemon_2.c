@@ -250,12 +250,12 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
 
         DecryptBoxMon(boxMon);
 
-        /* if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
+        if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
         {
             boxMon->isBadEgg = 1;
-            boxMon->isEgg = 1;
-            substruct3->isEgg = 1;
-        } */
+            // boxMon->isEgg = 1;
+            // substruct3->isEgg = 1;
+        }
     }
 
     switch (field)
@@ -642,14 +642,16 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
 
         DecryptBoxMon(boxMon);
 
-        /* if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
+        if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
         {
+            /*
             boxMon->isBadEgg = 1;
             boxMon->isEgg = 1;
             substruct3->isEgg = 1;
             EncryptBoxMon(boxMon);
             return;
-        } */
+            */
+        }
     }
 
     switch (field)
