@@ -1809,7 +1809,7 @@ _0809F2E4:\n\
     .align 2, 0\n\
 _0809F2EC: .4byte gSharedMem + 0x18000\n\
 _0809F2F0:\n\
-    movs r0, 0x64\n\
+    movs r0, 0x9c\n\
     muls r0, r1\n\
     adds r0, r7, r0\n\
     movs r1, 0x2D\n\
@@ -4703,7 +4703,7 @@ void sub_80A1D18(void)
 {
     asm(".syntax unified\n\
     push {r4,r5,lr}\n\
-    sub sp, 0x64\n\
+    sub sp, 0x9c\n\
     mov r0, sp\n\
     bl SummaryScreen_GetPokemon\n\
     mov r0, sp\n\
@@ -4744,7 +4744,7 @@ _080A1D60:\n\
     adds r1, r5, 0\n\
     bl StartSpriteAnim\n\
 _080A1D74:\n\
-    add sp, 0x64\n\
+    add sp, 0x9c\n\
     pop {r4,r5}\n\
     pop {r0}\n\
     bx r0\n\
