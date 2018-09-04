@@ -3187,7 +3187,7 @@ void SetHeldItemIconVisibility(u8 a, u8 monIndex)
     lsls r0, 24\n\
     lsrs r5, r0, 24\n\
     adds r6, r5, 0\n\
-    movs r0, 0x74\n\
+    movs r0, 0x9C\n\
     adds r1, r4, 0\n\
     muls r1, r0\n\
     ldr r0, _0806DFA4 @ =gPlayerParty\n\
