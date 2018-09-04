@@ -1159,7 +1159,7 @@ _0809E97A:\n\
     cmp r0, 0x4\n\
     beq _0809E996\n\
     ldr r0, _0809EA14 @ =gSharedMem + 0x18000\n\
-    adds r0, 0x7C\n\
+    adds r0, 0x9C\n\
     ldrh r0, [r0]\n\
     mov r2, r8\n\
     lsls r7, r2, 2\n\
@@ -1203,7 +1203,7 @@ _0809E9D0:\n\
     cmp r0, 0x4\n\
     bne _0809E9FE\n\
     ldr r0, _0809EA14 @ =gSharedMem + 0x18000\n\
-    adds r0, 0x7C\n\
+    adds r0, 0x9C\n\
     ldrh r0, [r0]\n\
     cmp r0, 0\n\
     bne _0809E9FE\n\
