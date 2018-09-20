@@ -394,7 +394,7 @@ s8 sub_8099D90(u8 boxId)
 
     for (i = 0; curBox != boxId; i++)
     {
-        if (++curBox >= 14)
+        if (++curBox >= 8)
             curBox = 0;
     }
     return i <= 6 ? 1 : -1;
@@ -1691,7 +1691,7 @@ void sub_809B760(void)
     {
         u8 boxId;
         if (gUnknown_020384E4 == 1)
-            boxId = 14;
+            boxId = 8;
         else
             boxId = get_preferred_box();
         sub_809B548(boxId, gUnknown_020384E5);
@@ -1719,7 +1719,7 @@ void sub_809B7D4(void)
         if (gUnknown_020384E4 == 1)
         {
             gPokemonStorageSystemPtr->unk_2618 = gPlayerParty[gUnknown_020384E5];
-            gPokemonStorageSystemPtr->unk_2682 = 14;
+            gPokemonStorageSystemPtr->unk_2682 = 8;
         }
         else
         {
@@ -1758,7 +1758,7 @@ s8 sub_809B960(void)
         case 0:
             for (i = 0; i < PARTY_SIZE; i++)
             {
-                if (gPokemonStorageSystemPtr->unk_2682 != 14 || gPokemonStorageSystemPtr->unk_2683 != i)
+                if (gPokemonStorageSystemPtr->unk_2682 != 8 || gPokemonStorageSystemPtr->unk_2683 != i)
                 {
                     knownMoves = GetMonData(gPlayerParty + i, MON_DATA_KNOWN_MOVES, gPokemonStorageSystemPtr->unk_2686);
                     if (knownMoves & 1)
@@ -1793,7 +1793,7 @@ s8 sub_809B960(void)
                 if (++gPokemonStorageSystemPtr->unk_2681 >= 30)
                 {
                     gPokemonStorageSystemPtr->unk_2681 = 0;
-                    if (++gPokemonStorageSystemPtr->unk_2680 >= 14)
+                    if (++gPokemonStorageSystemPtr->unk_2680 >= 8)
                     {
                         gPokemonStorageSystemPtr->unk_267d = 1;
                         gPokemonStorageSystemPtr->unk_267c = 0;
@@ -1821,7 +1821,7 @@ void sub_809BBC0(void)
 {
     if (gUnknown_020384E6)
     {
-        if (gUnknown_020384E7 == 14)
+        if (gUnknown_020384E7 == 8)
             gPokemonStorageSystemPtr->unk_25b4 = gUnknown_02038480;
         else
             gPokemonStorageSystemPtr->unk_25b4.box = gUnknown_02038480.box;

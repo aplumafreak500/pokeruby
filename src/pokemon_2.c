@@ -250,11 +250,13 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
 
         DecryptBoxMon(boxMon);
 
-        if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum)
-        {
+        if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum) {
             boxMon->isBadEgg = 1;
             // boxMon->isEgg = 1;
             // substruct3->isEgg = 1;
+        }
+        else {
+        	boxMon->isBadEgg = 0;
         }
     }
 

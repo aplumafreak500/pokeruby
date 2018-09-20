@@ -1570,8 +1570,8 @@ static void SummaryScreenHandleLeftRightInput(u8 taskId, s8 direction)
     }
 }
 
-#ifdef NONMATCHING
-static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
+// #ifdef NONMATCHING
+static void SummaryScreenHandleUpDownInputNonmatching(u8 taskId, s8 direction)
 {
     s8 var3;
     u8 var1 = direction;
@@ -1614,7 +1614,7 @@ static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
         gTasks[taskId].func = sub_809F43C;
     }
 }
-#else
+//#else
 NAKED
 static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
 {
@@ -1718,7 +1718,7 @@ _0809F27C: .4byte gTasks\n\
 _0809F280: .4byte sub_809F43C\n\
     .syntax divided\n");
 }
-#endif // NONMATCHING
+//#endif // NONMATCHING
 
 #ifdef NONMATCHING
 s8 sub_809F284(s8 a)

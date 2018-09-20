@@ -386,19 +386,19 @@ void ResetPokemonStorageSystem(void)
     u16 boxMon;
 
     gPokemonStorage.currentBox = 0;
-    for (boxId = 0; boxId < 12; boxId++)
+    for (boxId = 0; boxId < 8; boxId++)
     {
         for (boxMon = 0; boxMon < 30; boxMon++)
         {
             ZeroBoxMonData(gPokemonStorage.boxes[boxId] + boxMon);
         }
     }
-    for (boxId = 0; boxId < 12; boxId++)
+    for (boxId = 0; boxId < 8; boxId++)
     {
         u8 *dest = StringCopy(gPokemonStorage.boxNames[boxId], gPCText_BOX);
         ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
     }
-    for (boxId = 0; boxId < 12; boxId++)
+    for (boxId = 0; boxId < 8; boxId++)
     {
         gPokemonStorage.wallpaper[boxId] = boxId & 0x03;
     }
