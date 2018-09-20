@@ -141,9 +141,6 @@ u8 VarGetEventObjectGraphicsId(u8 id)
 
 u8 *GetFlagPointer(u16 id)
 {
-    if (id == 0)
-        return 0;
-
     if (id < 0x4000)
         return &gSaveBlock1.flags[id / 8];
 
