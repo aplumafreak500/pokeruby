@@ -92,6 +92,9 @@
 #define MON_DATA_SPEED2            86
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
+#define MON_DATA_HAS_HIDDEN_ABILITY 89
+#define MON_DATA_RIBBONS2          90
+#define MON_DATA_FORM              91
 
 #define MAX_LEVEL 100
 
@@ -138,7 +141,6 @@
 #define STATUS_PRIMARY_POKERUS   0x6
 #define STATUS_PRIMARY_FAINTED   0x7
 
-#define PARTY_SIZE 6
 #define MAX_TOTAL_EVS 510
 #define NUM_STATS 6
 #define UNOWN_FORM_COUNT 28
@@ -197,6 +199,8 @@ struct PokemonSubstruct0
     u32 experience;
     u8 ppBonuses;
     u8 friendship;
+    u8 metGame;
+    u8 pokeball;
 };
 
 struct PokemonSubstruct1
@@ -224,11 +228,11 @@ struct PokemonSubstruct2
 struct PokemonSubstruct3
 {
     /*0x00*/ u8 pokerus;
-    /*0x01*/ u8 metLocation;
+    /*0x01*/ u8 metLocationOld;
 
     /*0x02*/ u16 metLevel:7;
-    /*0x02*/ u16 metGame:4;
-    /*0x03*/ u16 pokeball:4;
+    /*0x02*/ u16 metGameOld:4;
+    /*0x03*/ u16 pokeballOld:4;
     /*0x03*/ u16 otGender:1;
 
     /*0x04*/ u32 hpIV:5;
@@ -260,12 +264,24 @@ struct PokemonSubstruct3
     /*0x0B*/ u32 fatefulEncounter:5; // unused in Ruby/Sapphire, but the high bit must be set for Mew/Deoxys to obey in FR/LG/Emerald
 };
 
+struct PokemonSubstruct4
+{
+    /*0x00*/ u16 metLocation;
+    /*0x02*/ u32 ribbon2;
+    /*0x06*/ u8 hasHiddenAbility:1;
+    /*0x06*/ u8 Form:7;
+    /*0x07*/ u8 padding;
+    /*0x08*/ u32 padding2[2];
+    
+};
+
 union PokemonSubstruct
 {
     struct PokemonSubstruct0 type0;
     struct PokemonSubstruct1 type1;
     struct PokemonSubstruct2 type2;
     struct PokemonSubstruct3 type3;
+    struct PokemonSubstruct4 type4;
     u16 raw[6];
 };
 
@@ -285,24 +301,25 @@ struct BoxPokemon
 
     union
     {
-        u32 raw[12];
-        union PokemonSubstruct substructs[4];
+        u32 raw[15];
+        union PokemonSubstruct substructs[5];
     } secure;
-}; /*size = 0x50*/
+    /*0x5C*/ u32 padding;
+}; 
 
 struct Pokemon
 {
     /*0x00*/ struct BoxPokemon box;
-    /*0x50*/ u32 status;
-    /*0x54*/ u8 level;
-    /*0x55*/ u8 mail;
-    /*0x56*/ u16 hp;
-    /*0x58*/ u16 maxHP;
-    /*0x5A*/ u16 attack;
-    /*0x5C*/ u16 defense;
-    /*0x5E*/ u16 speed;
-    /*0x60*/ u16 spAttack;
-    /*0x62*/ u16 spDefense;
+    /*0x60*/ u32 status;
+    /*0x64*/ u8 level;
+    /*0x65*/ u8 mail;
+    /*0x66*/ u16 hp;
+    /*0x68*/ u16 maxHP;
+    /*0x6A*/ u16 attack;
+    /*0x6C*/ u16 defense;
+    /*0x6E*/ u16 speed;
+    /*0x70*/ u16 spAttack;
+    /*0x72*/ u16 spDefense;
 };
 
 struct UnknownPokemonStruct
@@ -352,7 +369,7 @@ struct BattlePokemon
     /*0x17*/ u32 isEgg:1;
     /*0x17*/ u32 altAbility:1;
     /*0x18*/ s8 statStages[BATTLE_STATS_NO];
-    /*0x20*/ u8 ability;
+    /*0x20*/ u16 ability;
     /*0x21*/ u8 type1;
     /*0x22*/ u8 type2;
     /*0x23*/ u8 unknown;
@@ -370,6 +387,7 @@ struct BattlePokemon
     /*0x4C*/ u32 status1;
     /*0x50*/ u32 status2;
     /*0x54*/ u32 otId;
+             u32 hasHiddenAbility:1;
 };
 
 // Shouldn't these be the same enum?
@@ -407,7 +425,7 @@ struct BaseStats
     /*0x06*/ u8 type1;
     /*0x07*/ u8 type2;
     /*0x08*/ u8 catchRate;
-    /*0x09*/ u8 hiddenAbility;
+    /*0x09*/ u8 safariZoneFleeRate;
     /*0x0A*/ u16 evYield_HP:2;
     /*0x0A*/ u16 evYield_Attack:2;
     /*0x0A*/ u16 evYield_Defense:2;
@@ -422,12 +440,12 @@ struct BaseStats
     /*0x13*/ u8 growthRate;
     /*0x14*/ u8 eggGroup1;
     /*0x15*/ u8 eggGroup2;
-    /*0x16*/ u8 ability1;
-    /*0x17*/ u8 ability2;
-    /*0x18*/ u8 safariZoneFleeRate;
-    /*0x19*/ u8 bodyColor:7;
+    /*0x16*/ u16 ability1;
+    /*0x18*/ u16 ability2;
+    /*0x1A*/ u16 hiddenAbility;
+    /*0x1C*/ u8 bodyColor:7;
              u8 noFlip:1;
-             u16 expYield;
+    /*0x1D*/ u16 expYield;
 };
 
 struct BattleMove
@@ -447,10 +465,10 @@ struct BattleMove
 
 struct PokemonStorage
 {
-    /*0x0000*/ u8 currentBox;
-    /*0x0004*/ struct BoxPokemon boxes[14][30];
-    /*0x8344*/ u8 boxNames[14][9];
-    /*0x83c2*/ u8 wallpaper[14];
+	u8 currentBox;
+	u8 boxNames[12][9];
+	u8 wallpaper[12];
+	struct BoxPokemon boxes[12][30];
 };
 
 struct SpindaSpot
@@ -512,7 +530,7 @@ struct Evolution
 
 struct EvolutionData
 {
-    struct Evolution evolutions[5];
+    struct Evolution evolutions[10];
 };
 
 extern u8 gPlayerPartyCount;
@@ -530,11 +548,15 @@ void ZeroBoxMonData(struct BoxPokemon *boxMon);
 void ZeroMonData(struct Pokemon *mon);
 void ZeroPlayerPartyMons(void);
 void ZeroEnemyPartyMons(void);
-void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
-void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
+void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId, u8 hasHiddenAbility);
+void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId, u8 hasHiddenAbility);
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature);
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter);
 void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level);
+void CreateFemaleMon(struct Pokemon *mon, u16 species, u8 level);
+void CreateMonWithHiddenAbility(struct Pokemon *mon, u16 species, u8 level);
+void CreateShinyMon(struct Pokemon *mon, u16 species, u8 level, u32 otId);
+void CreateShinyLockedMon(struct Pokemon *mon, u16 species, u8 level, u32 otId);
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality);
 void CreateMonWithIVsOTID(struct Pokemon *mon, u16 species, u8 level, u8 *ivs, u32 otId);
 void CreateMonWithEVSpread(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 evSpread);
@@ -584,7 +606,7 @@ u8 SendMonToPC(struct Pokemon *mon);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
 u8 sub_803DAA0(void);
-u8 GetAbilityBySpecies(u16 species, bool8 altAbility);
+u8 GetAbilityBySpecies(u16 species, bool8 altAbility, bool8 hAbility);
 u8 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBaseRecord *secretBaseRecord);
 u8 GetSecretBaseTrainerPicIndex(void);
@@ -643,6 +665,7 @@ bool8 IsPokeSpriteNotFlipped(u16);
 u8 GetLevelUpMovesBySpecies(u16, u16 *);
 u8 TryIncrementMonLevel(struct Pokemon *);
 bool8 IsShiny(struct Pokemon *mon);
+bool8 IsShinyOtIdPersonality(u32, u32);
 void RandomlyGivePartyPokerus(struct Pokemon *party);
 void PartySpreadPokerus(struct Pokemon *party);
 

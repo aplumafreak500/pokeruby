@@ -1023,7 +1023,7 @@ void sub_806B908(void)
     ldr r0, _0806B950 @ =gUnknown_083769A8\n\
     adds r4, r0, 0\n\
     adds r4, 0x24\n\
-    ldr r5, _0806B954 @ =gPlayerParty + 1 * 0x64\n\
+    ldr r5, _0806B954 @ =gPlayerParty + 1 * 0x74\n\
     ldrb r0, [r4]\n\
     ldrb r1, [r4, 0x1]\n\
     movs r2, 0x3\n\
@@ -1043,7 +1043,7 @@ void sub_806B908(void)
 _0806B948: .4byte gBGTilemapBuffers + 0x1000\n\
 _0806B94C: .4byte gPartyMenuType\n\
 _0806B950: .4byte gUnknown_083769A8\n\
-_0806B954: .4byte gPlayerParty + 1 * 0x64\n\
+_0806B954: .4byte gPlayerParty + 1 * 0x74\n\
 _0806B958:\n\
     ldrb r0, [r4, 0x4]\n\
     ldrb r1, [r4, 0x5]\n\
@@ -1052,7 +1052,7 @@ _0806B958:\n\
     bl sub_806BA94\n\
 _0806B964:\n\
     adds r0, r5, 0\n\
-    adds r0, 0x64\n\
+    adds r0, 0x74\n\
     movs r1, 0xB\n\
     bl GetMonData\n\
     cmp r0, 0\n\
@@ -1875,7 +1875,7 @@ _0806C500:\n\
     adds r0, r4, 0x1\n\
     lsls r0, 24\n\
     lsrs r4, r0, 24\n\
-    movs r0, 0x64\n\
+    movs r0, 0x74\n\
     muls r0, r4\n\
     ldr r1, _0806C520 @ =gPlayerParty\n\
     adds r0, r1\n\
@@ -1907,7 +1907,7 @@ _0806C538:\n\
     lsrs r4, r0, 24\n\
     cmp r4, 0x6\n\
     beq _0806C554\n\
-    movs r0, 0x64\n\
+    movs r0, 0x74\n\
     muls r0, r4\n\
     ldr r1, _0806C574 @ =gPlayerParty\n\
     adds r0, r1\n\
@@ -1950,7 +1950,7 @@ _0806C57C:\n\
     lsrs r0, 16\n\
     cmp r0, 0x1\n\
     bls _0806C5E2\n\
-    ldr r5, _0806C5B0 @ =gPlayerParty + 2 * 0x64\n\
+    ldr r5, _0806C5B0 @ =gPlayerParty + 2 * 0x74\n\
     adds r0, r5, 0\n\
     movs r1, 0xB\n\
     bl GetMonData\n\
@@ -1961,10 +1961,10 @@ _0806C57C:\n\
     b _0806C64E\n\
     .align 2, 0\n\
 _0806C5AC: .4byte gSprites\n\
-_0806C5B0: .4byte gPlayerParty + 2 * 0x64\n\
+_0806C5B0: .4byte gPlayerParty + 2 * 0x74\n\
 _0806C5B4:\n\
     adds r0, r5, 0\n\
-    adds r0, 0x64\n\
+    adds r0, 0x74\n\
     movs r1, 0xB\n\
     bl GetMonData\n\
     cmp r0, 0\n\
@@ -1992,7 +1992,7 @@ _0806C5E2:\n\
     .align 2, 0\n\
 _0806C5E8: .4byte gSprites\n\
 _0806C5EC:\n\
-    ldr r5, _0806C600 @ =gPlayerParty + 4 * 0x64\n\
+    ldr r5, _0806C600 @ =gPlayerParty + 4 * 0x74\n\
     adds r0, r5, 0\n\
     movs r1, 0xB\n\
     bl GetMonData\n\
@@ -2002,10 +2002,10 @@ _0806C5EC:\n\
     strh r0, [r4, 0x2E]\n\
     b _0806C64E\n\
     .align 2, 0\n\
-_0806C600: .4byte gPlayerParty + 4 * 0x64\n\
+_0806C600: .4byte gPlayerParty + 4 * 0x74\n\
 _0806C604:\n\
     adds r0, r5, 0\n\
-    adds r0, 0x64\n\
+    adds r0, 0x74\n\
     movs r1, 0xB\n\
     bl GetMonData\n\
     cmp r0, 0\n\
@@ -3187,7 +3187,7 @@ void SetHeldItemIconVisibility(u8 a, u8 monIndex)
     lsls r0, 24\n\
     lsrs r5, r0, 24\n\
     adds r6, r5, 0\n\
-    movs r0, 0x64\n\
+    movs r0, 0x9C\n\
     adds r1, r4, 0\n\
     muls r1, r0\n\
     ldr r0, _0806DFA4 @ =gPlayerParty\n\

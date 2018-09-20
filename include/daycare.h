@@ -11,7 +11,7 @@ void Debug_AddDaycareSteps(u16 i);
 u16 GetEggSpecies(u16);
 void TriggerPendingDaycareEgg(void);
 void TriggerPendingDaycareMaleEgg(void);
-void CreateEgg(struct Pokemon *mon, u16, u8);
+void CreateEgg(struct Pokemon *mon, u16, bool8, u8, bool8);
 u8 ShouldEggHatch(void);
 u8 GetDaycareCompatibilityScoreFromSave(void);
 bool8 NameHasGenderSymbol(const u8 *, u8);

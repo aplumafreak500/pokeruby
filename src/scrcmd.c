@@ -1562,7 +1562,7 @@ bool8 ScrCmd_giveegg(struct ScriptContext *ctx)
 {
     u16 species = VarGet(ScriptReadHalfword(ctx));
 
-    gSpecialVar_Result = ScriptGiveEgg(species);
+    gSpecialVar_Result = ScriptGiveEgg(species, 0, 0);
     return FALSE;
 }
 
@@ -1740,7 +1740,7 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u8 level = ScriptReadByte(ctx);
     u16 item = ScriptReadHalfword(ctx);
 
-    CreateScriptedWildMon(species, level, item);
+    CreateScriptedWildMon(species, level, item, 0, 0);
     return FALSE;
 }
 
@@ -2016,5 +2016,30 @@ bool8 ScrCmd_takecoins(struct ScriptContext *ctx)
         gSpecialVar_Result = 0;
     else
         gSpecialVar_Result = 1;
+    return FALSE;
+}
+
+// new script commands, for use until the existing scripts have new parameters set
+
+bool8 ScrCmd_giveegg2(struct ScriptContext *ctx)
+{
+    u16 species = VarGet(ScriptReadHalfword(ctx));
+    u8 shinyMode = ScriptReadByte(ctx);
+    u8 hasHiddenAbility = ScriptReadByte(ctx);
+    
+    gSpecialVar_Result = ScriptGiveEgg(species, shinyMode, hasHiddenAbility);
+    return FALSE;
+}
+
+bool8 ScrCmd_setwildbattle2(struct ScriptContext *ctx)
+{
+    u16 species = ScriptReadHalfword(ctx);
+    u8 level = ScriptReadByte(ctx);
+    u16 item = ScriptReadHalfword(ctx);
+    
+    u8 shinyMode = ScriptReadByte(ctx);
+    u8 hasHiddenAbility = ScriptReadByte(ctx);
+
+    CreateScriptedWildMon(species, level, item, shinyMode, hasHiddenAbility);
     return FALSE;
 }

@@ -1159,7 +1159,7 @@ _0809E97A:\n\
     cmp r0, 0x4\n\
     beq _0809E996\n\
     ldr r0, _0809EA14 @ =gSharedMem + 0x18000\n\
-    adds r0, 0x7C\n\
+    adds r0, 0x9C\n\
     ldrh r0, [r0]\n\
     mov r2, r8\n\
     lsls r7, r2, 2\n\
@@ -1203,7 +1203,7 @@ _0809E9D0:\n\
     cmp r0, 0x4\n\
     bne _0809E9FE\n\
     ldr r0, _0809EA14 @ =gSharedMem + 0x18000\n\
-    adds r0, 0x7C\n\
+    adds r0, 0x9C\n\
     ldrh r0, [r0]\n\
     cmp r0, 0\n\
     bne _0809E9FE\n\
@@ -1570,8 +1570,8 @@ static void SummaryScreenHandleLeftRightInput(u8 taskId, s8 direction)
     }
 }
 
-#ifdef NONMATCHING
-static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
+// #ifdef NONMATCHING
+static void SummaryScreenHandleUpDownInputNonmatching(u8 taskId, s8 direction)
 {
     s8 var3;
     u8 var1 = direction;
@@ -1614,7 +1614,7 @@ static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
         gTasks[taskId].func = sub_809F43C;
     }
 }
-#else
+//#else
 NAKED
 static void SummaryScreenHandleUpDownInput(u8 taskId, s8 direction)
 {
@@ -1718,7 +1718,7 @@ _0809F27C: .4byte gTasks\n\
 _0809F280: .4byte sub_809F43C\n\
     .syntax divided\n");
 }
-#endif // NONMATCHING
+//#endif // NONMATCHING
 
 #ifdef NONMATCHING
 s8 sub_809F284(s8 a)
@@ -1809,7 +1809,7 @@ _0809F2E4:\n\
     .align 2, 0\n\
 _0809F2EC: .4byte gSharedMem + 0x18000\n\
 _0809F2F0:\n\
-    movs r0, 0x64\n\
+    movs r0, 0x9c\n\
     muls r0, r1\n\
     adds r0, r7, r0\n\
     movs r1, 0x2D\n\
@@ -2320,7 +2320,7 @@ static void SummaryScreen_PrintPokemonInfo(struct Pokemon *mon)
         if (gBaseStats[species].type1 != gBaseStats[species].type2)
             SummaryScreen_DrawTypeIcon(gBaseStats[species].type2, 160, 48, 1);
 
-        ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ALT_ABILITY));
+        ability = GetAbilityBySpecies(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_ALT_ABILITY), GetMonData(mon, MON_DATA_HAS_HIDDEN_ABILITY));
         SummaryScreen_PrintColoredText(gAbilityNames[ability], 13, 11, 9);
         Menu_PrintText(gAbilityDescriptions[ability], 11, 11);
 
@@ -2455,7 +2455,7 @@ static void sub_80A015C(struct Pokemon *mon)
             if (pssData.page == PSS_PAGE_BATTLE_MOVES)
                 SummaryScreen_DrawTypeIcon(gBattleMoves[move].type, 87, ((2 * i) + 4) * 8, i);
             else
-                SummaryScreen_DrawTypeIcon(gContestMoves[move].contestCategory + 18, 87, ((2 * i) + 4) * 8, i);
+                SummaryScreen_DrawTypeIcon(gContestMoves[move].contestCategory + 19, 87, ((2 * i) + 4) * 8, i);
 
             SummaryScreen_PrintColoredText(gMoveNames[move], 13, 15, (2 * i) + 4);
             SummaryScreen_PlaceTextTile_White(1, 24, (2 * i) + 4);
@@ -2810,36 +2810,36 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
     u8 locationMet;
     u8 gameMet = GetMonData(mon, MON_DATA_MET_GAME);
 
-    if (!(gameMet == VERSION_RUBY || gameMet == VERSION_SAPPHIRE || gameMet == VERSION_EMERALD))
-    {
-        Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
-        return;
-    }
-
-    locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
-
-    if (locationMet == 255)
-    {
-        // Eggs received from Pokemon Box.
-        Menu_PrintText(gOtherText_EggNicePlace, left, top);
-        return;
-    }
-
     if (!PokemonSummaryScreen_CheckOT(mon))
     {
         Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
         return;
     }
+    
+    locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
 
-    asm(""); // needed to match for some reason
-
-    if (locationMet == 253)
-    {
-        Menu_PrintText(gOtherText_EggHotSprings, left, top);
-        return;
+    switch (gameMet) {
+    	case VERSION_RUBY:
+    	case VERSION_SAPPHIRE:
+    	case VERSION_EMERALD:
+	    if (locationMet == 253)
+	    {
+		Menu_PrintText(gOtherText_EggHotSprings, left, top);
+		break;
+	    }
+	    if (locationMet == 255)
+	    {
+		// Eggs received from Pokemon Box.
+		Menu_PrintText(gOtherText_EggNicePlace, left, top);
+		break;
+	    }
+	    Menu_PrintText(gOtherText_EggDayCare, left, top);
+	    break;
+	default:
+	    Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
+            break;
     }
-
-    Menu_PrintText(gOtherText_EggDayCare, left, top);
+    
 }
 
 static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, u8 top)
@@ -2849,6 +2849,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     u8 *ptr = gStringVar4;
     u8 nature = GetNature(mon);
     u8 *orreMetLocationString; //receives the string pointer returned from DetermineOrreMetLocation
+    u8 levelMet;
     u16 species; //needed to check for starter Eeveelutions and Plusle, which are special cases
 
 #if ENGLISH
@@ -2861,81 +2862,45 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
     ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
     ptr = StringCopy(ptr, gOtherText_Terminator4);
 #endif
-
-    if (PokemonSummaryScreen_CheckOT(mon) == TRUE)
-    {
-        locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
-
-        if (GetMonData(mon, MON_DATA_MET_LEVEL) == 0)
-        {
-            ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
-            *ptr = CHAR_NEWLINE;
-            ptr++;
-
-            CopyLocationName(gStringVar1, locationMet);
-            ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-            StringCopy(ptr, gOtherText_Egg2);
-        }
-        else if (locationMet >= 214)
-        {
-            *ptr = CHAR_NEWLINE;
-            ptr++;
-
-            StringCopy(ptr, gOtherText_ObtainedInTrade);
-        }
-        else
-        {
-            u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
-            ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-            *ptr = CHAR_NEWLINE;
-            ptr++;
-
-            CopyLocationName(gStringVar1, locationMet);
-            ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-            StringCopy(ptr, gOtherText_Met);
-        }
-    }
-    else
-    {
-        gameMet = GetMonData(mon, MON_DATA_MET_GAME);
-        
-                if(gameMet == VERSION_GC) //Colosseum and XD Location Handling
-        {
-        	 u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
-        	 ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-        	 *ptr = CHAR_NEWLINE;
-        	 ptr++;
-
-        	 orreMetLocationString = DetermineOrreMetLocation(mon);
-        	 species = GetMonData(mon, MON_DATA_SPECIES);
-        	 if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
-        	 {
-            	 GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
-        		 StringCopy(ptr, orreMetLocationString);
-        	 }
-        	 else
-        	 {
-        		 ptr = SummaryScreen_CopyColoredString(ptr, orreMetLocationString, 14);
-        		 StringCopy(ptr, gOtherText_Met);
-        	 }
-        }
-
-        else if (!(gameMet == VERSION_RUBY || gameMet == VERSION_SAPPHIRE || gameMet == VERSION_EMERALD || gameMet == VERSION_FIRERED || gameMet == VERSION_LEAFGREEN))
-        {
-            *ptr = CHAR_NEWLINE;
-            ptr++;
-
-            StringCopy(ptr, gOtherText_ObtainedInTrade);
-        }
-        else
-        {
-            locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
+    locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
+    gameMet = GetMonData(mon, MON_DATA_MET_GAME);
+    levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
+    switch (gameMet) {
+	case VERSION_GC:
+		//Colosseum and XD Location Handling
+		if (levelMet==0) {
+			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+		}
+		else {
+			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+		}
+		*ptr = CHAR_NEWLINE;
+		ptr++;
+		orreMetLocationString = DetermineOrreMetLocation(mon);
+		species = GetMonData(mon, MON_DATA_SPECIES);
+		if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
+		{
+	    	 	GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
+			StringCopy(ptr, orreMetLocationString);
+		}
+		else
+		{
+			if (levelMet==0) {
+				ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+				StringCopy(ptr, gOtherText_Egg2);
+			}
+			else {
+				ptr = SummaryScreen_CopyColoredString(ptr, orreMetLocationString, 14);
+				StringCopy(ptr, gOtherText_Met2);
+			}
+		}
+	case VERSION_RUBY:
+	case VERSION_SAPPHIRE:
+	case VERSION_EMERALD:
+	case VERSION_FIRERED:
+	case VERSION_LEAFGREEN:
             if (locationMet == 0xFF)
             {
-                u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
                 ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
                 *ptr = CHAR_NEWLINE;
                 ptr++;
@@ -2951,17 +2916,28 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
             }
             else
             {
-                u8 levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-
-                ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-                *ptr = CHAR_NEWLINE;
-                ptr++;
-
-                CopyLocationName(gStringVar1, locationMet);
-                ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-                StringCopy(ptr, gOtherText_Met2);
+		if (levelMet==0) {
+		    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+		    	*ptr = CHAR_NEWLINE;
+		    	ptr++;
+			CopyLocationName(gStringVar1, locationMet);
+			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+			StringCopy(ptr, gOtherText_Egg2);
+		}
+		else {
+		        ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+		        *ptr = CHAR_NEWLINE;
+		        ptr++;
+		        CopyLocationName(gStringVar1, locationMet);
+		        ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+		        StringCopy(ptr, gOtherText_Met2);
+                }
             }
-        }
+	default:
+		*ptr = CHAR_NEWLINE;
+		ptr++;
+
+		StringCopy(ptr, gOtherText_ObtainedInTrade);
     }
 
     Menu_PrintText(gStringVar4, left++, top++);
@@ -4727,7 +4703,7 @@ void sub_80A1D18(void)
 {
     asm(".syntax unified\n\
     push {r4,r5,lr}\n\
-    sub sp, 0x64\n\
+    sub sp, 0x9c\n\
     mov r0, sp\n\
     bl SummaryScreen_GetPokemon\n\
     mov r0, sp\n\
@@ -4768,7 +4744,7 @@ _080A1D60:\n\
     adds r1, r5, 0\n\
     bl StartSpriteAnim\n\
 _080A1D74:\n\
-    add sp, 0x64\n\
+    add sp, 0x9c\n\
     pop {r4,r5}\n\
     pop {r0}\n\
     bx r0\n\
@@ -4805,7 +4781,7 @@ static void sub_80A1DCC(struct Pokemon *mon)
 static void sub_80A1DE8(struct Pokemon *mon)
 {
     u8 ball = ball_number_to_ball_processing_index(GetMonData(mon, MON_DATA_POKEBALL));
-    sub_80478DC(ball);
+    LoadBallGraphics(ball);
 
     pssData.ballSpriteId = CreateSprite(&gBallSpriteTemplates[ball], 6, 136, 0);
     gSprites[pssData.ballSpriteId].callback = SpriteCallbackDummy;

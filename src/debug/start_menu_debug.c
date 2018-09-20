@@ -2756,8 +2756,8 @@ u8 DebugMenu_OpenKiwa(void)
 
 u8 DebugMenu_OpenLuma(void)
 {
-    // return InitLumaDebugMenu();
-    CloseMenu();
-    return TRUE;
+    return InitLumaDebugMenu();
+    // CloseMenu();
+    // return TRUE;
 }
 #endif

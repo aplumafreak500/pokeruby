@@ -409,8 +409,23 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     int sentToPc;
     u8 heldItem[2];
     struct Pokemon mon;
-
-    CreateMon(&mon, species, level, 32, 0, 0, 0, 0);
+    
+    u8 shinyMode = unused1 & 0xF;
+    // We need to be sure that the Pokemon will be shiny when caught, not just when it's generated
+    u32 otId = gSaveBlock2.playerTrainerId[0]
+      | (gSaveBlock2.playerTrainerId[1] << 8)
+      | (gSaveBlock2.playerTrainerId[2] << 16)
+      | (gSaveBlock2.playerTrainerId[3] << 24);
+    if (shinyMode==2)
+    	CreateShinyLockedMon(&mon, species, level, otId);
+    else if (shinyMode==3)
+    	CreateShinyMon(&mon, species, level, otId);
+    else
+    	CreateMon(&mon, species, level, 32, 0, 0, 0, 0, 0);
+    if(unused3) // unused3 = has hidden ability
+    {
+        SetMonData(&mon, MON_DATA_HAS_HIDDEN_ABILITY, unused3);
+    }
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
@@ -428,12 +443,12 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     return sentToPc;
 }
 
-u8 ScriptGiveEgg(u16 species)
+u8 ScriptGiveEgg(u16 species, u8 shinyMode, u8 hasHiddenAbility)
 {
     struct Pokemon mon;
     u8 isEgg;
 
-    CreateEgg(&mon, species, TRUE);
+    CreateEgg(&mon, species, TRUE, shinyMode, hasHiddenAbility);
     isEgg = TRUE;
     SetMonData(&mon, MON_DATA_IS_EGG, &isEgg);
 
@@ -481,13 +496,25 @@ bool8 GetNameOfEnigmaBerryInPlayerParty(void)
     return hasItem;
 }
 
-void CreateScriptedWildMon(u16 species, u8 level, u16 item)
+void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 shinyMode, u8 hasHiddenAbility)
 {
     u8 heldItem[2];
-
+    // We need to be sure that the Pokemon will be shiny when caught, not just when it's generated
+    u32 otId = gSaveBlock2.playerTrainerId[0]
+      | (gSaveBlock2.playerTrainerId[1] << 8)
+      | (gSaveBlock2.playerTrainerId[2] << 16)
+      | (gSaveBlock2.playerTrainerId[3] << 24);
     ZeroEnemyPartyMons();
-    CreateMon(&gEnemyParty[0], species, level, 0x20, 0, 0, 0, 0);
-
+    if (shinyMode==2)
+    	CreateShinyLockedMon(&gEnemyParty[0], species, level, otId);
+    else if (shinyMode==3)
+    	CreateShinyMon(&gEnemyParty[0], species, level, otId);
+    else
+    	CreateMon(&gEnemyParty[0], species, level, 32, 0, 0, 0, 0, 0);
+    if(hasHiddenAbility)
+    {
+        SetMonData(&gEnemyParty[0], MON_DATA_HAS_HIDDEN_ABILITY, hasHiddenAbility);
+    }
     if(item)
     {
         heldItem[0] = item;

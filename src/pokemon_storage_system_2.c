@@ -337,7 +337,7 @@ void debug_sub_80A4300(void)
 extern void (*unk_2038794)(void);
 extern struct Pokemon * unk_2038798;
 
-extern void debug_sub_809CB94(struct Pokemon *);
+extern void sub_809CB94(struct Pokemon *);
 
 void debug_sub_80A433C(struct Pokemon * a, void (*b)(void))
 {
@@ -351,7 +351,7 @@ void debug_sub_80A435C(void)
     switch (gPokemonStorageSystemPtr->unk_0004)
     {
     case 0:
-        debug_sub_809CB94(unk_2038798);
+        sub_809CB94(unk_2038798);
         BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
         gPokemonStorageSystemPtr->unk_0004++;
         break;
@@ -491,7 +491,7 @@ void sub_8096C84(void)
         case 9:
             PlaySE(SE_SELECT);
             gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox + 1;
-            if (gPokemonStorageSystemPtr->unk_08b2 > 13)
+            if (gPokemonStorageSystemPtr->unk_08b2 > 11)
                 gPokemonStorageSystemPtr->unk_08b2 = 0;
             sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
             gPokemonStorageSystemPtr->unk_0004 = 2;
@@ -500,7 +500,7 @@ void sub_8096C84(void)
             PlaySE(SE_SELECT);
             gPokemonStorageSystemPtr->unk_08b2 = gPokemonStorage.currentBox - 1;
             if (gPokemonStorageSystemPtr->unk_08b2 < 0)
-                gPokemonStorageSystemPtr->unk_08b2 = 13;
+                gPokemonStorageSystemPtr->unk_08b2 = 11;
             sub_8099C70(gPokemonStorageSystemPtr->unk_08b2);
             gPokemonStorageSystemPtr->unk_0004 = 2;
             break;

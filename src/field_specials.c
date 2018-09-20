@@ -18,10 +18,6 @@
 #include "string_util.h"
 #include "strings.h"
 #include "pokeblock.h"
-#include "constants/species.h"
-#include "constants/abilities.h"
-#include "constants/moves.h"
-#include "constants/weather.h"
 #include "text.h"
 #include "wallclock.h"
 #include "tv.h"
@@ -36,6 +32,11 @@
 #include "field_weather.h"
 #include "pokemon_summary_screen.h"
 #include "random.h"
+#include "constants/abilities.h"
+#include "constants/event_object_movement_constants.h"
+#include "constants/moves.h"
+#include "constants/species.h"
+#include "constants/weather.h"
 
 #if ENGLISH
 #define CHAR_DECIMAL_SEPARATOR CHAR_PERIOD
@@ -1908,7 +1909,7 @@ void SetShoalItemFlag(u16 v0)
 void PutZigzagoonInPlayerParty(void)
 {
     u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, 0x20, FALSE, 0, FALSE, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, 0x20, FALSE, 0, FALSE, 0, 0);
     monData = TRUE;
     SetMonData(&gPlayerParty[0], MON_DATA_ALT_ABILITY, &monData);
     monData = MOVE_TACKLE;

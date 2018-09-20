@@ -707,19 +707,19 @@ bool8 TayaDebugMenu_Trainer(void)
     for (i = 0; i < ARRAY_COUNT(gTrainerEyeTrainers); i++)
         SetTrainerFlag(gTrainerEyeTrainers[i].opponentIDs[0]);
 
-    SetTrainerFlag(OPPONENT_ROXANNE);
-    SetTrainerFlag(OPPONENT_BRAWLY);
-    SetTrainerFlag(OPPONENT_WATTSON);
-    SetTrainerFlag(OPPONENT_FLANNERY);
-    SetTrainerFlag(OPPONENT_NORMAN);
-    SetTrainerFlag(OPPONENT_WINONA);
-    SetTrainerFlag(OPPONENT_TATE_AND_LIZA);
-    SetTrainerFlag(OPPONENT_WALLACE);
-    SetTrainerFlag(OPPONENT_SIDNEY);
-    SetTrainerFlag(OPPONENT_PHOEBE);
-    SetTrainerFlag(OPPONENT_GLACIA);
-    SetTrainerFlag(OPPONENT_DRAKE);
-    SetTrainerFlag(OPPONENT_STEVEN);
+    SetTrainerFlag(TRAINER_ROXANNE);
+    SetTrainerFlag(TRAINER_BRAWLY);
+    SetTrainerFlag(TRAINER_WATTSON);
+    SetTrainerFlag(TRAINER_FLANNERY);
+    SetTrainerFlag(TRAINER_NORMAN);
+    SetTrainerFlag(TRAINER_WINONA);
+    SetTrainerFlag(TRAINER_TATE_AND_LIZA);
+    SetTrainerFlag(TRAINER_WALLACE);
+    SetTrainerFlag(TRAINER_SIDNEY);
+    SetTrainerFlag(TRAINER_PHOEBE);
+    SetTrainerFlag(TRAINER_GLACIA);
+    SetTrainerFlag(TRAINER_DRAKE);
+    SetTrainerFlag(TRAINER_STEVEN);
     CloseMenu();
     return TRUE;
 }
@@ -731,7 +731,7 @@ bool8 TayaDebugMenu_PokenavD(void)
     
     Menu_DisplayDialogueFrame();
     
-    for (i = 0; i < 14; i++)
+    for (i = 0; i < 12; i++)
     {
         StringCopy(gSharedMem, gUnknown_Debug_083C4F94);
         gSharedMem[i + 1] = EOS;
@@ -742,6 +742,7 @@ bool8 TayaDebugMenu_PokenavD(void)
             u32 otId = Random() + 1;
             u16 level = (Random() % 100) + 1;
             u16 species = (Random() % 386) + 1;
+            u8 dwAbility = Random() % 1;
             if (species >= SPECIES_OLD_UNOWN_B)
             {
                 species += SPECIES_TREECKO - SPECIES_OLD_UNOWN_B;
@@ -749,7 +750,7 @@ bool8 TayaDebugMenu_PokenavD(void)
                     species = SPECIES_BULBASAUR;
             }
             boxPokemon = gPokemonStorage.boxes[i] + j;
-            CreateBoxMon(boxPokemon, species, level, 32, FALSE, 0, TRUE, otId);
+            CreateBoxMon(boxPokemon, species, level, 32, FALSE, 0, TRUE, otId, dwAbility);
 
             otId = Random() & 0xff;
             SetBoxMonData(boxPokemon, MON_DATA_COOL, &otId);
@@ -768,6 +769,15 @@ bool8 TayaDebugMenu_PokenavD(void)
 
             otId = Random() & 0xff;
             SetBoxMonData(boxPokemon, MON_DATA_SHEEN, &otId);
+            
+            otId = Random() & 0x7fff;
+            SetBoxMonData(boxPokemon, MON_DATA_MET_LOCATION, &otId);
+            
+            otId = Random() % VERSION_LETS_GO_EEVEE;
+            SetBoxMonData(boxPokemon, MON_DATA_MET_GAME, &otId);
+            
+            otId = Random() & 0x3f;
+            SetBoxMonData(boxPokemon, MON_DATA_FORM, &otId);
 
             otId = (Random() & 3) + 1;
             SetBoxMonData(boxPokemon, MON_DATA_COOL_RIBBON, &otId);

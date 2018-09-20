@@ -1055,24 +1055,24 @@ u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
             {
             case 0:
             {
-                const struct TrainerPartyMember0 *partyData = gTrainers[trainerNum].party;
+                const struct TrainerMonNoItemDefaultMoves *partyData = gTrainers[trainerNum].party.NoItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != 0xFF; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0, 0); // partyData[i].hAbility
                 break;
             }
-            case 1:
+            case F_TRAINER_PARTY_CUSTOM_MOVESET:
             {
-                const struct TrainerPartyMember1 *partyData = gTrainers[trainerNum].party;
+                const struct TrainerMonNoItemCustomMoves *partyData = gTrainers[trainerNum].party.NoItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != 0xFF; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0, 0); // partyData[i].hAbility
 
                 for (j = 0; j < 4; j++)
                 {
@@ -1081,28 +1081,28 @@ u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum)
                 }
                 break;
             }
-            case 2:
+            case F_TRAINER_PARTY_HELD_ITEM:
             {
-                const struct TrainerPartyMember2 *partyData = gTrainers[trainerNum].party;
+                const struct TrainerMonItemDefaultMoves *partyData = gTrainers[trainerNum].party.ItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != 0xFF; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0, 0); // partyData[i].hAbility
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
             }
-            case 3:
+            case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
             {
-                const struct TrainerPartyMember3 *partyData = gTrainers[trainerNum].party;
+                const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerNum].party.ItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != 0xFF; j++)
                     nameHash += gSpeciesNames[partyData[i].species][j];
                 personalityValue += nameHash << 8;
                 fixedIV = partyData[i].iv * 31 / 255;
-                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0);
+                CreateMon(&party[i], partyData[i].species, partyData[i].level, fixedIV, TRUE, personalityValue, 2, 0, 0); // partyData[i].hAbility
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 for (j = 0; j < 4; j++)
@@ -1576,7 +1576,7 @@ void debug_sub_8010CAC(void)
               gUnknown_Debug_2023A76[0][0 * 5 + 0],
               gUnknown_Debug_2023A76[0][0 * 5 + 1],
               32,
-              0, 0, 0, 0);
+              0, 0, 0, 0, 0); // DW ability doesn't matter anyway when testing evo scene
             for (r5 = 0; r5 < 4; r5++)
             {
                 SetMonData(&gPlayerParty[0], MON_DATA_MOVE1 + r5, &gUnknown_Debug_2023B02[0][0][r5]);
@@ -1878,7 +1878,7 @@ void debug_sub_8010CAC(void)
               gUnknown_Debug_2023A76_[0][0][0],
               gUnknown_Debug_2023A76_[0][0][1],
               32,
-              0, 0, 0, 0);
+              0, 0, 0, 0, 0); // DW ability doesn't matter anyway when testing evo scene
             for (r5 = 0; r5 < 4; r5++)
             {
                 SetMonData(&gPlayerParty[0], MON_DATA_MOVE1 + r5, &gUnknown_Debug_2023B02[0][0][r5]);
@@ -3923,7 +3923,7 @@ void sub_8011384(void)
                 MEMSET_ALT(&gBattleMons[gActiveBattler], gBattleBufferB[gActiveBattler][4 + i], 0x58, i, ptr);
                 gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
                 gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
-                gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].altAbility);
+                gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].altAbility, gBattleMons[gActiveBattler].hasHiddenAbility);
                 r0 = GetBattlerSide(gActiveBattler);
                 ewram160BC[r0] = gBattleMons[gActiveBattler].hp;
                 for (i = 0; i < 8; i++)

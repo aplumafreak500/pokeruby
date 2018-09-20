@@ -12,6 +12,7 @@
 #include "main.h"
 #include "move_tutor_menu.h"
 #include "pokemon.h"
+#include "pokedex.h"
 #include "random.h"
 #include "overworld.h"
 #include "rom_8077ABC.h"
@@ -398,10 +399,10 @@ u16 HoennPokedexNumToSpecies(u16 hoennNum)
 
     species = 0;
 
-    while (species < NUM_SPECIES && gSpeciesToHoennPokedexNum[species] != hoennNum)
+    while (species < POKEMON_SLOTS_NUMBER - 1 && gSpeciesToHoennPokedexNum[species] != hoennNum)
         species++;
 
-    if (species == NUM_SPECIES)
+    if (species == POKEMON_SLOTS_NUMBER - 1)
         return 0;
 
     return species + 1;
@@ -416,10 +417,10 @@ u16 NationalPokedexNumToSpecies(u16 nationalNum)
 
     species = 0;
 
-    while (species < NUM_SPECIES && gSpeciesToNationalPokedexNum[species] != nationalNum)
+    while (species < POKEMON_SLOTS_NUMBER - 1 && gSpeciesToNationalPokedexNum[species] != nationalNum)
         species++;
 
-    if (species == NUM_SPECIES)
+    if (species == POKEMON_SLOTS_NUMBER - 1)
         return 0;
 
     return species + 1;
@@ -434,10 +435,10 @@ u16 NationalToHoennOrder(u16 nationalNum)
 
     hoennNum = 0;
 
-    while (hoennNum < NUM_SPECIES && gHoennToNationalOrder[hoennNum] != nationalNum)
+    while (hoennNum < POKEMON_SLOTS_NUMBER - 1 && gHoennToNationalOrder[hoennNum] != nationalNum)
         hoennNum++;
 
-    if (hoennNum == NUM_SPECIES)
+    if (hoennNum == POKEMON_SLOTS_NUMBER - 1)
         return 0;
 
     return hoennNum + 1;
@@ -1103,7 +1104,7 @@ u16 SpeciesToPokedexNum(u16 species)
     else
     {
         species = SpeciesToHoennPokedexNum(species);
-        if (species <= 202)
+        if (species <= HOENN_DEX_COUNT)
             return species;
         return 0xFFFF;
     }
@@ -1192,7 +1193,7 @@ const u8 *GetMonSpritePalFromOtIdPersonality(u16 species, u32 otId, u32 personal
         return gMonPaletteTable[0].data;
 
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
-    if (shinyValue < 8)
+    if (shinyValue < 16) // G6/7 odds, 8 previously
         return gMonShinyPaletteTable[species].data;
     else
         return gMonPaletteTable[species].data;
@@ -1211,7 +1212,7 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
     u32 shinyValue;
 
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
-    if (shinyValue < 8)
+    if (shinyValue < 16) // G6/7 odds, 8 previously
         return &gMonShinyPaletteTable[species];
     else
         return &gMonPaletteTable[species];
@@ -1346,8 +1347,6 @@ void SetWildMonHeldItem(void)
     }
 }
 
-bool8 IsShinyOtIdPersonality(u32, u32);
-
 bool8 IsShiny(struct Pokemon *mon)
 {
     u32 otId = GetMonData(mon, MON_DATA_OT_ID, 0);
@@ -1359,7 +1358,7 @@ bool8 IsShinyOtIdPersonality(u32 otId, u32 personality)
 {
     bool8 retVal = FALSE;
     u32 shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
-    if (shinyValue < 8)
+    if (shinyValue < 16) // Gen 6/7 odds, was 8
         retVal = TRUE;
     return retVal;
 }

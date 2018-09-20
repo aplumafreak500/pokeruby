@@ -62,7 +62,7 @@ void ClearRoamerLocationData(void)
 void CreateInitialRoamerMon(void)
 {
     struct Roamer *roamer;
-    CreateMon(&gEnemyParty[0], ROAMER_SPECIES, 40, 0x20, 0, 0, 0, 0);
+    CreateMon(&gEnemyParty[0], ROAMER_SPECIES, 40, 0x20, 0, 0, 0, 0, 0);
     roamer = &gSaveBlock1.roamer;
     roamer->species = ROAMER_SPECIES;
     roamer->level = 40;
