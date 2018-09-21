@@ -2894,6 +2894,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 				StringCopy(ptr, gOtherText_Met2);
 			}
 		}
+		break;
 	case VERSION_RUBY:
 	case VERSION_SAPPHIRE:
 	case VERSION_EMERALD:
@@ -2933,6 +2934,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		        StringCopy(ptr, gOtherText_Met2);
                 }
             }
+            break;
 	default:
 		*ptr = CHAR_NEWLINE;
 		ptr++;
