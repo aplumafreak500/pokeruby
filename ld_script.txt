@@ -767,6 +767,7 @@ SECTIONS {
         data/debug_mystery_event_scripts.o(.rodata);
 	src/debug/luma_debug_menu.o(.rodata);
 	data/FairyWindAnimData.o(.rodata);
+	src/data/other_region_map_names.o(.rodata);
         src/libs/m4a_tables.o(.rodata);
         data/sound_data.o(.rodata);
     } =0

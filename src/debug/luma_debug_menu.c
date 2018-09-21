@@ -399,7 +399,7 @@ u8 LumaDebugMenu_FixBadEggs() {
 	for (i = 0; i < gPlayerPartyCount; i++) {
 		if (GetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, NULL)) {
 			SetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, 0);
-			SetMonData(gPlayerParty[i], MON_DATA_CHECKSUM, CalculateBoxMonChecksum(gPlayerParty[i]));
+			// SetMonData(gPlayerParty[i], MON_DATA_CHECKSUM, CalculateBoxMonChecksum(gPlayerParty[i]));
 		}
 	}
 	PlaySE(SE_C_GAJI);
