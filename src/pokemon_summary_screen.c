@@ -2842,6 +2842,8 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
     
 }
 
+extern const u8 *const Generation4LocationTable[];
+
 static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, u8 top)
 {
     u8 locationMet;
@@ -2930,6 +2932,39 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		        *ptr = CHAR_NEWLINE;
 		        ptr++;
 		        CopyLocationName(gStringVar1, locationMet);
+		        ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+		        StringCopy(ptr, gOtherText_Met2);
+                }
+            }
+            break;
+        case VERSION_DIAMOND:
+        case VERSION_PEARL:
+        case VERSION_PLATINUM:
+        case VERSION_HEARTGOLD:
+        case VERSION_SOULSILVER:
+        case VERSION_CRYSTAL_DS:
+            if (locationMet >= 234)
+            {
+                *ptr = CHAR_NEWLINE;
+                ptr++;
+
+                StringCopy(ptr, gOtherText_ObtainedInTrade);
+            }
+            else
+            {
+		if (levelMet==0) {
+		    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+		    	*ptr = CHAR_NEWLINE;
+		    	ptr++;
+			StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
+			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+			StringCopy(ptr, gOtherText_Egg2);
+		}
+		else {
+		        ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+		        *ptr = CHAR_NEWLINE;
+		        ptr++;
+		        StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
 		        ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
 		        StringCopy(ptr, gOtherText_Met2);
                 }
