@@ -379,7 +379,7 @@ void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 		VarSet(task->data[1], VarGet(task->data[1])-16);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
-	else if (gMain.newKeys & R_BUTTON) {
+	else if (gMain.newAndRepeatedKeys & R_BUTTON) {
 		VarSet(task->data[1], VarGet(task->data[1])+16);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
@@ -399,6 +399,7 @@ u8 LumaDebugMenu_FixBadEggs() {
 	for (i = 0; i < gPlayerPartyCount; i++) {
 		if (GetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, NULL)) {
 			SetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, 0);
+			SetMonData(gPlayerParty[i], MON_DATA_CHECKSUM, CalculateBoxMonChecksum(gPlayerParty[i]));
 		}
 	}
 	PlaySE(SE_C_GAJI);
