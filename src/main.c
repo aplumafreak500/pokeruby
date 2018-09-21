@@ -313,6 +313,9 @@ static void VBlankIntr(void)
     m4aSoundMain();
     sub_800C35C();
     Random();
+    Random_XD();
+    Random_Generation4();
+    Random_N64();
 
     INTR_CHECK |= INTR_FLAG_VBLANK;
     gMain.intrCheck |= INTR_FLAG_VBLANK;
