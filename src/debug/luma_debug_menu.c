@@ -34,7 +34,7 @@ void LumaDebugMenu_InitFlagEditor();
 void LumaDebugMenu_FlagEditorTask(u8);
 void LumaDebugMenu_DrawFlagStatus(u16);
 void LumaDebugMenu_FlagEditorHandleInput(u8);
-void LumaDebugMenu_ExitFlagVarEditor(u8);
+void LumaDebugMenu_ExitFlagEditor(u8);
 void LumaDebugMenu_BackToMainMenu();
 void LumaDebugMenu_MenuCB(u8);
 u8 LumaDebugMenu_ReloadMainMenu();
@@ -42,6 +42,7 @@ void LumaDebugMenu_InitVarEditor();
 void LumaDebugMenu_VarEditorTask(u8);
 void LumaDebugMenu_DrawVarStatus(u16);
 void LumaDebugMenu_VarEditorHandleInput(u8);
+void LumaDebugMenu_ExitVarEditor(u8);
 u8 LumaDebugMenu_FixBadEggs();
 // u8 LumaDebugMenu_SaveSerializedGame();
 
@@ -69,6 +70,7 @@ const u8 Str_MemoryEditorBank[] = _("Bank no. $");
 const u8 Str_MemoryEditorOther[] = _("$");
 
 const u8 Str_ChangeFlagState[] = _("Edit flag state");
+const u8 Str_ChangeVarState[] = _("Edit var state");
 const u8 Str_ChangeFlagState2[] = _("LR: Edit");
 const u8 dsStr[] = _("DS Num");
 
@@ -99,7 +101,7 @@ const u8* const RamPointerStrings[] = {
 
 const struct MenuAction LumaDebugMenuItems[] = {
 	{ Str_AddNewPKMN, LumaDebugMenu_CloseMenu },
-	{ Str_MemoryEditor, /* LumaDebugMenu_OpenMemoryEditorMenu */ LumaDebugMenu_CloseMenu },
+	{ Str_MemoryEditor, LumaDebugMenu_OpenMemoryEditorMenu },
 	{ Str_SaveGame, /* LumaDebugMenu_SaveSerializedGame*/ LumaDebugMenu_CloseMenu },
 	{ Str_FlagEdit, LumaDebugMenu_OpenFlagEditor },
 	{ Str_VarEdit, LumaDebugMenu_OpenVarEditor },
@@ -120,9 +122,9 @@ const struct MenuAction MemoryEditorItems[] = {
 
 bool8 InitLumaDebugMenu() {
 	Menu_EraseScreen();
-	Menu_DrawStdWindowFrame(0, 0, 20, 8);
+	Menu_DrawStdWindowFrame(0, 0, 16, 13);
 	Menu_PrintItems(1, 1, 6, LumaDebugMenuItems);
-	InitMenu(0, 1, 1, 6, 0, 19);
+	InitMenu(0, 1, 1, 6, 0, 15);
 	gMenuCallback = LumaDebugMenu_ProcessInput;
 	return 0;
 }
@@ -157,7 +159,7 @@ u8 LumaDebugMenu_CloseMenu() {
 
 u8 LumaDebugMenu_OpenMemoryEditorMenu() {
 	Menu_EraseScreen();
-	Menu_DrawStdWindowFrame(0, 0, 10, 11);
+	Menu_DrawStdWindowFrame(0, 0, 10, 20);
 	Menu_PrintItems(1, 1, 9, MemoryEditorItems);
 	InitMenu(0, 1, 1, 9, 0, 9);
 	gMenuCallback = MemoryEditorMenu_ProcessInput;
@@ -272,8 +274,8 @@ void LumaDebugMenu_DrawFlagStatus(u16 flag) {
 
 void LumaDebugMenu_FlagEditorHandleInput(u8 taskId) {
 	struct Task *task = gTasks + taskId;
-	if (gMain.newKeys & (A_BUTTON | B_BUTTON)) {
-		task->func = LumaDebugMenu_ExitFlagVarEditor;
+	if (gMain.newKeys & (A_BUTTON | B_BUTTON | START_BUTTON)) {
+		task->func = LumaDebugMenu_ExitFlagEditor;
 	}
 	else if (gMain.newAndRepeatedKeys & DPAD_LEFT) {
 		task->data[1]--;
@@ -302,7 +304,7 @@ void LumaDebugMenu_FlagEditorHandleInput(u8 taskId) {
 	// TODO: Select toggle hex/dec display
 }
 
-void LumaDebugMenu_ExitFlagVarEditor(u8 taskId) {
+void LumaDebugMenu_ExitFlagEditor(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_EraseScreen();
 	ScriptContext2_Disable();
@@ -338,14 +340,14 @@ void LumaDebugMenu_InitVarEditor() {
 void LumaDebugMenu_VarEditorTask(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_DisplayDialogueFrame();
-	Menu_PrintText(Str_ChangeFlagState, 2, 15);
+	Menu_PrintText(Str_ChangeVarState, 2, 15);
 	Menu_PrintText(Str_ChangeFlagState2, 15, 15);
 	LumaDebugMenu_DrawVarStatus(task->data[1]);
 	task->func = LumaDebugMenu_VarEditorHandleInput;
 }
 
 void LumaDebugMenu_DrawVarStatus(u16 var) {
-	u8 var_state;
+	u16 var_state;
 	Menu_BlankWindowRect(4, 17, 22, 18);
 	ConvertIntToHexStringN(gStringVar1, var, STR_CONV_MODE_RIGHT_ALIGN, 4);
 	Menu_PrintText(gStringVar1, 4, 17);
@@ -357,7 +359,7 @@ void LumaDebugMenu_DrawVarStatus(u16 var) {
 void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	if (gMain.newKeys & START_BUTTON) {
-		task->func = LumaDebugMenu_ExitFlagVarEditor;
+		task->func = LumaDebugMenu_ExitVarEditor;
 	}
 	else if (gMain.newAndRepeatedKeys & DPAD_LEFT) {
 		task->data[1]--;
@@ -392,6 +394,15 @@ void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	// TODO: Select toggle hex/dec display
+}
+
+void LumaDebugMenu_ExitVarEditor(u8 taskId) {
+	struct Task *task = gTasks + taskId;
+	Menu_EraseScreen();
+	ScriptContext2_Disable();
+	currentVar = task->data[1];
+	DestroyTask(taskId);
+	LumaDebugMenu_BackToMainMenu();
 }
 
 u8 LumaDebugMenu_FixBadEggs() {
