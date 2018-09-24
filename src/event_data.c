@@ -112,6 +112,8 @@ bool32 CanResetRTC(void)
 
 u16 *GetVarPointer(u16 id)
 {
+    if (id < VARS_START)
+        return NULL;
     if (id < 0x8000)
         return &gSaveBlock1.vars[id - VARS_START];
     return gSpecialVars[id - 0x8000];

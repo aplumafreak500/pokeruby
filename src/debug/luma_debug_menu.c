@@ -330,6 +330,30 @@ u8 LumaDebugMenu_ReloadMainMenu() {
 	return FALSE;
 }
 
+static u16 *DebugGetVarPointer(u16 id)
+{
+    if (id < 0x8000)
+        return &gSaveBlock1.vars[id - VARS_START];
+    return gSpecialVars[id - 0x8000];
+}
+
+static u16 DebugVarGet(u16 id)
+{
+    u16 *ptr = DebugGetVarPointer(id);
+    if (!ptr)
+        return id;
+    return *ptr;
+}
+
+static bool8 DebugVarSet(u16 id, u16 value)
+{
+    u16 *ptr = DebugGetVarPointer(id);
+    if (!ptr)
+        return FALSE;
+    *ptr = value;
+    return TRUE;
+}
+
 void LumaDebugMenu_InitVarEditor() {
 	u8 taskId = CreateTask(LumaDebugMenu_VarEditorTask, 80);
 	Menu_EraseScreen();
@@ -351,7 +375,7 @@ void LumaDebugMenu_DrawVarStatus(u16 var) {
 	Menu_BlankWindowRect(4, 17, 22, 18);
 	ConvertIntToHexStringN(gStringVar1, var, STR_CONV_MODE_RIGHT_ALIGN, 4);
 	Menu_PrintText(gStringVar1, 4, 17);
-	var_state = VarGet(var);
+	var_state = DebugVarGet(var);
 	ConvertIntToHexStringN(gStringVar1, var_state, STR_CONV_MODE_RIGHT_ALIGN, 4);
 	Menu_PrintText(gStringVar1, 17, 17);
 }
@@ -378,19 +402,19 @@ void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	else if (gMain.newAndRepeatedKeys & L_BUTTON) {
-		VarSet(task->data[1], VarGet(task->data[1])-16);
+		DebugVarSet(task->data[1], DebugVarGet(task->data[1])-16);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	else if (gMain.newAndRepeatedKeys & R_BUTTON) {
-		VarSet(task->data[1], VarGet(task->data[1])+16);
+		DebugVarSet(task->data[1], DebugVarGet(task->data[1])+16);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	else if (gMain.newAndRepeatedKeys & B_BUTTON) {
-		VarSet(task->data[1], VarGet(task->data[1])-1);
+		DebugVarSet(task->data[1], DebugVarGet(task->data[1])-1);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	else if (gMain.newAndRepeatedKeys & A_BUTTON) {
-		VarSet(task->data[1], VarGet(task->data[1])+1);
+		DebugVarSet(task->data[1], DebugVarGet(task->data[1])+1);
 		task->func = LumaDebugMenu_VarEditorTask;
 	}
 	// TODO: Select toggle hex/dec display
@@ -411,9 +435,9 @@ u8 LumaDebugMenu_FixBadEggs() {
 		if (GetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, NULL)) {
 			SetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, 0);
 			// SetMonData(gPlayerParty[i], MON_DATA_CHECKSUM, CalculateBoxMonChecksum(gPlayerParty[i]));
+			PlaySE(SE_C_GAJI);
 		}
 	}
-	PlaySE(SE_C_GAJI);
 	CloseMenu();
 	return 1;
 }
