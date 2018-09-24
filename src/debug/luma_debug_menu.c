@@ -48,6 +48,7 @@ u8 LumaDebugMenu_FixBadEggs();
 
 extern u8 (*gMenuCallback)();
 extern u8 DebugScript_New0;
+extern u16 *gSpecialVars[];
 
 const u8 Str_AddNewPKMN[] = _("Add Victini to party");
 const u8 Str_FlagEdit[] = _("Change Flag");
