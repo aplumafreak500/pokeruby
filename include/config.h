@@ -57,7 +57,7 @@
 #endif
 
 // Fixed in Emerald.
-#ifdef (ENGLISH && REVISION >= 3) || (EUROPEAN && REVISION >= 2)
+#if (ENGLISH && REVISION >= 3) || (EUROPEAN && REVISION >= 2)
 #define BUGFIX_SETMONIVS
 #endif
 
