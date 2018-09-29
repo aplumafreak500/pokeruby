@@ -27,35 +27,38 @@
 #define REVISION 0
 #endif
 
-#if (ENGLISH && REVISION == 2) || (GERMAN && REVISION == 1)
-#define BUGFIX_BERRY
+#if GERMAN || ITALIAN || SPANISH || FRENCH || DUTCH || PAL
+#define EUROPEAN
 #endif
 
-#if (ENGLISH && REVISION >= 1) || GERMAN
+#if (ENGLISH && REVISION >= 2) || (EUROPEAN && REVISION >= 1)
+#defne BUGFIX_BERRY
+#endi
+
+#if (ENGLISH && REVISION >= 1) || EUROPEAN
 #define BUGFIX_GLYPHWIDTH
 #define BUGFIX_SAVEFAILEDSCREEN1
 #endif
 
-#if GERMAN
+#if (ENGLISH && REVISION >= 3) || EUROPEAN
 #define BUGFIX_SAVEFAILEDSCREEN2
-#endif
-
 // European editions of Ruby/Sapphire and all editions of Emerald have this fix.
-#if GERMAN
 #define BUGFIX_TRAINERAPPROACH
 #endif
 
-#if (ENGLISH && REVISION >= 1) || GERMAN
+#if (ENGLISH && REVISION >= 1) || EUROPEAN
 #define BUGFIX_EVO_NAME
 #endif
 
 #ifdef ENGLISH
 #define UNITS_IMPERIAL
-#elif GERMAN
+#elif EUROPEAN
 #define UNITS_METRIC
 #endif
 
 // Fixed in Emerald.
-// #define BUGFIX_SETMONIVS
+#ifdef (ENGLISH && REVISION >= 3) || (EUROPEAN && REVISION >= 2)
+#define BUGFIX_SETMONIVS
+#endif
 
 #endif // GUARD_CONFIG_H

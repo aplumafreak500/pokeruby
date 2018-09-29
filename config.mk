@@ -40,7 +40,11 @@ else
 ifeq ($(GAME_LANGUAGE), GERMAN)
   BUILD_NAME := $(BUILD_NAME)_de
 else
+ifeq ($(GAME_LANGUAGE), PAL)
+  BUILD_NAME := $(BUILD_NAME)_eur
+else
   $(error unknown language $(GAME_LANGUAGE))
+endif
 endif
 endif
 

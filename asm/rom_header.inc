@@ -37,7 +37,11 @@ RomHeaderGameCode:
 	.ifdef ENGLISH
 	.ascii "E"
 	.else
+	.ifdef PAL
+	.ascii "P"
+	.else
 	.ascii "D"
+	.endif
 	.endif
 
 RomHeaderMakerCode:
@@ -66,10 +70,15 @@ RomHeaderChecksum:
 	.byte 0x41 - REVISION
 	.endif
 	.else
+	.ifdef PAL
+	#todo: sums
+	.byte 0
+	.else
 	.ifdef SAPPHIRE
 	.byte 0x56
 	.else
 	.byte 0x42
+	.endif
 	.endif
 	.endif
 
