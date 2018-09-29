@@ -947,7 +947,7 @@ u8 DebugMenu_NationalDex(void)
 {
     u16 i;
 
-    for (i = 0; i < 386; i++)
+    for (i = 0; i < 387; i++)
     {
         GetSetPokedexFlag(i + 1, 2);
         GetSetPokedexFlag(i + 1, 3);
