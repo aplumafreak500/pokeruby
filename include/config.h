@@ -32,8 +32,8 @@
 #endif
 
 #if (ENGLISH && REVISION >= 2) || (EUROPEAN && REVISION >= 1)
-#defne BUGFIX_BERRY
-#endi
+#define BUGFIX_BERRY
+#endif
 
 #if (ENGLISH && REVISION >= 1) || EUROPEAN
 #define BUGFIX_GLYPHWIDTH
