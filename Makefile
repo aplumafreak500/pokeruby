@@ -25,6 +25,7 @@ MID2AGB   := tools/mid2agb/mid2agb$(EXE)
 PREPROC   := tools/preproc/preproc$(EXE)
 SCANINC   := tools/scaninc/scaninc$(EXE)
 RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
+GBAFIX    := tools/gbafix/gbafix$(EXE)
 
 VERSION=\"$(shell git describe --always)\"
 
@@ -121,6 +122,7 @@ clean: tidy
 	$(MAKE) clean -C tools/rsfont
 	$(MAKE) clean -C tools/aif2pcm
 	$(MAKE) clean -C tools/ramscrgen
+	$(MAKE) clean -C tools/gbafix
 
 tools:
 	@$(MAKE) -C tools/gbagfx
@@ -131,6 +133,7 @@ tools:
 	@$(MAKE) -C tools/aif2pcm
 	@$(MAKE) -C tools/ramscrgen
 	@$(MAKE) -C tools/mid2agb
+	@$(MAKE) -C tools/gbafix
 
 tidy:
 	@echo tidy
@@ -140,6 +143,7 @@ tidy:
 $(ROM): %.gba: %.elf
 	@echo Output: $@
 	@$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
+	$(GBAFIX) $@ -p -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
 
 $(ELF): $(LD_SCRIPT) $(ALL_OBJECTS)
 	@echo Linking $@
