@@ -2902,6 +2902,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 	case VERSION_EMERALD:
 	case VERSION_FIRERED:
 	case VERSION_LEAFGREEN:
+	case VERSION_BLUE_GBA:
             if (locationMet == 0xFF)
             {
                 ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
