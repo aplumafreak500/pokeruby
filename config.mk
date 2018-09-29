@@ -51,6 +51,7 @@ ifeq ($(GAME_LANGUAGE), GERMAN)
 else
 ifeq ($(GAME_LANGUAGE), PAL)
   BUILD_NAME := $(BUILD_NAME)_eur
+  GAME_CODE  := $(GAME_CODE)P
 else
   $(error unknown language $(GAME_LANGUAGE))
 endif
