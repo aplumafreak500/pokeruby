@@ -1,5 +1,5 @@
 gTextTrader_Introduction:: @ 81AE88F
-	.string "Hi, I’m the TRADER.\n"
+	.string "Hi, I’m the Trader.\n"
 	.string "Want to trade decorations with me?$"
 
 gTextTrader_FeelUnwanted1:: @ 81AE8C6

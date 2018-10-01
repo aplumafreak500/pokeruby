@@ -1,6 +1,6 @@
 Route102_Text_1B79C3:: @ 81B79C3
-	.string "If you have POKéMON with you, then\n"
-	.string "you’re an official POKéMON TRAINER!\l"
+	.string "If you have Pokémon with you, then\n"
+	.string "you’re an official Pokémon Trainer!\l"
 	.string "You can’t say no to my challenge!$"
 
 Route102_Text_1B7A2C:: @ 81B7A2C
@@ -13,7 +13,7 @@ Route102_Text_1B7A60:: @ 81B7A60
 
 Route102_Text_1B7A9F:: @ 81B7A9F
 	.string "Ever since I lost to you, I desperately\n"
-	.string "trained my POKéMON.\l"
+	.string "trained my Pokémon.\l"
 	.string "You can’t say no to my challenge!$"
 
 Route102_Text_1B7AFD:: @ 81B7AFD
@@ -25,7 +25,7 @@ Route102_Text_1B7B2F:: @ 81B7B2F
 	.string "get stronger, too.$"
 
 Route102_Text_1B7B68:: @ 81B7B68
-	.string "Did you just become a TRAINER?\n"
+	.string "Did you just become a Trainer?\n"
 	.string "We’re both beginners!$"
 
 Route102_Text_1B7B9D:: @ 81B7B9D
@@ -38,18 +38,18 @@ Route102_Text_1B7BD0:: @ 81B7BD0
 
 Route102_Text_1B7C05:: @ 81B7C05
 	.string "Hahah! Our eyes met!\n"
-	.string "I’ll take you on with my BUG POKéMON!$"
+	.string "I’ll take you on with my Bug Pokémon!$"
 
 Route102_Text_1B7C40:: @ 81B7C40
 	.string "Ow! Down and out!$"
 
 Route102_Text_1B7C52:: @ 81B7C52
-	.string "If you lock eyes with a TRAINER,\n"
+	.string "If you lock eyes with a Trainer,\n"
 	.string "you have to challenge! It’s a rule!$"
 
 Route102_Text_1B7C97:: @ 81B7C97
 	.string "I’m going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
+	.string "to be the best Trainer.\p"
 	.string "Help me further my career!$"
 
 Route102_Text_1B7CEC:: @ 81B7CEC
@@ -57,7 +57,7 @@ Route102_Text_1B7CEC:: @ 81B7CEC
 
 Route102_Text_1B7D11:: @ 81B7D11
 	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "I have to catch more Pokémon.$"
 
 Route103_Text_1B7D55:: @ 81B7D55
 	.string "Did you feel the tug of our soul-\n"
@@ -71,75 +71,75 @@ Route103_Text_1B7DB2:: @ 81B7DB2
 	.string "healing that works with fragrances.$"
 
 Route103_Text_1B7DF7:: @ 81B7DF7
-	.string "AMY: I’m AMY.\n"
-	.string "And this is my little sister LIV.\l"
+	.string "Amy: I’m Amy.\n"
+	.string "And this is my little sister Liv.\l"
 	.string "We battle together!$"
 
 Route103_Text_1B7E3B:: @ 81B7E3B
-	.string "AMY: Uh-oh, we lost.$"
+	.string "Amy: Uh-oh, we lost.$"
 
 Route103_Text_1B7E50:: @ 81B7E50
-	.string "AMY: You have to think about all\n"
+	.string "Amy: You have to think about all\n"
 	.string "kinds of things when you’re battling\l"
-	.string "against two TRAINERS.$"
+	.string "against two Trainers.$"
 
 Route103_Text_1B7EAC:: @ 81B7EAC
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
+	.string "Amy: Uh-oh, you have only one\n"
+	.string "Pokémon with you.\l"
 	.string "You can’t battle us like that.$"
 
 Route103_Text_1B7EFB:: @ 81B7EFB
-	.string "LIV: We battle together as one\n"
+	.string "Liv: We battle together as one\n"
 	.string "team.$"
 
 Route103_Text_1B7F20:: @ 81B7F20
-	.string "LIV: Oh, we lost, big sister...$"
+	.string "Liv: Oh, we lost, big sister...$"
 
 Route103_Text_1B7F40:: @ 81B7F40
-	.string "LIV: We work perfectly together, me\n"
+	.string "Liv: We work perfectly together, me\n"
 	.string "and my big sister...\p"
 	.string "But we still lost...$"
 
 Route103_Text_1B7F8E:: @ 81B7F8E
-	.string "LIV: If you want to battle us, you\n"
-	.string "have to have two POKéMON!\l"
+	.string "Liv: If you want to battle us, you\n"
+	.string "have to have two Pokémon!\l"
 	.string "It’s not fair if you don’t!$"
 
 Route103_Text_1B7FE7:: @ 81B7FE7
-	.string "AMY: I’m AMY.\n"
-	.string "And this is my little sister LIV.\l"
+	.string "Amy: I’m Amy.\n"
+	.string "And this is my little sister Liv.\l"
 	.string "We battle together!$"
 
 Route103_Text_1B802B:: @ 81B802B
-	.string "AMY: Aww, boo!\n"
+	.string "Amy: Aww, boo!\n"
 	.string "We couldn’t win again...$"
 
 Route103_Text_1B8053:: @ 81B8053
-	.string "AMY: You have to think about all\n"
+	.string "Amy: You have to think about all\n"
 	.string "kinds of things when you’re battling\l"
-	.string "against two TRAINERS.$"
+	.string "against two Trainers.$"
 
 Route103_Text_1B80AF:: @ 81B80AF
-	.string "AMY: Uh-oh, you have only one\n"
-	.string "POKéMON with you.\l"
+	.string "Amy: Uh-oh, you have only one\n"
+	.string "Pokémon with you.\l"
 	.string "You can’t battle us like that.$"
 
 Route103_Text_1B80FE:: @ 81B80FE
-	.string "LIV: We battle together as one\n"
+	.string "Liv: We battle together as one\n"
 	.string "team.$"
 
 Route103_Text_1B8123:: @ 81B8123
-	.string "LIV: Awww, we lost again...\n"
+	.string "Liv: Awww, we lost again...\n"
 	.string "Big sister...$"
 
 Route103_Text_1B814D:: @ 81B814D
-	.string "LIV: We work perfectly together, me\n"
+	.string "Liv: We work perfectly together, me\n"
 	.string "and my big sister...\p"
 	.string "But why did we lose again?$"
 
 Route103_Text_1B81A1:: @ 81B81A1
-	.string "LIV: If you want to battle us, you\n"
-	.string "have to have two POKéMON!\l"
+	.string "Liv: If you want to battle us, you\n"
+	.string "have to have two Pokémon!\l"
 	.string "It’s not fair if you don’t!$"
 
 Route103_Text_1B81FA:: @ 81B81FA
@@ -156,67 +156,67 @@ Route103_Text_1B8281:: @ 81B8281
 	.string "Grrrrr...$"
 
 Route103_Text_1B82A9:: @ 81B82A9
-	.string "My POKéMON is delightfully adorable!\n"
+	.string "My Pokémon is delightfully adorable!\n"
 	.string "Don’t be shy - I’ll show you!$"
 
 Route103_Text_1B82EC:: @ 81B82EC
 	.string "Oh, my gosh!\n"
-	.string "My darling POKéMON!$"
+	.string "My darling Pokémon!$"
 
 Route103_Text_1B830D:: @ 81B830D
-	.string "My delightful POKéMON looks darling\n"
+	.string "My delightful Pokémon looks darling\n"
 	.string "even when it’s fainted!$"
 
 Route103_Text_1B8349:: @ 81B8349
 	.string "Hi, you! My delightfully adorable\n"
-	.string "POKéMON has become more darling!$"
+	.string "Pokémon has become more darling!$"
 
 Route103_Text_1B838C:: @ 81B838C
 	.string "Oh!\n"
-	.string "My darling POKéMON!$"
+	.string "My darling Pokémon!$"
 
 Route103_Text_1B83A4:: @ 81B83A4
 	.string "The more I spend time with it, the\n"
-	.string "more adorable my POKéMON becomes.$"
+	.string "more adorable my Pokémon becomes.$"
 
 Route104_Text_1B83E9:: @ 81B83E9
-	.string "GINA: Okay, let’s battle with our\n"
-	.string "POKéMON!$"
+	.string "Gina: Okay, let’s battle with our\n"
+	.string "Pokémon!$"
 
 Route104_Text_1B8414:: @ 81B8414
-	.string "GINA: Losing upsets me!$"
+	.string "Gina: Losing upsets me!$"
 
 Route104_Text_1B842C:: @ 81B842C
-	.string "GINA: {STR_VAR_1} is strong!\n"
+	.string "Gina: {STR_VAR_1} is strong!\n"
 	.string "We have to train lots more!$"
 
 Route104_Text_1B845C:: @ 81B845C
-	.string "GINA: Oh? Only one POKéMON?\n"
+	.string "Gina: Oh? Only one Pokémon?\n"
 	.string "Then, we don’t battle with you.\p"
-	.string "If there’s only one POKéMON, it will\n"
+	.string "If there’s only one Pokémon, it will\n"
 	.string "be lonesome. That’s not nice.$"
 
 Route104_Text_1B84DB:: @ 81B84DB
-	.string "MIA: We are twins, so we battle\n"
-	.string "POKéMON together.$"
+	.string "Mia: We are twins, so we battle\n"
+	.string "Pokémon together.$"
 
 Route104_Text_1B850D:: @ 81B850D
-	.string "MIA: We battled together, but we\n"
+	.string "Mia: We battled together, but we\n"
 	.string "both lost...$"
 
 Route104_Text_1B853B:: @ 81B853B
-	.string "MIA: We will train our POKéMON more\n"
+	.string "Mia: We will train our Pokémon more\n"
 	.string "and be strong like you.$"
 
 Route104_Text_1B8577:: @ 81B8577
-	.string "MIA: You want to battle with us?\p"
+	.string "Mia: You want to battle with us?\p"
 	.string "It’s a big no-no if you don’t have two\n"
-	.string "POKéMON with you.\l"
+	.string "Pokémon with you.\l"
 	.string "We’re too strong for you!$"
 
 Route104_Text_1B85EB:: @ 81B85EB
 	.string "Why keep it a secret?\n"
-	.string "I’m the WATER POKéMON expert!\p"
+	.string "I’m the Water Pokémon expert!\p"
 	.string "Huh?\n"
 	.string "You don’t know me?$"
 
@@ -226,7 +226,7 @@ Route104_Text_1B8637:: @ 81B8637
 
 Route104_Text_1B8680:: @ 81B8680
 	.string "I got too into fishing.\n"
-	.string "I forgot I had to raise my POKéMON...$"
+	.string "I forgot I had to raise my Pokémon...$"
 
 Route104_Text_1B86BE:: @ 81B86BE
 	.string "Leaving footprints in the sand is\n"
@@ -276,11 +276,11 @@ Route104_Text_1B8911:: @ 81B8911
 
 Route104_Text_1B8925:: @ 81B8925
 	.string "There are some things money can’t buy.\n"
-	.string "That’s POKéMON...$"
+	.string "That’s Pokémon...$"
 
 Route104_Text_1B895E:: @ 81B895E
 	.string "After I lost to you, I learned a bunch\n"
-	.string "of things about POKéMON.$"
+	.string "of things about Pokémon.$"
 
 Route104_Text_1B899E:: @ 81B899E
 	.string "I lost again?\n"
@@ -288,8 +288,8 @@ Route104_Text_1B899E:: @ 81B899E
 
 Route104_Text_1B89C0:: @ 81B89C0
 	.string "I’m fabulously wealthy, but I can’t\n"
-	.string "seem to win at POKéMON...\p"
-	.string "It’s so deep, the world of POKéMON...$"
+	.string "seem to win at Pokémon...\p"
+	.string "It’s so deep, the world of Pokémon...$"
 
 Route104_Text_1B8A24:: @ 81B8A24
 	.string "We must have been fated to meet.\n"
@@ -321,7 +321,7 @@ Route105_Text_1B8B40:: @ 81B8B40
 
 Route105_Text_1B8B93:: @ 81B8B93
 	.string "I was thinking too much about that\n"
-	.string "rock, while my POKéMON remained weak...$"
+	.string "rock, while my Pokémon remained weak...$"
 
 Route105_Text_1B8BDE:: @ 81B8BDE
 	.string "I can spend hours and hours staring\n"
@@ -350,8 +350,8 @@ Route105_Text_1B8D23:: @ 81B8D23
 
 Route105_Text_1B8D45:: @ 81B8D45
 	.string "Why is the sea blue?\p"
-	.string "I learned about that at the MUSEUM in\n"
-	.string "SLATEPORT, but I forgot.$"
+	.string "I learned about that at the Museum in\n"
+	.string "Slateport, but I forgot.$"
 
 Route105_Text_1B8D99:: @ 81B8D99
 	.string "My body feels lighter in the water.\n"
@@ -392,20 +392,20 @@ Route106_Text_1B8F55:: @ 81B8F55
 	.string "You agree with me, right?$"
 
 Route106_Text_1B8FAC:: @ 81B8FAC
-	.string "I caught a bunch of POKéMON fishing.\n"
+	.string "I caught a bunch of Pokémon fishing.\n"
 	.string "I’ll show you an impressive battle!$"
 
 Route106_Text_1B8FF5:: @ 81B8FF5
 	.string "I lost again spectacularly!$"
 
 Route106_Text_1B9011:: @ 81B9011
-	.string "Win or lose, POKéMON are the greatest!\n"
+	.string "Win or lose, Pokémon are the greatest!\n"
 	.string "You agree with me, right?$"
 
 Route106_Text_1B9052:: @ 81B9052
 	.string "What do people do if they need to go\n"
 	.string "to a washroom?\p"
-	.string "What if my ROD hooks a big one while\n"
+	.string "What if my rod hooks a big one while\n"
 	.string "I’m in the washroom? I just can’t go...$"
 
 Route106_Text_1B90D3:: @ 81B90D3
@@ -468,28 +468,28 @@ Route107_Text_1B938E:: @ 81B938E
 
 Route107_Text_1B93EB:: @ 81B93EB
 	.string "Swimming in the big, wide sea, my\n"
-	.string "POKéMON has grown stronger!$"
+	.string "Pokémon has grown stronger!$"
 
 Route107_Text_1B9429:: @ 81B9429
 	.string "What a shock!\p"
-	.string "My POKéMON has gotten stronger, but\n"
-	.string "I stayed weak as a TRAINER!$"
+	.string "My Pokémon has gotten stronger, but\n"
+	.string "I stayed weak as a Trainer!$"
 
 Route107_Text_1B9477:: @ 81B9477
 	.string "What you learn in battle makes you a\n"
-	.string "stronger TRAINER.\l"
+	.string "stronger Trainer.\l"
 	.string "The waves taught me that.$"
 
 Route107_Text_1B94C8:: @ 81B94C8
 	.string "Do you know a little town called\n"
-	.string "DEWFORD?$"
+	.string "Dewford?$"
 
 Route107_Text_1B94F2:: @ 81B94F2
 	.string "I hate this!$"
 
 Route107_Text_1B94FF:: @ 81B94FF
 	.string "A weird saying is getting really\n"
-	.string "trendy at DEWFORD HALL.$"
+	.string "trendy at Dewford Hall.$"
 
 Route107_Text_1B9538:: @ 81B9538
 	.string "Did you want to battle me?\n"
@@ -503,39 +503,39 @@ Route107_Text_1B9589:: @ 81B9589
 	.string "better. I’ll go for it, too!$"
 
 Route107_Text_1B95CB:: @ 81B95CB
-	.string "LISA: We challenge you as a sister\n"
+	.string "Lisa: We challenge you as a sister\n"
 	.string "and brother!$"
 
 Route107_Text_1B95FB:: @ 81B95FB
-	.string "LISA: Awesome.\n"
+	.string "Lisa: Awesome.\n"
 	.string "You’re in a different class of tough.$"
 
 Route107_Text_1B9630:: @ 81B9630
-	.string "LISA: Do you have any friends who\n"
+	.string "Lisa: Do you have any friends who\n"
 	.string "would go to the beach with you?$"
 
 Route107_Text_1B9672:: @ 81B9672
-	.string "LISA: If you want to battle with us,\n"
-	.string "bring more POKéMON.$"
+	.string "Lisa: If you want to battle with us,\n"
+	.string "bring more Pokémon.$"
 
 Route107_Text_1B96AB:: @ 81B96AB
-	.string "RAY: We always battle POKéMON, me\n"
+	.string "Ray: We always battle Pokémon, me\n"
 	.string "and my sister.\p"
 	.string "I always lose, but we can beat you\n"
 	.string "2-on-2!$"
 
 Route107_Text_1B9707:: @ 81B9707
-	.string "RAY: Wowee, you’re at a higher level\n"
+	.string "Ray: Wowee, you’re at a higher level\n"
 	.string "than us!$"
 
 Route107_Text_1B9735:: @ 81B9735
-	.string "RAY: My sister gave me my POKéMON.\n"
+	.string "Ray: My sister gave me my Pokémon.\n"
 	.string "I raised it, and now it’s my important\l"
 	.string "partner!$"
 
 Route107_Text_1B9788:: @ 81B9788
-	.string "RAY: If you want to battle us, go\n"
-	.string "bring some more POKéMON!$"
+	.string "Ray: If you want to battle us, go\n"
+	.string "bring some more Pokémon!$"
 
 Route108_Text_1B97C3:: @ 81B97C3
 	.string "My dream is to swim the world’s seven\n"
@@ -546,12 +546,12 @@ Route108_Text_1B97EF:: @ 81B97EF
 	.string "like this...$"
 
 Route108_Text_1B9823:: @ 81B9823
-	.string "Playing with marine POKéMON is one of\n"
+	.string "Playing with marine Pokémon is one of\n"
 	.string "the pleasures of swimming!$"
 
 Route108_Text_1B9864:: @ 81B9864
 	.string "Ahoy, there! Are you going out to the\n"
-	.string "ABANDONED SHIP, too?$"
+	.string "Abandoned Ship, too?$"
 
 Route108_Text_1B989F:: @ 81B989F
 	.string "I’m sinking!\n"
@@ -559,7 +559,7 @@ Route108_Text_1B989F:: @ 81B989F
 
 Route108_Text_1B98BC:: @ 81B98BC
 	.string "Some people even go inside that\n"
-	.string "ABANDONED SHIP.$"
+	.string "Abandoned Ship.$"
 
 Route108_Text_1B98EC:: @ 81B98EC
 	.string "My liar of a boyfriend told me that\n"
@@ -596,7 +596,7 @@ Route109_Text_1B9A59:: @ 81B9A59
 Route109_Text_1B9A6D:: @ 81B9A6D
 	.string "Hiyah!\p"
 	.string "My sculpted abs have nothing to do\n"
-	.string "with POKéMON battles!$"
+	.string "with Pokémon battles!$"
 
 Route109_Text_1B9AAD:: @ 81B9AAD
 	.string "Are you properly protected against\n"
@@ -610,14 +610,14 @@ Route109_Text_1B9AEB:: @ 81B9AEB
 
 Route109_Text_1B9B11:: @ 81B9B11
 	.string "I’ve laid anchor in ports around the\n"
-	.string "world, but SLATEPORT’s the best.$"
+	.string "world, but Slateport’s the best.$"
 
 Route109_Text_1B9B57:: @ 81B9B57
 	.string "You’re the best!$"
 
 Route109_Text_1B9B68:: @ 81B9B68
 	.string "In the best port was the best\n"
-	.string "TRAINER...$"
+	.string "Trainer...$"
 
 Route109_Text_1B9B91:: @ 81B9B91
 	.string "Urrrrppp...\n"
@@ -630,11 +630,11 @@ Route109_Text_1B9BAE:: @ 81B9BAE
 Route109_Text_1B9BD3:: @ 81B9BD3
 	.string "I’m usually stronger than this!\n"
 	.string "I’m just seasick as a dog!\p"
-	.string "I’m a SAILOR, but...$"
+	.string "I’m a Sailor, but...$"
 
 Route109_Text_1B9C23:: @ 81B9C23
-	.string "I’m thirsty... I could go for a SODA POP\n"
-	.string "at the SEASHORE HOUSE...$"
+	.string "I’m thirsty... I could go for a Soda Pop\n"
+	.string "at the Seashore House...$"
 
 Route109_Text_1B9C65:: @ 81B9C65
 	.string "Groan...$"
@@ -675,11 +675,11 @@ Route109_Text_1B9E16:: @ 81B9E16
 
 Route109_Text_1B9E1D:: @ 81B9E1D
 	.string "If I have an inner tube, me and my\n"
-	.string "POKéMON’s cuteness goes way up!$"
+	.string "Pokémon’s cuteness goes way up!$"
 
 Route109_Text_1B9E60:: @ 81B9E60
 	.string "I can’t swim without my inner tube,\n"
-	.string "but I won’t lose at POKéMON!$"
+	.string "but I won’t lose at Pokémon!$"
 
 Route109_Text_1B9EA1:: @ 81B9EA1
 	.string "Did I lose because I have an inner\n"
@@ -690,7 +690,7 @@ Route109_Text_1B9ECA:: @ 81B9ECA
 	.string "I can’t be seen without it.$"
 
 Route109_Text_1B9F07:: @ 81B9F07
-	.string "Hi, big TRAINER.\n"
+	.string "Hi, big Trainer.\n"
 	.string "Will you battle with me?$"
 
 Route109_Text_1B9F31:: @ 81B9F31
@@ -711,43 +711,43 @@ Route109_Text_1B9FB7:: @ 81B9FB7
 	.string "No, you’re a big-one-to-be!$"
 
 Route109_Text_1B9FF6:: @ 81B9FF6
-	.string "PAUL: Well, this is a mood-breaker.\p"
+	.string "Paul: Well, this is a mood-breaker.\p"
 	.string "I wish you wouldn’t disturb our\n"
 	.string "precious time together.$"
 
 Route109_Text_1BA052:: @ 81BA052
-	.string "PAUL: Well, I give up.$"
+	.string "Paul: Well, I give up.$"
 
 Route109_Text_1BA069:: @ 81BA069
-	.string "PAUL: Well, don’t tell anyone that\n"
+	.string "Paul: Well, don’t tell anyone that\n"
 	.string "we’re here.\l"
 	.string "This is just our private world of two!$"
 
 Route109_Text_1BA0BF:: @ 81BA0BF
-	.string "PAUL: We’re totally, deeply in love.\n"
-	.string "That’s why we make our POKéMON battle\l"
+	.string "Paul: We’re totally, deeply in love.\n"
+	.string "That’s why we make our Pokémon battle\l"
 	.string "together.$"
 
 Route109_Text_1BA114:: @ 81BA114
-	.string "MEL: We’re, like, totally in love.\n"
+	.string "Mel: We’re, like, totally in love.\n"
 	.string "Our romance is heating up all of HOENN!$"
 
 Route109_Text_1BA15F:: @ 81BA15F
-	.string "MEL: We lost, and it’s my fault!\n"
-	.string "PAUL will hate me!$"
+	.string "Mel: We lost, and it’s my fault!\n"
+	.string "Paul will hate me!$"
 
 Route109_Text_1BA193:: @ 81BA193
-	.string "MEL: Um, PAUL, are you angry with me?\n"
+	.string "Mel: Um, Paul, are you angry with me?\n"
 	.string "Please don’t be angry.$"
 
 Route109_Text_1BA1D0:: @ 81BA1D0
-	.string "MEL: We’re, like, deeply and truly in love.\n"
-	.string "That’s why we make our POKéMON\l"
+	.string "Mel: We’re, like, deeply and truly in love.\n"
+	.string "That’s why we make our Pokémon\l"
 	.string "battle together.$"
 
 Route110_Text_1BA22C:: @ 81BA22C
 	.string "Whoa! Watch it!\n"
-	.string "I guess you’re not used to BIKE racing.$"
+	.string "I guess you’re not used to Bike racing.$"
 
 Route110_Text_1BA264:: @ 81BA264
 	.string "Whoa!\n"
@@ -756,7 +756,7 @@ Route110_Text_1BA264:: @ 81BA264
 Route110_Text_1BA27C:: @ 81BA27C
 	.string "Flat tires and brake problems can\n"
 	.string "cause serious injury!\l"
-	.string "Inspect your BIKE for problems!$"
+	.string "Inspect your Bike for problems!$"
 
 Route110_Text_1BA2D4:: @ 81BA2D4
 	.string "Yo, you!\n"
@@ -766,14 +766,14 @@ Route110_Text_1BA2FC:: @ 81BA2FC
 	.string "Crash and burn!$"
 
 Route110_Text_1BA30C:: @ 81BA30C
-	.string "Speed alone won’t let me win at POKéMON.\n"
+	.string "Speed alone won’t let me win at Pokémon.\n"
 	.string "I need to reconsider this...$"
 
 Route110_Text_1BA352:: @ 81BA352
-	.string "Don’t panic if your BIKE’s going fast!$"
+	.string "Don’t panic if your Bike’s going fast!$"
 
 Route110_Text_1BA379:: @ 81BA379
-	.string "I shouldn’t panic during POKéMON\n"
+	.string "I shouldn’t panic during Pokémon\n"
 	.string "battles...$"
 
 Route110_Text_1BA3A5:: @ 81BA3A5
@@ -797,7 +797,7 @@ Route110_Text_1BA4A0:: @ 81BA4A0
 	.string "of swimming, cycling, and running.$"
 
 Route110_Text_1BA50F:: @ 81BA50F
-	.string "POKéMON battles are hard, too!$"
+	.string "Pokémon battles are hard, too!$"
 
 Route110_Text_1BA52E:: @ 81BA52E
 	.string "I’m exhausted, so I need a break.\n"
@@ -823,7 +823,7 @@ Route110_Text_1BA63C:: @ 81BA63C
 	.string "I’m worried about muscle cramps...$"
 
 Route110_Text_1BA65F:: @ 81BA65F
-	.string "Oh, you have some GYM BADGES?\n"
+	.string "Oh, you have some Gym Badges?\n"
 	.string "No wonder you’re so strong!$"
 
 Route110_Text_1BA699:: @ 81BA699
@@ -851,7 +851,7 @@ Route110_Text_1BA76C:: @ 81BA76C
 	.string "Don’t think you can win all the time!$"
 
 Route110_Text_1BA7D2:: @ 81BA7D2
-	.string "Could I see your POKéMON?\n"
+	.string "Could I see your Pokémon?\n"
 	.string "Just one look, please?$"
 
 Route110_Text_1BA803:: @ 81BA803
@@ -859,20 +859,20 @@ Route110_Text_1BA803:: @ 81BA803
 	.string "collection...$"
 
 Route110_Text_1BA829:: @ 81BA829
-	.string "When I see a POKéMON that I don’t know,\n"
+	.string "When I see a Pokémon that I don’t know,\n"
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_1BA877:: @ 81BA877
-	.string "Hi, have you caught any new POKéMON?\p"
-	.string "Could I see your POKéMON?\n"
+	.string "Hi, have you caught any new Pokémon?\p"
+	.string "Could I see your Pokémon?\n"
 	.string "Just one look, please?$"
 
 Route110_Text_1BA8CD:: @ 81BA8CD
-	.string "Your POKéMON...\n"
+	.string "Your Pokémon...\n"
 	.string "I envy you.$"
 
 Route110_Text_1BA8E9:: @ 81BA8E9
-	.string "Oh, I long to make all rare POKéMON\n"
+	.string "Oh, I long to make all rare Pokémon\n"
 	.string "mine!$"
 
 Route110_Text_1BA913:: @ 81BA913
@@ -889,55 +889,55 @@ Route110_Text_1BA94A:: @ 81BA94A
 
 Route110_Text_1BA990:: @ 81BA990
 	.string "Ahahaha! I would go anywhere to show\n"
-	.string "off my delightful POKéMON.$"
+	.string "off my delightful Pokémon.$"
 
 Route110_Text_1BA9D0:: @ 81BA9D0
 	.string "Oh, dear, this won’t do.$"
 
 Route110_Text_1BA9E9:: @ 81BA9E9
-	.string "Perhaps I should groom my POKéMON for\n"
-	.string "CONTESTS rather than battles.$"
+	.string "Perhaps I should groom my Pokémon for\n"
+	.string "Contests rather than battles.$"
 
 Route110_Text_1BAA2D:: @ 81BAA2D
 	.string "Ahahahaha! I would be happy to show\n"
-	.string "off my POKéMON as often as you like!$"
+	.string "off my Pokémon as often as you like!$"
 
 Route110_Text_1BAA76:: @ 81BAA76
 	.string "Oh, dear, this won’t do.$"
 
 Route110_Text_1BAA8F:: @ 81BAA8F
-	.string "CONTESTS are delightful, but I like\n"
+	.string "Contests are delightful, but I like\n"
 	.string "to battle, too.$"
 
 Route110_Text_1BAAC3:: @ 81BAAC3
-	.string "I found some cool POKéMON in the grass\n"
+	.string "I found some cool Pokémon in the grass\n"
 	.string "around here!$"
 
 Route110_Text_1BAAF7:: @ 81BAAF7
 	.string "Being cool isn’t enough to win...$"
 
 Route110_Text_1BAB19:: @ 81BAB19
-	.string "It’s hard to battle with POKéMON you\n"
+	.string "It’s hard to battle with Pokémon you\n"
 	.string "just caught.$"
 
 Route111_Text_1BAB4B:: @ 81BAB4B
-	.string "Oh, hey! Those GO-GOGGLES suit you.\n"
+	.string "Oh, hey! Those Go-Goggles suit you.\n"
 	.string "But I think they look better on me.\p"
 	.string "Let’s decide who they look better on\n"
 	.string "with a battle!$"
 
 Route111_Text_1BABC7:: @ 81BABC7
 	.string "I couldn’t see what was happening at my\n"
-	.string "sides because of the GO-GOGGLES.$"
+	.string "sides because of the Go-Goggles.$"
 
 Route111_Text_1BAC10:: @ 81BAC10
-	.string "The GO-GOGGLES make it possible to\n"
+	.string "The Go-Goggles make it possible to\n"
 	.string "get through sandstorms.\l"
 	.string "That makes me happy!$"
 
 Route111_Text_1BAC60:: @ 81BAC60
 	.string "I’m having a picnic in the desert.\p"
-	.string "You can always find a TRAINER, so\n"
+	.string "You can always find a Trainer, so\n"
 	.string "I can enjoy a battle here, too!$"
 
 Route111_Text_1BACC5:: @ 81BACC5
@@ -945,12 +945,12 @@ Route111_Text_1BACC5:: @ 81BACC5
 
 Route111_Text_1BACD8:: @ 81BACD8
 	.string "When you’re battling in a sandstorm,\n"
-	.string "watch out for your POKéMON’s HP.\p"
+	.string "watch out for your Pokémon’s HP.\p"
 	.string "It can faint if you don’t keep an eye\n"
 	.string "on it!$"
 
 Route111_Text_1BAD4B:: @ 81BAD4B
-	.string "Wearing these GO-GOGGLES makes me\n"
+	.string "Wearing these Go-Goggles makes me\n"
 	.string "feel like a superhero.\l"
 	.string "Right now, nobody can beat me!$"
 
@@ -960,7 +960,7 @@ Route111_Text_1BADA3:: @ 81BADA3
 Route111_Text_1BADC2:: @ 81BADC2
 	.string "I’m going to be a real hero one day.\n"
 	.string "I’m going to work harder to make me\l"
-	.string "and my POKéMON stronger.$"
+	.string "and my Pokémon stronger.$"
 
 Route111_Text_1BAE24:: @ 81BAE24
 	.string "I heard there are fossils to be found\n"
@@ -980,7 +980,7 @@ Route111_Text_1BAEC9:: @ 81BAEC9
 
 Route111_Text_1BAF14:: @ 81BAF14
 	.string "While I have searched for ruins, I’ve\n"
-	.string "not searched for strong POKéMON.$"
+	.string "not searched for strong Pokémon.$"
 
 Route111_Text_1BAF5B:: @ 81BAF5B
 	.string "For thirty years I have searched for\n"
@@ -996,7 +996,7 @@ Route111_Text_1BAFC1:: @ 81BAFC1
 
 Route111_Text_1BB034:: @ 81BB034
 	.string "I’ve found no ruins, nor have I found\n"
-	.string "any strong POKéMON...$"
+	.string "any strong Pokémon...$"
 
 Route111_Text_1BB070:: @ 81BB070
 	.string "For thirty years I have searched for\n"
@@ -1008,13 +1008,13 @@ Route111_Text_1BB070:: @ 81BB070
 
 Route111_Text_1BB111:: @ 81BB111
 	.string "I’m full of pep!\n"
-	.string "And my POKéMON is peppy, too!$"
+	.string "And my Pokémon is peppy, too!$"
 
 Route111_Text_1BB140:: @ 81BB140
-	.string "My POKéMON lost its pep...$"
+	.string "My Pokémon lost its pep...$"
 
 Route111_Text_1BB15B:: @ 81BB15B
-	.string "When I see a TRAINER with a lot of pep,\n"
+	.string "When I see a Trainer with a lot of pep,\n"
 	.string "I can’t help looking.$"
 
 Route111_Text_1BB199:: @ 81BB199
@@ -1026,7 +1026,7 @@ Route111_Text_1BB1D8:: @ 81BB1D8
 
 Route111_Text_1BB1F6:: @ 81BB1F6
 	.string "I’m thinking that I should go to\n"
-	.string "MT. CHIMNEY, but the view around\l"
+	.string "Mt. Chimney, but the view around\l"
 	.string "here is very nice, too.$"
 
 Route111_Text_1BB250:: @ 81BB250
@@ -1038,19 +1038,19 @@ Route111_Text_1BB27E:: @ 81BB27E
 
 Route111_Text_1BB290:: @ 81BB290
 	.string "All I can do is keep training until\n"
-	.string "I can defeat strong TRAINERS such\l"
+	.string "I can defeat strong Trainers such\l"
 	.string "as yourself.$"
 
 Route111_Text_1BB2E3:: @ 81BB2E3
 	.string "Show me how much you’ve toughened\n"
-	.string "your POKéMON.$"
+	.string "your Pokémon.$"
 
 Route111_Text_1BB313:: @ 81BB313
 	.string "I see, you’ve toughened them\n"
 	.string "considerably.$"
 
 Route111_Text_1BB33E:: @ 81BB33E
-	.string "POKéMON and TRAINERS learn much\n"
+	.string "Pokémon and Trainers learn much\n"
 	.string "through battling.\p"
 	.string "What’s important is to never give up\n"
 	.string "even if you lose.$"
@@ -1065,10 +1065,10 @@ Route111_Text_1BB3FA:: @ 81BB3FA
 
 Route111_Text_1BB40E:: @ 81BB40E
 	.string "Since you’re that strong, you should\n"
-	.string "aim for the POKéMON LEAGUE.$"
+	.string "aim for the Pokémon League.$"
 
 Route111_Text_1BB44F:: @ 81BB44F
-	.string "Oh, your POKéMON look like serious\n"
+	.string "Oh, your Pokémon look like serious\n"
 	.string "actors.\l"
 	.string "I have to ask you for an engagement.$"
 
@@ -1077,15 +1077,15 @@ Route111_Text_1BB49F:: @ 81BB49F
 	.string "are strong!$"
 
 Route111_Text_1BB4CE:: @ 81BB4CE
-	.string "I thought I was raising my POKéMON\n"
+	.string "I thought I was raising my Pokémon\n"
 	.string "diligently, but, oh no, there is still\l"
 	.string "much to be done.$"
 
 Route111_Text_1BB529:: @ 81BB529
-	.string "You can make POKéMON stronger or\n"
+	.string "You can make Pokémon stronger or\n"
 	.string "weaker depending on the moves you\l"
 	.string "teach them.\p"
-	.string "What kinds of moves do your POKéMON\n"
+	.string "What kinds of moves do your Pokémon\n"
 	.string "know?$"
 
 Route111_Text_1BB5A2:: @ 81BB5A2
@@ -1093,7 +1093,7 @@ Route111_Text_1BB5A2:: @ 81BB5A2
 
 Route111_Text_1BB5C1:: @ 81BB5C1
 	.string "Maybe I should have stopped my\n"
-	.string "POKéMON from evolving until they\l"
+	.string "Pokémon from evolving until they\l"
 	.string "learned better moves...$"
 
 Route112_Text_1BB619:: @ 81BB619
@@ -1136,7 +1136,7 @@ Route112_Text_1BB801:: @ 81BB801
 
 Route112_Text_1BB819:: @ 81BB819
 	.string "I hear there are some seriously tough\n"
-	.string "TRAINERS on top of MT. CHIMNEY.\p"
+	.string "Trainers on top of Mt. Chimney.\p"
 	.string "I intend to get up there and give them\n"
 	.string "a challenge!$"
 
@@ -1161,7 +1161,7 @@ Route112_Text_1BB942:: @ 81BB942
 
 Route112_Text_1BB958:: @ 81BB958
 	.string "It doesn’t matter if you’re good or bad\n"
-	.string "at singing or POKéMON.\p"
+	.string "at singing or Pokémon.\p"
 	.string "If you have the most fun, you win!$"
 
 Route113_Text_1BB9BA:: @ 81BB9BA
@@ -1193,7 +1193,7 @@ Route113_Text_1BBAB7:: @ 81BBAB7
 Route113_Text_1BBB27:: @ 81BBB27
 	.string "I use this parasol to ward off this\n"
 	.string "filthy, yucky volcanic ash from my\l"
-	.string "dear NUMEL.$"
+	.string "dear Nemel.$"
 
 Route113_Text_1BBB7A:: @ 81BBB7A
 	.string "Huff, huff...\n"
@@ -1245,41 +1245,46 @@ Route113_Text_1BBDC6:: @ 81BBDC6
 	.string "I’ll use my ninjutsu on you...\n"
 	.string "“VOLCANIC ASH SWIRL CLOAK”!\p"
 	.string "...What? It’s already over?$"
+	
+Route113_Text_1BBDC6_2:: @ 81BBDC6
+	.string "I’ll use my ninjutsu on you...\n"
+	.string "“Volcanic Ash Swirl Cloak”!\p"
+	.string "...What? It’s already over?$"
 
 Route113_Text_1BBE1D:: @ 81BBE1D
 	.string "You know what’s crummy about hiding?\n"
 	.string "It’s lonely if no one comes along.$"
 
 Route113_Text_1BBE65:: @ 81BBE65
-	.string "TORI: Both of us, we collect ashes.\n"
-	.string "We battle POKéMON, too.$"
+	.string "Tori: Both of us, we collect ashes.\n"
+	.string "We battle Pokémon, too.$"
 
 Route113_Text_1BBEA1:: @ 81BBEA1
-	.string "TORI: We lost... It’s boring, so I’m going\n"
+	.string "Tori: We lost... It’s boring, so I’m going\n"
 	.string "to get some more ashes.$"
 
 Route113_Text_1BBEE4:: @ 81BBEE4
-	.string "TORI: How much ash do we have?\n"
-	.string "Enough for a WHITE FLUTE, I hope.$"
+	.string "Tori: How much ash do we have?\n"
+	.string "Enough for a White Flute, I hope.$"
 
 Route113_Text_1BBF25:: @ 81BBF25
-	.string "TORI: We want to battle 2-on-2.\n"
+	.string "Tori: We want to battle 2-on-2.\n"
 	.string "If we didn’t, we would lose!$"
 
 Route113_Text_1BBF62:: @ 81BBF62
-	.string "TIA: Both of us, we collect ashes.\n"
-	.string "We battle POKéMON, too.$"
+	.string "Tia: Both of us, we collect ashes.\n"
+	.string "We battle Pokémon, too.$"
 
 Route113_Text_1BBF9D:: @ 81BBF9D
-	.string "TIA: We couldn’t win... It’s boring,\n"
+	.string "Tia: We couldn’t win... It’s boring,\n"
 	.string "so I’m getting some more ashes.$"
 
 Route113_Text_1BBFE2:: @ 81BBFE2
-	.string "TIA: We have a lot of ashes!\n"
-	.string "I think enough for a WHITE FLUTE!$"
+	.string "Tia: We have a lot of ashes!\n"
+	.string "I think enough for a White Flute!$"
 
 Route113_Text_1BC021:: @ 81BC021
-	.string "TIA: We want to battle 2-on-2.\n"
+	.string "Tia: We want to battle 2-on-2.\n"
 	.string "If we don’t, we won’t win!$"
 
 Route114_Text_1BC05B:: @ 81BC05B
@@ -1311,7 +1316,7 @@ Route114_Text_1BC184:: @ 81BC184
 Route114_Text_1BC1C8:: @ 81BC1C8
 	.string "Camping’s fun! You can fish, roast\n"
 	.string "marshmallows, and tell spooky stories!\p"
-	.string "But the best of all are the POKéMON\n"
+	.string "But the best of all are the Pokémon\n"
 	.string "battles!$"
 
 Route114_Text_1BC23F:: @ 81BC23F
@@ -1319,7 +1324,7 @@ Route114_Text_1BC23F:: @ 81BC23F
 
 Route114_Text_1BC24F:: @ 81BC24F
 	.string "I think it’s great that I can go\n"
-	.string "camping with my POKéMON.$"
+	.string "camping with my Pokémon.$"
 
 Route114_Text_1BC289:: @ 81BC289
 	.string "I need to exercise after a meal.\n"
@@ -1334,28 +1339,28 @@ Route114_Text_1BC2C6:: @ 81BC2C6
 
 Route114_Text_1BC2F5:: @ 81BC2F5
 	.string "Ufufufufufu...\n"
-	.string "Want to battle against my POKéMON?$"
+	.string "Want to battle against my Pokémon?$"
 
 Route114_Text_1BC327:: @ 81BC327
-	.string "M-My POKéMON...$"
+	.string "M-My Pokémon...$"
 
 Route114_Text_1BC337:: @ 81BC337
 	.string "A big body that’s all lumpy and hard,\n"
 	.string "enormous horns, and vicious fangs...\p"
 	.string "Ufufufufu...\n"
-	.string "I wish I had a POKéMON like that...$"
+	.string "I wish I had a Pokémon like that...$"
 
 Route114_Text_1BC3B3:: @ 81BC3B3
 	.string "Ufufufufufu...\n"
-	.string "Come on, battle my POKéMON...$"
+	.string "Come on, battle my Pokémon...$"
 
 Route114_Text_1BC3E0:: @ 81BC3E0
 	.string "I feel so lucky getting to see your\n"
-	.string "POKéMON...$"
+	.string "Pokémon...$"
 
 Route114_Text_1BC40F:: @ 81BC40F
 	.string "Ufufufufufu...\p"
-	.string "When I see POKéMON battling, I get all\n"
+	.string "When I see Pokémon battling, I get all\n"
 	.string "shivery and shaky...$"
 
 Route114_Text_1BC45A:: @ 81BC45A
@@ -1388,14 +1393,14 @@ Route114_Text_1BC58C:: @ 81BC58C
 Route114_Text_1BC5FC:: @ 81BC5FC
 	.string "If we were fishing, you wouldn’t stand\n"
 	.string "a chance against me.\l"
-	.string "So, bring on your POKéMON!$"
+	.string "So, bring on your Pokémon!$"
 
 Route114_Text_1BC653:: @ 81BC653
 	.string "If we were fishing, I would’ve won...$"
 
 Route114_Text_1BC679:: @ 81BC679
 	.string "I think I’ll try my luck at landing\n"
-	.string "a big one at METEOR FALLS.\p"
+	.string "a big one at Meteor Falls.\p"
 	.string "There has to be something in there.\n"
 	.string "I just know it.$"
 
@@ -1412,38 +1417,38 @@ Route114_Text_1BC750:: @ 81BC750
 Route114_Text_1BC78A:: @ 81BC78A
 	.string "This time I’ll do it!\p"
 	.string "I always think that, so I can’t walk\n"
-	.string "away from fishing or POKéMON.$"
+	.string "away from fishing or Pokémon.$"
 
 Route114_Text_1BC7E3:: @ 81BC7E3
-	.string "TYRA: Well, sure.\n"
+	.string "Tyra: Well, sure.\n"
 	.string "I’m in the mood for it.\l"
-	.string "I’ll teach you a little about POKéMON.$"
+	.string "I’ll teach you a little about Pokémon.$"
 
 Route114_Text_1BC834:: @ 81BC834
-	.string "TYRA: What an amazing battle style!$"
+	.string "Tyra: What an amazing battle style!$"
 
 Route114_Text_1BC858:: @ 81BC858
-	.string "TYRA: I was teaching my junior IVY\n"
-	.string "about POKéMON.$"
+	.string "Tyra: I was teaching my junior Ivy\n"
+	.string "about Pokémon.$"
 
 Route114_Text_1BC88A:: @ 81BC88A
-	.string "TYRA: Giggle...\n"
+	.string "Tyra: Giggle...\n"
 	.string "If you want to battle with us, just one\l"
-	.string "POKéMON isn’t enough!$"
+	.string "Pokémon isn’t enough!$"
 
 Route114_Text_1BC8D8:: @ 81BC8D8
-	.string "IVY: Who taught you about POKéMON?$"
+	.string "Ivy: Who taught you about Pokémon?$"
 
 Route114_Text_1BC8FB:: @ 81BC8FB
-	.string "IVY: What an amazing battle style!$"
+	.string "Ivy: What an amazing battle style!$"
 
 Route114_Text_1BC91E:: @ 81BC91E
-	.string "IVY: I started training POKéMON\n"
-	.string "because TYRA, my student mentor,\l"
+	.string "Ivy: I started training Pokémon\n"
+	.string "because Tyra, my student mentor,\l"
 	.string "taught me!$"
 
 Route114_Text_1BC96A:: @ 81BC96A
-	.string "IVY: Do you only have one POKéMON?\n"
+	.string "Ivy: Do you only have one Pokémon?\n"
 	.string "I think it must feel lonesome.$"
 
 Route115_Text_1BC9AC:: @ 81BC9AC
@@ -1475,14 +1480,14 @@ Route115_Text_1BCAC6:: @ 81BCAC6
 
 Route115_Text_1BCB0D:: @ 81BCB0D
 	.string "You!\p"
-	.string "My MACHOP!\p"
+	.string "My Machop!\p"
 	.string "Demand a battle!$"
 
 Route115_Text_1BCB2E:: @ 81BCB2E
 	.string "Ouch, ouch, ouch!$"
 
 Route115_Text_1BCB40:: @ 81BCB40
-	.string "My MACHOP crew!\p"
+	.string "My Machop crew!\p"
 	.string "So long as they seek power, I will\n"
 	.string "grow strong with them!$"
 
@@ -1495,7 +1500,7 @@ Route115_Text_1BCBC1:: @ 81BCBC1
 	.string "My head is busted!$"
 
 Route115_Text_1BCBDE:: @ 81BCBDE
-	.string "I’ve been teaching my POKéMON karate.\p"
+	.string "I’ve been teaching my Pokémon karate.\p"
 	.string "It looks like they’ll get a lot better\n"
 	.string "than me. I’m excited about that.$"
 
@@ -1509,7 +1514,7 @@ Route115_Text_1BCCA2:: @ 81BCCA2
 	.string "We lost again!$"
 
 Route115_Text_1BCCBA:: @ 81BCCBA
-	.string "My POKéMON will grow stronger!\n"
+	.string "My Pokémon will grow stronger!\n"
 	.string "I’ll redouble my training!$"
 
 Route115_Text_1BCCF4:: @ 81BCCF4
@@ -1528,35 +1533,35 @@ Route115_Text_1BCDB0:: @ 81BCDB0
 	.string "Okay, let’s get this battle on!$"
 
 Route115_Text_1BCDD0:: @ 81BCDD0
-	.string "I can battle but my POKéMON...$"
+	.string "I can battle but my Pokémon...$"
 
 Route115_Text_1BCDEF:: @ 81BCDEF
 	.string "Even when I lose, I still get some\n"
 	.string "enjoyment out of it.\l"
-	.string "It must be that I love POKéMON.$"
+	.string "It must be that I love Pokémon.$"
 
 UnknownString_81BCE47: @ 81BCE47
-	.string "I have a rare POKéMON!\n"
+	.string "I have a rare Pokémon!\n"
 	.string "Would you like me to show you?$"
 
 UnknownString_81BCE7D: @ 81BCE7D
 	.string "You...\n"
-	.string "You want my POKéMON, don’t you?$"
+	.string "You want my Pokémon, don’t you?$"
 
 UnknownString_81BCEA4: @ 81BCEA4
-	.string "I have this rare POKéMON.\n"
+	.string "I have this rare Pokémon.\n"
 	.string "It’s enough to keep me satisfied.$"
 
 Route115_Text_1BCEE0:: @ 81BCEE0
-	.string "I have a rare POKéMON!\n"
+	.string "I have a rare Pokémon!\n"
 	.string "Would you like me to show you?$"
 
 Route115_Text_1BCF16:: @ 81BCF16
 	.string "You...\n"
-	.string "You want my POKéMON, don’t you?$"
+	.string "You want my Pokémon, don’t you?$"
 
 Route115_Text_1BCF3D:: @ 81BCF3D
-	.string "I have this rare POKéMON.\n"
+	.string "I have this rare Pokémon.\n"
 	.string "It’s enough to keep me satisfied.$"
 
 Route116_Text_1BCF79:: @ 81BCF79
@@ -1569,10 +1574,10 @@ Route116_Text_1BCFBB:: @ 81BCFBB
 
 Route116_Text_1BCFE3:: @ 81BCFE3
 	.string "It’s no big deal if there’s no tunnel.\n"
-	.string "To a HIKER, mountains are roads!$"
+	.string "To a Hiker, mountains are roads!$"
 
 Route116_Text_1BD02B:: @ 81BD02B
-	.string "My POKéMON rule!\n"
+	.string "My Pokémon rule!\n"
 	.string "Check them out!$"
 
 Route116_Text_1BD04C:: @ 81BD04C
@@ -1584,7 +1589,7 @@ Route116_Text_1BD078:: @ 81BD078
 	.string "I’ve got another one!$"
 
 Route116_Text_1BD0AF:: @ 81BD0AF
-	.string "My BUG POKéMON are tough!\n"
+	.string "My Bug Pokémon are tough!\n"
 	.string "Let’s battle!$"
 
 Route116_Text_1BD0D7:: @ 81BD0D7
@@ -1592,23 +1597,23 @@ Route116_Text_1BD0D7:: @ 81BD0D7
 	.string "I thought I had you!$"
 
 Route116_Text_1BD0F4:: @ 81BD0F4
-	.string "BUG POKéMON evolve quickly.\n"
+	.string "Bug Pokémon evolve quickly.\n"
 	.string "So they get strong quickly, too.$"
 
 Route116_Text_1BD131:: @ 81BD131
 	.string "Let me teach you how strong my\n"
-	.string "adorable POKéMON is!$"
+	.string "adorable Pokémon is!$"
 
 Route116_Text_1BD165:: @ 81BD165
 	.string "You’re a notch above me...$"
 
 Route116_Text_1BD180:: @ 81BD180
-	.string "POKéMON that possess cuteness and\n"
+	.string "Pokémon that possess cuteness and\n"
 	.string "power, that’s ideal, I think.$"
 
 Route116_Text_1BD1C0:: @ 81BD1C0
 	.string "We learn all sorts of things at the\n"
-	.string "TRAINER’S SCHOOL.\p"
+	.string "Trainer’s School.\p"
 	.string "I want to test things out for real!$"
 
 Route116_Text_1BD21A:: @ 81BD21A
@@ -1617,12 +1622,12 @@ Route116_Text_1BD21A:: @ 81BD21A
 
 Route116_Text_1BD248:: @ 81BD248
 	.string "I’ll have to redo some courses at the\n"
-	.string "TRAINER’S SCHOOL.\l"
-	.string "If I don’t, ROXANNE will be steamed.$"
+	.string "Trainer’s School.\l"
+	.string "If I don’t, Roxanne will be steamed.$"
 
 Route116_Text_1BD2A5:: @ 81BD2A5
 	.string "I’ve been studying seriously at the\n"
-	.string "TRAINER’S SCHOOL.\l"
+	.string "Trainer’s School.\l"
 	.string "I won’t lose like I did last time.$"
 
 Route116_Text_1BD2FE:: @ 81BD2FE
@@ -1631,8 +1636,8 @@ Route116_Text_1BD2FE:: @ 81BD2FE
 
 Route116_Text_1BD31A:: @ 81BD31A
 	.string "I’ll have to redo some courses at the\n"
-	.string "TRAINER’S SCHOOL.\l"
-	.string "If I don’t, ROXANNE will be steamed.$"
+	.string "Trainer’s School.\l"
+	.string "If I don’t, Roxanne will be steamed.$"
 
 Route116_Text_1BD377:: @ 81BD377
 	.string "I study at school, and I study on the\n"
@@ -1643,7 +1648,7 @@ Route116_Text_1BD3AC:: @ 81BD3AC
 
 Route116_Text_1BD3C3:: @ 81BD3C3
 	.string "Awww, I’ll never become an elegant\n"
-	.string "TRAINER like ROXANNE this way!$"
+	.string "Trainer like Roxanne this way!$"
 
 Route116_Text_1BD405:: @ 81BD405
 	.string "I studied a whole lot since I saw you.\n"
@@ -1653,56 +1658,56 @@ Route116_Text_1BD44A:: @ 81BD44A
 	.string "I’m in shock. I lost again?$"
 
 Route116_Text_1BD466:: @ 81BD466
-	.string "You’ve beaten ROXANNE?\n"
+	.string "You’ve beaten Roxanne?\n"
 	.string "I can’t beat you, then. Not yet.$"
 
 Route117_Text_1BD49E:: @ 81BD49E
 	.string "Listen, could I get you to battle the\n"
-	.string "POKéMON I’m raising?$"
+	.string "Pokémon I’m raising?$"
 
 Route117_Text_1BD4D9:: @ 81BD4D9
 	.string "You’ve raised yours superbly...$"
 
 Route117_Text_1BD4F9:: @ 81BD4F9
-	.string "POKéMON isn’t all about power.\p"
+	.string "Pokémon isn’t all about power.\p"
 	.string "Polishing a unique aspect of one’s\n"
 	.string "character is another way of enjoying\l"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 
 Route117_Text_1BD569:: @ 81BD569
-	.string "The POKéMON I’ve been raising are\n"
+	.string "The Pokémon I’ve been raising are\n"
 	.string "looking good, just like before.$"
 
 Route117_Text_1BD5AB:: @ 81BD5AB
 	.string "You know how to raise them properly.\n"
-	.string "You might have DAY CARE skills...$"
+	.string "You might have Day Care skills...$"
 
 Route117_Text_1BD5F2:: @ 81BD5F2
-	.string "Your POKéMON are growing good!\n"
-	.string "You should enter them in CONTESTS.$"
+	.string "Your Pokémon are growing good!\n"
+	.string "You should enter them in Contests.$"
 
 Route117_Text_1BD634:: @ 81BD634
 	.string "Please, allow me to evaluate if you\n"
-	.string "have raised your POKéMON properly.$"
+	.string "have raised your Pokémon properly.$"
 
 Route117_Text_1BD67B:: @ 81BD67B
 	.string "Yes, they are growing properly.$"
 
 Route117_Text_1BD69B:: @ 81BD69B
-	.string "If you feed {POKEBLOCK}S to POKéMON, the\n"
+	.string "If you feed {POKEBLOCK}s to Pokémon, the\n"
 	.string "unique aspects of their character\l"
 	.string "will be enhanced.$"
 
 Route117_Text_1BD6F2:: @ 81BD6F2
 	.string "Allow me to reevaluate if you have\n"
-	.string "raised your POKéMON properly.$"
+	.string "raised your Pokémon properly.$"
 
 Route117_Text_1BD733:: @ 81BD733
 	.string "They are growing admirably.$"
 
 Route117_Text_1BD74F:: @ 81BD74F
-	.string "POKéMON seem to like different kinds\n"
-	.string "of {POKEBLOCK}S, depending on their nature.$"
+	.string "Pokémon seem to like different kinds\n"
+	.string "of {POKEBLOCK}s, depending on their nature.$"
 
 Route117_Text_1BD79A:: @ 81BD79A
 	.string "I’m in the middle of a triathlon, but,\n"
@@ -1727,10 +1732,10 @@ Route117_Text_1BD8A2:: @ 81BD8A2
 Route117_Text_1BD8BD:: @ 81BD8BD
 	.string "I was tops in swimming and cycling, but\n"
 	.string "I’m not quite that confident with\l"
-	.string "POKéMON yet.$"
+	.string "Pokémon yet.$"
 
 Route117_Text_1BD914:: @ 81BD914
-	.string "I do my triathlon training with POKéMON,\n"
+	.string "I do my triathlon training with Pokémon,\n"
 	.string "so I’m pretty confident about my speed.$"
 
 Route117_Text_1BD965:: @ 81BD965
@@ -1757,9 +1762,9 @@ Route117_Text_1BDA6B:: @ 81BDA6B
 	.string "Let’s battle again sometime!$"
 
 Route117_Text_1BDAA7:: @ 81BDAA7
-	.string "Once a BUG CATCHER!\n"
-	.string "And now a BUG MANIAC!\p"
-	.string "But my love for POKéMON remains\n"
+	.string "Once a Bug Catcher!\n"
+	.string "And now a Bug Maniac!\p"
+	.string "But my love for Pokémon remains\n"
 	.string "unchanged!$"
 
 Route117_Text_1BDAFC:: @ 81BDAFC
@@ -1768,75 +1773,75 @@ Route117_Text_1BDAFC:: @ 81BDAFC
 
 Route117_Text_1BDB24:: @ 81BDB24
 	.string "All I did was follow my heart, and now\n"
-	.string "they call me a BUG MANIAC...\p"
-	.string "Still, I am an expert on BUG POKéMON,\n"
+	.string "they call me a Bug Maniac...\p"
+	.string "Still, I am an expert on Bug Pokémon,\n"
 	.string "so it’s only natural that they call me\l"
-	.string "a BUG MANIAC.$"
+	.string "a Bug Maniac.$"
 
 Route117_Text_1BDBC3:: @ 81BDBC3
-	.string "ANNA: I’m with my pretty junior student\n"
+	.string "Anna: I’m with my pretty junior student\n"
 	.string "partner. I have to do good!$"
 
 Route117_Text_1BDC07:: @ 81BDC07
-	.string "ANNA: I’m with my pretty junior student\n"
+	.string "Anna: I’m with my pretty junior student\n"
 	.string "partner! Let me win!$"
 
 Route117_Text_1BDC44:: @ 81BDC44
-	.string "ANNA: Your POKéMON have some good\n"
+	.string "Anna: Your Pokémon have some good\n"
 	.string "combinations.\p"
 	.string "I’d say you’re second only to us!$"
 
 Route117_Text_1BDC96:: @ 81BDC96
-	.string "ANNA: If you want to battle us, bring\n"
-	.string "two POKéMON with you.$"
+	.string "Anna: If you want to battle us, bring\n"
+	.string "two Pokémon with you.$"
 
 Route117_Text_1BDCD2:: @ 81BDCD2
-	.string "MEG: I’m going to tag up with my super\n"
+	.string "Meg: I’m going to tag up with my super\n"
 	.string "senior student partner and beat you!$"
 
 Route117_Text_1BDD1E:: @ 81BDD1E
-	.string "MEG: Oh, no!\n"
-	.string "I’m sorry, ANNA! I let you down...$"
+	.string "Meg: Oh, no!\n"
+	.string "I’m sorry, Anna! I let you down...$"
 
 Route117_Text_1BDD4E:: @ 81BDD4E
-	.string "MEG: I dragged ANNA down...\n"
+	.string "Meg: I dragged Anna down...\n"
 	.string "If I didn’t, she would have won!$"
 
 Route117_Text_1BDD8B:: @ 81BDD8B
-	.string "MEG: Do you only have one POKéMON?\n"
+	.string "Meg: Do you only have one Pokémon?\n"
 	.string "We can’t battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
 
 Route117_Text_1BDDEF:: @ 81BDDEF
-	.string "ANNA: I can’t keep losing in front of\n"
+	.string "Anna: I can’t keep losing in front of\n"
 	.string "my junior partner, right?$"
 
 Route117_Text_1BDE2F:: @ 81BDE2F
-	.string "ANNA: I couldn’t get into the groove.$"
+	.string "Anna: I couldn’t get into the groove.$"
 
 Route117_Text_1BDE55:: @ 81BDE55
-	.string "ANNA: Your POKéMON have some good\n"
+	.string "Anna: Your Pokémon have some good\n"
 	.string "combinations.\p"
 	.string "I’d say you’re second only to us!$"
 
 Route117_Text_1BDEA7:: @ 81BDEA7
-	.string "ANNA: If you want to battle us, bring\n"
-	.string "two POKéMON with you.$"
+	.string "Anna: If you want to battle us, bring\n"
+	.string "two Pokémon with you.$"
 
 Route117_Text_1BDEE3:: @ 81BDEE3
-	.string "MEG: I’m going to tag up with my\n"
+	.string "Meg: I’m going to tag up with my\n"
 	.string "senior partner and win this time!$"
 
 Route117_Text_1BDF26:: @ 81BDF26
-	.string "MEG: Too strong!$"
+	.string "Meg: Too strong!$"
 
 Route117_Text_1BDF37:: @ 81BDF37
-	.string "MEG: I battled together with my\n"
+	.string "Meg: I battled together with my\n"
 	.string "senior partner, but we lost...\p"
 	.string "That’s so discouraging...$"
 
 Route117_Text_1BDF90:: @ 81BDF90
-	.string "MEG: Do you only have one POKéMON?\n"
+	.string "Meg: Do you only have one Pokémon?\n"
 	.string "We can’t battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
 
@@ -1849,7 +1854,7 @@ Route118_Text_1BE03C:: @ 81BE03C
 	.string "I seem to have lost.$"
 
 Route118_Text_1BE05E:: @ 81BE05E
-	.string "Flowers, POKéMON...\n"
+	.string "Flowers, Pokémon...\n"
 	.string "I love whatever smells nice.\p"
 	.string "Stinky things...\n"
 	.string "I’ll pass.$"
@@ -1864,22 +1869,22 @@ Route118_Text_1BE0D3:: @ 81BE0D3
 
 Route118_Text_1BE104:: @ 81BE104
 	.string "If you use a sweet aroma properly,\n"
-	.string "POKéMON will be attracted by it.$"
+	.string "Pokémon will be attracted by it.$"
 
 Route118_Text_1BE148:: @ 81BE148
-	.string "BIRD POKéMON that FLY elegantly in\n"
+	.string "Bird Pokémon that fly elegantly in\n"
 	.string "the sky... They’re the best!$"
 
 Route118_Text_1BE188:: @ 81BE188
 	.string "Urgh... I crashed...$"
 
 Route118_Text_1BE19D:: @ 81BE19D
-	.string "You’ve got great POKéMON.\n"
+	.string "You’ve got great Pokémon.\n"
 	.string "I’ll have to train mine better.$"
 
 Route118_Text_1BE1D7:: @ 81BE1D7
 	.string "Take flight!\n"
-	.string "My BIRD POKéMON!$"
+	.string "My bird Pokémon!$"
 
 Route118_Text_1BE1F5:: @ 81BE1F5
 	.string "They did take flight...$"
@@ -1889,29 +1894,29 @@ Route118_Text_1BE20D:: @ 81BE20D
 	.string "to fly more freely...$"
 
 Route118_Text_1BE24A:: @ 81BE24A
-	.string "I’m a FISHERMAN, but also a TRAINER.\n"
-	.string "I’m raising the POKéMON I caught.$"
+	.string "I’m a Fisherman, but also a Trainer.\n"
+	.string "I’m raising the Pokémon I caught.$"
 
 Route118_Text_1BE291:: @ 81BE291
 	.string "I thought I was doing okay in my\n"
 	.string "training...$"
 
 Route118_Text_1BE2BE:: @ 81BE2BE
-	.string "I couldn’t win by training POKéMON\n"
+	.string "I couldn’t win by training Pokémon\n"
 	.string "while I fished...\p"
 	.string "Was I doing things in half measures?$"
 
 Route118_Text_1BE318:: @ 81BE318
-	.string "For FISHERMEN, equipment is the key.\p"
-	.string "But for TRAINERS, the key ingredients\n"
-	.string "are POKéMON and heart, of course!$"
+	.string "For Fishermen, equipment is the key.\p"
+	.string "But for Trainers, the key ingredients\n"
+	.string "are Pokémon and heart, of course!$"
 
 Route118_Text_1BE385:: @ 81BE385
 	.string "I was beaten in heart?$"
 
 Route118_Text_1BE39C:: @ 81BE39C
 	.string "Come to think of it, fishing is a battle\n"
-	.string "between a FISHERMAN and a POKéMON.$"
+	.string "between a Fisherman and a Pokémon.$"
 
 Route118_Text_1BE3E8:: @ 81BE3E8
 	.string "Let my melody rock your soul!$"
@@ -1926,7 +1931,7 @@ Route118_Text_1BE413:: @ 81BE413
 	.string "this heart-stirring melody...$"
 
 Route118_Text_1BE489:: @ 81BE489
-	.string "A melody from my POKéMON and me...\n"
+	.string "A melody from my Pokémon and me...\n"
 	.string "Let us deliver it to your soul.$"
 
 Route118_Text_1BE4CC:: @ 81BE4CC
@@ -1937,8 +1942,8 @@ Route118_Text_1BE4D9:: @ 81BE4D9
 	.string "you through my electric guitar...$"
 
 Route119_Text_1BE521:: @ 81BE521
-	.string "We’re the MIMIC CIRCLE!\n"
-	.string "We MIMIC what you do!$"
+	.string "We’re the Mimic Circle!\n"
+	.string "We mimic what you do!$"
 
 Route119_Text_1BE54F:: @ 81BE54F
 	.string "Whoopsie!\n"
@@ -1951,13 +1956,13 @@ Route119_Text_1BE561:: @ 81BE561
 
 Route119_Text_1BE5A4:: @ 81BE5A4
 	.string "So, we finally meet!\n"
-	.string "My BUG POKéMON will keep you company!$"
+	.string "My Bug Pokémon will keep you company!$"
 
 Route119_Text_1BE5DF:: @ 81BE5DF
 	.string "I wish we’d never met...$"
 
 Route119_Text_1BE5F8:: @ 81BE5F8
-	.string "I want to MIMIC you some more.\p"
+	.string "I want to mimic you some more.\p"
 	.string "Can you hurry up and move?$"
 
 Route119_Text_1BE632:: @ 81BE632
@@ -1968,7 +1973,7 @@ Route119_Text_1BE67B:: @ 81BE67B
 	.string "But if you win, I lose...$"
 
 Route119_Text_1BE695:: @ 81BE695
-	.string "I can’t MIMIC you winning the match.\n"
+	.string "I can’t mimic you winning the match.\n"
 	.string "That’s just impossible...\l"
 	.string "It’s burning me up...$"
 
@@ -1980,7 +1985,7 @@ Route119_Text_1BE729:: @ 81BE729
 	.string "Whoop, that was a great match!$"
 
 Route119_Text_1BE748:: @ 81BE748
-	.string "We’re the MIMIC CIRCLE!\n"
+	.string "We’re the Mimic Circle!\n"
 	.string "I hope you enjoyed our performance.$"
 
 Route119_Text_1BE784:: @ 81BE784
@@ -1996,23 +2001,23 @@ Route119_Text_1BE7E9:: @ 81BE7E9
 	.string "keep on mimicking your every move.$"
 
 Route119_Text_1BE82F:: @ 81BE82F
-	.string "The MIMIC CIRCLE was formed by people\n"
-	.string "who like to MIMIC.\p"
+	.string "The Mimic Circle was formed by people\n"
+	.string "who like to mimic.\p"
 	.string "A battle starts the instant we meet!$"
 
 Route119_Text_1BE88D:: @ 81BE88D
 	.string "I surrender!$"
 
 Route119_Text_1BE89A:: @ 81BE89A
-	.string "Won’t you join our MIMIC CIRCLE?$"
+	.string "Won’t you join our Mimic Circle?$"
 
 Route119_Text_1BE8BB:: @ 81BE8BB
 	.string "Who has the knowledge and the\n"
 	.string "technique for survival?\p"
-	.string "POKéMON RANGERS, that’s who!$"
+	.string "Pokémon Rangers, that’s who!$"
 
 Route119_Text_1BE90E:: @ 81BE90E
-	.string "I didn’t have enough POKéMON\n"
+	.string "I didn’t have enough Pokémon\n"
 	.string "know-how...$"
 
 Route119_Text_1BE937:: @ 81BE937
@@ -2022,13 +2027,13 @@ Route119_Text_1BE937:: @ 81BE937
 
 Route119_Text_1BE98D:: @ 81BE98D
 	.string "I’m going to regain my wild spirit by\n"
-	.string "being together with POKéMON.$"
+	.string "being together with Pokémon.$"
 
 Route119_Text_1BE9D0:: @ 81BE9D0
 	.string "You’ve remained strong!$"
 
 Route119_Text_1BE9E8:: @ 81BE9E8
-	.string "Believe in your POKéMON.\n"
+	.string "Believe in your Pokémon.\n"
 	.string "Believe in yourself.\p"
 	.string "The road will reveal itself to you.$"
 
@@ -2048,15 +2053,15 @@ Route119_Text_1BEAB3:: @ 81BEAB3
 	.string "physically, too.$"
 
 Route119_Text_1BEB22:: @ 81BEB22
-	.string "How’s your journey with POKéMON\n"
+	.string "How’s your journey with Pokémon\n"
 	.string "going?$"
 
 Route119_Text_1BEB49:: @ 81BEB49
 	.string "I’m still missing something...$"
 
 Route119_Text_1BEB68:: @ 81BEB68
-	.string "In the same way that you, as a TRAINER,\n"
-	.string "rely on your POKéMON, your POKéMON\l"
+	.string "In the same way that you, as a Trainer,\n"
+	.string "rely on your Pokémon, your Pokémon\l"
 	.string "rely on you.$"
 
 Route119_Text_1BEBC0:: @ 81BEBC0
@@ -2068,19 +2073,19 @@ Route119_Text_1BEC1C:: @ 81BEC1C
 	.string "Down and out!$"
 
 Route119_Text_1BEC2A:: @ 81BEC2A
-	.string "My BIRD POKéMON made my dreams of\n"
+	.string "My bird Pokémon made my dreams of\n"
 	.string "flying come true!$"
 
 Route119_Text_1BEC5E:: @ 81BEC5E
 	.string "I’ll show you the true potential of me\n"
-	.string "and my BIRD POKéMON!$"
+	.string "and my bird Pokémon!$"
 
 Route119_Text_1BEC9A:: @ 81BEC9A
 	.string "We lacked potential...$"
 
 Route119_Text_1BECB1:: @ 81BECB1
 	.string "Ever since I was a little kid, I always\n"
-	.string "admired BIRD POKéMON...$"
+	.string "admired bird Pokémon...$"
 
 Route119_Text_1BECF1:: @ 81BECF1
 	.string "To lurk in shadows, and live in\n"
@@ -2114,72 +2119,72 @@ Route119_Text_1BEE4B:: @ 81BEE4B
 
 Route119_Text_1BEE66:: @ 81BEE66
 	.string "To hide a tree, use a forest!\n"
-	.string "To hide a POKéMON, use a POKéMON!\p"
+	.string "To hide a Pokémon, use a Pokémon!\p"
 	.string "There is no deep, hidden meaning\n"
 	.string "to that.$"
 
 Route119_Text_1BEED0:: @ 81BEED0
 	.string "You spoke to me...\n"
 	.string "So you want to challenge me!\p"
-	.string "Sure! I’ll try out the POKéMON I caught\n"
-	.string "while SURFING!$"
+	.string "Sure! I’ll try out the Pokémon I caught\n"
+	.string "while Surfing!$"
 
 Route119_Text_1BEF37:: @ 81BEF37
 	.string "I don’t have a clue about what it\n"
 	.string "takes to win.$"
 
 Route119_Text_1BEF67:: @ 81BEF67
-	.string "Go for a SURF on my POKéMON...\p"
+	.string "Go for a Surf on my Pokémon...\p"
 	.string "Then fish off its back...\p"
 	.string "It’s an indescribably luxuriant moment!$"
 
 Route120_Text_1BEFC8:: @ 81BEFC8
 	.string "Do you have any moves that can strike\n"
-	.string "a flying POKéMON?$"
+	.string "a flying Pokémon?$"
 
 Route120_Text_1BF000:: @ 81BF000
 	.string "You soared above me!$"
 
 Route120_Text_1BF015:: @ 81BF015
-	.string "The move FLY is convenient, don’t\n"
+	.string "The move Fly is convenient, don’t\n"
 	.string "you think?\p"
-	.string "While the POKéMON is flying, almost\n"
+	.string "While the Pokémon is flying, almost\n"
 	.string "no moves can strike it.$"
 
 Route120_Text_1BF07E:: @ 81BF07E
-	.string "My POKéMON is strong!\n"
+	.string "My Pokémon is strong!\n"
 	.string "How about yours?$"
 
 Route120_Text_1BF0A5:: @ 81BF0A5
-	.string "Your POKéMON were stronger...$"
+	.string "Your Pokémon were stronger...$"
 
 Route120_Text_1BF0C3:: @ 81BF0C3
-	.string "A POKéMON that grows steadily is one\n"
+	.string "A Pokémon that grows steadily is one\n"
 	.string "you can count on.$"
 
 Route120_Text_1BF0FA:: @ 81BF0FA
-	.string "A POKéMON that grows steadily is one\n"
+	.string "A Pokémon that grows steadily is one\n"
 	.string "you can count on.$"
 
 Route120_Text_1BF131:: @ 81BF131
-	.string "Your POKéMON are seriously strong.$"
+	.string "Your Pokémon are seriously strong.$"
 
 Route120_Text_1BF154:: @ 81BF154
-	.string "My POKéMON are growing stronger.\n"
+	.string "My Pokémon are growing stronger.\n"
 	.string "I have to grow stronger, too.$"
 
 Route120_Text_1BF193:: @ 81BF193
-	.string "I’ll check your POKéMON and see if\n"
+	.string "I’ll check your Pokémon and see if\n"
 	.string "they’re fit for the outdoors.$"
 
 Route120_Text_1BF1D4:: @ 81BF1D4
-	.string "With POKéMON that strong, you’re in\n"
+	.string "With Pokémon that strong, you’re in\n"
 	.string "no danger of needing rescue!$"
 
 Route120_Text_1BF215:: @ 81BF215
 	.string "To travel wherever your heart desires\n"
-	.string "with POKéMON...\l"
-	.string "That’s the joy of being a TRAINER.$"
+	.string "with Pokémon...\l"
+	.string "That’s the joy of being a Trainer.$"
 
 Route120_Text_1BF26E:: @ 81BF26E
 	.string "How’s your physical fitness?\n"
@@ -2191,7 +2196,7 @@ Route120_Text_1BF2D2:: @ 81BF2D2
 
 Route120_Text_1BF2EA:: @ 81BF2EA
 	.string "Fitness training is in my routine.\n"
-	.string "I always run with my POKéMON.$"
+	.string "I always run with my Pokémon.$"
 
 Route120_Text_1BF32B:: @ 81BF32B
 	.string "... ... ... ... ... ...\n"
@@ -2220,18 +2225,18 @@ Route120_Text_1BF43E:: @ 81BF43E
 	.string "... ... ... ... ... ...\n"
 	.string "... ... ... ... ... ...\l"
 	.string "I’ll try harder...\l"
-	.string "For my precious BUG POKéMON...$"
+	.string "For my precious Bug Pokémon...$"
 
 Route120_Text_1BF4A0:: @ 81BF4A0
-	.string "POKéMON have many special abilities.\n"
+	.string "Pokémon have many special abilities.\n"
 	.string "If you want to become a first-class\l"
-	.string "TRAINER, learn about them.$"
+	.string "Trainer, learn about them.$"
 
 Route120_Text_1BF504:: @ 81BF504
 	.string "You’re obviously thinking.$"
 
 Route120_Text_1BF51F:: @ 81BF51F
-	.string "The special abilities of POKéMON\n"
+	.string "The special abilities of Pokémon\n"
 	.string "will make battle styles change.$"
 
 Route120_Text_1BF560:: @ 81BF560
@@ -2253,16 +2258,16 @@ Route120_Text_1BF65B:: @ 81BF65B
 	.string "I’ll tell you if you can win against me.$"
 
 Route120_Text_1BF6A4:: @ 81BF6A4
-	.string "A parasol can’t ward off POKéMON\n"
+	.string "A parasol can’t ward off Pokémon\n"
 	.string "attacks...$"
 
 Route120_Text_1BF6D0:: @ 81BF6D0
 	.string "I don’t think strong sunlight is good\n"
-	.string "for my POKéMON.\l"
+	.string "for my Pokémon.\l"
 	.string "So I shield them with my parasol.$"
 
 Route120_Text_1BF728:: @ 81BF728
-	.string "Me, POKéMON, and my parasol...\p"
+	.string "Me, Pokémon, and my parasol...\p"
 	.string "If any one of them is missing, the\n"
 	.string "picture of beauty will be ruined.$"
 
@@ -2275,7 +2280,7 @@ Route120_Text_1BF7B2:: @ 81BF7B2
 	.string "get in your way.$"
 
 Route120_Text_1BF80B:: @ 81BF80B
-	.string "I will adopt the movements of POKéMON\n"
+	.string "I will adopt the movements of Pokémon\n"
 	.string "and create new ninja techniques.$"
 
 Route120_Text_1BF852:: @ 81BF852
@@ -2301,18 +2306,18 @@ Route120_Text_1BF946:: @ 81BF946
 
 Route121_Text_1BF96E:: @ 81BF96E
 	.string "Will you play with my delightfully\n"
-	.string "pretty POKéMON?$"
+	.string "pretty Pokémon?$"
 
 Route121_Text_1BF9A1:: @ 81BF9A1
 	.string "This isn’t what I meant!$"
 
 Route121_Text_1BF9BA:: @ 81BF9BA
-	.string "I’m going to a CONTEST in LILYCOVE.\p"
-	.string "My POKéMON should have no problem\n"
-	.string "sweeping the MASTER CLASS.$"
+	.string "I’m going to a Contest in Lilycove.\p"
+	.string "My Pokémon should have no problem\n"
+	.string "sweeping the Master Rank.$"
 
 Route121_Text_1BFA1B:: @ 81BFA1B
-	.string "With my POKéMON, I have traveled the\n"
+	.string "With my Pokémon, I have traveled the\n"
 	.string "world’s four corners.\p"
 	.string "You might say I have some confidence\n"
 	.string "in my abilities.$"
@@ -2322,10 +2327,10 @@ Route121_Text_1BFA8C:: @ 81BFA8C
 
 Route121_Text_1BFA9D:: @ 81BFA9D
 	.string "I would like to circle the globe once\n"
-	.string "again with my POKéMON.$"
+	.string "again with my Pokémon.$"
 
 Route121_Text_1BFADA:: @ 81BFADA
-	.string "With my POKéMON, I have traveled the\n"
+	.string "With my Pokémon, I have traveled the\n"
 	.string "world’s four corners.\p"
 	.string "You might say I have some confidence\n"
 	.string "in my abilities.$"
@@ -2334,7 +2339,7 @@ Route121_Text_1BFB4B:: @ 81BFB4B
 	.string "Ah, well played.$"
 
 Route121_Text_1BFB5C:: @ 81BFB5C
-	.string "Your POKéMON and you...\p"
+	.string "Your Pokémon and you...\p"
 	.string "Your prowess together will be\n"
 	.string "considered strong, even overseas.$"
 
@@ -2346,57 +2351,57 @@ Route121_Text_1BFBEE:: @ 81BFBEE
 	.string "I have lost...$"
 
 Route121_Text_1BFBFD:: @ 81BFBFD
-	.string "MT. PYRE...\n"
+	.string "Mt. Pyre...\n"
 	.string "There is a mysterious power\l"
 	.string "at work there...$"
 
 Route121_Text_1BFC36:: @ 81BFC36
-	.string "KATE: Together, we’re fearless!\n"
+	.string "Kate: Together, we’re fearless!\n"
 	.string "We’ll demonstrate how tough we are!$"
 
 Route121_Text_1BFC7A:: @ 81BFC7A
-	.string "KATE: I blew it in front of my junior\n"
+	.string "Kate: I blew it in front of my junior\n"
 	.string "student partner...$"
 
 Route121_Text_1BFCB3:: @ 81BFCB3
-	.string "KATE: When someone’s relying on me,\n"
+	.string "Kate: When someone’s relying on me,\n"
 	.string "I get this urge to look cool in front\l"
 	.string "of them...$"
 
 Route121_Text_1BFD08:: @ 81BFD08
-	.string "KATE: If you’ve only got one POKéMON,\n"
+	.string "Kate: If you’ve only got one Pokémon,\n"
 	.string "we can’t battle with you.\p"
 	.string "That would be bullying.$"
 
 Route121_Text_1BFD60:: @ 81BFD60
-	.string "JOY: Together, we’re fearless!\n"
+	.string "Joy: Together, we’re fearless!\n"
 	.string "We’ll demonstrate how tough we are!$"
 
 Route121_Text_1BFDA3:: @ 81BFDA3
-	.string "JOY: Please forgive me, KATE!$"
+	.string "Joy: Please forgive me, Kate!$"
 
 Route121_Text_1BFDC1:: @ 81BFDC1
-	.string "JOY: Ehehe, I’ll have to train with KATE,\n"
+	.string "Joy: Ehehe, I’ll have to train with Kate,\n"
 	.string "my senior student partner, again.$"
 
 Route121_Text_1BFE0D:: @ 81BFE0D
-	.string "JOY: You need at least two POKéMON\n"
+	.string "Joy: You need at least two Pokémon\n"
 	.string "if you’re going to challenge us!$"
 
 Route121_Text_1BFE51:: @ 81BFE51
 	.string "Stop! Have a good look at my precious\n"
-	.string "POKéMON!$"
+	.string "Pokémon!$"
 
 Route121_Text_1BFE80:: @ 81BFE80
 	.string "Oh, how dare you!\n"
 	.string "Don’t take it so seriously!$"
 
 Route121_Text_1BFEAE:: @ 81BFEAE
-	.string "Maybe I’ll go catch more POKéMON at\n"
-	.string "the SAFARI.$"
+	.string "Maybe I’ll go catch more Pokémon at\n"
+	.string "the Safari Zone.$"
 
 Route121_Text_1BFEDE:: @ 81BFEDE
-	.string "My precious POKéMON grew!\n"
+	.string "My precious Pokémon grew!\n"
 	.string "Have a good look!$"
 
 Route121_Text_1BFF0A:: @ 81BFF0A
@@ -2404,8 +2409,8 @@ Route121_Text_1BFF0A:: @ 81BFF0A
 	.string "You still won’t take it easy!$"
 
 Route121_Text_1BFF3A:: @ 81BFF3A
-	.string "Maybe I’ll go catch more POKéMON at\n"
-	.string "the SAFARI.$"
+	.string "Maybe I’ll go catch more Pokémon at\n"
+	.string "the Safari Zone.$"
 
 Route123_Text_1BFF6A:: @ 81BFF6A
 	.string "Want to determine how strong you are?\n"
@@ -2420,15 +2425,15 @@ Route123_Text_1BFFC1:: @ 81BFFC1
 
 Route123_Text_1BFFF0:: @ 81BFFF0
 	.string "You seem to have a big collection\n"
-	.string "of GYM BADGES.\p"
+	.string "of Gym Badges.\p"
 	.string "Let me see if you’re actually worthy of\n"
-	.string "those BADGES!$"
+	.string "those Badges!$"
 
 Route123_Text_1C0057:: @ 81C0057
 	.string "Oh, you’re worthy, all right!$"
 
 Route123_Text_1C0075:: @ 81C0075
-	.string "You did your BADGES proud in that\n"
+	.string "You did your Badges proud in that\n"
 	.string "match!$"
 
 Route123_Text_1C009E:: @ 81C009E
@@ -2440,7 +2445,7 @@ Route123_Text_1C00D4:: @ 81C00D4
 	.string "I smell the bitter scent of misery...$"
 
 Route123_Text_1C0100:: @ 81C0100
-	.string "The BERRY MASTER’s garden is filled\n"
+	.string "The Berry Master’s garden is filled\n"
 	.string "with uplifting fragrances.$"
 
 Route123_Text_1C013F:: @ 81C013F
@@ -2463,11 +2468,11 @@ Route123_Text_1C0240:: @ 81C0240
 	.string "I feel sad...$"
 
 Route123_Text_1C024E:: @ 81C024E
-	.string "I should train at MT. PYRE...\n"
+	.string "I should train at Mt. Pyre...\n"
 	.string "I’ll never beat you this way...$"
 
 Route123_Text_1C028C:: @ 81C028C
-	.string "Don’t be too happy if your POKéMON\n"
+	.string "Don’t be too happy if your Pokémon\n"
 	.string "develop psychic powers.\p"
 	.string "You need to refine those powers to\n"
 	.string "make them really useful.$"
@@ -2487,56 +2492,56 @@ Route123_Text_1C0380:: @ 81C0380
 	.string "Astounding!$"
 
 Route123_Text_1C038C:: @ 81C038C
-	.string "Your power with POKéMON...\n"
+	.string "Your power with Pokémon...\n"
 	.string "That could be a psychic power, too.$"
 
 Route123_Text_1C03CB:: @ 81C03CB
-	.string "MIU: Hello, TRAINER. I hope your\n"
-	.string "POKéMON won’t cry when they lose.$"
+	.string "Miu: Hello, Trainer. I hope your\n"
+	.string "Pokémon won’t cry when they lose.$"
 
 Route123_Text_1C040E:: @ 81C040E
-	.string "MIU: Uh-oh, we lost.$"
+	.string "Miu: Uh-oh, we lost.$"
 
 Route123_Text_1C0423:: @ 81C0423
-	.string "MIU: TRAINER, your POKéMON are\n"
+	.string "Miu: Trainer, your Pokémon are\n"
 	.string "strong because you are friends.$"
 
 Route123_Text_1C0462:: @ 81C0462
-	.string "MIU: It’s no fun to battle if you\n"
-	.string "don’t have two POKéMON.$"
+	.string "Miu: It’s no fun to battle if you\n"
+	.string "don’t have two Pokémon.$"
 
 Route123_Text_1C049C:: @ 81C049C
-	.string "YUKI: Okay!\n"
-	.string "We’re beating the TRAINER’s POKéMON!$"
+	.string "Yuki: Okay!\n"
+	.string "We’re beating the Trainer’s Pokémon!$"
 
 Route123_Text_1C04CD:: @ 81C04CD
-	.string "YUKI: Uh-oh, we lost.$"
+	.string "Yuki: Uh-oh, we lost.$"
 
 Route123_Text_1C04E3:: @ 81C04E3
-	.string "YUKI: Why are you so strong?\n"
+	.string "Yuki: Why are you so strong?\n"
 	.string "We’ve never lost before.$"
 
 Route123_Text_1C0519:: @ 81C0519
-	.string "YUKI: It’s no fun to battle if you\n"
-	.string "don’t have two POKéMON.$"
+	.string "Yuki: It’s no fun to battle if you\n"
+	.string "don’t have two Pokémon.$"
 
 Route123_Text_1C0554:: @ 81C0554
-	.string "MT. PYRE...\n"
-	.string "Where the spirits of POKéMON sleep...\l"
-	.string "Will your POKéMON sleep?$"
+	.string "Mt. Pyre...\n"
+	.string "Where the spirits of Pokémon sleep...\l"
+	.string "Will your Pokémon sleep?$"
 
 Route123_Text_1C059F:: @ 81C059F
 	.string "Overflowing with vitality...$"
 
 Route123_Text_1C05BC:: @ 81C05BC
-	.string "MT. PYRE...\n"
-	.string "Where the spirits of POKéMON sleep...\p"
+	.string "Mt. Pyre...\n"
+	.string "Where the spirits of Pokémon sleep...\p"
 	.string "It must overflow with a power that\n"
 	.string "soothes spirits...$"
 
 Route124_Text_1C0624:: @ 81C0624
 	.string "Hey, are you lost at sea?\p"
-	.string "If you can beat my POKéMON, I can\n"
+	.string "If you can beat my Pokémon, I can\n"
 	.string "serve as your pilot.$"
 
 Route124_Text_1C0675:: @ 81C0675
@@ -2545,10 +2550,10 @@ Route124_Text_1C0675:: @ 81C0675
 Route124_Text_1C0693:: @ 81C0693
 	.string "Many people lose their bearings at sea.\p"
 	.string "If you’re that sort, you should refer\n"
-	.string "to the POKéNAV’s MAP.$"
+	.string "to the Pokénav’s map.$"
 
 Route124_Text_1C06F7:: @ 81C06F7
-	.string "Hm! You’re riding a POKéMON instead\n"
+	.string "Hm! You’re riding a Pokémon instead\n"
 	.string "of swimming yourself...\p"
 	.string "I am envious!$"
 
@@ -2559,11 +2564,11 @@ Route124_Text_1C0741:: @ 81C0741
 Route124_Text_1C0750:: @ 81C0750
 	.string "I’m getting chilled...\n"
 	.string "I’ve been in the water too long...\p"
-	.string "I wish I could ride a POKéMON like you...$"
+	.string "I wish I could ride a Pokémon like you...$"
 
 Route124_Text_1C07B4:: @ 81C07B4
 	.string "If you just float in the sea like\n"
-	.string "this, POKéMON come around to play.$"
+	.string "this, Pokémon come around to play.$"
 
 Route124_Text_1C07F9:: @ 81C07F9
 	.string "Oh...\n"
@@ -2571,13 +2576,13 @@ Route124_Text_1C07F9:: @ 81C07F9
 
 Route124_Text_1C080E:: @ 81C080E
 	.string "While swimming, I noticed that some\n"
-	.string "POKéMON attack, and some just watch.\p"
-	.string "I guess POKéMON have personalities\n"
+	.string "Pokémon attack, and some just watch.\p"
+	.string "I guess Pokémon have personalities\n"
 	.string "of their own.$"
 
 Route124_Text_1C0888:: @ 81C0888
 	.string "If you just float in the sea like this,\n"
-	.string "TRAINERS challenge you!$"
+	.string "Trainers challenge you!$"
 
 Route124_Text_1C08C8:: @ 81C08C8
 	.string "That’s strange...\n"
@@ -2585,7 +2590,7 @@ Route124_Text_1C08C8:: @ 81C08C8
 
 Route124_Text_1C08EA:: @ 81C08EA
 	.string "This has nothing to do with anything,\n"
-	.string "but maybe I’ll visit the TRICK HOUSE.$"
+	.string "but maybe I’ll visit the Trick House.$"
 
 Route124_Text_1C0936:: @ 81C0936
 	.string "I’m growing bored of swimming...\n"
@@ -2610,86 +2615,86 @@ Route124_Text_1C0A2F:: @ 81C0A2F
 
 Route124_Text_1C0A52:: @ 81C0A52
 	.string "I have it on good authority that\n"
-	.string "there’s a DIVE spot around here.\p"
+	.string "there’s a Dive spot around here.\p"
 	.string "It gives me the urge to go deep\n"
 	.string "again...$"
 
 Route124_Text_1C0ABD:: @ 81C0ABD
-	.string "RITA: Sigh...\p"
+	.string "Rita: Sigh...\p"
 	.string "Here I am in the sea, but who’s with me?\n"
 	.string "My little brother!\p"
 	.string "Let’s battle so I won’t have to dwell\n"
 	.string "on that!$"
 
 Route124_Text_1C0B36:: @ 81C0B36
-	.string "RITA: SAM! It’s your fault we lost!\n"
+	.string "Rita: Sam! It’s your fault we lost!\n"
 	.string "You’re in for it later!$"
 
 Route124_Text_1C0B72:: @ 81C0B72
-	.string "RITA: Sigh...\p"
+	.string "Rita: Sigh...\p"
 	.string "If only it wasn’t my little brother\n"
 	.string "next to me, but a nice boyfriend...$"
 
 Route124_Text_1C0BC8:: @ 81C0BC8
-	.string "RITA: You’re planning to battle us?\n"
-	.string "Not unless you have more POKéMON.$"
+	.string "Rita: You’re planning to battle us?\n"
+	.string "Not unless you have more Pokémon.$"
 
 Route124_Text_1C0C0E:: @ 81C0C0E
-	.string "SAM: My big sister is tough at POKéMON!\p"
+	.string "Sam: My big sister is tough at Pokémon!\p"
 	.string "Don’t cry when you lose!$"
 
 Route124_Text_1C0C4F:: @ 81C0C4F
-	.string "SAM: Uh-oh...\n"
+	.string "Sam: Uh-oh...\n"
 	.string "My big sister will chew me out...$"
 
 Route124_Text_1C0C7F:: @ 81C0C7F
-	.string "SAM: My big sister is really scary\n"
+	.string "Sam: My big sister is really scary\n"
 	.string "when she gets angry.\p"
 	.string "That’s why she doesn’t have a\n"
 	.string "boyfriend.$"
 
 Route124_Text_1C0CE0:: @ 81C0CE0
-	.string "SAM: Did you want to battle us?\n"
-	.string "Bring some more POKéMON, then.$"
+	.string "Sam: Did you want to battle us?\n"
+	.string "Bring some more Pokémon, then.$"
 
 Route124_Text_1C0D1F:: @ 81C0D1F
-	.string "RITA: Sigh...\p"
+	.string "Rita: Sigh...\p"
 	.string "Here I am in the sea, but who’s with me?\n"
 	.string "My little brother!\p"
 	.string "Oh, hi, it’s been a while. Let’s battle\n"
 	.string "so I won’t have to dwell on things!$"
 
 Route124_Text_1C0DB5:: @ 81C0DB5
-	.string "RITA: SAM!\n"
+	.string "Rita: Sam!\n"
 	.string "It’s your fault we lost again!\p"
 	.string "We’re having a training session later!$"
 
 Route124_Text_1C0E06:: @ 81C0E06
-	.string "RITA: Sigh...\p"
+	.string "Rita: Sigh...\p"
 	.string "If I had a nice boyfriend, we’d beat\n"
 	.string "anyone with lovely combinations...$"
 
 Route124_Text_1C0E5C:: @ 81C0E5C
-	.string "RITA: You’re planning to battle us?\n"
-	.string "Not unless you have more POKéMON.$"
+	.string "Rita: You’re planning to battle us?\n"
+	.string "Not unless you have more Pokémon.$"
 
 Route124_Text_1C0EA2:: @ 81C0EA2
-	.string "SAM: If we lose, I’ll catch heck.\n"
+	.string "Sam: If we lose, I’ll catch heck.\n"
 	.string "I’m going to go totally all out!$"
 
 Route124_Text_1C0EE5:: @ 81C0EE5
-	.string "SAM: Uh-oh...\n"
+	.string "Sam: Uh-oh...\n"
 	.string "My big sister will chew me out again.$"
 
 Route124_Text_1C0F19:: @ 81C0F19
-	.string "SAM: My big sister is really scary\n"
+	.string "Sam: My big sister is really scary\n"
 	.string "when she gets angry.\p"
 	.string "She’s going to make me train really\n"
-	.string "hard with POKéMON later...$"
+	.string "hard with Pokémon later...$"
 
 Route124_Text_1C0F90:: @ 81C0F90
-	.string "SAM: Did you want to battle us?\n"
-	.string "Bring some more POKéMON, then.$"
+	.string "Sam: Did you want to battle us?\n"
+	.string "Bring some more Pokémon, then.$"
 
 Route125_Text_1C0FCF:: @ 81C0FCF
 	.string "I heard you approaching, so I hung\n"
@@ -2704,13 +2709,13 @@ Route125_Text_1C1013:: @ 81C1013
 
 Route125_Text_1C104B:: @ 81C104B
 	.string "Hey, there!\n"
-	.string "Check out my sweet POKéMON!$"
+	.string "Check out my sweet Pokémon!$"
 
 Route125_Text_1C1073:: @ 81C1073
 	.string "I floundered...$"
 
 Route125_Text_1C1083:: @ 81C1083
-	.string "I was blown away by HORSEA’s charm,\n"
+	.string "I was blown away by Horsea’s charm,\n"
 	.string "so I started swimming, too.$"
 
 Route125_Text_1C10C3:: @ 81C10C3
@@ -2722,11 +2727,11 @@ Route125_Text_1C10FB:: @ 81C10FB
 
 Route125_Text_1C110C:: @ 81C110C
 	.string "Whew...\n"
-	.string "Which way is it to MOSSDEEP CITY?$"
+	.string "Which way is it to Mossdeep City?$"
 
 Route125_Text_1C1136:: @ 81C1136
 	.string "How would you like to take on the\n"
-	.string "WATER-type POKéMON I raised?$"
+	.string "Water-type Pokémon I raised?$"
 
 Route125_Text_1C1175:: @ 81C1175
 	.string "I lost...$"
@@ -2736,7 +2741,7 @@ Route125_Text_1C117F:: @ 81C117F
 	.string "I’m amazed!$"
 
 Route125_Text_1C11AF:: @ 81C11AF
-	.string "Ahoy! I’m a buff, tough SAILOR!\n"
+	.string "Ahoy! I’m a buff, tough Sailor!\n"
 	.string "I’ve braved the world’s seas!$"
 
 Route125_Text_1C11ED:: @ 81C11ED
@@ -2745,7 +2750,7 @@ Route125_Text_1C11ED:: @ 81C11ED
 
 Route125_Text_1C1208:: @ 81C1208
 	.string "The tide ebbs and flows inside the\n"
-	.string "SHOAL CAVE.\p"
+	.string "Shoal Cave.\p"
 	.string "By the way, it’s about six hours from\n"
 	.string "high tide to low tide. Did you know?$"
 
@@ -2758,7 +2763,7 @@ Route125_Text_1C12C5:: @ 81C12C5
 	.string "I flat out couldn’t win!$"
 
 Route125_Text_1C12EE:: @ 81C12EE
-	.string "The SHOAL CAVE...\p"
+	.string "The Shoal Cave...\p"
 	.string "There are places you can and can’t\n"
 	.string "get to depending on the rise and fall\l"
 	.string "of the tide.\p"
@@ -2766,36 +2771,36 @@ Route125_Text_1C12EE:: @ 81C12EE
 	.string "high tide to low tide. Don’t forget!$"
 
 Route125_Text_1C13A1:: @ 81C13A1
-	.string "KIM: A funny old man lives in the\n"
+	.string "Kim: A funny old man lives in the\n"
 	.string "SHOAL CAVE. Someone told me.\l"
 	.string "Are you going to see him, too?$"
 
 Route125_Text_1C13FF:: @ 81C13FF
-	.string "KIM: I thought we would win.$"
+	.string "Kim: I thought we would win.$"
 
 Route125_Text_1C141C:: @ 81C141C
-	.string "KIM: A funny old man lives in the\n"
-	.string "SHOAL CAVE, doesn’t he?\p"
-	.string "Let’s go see him, IRIS!$"
+	.string "Kim: A funny old man lives in the\n"
+	.string "Shoal Cave, doesn’t he?\p"
+	.string "Let’s go see him, Iris!$"
 
 Route125_Text_1C146E:: @ 81C146E
-	.string "KIM: No, no, no! You need two POKéMON,\n"
+	.string "Kim: No, no, no! You need two Pokémon,\n"
 	.string "or it’s just no good!$"
 
 Route125_Text_1C14AB:: @ 81C14AB
-	.string "IRIS: KIM, can you tell me what we’re\n"
+	.string "Iris: Kim, can you tell me what we’re\n"
 	.string "looking for out here?$"
 
 Route125_Text_1C14E7:: @ 81C14E7
-	.string "IRIS: Oh, we came sort of close.$"
+	.string "Iris: Oh, we came sort of close.$"
 
 Route125_Text_1C1508:: @ 81C1508
-	.string "IRIS: KIM, are we really going into\n"
-	.string "the SHOAL CAVE?\l"
+	.string "Iris: Kim, are we really going into\n"
+	.string "the Shoal Cave?\l"
 	.string "We’ll get all wet.$"
 
 Route125_Text_1C154F:: @ 81C154F
-	.string "IRIS: Oh, we could never, ever do\n"
+	.string "Iris: Oh, we could never, ever do\n"
 	.string "anything like a 2-on-1 battle.$"
 
 Route126_Text_1C1590:: @ 81C1590
@@ -2811,14 +2816,14 @@ Route126_Text_1C15D8:: @ 81C15D8
 
 Route126_Text_1C1627:: @ 81C1627
 	.string "This towering white mountain of rock\n"
-	.string "is SOOTOPOLIS CITY.$"
+	.string "is Sootopolis City.$"
 
 Route126_Text_1C1660:: @ 81C1660
 	.string "I was done in?$"
 
 Route126_Text_1C166F:: @ 81C166F
 	.string "I can’t find the entrance to\n"
-	.string "SOOTOPOLIS. Where could it be?$"
+	.string "Sootopolis. Where could it be?$"
 
 Route126_Text_1C16AB:: @ 81C16AB
 	.string "Ufufufufu!\n"
@@ -2840,7 +2845,7 @@ Route126_Text_1C1766:: @ 81C1766
 	.string "Oh, noooooh!$"
 
 Route126_Text_1C1773:: @ 81C1773
-	.string "I love frolicking with POKéMON in\n"
+	.string "I love frolicking with Pokémon in\n"
 	.string "the sea like this!$"
 
 Route127_Text_1C17A8:: @ 81C17A8
@@ -2881,18 +2886,18 @@ Route127_Text_1C195D:: @ 81C195D
 
 Route127_Text_1C19A3:: @ 81C19A3
 	.string "Whoops! Don’t tell me I snagged\n"
-	.string "a SURFING POKéMON?$"
+	.string "a Surfing Pokémon?$"
 
 Route127_Text_1C19D6:: @ 81C19D6
 	.string "I can’t keep up!$"
 
 Route127_Text_1C19E7:: @ 81C19E7
-	.string "Your POKéMON look pretty strong.\n"
+	.string "Your Pokémon look pretty strong.\n"
 	.string "They’d be a handful if I hooked them!$"
 
 Route127_Text_1C1A2E:: @ 81C1A2E
 	.string "Well, hey! This is a match between a\n"
-	.string "POKéMON fan and a fishing buff!$"
+	.string "Pokémon fan and a fishing buff!$"
 
 Route127_Text_1C1A73:: @ 81C1A73
 	.string "No! My line’s all tangled!\n"
@@ -2903,19 +2908,19 @@ Route127_Text_1C1AA0:: @ 81C1AA0
 	.string "The tangle tango! Hahaha, snarl!$"
 
 Route127_Text_1C1AE2:: @ 81C1AE2
-	.string "What I learned at DEWFORD’s POKéMON\n"
-	.string "GYM, I will put into practice here.$"
+	.string "What I learned at Dewford’s Pokémon\n"
+	.string "Gym, I will put into practice here.$"
 
 Route127_Text_1C1B2A:: @ 81C1B2A
 	.string "I was swamped!$"
 
 Route127_Text_1C1B39:: @ 81C1B39
-	.string "BRAWLY, DEWFORD’s GYM LEADER, used\n"
-	.string "to train with a guy named BRUNO in\l"
-	.string "KANTO, I’ve heard.$"
+	.string "Brawly, Dewford’s Gym Leader, used\n"
+	.string "to train with a guy named Bruno in\l"
+	.string "Kanto, I’ve heard.$"
 
 Route127_Text_1C1B92:: @ 81C1B92
-	.string "BIRD POKéMON have excellent vision.\n"
+	.string "Bird Pokémon have excellent vision.\n"
 	.string "They spot prey from great heights.$"
 
 Route127_Text_1C1BD9:: @ 81C1BD9
@@ -2928,7 +2933,7 @@ Route127_Text_1C1BEC:: @ 81C1BEC
 	.string "because of their darker color.$"
 
 Route128_Text_1C1C67:: @ 81C1C67
-	.string "EVER GRANDE CITY is still a long ways\n"
+	.string "Ever Grande City is still a long ways\n"
 	.string "away...$"
 
 Route128_Text_1C1C95:: @ 81C1C95
@@ -2941,13 +2946,13 @@ Route128_Text_1C1CC3:: @ 81C1CC3
 
 Route128_Text_1C1D02:: @ 81C1D02
 	.string "I’m still feeling good. I’ll keep on\n"
-	.string "swimming to EVER GRANDE CITY.$"
+	.string "swimming to Ever Grande City.$"
 
 Route128_Text_1C1D45:: @ 81C1D45
 	.string "I’ve yet to taste my first victory...$"
 
 Route128_Text_1C1D6B:: @ 81C1D6B
-	.string "I’ll eventually reach EVER GRANDE CITY\n"
+	.string "I’ll eventually reach Ever Grande City\n"
 	.string "where I can eventually win...$"
 
 Route128_Text_1C1DB0:: @ 81C1DB0
@@ -2957,28 +2962,28 @@ Route128_Text_1C1DB0:: @ 81C1DB0
 	.string "of three events.$"
 
 Route128_Text_1C1E25:: @ 81C1E25
-	.string "A POKéMON battle is grueling, too...$"
+	.string "A Pokémon battle is grueling, too...$"
 
 Route128_Text_1C1E4A:: @ 81C1E4A
-	.string "I have to ride a BIKE next, but...\n"
+	.string "I have to ride a Bike next, but...\n"
 	.string "I’m about to throw in the towel...$"
 
 Route128_Text_1C1E90:: @ 81C1E90
 	.string "A triathlon is long. But I guess the\n"
-	.string "road to become the POKéMON CHAMPION\l"
+	.string "road to become the Pokémon Champion\l"
 	.string "is also a long and grueling one.$"
 
 Route128_Text_1C1EFA:: @ 81C1EFA
-	.string "A POKéMON battle really is harsh\n"
+	.string "A Pokémon battle really is harsh\n"
 	.string "and unforgiving...$"
 
 Route128_Text_1C1F2E:: @ 81C1F2E
 	.string "You should give serious thought to\n"
-	.string "challenges on VICTORY ROAD.$"
+	.string "challenges on Victory Road.$"
 
 Route128_Text_1C1F6D:: @ 81C1F6D
 	.string "We’ve been working so hard to mount\n"
-	.string "a POKéMON LEAGUE challenge...\p"
+	.string "a Pokémon League challenge...\p"
 	.string "We can’t afford to lose now!$"
 
 Route128_Text_1C1FCC:: @ 81C1FCC
@@ -2990,27 +2995,27 @@ Route128_Text_1C1FE8:: @ 81C1FE8
 	.string "give up after one setback.$"
 
 Route128_Text_1C202C:: @ 81C202C
-	.string "There is no stronger TRAINER than I!$"
+	.string "There is no stronger Trainer than I!$"
 
 Route128_Text_1C2051:: @ 81C2051
 	.string "This can’t be!$"
 
 Route128_Text_1C2060:: @ 81C2060
-	.string "There probably is no stronger TRAINER\n"
+	.string "There probably is no stronger Trainer\n"
 	.string "than you!$"
 
 Route128_Text_1C2090:: @ 81C2090
-	.string "I want to visit EVER GRANDE, so I\n"
-	.string "caught myself a POKéMON that knows\l"
-	.string "the move WATERFALL to crest the falls.$"
+	.string "I want to visit Ever Grande, so I\n"
+	.string "caught myself a Pokémon that knows\l"
+	.string "the move Waterfall to crest the falls.$"
 
 Route128_Text_1C20FC:: @ 81C20FC
 	.string "I’m crestfallen!$"
 
 Route128_Text_1C210D:: @ 81C210D
 	.string "Awww, phooey!\p"
-	.string "My POKéMON know WATERFALL, but\n"
-	.string "I don’t have the SOOTOPOLIS GYM BADGE!$"
+	.string "My Pokémon know Waterfall, but\n"
+	.string "I don’t have the Sootopolis Gym Badge!$"
 
 Route129_Text_1C2161:: @ 81C2161
 	.string "This is my first triathlon.\n"
@@ -3066,7 +3071,7 @@ Route129_Text_1C23A3:: @ 81C23A3
 
 Route130_Text_1C2401:: @ 81C2401
 	.string "What a surprise! I didn’t expect to\n"
-	.string "see a TRAINER out in the sea.\p"
+	.string "see a Trainer out in the sea.\p"
 	.string "I think we should battle!$"
 
 Route130_Text_1C245D:: @ 81C245D
@@ -3084,20 +3089,20 @@ Route130_Text_1C24DC:: @ 81C24DC
 
 Route130_Text_1C2525:: @ 81C2525
 	.string "Like the vast blue sea,\n"
-	.string "the world of POKéMON spans\l"
+	.string "the world of Pokémon spans\l"
 	.string "depths beyond belief.$"
 
 Route130_Text_1C256E:: @ 81C256E
 	.string "The world’s children dream\n"
 	.string "of one day becoming the\l"
-	.string "POKéMON CHAMPION.$"
+	.string "Pokémon Champion.$"
 
 Route131_Text_1C25B3:: @ 81C25B3
-	.string "The sea is teeming with POKéMON.\n"
+	.string "The sea is teeming with Pokémon.\n"
 	.string "It’s not easy swimming, I tell you.$"
 
 Route131_Text_1C25F8:: @ 81C25F8
-	.string "POKéMON raised by TRAINERS are\n"
+	.string "Pokémon raised by Trainers are\n"
 	.string "seriously tough...$"
 
 Route131_Text_1C262A:: @ 81C262A
@@ -3146,38 +3151,38 @@ Route131_Text_1C2898:: @ 81C2898
 	.string "makes men look. It must be my beauty!$"
 
 Route131_Text_1C28E2:: @ 81C28E2
-	.string "RELI: We’ll work together as siblings\n"
+	.string "Reli: We’ll work together as siblings\n"
 	.string "to take you on!$"
 
 Route131_Text_1C2918:: @ 81C2918
-	.string "RELI: We couldn’t win even though we\n"
+	.string "Reli: We couldn’t win even though we\n"
 	.string "worked together...$"
 
 Route131_Text_1C2950:: @ 81C2950
-	.string "RELI: The people of PACIFIDLOG are\n"
-	.string "together with the sea and POKéMON from\l"
+	.string "Reli: The people of Pacifidlog are\n"
+	.string "together with the sea and Pokémon from\l"
 	.string "the time they are born.$"
 
 Route131_Text_1C29B2:: @ 81C29B2
-	.string "RELI: You don’t have two POKéMON?\n"
+	.string "Reli: You don’t have two Pokémon?\n"
 	.string "We can’t enjoy a battle, then.$"
 
 Route131_Text_1C29F3:: @ 81C29F3
-	.string "IAN: I’m doing my best together with\n"
+	.string "Ian: I’m doing my best together with\n"
 	.string "my sis!$"
 
 Route131_Text_1C2A20:: @ 81C2A20
-	.string "IAN: I did my best with my sis, but\n"
+	.string "Ian: I did my best with my sis, but\n"
 	.string "we still couldn’t win...$"
 
 Route131_Text_1C2A5D:: @ 81C2A5D
-	.string "IAN: You know how PACIFIDLOG is\n"
+	.string "Ian: You know how Pacifidlog is\n"
 	.string "a floating town?\p"
 	.string "So, wherever there is the sea, that’s\n"
-	.string "a part of PACIFIDLOG!$"
+	.string "a part of Pacifidlog!$"
 
 Route131_Text_1C2ACA:: @ 81C2ACA
-	.string "IAN: If you have two POKéMON, we’ll\n"
+	.string "Ian: If you have two Pokémon, we’ll\n"
 	.string "take you on!$"
 
 Route132_Text_1C2AFB:: @ 81C2AFB
@@ -3189,7 +3194,7 @@ Route132_Text_1C2B5B:: @ 81C2B5B
 	.string "I crave more power...$"
 
 Route132_Text_1C2B71:: @ 81C2B71
-	.string "TRAINERS travel the fields and\n"
+	.string "Trainers travel the fields and\n"
 	.string "mountains, so they must be fit, too.$"
 
 Route132_Text_1C2BB5:: @ 81C2BB5
@@ -3217,7 +3222,7 @@ Route132_Text_1C2C78:: @ 81C2C78
 	.string "victory and defeat!$"
 
 Route132_Text_1C2CD9:: @ 81C2CD9
-	.string "I contemplate POKéMON 24 hours a day.\n"
+	.string "I contemplate Pokémon 24 hours a day.\n"
 	.string "How could you possibly beat me?$"
 
 Route132_Text_1C2D1F:: @ 81C2D1F
@@ -3226,8 +3231,8 @@ Route132_Text_1C2D1F:: @ 81C2D1F
 
 Route132_Text_1C2D3E:: @ 81C2D3E
 	.string "Urggh...\n"
-	.string "You’re a POKéMON fanatic, aren’t you?\p"
-	.string "You must contemplate POKéMON 24 hours\n"
+	.string "You’re a Pokémon fanatic, aren’t you?\p"
+	.string "You must contemplate Pokémon 24 hours\n"
 	.string "a day, don’t you?$"
 
 Route133_Text_1C2DA5:: @ 81C2DA5
@@ -3239,7 +3244,7 @@ Route133_Text_1C2DF4:: @ 81C2DF4
 	.string "Too much so!$"
 
 Route133_Text_1C2E09:: @ 81C2E09
-	.string "It’s just my luck that a tough TRAINER\n"
+	.string "It’s just my luck that a tough Trainer\n"
 	.string "like you would drift here...\l"
 	.string "I must be cursed...$"
 
@@ -3263,12 +3268,12 @@ Route133_Text_1C2F19:: @ 81C2F19
 	.string "No! Please!$"
 
 Route133_Text_1C2F25:: @ 81C2F25
-	.string "A strong child TRAINER...\n"
+	.string "A strong child Trainer...\n"
 	.string "That’s so annoying!$"
 
 Route133_Text_1C2F53:: @ 81C2F53
 	.string "I want to win like everyone else, but I\n"
-	.string "won’t raise POKéMON like everyone else.$"
+	.string "won’t raise Pokémon like everyone else.$"
 
 Route133_Text_1C2FA3:: @ 81C2FA3
 	.string "Darn it!\n"
@@ -3281,29 +3286,29 @@ Route133_Text_1C2FC7:: @ 81C2FC7
 
 Route133_Text_1C302D:: @ 81C302D
 	.string "I came all the way out here with my\n"
-	.string "BIRD POKéMON.$"
+	.string "bird Pokémon.$"
 
 Route133_Text_1C305F:: @ 81C305F
 	.string "You...\n"
 	.string "You’re stunningly cool!$"
 
 Route133_Text_1C307E:: @ 81C307E
-	.string "I’d like to go back to FORTREE, but I’ve\n"
+	.string "I’d like to go back to Fortree, but I’ve\n"
 	.string "grown to like this place, too.$"
 
 Route134_Text_1C30C6:: @ 81C30C6
-	.string "Even those POKéMON that can swim are\n"
+	.string "Even those Pokémon that can swim are\n"
 	.string "carried along by the rapid currents.$"
 
 Route134_Text_1C3110:: @ 81C3110
 	.string "Aiyeeeeh!$"
 
 Route134_Text_1C311A:: @ 81C311A
-	.string "I think POKéMON enjoy the fast-running\n"
+	.string "I think Pokémon enjoy the fast-running\n"
 	.string "currents around these parts.$"
 
 Route134_Text_1C315E:: @ 81C315E
-	.string "My LUVDISC are looking for a fun\n"
+	.string "My Luvdisc are looking for a fun\n"
 	.string "match. Will you join us?$"
 
 Route134_Text_1C3198:: @ 81C3198
@@ -3311,7 +3316,7 @@ Route134_Text_1C3198:: @ 81C3198
 
 Route134_Text_1C31A0:: @ 81C31A0
 	.string "There’s a collector who’s after the\n"
-	.string "SCALES of LUVDISC.$"
+	.string "scales of Luvdisc.$"
 
 Route134_Text_1C31D7:: @ 81C31D7
 	.string "Okeydokey! That’s enough rest, gang!\n"
@@ -3321,11 +3326,11 @@ Route134_Text_1C3213:: @ 81C3213
 	.string "Tuckered out again...$"
 
 Route134_Text_1C3229:: @ 81C3229
-	.string "My BIRD POKéMON get tired quickly after\n"
+	.string "My bird Pokémon get tired quickly after\n"
 	.string "a long flight...$"
 
 Route134_Text_1C3262:: @ 81C3262
-	.string "You’re a POKéMON TRAINER.\n"
+	.string "You’re a Pokémon Trainer.\n"
 	.string "No need for words. We battle now.$"
 
 Route134_Text_1C329E:: @ 81C329E
@@ -3345,6 +3350,6 @@ Route134_Text_1C335C:: @ 81C335C
 
 Route134_Text_1C336E:: @ 81C336E
 	.string "We will return for more training at\n"
-	.string "METEOR FALLS.\p"
+	.string "Meteor Falls.\p"
 	.string "If you’d like, you should go, too.\n"
 	.string "It will definitely toughen you up!$"

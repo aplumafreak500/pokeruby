@@ -1,23 +1,23 @@
 AbandonedShip_HiddenFloorCorridors_Text_198DC0:: @ 8198DC0
 	.string "The door is locked.\p"
-	.string "“RM. 1” is painted on the door.$"
+	.string "“Room 1” is painted on the door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_198DF4:: @ 8198DF4
 	.string "The door is locked.\p"
-	.string "“RM. 2” is painted on the door.$"
+	.string "“Room 2” is painted on the door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_198E28:: @ 8198E28
 	.string "The door is locked.\p"
-	.string "“RM. 4” is painted on the door.$"
+	.string "“Room 4” is painted on the door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_198E5C:: @ 8198E5C
 	.string "The door is locked.\p"
-	.string "“RM. 6” is painted on the door.$"
+	.string "“Room 6” is painted on the door.$"
 
 AbandonedShip_HiddenFloorCorridors_Text_198E90:: @ 8198E90
 	.string "{PLAYER} inserted and turned the\n"
-	.string "KEY.\p"
-	.string "The inserted KEY stuck fast, but the\n"
+	.string "key.\p"
+	.string "The inserted key stuck fast, but the\n"
 	.string "door opened.$"
 
 AbandonedShip_HiddenFloorRooms_Text_198EE2:: @ 8198EE2
@@ -29,7 +29,7 @@ UnknownString_8198F10: @ 8198F10
 
 UnknownString_8198F34: @ 8198F34
 	.string "There’s a small indent in the wall.\p"
-	.string "Use the SECRET POWER?$"
+	.string "Use Secret Power?$"
 
 UnknownString_8198F6E: @ 8198F6E
 	.string "Discovered a small cavern!$"

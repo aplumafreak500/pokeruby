@@ -80,7 +80,7 @@ MtChimney_Text_1B33EA:: @ 81B33EA
 	.string "They always mess with our plans!$"
 
 MtChimney_Text_1B3427:: @ 81B3427
-	.string "MeteoriteS pack amazing power!$"
+	.string "Meteorites pack amazing power!$"
 
 MtChimney_Text_1B3446:: @ 81B3446
 	.string "Go! Stomp Team Magma!\n"

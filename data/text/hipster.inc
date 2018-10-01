@@ -1,5 +1,5 @@
 gTextHipster_TheyCallMeTheHipster:: @ 81B0C5B
-	.string "Hey, yo! They call me the HIPSTER.\n"
+	.string "Hey, yo! They call me the Hipster.\n"
 	.string "I’ll teach you what’s hip and happening.$"
 
 gTextHipster_TaughtYouAlready:: @ 81B0CA7

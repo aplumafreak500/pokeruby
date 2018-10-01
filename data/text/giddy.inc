@@ -1,5 +1,5 @@
 gTextGiddy_Introduction:: @ 81B092A
-	.string "I’m GIDDY!\n"
+	.string "I’m Giddy!\n"
 	.string "I have a scintillating story for you!\p"
 	.string "Would you like to hear my story?$"
 

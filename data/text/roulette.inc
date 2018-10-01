@@ -5,7 +5,7 @@ UnknownString_81C40DF: @ 81C40DF
 
 gUnknown_081C411C:: @ 81C411C
 UnknownString_81C411C: @ 81C411C
-	.string "You don’t have enough COINS.$"
+	.string "You don’t have enough Coins.$"
 
 gUnknown_081C4139:: @ 81C4139
 UnknownString_81C4139: @ 81C4139
@@ -29,11 +29,11 @@ UnknownString_81C41AE: @ 81C41AE
 
 gUnknown_081C41BD:: @ 81C41BD
 UnknownString_81C41BD: @ 81C41BD
-	.string "You’ve won {STR_VAR_1} COINS!$"
+	.string "You’ve won {STR_VAR_1} Coins!$"
 
 gUnknown_081C41D2:: @ 81C41D2
 UnknownString_81C41D2: @ 81C41D2
-	.string "No COINS left...$"
+	.string "No Coins left...$"
 
 gUnknown_081C41E3:: @ 81C41E3
 UnknownString_81C41E3: @ 81C41E3
@@ -41,12 +41,12 @@ UnknownString_81C41E3: @ 81C41E3
 
 gUnknown_081C41F1:: @ 81C41F1
 UnknownString_81C41F1: @ 81C41F1
-	.string "The ROULETTE board will be cleared.$"
+	.string "The Roulette board will be cleared.$"
 
 UnknownString_81C4215: @ 81C4215
-	.string "You don’t have a COIN CASE.$"
+	.string "You don’t have a Coin Case.$"
 
 gUnknown_081C4231:: @ 81C4231
 UnknownString_81C4231: @ 81C4231
-	.string "Your COIN CASE is full!\n"
+	.string "Your Coin Case is full!\n"
 	.string "Coins can be exchanged for prizes.$"
