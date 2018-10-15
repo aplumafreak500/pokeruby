@@ -1,5 +1,4 @@
-# include $(DEVKITARM)/base_tools
-PREFIX=$(DEVKITARM)/bin/arm-none-eabi-
+include $(DEVKITARM)/base_tools
 include config.mk
 
 ifeq ($(OS),Windows_NT)
@@ -104,8 +103,10 @@ MAKEFLAGS += --no-print-directory
 # Create build subdirectories
 $(shell mkdir -p $(SUBDIRS))
 
+# Refresh the git hash
+@touch src/data/git.h
+
 all: $(ROM)
-	@touch src/data/git.h
 ifeq ($(COMPARE),1)
 	@$(SHA1SUM) $(BUILD_NAME).sha1
 endif
@@ -220,7 +221,7 @@ include override.mk
 %.gbapal: %.png
 	@echo $<
 	$(GBAGFX) $< $@ $(GFX_OPTS)
-%.lz: %     
+%.lz: %
 	@echo $<
 	@$(GBAGFX) $< $@ $(GFX_OPTS)
 %.rl: %
