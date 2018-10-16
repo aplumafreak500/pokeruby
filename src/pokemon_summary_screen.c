@@ -3028,6 +3028,35 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 				StringCopy(ptr, gOtherText_ObtainedInTrade);
 			}
 			break;
+		case VERSION_RED_BANK:
+		case VERSION_BLUE_BANK:
+		case VERSION_GREEN_BANK:
+		case VERSION_YELLOW_BANK:
+			if (locationMet == 255) {
+				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+				*ptr = CHAR_NEWLINE;
+				ptr++;
+				StringCopy(ptr, gOtherText_FatefulEncounter);
+			}
+			else {
+				if (levelMet==0) {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation1LocationTable[locationMet]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation1LocationTable[locationMet]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			break;
 		default:
 			*ptr = CHAR_NEWLINE;
 			ptr++;
