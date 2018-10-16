@@ -663,3 +663,265 @@ const u8 *const Generation4LocationTable3[] = {
 	MapName_EventSite,
 	MapName_Concert
 };
+
+// https://bulbapedia.bulbagarden.net/wiki/List_of_locations_by_index_number_(Generation_I)
+const u8 *const Generation1LocationTable[] = {
+	gMapName_PalletTown,
+	gMapName_ViridianCity,
+	gMapName_PewterCity,
+	gMapName_CeruleanCity,
+	gMapName_LavenderTown,
+	gMapName_VermilionCity,
+	gMapName_CeladonCity,
+	gMapName_FuchsiaCity,
+	gMapName_CinnabarIsland,
+	gMapName_IndigoPlateau,
+	gMapName_SaffronCity,
+	MapName_MysteryZone, // unused fly location
+	gMapName_Route1,
+	gMapName_Route2,
+	gMapName_Route3,
+	gMapName_Route4,
+	gMapName_Route5,
+	gMapName_Route6,
+	gMapName_Route7,
+	gMapName_Route8,
+	gMapName_Route9,
+	gMapName_Route10,
+	gMapName_Route11,
+	gMapName_Route12,
+	gMapName_Route13,
+	gMapName_Route14,
+	gMapName_Route15,
+	gMapName_Route16,
+	gMapName_Route17,
+	gMapName_Route18,
+	gMapName_Route19,
+	gMapName_Route20,
+	gMapName_Route21,
+	gMapName_Route22,
+	gMapName_Route23,
+	gMapName_Route24,
+	gMapName_Route25,
+	gMapName_PalletTown, // Red's house
+	gMapName_PalletTown,
+	gMapName_PalletTown, // Blue's house
+	gMapName_PalletTown, // Oak's lab
+	gMapName_ViridianCity,
+	gMapName_ViridianCity,
+	MapName_SinnohTrainersSchool, // viridian
+	gMapName_ViridianCity,
+	gMapName_ViridianCity,
+	gMapName_DiglettsCave,
+	gMapName_Route2,
+	gMapName_Route2,
+	gMapName_Route2,
+	gMapName_Route2,
+	gMapName_Route2,
+	gMapName_ViridianForest,
+	gMapName_PewterCity,
+	gMapName_PewterCity,
+	gMapName_PewterCity,
+	gMapName_PewterCity,
+	gMapName_PewterCity,
+	gMapName_MtMoon,
+	gMapName_MtMoon,
+	gMapName_MtMoon,
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_Route4,
+	gMapName_CeruleanCity, // plays different music
+	gMapName_Route5,
+	NULL, // underground path TODO
+	gMapName_Route5,
+	gMapName_Route6,
+	NULL, // underground path TODO
+	NULL, // underground path TODO
+	gMapName_Route7,
+	NULL, // underground path TODO
+	NULL, // underground path TODO
+	gMapName_Route8,
+	NULL, // underground path TODO
+	gMapName_Route10, // TODO: this or Route 9?
+	gMapName_RockTunnel,
+	gMapName_PowerPlant,
+	gMapName_Route11, // TODO: this or Route 12?
+	gMapName_Route12, // TODO: this or Route 13?
+	NULL, // sea cottage
+	gMapName_VermilionCity,
+	gMapName_VermilionCity,
+	gMapName_VermilionCity,
+	gMapName_VermilionCity,
+	gMapName_VermilionCity,
+	gMapName_VermilionCity,
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_VermilionCity, // TODO: ss anne
+	gMapName_KantoVictoryRoad,
+	gMapName_KantoVictoryRoad,
+	gMapName_KantoVictoryRoad,
+	gMapName_KantoVictoryRoad,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	NULL, // underground path TODO
+	gMapName_PalletTown, // Blue's house
+	NULL, // underground path TODO
+	gMapName_CeladonCity, // dpt store
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity, // mansion
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity, // game corner
+	gMapName_CeladonCity, // dpt store 5f
+	gMapName_CeladonCity, // game corner prize
+	gMapName_CeladonCity, // resturant
+	gMapName_CeladonCity,
+	gMapName_CeladonCity, // hotel
+	gMapName_LavenderTown,
+	gMapName_LavenderTown, // TODO: pokemon tower
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_LavenderTown, // mt fuji
+	gMapName_LavenderTown,
+	gMapName_LavenderTown,
+	gMapName_FuchsiaCity,
+	gMapName_FuchsiaCity,
+	gMapName_FuchsiaCity,
+	gMapName_FuchsiaCity,
+	gMapName_FuchsiaCity, // safari gate
+	gMapName_FuchsiaCity,
+	gMapName_FuchsiaCity,
+	gMapName_SeafoamIslands,
+	gMapName_SeafoamIslands,
+	gMapName_SeafoamIslands,
+	gMapName_SeafoamIslands,
+	gMapName_VermilionCity,
+	gMapName_FuchsiaCity,
+	gMapName_CinnabarIsland, // pokemon mansion TODO
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_IndigoPlateau,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity, // dojo
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity, // sliph co TODO
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_Route15,
+	gMapName_Route15,
+	gMapName_Route16,
+	gMapName_Route16,
+	gMapName_Route16,
+	gMapName_Route12,
+	gMapName_Route18,
+	gMapName_Route18,
+	gMapName_SeafoamIslands,
+	gMapName_Route22,
+	gMapName_KantoVictoryRoad,
+	gMapName_Route12,
+	gMapName_VermilionCity,
+	gMapName_DiglettsCave,
+	gMapName_KantoVictoryRoad,
+	gMapName_CeladonCity, // rocket hideout
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_CeladonCity,
+	gMapName_SaffronCity, // sliph co TODO
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_CinnabarIsland, // pokemon mansion TODO
+	gMapName_CinnabarIsland,
+	gMapName_CinnabarIsland,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_KantoSafariZone,
+	gMapName_CeruleanCity, // unknown/mewtwo dungeon
+	gMapName_CeruleanCity,
+	gMapName_CeruleanCity,
+	gMapName_LavenderTown, // name rater
+	gMapName_CeruleanCity,
+	gMapName_RockTunnel,
+	gMapName_RockTunnel,
+	gMapName_SaffronCity, // sliph co TODO
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	gMapName_SaffronCity,
+	NULL, // unused
+	NULL, // unused
+	NULL, // cable club
+	NULL, // cable club
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	gMapName_IndigoPlateau,
+	NULL, // pkmn yellow beach house
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	NULL, // unused
+	MapName_Dashes
+};
+
+// TODO: gen 2
+// TODO: gen 5, 6, 7
+
