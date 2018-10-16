@@ -250,9 +250,9 @@ const u8 MapName_Cynthia[] = _("Cynthia");
 const u8 MapName_MrPokemon[] = _("Mr. Pokémon");
 const u8 MapName_Primo[] = _("Primo");
 
-const u8 MapName_﻿LovelyPlace[] = _("Lovely place");
-const u8 MapName_FarawayPlace[] = _("Faraway place");
+const u8 MapName_LovelyPlace[] = _("Lovely place");
 const u8 MapName_Ranger[] = _("Pokémon Ranger");
+const u8 MapName_FarawayPlace[] = _("Faraway place");
 const u8 MapName_Movie[] = _("Pokémon Movie");
 const u8 MapName_Movie06[] = _("Pokémon Movie 06");
 const u8 MapName_Movie07[] = _("Pokémon Movie 07");
@@ -585,7 +585,7 @@ const u8 *const Generation4LocationTable2[] = {
 };
 
 const u8 *const Generation4LocationTable3[] = {
-	MapName_﻿LovelyPlace,
+	MapName_LovelyPlace,
 	MapName_Ranger,
 	MapName_FarawayPlace,
 	MapName_Movie,
