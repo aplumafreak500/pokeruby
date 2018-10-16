@@ -1856,4 +1856,4 @@ const u8 gSystemText_Saving[] = _("SPEICHERVORGANG...\nGERÄT NICHT AUSSCHALTEN!
 
 #endif
 
-const u8 gOtherText_MetDistantLand[] = _("met in a distant land.");
+const u8 gOtherText_MetDistantLand[] = _("Orre");
