@@ -104,7 +104,7 @@ MAKEFLAGS += --no-print-directory
 $(shell mkdir -p $(SUBDIRS))
 
 # Refresh the git hash
-@touch src/data/git.h
+$(shell touch src/data/git.h)
 
 all: $(ROM)
 ifeq ($(COMPARE),1)
