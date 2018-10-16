@@ -918,8 +918,8 @@ const u8 *const Generation1LocationTable[] = {
 	NULL, // unused
 	NULL, // unused
 	NULL, // unused
-	NULL, // unused
-	MapName_Dashes
+	NULL, // TODO: generation 3 in-game trade
+	MapName_Dashes // TODO: generation 3 fateful encounter
 };
 
 // TODO: gen 2

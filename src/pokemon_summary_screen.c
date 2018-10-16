@@ -2806,8 +2806,20 @@ bool8 PokemonSummaryScreen_CheckOT(struct Pokemon *mon)
     return FALSE;
 }
 
+extern const u8 *const Generation1LocationTable[];
+// extern const u8 *const Generation2LocationTable[];
 extern const u8 *const Generation4LocationTable[];
 extern const u8 *const Generation4LocationTable2[];
+extern const u8 *const Generation4LocationTable3[];
+//extern const u8 *const Generation5LocationTable[];
+//extern const u8 *const Generation5LocationTable2[];
+//extern const u8 *const Generation5LocationTable3[];
+//extern const u8 *const Generation6LocationTable[];
+//extern const u8 *const Generation6LocationTable2[];
+//extern const u8 *const Generation6LocationTable3[];
+//extern const u8 *const Generation7LocationTable[];
+//extern const u8 *const Generation7LocationTable2[];
+//extern const u8 *const Generation7LocationTable3[];
 extern const u8 gOtherText_EggStringVar1[];
 
 static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 left, u8 top)
