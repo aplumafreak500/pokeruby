@@ -236,6 +236,98 @@ const u8 MapName_EmbeddedTower[] = _("Embedded Tower");
 const u8 MapName_Pokewalker[] = _("Pokéwalker");
 const u8 MapName_CliffEdgeGate[] = _("Cliff Edge Gate");
 
+const u8 MapName_DayCare[] = _("Day-Care Couple");
+const u8 MapName_Trade[] = _("Link trade");
+const u8 MapName_Kanto[] = _("Kanto");
+const u8 MapName_Johto[] = _("Johto");
+const u8 MapName_Hoenn[] = _("Hoenn");
+const u8 MapName_Sinnoh[] = _("Sinnoh");
+const u8 MapName_Dashes[] = _("----------");
+const u8 MapName_DistantLand[] = _("Distant land");
+const u8 MapName_TravelingMan[] = _("Traveling Man");
+const u8 MapName_Riley[] = _("Riley");
+const u8 MapName_Cynthia[] = _("Cynthia");
+const u8 MapName_MrPokemon[] = _("Mr. Pokémon");
+const u8 MapName_Primo[] = _("Primo");
+
+const u8 MapName_﻿LovelyPlace[] = _("Lovely place");
+const u8 MapName_FarawayPlace[] = _("Faraway place");
+const u8 MapName_Ranger[] = _("Pokémon Ranger");
+const u8 MapName_Movie[] = _("Pokémon Movie");
+const u8 MapName_Movie06[] = _("Pokémon Movie 06");
+const u8 MapName_Movie07[] = _("Pokémon Movie 07");
+const u8 MapName_Movie08[] = _("Pokémon Movie 08");
+const u8 MapName_Movie09[] = _("Pokémon Movie 09");
+const u8 MapName_Movie10[] = _("Pokémon Movie 10");
+const u8 MapName_Movie11[] = _("Pokémon Movie 11");
+const u8 MapName_Movie12[] = _("Pokémon Movie 12");
+const u8 MapName_Movie13[] = _("Pokémon Movie 13");
+const u8 MapName_Movie14[] = _("Pokémon Movie 14");
+const u8 MapName_Movie15[] = _("Pokémon Movie 15");
+const u8 MapName_Movie16[] = _("Pokémon Movie 16");
+const u8 MapName_Cartoon[] = _("Pokémon Cartoon");
+const u8 MapName_Spaceworld[] = _("Spaceworld");
+const u8 MapName_Spaceworld06[] = _("Spaceworld 06");
+const u8 MapName_Spaceworld07[] = _("Spaceworld 07");
+const u8 MapName_Spaceworld08[] = _("Spaceworld 08");
+const u8 MapName_Spaceworld09[] = _("Spaceworld 09");
+const u8 MapName_Spaceworld10[] = _("Spaceworld 10");
+const u8 MapName_Spaceworld11[] = _("Spaceworld 11");
+const u8 MapName_Spaceworld12[] = _("Spaceworld 12");
+const u8 MapName_Spaceworld13[] = _("Spaceworld 13");
+const u8 MapName_Spaceworld14[] = _("Spaceworld 14");
+const u8 MapName_Spaceworld15[] = _("Spaceworld 15");
+const u8 MapName_Spaceworld16[] = _("Spaceworld 16");
+const u8 MapName_Festa[] = _("Pokémon Festa");
+const u8 MapName_Festa06[] = _("Pokémon Festa 06");
+const u8 MapName_Festa07[] = _("Pokémon Festa 07");
+const u8 MapName_Festa08[] = _("Pokémon Festa 08");
+const u8 MapName_Festa09[] = _("Pokémon Festa 09");
+const u8 MapName_Festa10[] = _("Pokémon Festa 10");
+const u8 MapName_Festa11[] = _("Pokémon Festa 11");
+const u8 MapName_Festa12[] = _("Pokémon Festa 12");
+const u8 MapName_Festa13[] = _("Pokémon Festa 13");
+const u8 MapName_Festa14[] = _("Pokémon Festa 14");
+const u8 MapName_Festa15[] = _("Pokémon Festa 15");
+const u8 MapName_Festa16[] = _("Pokémon Festa 16");
+const u8 MapName_Pokepark[] = _("Poképark");
+const u8 MapName_Pokepark06[] = _("Poképark 06");
+const u8 MapName_Pokepark07[] = _("Poképark 07");
+const u8 MapName_Pokepark08[] = _("Poképark 08");
+const u8 MapName_Pokepark09[] = _("Poképark 09");
+const u8 MapName_Pokepark10[] = _("Poképark 10");
+const u8 MapName_Pokepark11[] = _("Poképark 11");
+const u8 MapName_Pokepark12[] = _("Poképark 12");
+const u8 MapName_Pokepark13[] = _("Poképark 13");
+const u8 MapName_Pokepark14[] = _("Poképark 14");
+const u8 MapName_Pokepark15[] = _("Poképark 15");
+const u8 MapName_Pokepark16[] = _("Poképark 16");
+const u8 MapName_PokemonCenter[] = _("Pokémon Center");
+const u8 MapName_PokemonCenterTokyo[] = _("PC Tokyo");
+const u8 MapName_PokemonCenterOsaka[] = _("PC Osaka");
+const u8 MapName_PokemonCenterFukuoka[] = _("PC Fukuoka");
+const u8 MapName_PokemonCenterNagoya[] = _("PC Nagoya");
+const u8 MapName_PokemonCenterSapporo[] = _("PC Sapporo");
+const u8 MapName_PokemonCenterYokohama[] = _("PC Yokohama");
+const u8 MapName_NintendoWorld[] = _("Nintendo World");
+const u8 MapName_Event[] = _("Pokémon Event");
+const u8 MapName_Event06[] = _("Pokémon Event 06");
+const u8 MapName_Event07[] = _("Pokémon Event 07");
+const u8 MapName_Event08[] = _("Pokémon Event 08");
+const u8 MapName_Event09[] = _("Pokémon Event 09");
+const u8 MapName_Event10[] = _("Pokémon Event 10");
+const u8 MapName_Event11[] = _("Pokémon Event 11");
+const u8 MapName_Event12[] = _("Pokémon Event 12");
+const u8 MapName_Event13[] = _("Pokémon Event 13");
+const u8 MapName_Event14[] = _("Pokémon Event 14");
+const u8 MapName_Event15[] = _("Pokémon Event 15");
+const u8 MapName_Event16[] = _("Pokémon Event 16");
+const u8 MapName_WifiEvent[] = _("Wi-Fi Event");
+const u8 MapName_WifiGift[] = _("Wi-Fi Gift");
+const u8 MapName_FanClub[] = _("Pokémon Fan Club");
+const u8 MapName_EventSite[] = _("Event Site");
+const u8 MapName_Concert[] = _("Concert Event");
+
 const u8 *const Generation4LocationTable[] = {
 	MapName_MysteryZone,
 	MapName_Twinleaf,
@@ -471,5 +563,103 @@ const u8 *const Generation4LocationTable[] = {
 	MapName_SinjohRuins,
 	MapName_EmbeddedTower,
 	MapName_Pokewalker,
-	MapName_CliffEdgeGate,
+	MapName_CliffEdgeGate
+};
+
+const u8 *const Generation4LocationTable2[] = {
+	MapName_DayCare,
+	MapName_Trade,
+	MapName_Trade,
+	MapName_Kanto,
+	MapName_Johto,
+	MapName_Hoenn,
+	MapName_Sinnoh,
+	MapName_Dashes,
+	MapName_DistantLand,
+	MapName_TravelingMan,
+	MapName_Riley,
+	MapName_Cynthia,
+	MapName_MysteryZone,
+	MapName_MrPokemon,
+	MapName_Primo
+};
+
+const u8 *const Generation4LocationTable3[] = {
+	MapName_﻿LovelyPlace,
+	MapName_Ranger,
+	MapName_FarawayPlace,
+	MapName_Movie,
+	MapName_Movie06,
+	MapName_Movie07,
+	MapName_Movie08,
+	MapName_Movie09,
+	MapName_Movie10,
+	MapName_Movie11,
+	MapName_Movie12,
+	MapName_Movie13,
+	MapName_Movie14,
+	MapName_Movie15,
+	MapName_Movie16,
+	MapName_Cartoon,
+	MapName_Spaceworld,
+	MapName_Spaceworld06,
+	MapName_Spaceworld07,
+	MapName_Spaceworld08,
+	MapName_Spaceworld09,
+	MapName_Spaceworld10,
+	MapName_Spaceworld11,
+	MapName_Spaceworld12,
+	MapName_Spaceworld13,
+	MapName_Spaceworld14,
+	MapName_Spaceworld15,
+	MapName_Spaceworld16,
+	MapName_Festa,
+	MapName_Festa06,
+	MapName_Festa07,
+	MapName_Festa08,
+	MapName_Festa09,
+	MapName_Festa10,
+	MapName_Festa11,
+	MapName_Festa12,
+	MapName_Festa13,
+	MapName_Festa14,
+	MapName_Festa15,
+	MapName_Festa16,
+	MapName_Pokepark,
+	MapName_Pokepark06,
+	MapName_Pokepark07,
+	MapName_Pokepark08,
+	MapName_Pokepark09,
+	MapName_Pokepark10,
+	MapName_Pokepark11,
+	MapName_Pokepark12,
+	MapName_Pokepark13,
+	MapName_Pokepark14,
+	MapName_Pokepark15,
+	MapName_Pokepark16,
+	MapName_PokemonCenter,
+	MapName_PokemonCenterTokyo,
+	MapName_PokemonCenterOsaka,
+	MapName_PokemonCenterFukuoka,
+	MapName_PokemonCenterNagoya,
+	MapName_PokemonCenterSapporo,
+	MapName_PokemonCenterYokohama,
+	MapName_NintendoWorld,
+	MapName_Event,
+	MapName_Event06,
+	MapName_Event07,
+	MapName_Event08,
+	MapName_Event09,
+	MapName_Event10,
+	MapName_Event11,
+	MapName_Event12,
+	MapName_Event13,
+	MapName_Event14,
+	MapName_Event15,
+	MapName_Event16,
+	MapName_WifiEvent,
+	MapName_WifiGift,
+	MapName_FanClub,
+	MapName_EventSite,
+	MapName_Concert
 };

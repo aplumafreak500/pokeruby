@@ -2806,6 +2806,10 @@ bool8 PokemonSummaryScreen_CheckOT(struct Pokemon *mon)
     return FALSE;
 }
 
+extern const u8 *const Generation4LocationTable[];
+extern const u8 *const Generation4LocationTable2[];
+extern const u8 gOtherText_EggStringVar1[];
+
 static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 left, u8 top)
 {
     u8 locationMet;
@@ -2819,167 +2823,206 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
     
     locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
 
-    switch (gameMet) {
-    	case VERSION_RUBY:
-    	case VERSION_SAPPHIRE:
-    	case VERSION_EMERALD:
-	    if (locationMet == 253)
-	    {
-		Menu_PrintText(gOtherText_EggHotSprings, left, top);
-		break;
-	    }
-	    if (locationMet == 255)
-	    {
-		// Eggs received from Pokemon Box.
-		Menu_PrintText(gOtherText_EggNicePlace, left, top);
-		break;
-	    }
-	    Menu_PrintText(gOtherText_EggDayCare, left, top);
-	    break;
-	default:
-	    Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
-            break;
-    }
-    
-}
-
-extern const u8 *const Generation4LocationTable[];
-
-static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, u8 top)
-{
-    u8 locationMet;
-    u8 gameMet;
-    u8 *ptr = gStringVar4;
-    u8 nature = GetNature(mon);
-    u8 *orreMetLocationString; //receives the string pointer returned from DetermineOrreMetLocation
-    u8 levelMet;
-    u16 species; //needed to check for starter Eeveelutions and Plusle, which are special cases
-
-#if ENGLISH
-    ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
-    if (nature != NATURE_BOLD && nature != NATURE_GENTLE)
-        ptr = StringCopy(ptr, gOtherText_Terminator4);
-    ptr = StringCopy(ptr, gOtherText_Nature);
-#elif GERMAN
-    ptr = StringCopy(gStringVar4, gOtherText_Nature);
-    ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
-    ptr = StringCopy(ptr, gOtherText_Terminator4);
-#endif
-    locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
-    gameMet = GetMonData(mon, MON_DATA_MET_GAME);
-    levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
-    switch (gameMet) {
-	case VERSION_GC:
-		//Colosseum and XD Location Handling
-		if (levelMet==0) {
-			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
-		}
-		else {
-			ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-		}
-		*ptr = CHAR_NEWLINE;
-		ptr++;
-		orreMetLocationString = DetermineOrreMetLocation(mon);
-		species = GetMonData(mon, MON_DATA_SPECIES);
-		if((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE)
-		{
-	    	 	GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
-			StringCopy(ptr, orreMetLocationString);
-		}
-		else
-		{
-			if (levelMet==0) {
-				ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-				StringCopy(ptr, gOtherText_Egg2);
+	switch (gameMet) {
+		case VERSION_RUBY:
+		case VERSION_SAPPHIRE:
+		case VERSION_EMERALD:
+		case VERSION_FIRERED:
+		case VERSION_LEAFGREEN:
+		case VERSION_BLUE_GBA:
+			if (locationMet == 253) {
+				Menu_PrintText(gOtherText_EggHotSprings, left, top);
+			}
+			else if (locationMet == 255) {
+				// Eggs received from Pokemon Box.
+				Menu_PrintText(gOtherText_EggNicePlace, left, top);
 			}
 			else {
-				ptr = SummaryScreen_CopyColoredString(ptr, orreMetLocationString, 14);
-				StringCopy(ptr, gOtherText_Met2);
+				Menu_PrintText(gOtherText_EggDayCare, left, top);
 			}
+			break;
+		case VERSION_DIAMOND:
+		case VERSION_PEARL:
+		case VERSION_PLATINUM:
+		case VERSION_HEARTGOLD:
+		case VERSION_SOULSILVER:
+		case VERSION_CRYSTAL_DS:
+			if (locationMet == 2000) {
+				Menu_PrintText(gOtherText_EggDayCare, left, top);
+			}
+			else if (locationMet > 2002 && locationMet <= 2014) {
+				SummaryScreen_CopyColoredString(gStringVar1, Generation4LocationTable2[locationMet - 2000], 14);
+				Menu_PrintText(gOtherText_EggStringVar1, left, top);
+			}
+			else { // 2001 and 2002
+				Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
+			}
+			break;
+		default:
+			Menu_PrintText(gOtherText_EggObtainedInTrade, left, top);
+			break;
 		}
-		break;
-	case VERSION_RUBY:
-	case VERSION_SAPPHIRE:
-	case VERSION_EMERALD:
-	case VERSION_FIRERED:
-	case VERSION_LEAFGREEN:
-	case VERSION_BLUE_GBA:
-            if (locationMet == 0xFF)
-            {
-                ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-                *ptr = CHAR_NEWLINE;
-                ptr++;
+}
 
-                StringCopy(ptr, gOtherText_FatefulEncounter);
-            }
-            else if (locationMet >= 214)
-            {
-                *ptr = CHAR_NEWLINE;
-                ptr++;
+static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, u8 top) {
+	u8 locationMet;
+	u8 gameMet;
+	u8 *ptr = gStringVar4;
+	u8 nature = GetNature(mon);
+	u8 *orreMetLocationString; //receives the string pointer returned from DetermineOrreMetLocation
+	u8 levelMet;
+	u16 species; //needed to check for starter Eeveelutions and Plusle, which are special cases
 
-                StringCopy(ptr, gOtherText_ObtainedInTrade);
-            }
-            else
-            {
-		if (levelMet==0) {
-		    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
-		    	*ptr = CHAR_NEWLINE;
-		    	ptr++;
-			CopyLocationName(gStringVar1, locationMet);
-			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-			StringCopy(ptr, gOtherText_Egg2);
-		}
-		else {
-		        ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-		        *ptr = CHAR_NEWLINE;
-		        ptr++;
-		        CopyLocationName(gStringVar1, locationMet);
-		        ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-		        StringCopy(ptr, gOtherText_Met2);
-                }
-            }
-            break;
-        case VERSION_DIAMOND:
-        case VERSION_PEARL:
-        case VERSION_PLATINUM:
-        case VERSION_HEARTGOLD:
-        case VERSION_SOULSILVER:
-        case VERSION_CRYSTAL_DS:
-            if (locationMet >= 234)
-            {
-                *ptr = CHAR_NEWLINE;
-                ptr++;
-
-                StringCopy(ptr, gOtherText_ObtainedInTrade);
-            }
-            else
-            {
-		if (levelMet==0) {
-		    	ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
-		    	*ptr = CHAR_NEWLINE;
-		    	ptr++;
-			StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
-			ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-			StringCopy(ptr, gOtherText_Egg2);
-		}
-		else {
-		        ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
-		        *ptr = CHAR_NEWLINE;
-		        ptr++;
-		        StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
-		        ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
-		        StringCopy(ptr, gOtherText_Met2);
-                }
-            }
-            break;
-	default:
-		*ptr = CHAR_NEWLINE;
-		ptr++;
-
-		StringCopy(ptr, gOtherText_ObtainedInTrade);
-    }
-
-    Menu_PrintText(gStringVar4, left++, top++);
+#if ENGLISH
+	ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
+	if (nature != NATURE_BOLD && nature != NATURE_GENTLE)
+	ptr = StringCopy(ptr, gOtherText_Terminator4);
+	ptr = StringCopy(ptr, gOtherText_Nature);
+#elif GERMAN
+	ptr = StringCopy(gStringVar4, gOtherText_Nature);
+	ptr = SummaryScreen_CopyColoredString(ptr, gNatureNames[nature], 14);
+	ptr = StringCopy(ptr, gOtherText_Terminator4);
+#endif
+	locationMet = GetMonData(mon, MON_DATA_MET_LOCATION);
+	gameMet = GetMonData(mon, MON_DATA_MET_GAME);
+	levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
+	switch (gameMet) {
+		case VERSION_GC:
+			//Colosseum and XD Location Handling
+			if (levelMet==0) {
+				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+			}
+			else {
+				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+			}
+			*ptr = CHAR_NEWLINE;
+			ptr++;
+			orreMetLocationString = DetermineOrreMetLocation(mon);
+			species = GetMonData(mon, MON_DATA_SPECIES);
+			if ((species >= SPECIES_EEVEE && species <= SPECIES_FLAREON) || species == SPECIES_ESPEON || species == SPECIES_UMBREON || species == SPECIES_PLUSLE) {
+				GetMonData(mon, MON_DATA_OT_NAME, gStringVar2); //used for Eeveelution strings and Duking's Plusle
+				StringCopy(ptr, orreMetLocationString);
+			}
+			else {
+				if (levelMet==0) {
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = SummaryScreen_CopyColoredString(ptr, orreMetLocationString, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			break;
+		case VERSION_RUBY:
+		case VERSION_SAPPHIRE:
+		case VERSION_EMERALD:
+		case VERSION_FIRERED:
+		case VERSION_LEAFGREEN:
+		case VERSION_BLUE_GBA:
+			if (locationMet == 255) {
+				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+				*ptr = CHAR_NEWLINE;
+				ptr++;
+				StringCopy(ptr, gOtherText_FatefulEncounter);
+			}
+			else if (locationMet > 214) {
+				*ptr = CHAR_NEWLINE;
+				ptr++;
+				StringCopy(ptr, gOtherText_ObtainedInTrade);
+			}
+			else {
+				if (levelMet==0) {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					CopyLocationName(gStringVar1, locationMet);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					CopyLocationName(gStringVar1, locationMet);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			break;
+		case VERSION_DIAMOND:
+		case VERSION_PEARL:
+		case VERSION_PLATINUM:
+		case VERSION_HEARTGOLD:
+		case VERSION_SOULSILVER:
+		case VERSION_CRYSTAL_DS:
+			if (locationMet < 235) {
+				if (levelMet==0) {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable[locationMet]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			else if (locationMet > 2002 && locationMet < 2015) {
+				if (levelMet==0) {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable2[locationMet - 2000]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable2[locationMet - 2000]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			else if (locationMet >= 3000 && locationMet < 3077) {
+				if (levelMet==0) {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable3[locationMet - 3000]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Egg2);
+				}
+				else {
+					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
+					*ptr = CHAR_NEWLINE;
+					ptr++;
+					StringCopy(gStringVar1, Generation4LocationTable3[locationMet - 3000]);
+					ptr = SummaryScreen_CopyColoredString(ptr, gStringVar1, 14);
+					StringCopy(ptr, gOtherText_Met2);
+				}
+			}
+			else {
+				*ptr = CHAR_NEWLINE;
+				ptr++;
+				StringCopy(ptr, gOtherText_ObtainedInTrade);
+			}
+			break;
+		default:
+			*ptr = CHAR_NEWLINE;
+			ptr++;
+			StringCopy(ptr, gOtherText_ObtainedInTrade);
+			break;
+	}
+Menu_PrintText(gStringVar4, left++, top++);
 }
 
 static void sub_80A0958(struct Pokemon *mon)

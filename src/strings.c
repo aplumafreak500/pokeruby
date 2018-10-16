@@ -1857,3 +1857,6 @@ const u8 gSystemText_Saving[] = _("SPEICHERVORGANG...\nGERÄT NICHT AUSSCHALTEN!
 #endif
 
 const u8 gOtherText_MetDistantLand[] = _("Orre");
+
+const u8 gOtherText_EggStringVar1[] = _("A peculiar Pokémon Egg\nrecieved from {STR_VAR_1}.$");
+
