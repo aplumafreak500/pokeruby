@@ -28,7 +28,7 @@
 #endif
 
 #if GERMAN || ITALIAN || SPANISH || FRENCH || DUTCH || PAL
-#define EUROPEAN
+#define EUROPEAN 1
 #endif
 
 #if (ENGLISH && REVISION >= 2) || (EUROPEAN && REVISION >= 1)
