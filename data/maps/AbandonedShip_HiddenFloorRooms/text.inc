@@ -21,11 +21,11 @@ AbandonedShip_HiddenFloorCorridors_Text_198E90:: @ 8198E90
 	.string "door opened.$"
 
 AbandonedShip_HiddenFloorRooms_Text_198EE2:: @ 8198EE2
-	.string "It’s bright and shiny!\n"
-	.string "But it’s just trash...$"
+	.string "It's bright and shiny!\n"
+	.string "But it's just trash...$"
 
 UnknownString_8198F10: @ 8198F10
-	.string "There’s a small indent in the wall.$"
+	.string "There's a small indent in the wall.$"
 
 UnknownString_8198F34: @ 8198F34
 	.string "There’s a small indent in the wall.\p"
