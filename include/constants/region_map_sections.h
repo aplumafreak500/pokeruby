@@ -215,6 +215,6 @@
 #define MAPSEC_NAVEL_ROCK2           0xD3
 #define MAPSEC_TRAINER_HILL          0xD4
 #define MAPSEC_BATTLE_FRONTIER       0xD5
-#define MAPSEC_NOTHING               0xD6
+#define MAPSEC_NONE                  0xD6
 
 #endif // GUARD_REGIONMAPSEC_H
