@@ -144,7 +144,7 @@ tidy:
 $(ROM): %.gba: %.elf
 	@echo Output: $@
 	@$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
-	$(GBAFIX) $@ -p -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
+	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
 
 $(ELF): $(LD_SCRIPT) $(ALL_OBJECTS)
 	@echo Linking $@
