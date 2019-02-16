@@ -121,12 +121,12 @@ extern u8 GetBattlerPosition(u8);
 extern void LoadPlayerTrainerBankSprite();
 extern void sub_80313A0(struct Sprite *);
 extern void sub_802D204(void);
-extern u8 sub_8079E90();
+extern u8 GetBattlerSubpriority();
 extern void sub_802DEAC(void);
 extern void sub_80312F0(struct Sprite *);
 extern u8 GetBattlerSpriteCoord();
 extern u8 sub_8077F68();
-extern u8 sub_8046400();
+extern u8 StartSendOutMonAnimation();
 extern void sub_802D798(void);
 extern void bx_0802E404(void);
 extern u8 gActiveBattler;
@@ -2515,7 +2515,7 @@ void sub_802F934(u8 bank, u8 b)
       &gUnknown_02024E8C,
       GetBattlerSpriteCoord(bank, 2),
       sub_8077F68(bank),
-      sub_8079E90(bank));
+      GetBattlerSubpriority(bank));
     gSprites[gUnknown_0300434C[bank]].data[1] = gBankSpriteIds[bank];
     gSprites[gBankSpriteIds[bank]].data[0] = bank;
     gSprites[gBankSpriteIds[bank]].data[2] = species;
@@ -2523,7 +2523,7 @@ void sub_802F934(u8 bank, u8 b)
     StartSpriteAnim(&gSprites[gBankSpriteIds[bank]], gBattleMonForms[bank]);
     gSprites[gBankSpriteIds[bank]].invisible = TRUE;
     gSprites[gBankSpriteIds[bank]].callback = SpriteCallbackDummy;
-    gSprites[gUnknown_0300434C[bank]].data[0] = sub_8046400(0, 0xFF);
+    gSprites[gUnknown_0300434C[bank]].data[0] = StartSendOutMonAnimation(0, 0xFF);
 }
 
 void PlayerHandleReturnPokeToBall(void)
@@ -2582,7 +2582,7 @@ void PlayerHandleTrainerThrow(void)
       &gUnknown_02024E8C,
       r7 + 80,
       (8 - gTrainerBackPicCoords[gSaveBlock2.playerGender].coords) * 4 + 80,
-      sub_8079E90(gActiveBattler));
+      GetBattlerSubpriority(gActiveBattler));
     gSprites[gBankSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
     gSprites[gBankSpriteIds[gActiveBattler]].pos2.x = 240;
     gSprites[gBankSpriteIds[gActiveBattler]].data[0] = -2;

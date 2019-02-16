@@ -10,6 +10,7 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/weather.h"
+#include "constants/heal_locations.h"
 #include "constants/vars.h"
 	.include "include/macros.inc"
 	.include "include/macros/event.inc"
@@ -3357,7 +3358,7 @@ SecretBase_RedCave1_Text_1A1CB2:: @ 81A1CB2
 	.string "Oh, hast du Lust auf einen Kampf?$"
 
 SecretBase_RedCave1_Text_1A1D48:: @ 81A1D48
-	.string "Okay, los geht’s!$"
+	.string "Okay, los geht's!$"
 
 SecretBase_RedCave1_Text_1A1D59:: @ 81A1D59
 	.string "Oh...\n"
@@ -3447,7 +3448,7 @@ SecretBase_RedCave1_Text_1A2230:: @ 81A2230
 	.string "Wenn du bereit bist, sag Bescheid.$"
 
 UnknownString_81A2254:: @ 81A2254
-	.string "Ooch! Ich hab’s vergeigt!\n"
+	.string "Ooch! Ich hab's vergeigt!\n"
 	.string "Aber es hat sehr viel Spaß gemacht!$"
 
 SecretBase_RedCave1_Text_1A2280:: @ 81A2280

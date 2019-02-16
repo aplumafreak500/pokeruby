@@ -88,10 +88,10 @@ extern void oamt_add_pos2_onto_pos1();
 extern void StartAnimLinearTranslation(struct Sprite *);
 extern void sub_8030E38(struct Sprite *);
 extern void StoreSpriteCallbackInData();
-extern u8 sub_8046400();
+extern u8 StartSendOutMonAnimation();
 extern u8 GetBattlerSpriteCoord();
 extern u8 sub_8077F68();
-extern u8 sub_8079E90();
+extern u8 GetBattlerSubpriority();
 extern void sub_80312F0(struct Sprite *);
 extern bool8 move_anim_start_t3();
 
@@ -1510,7 +1510,7 @@ void sub_81398BC(u8 bank)
       &gUnknown_02024E8C,
       GetBattlerSpriteCoord(bank, 2),
       sub_8077F68(bank),
-      sub_8079E90(bank));
+      GetBattlerSubpriority(bank));
     gSprites[gUnknown_0300434C[bank]].data[1] = gBankSpriteIds[bank];
     gSprites[gBankSpriteIds[bank]].data[0] = bank;
     gSprites[gBankSpriteIds[bank]].data[2] = species;
@@ -1518,7 +1518,7 @@ void sub_81398BC(u8 bank)
     StartSpriteAnim(&gSprites[gBankSpriteIds[bank]], gBattleMonForms[bank]);
     gSprites[gBankSpriteIds[bank]].invisible = TRUE;
     gSprites[gBankSpriteIds[bank]].callback = SpriteCallbackDummy;
-    gSprites[gUnknown_0300434C[bank]].data[0] = sub_8046400(0, 0xFF);
+    gSprites[gUnknown_0300434C[bank]].data[0] = StartSendOutMonAnimation(0, 0xFF);
 }
 
 void sub_8139A2C(u8 taskId)

@@ -55,14 +55,14 @@ extern MainCallback gPreBattleCallback1;
 extern struct MusicPlayerInfo gMPlay_BGM;
 
 extern u8 sub_8077F68();
-extern u8 sub_8079E90();
+extern u8 GetBattlerSubpriority();
 extern u8 GetBattlerPosition(u8);
 extern void BattleLoadOpponentMonSprite(struct Pokemon *, u8);
 extern void sub_8037A74(void);
 extern void sub_8032984(u8, u16);
 extern void sub_8037E30(void);
 extern void sub_80312F0(struct Sprite *);
-extern u8 sub_8046400();
+extern u8 StartSendOutMonAnimation();
 extern void sub_8032A08();
 extern void sub_8043DB0();
 extern void sub_8037BBC(void);
@@ -1157,7 +1157,7 @@ void LinkOpponentHandleLoadPokeSprite(void)
       &gUnknown_02024E8C,
       GetBattlerSpriteCoord(gActiveBattler, 2),
       sub_8077F68(gActiveBattler),
-      sub_8079E90(gActiveBattler));
+      GetBattlerSubpriority(gActiveBattler));
     gSprites[gBankSpriteIds[gActiveBattler]].pos2.x = -240;
     gSprites[gBankSpriteIds[gActiveBattler]].data[0] = gActiveBattler;
     gSprites[gBankSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
@@ -1187,7 +1187,7 @@ void sub_8039430(u8 a, u8 b)
       &gUnknown_02024E8C,
       GetBattlerSpriteCoord(a, 2),
       sub_8077F68(a),
-      sub_8079E90(a));
+      GetBattlerSubpriority(a));
     gSprites[gUnknown_0300434C[a]].data[1] = gBankSpriteIds[a];
     gSprites[gBankSpriteIds[a]].data[0] = a;
     gSprites[gBankSpriteIds[a]].data[2] = species;
@@ -1195,7 +1195,7 @@ void sub_8039430(u8 a, u8 b)
     StartSpriteAnim(&gSprites[gBankSpriteIds[a]], gBattleMonForms[a]);
     gSprites[gBankSpriteIds[a]].invisible = TRUE;
     gSprites[gBankSpriteIds[a]].callback = SpriteCallbackDummy;
-    gSprites[gUnknown_0300434C[a]].data[0] = sub_8046400(0, 0xFE);
+    gSprites[gUnknown_0300434C[a]].data[0] = StartSendOutMonAnimation(0, 0xFE);
 }
 
 void LinkOpponentHandleReturnPokeToBall(void)
@@ -1258,7 +1258,7 @@ void LinkOpponentHandleTrainerThrow(void)
     gBankSpriteIds[gActiveBattler] = CreateSprite(
       &gUnknown_02024E8C,
       176 + xOffset, 40 + 4 * (8 - gTrainerFrontPicCoords[gender].coords),
-      sub_8079E90(gActiveBattler));
+      GetBattlerSubpriority(gActiveBattler));
     gSprites[gBankSpriteIds[gActiveBattler]].pos2.x = -240;
     gSprites[gBankSpriteIds[gActiveBattler]].data[0] = 2;
     gSprites[gBankSpriteIds[gActiveBattler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerFrontPicPaletteTable[gender].tag);

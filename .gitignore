@@ -34,6 +34,7 @@ types_*.taghl
 *.s.old2
 *.dump
 *.sa*
+*.sgm
 Thumbs.db
 build/
 .idea/
@@ -41,3 +42,4 @@ build/
 *.pl
 .vs/
 .projects/ARM/
+*.diff

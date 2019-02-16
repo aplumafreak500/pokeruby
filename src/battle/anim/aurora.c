@@ -6,12 +6,12 @@
 #include "task.h"
 
 extern s16 gBattleAnimArgs[8];
-extern u8 gAnimBankAttacker;
-extern u8 gAnimBankTarget;
+extern u8 gBattleAnimAttacker;
+extern u8 gBattleAnimTarget;
 
-void sub_80D33B4(struct Sprite *sprite);
-static void sub_80D344C(struct Sprite *);
-static void sub_80D34D4(u8);
+void AnimAuroraRings(struct Sprite *sprite);
+static void AnimGrowAuroraRings(struct Sprite *);
+static void AnimTask_RotateMonPalette2(u8);
 
 const union AnimCmd gSpriteAnim_83D9190[] =
 {
@@ -43,38 +43,47 @@ const union AffineAnimCmd *const gSpriteAffineAnimTable_83D91C0[] =
     gSpriteAffineAnim_83D91A8,
 };
 
-const struct SpriteTemplate gBattleAnimSpriteTemplate_83D91C4 =
+// Multi-colored rings used in Aurora Beam.
+const struct SpriteTemplate RainbowRingSpriteTemplate =
 {
-    .tileTag = 10140,
-    .paletteTag = 10140,
+    .tileTag = ANIM_TAG_RAINBOW_RINGS,
+    .paletteTag = ANIM_TAG_RAINBOW_RINGS,
     .oam = &gOamData_837E024,
     .anims = gSpriteAnimTable_83D91A0,
     .images = NULL,
     .affineAnims = gSpriteAffineAnimTable_83D91C0,
-    .callback = sub_80D33B4,
+    .callback = AnimAuroraRings,
 };
 
-void sub_80D33B4(struct Sprite *sprite)
+// Animates the colorful rings in Aurora Beam linearly towards the target mon.
+// arg 0: initial x pixel offset
+// arg 1: initial y pixel offset
+// arg 2: target x offset
+// arg 3: target y offset
+// arg 4: duration
+void AnimAuroraRings(struct Sprite *sprite)
 {
     s16 r6;
 
     InitAnimSpritePos(sprite, 1);
-    if (GetBattlerSide(gAnimBankAttacker) != 0)
+    if (GetBattlerSide(gBattleAnimAttacker) != 0)
         r6 = -gBattleAnimArgs[2];
     else
         r6 = gBattleAnimArgs[2];
     sprite->data[0] = gBattleAnimArgs[4];
     sprite->data[1] = sprite->pos1.x;
-    sprite->data[2] = GetBattlerSpriteCoord(gAnimBankTarget, 2) + r6;
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimTarget, 2) + r6;
     sprite->data[3] = sprite->pos1.y;
-    sprite->data[4] = GetBattlerSpriteCoord(gAnimBankTarget, 3) + gBattleAnimArgs[3];
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, 3) + gBattleAnimArgs[3];
     InitAnimLinearTranslation(sprite);
-    sprite->callback = sub_80D344C;
+    sprite->callback = AnimGrowAuroraRings;
     sprite->affineAnimPaused = TRUE;
     sprite->callback(sprite);
 }
 
-static void sub_80D344C(struct Sprite *sprite)
+// Grows the rings in Aurora Beam.
+// arg 7: if -1, grow the rings
+static void AnimGrowAuroraRings(struct Sprite *sprite)
 {
     if ((u16)gBattleAnimArgs[7] == 0xFFFF)
     {
@@ -85,14 +94,17 @@ static void sub_80D344C(struct Sprite *sprite)
         DestroyAnimSprite(sprite);
 }
 
-void sub_80D3490(u8 taskId)
+// This seems to rotate the palette of the attacking mon, but the visual 
+// effect is not noticeable in-game.
+// arg 0: duration
+void AnimTask_RotateMonPalette1(u8 taskId)
 {
     gTasks[taskId].data[0] = gBattleAnimArgs[0];
     gTasks[taskId].data[2] = 0x100 + IndexOfSpritePaletteTag(0x279C) * 16;
-    gTasks[taskId].func = sub_80D34D4;
+    gTasks[taskId].func = AnimTask_RotateMonPalette2;
 }
 
-static void sub_80D34D4(u8 taskId)
+static void AnimTask_RotateMonPalette2(u8 taskId)
 {
     gTasks[taskId].data[10]++;
     if (gTasks[taskId].data[10] == 3)

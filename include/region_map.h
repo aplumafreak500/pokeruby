@@ -78,7 +78,8 @@ const u8 *CopyLocationName(u8 *dest, u16 b);
 void CB2_InitFlyRegionMap(void);
 void debug_sub_8110F28(void);
 u16 GetRegionMapSectionAt_(u16 x, u16 y);
+void sub_80FBF94(void);
 
-extern const struct RegionMapLocation gRegionMapLocations[];
+extern const struct RegionMapLocation gRegionMapEntries[];
 
 #endif // GUARD_REGION_MAP_H

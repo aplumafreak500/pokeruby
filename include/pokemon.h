@@ -117,6 +117,7 @@
 #define TYPE_ICE      0x0f
 #define TYPE_DRAGON   0x10
 #define TYPE_DARK     0x11
+#define NUMBER_OF_MON_TYPES     0x12
 
 #define FRIENDSHIP_EVENT_GROW_LEVEL           0x0
 #define FRIENDSHIP_EVENT_VITAMIN              0x1 // unused
@@ -137,7 +138,6 @@
 #define STATUS_PRIMARY_POKERUS   0x6
 #define STATUS_PRIMARY_FAINTED   0x7
 
-#define PARTY_SIZE 6
 #define MAX_TOTAL_EVS 510
 #define NUM_STATS 6
 #define UNOWN_FORM_COUNT 28
