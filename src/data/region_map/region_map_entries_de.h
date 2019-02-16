@@ -235,7 +235,7 @@ const u8 gMapName_BattleFrontier[] = _("Battle Frontier");
 
 const u8 gMapName_None[] = _("");
 
-const struct RegionMapLocation gRegionMapLocations[] =
+const struct RegionMapLocation gRegionMapEntries[] =
 {
     { 4, 11, 1, 1, gMapName_LittlerootTown},
     { 4,  9, 1, 1, gMapName_OldaleTown},
