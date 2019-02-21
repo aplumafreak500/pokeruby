@@ -27,7 +27,7 @@ RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
 GBAFIX    := tools/gbafix/gbafix$(EXE)
 MAPJSON   := tools/mapjson/mapjson$(EXE)
 
-VERSION=\"$(shell git describe --always)\"
+VERSION=\"$(shell git describe --always --abbrev=7)\"
 
 ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG)
 CC1FLAGS := -mthumb-interwork -Wall -O2 -fhex-asm
