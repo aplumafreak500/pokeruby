@@ -17,17 +17,17 @@ u8 LumaDebugMenu_CloseMenu();
 u8 LumaDebugMenu_OpenMemoryEditorMenu();
 u8 LumaDebugMenu_OpenMemoryEditor(u32);
 static u8 MemoryEditorMenu_ProcessInput();
-void MemoryEditor_Bios();
-void MemoryEditor_Ewram();
-void MemoryEditor_Iwram();
-void MemoryEditor_IO();
-void MemoryEditor_Vram();
-void MemoryEditor_Pal();
-void MemoryEditor_Oam();
-void MemoryEditor_Rom();
-void MemoryEditor_Fram();
-UNUSED void MemoryEditor_Sram();
-UNUSED void MemoryEditor_Eeprom();
+u8 MemoryEditor_Bios();
+u8 MemoryEditor_Ewram();
+u8 MemoryEditor_Iwram();
+u8 MemoryEditor_IO();
+u8 MemoryEditor_Vram();
+u8 MemoryEditor_Pal();
+u8 MemoryEditor_Oam();
+u8 MemoryEditor_Rom();
+u8 MemoryEditor_Fram();
+UNUSED u8 MemoryEditor_Sram();
+UNUSED u8 MemoryEditor_Eeprom();
 u8 LumaDebugMenu_OpenFlagEditor();
 u8 LumaDebugMenu_OpenVarEditor();
 void LumaDebugMenu_InitFlagEditor();
@@ -183,48 +183,48 @@ static u8 MemoryEditorMenu_ProcessInput() {
 	}
 }
 
-void MemoryEditor_Bios() {
-	LumaDebugMenu_OpenMemoryEditor(0x0000000);
+u8 MemoryEditor_Bios() {
+	return LumaDebugMenu_OpenMemoryEditor(0x0000000);
 }
 
-void MemoryEditor_Ewram() {
-	LumaDebugMenu_OpenMemoryEditor(0x2000000);
+u8 MemoryEditor_Ewram() {
+	return LumaDebugMenu_OpenMemoryEditor(0x2000000);
 }
 
-void MemoryEditor_Iwram() {
-	LumaDebugMenu_OpenMemoryEditor(0x3000000);
+u8 MemoryEditor_Iwram() {
+	return LumaDebugMenu_OpenMemoryEditor(0x3000000);
 }
 
-void MemoryEditor_IO() {
-	LumaDebugMenu_OpenMemoryEditor(0x4000000);
+u8 MemoryEditor_IO() {
+	return LumaDebugMenu_OpenMemoryEditor(0x4000000);
 }
 
-void MemoryEditor_Vram() {
-	LumaDebugMenu_OpenMemoryEditor(0x5000000); // TODO: verify this
+u8 MemoryEditor_Vram() {
+	return LumaDebugMenu_OpenMemoryEditor(0x5000000); // TODO: verify this
 }
 
-void MemoryEditor_Pal() {
-	LumaDebugMenu_OpenMemoryEditor(0x6000000); // TODO: verify this
+u8 MemoryEditor_Pal() {
+	return LumaDebugMenu_OpenMemoryEditor(0x6000000); // TODO: verify this
 }
 
-void MemoryEditor_Oam() {
-	LumaDebugMenu_OpenMemoryEditor(0x7000000); // TODO: verify this
+u8 MemoryEditor_Oam() {
+	return LumaDebugMenu_OpenMemoryEditor(0x7000000); // TODO: verify this
 }
 
-void MemoryEditor_Rom() {
-	LumaDebugMenu_OpenMemoryEditor(0x8000000);
+u8 MemoryEditor_Rom() {
+	return LumaDebugMenu_OpenMemoryEditor(0x8000000);
 }
 
-void MemoryEditor_Fram() {
-	LumaDebugMenu_OpenMemoryEditor(0xe000000);
+u8 MemoryEditor_Fram() {
+	return LumaDebugMenu_OpenMemoryEditor(0xe000000);
 }
 
-UNUSED void MemoryEditor_Sram() {
-	LumaDebugMenu_OpenMemoryEditor(0xe000000);
+UNUSED u8 MemoryEditor_Sram() {
+	return LumaDebugMenu_OpenMemoryEditor(0xe000000);
 }
 
-UNUSED void MemoryEditor_Eeprom() {
-	LumaDebugMenu_OpenMemoryEditor(0xd000000);
+UNUSED u8 MemoryEditor_Eeprom() {
+	return LumaDebugMenu_OpenMemoryEditor(0xd000000);
 }
 
 u8 LumaDebugMenu_OpenMemoryEditor(u32 address) {
