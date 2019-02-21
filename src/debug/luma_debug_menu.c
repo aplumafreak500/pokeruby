@@ -160,7 +160,7 @@ u8 LumaDebugMenu_CloseMenu() {
 
 u8 LumaDebugMenu_OpenMemoryEditorMenu() {
 	Menu_EraseScreen();
-	Menu_DrawStdWindowFrame(0, 0, 10, 20);
+	Menu_DrawStdWindowFrame(0, 0, 10, 10);
 	Menu_PrintItems(1, 1, 9, MemoryEditorItems);
 	InitMenu(0, 1, 1, 9, 0, 9);
 	gMenuCallback = MemoryEditorMenu_ProcessInput;
