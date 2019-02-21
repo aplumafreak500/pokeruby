@@ -35,8 +35,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1501D1",
       "flag": "FLAG_HIDE_VICTOR_WINSTRATE"
     },
@@ -48,8 +48,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_VICTORIA_WINSTRATE"
     },
@@ -61,8 +61,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_VIVI_WINSTRATE"
     },
@@ -74,8 +74,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_VICKI_WINSTRATE"
     },
@@ -87,8 +87,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 3,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route111_EventScript_1503BE",
       "flag": "0"
     },
@@ -100,8 +100,8 @@
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 19,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "19",
       "script": "S_BerryTree",
       "flag": "0"
     },
@@ -113,8 +113,8 @@
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 20,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "20",
       "script": "S_BerryTree",
       "flag": "0"
     },
@@ -126,8 +126,8 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_150395",
       "flag": "0"
     },
@@ -139,8 +139,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 3,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route111_EventScript_1503A7",
       "flag": "0"
     },
@@ -152,8 +152,8 @@
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
       "movement_range_x": 2,
       "movement_range_y": 2,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 2,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route111_EventScript_150403",
       "flag": "0"
     },
@@ -165,8 +165,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 4,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route111_EventScript_1503D5",
       "flag": "0"
     },
@@ -178,8 +178,8 @@
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 3,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route111_EventScript_1503EC",
       "flag": "0"
     },
@@ -191,8 +191,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE442",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1"
     },
@@ -204,8 +204,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE422",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_1"
     },
@@ -217,8 +217,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "S_BreakableRock",
       "flag": "FLAG_TEMP_11"
     },
@@ -230,8 +230,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "S_BreakableRock",
       "flag": "FLAG_TEMP_12"
     },
@@ -243,8 +243,8 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1500C5",
       "flag": "0"
     },
@@ -256,8 +256,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1B14C8",
       "flag": "FLAG_ITEM_ROUTE111_1"
     },
@@ -269,8 +269,8 @@
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 80,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "80",
       "script": "S_BerryTree",
       "flag": "0"
     },
@@ -282,8 +282,8 @@
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 81,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "81",
       "script": "S_BerryTree",
       "flag": "0"
     },
@@ -295,8 +295,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE4E2",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2"
     },
@@ -308,8 +308,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE502",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_2"
     },
@@ -321,8 +321,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE562",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3"
     },
@@ -334,8 +334,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1AE582",
       "flag": "FLAG_HIDE_GABBY_AND_TY_ROUTE111_3"
     },
@@ -347,8 +347,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1B14D5",
       "flag": "FLAG_ITEM_ROUTE111_2"
     },
@@ -360,8 +360,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1B14E2",
       "flag": "FLAG_ITEM_ROUTE111_3"
     },
@@ -373,8 +373,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "S_CuttableTree",
       "flag": "FLAG_TEMP_13"
     },
@@ -386,8 +386,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 2,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route111_EventScript_150458",
       "flag": "0"
     },
@@ -399,8 +399,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 3,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route111_EventScript_150441",
       "flag": "0"
     },
@@ -412,8 +412,8 @@
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 2,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route111_EventScript_15046F",
       "flag": "0"
     },
@@ -425,8 +425,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 4,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 4,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route111_EventScript_1504C4",
       "flag": "0"
     },
@@ -438,8 +438,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 1,
-      "trainer_sight_or_berry_tree_id": 3,
+      "trainer_type": "1",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route111_EventScript_150486",
       "flag": "0"
     },
@@ -451,8 +451,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_1A3858",
       "flag": "FLAG_HIDE_SECRET_POWER_MAN"
     },
@@ -464,8 +464,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_150023",
       "flag": "FLAG_HIDE_ROOT_FOSSIL"
     },
@@ -477,8 +477,8 @@
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_150069",
       "flag": "FLAG_HIDE_CLAW_FOSSIL"
     },
@@ -490,8 +490,8 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_15039E",
       "flag": "0"
     }
@@ -526,7 +526,7 @@
       "y": 62,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -535,7 +535,7 @@
       "y": 61,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150116"
     },
     {
@@ -544,7 +544,7 @@
       "y": 61,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150116"
     },
     {
@@ -553,7 +553,7 @@
       "y": 61,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150116"
     },
     {
@@ -562,7 +562,7 @@
       "y": 63,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -571,7 +571,7 @@
       "y": 44,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -580,7 +580,7 @@
       "y": 43,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -589,7 +589,7 @@
       "y": 42,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -598,7 +598,7 @@
       "y": 40,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -607,7 +607,7 @@
       "y": 61,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150116"
     },
     {
@@ -616,7 +616,7 @@
       "y": 32,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -625,7 +625,7 @@
       "y": 31,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -634,7 +634,7 @@
       "y": 37,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -643,7 +643,7 @@
       "y": 36,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -652,7 +652,7 @@
       "y": 39,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -661,7 +661,7 @@
       "y": 38,
       "elevation": 3,
       "var": "VAR_TEMP_3",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_150122"
     },
     {
@@ -670,7 +670,7 @@
       "y": 64,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -679,7 +679,7 @@
       "y": 65,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -688,7 +688,7 @@
       "y": 65,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -697,7 +697,7 @@
       "y": 66,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -706,7 +706,7 @@
       "y": 67,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -715,7 +715,7 @@
       "y": 68,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -724,7 +724,7 @@
       "y": 69,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501BC"
     },
     {
@@ -733,7 +733,7 @@
       "y": 61,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -742,7 +742,7 @@
       "y": 62,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -751,7 +751,7 @@
       "y": 62,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -760,7 +760,7 @@
       "y": 62,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -769,7 +769,7 @@
       "y": 38,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -778,7 +778,7 @@
       "y": 39,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -787,7 +787,7 @@
       "y": 40,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -796,7 +796,7 @@
       "y": 41,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -805,7 +805,7 @@
       "y": 42,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -814,7 +814,7 @@
       "y": 43,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     },
     {
@@ -823,7 +823,7 @@
       "y": 44,
       "elevation": 3,
       "var": "0",
-      "var_value": 0,
+      "var_value": "0",
       "script": "Route111_EventScript_1501C9"
     }
   ],

@@ -19,8 +19,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "InsideOfTruck_EventScript_15FC8B",
       "flag": "0"
     },
@@ -32,8 +32,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "InsideOfTruck_EventScript_15FC8B",
       "flag": "0"
     },
@@ -45,8 +45,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": 0,
-      "trainer_sight_or_berry_tree_id": 0,
+      "trainer_type": "0",
+      "trainer_sight_or_berry_tree_id": "0",
       "script": "InsideOfTruck_EventScript_15FC8B",
       "flag": "0"
     }
@@ -81,7 +81,7 @@
       "y": 1,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
-      "var_value": 0,
+      "var_value": "0",
       "script": "InsideOfTruck_EventScript_15FC29"
     },
     {
@@ -90,7 +90,7 @@
       "y": 2,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
-      "var_value": 0,
+      "var_value": "0",
       "script": "InsideOfTruck_EventScript_15FC29"
     },
     {
@@ -99,7 +99,7 @@
       "y": 3,
       "elevation": 3,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
-      "var_value": 0,
+      "var_value": "0",
       "script": "InsideOfTruck_EventScript_15FC29"
     }
   ],
