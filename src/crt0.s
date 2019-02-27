@@ -155,6 +155,7 @@ RomInfoString:
 	.2byte 0xFFFF
 	.byte 0xFF
 	.4byte gSongTable
+	.4byte 0xffffffff
 
 	.arm
 	.align 2, 0
