@@ -1500,7 +1500,7 @@ _0802DB9C:\n\
     bne _0802DC98\n\
     movs r0, 0x21\n\
     bl m4aSongNumStop\n\
-    movs r0, 0x64\n\
+    movs r0, 0x9c\n\
     mov r1, r9\n\
     muls r1, r0\n\
     ldr r0, _0802DC68 @ =gPlayerParty\n\
