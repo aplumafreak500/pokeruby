@@ -19,10 +19,10 @@ extern u16 gMoveToLearn;
 
 static EWRAM_DATA u8 sLearningMoveTableID = 0;
 
-u8 gPlayerPartyCount;
-struct Pokemon gPlayerParty[6];
-u8 gEnemyPartyCount;
-struct Pokemon gEnemyParty[6];
+IWRAM_DATA u8 gPlayerPartyCount = 0;
+IWRAM_DATA struct Pokemon gPlayerParty[6] = {0};
+IWRAM_DATA u8 gEnemyPartyCount = 0;
+IWRAM_DATA struct Pokemon gEnemyParty[6] = {0};
 
 const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 {
@@ -438,7 +438,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
 	HOENN_DEX_JIRACHI,         	// SPECIES_JIRACHI
 	HOENN_DEX_DEOXYS,          	// SPECIES_DEOXYS
 	HOENN_DEX_CHIMECHO,         	// SPECIES_CHIMECHO
-	387, // Victini
+	HOENN_DEX_VICTINI,
 };
 
 const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -855,7 +855,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
 	NATIONAL_DEX_JIRACHI,         	// SPECIES_JIRACHI
 	NATIONAL_DEX_DEOXYS,          	// SPECIES_DEOXYS
 	NATIONAL_DEX_CHIMECHO,         	// SPECIES_CHIMECHO
-	387, // Victini
+	NATIONAL_DEX_VICTINI,
 };
 
 const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)
@@ -1247,7 +1247,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
 	NATIONAL_DEX_LUGIA,      	// HOENN_DEX_LUGIA
 	NATIONAL_DEX_HO_OH,      	// HOENN_DEX_HO-OH
 	NATIONAL_DEX_CELEBI,     	// HOENN_DEX_CELEBI
-	412, // Victini
+	NATIONAL_DEX_VICTINI,
 	NATIONAL_DEX_OLD_UNOWN_B,  	// HOENN_DEX_OLD_UNOWN_B
 	NATIONAL_DEX_OLD_UNOWN_C,  	// HOENN_DEX_OLD_UNOWN_C
 	NATIONAL_DEX_OLD_UNOWN_D,  	// HOENN_DEX_OLD_UNOWN_D

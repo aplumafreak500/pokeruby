@@ -3,7 +3,7 @@
 #include "strings.h"
 #include "text.h"
 
-u8 gUnknownStringVar[16];
+IWRAM_DATA u8 gUnknownStringVar[16];
 
 const u8 gEmptyString_81E72B0[] = _("");
 const u8 gRightPointingTriangleString[] = _("▶");

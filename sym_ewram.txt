@@ -2,9 +2,6 @@
 . = ALIGN(4); src/sprite.o(ewram_data);
 . = ALIGN(4); src/text.o(ewram_data);
 . = ALIGN(4); src/string_util.o(ewram_data);
-
-. += 0x2E8;
-
 . = ALIGN(4); src/link.o(ewram_data);
 . = ALIGN(4); src/rom3.o(ewram_data);
 
@@ -389,11 +386,7 @@ gBattleMonForms = .; /* 2024E84 */
 
 /* ??? */
 
-#if DEBUG
-    . = ALIGN(8);
-#else
-    . = ALIGN(16);
-#endif
+   . = ALIGN(16);
 gTileBuffer = .; /* 2039360 */
     . += 0x100;
 
