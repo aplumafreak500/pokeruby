@@ -1042,7 +1042,7 @@ void debug_sub_8030C24(void)
         {
             move += 9;
     case DPAD_RIGHT:
-            if (++move > 354)
+            if (++move > NUM_MOVES - 1)
                 move = 1;
             SetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_MOVE1, &move);
             gBattleMons[gActiveBattler].moves[0] = move;
@@ -1068,7 +1068,7 @@ void debug_sub_8030C24(void)
             move -= 9;
     case DPAD_LEFT:
             if (--move <= 0)
-                move = 354;
+                move = NUM_MOVES - 1;
             SetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_MOVE1, &move);
             gBattleMons[gActiveBattler].moves[0] = move;
             Text_FillWindowRect(&gUnknown_03004210, 0x1016, 1, 0x37, 16, 0x38);
