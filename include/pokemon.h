@@ -272,7 +272,7 @@ struct PokemonSubstruct4
     /*0x06*/ u8 hasHiddenAbility:1;
     /*0x06*/ u8 Form:7;
     /*0x07*/ u8 padding;
-    /*0x08*/ u32 padding2[2];
+    /*0x08*/ u32 padding2;
     
 };
 
