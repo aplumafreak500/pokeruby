@@ -19,10 +19,10 @@ extern u16 gMoveToLearn;
 
 static EWRAM_DATA u8 sLearningMoveTableID = 0;
 
-IWRAM_DATA u8 gPlayerPartyCount = 0;
-IWRAM_DATA struct Pokemon gPlayerParty[6] = {0};
-IWRAM_DATA u8 gEnemyPartyCount = 0;
-IWRAM_DATA struct Pokemon gEnemyParty[6] = {0};
+u8 gPlayerPartyCount;
+struct Pokemon gPlayerParty[6];
+u8 gEnemyPartyCount;
+struct Pokemon gEnemyParty[6];
 
 const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 {
