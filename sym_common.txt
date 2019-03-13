@@ -4,6 +4,41 @@
     name = .;                                \
     . += size;
 
+
+// main.c
+#if DEBUG
+/*. += 0x18;*/
+#endif
+SYMBOL(gKeyRepeatStartDelay, 4)
+SYMBOL(gLinkTransferringData, 4)
+#if DEBUG
+. += 0x8;
+#endif
+SYMBOL(gMain, 1088)
+SYMBOL(gKeyRepeatContinueDelay, 4)
+SYMBOL(gSoftResetDisabled, 4)
+SYMBOL(gIntrTable, 56)
+SYMBOL(gLinkVSyncDisabled, 4)
+SYMBOL(IntrMain_Buffer, 2048)
+SYMBOL(gPcmDmaCounter, 4)
+
+// sprite.c
+SYMBOL(gSpriteOrder, 64)
+SYMBOL(gSpriteTileAllocBitmap, 128)
+SYMBOL(gSpriteCoordOffsetX, 4)
+SYMBOL(gOamLimit, 4)
+SYMBOL(gReservedSpriteTileCount, 4)
+SYMBOL(gSpriteCopyRequestCount, 4)
+SYMBOL(gSpriteCopyRequests, 768)
+SYMBOL(gSpriteCoordOffsetY, 4)
+SYMBOL(gOamMatrices, 256)
+SYMBOL(gShouldProcessSpriteCopyRequests, 4)
+SYMBOL(gOamMatrixAllocBitmap, 4)
+SYMBOL(gReservedSpritePaletteCount, 4)
+
+// string_util.c
+SYMBOL(gUnknownStringVar, 16)
+
 // link.c
 SYMBOL(word_3002910, 8)
 SYMBOL(gLinkDebugValue1, 4)
@@ -100,6 +135,12 @@ SYMBOL(gHealthboxIDs, 4)
 SYMBOL(gUnknown_03004344, 4)
 SYMBOL(gUnknown_03004348, 4)
 SYMBOL(gUnknown_0300434C, 4)
+
+// pokemon_1.c
+SYMBOL(gPlayerPartyCount, 4)
+SYMBOL(gPlayerParty, 944)
+SYMBOL(gEnemyPartyCount, 4)
+SYMBOL(gEnemyParty, 944)
 
 // random.c
 SYMBOL(gRngValues, 16)
