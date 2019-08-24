@@ -9,7 +9,7 @@
 extern s16 gBattleAnimArgs[];
 extern u8 gBattleAnimTarget;
 extern u8 gBattleAnimAttacker;
-extern u8 gBankSpriteIds[];
+extern u8 gBattlerSpriteIds[];
 
 void sub_80D5CC0(struct Sprite *sprite);
 static void sub_80D5E4C(u8 taskId);
@@ -68,9 +68,9 @@ void sub_80D5CC0(struct Sprite *sprite)
     if (gMain.inBattle)
     {
         if (sprite->data[1] < 64 || sprite->data[1] > 195)
-            sprite->oam.priority = sub_8079ED4(gBattleAnimTarget);
+            sprite->oam.priority = GetBattlerSpriteBGPriority(gBattleAnimTarget);
         else
-            sprite->oam.priority = sub_8079ED4(gBattleAnimTarget) + 1;
+            sprite->oam.priority = GetBattlerSpriteBGPriority(gBattleAnimTarget) + 1;
     }
     else
     {
@@ -211,7 +211,7 @@ void sub_80D60B4(u8 taskId)
     }
     gTasks[taskId].data[0]++;
 
-    spriteId = gBankSpriteIds[gBattleAnimTarget];
+    spriteId = gBattlerSpriteIds[gBattleAnimTarget];
 
     if (!gTasks[taskId].data[4])
         unk = gUnknown_083D9794[gTasks[taskId].data[0] % 10];

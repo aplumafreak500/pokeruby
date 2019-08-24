@@ -8,7 +8,7 @@ extern s16 gBattleAnimArgs[];
 extern u8 gBattleAnimAttacker;
 extern u8 gBattleAnimTarget;
 
-extern u8 gBankSpriteIds[];
+extern u8 gBattlerSpriteIds[];
 
 void sub_80CF3C4(struct Sprite* sprite);
 
@@ -34,7 +34,7 @@ static void sub_80CF374(struct Sprite* sprite)
     if (sprite->data[0] == 0)
     {
         gSprites[sprite->data[2]].pos2.x = 0;
-        move_anim_8074EE0(sprite);
+        DestroySpriteAndMatrix(sprite);
     }
 
     sprite->data[0]--;
@@ -45,7 +45,7 @@ void sub_80CF3C4(struct Sprite* sprite)
     u8 a;
     sprite->pos1.x = GetBattlerSpriteCoord(gBattleAnimAttacker, 2);
     sprite->pos1.y = GetBattlerSpriteCoord(gBattleAnimAttacker, 3);
-    a = gBankSpriteIds[gBattleAnimTarget];
+    a = gBattlerSpriteIds[gBattleAnimTarget];
     if (GetBattlerSide(gBattleAnimAttacker) != 0)
     {
         sprite->pos1.x -= gBattleAnimArgs[0];
