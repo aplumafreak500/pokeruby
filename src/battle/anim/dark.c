@@ -9,12 +9,12 @@
 #include "sound.h"
 #include "sprite.h"
 #include "trig.h"
-#include "constants/battle_constants.h"
+#include "constants/battle.h"
 
 extern s16 gBattleAnimArgs[];
 extern u8 gBattleAnimAttacker;
 extern u8 gBattleAnimTarget;
-extern u8 gBankSpriteIds[];
+extern u8 gBattlerSpriteIds[];
 extern u16 gBattle_BG1_X;
 extern u16 gBattle_BG1_Y;
 extern u16 gBattle_BG2_X;
@@ -233,7 +233,7 @@ static void sub_80DFC9C(u8 taskId)
         gTasks[taskId].data[2] = 0;
         if (r2 == 16)
         {
-            gSprites[gBankSpriteIds[gBattleAnimAttacker]].invisible = 1;
+            gSprites[gBattlerSpriteIds[gBattleAnimAttacker]].invisible = 1;
             DestroyAnimVisualTask(taskId);
         }
     }
@@ -357,7 +357,7 @@ static void sub_80DFF98(struct Sprite *sprite)
     sprite->pos2.y = sprite->data[5] >> 8;
 
     if (--sprite->data[3] == 0)
-        move_anim_8074EE0(sprite);
+        DestroySpriteAndMatrix(sprite);
 }
 
 void sub_80DFFD0(struct Sprite *sprite)
@@ -376,22 +376,22 @@ void sub_80DFFD0(struct Sprite *sprite)
     switch (gBattleAnimArgs[1])
     {
     case 0:
-        sprite->pos1.x = sub_807A100(bank, 5) - 8;
-        sprite->pos1.y = sub_807A100(bank, 2) + 8;
+        sprite->pos1.x = GetBattlerSpriteCoordAttr(bank, 5) - 8;
+        sprite->pos1.y = GetBattlerSpriteCoordAttr(bank, 2) + 8;
         break;
     case 1:
-        sprite->pos1.x = sub_807A100(bank, 5) - 14;
-        sprite->pos1.y = sub_807A100(bank, 2) + 16;
+        sprite->pos1.x = GetBattlerSpriteCoordAttr(bank, 5) - 14;
+        sprite->pos1.y = GetBattlerSpriteCoordAttr(bank, 2) + 16;
         break;
     case 2:
-        sprite->pos1.x = sub_807A100(bank, 4) + 8;
-        sprite->pos1.y = sub_807A100(bank, 2) + 8;
+        sprite->pos1.x = GetBattlerSpriteCoordAttr(bank, 4) + 8;
+        sprite->pos1.y = GetBattlerSpriteCoordAttr(bank, 2) + 8;
         StartSpriteAffineAnim(sprite, 1);
         xOffset = -20;
         break;
     case 3:
-        sprite->pos1.x = sub_807A100(bank, 4) + 14;
-        sprite->pos1.y = sub_807A100(bank, 2) + 16;
+        sprite->pos1.x = GetBattlerSpriteCoordAttr(bank, 4) + 14;
+        sprite->pos1.y = GetBattlerSpriteCoordAttr(bank, 2) + 16;
         StartSpriteAffineAnim(sprite, 1);
         xOffset = -20;
         break;
@@ -409,7 +409,7 @@ void sub_80DFFD0(struct Sprite *sprite)
 static void sub_80E00D0(struct Sprite *sprite)
 {
     if (TranslateAnimArc(sprite))
-        move_anim_8074EE0(sprite);
+        DestroySpriteAndMatrix(sprite);
 }
 
 void sub_80E00EC(u8 taskId)
@@ -422,7 +422,7 @@ void sub_80E00EC(u8 taskId)
     struct Task *task = &gTasks[taskId];
 
     task->data[7] = GetBattlerSpriteCoord(gBattleAnimAttacker, 1) + 31;
-    task->data[6] = sub_807A100(gBattleAnimAttacker, 2) - 7;
+    task->data[6] = GetBattlerSpriteCoordAttr(gBattleAnimAttacker, 2) - 7;
     task->data[5] = task->data[7];
     task->data[4] = task->data[6];
     task->data[13] = (task->data[7] - task->data[6]) << 8;
@@ -600,7 +600,7 @@ void sub_80E03BC(u8 taskId)
         break;
     case 2:
         task->data[7] = GetBattlerSpriteCoord(gBattleAnimTarget, 1) + 31;
-        task->data[6] = sub_807A100(gBattleAnimTarget, 2) - 7;
+        task->data[6] = GetBattlerSpriteCoordAttr(gBattleAnimTarget, 2) - 7;
         task->data[13] = (task->data[7] - task->data[6]) << 8;
         pos = GetBattlerSpriteCoord(gBattleAnimTarget, 0);
         task->data[14] = pos - 4;
@@ -957,12 +957,12 @@ void sub_80E0918(u8 taskId)
 {
     u8 toBG2 = GetBattlerPosition_permutated(gBattleAnimAttacker) ^ 1 ? 1 : 0;
     MoveBattlerSpriteToBG(gBattleAnimAttacker, toBG2);
-    gSprites[gBankSpriteIds[gBattleAnimAttacker]].invisible = 0;
+    gSprites[gBattlerSpriteIds[gBattleAnimAttacker]].invisible = 0;
 
     if (IsAnimBankSpriteVisible(gBattleAnimAttacker ^ 2))
     {
         MoveBattlerSpriteToBG(gBattleAnimAttacker ^ 2, toBG2 ^ 1);
-        gSprites[gBankSpriteIds[gBattleAnimAttacker ^ 2]].invisible = 0;
+        gSprites[gBattlerSpriteIds[gBattleAnimAttacker ^ 2]].invisible = 0;
     }
 
     DestroyAnimVisualTask(taskId);
@@ -1015,7 +1015,7 @@ void sub_80E0A4C(u8 taskId)
         {
             if (IsAnimBankSpriteVisible(gBattleAnimAttacker ^ 2) == TRUE)
             {
-                gSprites[gBankSpriteIds[gBattleAnimAttacker ^ 2]].oam.priority--;
+                gSprites[gBattlerSpriteIds[gBattleAnimAttacker ^ 2]].oam.priority--;
                 REG_BG1CNT_BITFIELD.priority = 1;
                 var0 = 1;
             }
@@ -1101,7 +1101,7 @@ static void sub_80E0CD0(u8 taskId)
 
             if (gTasks[taskIdCopy].data[6] == 1)
             {
-                gSprites[gBankSpriteIds[gBattleAnimAttacker ^ 2]].oam.priority++;
+                gSprites[gBattlerSpriteIds[gBattleAnimAttacker ^ 2]].oam.priority++;
             }
             
             DestroyAnimVisualTask(taskIdCopy);
@@ -1149,7 +1149,7 @@ void sub_80E0E24(u8 taskId)
     {
         bank = GetBattlerAtPosition(identity);
         if (IsAnimBankSpriteVisible(bank))
-            spriteId = gBankSpriteIds[bank];
+            spriteId = gBattlerSpriteIds[bank];
         else
             spriteId = 0xFF;
     }

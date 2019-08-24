@@ -17,7 +17,7 @@ extern u16 gBattle_BG2_Y;
 extern u16 gBattle_BG3_X;
 extern u16 gBattle_BG3_Y;
 extern u16 gAnimMovePower;
-extern u8 gBankSpriteIds[];
+extern u8 gBattlerSpriteIds[];
 
 static void AnimBonemerangProjectile(struct Sprite *sprite);
 static void AnimBonemerangProjectileStep(struct Sprite *sprite);
@@ -234,7 +234,7 @@ static void AnimDirtScatter(struct Sprite *sprite)
     sprite->data[2] = targetXPos + xOffset;
     sprite->data[4] = targetYPos + yOffset;
     sprite->callback = StartAnimLinearTranslation;
-    StoreSpriteCallbackInData(sprite, move_anim_8074EE0);
+    StoreSpriteCallbackInData(sprite, DestroySpriteAndMatrix);
 }
 
 // Moves a particle of dirt in the Mud Sport animation.
@@ -593,7 +593,7 @@ void sub_80E1864(u8 taskId)
         {
             if (IsAnimBankSpriteVisible(i))
             {
-                task->data[task->data[13] + 9] = gBankSpriteIds[i];
+                task->data[task->data[13] + 9] = gBattlerSpriteIds[i];
                 task->data[13]++;
             }
         }
