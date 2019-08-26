@@ -163,7 +163,6 @@ extern u8 gNumSafariBalls;
 extern u8 gUnknown_081FA70C[][3];
 extern u8 gUnknown_081FA71B[];
 extern u8 gUnknown_081FA71F[];
-extern u8 gBattleTerrain;
 
 void BattleMainCB1(void);
 static void BattlePrepIntroSlide(void);
