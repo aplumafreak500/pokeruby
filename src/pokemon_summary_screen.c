@@ -2152,6 +2152,11 @@ static u8 SummaryScreen_LoadPokemonSprite(struct Pokemon *mon, u8 *state)
         return SummaryScreen_CreatePokemonSprite(mon);
     case 0:
         species = GetMonData(mon, MON_DATA_SPECIES2);
+
+	if (species > NUM_SPECIES) {
+		species = SPECIES_NONE;
+	}
+
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
 
         HandleLoadSpecialPokePic(
@@ -2166,6 +2171,11 @@ static u8 SummaryScreen_LoadPokemonSprite(struct Pokemon *mon, u8 *state)
         return 0xFF;
     case 1:
         species = GetMonData(mon, MON_DATA_SPECIES2);
+
+	if (species > NUM_SPECIES) {
+		species = SPECIES_NONE;
+	}
+
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
         otId = GetMonData(mon, MON_DATA_OT_ID);
 
@@ -3081,7 +3091,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 			else if (locationMet > 214) {
 				*ptr = CHAR_NEWLINE;
 				ptr++;
-				StringCopy(ptr, gOtherText_ObtainedInTrade);
+				StringCopy(ptr, gOtherText_ObtainedInTrade); // TODO: make it say "Hoenn (met/Egg)"
 			}
 			else {
 				if (levelMet==0) {
@@ -3162,7 +3172,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 					StringCopy(ptr, gOtherText_Met2);
 				}
 			}
-			else {
+			else { // TODO: make it say "Johto/Sinnoh (met/Egg)" depending on source game
 				*ptr = CHAR_NEWLINE;
 				ptr++;
 				StringCopy(ptr, gOtherText_ObtainedInTrade);
@@ -3221,7 +3231,16 @@ static void sub_80A0958(struct Pokemon *mon)
     buffer[2] = 0x7;
     buffer[3] = CHAR_SLASH;
     buffer += 4;
-    buffer = StringCopy(buffer, gSpeciesNames[species]);
+
+    if (species > NUM_SPECIES) {
+        buffer[0] = CHAR_0;
+        buffer[1] = CHAR_x;
+        buffer += 2;
+        buffer = ConvertIntToHexStringN(buffer, species, STR_CONV_MODE_LEFT_ALIGN, 4);
+    }
+    else {
+        buffer = StringCopy(buffer, gSpeciesNames[species]);
+    }
 
     buffer[0] = EXT_CTRL_CODE_BEGIN;
     buffer[1] = 0x13;
@@ -4740,6 +4759,11 @@ u8 SummaryScreen_CreatePokemonSprite(struct Pokemon *mon)
     u8 spriteId;
 
     species = GetMonData(mon, MON_DATA_SPECIES2);
+
+    if (species > NUM_SPECIES) {
+        species = SPECIES_NONE;
+    }
+
     spriteId = CreateSprite(&gUnknown_02024E8C, 40, 64, 5);
 
     FreeSpriteOamMatrix(&gSprites[spriteId]);
