@@ -295,6 +295,8 @@ const u8 gTestMenu_MimicECardText[] = _("Mimic e-Card");
 const u8 gTestMenu_RTCResetText[] = _("RTC reset");
 const u8 gTestMenu_ConverterText[] = _("Converter");
 
+extern const u8 GitBuildString[];
+
 const struct MenuAction gDebug_TestMenuItems[] =
 {
     { gTestMenu_TestMenuHeaderText,  DebugMenu_8076CBC }, // Disabled - nop header
