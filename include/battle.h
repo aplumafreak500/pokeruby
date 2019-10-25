@@ -69,10 +69,6 @@
 #define TYPE_FORESIGHT  0xFE
 #define TYPE_ENDTABLE   0xFF
 
-// physical/special types
-#define TYPE_IS_PHYSICAL(type) ((type) < TYPE_MYSTERY)
-#define TYPE_IS_SPECIAL(type) ((type) > TYPE_MYSTERY)
-
 struct DisableStruct
 {
     /*0x00*/ u32 transformedMonPersonality;
@@ -97,12 +93,12 @@ struct DisableStruct
     /*0x13*/ u8 tauntTimer1:4;
     /*0x13*/ u8 tauntTimer2:4;
     /*0x14*/ u8 bankPreventingEscape;
-    /*0x15*/ u8 bankWithSureHit;
+    /*0x15*/ u8 battlerWithSureHit;
     /*0x16*/ u8 isFirstTurn;
     /*0x17*/ u8 unk17;
     /*0x18*/ u8 truantCounter : 1;
     /*0x18*/ u8 unk18_a : 3;
-    /*0x18*/ u8 unk18_b : 4;
+    /*0x18*/ u8 mimickedMoves : 4;
     /*0x19*/ u8 rechargeCounter;
     /*0x1A*/ u8 unk1A[2];
 };
@@ -240,7 +236,7 @@ struct BattleResults
     u8 unk2;                  // 0x2
     u8 unk3;                  // 0x3
     u8 unk4;                  // 0x4
-    u8 unk5_0:1;              // 0x5
+    u8 playerMonWasDamaged:1; // 0x5
     u8 unk5_1:1;              // 0x5
     u16 poke1Species;         // 0x6
     u8 pokeString1[10];       // 0x8
@@ -297,20 +293,20 @@ struct BattleStruct /* 0x2000000 */
     /*0x15DDF*/ u8 unk15DDF;
     /*0x15DE0*/ u8 filler15DE0[0x220];
     /*0x16000*/ u8 turnEffectsTracker;
-    /*0x16001*/ u8 turnEffectsBank;
+    /*0x16001*/ u8 turnEffectsBattlerId;
     /*0x16002*/ u8 animTurn;
     /*0x16003*/ u8 scriptingActive;
     /*0x16004*/ u8 wrappedMove[8];
     /*0x1600C*/ u8 cmd49StateTracker;
     /*0x1600D*/ u8 unk1600D;
-    /*0x1600E*/ u8 turncountersTracker;
+    /*0x1600E*/ u8 turnCountersTracker;
     /*0x1600F*/ u8 getexpStateTracker;
     /*0x16010*/ u8 moveTarget[4];
     /*0x16014*/ u8 unk16014;
     /*0x16015*/ u8 unk16015;
     /*0x16016*/ u8 unk16016;
     /*0x16017*/ u8 unk16017;
-    /*0x16018*/ u8 expGetterID;
+    /*0x16018*/ u8 expGetterMonId;
     /*0x16019*/ u8 unk16019;
     /*0x1601A*/ u8 atk5A_StateTracker; //also atk5B, statetracker
     /*0x1601B*/ u8 wildVictorySong;
@@ -319,54 +315,7 @@ struct BattleStruct /* 0x2000000 */
     /*0x1601E*/ u8 statChanger;
     /*0x1601F*/ u8 dmgMultiplier;
     /*0x16020*/ u8 wrappedBy[4];
-    /*0x16024*/ u8 unk16024;
-    /*0x16025*/ u8 unk16025;
-    /*0x16026*/ u8 unk16026;
-    /*0x16027*/ u8 unk16027;
-    /*0x16028*/ u8 unk16028;
-    /*0x16029*/ u8 unk16029;
-    /*0x1602A*/ u8 unk1602A;
-    /*0x1602B*/ u8 unk1602B;
-    /*0x1602C*/ u8 unk1602C;
-    /*0x1602D*/ u8 unk1602D;
-    /*0x1602E*/ u8 unk1602E;
-    /*0x1602F*/ u8 unk1602F;
-    /*0x16030*/ u8 unk16030;
-    /*0x16031*/ u8 unk16031;
-    /*0x16032*/ u8 unk16032;
-    /*0x16033*/ u8 unk16033;
-    /*0x16034*/ u8 unk16034;
-    /*0x16035*/ u8 unk16035;
-    /*0x16036*/ u8 unk16036;
-    /*0x16037*/ u8 unk16037;
-    /*0x16038*/ u8 unk16038;
-    /*0x16039*/ u8 unk16039;
-    /*0x1603A*/ u8 unk1603A;
-    /*0x1603B*/ u8 unk1603B;
-    /*0x1603C*/ u8 unk1603C;
-    /*0x1603D*/ u8 unk1603D;
-    /*0x1603E*/ u8 unk1603E;
-    /*0x1603F*/ u8 unk1603F;
-    /*0x16040*/ u8 unk16040;
-    /*0x16041*/ u8 unk16041;
-    /*0x16042*/ u8 unk16042;
-    /*0x16043*/ u8 unk16043;
-    /*0x16044*/ u8 unk16044;
-    /*0x16045*/ u8 unk16045;
-    /*0x16046*/ u8 unk16046;
-    /*0x16047*/ u8 unk16047;
-    /*0x16048*/ u8 unk16048;
-    /*0x16049*/ u8 unk16049;
-    /*0x1604A*/ u8 unk1604A;
-    /*0x1604B*/ u8 unk1604B;
-    /*0x1604C*/ u8 unk1604C;
-    /*0x1604D*/ u8 unk1604D;
-    /*0x1604E*/ u8 unk1604E;
-    /*0x1604F*/ u8 unk1604F;
-    /*0x16050*/ u8 unk16050;
-    /*0x16051*/ u8 unk16051;
-    /*0x16052*/ u8 unk16052;
-    /*0x16053*/ u8 unk16053;
+    /*0x16024*/ u16 assistMove[24];
     /*0x16054*/ u8 unk16054;
     /*0x16055*/ u8 unk16055;
     /*0x16056*/ u8 moneyMultiplier;
@@ -408,7 +357,7 @@ struct BattleStruct /* 0x2000000 */
     /*0x1609F*/ u8 unk1609F;
     /*0x160A0*/ u8 stringMoveType;
     /*0x160A1*/ u8 animTargetsHit;
-    /*0x160A2*/ u8 expGetterBank;
+    /*0x160A2*/ u8 expGetterBattlerId;
     /*0x160A3*/ u8 unk160A3;
     /*0x160A4*/ u8 animArg1;
     /*0x160A5*/ u8 animArg2;
@@ -505,8 +454,8 @@ struct BattleStruct /* 0x2000000 */
     /*0x1610D*/ u8 unk1610D;
     /*0x1610E*/ u8 unk1610E;
     /*0x1610F*/ u8 unk1610F;
-    /*0x16110*/ u8 sub80170DC_Tracker;
-    /*0x16111*/ u8 sub80170DC_Bank;
+    /*0x16110*/ u8 wishPerishSongState;
+    /*0x16111*/ u8 wishPerishSongBattlerId;
     /*0x16112*/ u8 unk16112;
     /*0x16113*/ u8 unk16113;
     /*0x16114*/ u8 unk16114;
@@ -681,17 +630,6 @@ void BtlController_EmitBattleAnimation(u8 a, u8 b, u16 c); //0x34
 void BtlController_EmitResetActionMoveSelection(u8 a, u8 b); //0x36
 void BtlController_EmitCmd55(u8 a, u8 b); //0x37
 
-#define REQUEST_ALL_BATTLE      0x0
-#define REQUEST_SPECIES_BATTLE  0x1
-#define REQUEST_HELDITEM_BATTLE 0x2
-#define REQUEST_MOVES_PP_BATTLE 0x3
-#define REQUEST_PPMOVE1_BATTLE  0x9
-#define REQUEST_PPMOVE2_BATTLE  0xA
-#define REQUEST_PPMOVE3_BATTLE  0xB
-#define REQUEST_PPMOVE4_BATTLE  0xC
-#define REQUEST_STATUS_BATTLE   0x28
-#define REQUEST_HP_BATTLE       0x2A
-
 void MarkBattlerForControllerExec(u8 bank);
 
 extern u8 gBattleTextBuff1[];
@@ -777,7 +715,7 @@ void debug_sub_8010800(void);
 
 // asm/battle_3.o
 u8 CheckMoveLimitations(u8 bank, u8 unusableMoves, u8 check);
-u8 UpdateTurnCounters(void);
+u8 DoFieldEndTurnEffects(void);
 u8 TurnBasedEffects(void);
 u8 HandleFaintedMonActions();
 u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 move);
@@ -787,7 +725,7 @@ u8 GetMoveTarget(u16 move, u8 useMoveTarget);
 // asm/battle_4.o
 void AI_CalcDmg(u8, u8);
 u8 TypeCalc(u16 move, u8 bank_atk, u8 bank_def);
-u8 BankGetTurnOrder(u8 bank);
+u8 GetBattlerTurnOrderNum(u8 bank);
 
 // asm/battle_5.o
 void nullsub_91(void);

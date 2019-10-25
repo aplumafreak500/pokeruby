@@ -15,6 +15,7 @@
 #include "text.h"
 #include "ewram.h"
 #include "graphics.h"
+#include "pokemon_summary_screen.h"
 
 struct UnknownStruct5
 {
@@ -249,7 +250,7 @@ const struct SpritePalette gUnknown_0820A774[] =
     { gUnknown_08D1214C, 0xd713 },
 };
 
-const struct CompressedSpriteSheet gUnknown_0820A784[] =
+const struct SpriteSheet gUnknown_0820A784[] =
 {
     { Tiles_D129AC, 0x80, 0xd714 },
     { Tiles_D129AC, 0x80, 0xd715 },
@@ -269,48 +270,45 @@ const struct OamData gOamData_820A79C =
     .priority = 1,
 };
 
-const struct SpriteTemplate gSpriteTemplate_820A7A4 =
+const struct SpriteTemplate gSpriteTemplate_820A7A4[] =
 {
-    .tileTag = 55052,
-    .paletteTag = 55056,
-    .oam = &gOamData_820A4E4,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = sub_8045030,
+    {
+        .tileTag = 55052,
+        .paletteTag = 55056,
+        .oam = &gOamData_820A4E4,
+        .anims = gDummySpriteAnimTable,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = sub_8045030,
+    }, {
+        .tileTag = 55053,
+        .paletteTag = 55057,
+        .oam = &gOamData_820A4E4,
+        .anims = gDummySpriteAnimTable,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = sub_8045030,
+    }
 };
 
-const struct SpriteTemplate gSpriteTemplate_820A7BC =
-{
-    .tileTag = 55053,
-    .paletteTag = 55057,
-    .oam = &gOamData_820A4E4,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = sub_8045030,
-};
-
-const struct SpriteTemplate gSpriteTemplate_820A7D4 =
-{
-    .tileTag = 55060,
-    .paletteTag = 55058,
-    .oam = &gOamData_820A79C,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = sub_804507C,
-};
-
-const struct SpriteTemplate gSpriteTemplate_820A7EC =
-{
-    .tileTag = 55061,
-    .paletteTag = 55059,
-    .oam = &gOamData_820A79C,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = sub_804507C,
+const struct SpriteTemplate gSpriteTemplate_820A7D4[] = {
+    {
+        .tileTag = 55060,
+        .paletteTag = 55058,
+        .oam = &gOamData_820A79C,
+        .anims = gDummySpriteAnimTable,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = sub_804507C,
+    }, {
+        .tileTag = 55061,
+        .paletteTag = 55059,
+        .oam = &gOamData_820A79C,
+        .anims = gDummySpriteAnimTable,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = sub_804507C,
+    }
 };
 
 u8 *const gUnknown_0820A804[2] =
@@ -425,7 +423,7 @@ u8 *const gUnknown_0820A904[10] =
 extern u8 gDisplayedStringBattle[];
 extern u8 gBattlersCount;
 extern u16 gBattlerPartyIndexes[];
-extern u8 gBanksBySide[];
+extern u8 gBattlerPositions[];
 extern u8 gHealthboxSpriteIds[];
 
 extern u16 gBattleTypeFlags;
@@ -836,7 +834,7 @@ u8 battle_make_oam_normal_battle(u8 a)
     }
     //_08043B50
 
-    spriteId3 = CreateSpriteAtEnd(&gSpriteTemplates_820A56C[gBanksBySide[a]], 140, 60, 0);
+    spriteId3 = CreateSpriteAtEnd(&gSpriteTemplates_820A56C[gBattlerPositions[a]], 140, 60, 0);
     sprite = &gSprites[spriteId3];
     SetSubspriteTables(sprite, &gSubspriteTables_820A684[GetBattlerSide(a)]);
     sprite->subspriteMode = 2;

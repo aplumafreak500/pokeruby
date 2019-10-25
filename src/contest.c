@@ -46,7 +46,7 @@ extern u8 gDisplayedStringBattle[];
 extern u16 gBattleTypeFlags;
 extern u8 gBattlerAttacker;
 extern u8 gBattlerTarget;
-extern u8 gBanksBySide[];
+extern u8 gBattlerPositions[];
 extern u8 gBattlerSpriteIds[];
 extern struct Window gUnknown_03004210;
 extern u32 gContestRngValue;
@@ -528,10 +528,10 @@ u8 sub_80AB70C(u8 *a)
         CreateApplauseMeterSprite();
         sub_80B0324();
         sub_80B0518();
-        gBanksBySide[0] = 0;
-        gBanksBySide[1] = 1;
-        gBanksBySide[2] = 3;
-        gBanksBySide[3] = 2;
+        gBattlerPositions[0] = 0;
+        gBattlerPositions[1] = 1;
+        gBattlerPositions[2] = 3;
+        gBattlerPositions[3] = 2;
         gBattleTypeFlags = 0;
         gBattlerAttacker = 2;
         gBattlerTarget = 3;
@@ -3758,6 +3758,7 @@ u8 unref_sub_80B06E0(u8 *a)
 void sub_80B0748(u8 taskId)
 {
     u8 i;
+    u8 r4;
     u8 r4_2;
     u8 r1;
     u8 r7;

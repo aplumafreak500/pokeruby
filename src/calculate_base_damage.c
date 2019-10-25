@@ -154,7 +154,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         if (attackerHoldEffect == gHoldEffectToType[i][0]
             && type == gHoldEffectToType[i][1])
         {
-            if (TYPE_IS_PHYSICAL(type))
+            if (IS_TYPE_PHYSICAL(type))
                 attack = (attack * (attackerHoldEffectParam + 100)) / 100;
             else
                 spAttack = (spAttack * (attackerHoldEffectParam + 100)) / 100;
@@ -205,7 +205,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (gBattleMoves[gCurrentMove].effect == EFFECT_EXPLOSION)
         defense /= 2;
 
-    if (TYPE_IS_PHYSICAL(type) || (gBattleMoves[move].damageEffect == MOVE_PHYSICAL && gBattleMoves[move].paddingFlag)) // type < TYPE_MYSTERY
+    if (IS_TYPE_PHYSICAL(type) || (gBattleMoves[move].damageEffect == MOVE_PHYSICAL && gBattleMoves[move].paddingFlag)) // type < TYPE_MYSTERY
     {
         if (gCritMultiplier == 2)
         {
@@ -233,7 +233,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         damage = damage / damageHelper;
         damage /= 50;
 
-        if ((attacker->status1 & STATUS_BURN) && attacker->ability != ABILITY_GUTS)
+        if ((attacker->status1 & STATUS1_BURN) && attacker->ability != ABILITY_GUTS)
             damage /= 2;
 
         if ((sideStatus & SIDE_STATUS_REFLECT) && gCritMultiplier == 1)
@@ -255,7 +255,7 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
     if (type == TYPE_MYSTERY || (gBattleMoves[move].damageEffect == MOVE_STATUS && gBattleMoves[move].paddingFlag))
         damage = 0; // is ??? type. does 0 damage.
 
-    if (TYPE_IS_SPECIAL(type) || (gBattleMoves[move].damageEffect == MOVE_SPECIAL && gBattleMoves[move].paddingFlag)) // type > TYPE_MYSTERY
+    if (IS_TYPE_SPECIAL(type) || (gBattleMoves[move].damageEffect == MOVE_SPECIAL && gBattleMoves[move].paddingFlag)) // type > TYPE_MYSTERY
     {
         if (gCritMultiplier == 2)
         {

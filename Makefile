@@ -7,7 +7,6 @@ else
 EXE :=
 endif
 
-
 #### Tools ####
 
 SHELL     := /bin/bash -o pipefail
@@ -26,12 +25,19 @@ SCANINC   := tools/scaninc/scaninc$(EXE)
 RAMSCRGEN := tools/ramscrgen/ramscrgen$(EXE)
 GBAFIX    := tools/gbafix/gbafix$(EXE)
 MAPJSON   := tools/mapjson/mapjson$(EXE)
+JSONPROC  := tools/jsonproc/jsonproc$(EXE)
+
 
 VERSION=\"$(shell git describe --always --abbrev=7)\"
 
-ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG)
+ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym DEBUG_TRANSLATE=$(DEBUG_TRANSLATE) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG)
 CC1FLAGS := -mthumb-interwork -Wall -O2 -fhex-asm
-CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef -Wall -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -D DEBUG=$(DEBUG) -D VERSION_NUMBER=$(VERSION)
+CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef -Wall -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -DDEBUG_TRANSLATE=$(DEBUG_TRANSLATE) -D DEBUG=$(DEBUG) -D VERSION_NUMBER=$(VERSION)
+
+ifneq (,$(NONMATCHING))
+CPPFLAGS += -DNONMATCHING
+ASFLAGS  += --defsym NONMATCHING=1
+endif
 
 #### Files ####
 
@@ -48,7 +54,8 @@ C_OBJECTS    := $(addprefix $(BUILD_DIR)/, $(C_SOURCES:%.c=%.o))
 ASM_OBJECTS  := $(addprefix $(BUILD_DIR)/, $(ASM_SOURCES:%.s=%.o))
 ALL_OBJECTS  := $(C_OBJECTS) $(ASM_OBJECTS)
 
-SUBDIRS      := $(sort $(dir $(ALL_OBJECTS)))
+SUBDIRS        := $(sort $(dir $(ALL_OBJECTS)))
+DATA_SRC_SUBDIR = src/data
 
 LIBC   := tools/agbcc/lib/libc.a
 LIBGCC := tools/agbcc/lib/libgcc.a
@@ -107,10 +114,14 @@ $(shell mkdir -p $(SUBDIRS))
 # Refresh the git hash
 $(shell touch src/data/git.h)
 
+AUTO_GEN_TARGETS :=
+
 all: $(ROM)
 ifeq ($(COMPARE),1)
 	@$(SHA1SUM) $(BUILD_NAME).sha1
 endif
+
+compare: ; @$(MAKE) COMPARE=1
 
 clean: tidy
 	@echo clean
@@ -120,6 +131,8 @@ clean: tidy
 	@rm -f data/layouts/layouts.inc data/layouts/layouts_table.inc
 	@rm -f data/maps/connections.inc data/maps/events.inc data/maps/groups.inc data/maps/headers.inc
 	@find data/maps \( -iname 'connections.inc' -o -iname 'events.inc' -o -iname 'header.inc' \) -exec rm {} +
+	rm -f $(AUTO_GEN_TARGETS)
+	rm -f $(AUTO_GEN_TARGETS)
 	$(MAKE) clean -C tools/gbagfx
 	$(MAKE) clean -C tools/scaninc
 	$(MAKE) clean -C tools/preproc
@@ -129,6 +142,7 @@ clean: tidy
 	$(MAKE) clean -C tools/ramscrgen
 	$(MAKE) clean -C tools/gbafix
 	$(MAKE) clean -C tools/mapjson
+	$(MAKE) clean -C tools/jsonproc
 
 tools:
 	@$(MAKE) -C tools/gbagfx
@@ -141,6 +155,7 @@ tools:
 	@$(MAKE) -C tools/mid2agb
 	@$(MAKE) -C tools/gbafix
 	@$(MAKE) -C tools/mapjson
+	@$(MAKE) -C tools/jsonproc
 
 tidy:
 	@echo tidy
@@ -201,6 +216,16 @@ sapphire_eur:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=PAL
 ruby_eur_debug:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=PAL DEBUG=1
 sapphire_eur_debug:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=PAL DEBUG=1
 
+compare_ruby:          ; @$(MAKE) GAME_VERSION=RUBY COMPARE=1
+compare_ruby_rev1:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 COMPARE=1
+compare_ruby_rev2:     ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 COMPARE=1
+compare_sapphire:      ; @$(MAKE) GAME_VERSION=SAPPHIRE COMPARE=1
+compare_sapphire_rev1: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 COMPARE=1
+compare_sapphire_rev2: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 COMPARE=1
+compare_ruby_de:       ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN COMPARE=1
+compare_sapphire_de:   ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN COMPARE=1
+compare_ruby_de_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=1
+
 #### Graphics Rules ####
 
 GFX_OPTS :=
@@ -212,6 +237,7 @@ include misc.mk
 include spritesheet_rules.mk
 include override.mk
 include map_data_rules.mk
+include json_data_rules.mk
 
 %.1bpp: %.png
 	@echo $<

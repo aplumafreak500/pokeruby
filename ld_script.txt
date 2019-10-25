@@ -47,7 +47,7 @@ SECTIONS {
         src/link.o(.text);
         src/rtc.o(.text);
         src/main_menu.o(.text);
-        src/rom3.o(.text);
+        src/battle_controllers.o(.text);
         src/decompress.o(.text);
         asm/decompress.o(.text);
         src/battle_bg.o(.text);
@@ -698,7 +698,6 @@ SECTIONS {
         src/easy_chat_2.o(.data);
         src/pokenav_before.o(.rodata);
         src/pokenav.o(.rodata);
-        data/pokenav.o(.rodata);
         src/trainers_eye.o(.rodata);
         src/mon_markings.o(.rodata);
         src/mauville_man.o(.rodata);

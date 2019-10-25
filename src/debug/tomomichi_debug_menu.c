@@ -16,6 +16,8 @@
 #include "contest_painting.h"
 #include "sound.h"
 
+// TRN: If anyone wants to translate the dummy options, they are welcome to :P
+
 static u16 sPicTest_Species;
 static u32 sPicTest_OTID;
 static u32 sPicTest_Personality;
@@ -359,6 +361,7 @@ static const struct MenuAction sMenuActions_ControlEvents_Events1[] = {
     {sString_Coin_ippai, CallScript_GiveAllCoins}
 };
 
+// Note: JP text says Dewford Gym for some reason.
 static const u8 sString_SootpolisGymOpen[] = _("Open gym 8");
 static const u8 sString_MoneyTo0[] = _("Set to ¥0");
 static const u8 sString_BarboachFull[] = _("All Barboach");
@@ -1858,13 +1861,13 @@ static const struct MenuAction gUnknown_Debug_083C47F0[] = {
     {gUnknown_Debug_083C47E9, DummyMenuAction}
 };
 
-static const u8 gUnknown_Debug_083C4830[] = _("Trick　Master");
+static const u8 gUnknown_Debug_083C4830[] = _("Trick Master");
 
-static const u8 gUnknown_Debug_083C483D[] = _("Hidden　Master");
-static const u8 gUnknown_Debug_083C484B[] = _("Inside　the　house");
-static const u8 gUnknown_Debug_083C485C[] = _("Pass　a　reward");
-static const u8 gUnknown_Debug_083C486A[] = _("Rig　a　trick");
-static const u8 gUnknown_Debug_083C4876[] = _("Master　is　gone");
+static const u8 gUnknown_Debug_083C483D[] = _("Hidden Master");
+static const u8 gUnknown_Debug_083C484B[] = _("Inside the house");
+static const u8 gUnknown_Debug_083C485C[] = _("Pass a reward");
+static const u8 gUnknown_Debug_083C486A[] = _("Rig a trick");
+static const u8 gUnknown_Debug_083C4876[] = _("Master is gone");
 
 static const struct MenuAction gUnknown_Debug_083C4888[] = {
     {gUnknown_Debug_083C483D, DummyMenuAction},
@@ -1885,7 +1888,7 @@ bool8 InitTomomichiDebugWindow(void)
 
 static void debug_sub_808B868(void)
 {
-    c2_exit_to_overworld_1_continue_scripts_restart_music();
+    CB2_ReturnToFieldContinueScriptPlayMapMusic();
 }
 
 static bool8 InitDebugWindow(void)

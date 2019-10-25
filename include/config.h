@@ -56,6 +56,16 @@
 #define UNITS_METRIC
 #endif
 
+// An option to use translations/encoding fixes for the Debug menus.
+// Selected by default for custom English debug roms.
+#ifndef DEBUG_TRANSLATE
+#if ENGLISH && DEBUG
+#define DEBUG_TRANSLATE 1
+#else
+#define DEBUG_TRANSLATE 0
+#endif
+#endif
+
 // Fixed in Emerald.
 #if (ENGLISH && REVISION >= 3) || (EUROPEAN && REVISION >= 2)
 #define BUGFIX_SETMONIVS

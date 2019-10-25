@@ -3488,10 +3488,10 @@ static void sub_8090584(u8 a, u16 b)
             u32 r0 = b * 0x800 + (r7 + j) * 2;
             u8 *ptr;
 
-            ptr = VRAM;
-            *(u16 *)(ptr + r0) = *(u16 *)(ptr + r0) & 0xFFF | r6;
-            ptr = VRAM + 0x40;
-            *(u16 *)(ptr + r0) = *(u16 *)(ptr + r0) & 0xFFF | r6;
+            ptr = (void *)VRAM;
+            *(u16 *)(ptr + r0) = (*(u16 *)(ptr + r0) & 0xFFF) | r6;
+            ptr = (void *)VRAM + 0x40;
+            *(u16 *)(ptr + r0) = (*(u16 *)(ptr + r0) & 0xFFF) | r6;
         }
     }
     r6 = 0x4000;
@@ -3500,10 +3500,10 @@ static void sub_8090584(u8 a, u16 b)
         u32 r0 = b * 0x800 + j * 2;
         u8 *ptr;
 
-        ptr = VRAM + 0x32;
-        *(u16 *)(ptr + r0) = *(u16 *)(ptr + r0) & 0xFFF | r6;
-        ptr = VRAM + 0x72;
-        *(u16 *)(ptr + r0) = *(u16 *)(ptr + r0) & 0xFFF | r6;
+        ptr = (void *)VRAM + 0x32;
+        *(u16 *)(ptr + r0) = (*(u16 *)(ptr + r0) & 0xFFF) | r6;
+        ptr = (void *)VRAM + 0x72;
+        *(u16 *)(ptr + r0) = (*(u16 *)(ptr + r0) & 0xFFF) | r6;
     }
 }
 #else
@@ -3634,9 +3634,9 @@ static void sub_8090644(u8 a, u16 b)
             u16 (*vramData)[0x400];
 
             vramData = (u16 (*)[])VRAM;
-            vramData[b][r8 + j] = vramData[b][r8 + j] & 0xFFF | r5;
+            vramData[b][r8 + j] = (vramData[b][r8 + j] & 0xFFF) | r5;
             vramData = (u16 (*)[])(VRAM + 0x40);
-            vramData[b][r8 + j] = vramData[b][r8 + j] & 0xFFF | r5;
+            vramData[b][r8 + j] = (vramData[b][r8 + j] & 0xFFF) | r5;
         }
     }
 
@@ -3645,9 +3645,9 @@ static void sub_8090644(u8 a, u16 b)
         u16 (*vramData)[0x400];
 
         vramData = (u16 (*)[])(VRAM + 0x32);
-        vramData[b][j] = vramData[b][j] & 0xFFF | 0x4000;
+        vramData[b][j] = (vramData[b][j] & 0xFFF) | 0x4000;
         vramData = (u16 (*)[])(VRAM + 0x72);
-        vramData[b][j] = vramData[b][j] & 0xFFF | 0x4000;
+        vramData[b][j] = (vramData[b][j] & 0xFFF) | 0x4000;
     }
 }
 #else
