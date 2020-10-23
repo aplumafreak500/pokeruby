@@ -2553,9 +2553,9 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
 		case VERSION_RUBY:
 		case VERSION_SAPPHIRE:
 		case VERSION_EMERALD:
-		case VERSION_FIRERED:
-		case VERSION_LEAFGREEN:
-		case VERSION_BLUE_GBA:
+		case VERSION_FIRE_RED:
+		case VERSION_LEAF_GREEN:
+		case VERSION_BUBBLE_BLUE:
 			if (locationMet == 253) {
 				Menu_PrintText(gOtherText_EggHotSprings, left, top);
 			}
@@ -2570,9 +2570,9 @@ static void PokemonSummaryScreen_PrintEggTrainerMemo(struct Pokemon *mon, u8 lef
 		case VERSION_DIAMOND:
 		case VERSION_PEARL:
 		case VERSION_PLATINUM:
-		case VERSION_HEARTGOLD:
-		case VERSION_SOULSILVER:
-		case VERSION_CRYSTAL_DS:
+		case VERSION_HEART_GOLD:
+		case VERSION_SOUL_SILVER:
+		case VERSION_DS_CRYSTAL:
 			if (locationMet == 2000) {
 				Menu_PrintText(gOtherText_EggDayCare, left, top);
 			}
