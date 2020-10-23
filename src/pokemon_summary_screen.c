@@ -2643,9 +2643,9 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		case VERSION_RUBY:
 		case VERSION_SAPPHIRE:
 		case VERSION_EMERALD:
-		case VERSION_FIRERED:
-		case VERSION_LEAFGREEN:
-		case VERSION_BLUE_GBA:
+		case VERSION_FIRE_RED:
+		case VERSION_LEAF_GREEN:
+		case VERSION_BUBBLE_BLUE:
 			if (locationMet == 255) {
 				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
 				*ptr = CHAR_NEWLINE;
@@ -2679,9 +2679,9 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 		case VERSION_DIAMOND:
 		case VERSION_PEARL:
 		case VERSION_PLATINUM:
-		case VERSION_HEARTGOLD:
-		case VERSION_SOULSILVER:
-		case VERSION_CRYSTAL_DS:
+		case VERSION_HEART_GOLD:
+		case VERSION_SOUL_SILVER:
+		case VERSION_DS_CRYSTAL:
 			if (locationMet < 235) {
 				if (levelMet==0) {
 					ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
@@ -2742,10 +2742,10 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 				StringCopy(ptr, gOtherText_ObtainedInTrade);
 			}
 			break;
-		case VERSION_RED_BANK:
-		case VERSION_BLUE_BANK:
-		case VERSION_GREEN_BANK:
-		case VERSION_YELLOW_BANK:
+		case VERSION_VC_RED:
+		case VERSION_VC_BLUE:
+		case VERSION_VC_GREEN:
+		case VERSION_VC_YELLOW:
 			if (locationMet == 255) {
 				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, levelMet);
 				*ptr = CHAR_NEWLINE;
