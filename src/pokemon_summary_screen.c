@@ -2613,7 +2613,7 @@ static void PokemonSummaryScreen_PrintTrainerMemo(struct Pokemon *mon, u8 left, 
 	gameMet = GetMonData(mon, MON_DATA_MET_GAME);
 	levelMet = GetMonData(mon, MON_DATA_MET_LEVEL);
 	switch (gameMet) {
-		case VERSION_GC:
+		case VERSION_GAMECUBE:
 			//Colosseum and XD Location Handling
 			if (levelMet==0) {
 				ptr = PokemonSummaryScreen_CopyPokemonLevel(ptr, EGG_HATCH_LEVEL);
