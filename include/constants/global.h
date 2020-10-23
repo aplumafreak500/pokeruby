@@ -5,26 +5,65 @@
 // In Gen 4 only, migrated Pokemon with Diamond, Pearl, or Platinum's ID show as "----------".
 // Gen 5 and up read Diamond, Pearl, or Platinum's ID as "Sinnoh".
 // In Gen 4 and up, migrated Pokemon with HeartGold or SoulSilver's ID show the otherwise unused "Johto" string.
+// Some of this is taken from PKHeX
+
 #define VERSION_SAPPHIRE 1
 #define VERSION_RUBY 2
 #define VERSION_EMERALD 3
 #define VERSION_FIRE_RED 4
 #define VERSION_LEAF_GREEN 5
+#define VERSION_BUBBLE_BLUE 6
 #define VERSION_HEART_GOLD 7
 #define VERSION_SOUL_SILVER 8
+#define VERSION_DS_CRYSTAL 9
 #define VERSION_DIAMOND 10
 #define VERSION_PEARL 11
 #define VERSION_PLATINUM 12
+
 #define VERSION_GAMECUBE 15
+
+#define VERSION_WHITE 20
+#define VERSION_BLACK 21
+#define VERSION_WHITE_2 22
+#define VERSION_BLACK_2 23
+#define VERSION_X 24
+#define VERSION_Y 25
+#define VERSION_ALPHA_SAPPHIRE 26
+#define VERSION_OMEGA_RUBY 27
+#define VERSION_3DS_EMERALD 28
+#define VERSION_Z 29
+#define VERSION_SUN 30
+#define VERSION_MOON 31
+#define VERSION_ULTRA_SUN 32
+#define VERSION_ULTRA_MOON 33
+#define VERSION_GO 34
+#define VERSION_VC_RED 35
+// Blue international
+#define VERSION_VC_GREEN 36
+// Green international
+#define VERSION_VC_BLUE 37
+#define VERSION_VC_YELLOW 38
+#define VERSION_VC_GOLD 39
+#define VERSION_VC_SILVER 40
+#define VERSION_VC_CRYSTAL 41
+#define VERSION_LETS_GO_PIKACHU 42
+#define VERSION_LETS_GO_EEVEE 43
+#define VERSION_SWORD 44
+#define VERSION_SHIELD 45
 
 #define LANGUAGE_JAPANESE 1
 #define LANGUAGE_ENGLISH  2
 #define LANGUAGE_FRENCH   3
 #define LANGUAGE_ITALIAN  4
 #define LANGUAGE_GERMAN   5
-#define LANGUAGE_KOREAN   6 // 6 goes unused but the theory is it was meant to be Korean
+// 6 goes unused in Gen 3 but the theory is it was meant to be Korean. Language ID #6 is Dutch in the system software on later consoles, but it remains unused.
+#define LANGUAGE_OLD_KOREAN 6
+#define LANGUAGE_DUTCH    6
 #define LANGUAGE_SPANISH  7
-#define NUM_LANGUAGES     7
+#define LANGUAGE_KOREAN   8
+#define LANGUAGE_CHINESE_SIMPLIFIED 9
+#define LANGUAGE_CHINESE_TRADITIONAL 10
+#define NUM_LANGUAGES     10
 
 #if defined(ENGLISH)
 #define GAME_LANGUAGE (LANGUAGE_ENGLISH)
