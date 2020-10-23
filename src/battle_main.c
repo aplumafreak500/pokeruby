@@ -9,6 +9,7 @@
 #include "gba/flash_internal.h"
 #include "battle.h"
 #include "battle_ai_script_commands.h"
+#include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_message.h"
 #include "battle_setup.h"
@@ -32,7 +33,6 @@
 #include "pokemon.h"
 #include "random.h"
 #include "roamer.h"
-#include "rom3.h"
 #include "rom_8077ABC.h"
 #include "rom_8094928.h"
 #include "safari_zone.h"
@@ -83,7 +83,7 @@ extern u32 gBattleControllerExecFlags;
 extern u8 gBattlersCount;
 extern u16 gBattlerPartyIndexes[];
 extern u8 gCurrentActionFuncId;
-extern u8 gBanksByTurnOrder[];
+extern u8 gBattlerByTurnOrder[];
 extern u8 gBattlerSpriteIds[];
 extern u16 gCurrentMove;  // This is mis-named. It is a species, not a move ID.
 extern u8 gLastUsedAbility;
@@ -92,7 +92,7 @@ extern u8 gAbsentBattlerFlags;
 extern u8 gMultiHitCounter;
 extern u8 gActionForBanks[];
 extern u16 gUnknown_02024C2C[];
-extern u16 gLastUsedMove[];
+extern u16 gLastMoves[];
 extern u16 gLastLandedMoves[];
 extern u16 gLastHitByType[];
 extern u16 gUnknown_02024C4C[];
@@ -100,7 +100,7 @@ extern u16 gLockedMoves[];
 extern u16 gChosenMovesByBanks[];
 extern u32 gHitMarker;
 extern u8 gUnknown_02024C70[];
-extern u16 gSideAffecting[];
+extern u16 gSideStatuses[];
 extern u32 gStatuses3[];
 //extern u8 gDisableStructs[][0x1C];
 extern u16 gPauseCounterBattle;
@@ -113,11 +113,14 @@ extern u16 gUnknown_02024DE8;
 extern u8 gActionSelectionCursor[];
 extern u8 gMoveSelectionCursor[];
 extern u8 gUnknown_02038470[];
-extern MainCallback gPreBattleCallback1;
+MainCallback gPreBattleCallback1;
+u8 gUnknown_03004344;
+u8 gUnknown_03004348;
 extern void (*gBattleMainFunc)(void);
-extern u8 gLeveledUpInBattle;
-extern void (*gBattlerControllerFuncs[])(void);
-extern u8 gHealthboxSpriteIds[];
+u8 gLeveledUpInBattle;
+void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(void);
+u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
+u8 gUnknown_0300434C[MAX_BATTLERS_COUNT];
 extern u16 gBattleTypeFlags;
 extern u8 gReservedSpritePaletteCount;
 extern u16 gTrainerBattleOpponent;
@@ -163,6 +166,7 @@ extern u8 gNumSafariBalls;
 extern u8 gUnknown_081FA70C[][3];
 extern u8 gUnknown_081FA71B[];
 extern u8 gUnknown_081FA71F[];
+struct BattleResults gBattleResults;
 
 void BattleMainCB1(void);
 static void BattlePrepIntroSlide(void);
@@ -208,7 +212,7 @@ void CB2_InitBattle(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
-        sub_800B858();
+        HandleLinkBattleSetup();
         SetMainCallback2(sub_800F104);
         gBattleCommunication[0] = 0;
     }
@@ -241,9 +245,8 @@ void CB2_InitBattleInternal(void)
         gScanlineEffectRegBuffers[0][i] = 0xF0;
         gScanlineEffectRegBuffers[1][i] = 0xF0;
     }
-    for (i = 80; i < 160; i++)
+    for (; i < 160; i++)
     {
-        asm(""::"r"(i));  // Needed to stop the compiler from optimizing out the loop counter
         gScanlineEffectRegBuffers[0][i] = 0xFF10;
         gScanlineEffectRegBuffers[1][i] = 0xFF10;
     }
@@ -1185,7 +1188,7 @@ void sub_800FE20(struct Sprite *sprite)
 {
     StartSpriteAffineAnim(sprite, 1);
     sprite->callback = sub_800FDB0;
-    PlaySE(SE_BT_START);
+    PlaySE(SE_MUGSHOT);
 }
 
 void sub_800FE40(u8 taskId)
@@ -1289,9 +1292,8 @@ void c2_8011A1C(void)
         gScanlineEffectRegBuffers[0][i] = 0xF0;
         gScanlineEffectRegBuffers[1][i] = 0xF0;
     }
-    for (i = 80; i < 160; i++)
+    for (; i < 160; i++)
     {
-        asm(""::"r"(i));  // Needed to stop the compiler from optimizing out the loop counter
         gScanlineEffectRegBuffers[0][i] = 0xFF10;
         gScanlineEffectRegBuffers[1][i] = 0xFF10;
     }
@@ -1378,7 +1380,7 @@ void debug_sub_8011EA0(u8);
 void debug_sub_8012294(void);
 void debug_sub_80123D8(u8);
 void debug_sub_8012540(void);
-void debug_nullsub_3(void);
+void debug_ShowCurrentAnimAudioOptions(void);
 void debug_sub_80125A0(void);
 void debug_sub_80125E4(void);
 void debug_sub_8012628(void);
@@ -1402,9 +1404,9 @@ extern const u16 gUnknown_Debug_821F424[][5];
 extern const u16 gUnknown_Debug_821F56C[][5];
 extern const u32 gUnknown_Debug_821F798[][4];
 
-extern const u8 gUnusedOldCharmap_Gfx_lz[];
-extern const u8 gUnusedOldCharmap_Tilemap_lz[];
-extern const u8 gUnusedOldCharmap_Pal_lz[];
+extern const u8 gDebugBattleCharmap_Gfx_lz[];
+extern const u8 gDebugBattleCharmap_Tilemap_lz[];
+extern const u8 gDebugBattleCharmap_Pal_lz[];
 
 void debug_sub_8010800(void)
 {
@@ -1457,10 +1459,10 @@ void debug_sub_80108B8(void)
 	REG_BG1CNT = 0x4801;
 	REG_BLDCNT = 0;
 	REG_BLDY = 0;
-	LZDecompressVram(gUnusedOldCharmap_Gfx_lz, (void *)VRAM);
-	LZDecompressWram(gUnusedOldCharmap_Tilemap_lz, gSharedMem);
-	LZDecompressVram(gUnusedOldCharmap_Pal_lz, (void *)PLTT);
-	LZDecompressVram(gUnusedOldCharmap_Pal_lz, (void *)(PLTT + 0x1E0));
+	LZDecompressVram(gDebugBattleCharmap_Gfx_lz, (void *)VRAM);
+	LZDecompressWram(gDebugBattleCharmap_Tilemap_lz, gSharedMem);
+	LZDecompressVram(gDebugBattleCharmap_Pal_lz, (void *)PLTT);
+	LZDecompressVram(gDebugBattleCharmap_Pal_lz, (void *)(PLTT + 0x1E0));
 	m4aSoundVSyncOn();
 	SetVBlankCallback(debug_sub_8011D40);
 	SetMainCallback2(debug_sub_8010CAC);
@@ -1478,7 +1480,7 @@ void debug_sub_80108B8(void)
 		debug_sub_8012294();
 	debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
 	debug_sub_8012540();
-	debug_nullsub_3();
+	debug_ShowCurrentAnimAudioOptions();
 	gUnknown_Debug_030043A8 = 0;
 	debug_sub_80125A0();
 	if (gUnknown_Debug_2023A76[0][0x22] == 8)
@@ -1612,7 +1614,7 @@ void debug_sub_8010CAC(void)
             gSaveBlock2.optionsBattleSceneOff = (r5 & 1);
             gSaveBlock2.optionsSound = (r5 & 2) >> 1;
             SetPokemonCryStereo(gSaveBlock2.optionsSound);
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
         }
     }
     if (gMain.newKeysRaw == START_BUTTON)
@@ -1690,7 +1692,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 32:
@@ -1698,7 +1700,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 33:
@@ -1751,7 +1753,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 32:
@@ -1759,7 +1761,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 33:
@@ -2214,7 +2216,12 @@ void debug_sub_8011EA0(u8 a)
     case 15:
     case 20:
     case 25:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 8);
+#else
         debug_sub_8010A7C(0, 20);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2223,6 +2230,8 @@ void debug_sub_8011EA0(u8 a)
             gUnknown_Debug_821F424[a][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2231,6 +2240,7 @@ void debug_sub_8011EA0(u8 a)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         StringAppend(gBattleTextBuff1, gSpeciesNames[gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a]]);
         Text_InitWindow(
             &gUnknown_Debug_03004370,
@@ -2262,7 +2272,12 @@ void debug_sub_8011EA0(u8 a)
     case 17:
     case 22:
     case 27:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 11);
+#else
         debug_sub_8010A7C(0, 24);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2271,6 +2286,8 @@ void debug_sub_8011EA0(u8 a)
             gUnknown_Debug_821F424[a][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2279,6 +2296,7 @@ void debug_sub_8011EA0(u8 a)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         if (gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a] != 0)
             StringAppend(gBattleTextBuff1, ItemId_GetName(gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a]));
         else
@@ -2297,7 +2315,12 @@ void debug_sub_8011EA0(u8 a)
     case 19:
     case 24:
     case 29:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 2);
+#else
         debug_sub_8010A7C(0, 4);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2370,7 +2393,12 @@ void debug_sub_8012294(void)
     
     if (r5 < 30)
     {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 10);
+#else
         debug_sub_8010A7C(0, 24);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2379,6 +2407,8 @@ void debug_sub_8012294(void)
             gUnknown_Debug_821F564[gUnknown_Debug_030043A8][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023B02[gUnknown_Debug_03004360][r5 / 5][gUnknown_Debug_030043A8], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2387,6 +2417,7 @@ void debug_sub_8012294(void)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         StringAppend(gBattleTextBuff1, gMoveNames[gUnknown_Debug_2023B02[gUnknown_Debug_03004360][r5 / 5][gUnknown_Debug_030043A8]]);
         Text_InitWindow(
             &gUnknown_Debug_03004370,
@@ -2404,7 +2435,12 @@ void debug_sub_80123D8(u8 a)
 {
     if (a < 30)
     {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 7);
+#else
         debug_sub_8010A7C(0, 18);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2420,7 +2456,12 @@ void debug_sub_80123D8(u8 a)
             gUnknown_Debug_821F58C[1],
             gUnknown_Debug_821F58C[2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 7);
+#else
         debug_sub_8010A7C(0, 18);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2469,17 +2510,61 @@ void debug_sub_8012540(void)
     Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
 }
 
-void debug_nullsub_3(void)
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+extern const u8 Str_821F64D[];
+extern const u8 Str_821F652[];
+extern const u8 Str_821F655[];
+extern const u8 Str_821F65A[];
+#endif
+
+void debug_ShowCurrentAnimAudioOptions(void)
 {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+    if (gSaveBlock2.optionsBattleSceneOff)
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F652,
+            418,
+            gUnknown_Debug_03004360 * 32 + 21,
+            0);
+    else
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F64D,
+            418,
+            gUnknown_Debug_03004360 * 32 + 21,
+            0);
+    Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+
+    if (gSaveBlock2.optionsSound)
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F65A,
+            422,
+            gUnknown_Debug_03004360 * 32 + 24,
+            0);
+    else
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F655,
+            422,
+            gUnknown_Debug_03004360 * 32 + 24,
+            0);
+    Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+#endif
 }
 
 extern const u32 gUnknown_Debug_821F680[][0x23];
 
+// Shows a cursor
 void debug_sub_80125A0(void)
 {
     gSharedMem[gUnknown_Debug_821F680[gUnknown_Debug_03004360][gUnknown_Debug_030043A0 + gUnknown_Debug_030043A4 * 5]] = 0x6D;
 }
 
+// Hides a cursor
 void debug_sub_80125E4(void)
 {
     gSharedMem[gUnknown_Debug_821F680[gUnknown_Debug_03004360][gUnknown_Debug_030043A0 + gUnknown_Debug_030043A4 * 5]] = 0x81;
@@ -3329,7 +3414,7 @@ void sub_8010874(void)
         MEMSET_ALT(&gDisableStructs[i], 0, 0x1C, j, r4);
         gDisableStructs[i].isFirstTurn= 2;
         gUnknown_02024C70[i] = 0;
-        gLastUsedMove[i] = 0;
+        gLastMoves[i] = 0;
         gLastLandedMoves[i] = 0;
         gLastHitByType[i] = 0;
         gUnknown_02024C4C[i] = 0;
@@ -3341,7 +3426,7 @@ void sub_8010874(void)
 
     for (i = 0; i < 2; i++)
     {
-        gSideAffecting[i] = 0;
+        gSideStatuses[i] = 0;
         MEMSET_ALT(&gSideTimers[i], 0, 12, j, r4);
     }
 
@@ -3399,7 +3484,7 @@ void sub_8010874(void)
     gBattleResults.unk2 = 0;
     gBattleResults.unk3 = 0;
     gBattleResults.unk4 = 0;
-    gBattleResults.unk5_0 = 0;
+    gBattleResults.playerMonWasDamaged = 0;
     gBattleResults.unk5_1 = 0;
     gBattleResults.lastOpponentSpecies = 0;
     gBattleResults.lastUsedMove = 0;
@@ -3433,23 +3518,23 @@ void SwitchInClearSetData(void)
         {
             if ((gBattleMons[i].status2 & STATUS2_ESCAPE_PREVENTION) && gDisableStructs[i].bankPreventingEscape == gActiveBattler)
                 gBattleMons[i].status2 &= ~STATUS2_ESCAPE_PREVENTION;
-            if ((gStatuses3[i] & STATUS3_ALWAYS_HITS) && gDisableStructs[i].bankWithSureHit == gActiveBattler)
+            if ((gStatuses3[i] & STATUS3_ALWAYS_HITS) && gDisableStructs[i].battlerWithSureHit == gActiveBattler)
             {
                 gStatuses3[i] &= ~STATUS3_ALWAYS_HITS;
-                gDisableStructs[i].bankWithSureHit = 0;
+                gDisableStructs[i].battlerWithSureHit = 0;
             }
         }
     }
     if (gBattleMoves[gCurrentMove].effect == EFFECT_BATON_PASS)
     {
         gBattleMons[gActiveBattler].status2 &= (STATUS2_CONFUSION | STATUS2_FOCUS_ENERGY | STATUS2_SUBSTITUTE | STATUS2_ESCAPE_PREVENTION | STATUS2_CURSED);
-        gStatuses3[gActiveBattler] &= (STATUS3_LEECHSEED_BANK | STATUS3_LEECHSEED | STATUS3_ALWAYS_HITS | STATUS3_PERISH_SONG | STATUS3_ROOTED | STATUS3_MUDSPORT | STATUS3_WATERSPORT);
+        gStatuses3[gActiveBattler] &= (STATUS3_LEECHSEED_BATTLER | STATUS3_LEECHSEED | STATUS3_ALWAYS_HITS | STATUS3_PERISH_SONG | STATUS3_ROOTED | STATUS3_MUDSPORT | STATUS3_WATERSPORT);
 
         for (i = 0; i < gBattlersCount; i++)
         {
             if (GetBattlerSide(gActiveBattler) != GetBattlerSide(i)
              && (gStatuses3[i] & STATUS3_ALWAYS_HITS) != 0
-             && (gDisableStructs[i].bankWithSureHit == gActiveBattler))
+             && (gDisableStructs[i].battlerWithSureHit == gActiveBattler))
             {
                 gStatuses3[i] &= ~STATUS3_ALWAYS_HITS;
                 gStatuses3[i] |= 0x10;
@@ -3478,13 +3563,13 @@ void SwitchInClearSetData(void)
     if (gBattleMoves[gCurrentMove].effect == EFFECT_BATON_PASS)
     {
         gDisableStructs[gActiveBattler].substituteHP = sp0.substituteHP;
-        gDisableStructs[gActiveBattler].bankWithSureHit = sp0.bankWithSureHit;
+        gDisableStructs[gActiveBattler].battlerWithSureHit = sp0.battlerWithSureHit;
         gDisableStructs[gActiveBattler].perishSongTimer1 = sp0.perishSongTimer1;
         gDisableStructs[gActiveBattler].perishSongTimer2 = sp0.perishSongTimer2;
     }
 
     gDisableStructs[gActiveBattler].isFirstTurn= 2;
-    gLastUsedMove[gActiveBattler] = 0;
+    gLastMoves[gActiveBattler] = 0;
     gLastLandedMoves[gActiveBattler] = 0;
     gLastHitByType[gActiveBattler] = 0;
     gUnknown_02024C4C[gActiveBattler] = 0;
@@ -3548,7 +3633,7 @@ void UndoEffectsAfterFainting(void)
     gProtectStructs[gActiveBattler].notFirstStrike = 0;
 
     gDisableStructs[gActiveBattler].isFirstTurn= 2;
-    gLastUsedMove[gActiveBattler] = 0;
+    gLastMoves[gActiveBattler] = 0;
     gLastLandedMoves[gActiveBattler] = 0;
     gLastHitByType[gActiveBattler] = 0;
     gUnknown_02024C4C[gActiveBattler] = 0;
@@ -3885,12 +3970,12 @@ void BattleBeginFirstTurn(void)
         if (ewram16058 == 0)
         {
             for (i = 0; i < gBattlersCount; i++)
-                gBanksByTurnOrder[i] = i;
+                gBattlerByTurnOrder[i] = i;
             for (i = 0; i < gBattlersCount - 1; i++)
             {
                 for (j = i + 1; j < gBattlersCount; j++)
                 {
-                    if (GetWhoStrikesFirst(gBanksByTurnOrder[i], gBanksByTurnOrder[j], 1) != 0)
+                    if (GetWhoStrikesFirst(gBattlerByTurnOrder[i], gBattlerByTurnOrder[j], 1) != 0)
                         SwapTurnOrder(i, j);
                 }
             }
@@ -3902,7 +3987,7 @@ void BattleBeginFirstTurn(void)
         }
         while (ewram16058 < gBattlersCount)
         {
-            if (AbilityBattleEffects(0, gBanksByTurnOrder[ewram16058], 0, 0, 0) != 0)
+            if (AbilityBattleEffects(0, gBattlerByTurnOrder[ewram16058], 0, 0, 0) != 0)
                 r9++;
             ewram16058++;
             if (r9 != 0)
@@ -3914,7 +3999,7 @@ void BattleBeginFirstTurn(void)
             return;
         while (ewram160F9 < gBattlersCount)
         {
-            if (ItemBattleEffects(0, gBanksByTurnOrder[ewram160F9], 0) != 0)
+            if (ItemBattleEffects(0, gBattlerByTurnOrder[ewram160F9], 0) != 0)
                 r9++;
             ewram160F9++;
             if (r9 != 0)
@@ -3981,7 +4066,7 @@ void BattleTurnPassed(void)
     TurnValuesCleanUp(1);
     if (gBattleOutcome == 0)
     {
-        if (UpdateTurnCounters() != 0)
+        if (DoFieldEndTurnEffects() != 0)
             return;
         if (TurnBasedEffects() != 0)
             return;
@@ -4482,9 +4567,9 @@ void SwapTurnOrder(u8 a, u8 b)
     gActionsByTurnOrder[a] = gActionsByTurnOrder[b];
     gActionsByTurnOrder[b] = temp;
 
-    temp = gBanksByTurnOrder[a];
-    gBanksByTurnOrder[a] = gBanksByTurnOrder[b];
-    gBanksByTurnOrder[b] = temp;
+    temp = gBattlerByTurnOrder[a];
+    gBattlerByTurnOrder[a] = gBattlerByTurnOrder[b];
+    gBattlerByTurnOrder[b] = temp;
 }
 
 // Determines which of the two given mons will strike first in a battle.
@@ -4545,7 +4630,7 @@ u8 GetWhoStrikesFirst(u8 bank1, u8 bank2, bool8 ignoreMovePriorities)
     if (heldItemEffect == HOLD_EFFECT_MACHO_BRACE)
         bank1AdjustedSpeed /= 2;
 
-    if (gBattleMons[bank1].status1 & STATUS_PARALYSIS)
+    if (gBattleMons[bank1].status1 & STATUS1_PARALYSIS)
         bank1AdjustedSpeed /= 4;
 
     if (heldItemEffect == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (heldItemEffectParam * 0xFFFF) / 100)
@@ -4575,7 +4660,7 @@ u8 GetWhoStrikesFirst(u8 bank1, u8 bank2, bool8 ignoreMovePriorities)
     if (heldItemEffect == HOLD_EFFECT_MACHO_BRACE)
         bank2AdjustedSpeed /= 2;
 
-    if (gBattleMons[bank2].status1 & STATUS_PARALYSIS)
+    if (gBattleMons[bank2].status1 & STATUS1_PARALYSIS)
         bank2AdjustedSpeed /= 4;
 
     if (heldItemEffect == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (heldItemEffectParam * 0xFFFF) / 100)
@@ -4642,7 +4727,7 @@ void SetActionsAndBanksTurnOrder(void)
         for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
         {
             gActionsByTurnOrder[var] = gActionForBanks[gActiveBattler];
-            gBanksByTurnOrder[var] = gActiveBattler;
+            gBattlerByTurnOrder[var] = gActiveBattler;
             var++;
         }
     }
@@ -4671,14 +4756,14 @@ void SetActionsAndBanksTurnOrder(void)
         if (var == 5)
         {
             gActionsByTurnOrder[0] = gActionForBanks[gActiveBattler];
-            gBanksByTurnOrder[0] = gActiveBattler;
+            gBattlerByTurnOrder[0] = gActiveBattler;
             var = 1;
             for (i = 0; i < gBattlersCount; i++)
             {
                 if (i != gActiveBattler)
                 {
                     gActionsByTurnOrder[var] = gActionForBanks[i];
-                    gBanksByTurnOrder[var] = i;
+                    gBattlerByTurnOrder[var] = i;
                     var++;
                 }
             }
@@ -4693,7 +4778,7 @@ void SetActionsAndBanksTurnOrder(void)
                 if (gActionForBanks[gActiveBattler] == B_ACTION_USE_ITEM || gActionForBanks[gActiveBattler] == B_ACTION_SWITCH)
                 {
                     gActionsByTurnOrder[var] = gActionForBanks[gActiveBattler];
-                    gBanksByTurnOrder[var] = gActiveBattler;
+                    gBattlerByTurnOrder[var] = gActiveBattler;
                     var++;
                 }
             }
@@ -4702,7 +4787,7 @@ void SetActionsAndBanksTurnOrder(void)
                 if (gActionForBanks[gActiveBattler] != B_ACTION_USE_ITEM && gActionForBanks[gActiveBattler] != B_ACTION_SWITCH)
                 {
                     gActionsByTurnOrder[var] = gActionForBanks[gActiveBattler];
-                    gBanksByTurnOrder[var] = gActiveBattler;
+                    gBattlerByTurnOrder[var] = gActiveBattler;
                     var++;
                 }
             }
@@ -4710,8 +4795,8 @@ void SetActionsAndBanksTurnOrder(void)
             {
                 for (j = i + 1; j < gBattlersCount; j++)
                 {
-                    u8 bank1 = gBanksByTurnOrder[i];
-                    u8 bank2 = gBanksByTurnOrder[j];
+                    u8 bank1 = gBattlerByTurnOrder[i];
+                    u8 bank2 = gBattlerByTurnOrder[j];
                     if (gActionsByTurnOrder[i] != B_ACTION_USE_ITEM
                         && gActionsByTurnOrder[j] != B_ACTION_USE_ITEM
                         && gActionsByTurnOrder[i] != B_ACTION_SWITCH
@@ -4787,7 +4872,7 @@ void CheckFocusPunch_ClearVarsBeforeTurnStarts(void)
             gActiveBattler = gBattlerAttacker = eFocusPunchBattler;
             eFocusPunchBattler++;
             if (gChosenMovesByBanks[gActiveBattler] == MOVE_FOCUS_PUNCH
-                && !(gBattleMons[gActiveBattler].status1 & STATUS_SLEEP)
+                && !(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP)
                 && !(gDisableStructs[gBattlerAttacker].truantCounter)
                 && !(gProtectStructs[gActiveBattler].noValidMoves))
             {
@@ -4846,7 +4931,7 @@ void HandleEndTurn_BattleWon(void)
         gBattleTextBuff1[0] = gBattleOutcome;
         gBattlerAttacker = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
         gBattlescriptCurrInstr = BattleScript_LinkBattleWonOrLost;
-        gBattleOutcome &= ~(OUTCOME_LINK_BATTLE_RUN);
+        gBattleOutcome &= ~(B_OUTCOME_LINK_BATTLE_RAN);
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_EREADER_TRAINER))
     {
@@ -4861,7 +4946,7 @@ void HandleEndTurn_BattleWon(void)
         {
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
-            PlayBGM(MUS_KACHI5);
+            PlayBGM(MUS_VICTORY_LEAGUE);
             break;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
@@ -4869,13 +4954,13 @@ void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
-            PlayBGM(MUS_KACHI4);
+            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_KACHI3);
+            PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
         default:
-            PlayBGM(MUS_KACHI1);
+            PlayBGM(MUS_VICTORY_TRAINER);
             break;
         }
     }
@@ -4896,7 +4981,7 @@ void HandleEndTurn_BattleLost(void)
         gBattleTextBuff1[0] = gBattleOutcome;
         gBattlerAttacker = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
         gBattlescriptCurrInstr = BattleScript_LinkBattleWonOrLost;
-        gBattleOutcome &= ~(OUTCOME_LINK_BATTLE_RUN);
+        gBattleOutcome &= ~(B_OUTCOME_LINK_BATTLE_RAN);
     }
     else
     {
@@ -4983,7 +5068,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
     if (!gPaletteFade.active)
     {
         ResetSpriteData();
-        if (gLeveledUpInBattle == 0 || gBattleOutcome != BATTLE_WON)
+        if (gLeveledUpInBattle == 0 || gBattleOutcome != B_OUTCOME_WON)
         {
             gBattleMainFunc = ReturnFromBattleToOverworld;
             return;
@@ -5049,7 +5134,7 @@ static void ReturnFromBattleToOverworld(void)
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
         UpdateRoamerHPStatus(&gEnemyParty[0]);
-        if (gBattleOutcome == BATTLE_WON || gBattleOutcome == BATTLE_CAUGHT)
+        if (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT)
             SetRoamerInactive();
     }
 
@@ -5083,7 +5168,7 @@ void HandleAction_UseMove(void)
     u8 side;
     u8 var = 4;
 
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
 
     if (ewram160A6 & gBitTable[gBattlerAttacker])
     {
@@ -5167,9 +5252,9 @@ void HandleAction_UseMove(void)
             if (side != GetBattlerSide(gActiveBattler)
                 && ewram16010arr(gBattlerAttacker) != gActiveBattler
                 && gBattleMons[gActiveBattler].ability == ABILITY_LIGHTNING_ROD
-                && BankGetTurnOrder(gActiveBattler) < var)
+                && GetBattlerTurnOrderNum(gActiveBattler) < var)
             {
-                var = BankGetTurnOrder(gActiveBattler);
+                var = GetBattlerTurnOrderNum(gActiveBattler);
             }
         }
         if (var == 4)
@@ -5212,7 +5297,7 @@ void HandleAction_UseMove(void)
         }
         else
         {
-            gActiveBattler = gBanksByTurnOrder[var];
+            gActiveBattler = gBattlerByTurnOrder[var];
             RecordAbilityBattle(gActiveBattler, gBattleMons[gActiveBattler].ability);
             gSpecialStatuses[gActiveBattler].lightningRodRedirected = 1;
             gBattlerTarget = gActiveBattler;
@@ -5266,7 +5351,7 @@ void HandleAction_UseMove(void)
 
 void HandleAction_Switch(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
     gActionSelectionCursor[gBattlerAttacker] = 0;
@@ -5284,7 +5369,7 @@ void HandleAction_Switch(void)
 
 void HandleAction_UseItem(void)
 {
-    gBattlerAttacker = gBattlerTarget = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerTarget = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
     gDisableStructs[gBattlerAttacker].furyCutterCounter = 0;
@@ -5407,7 +5492,7 @@ bool8 TryRunFromBattle(u8 bank)
     if (effect)
     {
         gCurrentTurnActionNumber = gBattlersCount;
-        gBattleOutcome = BATTLE_RAN;
+        gBattleOutcome = B_OUTCOME_RAN;
     }
 
     return effect;
@@ -5415,7 +5500,7 @@ bool8 TryRunFromBattle(u8 bank)
 
 void HandleAction_Run(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
 
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
     {
@@ -5426,16 +5511,16 @@ void HandleAction_Run(void)
             if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
             {
                 if (gActionForBanks[gActiveBattler] == B_ACTION_RUN)
-                    gBattleOutcome |= BATTLE_LOST;
+                    gBattleOutcome |= B_OUTCOME_LOST;
             }
             else
             {
                 if (gActionForBanks[gActiveBattler] == B_ACTION_RUN)
-                    gBattleOutcome |= BATTLE_WON;
+                    gBattleOutcome |= B_OUTCOME_WON;
             }
         }
 
-        gBattleOutcome |= OUTCOME_LINK_BATTLE_RUN;
+        gBattleOutcome |= B_OUTCOME_LINK_BATTLE_RAN;
     }
     else
     {
@@ -5460,7 +5545,7 @@ void HandleAction_Run(void)
             else
             {
                 gCurrentTurnActionNumber = gBattlersCount;
-                gBattleOutcome = BATTLE_POKE_FLED;
+                gBattleOutcome = B_OUTCOME_MON_FLED;
             }
         }
     }
@@ -5468,7 +5553,7 @@ void HandleAction_Run(void)
 
 void HandleAction_WatchesCarefully(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
     gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
@@ -5477,7 +5562,7 @@ void HandleAction_WatchesCarefully(void)
 
 void HandleAction_SafariZoneBallThrow(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
     gNumSafariBalls--;
@@ -5488,7 +5573,7 @@ void HandleAction_SafariZoneBallThrow(void)
 
 void HandleAction_ThrowPokeblock(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
     gBattleCommunication[MULTISTRING_CHOOSER] = gBattleBufferB[gBattlerAttacker][1] - 1;
@@ -5510,7 +5595,7 @@ void HandleAction_ThrowPokeblock(void)
 
 void HandleAction_GoNear(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
 
@@ -5537,15 +5622,15 @@ void HandleAction_GoNear(void)
 
 void HandleAction_SafriZoneRun(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
-    PlaySE(SE_NIGERU);
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
+    PlaySE(SE_FLEE);
     gCurrentTurnActionNumber = gBattlersCount;
-    gBattleOutcome = BATTLE_RAN;
+    gBattleOutcome = B_OUTCOME_RAN;
 }
 
 void HandleAction_Action9(void)
 {
-    gBattlerAttacker = gBanksByTurnOrder[gCurrentTurnActionNumber];
+    gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
 
@@ -5573,7 +5658,7 @@ void HandleAction_NothingIsFainted(void)
                     | HITMARKER_NO_PPDEDUCT | HITMARKER_IGNORE_SAFEGUARD | HITMARKER_IGNORE_ON_AIR
                     | HITMARKER_IGNORE_UNDERGROUND | HITMARKER_IGNORE_UNDERWATER | HITMARKER_x100000
                     | HITMARKER_OBEYS | HITMARKER_x10 | HITMARKER_SYNCHRONISE_EFFECT
-                    | HITMARKER_x8000000 | HITMARKER_x4000000);
+                    | HITMARKER_CHARGING | HITMARKER_x4000000);
 }
 
 void HandleAction_ActionFinished(void)
@@ -5585,7 +5670,7 @@ void HandleAction_ActionFinished(void)
                     | HITMARKER_NO_PPDEDUCT | HITMARKER_IGNORE_SAFEGUARD | HITMARKER_IGNORE_ON_AIR
                     | HITMARKER_IGNORE_UNDERGROUND | HITMARKER_IGNORE_UNDERWATER | HITMARKER_x100000
                     | HITMARKER_OBEYS | HITMARKER_x10 | HITMARKER_SYNCHRONISE_EFFECT
-                    | HITMARKER_x8000000 | HITMARKER_x4000000);
+                    | HITMARKER_CHARGING | HITMARKER_x4000000);
 
     gBattleMoveDamage = 0;
     ewram16002 = 0;

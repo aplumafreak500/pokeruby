@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_anim_special.h"
+#include "battle_controllers.h"
 #include "battle_interface.h"
 #include "data2.h"
 #include "link.h"
@@ -9,7 +10,6 @@
 #include "main.h"
 #include "palette.h"
 #include "rom_8077ABC.h"
-#include "rom3.h"
 #include "constants/songs.h"
 #include "sound.h"
 #include "sprite.h"
@@ -55,7 +55,6 @@ extern MainCallback gPreBattleCallback1;
 extern struct MusicPlayerInfo gMPlayInfo_BGM;
 
 extern u8 sub_8077F68();
-extern u8 GetBattlerSubpriority();
 extern u8 GetBattlerPosition(u8);
 extern void BattleLoadOpponentMonSprite(struct Pokemon *, u8);
 extern void sub_8037A74(void);
@@ -64,7 +63,6 @@ extern void sub_8037E30(void);
 extern void sub_80312F0(struct Sprite *);
 extern u8 StartSendOutMonAnimation();
 extern void sub_8032A08();
-extern void sub_8043DB0();
 extern void sub_8037BBC(void);
 extern s32 sub_803FC34(u16);
 extern void sub_8031A6C(u16, u8);
@@ -78,15 +76,12 @@ extern void sub_8010384(struct Sprite *);
 extern void sub_8037B78(void);
 extern u8 IsMoveWithoutAnimation();
 extern bool8 mplay_80342A4(u8);
-extern void DoMoveAnim();
 extern void sub_80326EC();
 extern void sub_8031F24(void);
 extern void sub_80324BC();
 extern void BufferStringBattle();
 extern void sub_8037C2C(void);
-extern void sub_8043D84();
 extern void sub_8037B24(void);
-extern void sub_8045A5C();
 extern void sub_8037FAC(void);
 extern void move_anim_start_t2_for_situation();
 extern void dp01t_0F_4_move_anim(void);
@@ -99,7 +94,6 @@ extern void nullsub_47(void);
 extern bool8 IsDoubleBattle(void);
 extern void sub_8037840(void);
 extern void sub_8031B74();
-extern u8 IsBankSpritePresent();
 extern u8 move_anim_start_t3();
 extern void sub_8037FD8(void);
 extern void sub_8037F34(void);
@@ -512,7 +506,7 @@ void sub_8037EF0(void)
 {
     if (gReceivedRemoteLinkPlayers == 0)
     {
-        m4aSongNumStop(SE_HINSI);
+        m4aSongNumStop(SE_LOW_HEALTH);
         gMain.inBattle = FALSE;
         gMain.callback1 = gPreBattleCallback1;
         SetMainCallback2(c2_8011A1C);
@@ -530,7 +524,7 @@ void sub_8037F34(void)
         }
         else
         {
-            m4aSongNumStop(SE_HINSI);
+            m4aSongNumStop(SE_LOW_HEALTH);
             gMain.inBattle = FALSE;
             gMain.callback1 = gPreBattleCallback1;
             SetMainCallback2(gMain.savedCallback);
@@ -1296,7 +1290,7 @@ void LinkOpponentHandlecmd10(void)
     else if (!ewram17810[gActiveBattler].unk0_6)
     {
         ewram17810[gActiveBattler].unk4 = 0;
-        PlaySE12WithPanning(SE_POKE_DEAD, 63);
+        PlaySE12WithPanning(SE_FAINT, 63);
         gSprites[gBattlerSpriteIds[gActiveBattler]].callback = sub_8010384;
         gBattlerControllerFuncs[gActiveBattler] = sub_8037B78;
     }

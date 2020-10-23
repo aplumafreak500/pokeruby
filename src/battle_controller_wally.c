@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_anim_special.h"
+#include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_message.h"
 #include "data2.h"
@@ -10,7 +11,6 @@
 #include "menu_cursor.h"
 #include "palette.h"
 #include "pokemon.h"
-#include "rom3.h"
 #include "constants/songs.h"
 #include "sound.h"
 #include "sprite.h"
@@ -58,15 +58,12 @@ extern u8 gUnknown_0300434C[];
 extern const u8 BattleText_WallyMenu[];
 extern const u8 BattleText_MenuOptions[];
 
-// TODO: include rom3.h when my other PR gets merged
 extern void BtlController_EmitTwoReturnValues(u8, u8, u16);
 extern void BtlController_EmitOneReturnValue(u8, u16);
 
 extern void nullsub_14(void);
 extern void PrepareBagForWallyTutorial(void);
-extern void sub_8045A5C();
 extern void sub_804777C();
-extern void sub_8043DFC();
 extern bool8 IsDoubleBattle(void);
 extern void c3_0802FDF4(u8);
 extern void PlayerHandlecmd1(void);
@@ -75,11 +72,9 @@ extern u8 GetBattlerPosition(u8);
 extern void sub_80313A0(struct Sprite *);
 extern u8 GetBattlerAtPosition(u8);
 extern u8 IsMoveWithoutAnimation();
-extern void DoMoveAnim();
 extern void sub_80326EC();
 extern void sub_8031F24(void);
 extern void sub_80324BC();
-extern void BufferStringBattle();
 extern u8 GetBattlerSide(u8);
 extern void sub_80304A8(void);
 extern void sub_8047858();

@@ -329,7 +329,7 @@ void sub_80C2358(void)
     gBattle_WIN1V = 0x80a0;
     CreateTask(sub_80C2F28, 20);
     sub_80C3F00();
-    PlayBGM(MUS_CON_K);
+    PlayBGM(MUS_CONTEST_RESULTS);
     SetVBlankCallback(sub_80C2448);
 }
 
@@ -753,7 +753,7 @@ static void sub_80C2EA0(u8 taskId)
             REG_BLDCNT = 0;
             REG_BLDY = 0;
             DestroyTask(taskId);
-            SetMainCallback2(c2_exit_to_overworld_1_continue_scripts_restart_music);
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         }
     }
 }
@@ -1378,12 +1378,12 @@ void sub_80C3698(const u8 *text)
     sprite = &gSprites[eContestLink80C2020Struct2018000.unk_01];
     sprite->pos1.x = x + 32;
     sprite->pos1.y = 80;
-    sprite->invisible = 0;
+    sprite->invisible = FALSE;
     for (i = 0; i < 3; i++)
     {
         gSprites[sprite->data[i]].pos1.x = sprite->pos1.x + sprite->pos2.x + (i + 1) * 64;
         gSprites[sprite->data[i]].pos1.y = sprite->pos1.y;
-        gSprites[sprite->data[i]].invisible = 0;
+        gSprites[sprite->data[i]].invisible = FALSE;
     }
 
     gBattle_WIN0H = 0x00F0;
@@ -1397,9 +1397,9 @@ void sub_80C3764(void)
     struct Sprite *sprite;
 
     sprite = &gSprites[eContestLink80C2020Struct2018000.unk_01];
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
     for (i = 0; i < 3; i++)
-        gSprites[sprite->data[i]].invisible = 1;
+        gSprites[sprite->data[i]].invisible = TRUE;
 
     gBattle_WIN0H = 0;
     gBattle_WIN0V = 0;
@@ -1854,7 +1854,7 @@ void sub_80C3A5C(u8 taskId)
             *(vu16 *)((VRAM + 0xE184) + gTasks[taskId].data[1] * 192) = firstTileNum + 0x11;
             eContestLink80C2020Struct2018000.unk_05++;
             DestroyTask(taskId);
-            PlaySE(SE_JYUNI);
+            PlaySE(SE_CONTEST_PLACE);
         }
     }
 }
@@ -2025,7 +2025,7 @@ void sub_80C3CB8(struct Sprite *sprite)
     if (sprite->pos1.x < -32)
     {
         sprite->callback = SpriteCallbackDummy;
-        sprite->invisible = 1;
+        sprite->invisible = TRUE;
         eContestLink80C2020Struct2018000.unk_06 = 2;
     }
 }
@@ -2062,7 +2062,7 @@ void sub_80C3DF0(struct Sprite *sprite)
     sprite->data[4] = var0;
     sprite->pos1.y++;
     if (eContestLink80C2020Struct2018000.unk_09)
-        sprite->invisible = 1;
+        sprite->invisible = TRUE;
 
     if (sprite->pos1.x > 248 || sprite->pos1.y > 116)
     {

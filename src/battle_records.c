@@ -14,19 +14,19 @@ struct DebugStruct1
     u8 var1[10];
 };
 
-extern struct LinkPlayerEventObject gLinkPlayerEventObjects[4];
+extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
 extern u8 gBattleOutcome;
 
 #if DEBUG
 const struct DebugStruct1 gUnknown_Debug_4245CC[] =
 {
     { 1, _("NUMBER1") },
-    { 2, _("ナンバー2") },
-    { 3, _("ナンバー3") },
-    { 4, _("ナンバー4") },
-    { 5, _("ナンバー5") },
-    { 6, _("ナンバー6") },
-    { 7, _("ナンバー7") },
+    { 2, DTR("ナンバー2", "NUMBER2") },
+    { 3, DTR("ナンバー3", "NUMBER3") },
+    { 4, DTR("ナンバー4", "NUMBER4") },
+    { 5, DTR("ナンバー5", "NUMBER5") },
+    { 6, DTR("ナンバー6", "NUMBER6") },
+    { 7, DTR("ナンバー7", "NUMBER7") },
 };
 
 const struct {u8 unk0; u8 unk1;} gUnknown_Debug_8424620[] =
@@ -220,7 +220,7 @@ void UpdateLinkBattleRecords(int id)
         gTrainerCards[id].playerName,
         gTrainerCards[id].trainerId,
         gBattleOutcome,
-        gLinkPlayers[gLinkPlayerEventObjects[id].linkPlayerId].language);
+        gLinkPlayers[gLinkPlayerObjectEvents[id].linkPlayerId].language);
 }
 
 #if DEBUG
@@ -238,7 +238,7 @@ void debug_sub_81257E0(void)
             gUnknown_Debug_4245CC[id].var1,
             gUnknown_Debug_4245CC[id].var0,
             gUnknown_Debug_8424620[i].unk1,
-            gLinkPlayers[gLinkPlayerEventObjects[id].linkPlayerId].language);
+            gLinkPlayers[gLinkPlayerObjectEvents[id].linkPlayerId].language);
     }
 }
 #endif

@@ -10,10 +10,18 @@ const u8 gMonBackPic_CircledQuestionMark[] = INCBIN_U8("graphics/pokemon/circled
 const u16 gMonPalette_CircledQuestionMark[] = INCBIN_U16("graphics/pokemon/circled_question_mark/normal.gbapal.lz");
 const u16 gMonShinyPalette_CircledQuestionMark[] = INCBIN_U16("graphics/pokemon/circled_question_mark/shiny.gbapal.lz");
 
-// japanese table and bunch of stuff
-const u8 gUnusedOldCharmap_Gfx_lz[] = INCBIN_U8("graphics/unused/old_charmap.4bpp.lz");
-const u8 gUnusedOldCharmap_Tilemap_lz[] = INCBIN_U8("graphics/unused/old_charmap.bin.lz");
-const u16 gUnusedOldCharmap_Pal_lz[] = INCBIN_U16("graphics/unused/old_charmap.gbapal.lz");
+// The test menu debug battle tileset. This uses the old Crystal
+// charmap and rendering method (it uses tiles instead of text).
+// The non-English releases use translated graphics.
+#if DEBUG_FIX || !ENGLISH
+const u8 gDebugBattleCharmap_Gfx_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_en.4bpp.lz");
+const u8 gDebugBattleCharmap_Tilemap_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_en.bin.lz");
+const u8 gDebugBattleCharmap_Pal_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_en.gbapal.lz");
+#else
+const u8 gDebugBattleCharmap_Gfx_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_jp.4bpp.lz");
+const u8 gDebugBattleCharmap_Tilemap_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_jp.bin.lz");
+const u8 gDebugBattleCharmap_Pal_lz[] = INCBIN_U8("graphics/debug/debug_battle_charmap_jp.gbapal.lz");
+#endif
 
 const u8 gSmokescreenImpactTiles[] = INCBIN_U8("graphics/battle_anims/sprites/smokescreen_impact.4bpp.lz");
 const u16 gSmokescreenImpactPalette[] = INCBIN_U16("graphics/battle_anims/sprites/smokescreen_impact.gbapal.lz");
@@ -713,7 +721,7 @@ const u8 gBattleAnimSpritePalette_256[] = INCBIN_U8("graphics/battle_anims/sprit
 const u8 gBattleAnimSpriteSheet_257[] = INCBIN_U8("graphics/battle_anims/sprites/257.4bpp.lz");
 const u8 gBattleAnimSpritePalette_257[] = INCBIN_U8("graphics/battle_anims/sprites/257.gbapal.lz");
 
-#include "pokemon_gfx.h"
+#include "graphics/pokemon.h"
 
 const u8 gMonFrontPic_UnownExclamationMark[] = INCBIN_U8("graphics/pokemon/unown/front_exclamation_mark.4bpp.lz");
 const u8 gMonBackPic_UnownExclamationMark[] = INCBIN_U8("graphics/pokemon/unown/back_exclamation_mark.4bpp.lz");
@@ -722,7 +730,7 @@ const u8 gMonFrontPic_UnownQuestionMark[] = INCBIN_U8("graphics/pokemon/unown/fr
 const u8 gMonBackPic_UnownQuestionMark[] = INCBIN_U8("graphics/pokemon/unown/back_question_mark.4bpp.lz");
 const u8 gMonIcon_UnownQuestionMark[] = INCBIN_U8("graphics/pokemon/unown/icon_question_mark.4bpp");
 
-#include "trainer_gfx.h"
+#include "graphics/trainers.h"
 
 const u8 gMonIcon_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
 const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/footprint.1bpp");
@@ -936,7 +944,7 @@ const u8 gUnknown_08E788E4[] = INCBIN_U8("graphics/interface/berry_tag.bin.lz");
 const u8 gUnknown_08E78A84[] = INCBIN_U8("graphics/interface/berry_tag_title.bin.lz");
 const u8 gBerryCheckCircle_Gfx[] = INCBIN_U8("graphics/interface/check_berry_circle.4bpp.lz");
 
-#include "berry_gfx.h"
+#include "graphics/berries.h"
 
 const u8 gBattleAnimSpritePalette_282[] = INCBIN_U8("graphics/battle_anims/sprites/282.gbapal.lz");
 const u8 gBattleAnimSpriteSheet_282[] = INCBIN_U8("graphics/battle_anims/sprites/282.4bpp.lz");

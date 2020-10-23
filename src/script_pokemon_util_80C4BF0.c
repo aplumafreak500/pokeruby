@@ -214,7 +214,7 @@ void sub_80C4D80(void)
 
 void ShowContestWinnerCleanup(void)
 {
-    SetMainCallback2(c2_exit_to_overworld_1_continue_scripts_restart_music);
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 void ShowContestWinner(void)
@@ -437,20 +437,18 @@ u8 ScriptGiveEgg(u16 species)
     return GiveMonToPlayer(&mon);
 }
 
-void CheckForAlivePartyMons(void)
+void HasEnoughMonsForDoubleBattle(void)
 {
-    u8 var = sub_803DAA0();
-
-    switch(var)
+    switch (GetMonsStateToDoubles())
     {
-    case 1:
-        gSpecialVar_Result = var;
+    case PLAYER_HAS_TWO_USABLE_MONS:
+        gSpecialVar_Result = PLAYER_HAS_TWO_USABLE_MONS;
         break;
-    case 0:
-        gSpecialVar_Result = var;
+    case PLAYER_HAS_ONE_MON:
+        gSpecialVar_Result = PLAYER_HAS_ONE_MON;
         break;
-    case 2:
-        gSpecialVar_Result = var;
+    case PLAYER_HAS_ONE_USABLE_MON:
+        gSpecialVar_Result = PLAYER_HAS_ONE_USABLE_MON;
         break;
     }
 }
@@ -521,7 +519,7 @@ void sub_80C5580(void)
         break;
     }
 
-    SetMainCallback2(c2_exit_to_overworld_1_continue_scripts_restart_music);
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 void ChooseBattleTowerPlayerParty(void)
@@ -546,7 +544,7 @@ void SetBattleTowerPlayerParty(void)
         break;
     }
 
-    SetMainCallback2(c2_exit_to_overworld_1_continue_scripts_restart_music);
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 void ReducePlayerPartyToThree(void)

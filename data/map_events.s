@@ -1,10 +1,11 @@
 #include "constants/flags.h"
 #include "constants/items.h"
-#include "constants/bg_event_constants.h"
-#include "constants/event_object_movement_constants.h"
+#include "constants/event_bg.h"
+#include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/maps.h"
 #include "constants/secret_bases.h"
+#include "constants/trainer_types.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
 
