@@ -1657,7 +1657,7 @@ const u8 Str_83F8300[] = _("Move4");
 const struct WatanabeDebugMenuItemSubstruct _83F8308 = {0, NUM_MOVES-1, 0x00, 0x03};
 
 const u8 Str_83F8314[] = _("Hold");
-const struct WatanabeDebugMenuItemSubstruct _83F831C = {0, NUM_ITEMS-1, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F831C = {0, ITEM_COUNT-1, 0x00, 0x03};
 
 const u8 Str_83F8328[] = _("SP. Ability");
 const struct WatanabeDebugMenuItemSubstruct _83F8334 = {0, 0x00000001, 0x00, 0xFF};
