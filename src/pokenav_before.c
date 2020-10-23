@@ -99,7 +99,7 @@ struct PokenavRibbonIconGfx {
     u8 paletteNum;
 };
 
-IWRAM_DATA void (*gUnknown_03000744)(void);
+static void (*gUnknown_03000744)(void);
 
 struct UnkPokenavStruct *const gPokenavStructPtr = (struct UnkPokenavStruct *)gSharedMem;
 
@@ -1176,7 +1176,7 @@ void sub_80EBA5C()
         break;
     case 14:
         gPokenavStructPtr->unk6DAB = 1;
-        PlaySE(SE_PN_ON);
+        PlaySE(SE_POKENAV_ON);
         SetMainCallback2(&sub_80EBD90);
         SetVBlankCallback(&sub_80EBD18);
         sub_80F1A74();

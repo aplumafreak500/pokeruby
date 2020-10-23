@@ -1302,7 +1302,7 @@ static void sub_80B6E68(void)
     u8 spriteId;
 
     rivalGfxId = GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, namingScreenDataPtr->speciesOrPlayerGender);
-    spriteId = AddPseudoEventObject(rivalGfxId, SpriteCallbackDummy, 0x38, 0x18, 0);
+    spriteId = AddPseudoObjectEvent(rivalGfxId, SpriteCallbackDummy, 0x38, 0x18, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], 4);
 }
@@ -1361,7 +1361,7 @@ static void DeleteTextCharacter(void)
     var2 = GetKeyRoleAtCursorPos();
     if (var2 == 0 || var2 == 2)
         sub_80B6460(1, 0, 1);
-    PlaySE(SE_BOWA);
+    PlaySE(SE_BALL);
 }
 
 static bool8 sub_80B7004(void)

@@ -3,8 +3,10 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "config.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
 #include "gba/gba.h"
+#include "constants/global.h"
 
 // IDE support
 #if defined(__APPLE__) || defined(__CYGWIN__)
@@ -20,12 +22,13 @@
 #endif
 
 // For debug menu translations.
-// DTR("こんにちは", "Hello") will expand to "Hello" with DEBUG_TRANSLATE,
+// DTR("こんにちは", "Hello") will expand to "Hello" with DEBUG_FIX,
 // or "こんにちは" if not.
 // The KANA macro will wrap Japanese text with encoding markers to
 // prevent mojibake while they are being translated.
 
-#if DEBUG_TRANSLATE
+// TODO: Support multiple languages.
+#if DEBUG_FIX
 #define DTR(japanese, english) _(english)
 #define KANA(txt) _("{JPN}" txt "{ENG}")
 #else
@@ -189,47 +192,6 @@ enum LanguageId
 #define JOY_HELD(button) (TEST_BUTTON(gMain.heldKeys, button))
 #define JOY_REPT(button) (TEST_BUTTON(gMain.newAndRepeatedKeys, button))
 
-enum
-{
-    MALE,
-    FEMALE
-};
-
-enum
-{
-    OPTIONS_BUTTON_MODE_NORMAL,
-    OPTIONS_BUTTON_MODE_LR,
-    OPTIONS_BUTTON_MODE_L_EQUALS_A
-};
-
-enum
-{
-    OPTIONS_TEXT_SPEED_SLOW,
-    OPTIONS_TEXT_SPEED_MID,
-    OPTIONS_TEXT_SPEED_FAST
-};
-
-enum
-{
-    OPTIONS_SOUND_MONO,
-    OPTIONS_SOUND_STEREO
-};
-
-enum
-{
-    OPTIONS_BATTLE_STYLE_SHIFT,
-    OPTIONS_BATTLE_STYLE_SET
-};
-
-enum
-{
-    BAG_ITEMS = 1,
-    BAG_POKEBALLS,
-    BAG_TMsHMs,
-    BAG_BERRIES,
-    BAG_KEYITEMS
-};
-
 struct Coords16
 {
     s16 x;
@@ -254,14 +216,14 @@ struct SecretBaseRecord
     /*0x1A16*/ u16 sbr_field_e;
     /*0x1A18*/ u8 sbr_field_10;
     /*0x1A19*/ u8 sbr_field_11;
-    /*0x1A1A*/ u8 decorations[16];
-    /*0x1A2A*/ u8 decorationPos[16];
-    /*0x1A3C*/ u32 partyPersonality[6];
-    /*0x1A54*/ u16 partyMoves[6 * 4];
-    /*0x1A84*/ u16 partySpecies[6];
-    /*0x1A90*/ u16 partyHeldItems[6];
-    /*0x1A9C*/ u8 partyLevels[6];
-    /*0x1AA2*/ u8 partyEVs[6];
+    /*0x1A1A*/ u8 decorations[DECOR_MAX_SECRET_BASE];
+    /*0x1A2A*/ u8 decorationPos[DECOR_MAX_SECRET_BASE];
+    /*0x1A3C*/ u32 partyPersonality[PARTY_SIZE];
+    /*0x1A54*/ u16 partyMoves[PARTY_SIZE * 4];
+    /*0x1A84*/ u16 partySpecies[PARTY_SIZE];
+    /*0x1A90*/ u16 partyHeldItems[PARTY_SIZE];
+    /*0x1A9C*/ u8 partyLevels[PARTY_SIZE];
+    /*0x1AA2*/ u8 partyEVs[PARTY_SIZE];
 };
 
 #include "constants/game_stat.h"
@@ -747,16 +709,16 @@ struct SaveBlock1 /* 0x02025734 */
     /*0x96C*/ u16 berryBlenderRecords[3];
     /*0x972*/ u8 filler_972[0x6];
     /*0x978*/ u16 trainerRematchStepCounter;
-    /*0x97A*/ u8 trainerRematches[100];
-    /*0x9E0*/ struct EventObject eventObjects[EVENT_OBJECTS_COUNT];
-    /*0xC20*/ struct EventObjectTemplate eventObjectTemplates[64];
+    /*0x97A*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
+    /*0x9E0*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
+    /*0xC20*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
     /*0x1220*/ u8 flags[FLAGS_COUNT];
     /*0x1340*/ u16 vars[VARS_COUNT];
     /*0x1540*/ u32 gameStats[NUM_GAME_STATS];
     /*0x1608*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
     /*0x1A08*/ struct SecretBaseRecord secretBases[SECRET_BASES_COUNT];
-    /*0x2688*/ u8 playerRoomDecor[12];
-    /*0x2694*/ u8 playerRoomDecorPos[12];
+    /*0x2688*/ u8 playerRoomDecor[DECOR_MAX_PLAYERS_HOUSE];
+    /*0x2694*/ u8 playerRoomDecorPos[DECOR_MAX_PLAYERS_HOUSE];
     /*0x26A0*/ u8 decorDesk[10];
     /*0x26AA*/ u8 decorChair[10];
     /*0x26B4*/ u8 decorPlant[10];

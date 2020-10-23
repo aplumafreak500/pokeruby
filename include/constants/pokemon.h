@@ -140,3 +140,7 @@
 #define MAX_TOTAL_EVS 510
 #define NUM_STATS 6
 #define UNOWN_FORM_COUNT 28
+
+#define PLAYER_HAS_TWO_USABLE_MONS     0
+#define PLAYER_HAS_ONE_MON             1
+#define PLAYER_HAS_ONE_USABLE_MON      2

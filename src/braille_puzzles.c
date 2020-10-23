@@ -5,7 +5,7 @@
 #include "field_effect.h"
 #include "fieldmap.h"
 #include "main.h"
-#include "event_obj_lock.h"
+#include "event_object_lock.h"
 #include "menu.h"
 #include "rom6.h"
 #include "script.h"
@@ -50,7 +50,7 @@ void DoBrailleDigEffect(void)
     MapGridSetMetatileIdAt(17, 9, METATILE_ID(Cave, SealedChamberEntrance_BottomMid));
     MapGridSetMetatileIdAt(18, 9, METATILE_ID(Cave, SealedChamberEntrance_BottomRight) | (COLLISION_DIR_ALL << METATILE_COLLISION_SHIFT));
     DrawWholeMapView();
-    PlaySE(SE_BAN);
+    PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_BRAILLE_DIG);
     ScriptContext2_Disable();
 }
@@ -93,7 +93,7 @@ void DoBrailleStrengthEffect(void)
     MapGridSetMetatileIdAt(15, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomMid));
     MapGridSetMetatileIdAt(16, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomRight) | (COLLISION_DIR_ALL << METATILE_COLLISION_SHIFT));
     DrawWholeMapView();
-    PlaySE(SE_BAN);
+    PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_BRAILLE_STRENGTH);
     ScriptContext2_Disable();
 }
@@ -139,7 +139,7 @@ void UseFlyAncientTomb_Finish(void)
     MapGridSetMetatileIdAt(15, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomMid));
     MapGridSetMetatileIdAt(16, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomRight) | (COLLISION_DIR_ALL << METATILE_COLLISION_SHIFT));
     DrawWholeMapView();
-    PlaySE(SE_BAN);
+    PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_BRAILLE_FLY);
     ScriptContext2_Disable();
 }
@@ -186,7 +186,7 @@ void Task_BrailleWait(u8 taskId)
                 data[0] = 4;
             break;
         }
-        ScriptUnfreezeEventObjects();
+        ScriptUnfreezeObjectEvents();
         DestroyTask(taskId);
         ScriptContext2_Disable();
         break;
@@ -196,7 +196,7 @@ void Task_BrailleWait(u8 taskId)
             data[0] = 4;
         break;
     case 4:
-        ScriptUnfreezeEventObjects();
+        ScriptUnfreezeObjectEvents();
         ScriptContext1_SetupScript(S_OpenRegiceChamber);
         DestroyTask(taskId);
         break;

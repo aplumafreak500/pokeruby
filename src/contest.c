@@ -49,7 +49,7 @@ extern u8 gBattlerTarget;
 extern u8 gBattlerPositions[];
 extern u8 gBattlerSpriteIds[];
 extern struct Window gUnknown_03004210;
-extern u32 gContestRngValue;
+u32 gContestRngValue;
 
 extern struct SpriteTemplate gUnknown_02024E8C;
 extern const struct ContestPokemon gContestOpponents[60];
@@ -293,12 +293,12 @@ void ResetContestGpuRegs(void)
 {
     u16 savedIme;
 
-    REG_DISPCNT = 0x40;
+    REG_DISPCNT = DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP;
     savedIme = REG_IME;
     REG_IME = 0;
     REG_IE |= INTR_FLAG_VBLANK;
     REG_IME = savedIme;
-    REG_DISPSTAT = 8;
+    REG_DISPSTAT = DISPSTAT_VBLANK_INTR;
     REG_BG0CNT = 0x9800;
     REG_BG1CNT = 0x9E09;
     REG_BG2CNT = 0x9C00;
@@ -323,7 +323,6 @@ void ResetContestGpuRegs(void)
     gBattle_WIN1H = 0;
     gBattle_WIN1V = 0;
 }
-
 void LoadContestBgAfterMoveAnim(void)
 {
     s32 i;
@@ -474,14 +473,12 @@ void sub_80AB694(u8 taskId)
 
 void sub_80AB6B4(u8 taskId)
 {
-    gTasks[taskId].data[0]--;
-    if (gTasks[taskId].data[0] <= 0)
-    {
-        GetMultiplayerId();  // unused return value
-        DestroyTask(taskId);
-        gTasks[sContest.mainTaskId].func = sub_80AB960;
-        gRngValues[RNG_VALUE_LCRNG] = gContestRngValue;
-    }
+    if (--gTasks[taskId].data[0] > 0)
+        return;
+    GetMultiplayerId(); // unused return value
+    DestroyTask(taskId);
+    gTasks[sContest.mainTaskId].func = sub_80AB960;
+    gRngValues[RNG_VALUE_LCRNG] = gContestRngValue;
 }
 
 u8 sub_80AB70C(u8 *a)
@@ -566,7 +563,7 @@ void sub_80AB9A0(u8 taskId)
         if (gTasks[taskId].data[1]++ <= 60)
             break;
         gTasks[taskId].data[1] = 0;
-        PlaySE12WithPanning(SE_C_MAKU_U, 0);
+        PlaySE12WithPanning(SE_CONTEST_CURTAIN_RISE, 0);
         gTasks[taskId].data[0]++;
         break;
     case 1:
@@ -1301,7 +1298,7 @@ void sub_80AC2CC(u8 taskId)
         return;
     case 50:
         if (sub_80AF038(r7))
-            PlaySE(SE_C_PASI);
+            PlaySE(SE_CONTEST_ICON_CHANGE);
         gTasks[taskId].data[0] = 25;
         return;
     case 25:
@@ -1387,9 +1384,9 @@ void sub_80AC2CC(u8 taskId)
                 break;
         }
         if (sub_80AF038(i))
-            PlaySE(SE_C_PASI);
+            PlaySE(SE_CONTEST_ICON_CHANGE);
         else
-            PlaySE(SE_C_SYU);
+            PlaySE(SE_CONTEST_ICON_CLEAR);
         if (sContestantStatus[i].judgesAttentionWasRemoved)
         {
             sub_80B03A8(i);
@@ -1570,7 +1567,7 @@ void sub_80AC2CC(u8 taskId)
         {
         case 0:
             sub_80B1EA8(-1, 1);
-            PlayFanfare(MUS_ME_ZANNEN);
+            PlayFanfare(MUS_TOO_BAD);
             gTasks[taskId].data[10]++;
             break;
         case 1:
@@ -1615,7 +1612,7 @@ void sub_80AC2CC(u8 taskId)
             if (!sContest.unk1920B_0)
             {
                 sub_80B1DDC();
-                PlaySE(SE_W227B);
+                PlaySE(SE_M_ENCORE2);
                 sub_80B1CBC(1);
                 gTasks[taskId].data[10]++;
             }
@@ -1999,7 +1996,7 @@ void sub_80ADE54(u8 taskId)
         sub_80B2184();
         gBattle_BG1_X = 0;
         gBattle_BG1_Y = 160;
-        PlaySE12WithPanning(SE_C_MAKU_D, 0);
+        PlaySE12WithPanning(SE_CONTEST_CURTAIN_FALL, 0);
         gTasks[taskId].data[0] = 0;
         gTasks[taskId].func = sub_80ADEAC;
     }
@@ -2123,9 +2120,9 @@ void Contest_CreatePlayerMon(u8 partyIndex)
     }
     memcpy(gContestMons[gContestPlayerMonIndex].trainerName, name, 8);
     if (gSaveBlock2.playerGender == MALE)
-        gContestMons[gContestPlayerMonIndex].trainerGfxId = EVENT_OBJ_GFX_LINK_BRENDAN;
+        gContestMons[gContestPlayerMonIndex].trainerGfxId = OBJ_EVENT_GFX_LINK_BRENDAN;
     else
-        gContestMons[gContestPlayerMonIndex].trainerGfxId = EVENT_OBJ_GFX_LINK_MAY;
+        gContestMons[gContestPlayerMonIndex].trainerGfxId = OBJ_EVENT_GFX_LINK_MAY;
     gContestMons[gContestPlayerMonIndex].flags = 0;
     gContestMons[gContestPlayerMonIndex].unk2C[0] = 0;
     gContestMons[gContestPlayerMonIndex].species = GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES);
@@ -2673,7 +2670,7 @@ bool8 sub_80AEE54(u8 a, u8 b)
         }
         if (b != 0)
         {
-            PlaySE(SE_EXPMAX);
+            PlaySE(SE_EXP_MAX);
             sContestantStatus[a].conditionMod = 0;
         }
     }
@@ -2688,7 +2685,7 @@ bool8 sub_80AEE54(u8 a, u8 b)
         }
         if (b != 0)
         {
-            PlaySE(SE_FU_ZAKU2);
+            PlaySE(SE_CONTEST_CONDITION_LOSE);
             sContestantStatus[a].conditionMod = 0;
         }
     }
@@ -3365,7 +3362,7 @@ void sub_80AFC74(u8 taskId)
         CpuFill16(r6, (void *)(VRAM + 0xC000 + (0x56 + r5 + gUnknown_02038696[r7] * 160) * 2), 2);
         if (r1 > 0)
         {
-            PlaySE(SE_C_GAJI);
+            PlaySE(SE_CONTEST_HEART);
             m4aMPlayImmInit(&gMPlayInfo_SE1);
             m4aMPlayPitchControl(&gMPlayInfo_SE1, 0xFFFF, r10 * 256);
         }
@@ -3578,7 +3575,7 @@ void sub_80B02A8(struct Sprite *sprite)
     StartSpriteAnim(sprite, sContestantStatus[sprite->data[0]].unkB_0);
     StartSpriteAffineAnim(sprite, 2);
     sprite->callback = sub_80B02F4;
-    PlaySE(SE_JYUNI);
+    PlaySE(SE_CONTEST_PLACE);
 }
 
 void sub_80B02F4(struct Sprite *sprite)
@@ -3679,28 +3676,22 @@ void sub_80B0588(void)
         sub_80B05A4(i);
 }
 
-// TODO: Try to write this better
 void sub_80B05A4(u8 a)
 {
-    u32 var;
-    u32 r0;
-
     sub_80B0548(a);
 
     // 2-byte DMA copy? Why?
 
-    r0 = a + 5;
     DmaCopy16Defvars(
       3,
-      gPlttBufferUnfaded + r0 * 16 + 10,
-      gPlttBufferFaded   + r0 * 16 + 10,
+      &gPlttBufferUnfaded[16 * (5 + a) + 10],
+      &gPlttBufferFaded[16 * (5 + a) + 10],
       2);
 
-    var = (a + 5) * 16 + 12 + a;
     DmaCopy16Defvars(
       3,
-      gPlttBufferUnfaded + var,
-      gPlttBufferFaded + var,
+      &gPlttBufferUnfaded[16 * (5 + a) + 12 + a],
+      &gPlttBufferFaded[16 * (5 + a) + 12 + a],
       2);
 }
 
@@ -4265,9 +4256,9 @@ void sub_80B0BC4(u8 a, bool8 b)
     gSprites[a].callback = sub_80B0C5C;
     gSprites[r5].callback = SpriteCallbackDummy;
     if (b == FALSE)
-        PlaySE(SE_C_PIKON);
+        PlaySE(SE_CONTEST_MONS_TURN);
     else
-        PlaySE(SE_PC_LOGON);
+        PlaySE(SE_PC_LOGIN);
 }
 
 void sub_80B0C5C(struct Sprite *sprite)
@@ -4732,36 +4723,36 @@ void sub_80B1710(u8 a)
     case 0:
     case 1:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0];
-        PlaySE(SE_HAZURE);
+        PlaySE(SE_FAILURE);
         break;
     case 2:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 4;
-        PlaySE(SE_SEIKAI);
+        PlaySE(SE_SUCCESS);
         break;
     case 3:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 8;
-        PlaySE(SE_SEIKAI);
+        PlaySE(SE_SUCCESS);
         break;
     case 4:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 12;
-        PlaySE(SE_TK_WARPIN);
+        PlaySE(SE_WARP_IN);
         break;
     case 5:  // exactly the same as case 4
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 12;
-        PlaySE(SE_TK_WARPIN);
+        PlaySE(SE_WARP_IN);
         break;
     case 6:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 16;
-        PlaySE(SE_TK_WARPIN);
+        PlaySE(SE_WARP_IN);
         break;
     case 8:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 24;
-        PlaySE(SE_W215);
+        PlaySE(SE_M_HEAL_BELL);
         break;
     case 7:
     default:
         gSprites[spriteId].oam.tileNum = gSprites[spriteId].data[0] + 20;
-        PlaySE(SE_TK_WARPIN);
+        PlaySE(SE_WARP_IN);
         break;
     }
     gSprites[spriteId].data[1] = 0;
@@ -5089,7 +5080,7 @@ void sub_80B20C4(void)
             *(u16 *)(VRAM + 0xC000 + r4 * 64 + 0x2A) = r0 + 1;
             *(u16 *)(VRAM + 0xC000 + (r4 + 1) * 64 + 0x28) = r0 + 16;
             *(u16 *)(VRAM + 0xC000 + (r4 + 1) * 64 + 0x2A) = r0 + 17;
-            PlaySE(SE_C_PASI);
+            PlaySE(SE_CONTEST_ICON_CHANGE);
         }
     }
 }
@@ -5157,7 +5148,7 @@ void sub_80B237C(u8 taskId)
 {
     gBattle_BG1_X = 0;
     gBattle_BG1_Y = DISPLAY_HEIGHT;
-    PlaySE12WithPanning(SE_C_MAKU_D, 0);
+    PlaySE12WithPanning(SE_CONTEST_CURTAIN_FALL, 0);
     gTasks[taskId].func = sub_80B23BC;
 }
 
@@ -5269,7 +5260,7 @@ void sub_80B25A4(u8 taskId)
     else
     {
         gTasks[taskId].data[2] = 0;
-        PlaySE12WithPanning(SE_C_MAKU_U, 0);
+        PlaySE12WithPanning(SE_CONTEST_CURTAIN_RISE, 0);
         gTasks[taskId].func = sub_80B2508;
     }
 }

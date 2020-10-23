@@ -214,14 +214,14 @@ u16 gUnknown_03004840[10];
 struct BerryBlenderData* gBerryBlenderData;
 
 // iwram bss
-IWRAM_DATA s16 gUnknown_03000510[8];
-IWRAM_DATA s16 gUnknown_03000520[6];
-IWRAM_DATA s16 gUnknown_0300052C;
-IWRAM_DATA s16 gUnknown_0300052E;
-IWRAM_DATA s32 gUnknown_03000530[6];
-IWRAM_DATA s32 gUnknown_03000548[5];
-IWRAM_DATA u32 gUnknown_0300055C;
-IWRAM_DATA struct BlenderDebug sBlenderDebug;
+static s16 gUnknown_03000510[8];
+static s16 gUnknown_03000520[6];
+static s16 gUnknown_0300052C;
+static s16 gUnknown_0300052E;
+static s32 gUnknown_03000530[6];
+static s32 gUnknown_03000548[5];
+static u32 gUnknown_0300055C;
+static struct BlenderDebug sBlenderDebug;
 
 // this file's functions
 void Blender_SetBankBerryData(u8 bank, u16 itemID);
@@ -970,7 +970,7 @@ void sub_804E738(struct Sprite* sprite)
         if (++sprite->data[5] > 3)
             DestroySprite(sprite);
         else
-            PlaySE(SE_TB_KARA);
+            PlaySE(SE_BALL_TRAY_EXIT);
     }
     sprite->pos1.x = sprite->data[1];
     sprite->pos1.y = sprite->data[2];
@@ -1451,7 +1451,7 @@ static void sub_804F378(void)
     case 13:
         gBerryBlenderData->field_0++;
         sub_804F238();
-        PlaySE(SE_RU_HYUU);
+        PlaySE(SE_FALL);
         sub_8051414(&gBerryBlenderData->field_168);
         break;
     case 14:
@@ -1465,7 +1465,7 @@ static void sub_804F378(void)
             gBerryBlenderData->arrowPos = gUnknown_082162F8[gUnknown_08216300[gBerryBlenderData->playersNo - 2]];
             REG_BG2CNT = 0x4882;
             gBerryBlenderData->framesToWait = 0;
-            PlaySE(SE_TRACK_DOOR);;
+            PlaySE(SE_TRUCK_DOOR);;
             sub_804F2A8();
         }
         sub_8051414(&gBerryBlenderData->field_168);
@@ -1508,7 +1508,7 @@ static void sub_804F378(void)
             gBerryBlenderData->field_178 = GetCurrentMapMusic();
         }
         PlayBGM(MUS_CYCLING);
-        PlaySE(SE_MOTER);
+        PlaySE(SE_BERRY_BLENDER);
         Blender_ControlHitPitch();
         break;
     }
@@ -1699,17 +1699,17 @@ static void sub_804FC48(u16 a0, u8 a1)
     {
         StartSpriteAnim(&gSprites[spriteID], 2);
         gSprites[spriteID].callback = sub_8051684;
-        PlaySE(SE_RU_GASHIN);
+        PlaySE(SE_ICE_STAIRS);
     }
     else if (a0 == 0x5432)
     {
         StartSpriteAnim(&gSprites[spriteID], 0);
-        PlaySE(SE_SEIKAI);
+        PlaySE(SE_SUCCESS);
     }
     else if (a0 == 0x2345)
     {
         StartSpriteAnim(&gSprites[spriteID], 1);
-        PlaySE(SE_HAZURE);
+        PlaySE(SE_FAILURE);
     }
     sub_805156C();
 }
@@ -1888,7 +1888,12 @@ u32 Blender_GetPokeblockColor(struct BlenderBerry* berries, s16* a1, u8 playersN
     s32 r6;
     u8 r2;
 
-    for (i = 0; i <= 5; i++) // bug, writing one index too far
+    // bug, writing one index too far
+#ifdef UBFIX
+    for (i = 0; i < 5; i++)
+#else
+    for (i = 0; i <= 5; i++)
+#endif //UBFIX
         vars[i] = a1[i];
     r6 = 0;
     for (i = 0; i < 5; i++)
@@ -2765,7 +2770,7 @@ static void sub_805181C(struct Sprite* sprite)
         {
             sprite->data[1] = 88;
             sprite->data[0]++;
-            PlaySE(SE_KON);
+            PlaySE(SE_BALL_BOUNCE_1);
         }
         break;
     case 1:
@@ -3272,7 +3277,7 @@ void debug_sub_80524BC(void)
 }
 
 // Partially fixes the clipping on longer names.
-#if DEBUG_TRANSLATE && DEBUG
+#if DEBUG_FIX
 #  define BLENDER_DEBUG_BERRY_LEN 12
 #else
 #  define BLENDER_DEBUG_BERRY_LEN 6
@@ -3532,7 +3537,7 @@ static void sub_8052BD0(u8 taskID)
 {
     if (gTasks[taskID].data[0] == 0)
     {
-        PlayFanfare(MUS_FANFA1);
+        PlayFanfare(MUS_LEVEL_UP);
         gTasks[taskID].data[0]++;
     }
     if (IsFanfareTaskInactive())

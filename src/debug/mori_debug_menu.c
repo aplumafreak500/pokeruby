@@ -42,11 +42,11 @@ const u8 Text_39B28B[] = _("Add 10000 steps");
 const u8 Text_39B297[] = _("Move Tutor");
 const u8 Text_39B2A2[] = _("Breed an egg");
 const u8 Text_39B2AF[] = _("Long name");
-// #ifdef GERMAN
+//#if (ENGLISH && !DEBUG_FIX)
+//const u8 Text_39B2B9[] = _("ポロックけす");
+//#else
 const u8 Text_39B2B9[] = _("Delete {POKEBLOCK}");
-// #else
-// const u8 Text_39B2B9[] = _("ポロックけす");
-// #endif
+//#endif
 
 const struct MenuAction gMoriDebugMenuActions[] =
 {

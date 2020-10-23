@@ -94,9 +94,7 @@ const struct SpritePalette gUnknown_0820A4D4[] =
 };
 
 extern void c3_0802FDF4(u8);
-extern void sub_80440EC();
 extern void sub_804777C();
-extern u8 GetBattlerSpriteCoord();
 extern u8 IsBankSpritePresent(u8);
 extern u8 sub_8077F68(u8);
 extern u8 sub_8077F7C(u8);
@@ -797,7 +795,7 @@ void HandleLowHpMusicChange(struct Pokemon *pkmn, u8 b)
         if (!ewram17800[b].unk0_1)
         {
             if (!ewram17800[b ^ 2].unk0_1)
-                PlaySE(SE_HINSI);
+                PlaySE(SE_LOW_HEALTH);
             ewram17800[b].unk0_1 = 1;
         }
     }
@@ -806,12 +804,12 @@ void HandleLowHpMusicChange(struct Pokemon *pkmn, u8 b)
         ewram17800[b].unk0_1 = 0;
         if (!IsDoubleBattle())
         {
-            m4aSongNumStop(SE_HINSI);
+            m4aSongNumStop(SE_LOW_HEALTH);
             return;
         }
         if (IsDoubleBattle() && !ewram17800[b ^ 2].unk0_1)
         {
-            m4aSongNumStop(SE_HINSI);
+            m4aSongNumStop(SE_LOW_HEALTH);
             return;
         }
     }
@@ -824,7 +822,7 @@ void BattleStopLowHpSound(void)
     ewram17800[r4].unk0_1 = 0;
     if (IsDoubleBattle())
         ewram17800[r4 ^ 2].unk0_1 = 0;
-    m4aSongNumStop(SE_HINSI);
+    m4aSongNumStop(SE_LOW_HEALTH);
 }
 
 u8 unref_sub_8032604(struct Pokemon *pkmn)

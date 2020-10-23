@@ -4,7 +4,7 @@
 #include "event_object_movement.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
-#include "event_obj_lock.h"
+#include "event_object_lock.h"
 #include "metatile_behavior.h"
 #include "pokemon_menu.h"
 #include "overworld.h"
@@ -92,7 +92,7 @@ void Debug_SetUpFieldMove_Cut(void)
     u8 i, j;
     u8 metatileBehavior;
 
-    if (CheckObjectGraphicsInFrontOfPlayer(EVENT_OBJ_GFX_CUTTABLE_TREE) == TRUE)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE)
     {
         gLastFieldPokeMenuOpened = 0;
         FieldCallback_CutTree();
@@ -131,7 +131,7 @@ bool8 SetUpFieldMove_Cut(void)
     u8 i, j;
     u8 tileBehavior;
 
-    if (CheckObjectGraphicsInFrontOfPlayer(EVENT_OBJ_GFX_CUTTABLE_TREE) == TRUE)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE) == TRUE)
     {
         // Standing in front of cuttable tree.
         gFieldCallback = FieldCallback_PrepareFadeInFromMenu;
@@ -211,7 +211,7 @@ bool8 FldEff_CutGrass(void)
     u8 tileBehavior;
     u8 i = 0, j;
 
-    PlaySE(SE_W015);
+    PlaySE(SE_M_CUT);
     PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
     for (i = 0; i < 3; i++)
     {
@@ -377,13 +377,13 @@ static void CutGrassSpriteCallbackEnd(struct Sprite *sprite)
     for (i = 1; i < 8; i++)
         DestroySprite(&gSprites[eCutGrassSpriteArray[i]]);
     FieldEffectStop(&gSprites[eCutGrassSpriteArray[0]], FLDEFF_CUT_GRASS);
-    ScriptUnfreezeEventObjects();
+    ScriptUnfreezeObjectEvents();
     ScriptContext2_Disable();
 }
 
 static void StartCutTreeFieldEffect(void)
 {
-    PlaySE(SE_W015);
+    PlaySE(SE_M_CUT);
     FieldEffectActiveListRemove(FLDEFF_USE_CUT_ON_TREE);
     EnableBothScriptContexts();
 }

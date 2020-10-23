@@ -464,7 +464,7 @@ u8 GiveMonToPlayer(struct Pokemon *mon);
 u8 SendMonToPC(struct Pokemon *mon);
 u8 CalculatePlayerPartyCount(void);
 u8 CalculateEnemyPartyCount(void);
-u8 sub_803DAA0(void);
+u8 GetMonsStateToDoubles(void);
 u8 GetAbilityBySpecies(u16 species, bool8 altAbility, bool8 hAbility);
 u8 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBaseRecord *secretBaseRecord);
@@ -534,8 +534,8 @@ void BoxMonRestorePP(struct BoxPokemon *);
 bool8 HealStatusConditions(struct Pokemon *mon, u32 unused, u32 healMask, u8 battleId);
 u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit);
 
-#if DEBUG
+#if DEBUG && !(ENGLISH && REVISION == 0)
 void Nakamura_NakaGenderTest_RecalcStats(struct Pokemon *);
-#endif // DEBUG
+#endif
 
 #endif // GUARD_POKEMON_H

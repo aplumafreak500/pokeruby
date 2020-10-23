@@ -17,7 +17,7 @@
 #include "constants/items.h"
 #include "mail.h"
 #include "main.h"
-#include "event_obj_lock.h"
+#include "event_object_lock.h"
 #include "menu.h"
 #include "menu_helpers.h"
 #include "metatile_behavior.h"
@@ -34,7 +34,7 @@
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
-#include "constants/bg_event_constants.h"
+#include "constants/event_bg.h"
 #include "constants/map_types.h"
 #include "constants/species.h"
 #include "constants/vars.h"
@@ -213,7 +213,7 @@ void ItemUseOnFieldCB_Bike(u8 taskId)
     if (ItemId_GetSecondaryId(gSpecialVar_ItemId) == 1)
         GetOnOffBike(PLAYER_AVATAR_FLAG_ACRO_BIKE);
 
-    ScriptUnfreezeEventObjects();
+    ScriptUnfreezeObjectEvents();
     ScriptContext2_Disable();
     DestroyTask(taskId);
 }
@@ -312,7 +312,7 @@ void RunItemfinderResults(u8 taskId)
             }
             return;
         }
-        PlaySE(SE_DAUGI); // play the itemfinder jingle 4 times before executing the itemfinder.
+        PlaySE(SE_ITEMFINDER); // play the itemfinder jingle 4 times before executing the itemfinder.
         data[4]++;
     }
     data[3] = (data[3] + 1) & 0x1F;
@@ -321,7 +321,7 @@ void RunItemfinderResults(u8 taskId)
 void ExitItemfinder(u8 taskId)
 {
     Menu_EraseWindowRect(0, 14, 29, 19);
-    ScriptUnfreezeEventObjects();
+    ScriptUnfreezeObjectEvents();
     ScriptContext2_Disable();
     DestroyTask(taskId);
 }
@@ -548,15 +548,15 @@ u8 GetPlayerDirectionTowardsHiddenItem(s16 itemX, s16 itemY)
 
 void SetPlayerDirectionTowardsItem(u8 direction)
 {
-    EventObjectClearHeldMovementIfFinished(&gEventObjects[GetEventObjectIdByLocalIdAndMap(0xFF, 0, 0)]);
-    EventObjectClearHeldMovement(&gEventObjects[GetEventObjectIdByLocalIdAndMap(0xFF, 0, 0)]);
-    UnfreezeEventObject(&gEventObjects[GetEventObjectIdByLocalIdAndMap(0xFF, 0, 0)]);
+    ObjectEventClearHeldMovementIfFinished(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(0xFF, 0, 0)]);
+    ObjectEventClearHeldMovement(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(0xFF, 0, 0)]);
+    UnfreezeObjectEvent(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(0xFF, 0, 0)]);
     PlayerTurnInPlace(direction);
 }
 
 void DisplayItemRespondingMessageAndExitItemfinder(u8 taskId)
 {
-    if (EventObjectCheckHeldMovementStatus(&gEventObjects[GetEventObjectIdByLocalIdAndMap(0xFF, 0, 0)]) == TRUE)
+    if (ObjectEventCheckHeldMovementStatus(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(0xFF, 0, 0)]) == TRUE)
         DisplayItemMessageOnField(taskId, gOtherText_ItemfinderResponding, ExitItemfinder, 0);
 }
 
@@ -564,7 +564,7 @@ void RotatePlayerAndExitItemfinder(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (EventObjectCheckHeldMovementStatus(&gEventObjects[GetEventObjectIdByLocalIdAndMap(0xFF, 0, 0)]) == TRUE
+    if (ObjectEventCheckHeldMovementStatus(&gObjectEvents[GetObjectEventIdByLocalIdAndMap(0xFF, 0, 0)]) == TRUE
     || data[2] == FALSE)
     {
         SetPlayerDirectionTowardsItem(gItemFinderDirections[data[5]]);
@@ -744,7 +744,7 @@ void ItemUseOutOfBattle_TMHM(u8 taskId)
 
 static void BootTMHM(u8 taskId)
 {
-    PlaySE(SE_PC_LOGON);
+    PlaySE(SE_PC_LOGIN);
     gTasks[taskId].func = WaitButtonPressAndDisplayTMHMInfo;
 }
 
@@ -803,7 +803,7 @@ static void PlayBlackWhiteFluteSound(u8 taskId)
 {
     if(++gTasks[taskId].data[15] > 7)
     {
-        PlaySE(SE_BIDORO);
+        PlaySE(SE_GLASS_FLUTE);
         DisplayItemMessageOnField(taskId, gStringVar4, CleanUpItemMenuMessage, 1);
     }
 }
@@ -896,7 +896,7 @@ void sub_80CA2BC(u8 taskId)
 {
     if(++gTasks[taskId].data[15] > 7)
     {
-        PlaySE(SE_KAIFUKU);
+        PlaySE(SE_USE_ITEM);
         RemoveBagItem(gSpecialVar_ItemId, 1);
         DisplayItemMessageOnField(taskId, sub_803F378(gSpecialVar_ItemId), sub_80CA294, 1);
     }

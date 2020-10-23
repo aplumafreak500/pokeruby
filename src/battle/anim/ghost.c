@@ -257,7 +257,7 @@ static void sub_80DDBD8(struct Sprite *sprite)
         return;
     if (r0 <= 0)
         return;
-    PlaySE12WithPanning(SE_W109, gUnknown_0202F7D2);
+    PlaySE12WithPanning(SE_M_CONFUSE_RAY, gUnknown_0202F7D2);
 }
 
 static void sub_80DDC4C(struct Sprite *sprite)
@@ -276,7 +276,7 @@ static void sub_80DDC4C(struct Sprite *sprite)
     if (r2 == 0 || r2 > 196)
     {
         if (r0 > 0)
-            PlaySE(SE_W109);
+            PlaySE(SE_M_CONFUSE_RAY);
     }
     
     if (sprite->data[6] == 0)
@@ -723,7 +723,7 @@ static void sub_80DE6B0(u8 taskId)
         BlendPalette(task->data[4], 16, 0, RGB(13, 0, 15));
         break;
     case 2:
-        gSprites[task->data[14]].invisible = 1;
+        gSprites[task->data[14]].invisible = TRUE;
         obj_delete_but_dont_free_vram(&gSprites[task->data[0]]);
         FreeSpritePaletteByTag(0x2771);
         REG_BLDCNT = 0;
@@ -774,7 +774,7 @@ static void sub_80DE7B8(struct Sprite *sprite)
     sprite->pos1.x = battler1X;
     sprite->pos1.y = battler1Y;
     sprite->callback = sub_80DE8D8;
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
 }
 
 static void sub_80DE8D8(struct Sprite *sprite)
@@ -1102,7 +1102,7 @@ static void sub_80DF018(struct Sprite *sprite)
         REG_BLDALPHA = (16 - sprite->data[2]) | (sprite->data[2] << 8);
         if (sprite->data[2] == 16)
         {
-            sprite->invisible = 1;
+            sprite->invisible = TRUE;
             sprite->callback = sub_80DF090;
         }
     }
@@ -1145,14 +1145,15 @@ static void sub_80DF0B8(struct Sprite *sprite)
 
         if (++coeffB > 16)
             coeffB = 16;
-        if (--(s16)coeffA < 0)
+        --coeffA;
+        if ((s16)coeffA < 0)
             coeffA = 0;
 
         REG_BLDALPHA = (coeffB << 8) | coeffA;
         sprite->data[6] = (coeffB << 8) | coeffA;
         if (coeffB == 16 && coeffA == 0)
         {
-            sprite->invisible = 1;
+            sprite->invisible = TRUE;
             sprite->callback = sub_80DF18C;
         }
     }
@@ -1300,7 +1301,7 @@ static void sub_80DF3D8(struct Sprite *sprite)
 
 static void sub_80DF49C(struct Sprite *sprite)
 {
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
     sprite->data[5] = gBattlerSpriteIds[gBattleAnimAttacker];
     sprite->data[0] = 128;
     sprite->data[1] = 10;

@@ -355,7 +355,7 @@ static void AnimSimplePaletteBlend(struct Sprite *sprite)
 {
     u32 selectedPalettes = UnpackSelectedBattleAnimPalettes(gBattleAnimArgs[0]);
     BeginNormalPaletteFade(selectedPalettes, gBattleAnimArgs[1], gBattleAnimArgs[2], gBattleAnimArgs[3], gBattleAnimArgs[4]);
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
     sprite->callback = AnimSimplePaletteBlendStep;
 }
 
@@ -401,7 +401,7 @@ static void sub_80E1E2C(struct Sprite *sprite)
 
     selectedPalettes = UnpackSelectedBattleAnimPalettes(sprite->data[7]);
     BlendPalettes(selectedPalettes, gBattleAnimArgs[4], gBattleAnimArgs[3]);
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
     sprite->callback = sub_80E1E80;
 }
 
@@ -724,7 +724,7 @@ static void sub_80E24B8(struct Sprite *sprite)
 {
     u16 var0;
 
-    sprite->invisible = 1;
+    sprite->invisible = TRUE;
     sprite->data[0] = -gBattleAnimArgs[0];
     sprite->data[1] = gBattleAnimArgs[1];
     sprite->data[2] = gBattleAnimArgs[1];
@@ -1426,9 +1426,9 @@ static void sub_80E3338(u8 taskId)
     gTasks[taskId].func = sub_80E3704;
 
     if (taskData[0] == 0)
-        PlaySE12WithPanning(SE_W287, BattleAnimAdjustPanning2(SOUND_PAN_ATTACKER_NEG));
+        PlaySE12WithPanning(SE_M_STAT_INCREASE, BattleAnimAdjustPanning2(SOUND_PAN_ATTACKER_NEG));
     else
-        PlaySE12WithPanning(SE_W287B, BattleAnimAdjustPanning2(SOUND_PAN_ATTACKER_NEG));
+        PlaySE12WithPanning(SE_M_STAT_DECREASE, BattleAnimAdjustPanning2(SOUND_PAN_ATTACKER_NEG));
 }
 
 static void sub_80E3704(u8 taskId)
@@ -1921,7 +1921,7 @@ void sub_80E4300(u8 taskId)
     else
     {
         gTasks[taskId].data[0] = ewram17800[gBattleAnimAttacker].invisible;
-        ewram17800[gBattleAnimAttacker].invisible = 1;
+        ewram17800[gBattleAnimAttacker].invisible = TRUE;
         gTasks[taskId].func = sub_80E4368;
         gAnimVisualTaskCount--;
     }

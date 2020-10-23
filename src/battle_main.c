@@ -113,11 +113,14 @@ extern u16 gUnknown_02024DE8;
 extern u8 gActionSelectionCursor[];
 extern u8 gMoveSelectionCursor[];
 extern u8 gUnknown_02038470[];
-extern MainCallback gPreBattleCallback1;
+MainCallback gPreBattleCallback1;
+u8 gUnknown_03004344;
+u8 gUnknown_03004348;
 extern void (*gBattleMainFunc)(void);
-extern u8 gLeveledUpInBattle;
-extern void (*gBattlerControllerFuncs[])(void);
-extern u8 gHealthboxSpriteIds[];
+u8 gLeveledUpInBattle;
+void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(void);
+u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
+u8 gUnknown_0300434C[MAX_BATTLERS_COUNT];
 extern u16 gBattleTypeFlags;
 extern u8 gReservedSpritePaletteCount;
 extern u16 gTrainerBattleOpponent;
@@ -163,6 +166,7 @@ extern u8 gNumSafariBalls;
 extern u8 gUnknown_081FA70C[][3];
 extern u8 gUnknown_081FA71B[];
 extern u8 gUnknown_081FA71F[];
+struct BattleResults gBattleResults;
 
 void BattleMainCB1(void);
 static void BattlePrepIntroSlide(void);
@@ -241,9 +245,8 @@ void CB2_InitBattleInternal(void)
         gScanlineEffectRegBuffers[0][i] = 0xF0;
         gScanlineEffectRegBuffers[1][i] = 0xF0;
     }
-    for (i = 80; i < 160; i++)
+    for (; i < 160; i++)
     {
-        asm(""::"r"(i));  // Needed to stop the compiler from optimizing out the loop counter
         gScanlineEffectRegBuffers[0][i] = 0xFF10;
         gScanlineEffectRegBuffers[1][i] = 0xFF10;
     }
@@ -1185,7 +1188,7 @@ void sub_800FE20(struct Sprite *sprite)
 {
     StartSpriteAffineAnim(sprite, 1);
     sprite->callback = sub_800FDB0;
-    PlaySE(SE_BT_START);
+    PlaySE(SE_MUGSHOT);
 }
 
 void sub_800FE40(u8 taskId)
@@ -1289,9 +1292,8 @@ void c2_8011A1C(void)
         gScanlineEffectRegBuffers[0][i] = 0xF0;
         gScanlineEffectRegBuffers[1][i] = 0xF0;
     }
-    for (i = 80; i < 160; i++)
+    for (; i < 160; i++)
     {
-        asm(""::"r"(i));  // Needed to stop the compiler from optimizing out the loop counter
         gScanlineEffectRegBuffers[0][i] = 0xFF10;
         gScanlineEffectRegBuffers[1][i] = 0xFF10;
     }
@@ -1378,7 +1380,7 @@ void debug_sub_8011EA0(u8);
 void debug_sub_8012294(void);
 void debug_sub_80123D8(u8);
 void debug_sub_8012540(void);
-void debug_nullsub_3(void);
+void debug_ShowCurrentAnimAudioOptions(void);
 void debug_sub_80125A0(void);
 void debug_sub_80125E4(void);
 void debug_sub_8012628(void);
@@ -1478,7 +1480,7 @@ void debug_sub_80108B8(void)
 		debug_sub_8012294();
 	debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
 	debug_sub_8012540();
-	debug_nullsub_3();
+	debug_ShowCurrentAnimAudioOptions();
 	gUnknown_Debug_030043A8 = 0;
 	debug_sub_80125A0();
 	if (gUnknown_Debug_2023A76[0][0x22] == 8)
@@ -1612,7 +1614,7 @@ void debug_sub_8010CAC(void)
             gSaveBlock2.optionsBattleSceneOff = (r5 & 1);
             gSaveBlock2.optionsSound = (r5 & 2) >> 1;
             SetPokemonCryStereo(gSaveBlock2.optionsSound);
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
         }
     }
     if (gMain.newKeysRaw == START_BUTTON)
@@ -1690,7 +1692,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 32:
@@ -1698,7 +1700,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 33:
@@ -1751,7 +1753,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 32:
@@ -1759,7 +1761,7 @@ void debug_sub_8010CAC(void)
             debug_sub_8011E5C();
             debug_sub_8011E74();
             debug_sub_8012540();
-            debug_nullsub_3();
+            debug_ShowCurrentAnimAudioOptions();
             debug_sub_80123D8(gUnknown_Debug_030043A4 * 5);
             break;
         case 33:
@@ -2214,7 +2216,12 @@ void debug_sub_8011EA0(u8 a)
     case 15:
     case 20:
     case 25:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 8);
+#else
         debug_sub_8010A7C(0, 20);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2223,6 +2230,8 @@ void debug_sub_8011EA0(u8 a)
             gUnknown_Debug_821F424[a][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2231,6 +2240,7 @@ void debug_sub_8011EA0(u8 a)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         StringAppend(gBattleTextBuff1, gSpeciesNames[gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a]]);
         Text_InitWindow(
             &gUnknown_Debug_03004370,
@@ -2262,7 +2272,12 @@ void debug_sub_8011EA0(u8 a)
     case 17:
     case 22:
     case 27:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 11);
+#else
         debug_sub_8010A7C(0, 24);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2271,6 +2286,8 @@ void debug_sub_8011EA0(u8 a)
             gUnknown_Debug_821F424[a][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2279,6 +2296,7 @@ void debug_sub_8011EA0(u8 a)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         if (gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a] != 0)
             StringAppend(gBattleTextBuff1, ItemId_GetName(gUnknown_Debug_2023A76[gUnknown_Debug_03004360][a]));
         else
@@ -2297,7 +2315,12 @@ void debug_sub_8011EA0(u8 a)
     case 19:
     case 24:
     case 29:
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 2);
+#else
         debug_sub_8010A7C(0, 4);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2370,7 +2393,12 @@ void debug_sub_8012294(void)
     
     if (r5 < 30)
     {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 10);
+#else
         debug_sub_8010A7C(0, 24);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2379,6 +2407,8 @@ void debug_sub_8012294(void)
             gUnknown_Debug_821F564[gUnknown_Debug_030043A8][2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         ConvertIntToDecimalStringN(gBattleTextBuff1, gUnknown_Debug_2023B02[gUnknown_Debug_03004360][r5 / 5][gUnknown_Debug_030043A8], 2, 3);
+// TODO: check other revisions
+#if !(ENGLISH && REVISION == 0)
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2387,6 +2417,7 @@ void debug_sub_8012294(void)
             0);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
         gBattleTextBuff1[0] = EOS;
+#endif
         StringAppend(gBattleTextBuff1, gMoveNames[gUnknown_Debug_2023B02[gUnknown_Debug_03004360][r5 / 5][gUnknown_Debug_030043A8]]);
         Text_InitWindow(
             &gUnknown_Debug_03004370,
@@ -2404,7 +2435,12 @@ void debug_sub_80123D8(u8 a)
 {
     if (a < 30)
     {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 7);
+#else
         debug_sub_8010A7C(0, 18);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2420,7 +2456,12 @@ void debug_sub_80123D8(u8 a)
             gUnknown_Debug_821F58C[1],
             gUnknown_Debug_821F58C[2]);
         Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+        debug_sub_8010A7C(0, 7);
+#else
         debug_sub_8010A7C(0, 18);
+#endif
         Text_InitWindow(
             &gUnknown_Debug_03004370,
             gBattleTextBuff1,
@@ -2469,8 +2510,50 @@ void debug_sub_8012540(void)
     Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
 }
 
-void debug_nullsub_3(void)
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+extern const u8 Str_821F64D[];
+extern const u8 Str_821F652[];
+extern const u8 Str_821F655[];
+extern const u8 Str_821F65A[];
+#endif
+
+void debug_ShowCurrentAnimAudioOptions(void)
 {
+// TODO: check other revisions
+#if (ENGLISH && REVISION == 0)
+    if (gSaveBlock2.optionsBattleSceneOff)
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F652,
+            418,
+            gUnknown_Debug_03004360 * 32 + 21,
+            0);
+    else
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F64D,
+            418,
+            gUnknown_Debug_03004360 * 32 + 21,
+            0);
+    Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+
+    if (gSaveBlock2.optionsSound)
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F65A,
+            422,
+            gUnknown_Debug_03004360 * 32 + 24,
+            0);
+    else
+        Text_InitWindow(
+            &gUnknown_Debug_03004370,
+            Str_821F655,
+            422,
+            gUnknown_Debug_03004360 * 32 + 24,
+            0);
+    Text_PrintWindow8002F44(&gUnknown_Debug_03004370);
+#endif
 }
 
 extern const u32 gUnknown_Debug_821F680[][0x23];
@@ -4863,7 +4946,7 @@ void HandleEndTurn_BattleWon(void)
         {
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
-            PlayBGM(MUS_KACHI5);
+            PlayBGM(MUS_VICTORY_LEAGUE);
             break;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
@@ -4871,13 +4954,13 @@ void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
-            PlayBGM(MUS_KACHI4);
+            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:
-            PlayBGM(MUS_KACHI3);
+            PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
         default:
-            PlayBGM(MUS_KACHI1);
+            PlayBGM(MUS_VICTORY_TRAINER);
             break;
         }
     }
@@ -5540,7 +5623,7 @@ void HandleAction_GoNear(void)
 void HandleAction_SafriZoneRun(void)
 {
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
-    PlaySE(SE_NIGERU);
+    PlaySE(SE_FLEE);
     gCurrentTurnActionNumber = gBattlersCount;
     gBattleOutcome = B_OUTCOME_RAN;
 }
