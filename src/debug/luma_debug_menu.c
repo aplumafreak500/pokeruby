@@ -148,7 +148,7 @@ static u8 LumaDebugMenu_ProcessInput() {
 
 UNUSED u8 LumaDebugMenu_AddNewPKMN() {
 	ScriptContext1_SetupScript(&DebugScript_New0);
-	PlaySE(SE_EXPMAX);
+	PlaySE(SE_EXP_MAX);
 	CloseMenu();
 	return 1;
 }
@@ -436,7 +436,7 @@ u8 LumaDebugMenu_FixBadEggs() {
 		if (GetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, NULL)) {
 			SetMonData(gPlayerParty[i], MON_DATA_SANITY_BIT1, 0);
 			// SetMonData(gPlayerParty[i], MON_DATA_CHECKSUM, CalculateBoxMonChecksum(gPlayerParty[i]));
-			PlaySE(SE_C_GAJI);
+			PlaySE(SE_CONTEST_HEART);
 		}
 	}
 	CloseMenu();
