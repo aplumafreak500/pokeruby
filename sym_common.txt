@@ -136,11 +136,9 @@ SYMBOL(gUnknown_03004344, 4)
 SYMBOL(gUnknown_03004348, 4)
 SYMBOL(gUnknown_0300434C, 4)
 
-// pokemon_1.c
-SYMBOL(gPlayerPartyCount, 4)
-SYMBOL(gPlayerParty, 696)
-SYMBOL(gEnemyPartyCount, 4)
-SYMBOL(gEnemyParty, 696)
+// Put this here
+. = ALIGN(4); src/pokemon_1.o(.bss);
+. = ALIGN(4); src/pokemon_1.o(COMMON);
 
 // random.c
 SYMBOL(gRngValues, 16)

@@ -20,9 +20,9 @@ extern u16 gMoveToLearn;
 static EWRAM_DATA u8 sLearningMoveTableID = 0;
 
 u8 gPlayerPartyCount;
-struct Pokemon gPlayerParty[6];
+struct Pokemon gPlayerParty[PARTY_SIZE];
 u8 gEnemyPartyCount;
-struct Pokemon gEnemyParty[6];
+struct Pokemon gEnemyParty[PARTY_SIZE];
 
 const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 {
