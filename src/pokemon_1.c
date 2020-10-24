@@ -1760,23 +1760,19 @@ u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     union PokemonSubstruct *substruct1 = GetSubstruct(boxMon, boxMon->personality, 1);
     union PokemonSubstruct *substruct2 = GetSubstruct(boxMon, boxMon->personality, 2);
     union PokemonSubstruct *substruct3 = GetSubstruct(boxMon, boxMon->personality, 3);
-    union PokemonSubstruct *substruct4 = GetSubstruct(boxMon, boxMon->personality, 4);
     s32 i;
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct0->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct1->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct2->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct3->raw[i];
-
-    for (i = 0; i < 6; i++)
-        checksum += substruct4->raw[i];
 
     return checksum;
 }

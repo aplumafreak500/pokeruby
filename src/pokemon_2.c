@@ -177,7 +177,7 @@ void GetMonSpriteTemplate_803C5A0(u16 species, u8 a2)
 void EncryptBoxMon(struct BoxPokemon *boxMon)
 {
     u32 i;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 16; i++)
     {
         boxMon->secure.raw[i] ^= boxMon->personality;
         boxMon->secure.raw[i] ^= boxMon->otId;
@@ -187,13 +187,14 @@ void EncryptBoxMon(struct BoxPokemon *boxMon)
 void DecryptBoxMon(struct BoxPokemon *boxMon)
 {
     u32 i;
-    for (i = 0; i < 15; i++)
+    for (i = 0; i < 16; i++)
     {
         boxMon->secure.raw[i] ^= boxMon->otId;
         boxMon->secure.raw[i] ^= boxMon->personality;
     }
 }
 
+// TODO Revert this.
 union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 personality, u8 substructType)
 {
 
@@ -238,7 +239,6 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     struct PokemonSubstruct1 *substruct1 = NULL;
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
-    struct PokemonSubstruct4 *substruct4 = NULL;
 
     if (field > MON_DATA_10)
     {
@@ -246,7 +246,6 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         substruct1 = &(GetSubstruct(boxMon, boxMon->personality, 1)->type1);
         substruct2 = &(GetSubstruct(boxMon, boxMon->personality, 2)->type2);
         substruct3 = &(GetSubstruct(boxMon, boxMon->personality, 3)->type3);
-        substruct4 = &(GetSubstruct(boxMon, boxMon->personality, 4)->type4);
 
         DecryptBoxMon(boxMon);
 
@@ -397,7 +396,7 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = substruct3->pokerus;
         break;
     case MON_DATA_MET_LOCATION:
-        retVal = substruct4->metLocation;
+        retVal = substruct0->metLocation;
         break;
     case MON_DATA_MET_LEVEL:
         retVal = substruct3->metLevel;
@@ -562,13 +561,13 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         }
         break;
     case MON_DATA_HAS_HIDDEN_ABILITY:
-        retVal = substruct4->hasHiddenAbility;
+        retVal = substruct0->hasHiddenAbility;
         break;
     case MON_DATA_RIBBONS2:
-        retVal = substruct4->ribbon2;
+        retVal = substruct3->ribbon2;
         break;
     case MON_DATA_FORM:
-        retVal = substruct4->Form;
+        retVal = substruct0->Form;
         break;
     default:
         break;
@@ -632,7 +631,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
     struct PokemonSubstruct1 *substruct1 = NULL;
     struct PokemonSubstruct2 *substruct2 = NULL;
     struct PokemonSubstruct3 *substruct3 = NULL;
-    struct PokemonSubstruct4 *substruct4 = NULL;
 
     if (field > MON_DATA_10)
     {
@@ -640,7 +638,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
         substruct1 = &(GetSubstruct(boxMon, boxMon->personality, 1)->type1);
         substruct2 = &(GetSubstruct(boxMon, boxMon->personality, 2)->type2);
         substruct3 = &(GetSubstruct(boxMon, boxMon->personality, 3)->type3);
-        substruct4 = &(GetSubstruct(boxMon, boxMon->personality, 4)->type4);
 
         DecryptBoxMon(boxMon);
 
@@ -772,7 +769,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
         SET8(substruct3->pokerus);
         break;
     case MON_DATA_MET_LOCATION:
-        SET16(substruct4->metLocation);
+        SET16(substruct0->metLocation);
         SET8(substruct3->metLocationOld); // compatibility
         break;
     case MON_DATA_MET_LEVEL:
@@ -893,13 +890,13 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
         break;
     }
     case MON_DATA_HAS_HIDDEN_ABILITY:
-        SET8(substruct4->hasHiddenAbility);
+        SET8(substruct0->hasHiddenAbility);
         break;
     case MON_DATA_RIBBONS2:
-        SET32(substruct4->ribbon2);
+        SET32(substruct3->ribbon2);
         break;
     case MON_DATA_FORM:
-        SET8(substruct4->Form);
+        SET8(substruct0->Form);
         break;
     default:
         break;
