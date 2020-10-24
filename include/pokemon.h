@@ -155,8 +155,8 @@ struct BoxPokemon
 
     union
     {
-        u32 raw[15];
-        union PokemonSubstruct substructs[5];
+        u32 raw[16];
+        union PokemonSubstruct substructs[4];
     } secure;
     /*0x5C*/ u32 padding;
 };
