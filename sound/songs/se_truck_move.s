@@ -1,23 +1,22 @@
 	.include "MPlayDef.s"
 
-	.equ	se_truck_move_grp, voicegroup128
+	.equ	se_truck_move_grp, voicegroup111
 	.equ	se_truck_move_pri, 4
 	.equ	se_truck_move_rev, reverb_set+50
 	.equ	se_truck_move_mvl, 127
 	.equ	se_truck_move_key, 0
 	.equ	se_truck_move_tbs, 1
-	.equ	se_truck_move_exg, 1
+	.equ	se_truck_move_exg, 0
 	.equ	se_truck_move_cmp, 1
 
 	.section .rodata
 	.global	se_truck_move
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 se_truck_move_1:
 	.byte	KEYSH , se_truck_move_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_truck_move_tbs/2
 	.byte		VOICE , 10
 	.byte		VOL   , 18*se_truck_move_mvl/mxv
@@ -41,25 +40,19 @@ se_truck_move_1:
 	.byte		        127*se_truck_move_mvl/mxv
 	.byte	W32
 se_truck_move_1_B1:
-@ 001   ----------------------------------------
 	.byte		TIE   , Cs3 , v127
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
 	.byte		EOT   
 	.byte	GOTO
 	 .word	se_truck_move_1_B1
-se_truck_move_1_B2:
-@ 004   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 se_truck_move_2:
 	.byte	KEYSH , se_truck_move_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 11
 	.byte		VOL   , 18*se_truck_move_mvl/mxv
 	.byte	W08
@@ -91,7 +84,6 @@ se_truck_move_2:
 	.byte		N03   , Fn2 , v044
 	.byte	W12
 se_truck_move_2_B1:
-@ 001   ----------------------------------------
 	.byte	W12
 	.byte		N03   , Fn2 , v044
 	.byte	W06
@@ -107,7 +99,6 @@ se_truck_move_2_B1:
 	.byte	W12
 	.byte		        Fn2 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		        Gn2 
 	.byte	W18
 	.byte		        Cs2 , v052
@@ -120,7 +111,6 @@ se_truck_move_2_B1:
 	.byte	W18
 	.byte		        Cs2 , v052
 	.byte	W18
-@ 003   ----------------------------------------
 	.byte		        Gn2 , v044
 	.byte	W18
 	.byte		        An2 
@@ -137,8 +127,6 @@ se_truck_move_2_B1:
 	.byte	W12
 	.byte	GOTO
 	 .word	se_truck_move_2_B1
-se_truck_move_2_B2:
-@ 004   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

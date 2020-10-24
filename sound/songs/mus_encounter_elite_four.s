@@ -1,33 +1,31 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_encounter_elite_four_grp, voicegroup096
+	.equ	mus_encounter_elite_four_grp, voicegroup093
 	.equ	mus_encounter_elite_four_pri, 0
 	.equ	mus_encounter_elite_four_rev, reverb_set+50
-	.equ	mus_encounter_elite_four_mvl, 78
+	.equ	mus_encounter_elite_four_mvl, 127
 	.equ	mus_encounter_elite_four_key, 0
 	.equ	mus_encounter_elite_four_tbs, 1
-	.equ	mus_encounter_elite_four_exg, 1
+	.equ	mus_encounter_elite_four_exg, 0
 	.equ	mus_encounter_elite_four_cmp, 1
 
 	.section .rodata
 	.global	mus_encounter_elite_four
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_encounter_elite_four_1:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 134*mus_encounter_elite_four_tbs/2
 	.byte		VOICE , 127
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 84*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 51*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v+62
 	.byte	W24
 mus_encounter_elite_four_1_B1:
-@ 001   ----------------------------------------
-mus_encounter_elite_four_1_001:
+mus_encounter_elite_four_1_000:
 	.byte	W12
 	.byte		N03   , Gn5 , v072
 	.byte	W06
@@ -46,56 +44,41 @@ mus_encounter_elite_four_1_001:
 	.byte		N03   
 	.byte	W06
 	.byte	PEND
-@ 002   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 003   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 004   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 005   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 006   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 007   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 008   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_1_001
-@ 009   ----------------------------------------
+	 .word	mus_encounter_elite_four_1_000
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_1_B1
-mus_encounter_elite_four_1_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_encounter_elite_four_2:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 38
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 127*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 78*mus_encounter_elite_four_mvl/mxv
 	.byte	W24
 mus_encounter_elite_four_2_B1:
-@ 001   ----------------------------------------
 	.byte		VOICE , 38
 	.byte		BEND  , c_v-5
 	.byte		N12   , Bn0 , v112
@@ -132,7 +115,6 @@ mus_encounter_elite_four_2_B1:
 	.byte	W06
 	.byte		BEND  , c_v+0
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N12   , Bn0 
 	.byte	W12
 	.byte		N03   , Fs1 
@@ -148,7 +130,6 @@ mus_encounter_elite_four_2_B1:
 	.byte	W06
 	.byte		BEND  , c_v+0
 	.byte	W18
-@ 003   ----------------------------------------
 	.byte		        c_v-5
 	.byte		N12   , Bn0 
 	.byte	W06
@@ -184,7 +165,6 @@ mus_encounter_elite_four_2_B1:
 	.byte	W06
 	.byte		BEND  , c_v+0
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte		N12   , Bn0 
 	.byte	W12
 	.byte		N03   , Fs1 
@@ -205,8 +185,7 @@ mus_encounter_elite_four_2_B1:
 	.byte	W06
 	.byte		        Fs1 
 	.byte	W06
-@ 005   ----------------------------------------
-mus_encounter_elite_four_2_005:
+mus_encounter_elite_four_2_000:
 	.byte		BEND  , c_v-5
 	.byte		N12   , Dn1 , v112
 	.byte	W06
@@ -243,7 +222,6 @@ mus_encounter_elite_four_2_005:
 	.byte		BEND  , c_v+0
 	.byte	W06
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		N12   , Dn1 
 	.byte	W12
 	.byte		N03   , An1 
@@ -263,10 +241,8 @@ mus_encounter_elite_four_2_005:
 	.byte	W06
 	.byte		BEND  , c_v+0
 	.byte	W18
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_2_005
-@ 008   ----------------------------------------
+	 .word	mus_encounter_elite_four_2_000
 	.byte		BEND  , c_v-5
 	.byte		N12   , Dn1 , v112
 	.byte	W06
@@ -293,8 +269,7 @@ mus_encounter_elite_four_2_005:
 	.byte	W06
 	.byte		        As0 
 	.byte	W18
-@ 009   ----------------------------------------
-mus_encounter_elite_four_2_009:
+mus_encounter_elite_four_2_001:
 	.byte		BEND  , c_v-5
 	.byte		N06   , Dn1 , v112
 	.byte	W06
@@ -346,7 +321,6 @@ mus_encounter_elite_four_2_009:
 	.byte		        Cn1 
 	.byte	W03
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte		N06   , Dn1 
 	.byte	W06
 	.byte		N03   , Dn2 
@@ -389,10 +363,8 @@ mus_encounter_elite_four_2_009:
 	.byte	W03
 	.byte		        Cn1 
 	.byte	W03
-@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_2_009
-@ 012   ----------------------------------------
+	 .word	mus_encounter_elite_four_2_001
 	.byte		N06   , An0 , v112
 	.byte	W12
 	.byte		N03   
@@ -427,25 +399,21 @@ mus_encounter_elite_four_2_009:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_2_B1
-mus_encounter_elite_four_2_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_encounter_elite_four_3:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 111*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 68*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v-1
 	.byte	W24
 mus_encounter_elite_four_3_B1:
-@ 001   ----------------------------------------
 	.byte		VOICE , 13
 	.byte		PAN   , c_v-32
-	.byte		VOL   , 105*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 64*mus_encounter_elite_four_mvl/mxv
 	.byte	W12
 	.byte		N03   , Bn5 , v088
 	.byte	W03
@@ -482,10 +450,9 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		N12   , Bn4 , v096
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		PAN   , c_v-26
-	.byte		VOL   , 119*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 73*mus_encounter_elite_four_mvl/mxv
 	.byte		MOD   , 8
 	.byte		N12   , Bn1 , v112
 	.byte	W12
@@ -514,11 +481,10 @@ mus_encounter_elite_four_3_B1:
 	.byte	W09
 	.byte		N03   , As1 
 	.byte	W03
-@ 003   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		MOD   , 0
 	.byte		PAN   , c_v+32
-	.byte		VOL   , 95*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 58*mus_encounter_elite_four_mvl/mxv
 	.byte	W12
 	.byte		N03   , Bn5 
 	.byte	W03
@@ -556,10 +522,9 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		N12   , Fs5 , v112
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		PAN   , c_v-27
-	.byte		VOL   , 119*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 73*mus_encounter_elite_four_mvl/mxv
 	.byte		MOD   , 8
 	.byte		N12   , Bn1 
 	.byte	W12
@@ -582,7 +547,7 @@ mus_encounter_elite_four_3_B1:
 	.byte		PAN   , c_v-27
 	.byte	W03
 	.byte		VOICE , 17
-	.byte		VOL   , 111*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 68*mus_encounter_elite_four_mvl/mxv
 	.byte		N03   , Cn4 , v064
 	.byte	W03
 	.byte		        Cs4 
@@ -611,11 +576,10 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		        As4 
 	.byte	W03
-@ 005   ----------------------------------------
 	.byte		VOICE , 13
 	.byte		MOD   , 0
 	.byte		PAN   , c_v-32
-	.byte		VOL   , 105*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 64*mus_encounter_elite_four_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn6 , v080
 	.byte	W03
@@ -652,10 +616,9 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		N12   , Dn5 , v096
 	.byte	W12
-@ 006   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		PAN   , c_v-27
-	.byte		VOL   , 121*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 74*mus_encounter_elite_four_mvl/mxv
 	.byte		MOD   , 9
 	.byte		N12   , Dn2 , v112
 	.byte	W12
@@ -680,7 +643,7 @@ mus_encounter_elite_four_3_B1:
 	.byte		MOD   , 15
 	.byte	W09
 	.byte		VOICE , 24
-	.byte		VOL   , 111*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 68*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v+24
 	.byte		MOD   , 9
 	.byte		N03   , An5 , v088
@@ -693,11 +656,10 @@ mus_encounter_elite_four_3_B1:
 	.byte	W06
 	.byte		        Fn5 , v076
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		MOD   , 0
 	.byte		PAN   , c_v+32
-	.byte		VOL   , 95*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 58*mus_encounter_elite_four_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn6 , v092
 	.byte	W03
@@ -734,10 +696,9 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		N12   , An5 , v112
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		PAN   , c_v-27
-	.byte		VOL   , 121*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 74*mus_encounter_elite_four_mvl/mxv
 	.byte		MOD   , 9
 	.byte		N12   , Dn2 
 	.byte	W12
@@ -758,7 +719,7 @@ mus_encounter_elite_four_3_B1:
 	.byte		N03   
 	.byte	W06
 	.byte		VOICE , 17
-	.byte		VOL   , 111*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 68*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v+51
 	.byte		N03   , Ds4 , v064
 	.byte	W03
@@ -789,7 +750,6 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte		        Cs5 
 	.byte	W03
-@ 009   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		MOD   , 0
 	.byte		PAN   , c_v-12
@@ -817,11 +777,10 @@ mus_encounter_elite_four_3_B1:
 	.byte	W12
 	.byte		        Gn4 
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		PAN   , c_v-26
 	.byte		MOD   , 8
-	.byte		VOL   , 127*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 78*mus_encounter_elite_four_mvl/mxv
 	.byte		N03   , An2 
 	.byte	W06
 	.byte		N03   
@@ -844,11 +803,10 @@ mus_encounter_elite_four_3_B1:
 	.byte	W12
 	.byte		MOD   , 21
 	.byte	W12
-@ 011   ----------------------------------------
 	.byte		VOICE , 38
 	.byte		MOD   , 10
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 90*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 55*mus_encounter_elite_four_mvl/mxv
 	.byte		N03   , An4 , v092
 	.byte	W06
 	.byte		N03   
@@ -871,7 +829,6 @@ mus_encounter_elite_four_3_B1:
 	.byte	W12
 	.byte		        Gn4 
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		MOD   , 0
 	.byte		N06   , An4 , v084
 	.byte	W06
@@ -893,7 +850,7 @@ mus_encounter_elite_four_3_B1:
 	.byte	W12
 	.byte		VOICE , 17
 	.byte		PAN   , c_v+44
-	.byte		VOL   , 98*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 60*mus_encounter_elite_four_mvl/mxv
 	.byte		N03   , An4 , v072
 	.byte	W03
 	.byte		        Gs4 
@@ -915,25 +872,21 @@ mus_encounter_elite_four_3_B1:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_3_B1
-mus_encounter_elite_four_3_B2:
-@ 013   ----------------------------------------
 	.byte		PAN   , c_v+6
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_encounter_elite_four_4:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 126
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v-62
-	.byte		VOL   , 44*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 27*mus_encounter_elite_four_mvl/mxv
 	.byte	W24
 mus_encounter_elite_four_4_B1:
-@ 001   ----------------------------------------
-mus_encounter_elite_four_4_001:
+mus_encounter_elite_four_4_000:
 	.byte		N06   , En5 , v112
 	.byte	W24
 	.byte		N06   
@@ -943,56 +896,41 @@ mus_encounter_elite_four_4_001:
 	.byte		N06   
 	.byte	W24
 	.byte	PEND
-@ 002   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 003   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 004   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 005   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 006   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 007   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 008   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	PATT
-	 .word	mus_encounter_elite_four_4_001
-@ 009   ----------------------------------------
+	 .word	mus_encounter_elite_four_4_000
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_4_B1
-mus_encounter_elite_four_4_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_encounter_elite_four_5:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
-	.byte		VOL   , 64*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v-61
 	.byte	W24
 mus_encounter_elite_four_5_B1:
-@ 001   ----------------------------------------
 	.byte		MOD   , 2
 	.byte		BEND  , c_v+0
 	.byte		N12   , Fs2 , v112
@@ -1023,7 +961,6 @@ mus_encounter_elite_four_5_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , Fn2 
@@ -1051,7 +988,6 @@ mus_encounter_elite_four_5_B1:
 	.byte	W09
 	.byte		N03   , Fn2 
 	.byte	W03
-@ 003   ----------------------------------------
 	.byte		MOD   , 2
 	.byte		N12   , Fs2 
 	.byte	W12
@@ -1081,7 +1017,6 @@ mus_encounter_elite_four_5_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , Fn2 
@@ -1113,8 +1048,7 @@ mus_encounter_elite_four_5_B1:
 	.byte	W03
 	.byte		        Ds2 
 	.byte	W03
-@ 005   ----------------------------------------
-mus_encounter_elite_four_5_005:
+mus_encounter_elite_four_5_000:
 	.byte		MOD   , 2
 	.byte		N12   , An2 , v112
 	.byte	W12
@@ -1145,7 +1079,6 @@ mus_encounter_elite_four_5_005:
 	.byte		N03   
 	.byte	W06
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , Gs2 
@@ -1173,10 +1106,8 @@ mus_encounter_elite_four_5_005:
 	.byte	W06
 	.byte		        Gs2 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_5_005
-@ 008   ----------------------------------------
+	 .word	mus_encounter_elite_four_5_000
 	.byte		N12   , An2 , v112
 	.byte	W12
 	.byte		N03   , Gs2 
@@ -1203,7 +1134,6 @@ mus_encounter_elite_four_5_005:
 	.byte	W12
 	.byte		        Dn3 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte		N03   , Fn4 
 	.byte	W06
@@ -1227,7 +1157,6 @@ mus_encounter_elite_four_5_005:
 	.byte	W12
 	.byte		        Ds4 
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		N03   , Fn4 
 	.byte	W06
 	.byte		N03   
@@ -1250,7 +1179,6 @@ mus_encounter_elite_four_5_005:
 	.byte	W12
 	.byte		MOD   , 7
 	.byte	W12
-@ 011   ----------------------------------------
 	.byte		        2
 	.byte		N03   , Fn4 
 	.byte	W06
@@ -1274,7 +1202,6 @@ mus_encounter_elite_four_5_005:
 	.byte	W12
 	.byte		        Ds4 
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		N06   , En4 
 	.byte	W06
 	.byte		N03   , En3 
@@ -1309,25 +1236,21 @@ mus_encounter_elite_four_5_005:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_5_B1
-mus_encounter_elite_four_5_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_encounter_elite_four_6:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 81
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
-	.byte		VOL   , 64*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_elite_four_mvl/mxv
 	.byte		PAN   , c_v+63
 	.byte	W24
 mus_encounter_elite_four_6_B1:
-@ 001   ----------------------------------------
 	.byte	W12
 	.byte		N03   , Fs5 , v112
 	.byte	W12
@@ -1345,7 +1268,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		N12   , Fs4 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W12
 	.byte		N03   , Fn3 
@@ -1370,7 +1292,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W09
 	.byte		N03   , Fn3 
 	.byte	W03
-@ 003   ----------------------------------------
 	.byte	W12
 	.byte		        Fs5 
 	.byte	W12
@@ -1388,7 +1309,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		N12   , Bn4 
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W12
 	.byte		N03   , Fn3 
@@ -1431,7 +1351,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W03
 	.byte		        Gn4 
 	.byte	W03
-@ 005   ----------------------------------------
 	.byte	W12
 	.byte		        An5 
 	.byte	W12
@@ -1449,7 +1368,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		N12   , An4 
 	.byte	W12
-@ 006   ----------------------------------------
 	.byte		        An3 
 	.byte	W12
 	.byte		N03   , Gs3 
@@ -1480,7 +1398,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		        As4 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte	W12
 	.byte		        An5 
 	.byte	W12
@@ -1498,7 +1415,6 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		N12   , Dn5 
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte		        An3 
 	.byte	W12
 	.byte		N03   , Gs3 
@@ -1541,8 +1457,7 @@ mus_encounter_elite_four_6_B1:
 	.byte	W03
 	.byte		        As4 
 	.byte	W03
-@ 009   ----------------------------------------
-	.byte		VOL   , 88*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 54*mus_encounter_elite_four_mvl/mxv
 	.byte		N06   , An5 
 	.byte	W06
 	.byte		        An5 , v036
@@ -1573,8 +1488,7 @@ mus_encounter_elite_four_6_B1:
 	.byte	W06
 	.byte		        An5 , v036
 	.byte	W06
-@ 010   ----------------------------------------
-mus_encounter_elite_four_6_010:
+mus_encounter_elite_four_6_000:
 	.byte		PAN   , c_v+63
 	.byte		N06   , An5 , v112
 	.byte	W06
@@ -1607,10 +1521,8 @@ mus_encounter_elite_four_6_010:
 	.byte		        An5 , v036
 	.byte	W06
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_6_010
-@ 012   ----------------------------------------
+	 .word	mus_encounter_elite_four_6_000
 	.byte		PAN   , c_v+63
 	.byte		N06   , An4 , v112
 	.byte	W12
@@ -1629,7 +1541,7 @@ mus_encounter_elite_four_6_010:
 	.byte	W12
 	.byte		N03   
 	.byte	W12
-	.byte		VOL   , 64*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_elite_four_mvl/mxv
 	.byte		N03   , Cs5 
 	.byte	W03
 	.byte		        Cn5 
@@ -1648,19 +1560,16 @@ mus_encounter_elite_four_6_010:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_6_B1
-mus_encounter_elite_four_6_B2:
-@ 013   ----------------------------------------
 	.byte		PAN   , c_v+63
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_encounter_elite_four_7:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 108*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 66*mus_encounter_elite_four_mvl/mxv
 	.byte		N06   , Cn1 , v112
 	.byte		N24   , An2 , v076
 	.byte	W06
@@ -1673,8 +1582,7 @@ mus_encounter_elite_four_7:
 	.byte		N06   
 	.byte	W06
 mus_encounter_elite_four_7_B1:
-@ 001   ----------------------------------------
-mus_encounter_elite_four_7_001:
+mus_encounter_elite_four_7_000:
 	.byte		N48   , An2 , v112
 	.byte	W18
 	.byte		N06   , Cn1 
@@ -1692,8 +1600,7 @@ mus_encounter_elite_four_7_001:
 	.byte		        Cn1 
 	.byte	W12
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_encounter_elite_four_7_002:
+mus_encounter_elite_four_7_001:
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		N06   
@@ -1711,14 +1618,11 @@ mus_encounter_elite_four_7_002:
 	.byte		        Cn1 
 	.byte	W12
 	.byte	PEND
-@ 003   ----------------------------------------
+	.byte	PATT
+	 .word	mus_encounter_elite_four_7_000
 	.byte	PATT
 	 .word	mus_encounter_elite_four_7_001
-@ 004   ----------------------------------------
-	.byte	PATT
-	 .word	mus_encounter_elite_four_7_002
-@ 005   ----------------------------------------
-mus_encounter_elite_four_7_005:
+mus_encounter_elite_four_7_002:
 	.byte		N48   , An2 , v112
 	.byte	W18
 	.byte		N06   , Cn1 
@@ -1734,7 +1638,6 @@ mus_encounter_elite_four_7_005:
 	.byte		        En1 , v112
 	.byte	W24
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte	W18
 	.byte		        Cn1 
 	.byte	W06
@@ -1748,10 +1651,8 @@ mus_encounter_elite_four_7_005:
 	.byte	W06
 	.byte		        En1 , v112
 	.byte	W24
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_7_005
-@ 008   ----------------------------------------
+	 .word	mus_encounter_elite_four_7_002
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		N06   
@@ -1766,8 +1667,7 @@ mus_encounter_elite_four_7_005:
 	.byte	W06
 	.byte		N06   
 	.byte	W24
-@ 009   ----------------------------------------
-mus_encounter_elite_four_7_009:
+mus_encounter_elite_four_7_003:
 	.byte		N06   , En1 , v112
 	.byte	W06
 	.byte		N06   
@@ -1791,13 +1691,10 @@ mus_encounter_elite_four_7_009:
 	.byte		N06   
 	.byte	W12
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_7_009
-@ 011   ----------------------------------------
+	 .word	mus_encounter_elite_four_7_003
 	.byte	PATT
-	 .word	mus_encounter_elite_four_7_009
-@ 012   ----------------------------------------
+	 .word	mus_encounter_elite_four_7_003
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -1819,25 +1716,21 @@ mus_encounter_elite_four_7_009:
 	.byte	W21
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_7_B1
-mus_encounter_elite_four_7_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_encounter_elite_four_8:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 84
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 85*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 52*mus_encounter_elite_four_mvl/mxv
 	.byte	W24
 mus_encounter_elite_four_8_B1:
-@ 001   ----------------------------------------
 	.byte		MOD   , 8
 	.byte		BEND  , c_v-4
 	.byte		N12   , Bn1 , v112
@@ -1872,7 +1765,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , As1 
@@ -1904,7 +1796,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W09
 	.byte		N03   , As1 
 	.byte	W03
-@ 003   ----------------------------------------
 	.byte		MOD   , 2
 	.byte		N12   , Bn1 
 	.byte	W12
@@ -1934,7 +1825,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , As1 
@@ -1966,7 +1856,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W03
 	.byte		        Gs1 
 	.byte	W03
-@ 005   ----------------------------------------
 	.byte		MOD   , 2
 	.byte		N12   , Dn2 , v112
 	.byte	W12
@@ -1996,7 +1885,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		N12   
 	.byte	W12
 	.byte		N03   , Cs2 
@@ -2025,7 +1913,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W03
 	.byte		N06   , Cs2 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		N12   , Dn2 
 	.byte	W12
 	.byte		N03   , Cs2 
@@ -2054,7 +1941,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte		N12   
 	.byte	W12
@@ -2082,7 +1968,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W12
 	.byte		        Gn2 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		BEND  , c_v-4
 	.byte		N03   , An2 
 	.byte	W06
@@ -2107,7 +1992,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W12
 	.byte		        Gn2 
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		N03   , An2 
 	.byte	W06
 	.byte		N03   
@@ -2130,7 +2014,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W12
 	.byte		MOD   , 16
 	.byte	W12
-@ 011   ----------------------------------------
 	.byte		        2
 	.byte		N03   , An2 
 	.byte	W06
@@ -2154,7 +2037,6 @@ mus_encounter_elite_four_8_B1:
 	.byte	W12
 	.byte		        Gn2 
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		N06   , An2 
 	.byte	W06
 	.byte		N03   , An1 
@@ -2173,18 +2055,15 @@ mus_encounter_elite_four_8_B1:
 	.byte	W36
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_8_B1
-mus_encounter_elite_four_8_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
+@********************** Track  9 **********************@
 
 mus_encounter_elite_four_9:
 	.byte	KEYSH , mus_encounter_elite_four_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 47
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 80*mus_encounter_elite_four_mvl/mxv
+	.byte		VOL   , 49*mus_encounter_elite_four_mvl/mxv
 	.byte		N06   , Bn1 , v112
 	.byte	W06
 	.byte		N06   
@@ -2197,7 +2076,6 @@ mus_encounter_elite_four_9:
 	.byte		N03   
 	.byte	W03
 mus_encounter_elite_four_9_B1:
-@ 001   ----------------------------------------
 	.byte		PAN   , c_v-30
 	.byte		N12   , Bn1 , v112
 	.byte	W60
@@ -2208,7 +2086,6 @@ mus_encounter_elite_four_9_B1:
 	.byte		PAN   , c_v+26
 	.byte		N06   , Bn1 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte		PAN   , c_v+32
 	.byte		N06   
 	.byte	W12
@@ -2236,7 +2113,6 @@ mus_encounter_elite_four_9_B1:
 	.byte	W06
 	.byte		N06   , An1 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N12   , Bn1 
 	.byte	W48
@@ -2256,7 +2132,6 @@ mus_encounter_elite_four_9_B1:
 	.byte	W03
 	.byte		PAN   , c_v-31
 	.byte	W09
-@ 004   ----------------------------------------
 	.byte		        c_v+22
 	.byte		N06   , Bn1 
 	.byte	W12
@@ -2286,7 +2161,6 @@ mus_encounter_elite_four_9_B1:
 	.byte		PAN   , c_v-33
 	.byte		N06   , Fs1 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte		PAN   , c_v+23
 	.byte		N12   , Dn2 
 	.byte	W36
@@ -2308,7 +2182,6 @@ mus_encounter_elite_four_9_B1:
 	.byte	W06
 	.byte		N03   , An1 
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		PAN   , c_v+26
 	.byte		N12   , Dn2 
 	.byte	W48
@@ -2323,7 +2196,6 @@ mus_encounter_elite_four_9_B1:
 	.byte		PAN   , c_v-35
 	.byte		N06   , Ds2 
 	.byte	W12
-@ 007   ----------------------------------------
 	.byte		N12   , Dn2 
 	.byte	W48
 	.byte		PAN   , c_v+25
@@ -2340,7 +2212,6 @@ mus_encounter_elite_four_9_B1:
 	.byte		PAN   , c_v-35
 	.byte		N06   , An2 
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte		PAN   , c_v-44
 	.byte		N06   
 	.byte	W12
@@ -2358,8 +2229,7 @@ mus_encounter_elite_four_9_B1:
 	.byte	W12
 	.byte		N06   
 	.byte	W12
-@ 009   ----------------------------------------
-mus_encounter_elite_four_9_009:
+mus_encounter_elite_four_9_000:
 	.byte		PAN   , c_v-32
 	.byte		N06   , An2 , v112
 	.byte	W06
@@ -2388,10 +2258,8 @@ mus_encounter_elite_four_9_009:
 	.byte		N24   , As2 
 	.byte	W24
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_elite_four_9_009
-@ 011   ----------------------------------------
+	 .word	mus_encounter_elite_four_9_000
 	.byte		N06   , An2 , v112
 	.byte	W06
 	.byte		N06   
@@ -2421,7 +2289,6 @@ mus_encounter_elite_four_9_009:
 	.byte		PAN   , c_v+48
 	.byte		N12   
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		PAN   , c_v+33
 	.byte		N06   , An2 
 	.byte	W06
@@ -2451,8 +2318,6 @@ mus_encounter_elite_four_9_009:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_encounter_elite_four_9_B1
-mus_encounter_elite_four_9_B2:
-@ 013   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

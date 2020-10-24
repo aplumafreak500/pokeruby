@@ -1,30 +1,29 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_link_contest_p1_grp, voicegroup039
+	.equ	mus_link_contest_p1_grp, voicegroup036
 	.equ	mus_link_contest_p1_pri, 0
 	.equ	mus_link_contest_p1_rev, reverb_set+50
-	.equ	mus_link_contest_p1_mvl, 79
+	.equ	mus_link_contest_p1_mvl, 127
 	.equ	mus_link_contest_p1_key, 0
 	.equ	mus_link_contest_p1_tbs, 1
-	.equ	mus_link_contest_p1_exg, 1
+	.equ	mus_link_contest_p1_exg, 0
 	.equ	mus_link_contest_p1_cmp, 1
 
 	.section .rodata
 	.global	mus_link_contest_p1
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_link_contest_p1_1:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_1_B1:
-@ 000   ----------------------------------------
 	.byte	TEMPO , 128*mus_link_contest_p1_tbs/2
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 91*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 56*mus_link_contest_p1_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N06   , Fn4 , v112
 	.byte	W12
@@ -62,7 +61,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
-@ 001   ----------------------------------------
 	.byte		        Fn3 
 	.byte	W06
 	.byte		        Cn3 
@@ -97,7 +95,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W03
 	.byte		        Ds3 , v092
 	.byte	W03
-@ 002   ----------------------------------------
 	.byte		N06   , Dn3 , v112
 	.byte	W12
 	.byte		N18   
@@ -110,7 +107,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W24
 	.byte		        As3 
 	.byte	W24
-@ 003   ----------------------------------------
 	.byte		N06   , Cn4 
 	.byte	W06
 	.byte		        Bn3 
@@ -123,14 +119,12 @@ mus_link_contest_p1_1_B1:
 	.byte	W24
 	.byte		N06   , Ds4 
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        Dn4 
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
 	.byte		N78   , Dn4 
 	.byte	W84
-@ 005   ----------------------------------------
 	.byte		N04   , Fs3 
 	.byte	W08
 	.byte		        As3 
@@ -155,7 +149,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W03
 	.byte		        Fs4 
 	.byte	W03
-@ 006   ----------------------------------------
 	.byte		N06   , Fn4 , v112
 	.byte	W12
 	.byte		N03   , Ds3 
@@ -174,7 +167,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W24
 	.byte		        As3 
 	.byte	W24
-@ 007   ----------------------------------------
 	.byte		N03   , Gs3 
 	.byte	W12
 	.byte		N24   , Cn4 
@@ -189,7 +181,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W24
 	.byte		N06   , Ds4 
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte		        Dn4 
 	.byte	W06
 	.byte		        Ds4 
@@ -200,7 +191,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W03
 	.byte		        En4 
 	.byte	W03
-@ 009   ----------------------------------------
 	.byte		N32   , Fn4 
 	.byte	W36
 	.byte		N02   
@@ -213,27 +203,18 @@ mus_link_contest_p1_1_B1:
 	.byte	W24
 	.byte		        Ds4 
 	.byte	W24
-@ 010   ----------------------------------------
 	.byte		VOICE , 17
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	W96
-@ 015   ----------------------------------------
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W96
-@ 017   ----------------------------------------
 	.byte	W48
 	.byte		        24
 	.byte	W48
-@ 018   ----------------------------------------
-	.byte		VOL   , 62*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 38*mus_link_contest_p1_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn4 
 	.byte	W06
@@ -249,7 +230,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 019   ----------------------------------------
 	.byte	W12
 	.byte		N03   
 	.byte	W06
@@ -267,7 +247,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W18
 	.byte		        Cn4 
 	.byte	W12
-@ 020   ----------------------------------------
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
@@ -283,7 +262,6 @@ mus_link_contest_p1_1_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 021   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W06
 	.byte		        As3 
@@ -306,21 +284,18 @@ mus_link_contest_p1_1_B1:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_link_contest_p1_1_B1
-mus_link_contest_p1_1_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_link_contest_p1_2:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_2_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 127*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 79*mus_link_contest_p1_mvl/mxv
 	.byte		N06   , Fn4 , v112
 	.byte	W12
 	.byte		N03   
@@ -357,7 +332,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
-@ 001   ----------------------------------------
 	.byte		        Fn3 
 	.byte	W06
 	.byte		        Cn3 
@@ -392,7 +366,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W03
 	.byte		        Ds3 , v092
 	.byte	W03
-@ 002   ----------------------------------------
 	.byte		N06   , Dn3 , v112
 	.byte	W12
 	.byte		N18   
@@ -405,7 +378,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W24
 	.byte		        As3 
 	.byte	W24
-@ 003   ----------------------------------------
 	.byte		N06   , Cn4 
 	.byte	W06
 	.byte		        Bn3 
@@ -418,14 +390,12 @@ mus_link_contest_p1_2_B1:
 	.byte	W24
 	.byte		N06   , Ds4 
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        Dn4 
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
 	.byte		N78   , Dn4 
 	.byte	W84
-@ 005   ----------------------------------------
 	.byte		N04   , Fs3 
 	.byte	W08
 	.byte		        As3 
@@ -450,7 +420,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W03
 	.byte		        Fs4 
 	.byte	W03
-@ 006   ----------------------------------------
 	.byte		N06   , Fn4 , v112
 	.byte	W12
 	.byte		N03   , Ds3 
@@ -469,7 +438,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W24
 	.byte		        As3 
 	.byte	W24
-@ 007   ----------------------------------------
 	.byte		N03   , Gs3 
 	.byte	W12
 	.byte		N24   , Cn4 
@@ -484,7 +452,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W24
 	.byte		N06   , Ds4 
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte		        Dn4 
 	.byte	W06
 	.byte		        Ds4 
@@ -495,7 +462,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W03
 	.byte		        En4 
 	.byte	W03
-@ 009   ----------------------------------------
 	.byte		N32   , Fn4 
 	.byte	W36
 	.byte		N02   
@@ -508,27 +474,18 @@ mus_link_contest_p1_2_B1:
 	.byte	W24
 	.byte		        Ds4 
 	.byte	W24
-@ 010   ----------------------------------------
 	.byte		VOICE , 17
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	W96
-@ 015   ----------------------------------------
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W96
-@ 017   ----------------------------------------
 	.byte	W48
 	.byte		        24
 	.byte	W48
-@ 018   ----------------------------------------
-	.byte		VOL   , 102*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 63*mus_link_contest_p1_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn4 
 	.byte	W06
@@ -544,7 +501,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 019   ----------------------------------------
 	.byte	W12
 	.byte		N03   
 	.byte	W06
@@ -562,7 +518,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W18
 	.byte		        Cn4 
 	.byte	W12
-@ 020   ----------------------------------------
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
@@ -578,7 +533,6 @@ mus_link_contest_p1_2_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 021   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W06
 	.byte		        As3 
@@ -601,45 +555,32 @@ mus_link_contest_p1_2_B1:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_link_contest_p1_2_B1
-mus_link_contest_p1_2_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_link_contest_p1_3:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_3_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 60
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 66*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 41*mus_link_contest_p1_mvl/mxv
 	.byte		BEND  , c_v+1
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
-	.byte		VOL   , 102*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 63*mus_link_contest_p1_mvl/mxv
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte		VOICE , 73
-	.byte		VOL   , 91*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 56*mus_link_contest_p1_mvl/mxv
 	.byte		N04   , Dn4 , v112
 	.byte	W08
 	.byte		        Ds4 
@@ -654,7 +595,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W08
 	.byte		        Fn4 
 	.byte	W08
-@ 011   ----------------------------------------
 	.byte		N36   , Cn4 
 	.byte	W36
 	.byte		N06   , An3 
@@ -671,7 +611,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		N12   , Fs4 
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		N36   , Fn4 
 	.byte	W36
 	.byte		N06   , Dn4 
@@ -684,7 +623,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W24
 	.byte		N12   , Dn4 
 	.byte	W12
-@ 013   ----------------------------------------
 	.byte		        Cn4 
 	.byte	W12
 	.byte		        Bn3 
@@ -703,7 +641,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		N12   , Fn4 
 	.byte	W12
-@ 014   ----------------------------------------
 	.byte		N06   
 	.byte	W06
 	.byte		        Ds4 
@@ -714,7 +651,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		TIE   , Gn4 
 	.byte	W72
-@ 015   ----------------------------------------
 	.byte	W48
 	.byte		EOT   
 	.byte		N06   , Fn4 
@@ -729,7 +665,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W12
 	.byte		        Gn4 
 	.byte	W06
-@ 016   ----------------------------------------
 	.byte		        As4 
 	.byte	W12
 	.byte		N06   
@@ -754,7 +689,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		        En4 
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte		        Fn4 
 	.byte	W12
 	.byte		N06   
@@ -777,8 +711,7 @@ mus_link_contest_p1_3_B1:
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-@ 018   ----------------------------------------
-	.byte		VOL   , 73*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 45*mus_link_contest_p1_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn4 
 	.byte	W06
@@ -794,7 +727,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 019   ----------------------------------------
 	.byte	W12
 	.byte		N03   
 	.byte	W06
@@ -812,7 +744,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W18
 	.byte		        Cn4 
 	.byte	W12
-@ 020   ----------------------------------------
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
@@ -828,7 +759,6 @@ mus_link_contest_p1_3_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 021   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W06
 	.byte		        As3 
@@ -847,44 +777,31 @@ mus_link_contest_p1_3_B1:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_link_contest_p1_3_B1
-mus_link_contest_p1_3_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_link_contest_p1_4:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_4_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
-	.byte		VOL   , 73*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 45*mus_link_contest_p1_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
-mus_link_contest_p1_4_010:
+mus_link_contest_p1_4_000:
 	.byte		N06   , Gn3 , v112
 	.byte	W06
 	.byte		N03   , Gn3 , v096
@@ -894,11 +811,9 @@ mus_link_contest_p1_4_010:
 	.byte		N03   
 	.byte	W78
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_4_010
-@ 012   ----------------------------------------
-mus_link_contest_p1_4_012:
+	 .word	mus_link_contest_p1_4_000
+mus_link_contest_p1_4_001:
 	.byte		N06   , An3 , v112
 	.byte	W06
 	.byte		N03   , An3 , v096
@@ -908,8 +823,7 @@ mus_link_contest_p1_4_012:
 	.byte		N03   
 	.byte	W78
 	.byte	PEND
-@ 013   ----------------------------------------
-mus_link_contest_p1_4_013:
+mus_link_contest_p1_4_002:
 	.byte		N06   , As3 , v112
 	.byte	W06
 	.byte		N03   , As3 , v096
@@ -919,19 +833,14 @@ mus_link_contest_p1_4_013:
 	.byte		N03   
 	.byte	W78
 	.byte	PEND
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_4_010
-@ 015   ----------------------------------------
+	 .word	mus_link_contest_p1_4_000
 	.byte	PATT
-	 .word	mus_link_contest_p1_4_010
-@ 016   ----------------------------------------
+	 .word	mus_link_contest_p1_4_000
 	.byte	PATT
-	 .word	mus_link_contest_p1_4_012
-@ 017   ----------------------------------------
+	 .word	mus_link_contest_p1_4_001
 	.byte	PATT
-	 .word	mus_link_contest_p1_4_013
-@ 018   ----------------------------------------
+	 .word	mus_link_contest_p1_4_002
 	.byte		N03   , Dn4 , v112
 	.byte	W06
 	.byte		        As3 
@@ -940,7 +849,6 @@ mus_link_contest_p1_4_013:
 	.byte	W06
 	.byte		        Dn3 
 	.byte	W78
-@ 019   ----------------------------------------
 	.byte		        As3 
 	.byte	W06
 	.byte		        Gn3 
@@ -949,7 +857,6 @@ mus_link_contest_p1_4_013:
 	.byte	W06
 	.byte		        As2 
 	.byte	W78
-@ 020   ----------------------------------------
 	.byte		        Dn4 
 	.byte	W03
 	.byte		        As3 
@@ -983,7 +890,6 @@ mus_link_contest_p1_4_013:
 	.byte		        As3 
 	.byte	W48
 	.byte	W03
-@ 021   ----------------------------------------
 	.byte		N03   
 	.byte	W03
 	.byte		        Gn3 
@@ -1019,44 +925,31 @@ mus_link_contest_p1_4_013:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_link_contest_p1_4_B1
-mus_link_contest_p1_4_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_link_contest_p1_5:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_5_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 81
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
-	.byte		VOL   , 73*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 45*mus_link_contest_p1_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
-mus_link_contest_p1_5_010:
+mus_link_contest_p1_5_000:
 	.byte		N06   , Fn4 , v112
 	.byte	W06
 	.byte		N03   , Fn4 , v096
@@ -1066,11 +959,9 @@ mus_link_contest_p1_5_010:
 	.byte		N03   
 	.byte	W78
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_010
-@ 012   ----------------------------------------
-mus_link_contest_p1_5_012:
+	 .word	mus_link_contest_p1_5_000
+mus_link_contest_p1_5_001:
 	.byte		N06   , Fn4 , v112
 	.byte	W06
 	.byte		N03   , Fn4 , v096
@@ -1080,22 +971,16 @@ mus_link_contest_p1_5_012:
 	.byte		N03   
 	.byte	W78
 	.byte	PEND
-@ 013   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_010
-@ 014   ----------------------------------------
+	 .word	mus_link_contest_p1_5_000
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_010
-@ 015   ----------------------------------------
+	 .word	mus_link_contest_p1_5_000
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_010
-@ 016   ----------------------------------------
+	 .word	mus_link_contest_p1_5_000
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_012
-@ 017   ----------------------------------------
+	 .word	mus_link_contest_p1_5_001
 	.byte	PATT
-	 .word	mus_link_contest_p1_5_010
-@ 018   ----------------------------------------
+	 .word	mus_link_contest_p1_5_000
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Fn4 
@@ -1104,7 +989,6 @@ mus_link_contest_p1_5_012:
 	.byte	W06
 	.byte		        As3 
 	.byte	W78
-@ 019   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W06
 	.byte		        Ds4 
@@ -1113,7 +997,6 @@ mus_link_contest_p1_5_012:
 	.byte	W06
 	.byte		        Gn3 
 	.byte	W78
-@ 020   ----------------------------------------
 	.byte		        As4 
 	.byte	W03
 	.byte		        Fn4 
@@ -1147,7 +1030,6 @@ mus_link_contest_p1_5_012:
 	.byte		        As4 
 	.byte	W48
 	.byte	W03
-@ 021   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W03
 	.byte		        Ds4 
@@ -1183,19 +1065,16 @@ mus_link_contest_p1_5_012:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_link_contest_p1_5_B1
-mus_link_contest_p1_5_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_link_contest_p1_6:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_6_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 66*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 41*mus_link_contest_p1_mvl/mxv
 	.byte		N06   , En1 , v112
 	.byte		N48   , An2 , v092
 	.byte	W06
@@ -1259,7 +1138,6 @@ mus_link_contest_p1_6_B1:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		N06   , En1 , v112
 	.byte	W06
 	.byte		        En1 , v064
@@ -1279,8 +1157,7 @@ mus_link_contest_p1_6_B1:
 	.byte		N06   
 	.byte		N24   , An2 
 	.byte	W48
-@ 002   ----------------------------------------
-mus_link_contest_p1_6_002:
+mus_link_contest_p1_6_000:
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -1293,7 +1170,6 @@ mus_link_contest_p1_6_002:
 	.byte		N48   , An2 
 	.byte	W48
 	.byte	PEND
-@ 003   ----------------------------------------
 	.byte		N06   , En1 
 	.byte	W12
 	.byte		        En1 , v092
@@ -1309,7 +1185,6 @@ mus_link_contest_p1_6_002:
 	.byte		        Cn1 
 	.byte		N24   , An2 , v076
 	.byte	W24
-@ 004   ----------------------------------------
 	.byte		N06   , Cn1 , v112
 	.byte		N48   , An2 
 	.byte	W12
@@ -1337,7 +1212,6 @@ mus_link_contest_p1_6_002:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 005   ----------------------------------------
 	.byte		N06   , En1 , v112
 	.byte	W06
 	.byte		N03   , En1 , v036
@@ -1400,10 +1274,8 @@ mus_link_contest_p1_6_002:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_002
-@ 007   ----------------------------------------
+	 .word	mus_link_contest_p1_6_000
 	.byte		N06   , En1 , v112
 	.byte	W36
 	.byte		N03   
@@ -1417,7 +1289,6 @@ mus_link_contest_p1_6_002:
 	.byte		        Cn1 
 	.byte		N24   , An2 , v076
 	.byte	W24
-@ 008   ----------------------------------------
 	.byte		N06   , Cn1 , v112
 	.byte		N48   , An2 
 	.byte	W06
@@ -1449,7 +1320,6 @@ mus_link_contest_p1_6_002:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 009   ----------------------------------------
 	.byte		        En1 , v104
 	.byte	W03
 	.byte		        En1 , v064
@@ -1492,8 +1362,7 @@ mus_link_contest_p1_6_002:
 	.byte	W06
 	.byte		        Cn1 
 	.byte	W12
-@ 010   ----------------------------------------
-mus_link_contest_p1_6_010:
+mus_link_contest_p1_6_001:
 	.byte		N06   , Cn1 , v112
 	.byte	W12
 	.byte		N03   
@@ -1517,7 +1386,6 @@ mus_link_contest_p1_6_010:
 	.byte		        Cn1 
 	.byte	W12
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		N03   
@@ -1542,11 +1410,9 @@ mus_link_contest_p1_6_010:
 	.byte	W12
 	.byte		        En1 , v088
 	.byte	W06
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_010
-@ 013   ----------------------------------------
-mus_link_contest_p1_6_013:
+	 .word	mus_link_contest_p1_6_001
+mus_link_contest_p1_6_002:
 	.byte		N06   , Cn1 , v112
 	.byte	W12
 	.byte		N03   
@@ -1568,10 +1434,8 @@ mus_link_contest_p1_6_013:
 	.byte		N06   
 	.byte	W06
 	.byte	PEND
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_010
-@ 015   ----------------------------------------
+	 .word	mus_link_contest_p1_6_001
 	.byte		N06   , Cn1 , v112
 	.byte	W12
 	.byte		N03   
@@ -1598,14 +1462,11 @@ mus_link_contest_p1_6_013:
 	.byte	W06
 	.byte		        En1 , v092
 	.byte	W06
-@ 016   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_010
-@ 017   ----------------------------------------
+	 .word	mus_link_contest_p1_6_001
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_013
-@ 018   ----------------------------------------
-mus_link_contest_p1_6_018:
+	 .word	mus_link_contest_p1_6_002
+mus_link_contest_p1_6_003:
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		        Cn1 , v088
@@ -1627,13 +1488,10 @@ mus_link_contest_p1_6_018:
 	.byte		        Cn1 , v096
 	.byte	W06
 	.byte	PEND
-@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_018
-@ 020   ----------------------------------------
+	 .word	mus_link_contest_p1_6_003
 	.byte	PATT
-	 .word	mus_link_contest_p1_6_018
-@ 021   ----------------------------------------
+	 .word	mus_link_contest_p1_6_003
 	.byte		N06   , Dn1 , v112
 	.byte	W06
 	.byte		        Dn1 , v080
@@ -1660,45 +1518,32 @@ mus_link_contest_p1_6_018:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_link_contest_p1_6_B1
-mus_link_contest_p1_6_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_link_contest_p1_7:
 	.byte	KEYSH , mus_link_contest_p1_key+0
 mus_link_contest_p1_7_B1:
-@ 000   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 127*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 79*mus_link_contest_p1_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
-	.byte		VOL   , 62*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 38*mus_link_contest_p1_mvl/mxv
 	.byte		BEND  , c_v+1
 	.byte		N04   , Dn4 , v112
 	.byte	W08
@@ -1714,7 +1559,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W08
 	.byte		        Fn4 
 	.byte	W08
-@ 011   ----------------------------------------
 	.byte		N36   , Cn4 
 	.byte	W36
 	.byte		N06   , An3 
@@ -1731,7 +1575,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		N12   , Fs4 
 	.byte	W12
-@ 012   ----------------------------------------
 	.byte		N36   , Fn4 
 	.byte	W36
 	.byte		N06   , Dn4 
@@ -1744,7 +1587,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W24
 	.byte		N12   , Dn4 
 	.byte	W12
-@ 013   ----------------------------------------
 	.byte		        Cn4 
 	.byte	W12
 	.byte		        Bn3 
@@ -1763,7 +1605,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		N12   , Fn4 
 	.byte	W12
-@ 014   ----------------------------------------
 	.byte		N06   
 	.byte	W06
 	.byte		        Ds4 
@@ -1774,7 +1615,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		TIE   , Gn4 
 	.byte	W72
-@ 015   ----------------------------------------
 	.byte	W48
 	.byte		EOT   
 	.byte		N06   , Fn4 
@@ -1789,7 +1629,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W12
 	.byte		        Gn4 
 	.byte	W06
-@ 016   ----------------------------------------
 	.byte		        As4 
 	.byte	W12
 	.byte		N06   
@@ -1814,7 +1653,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		        En4 
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte		        Fn4 
 	.byte	W12
 	.byte		N06   
@@ -1837,8 +1675,7 @@ mus_link_contest_p1_7_B1:
 	.byte	W12
 	.byte		N06   
 	.byte	W06
-@ 018   ----------------------------------------
-	.byte		VOL   , 73*mus_link_contest_p1_mvl/mxv
+	.byte		VOL   , 45*mus_link_contest_p1_mvl/mxv
 	.byte	W12
 	.byte		N03   , Dn4 
 	.byte	W06
@@ -1854,7 +1691,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 019   ----------------------------------------
 	.byte	W12
 	.byte		N03   
 	.byte	W06
@@ -1872,7 +1708,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W18
 	.byte		        Cn4 
 	.byte	W12
-@ 020   ----------------------------------------
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
@@ -1888,7 +1723,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W06
 	.byte		        Dn4 
 	.byte	W30
-@ 021   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W06
 	.byte		        As3 
@@ -1907,8 +1741,6 @@ mus_link_contest_p1_7_B1:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_link_contest_p1_7_B1
-mus_link_contest_p1_7_B2:
-@ 022   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

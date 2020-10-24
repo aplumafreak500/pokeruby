@@ -6,7 +6,7 @@
 	.equ	mus_dummy_mvl, 127
 	.equ	mus_dummy_key, 0
 	.equ	mus_dummy_tbs, 1
-	.equ	mus_dummy_exg, 1
+	.equ	mus_dummy_exg, 0
 	.equ	mus_dummy_cmp, 1
 
 	.section .rodata

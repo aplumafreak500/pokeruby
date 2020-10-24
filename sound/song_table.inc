@@ -248,31 +248,6 @@ gSongTable:: @ 845548C
 	song se_m_stat_decrease, 1, 1
 	song se_m_haze, 1, 1
 	song se_m_hyper_beam2, 1, 1
-	@ FRLG SFX below
-	song se_rg_door, 1, 1
-	song se_rg_card_flip, 1, 1
-	song se_rg_card_flipping, 1, 1
-	song se_rg_card_open, 1, 1
-	song se_rg_bag_cursor, 1, 1
-	song se_rg_bag_pocket, 1, 1
-	song se_rg_ball_click, 1, 1
-	song se_rg_shop, 1, 1
-	song se_rg_ss_anne_horn, 1, 1
-	song se_rg_help_open, 1, 1
-	song se_rg_help_close, 1, 1
-	song se_rg_help_error, 1, 1
-	song se_rg_deoxys_move, 1, 1
-	song se_rg_poke_jump_success, 1, 1
-	song se_rg_poke_jump_failure, 1, 1
-	@ Emerald SFX below
-	song se_pokenav_call, 1, 1
-	song se_pokenav_hang_up, 1, 1
-	song se_arena_timeup1, 1, 1
-	song se_arena_timeup2, 1, 1
-	song se_pike_curtain_close, 1, 1
-	song se_pike_curtain_open, 1, 1
-	song se_sudowoodo_shake, 1, 1
-	@ end Emerald SFX
 	song song_248, 2, 2
 	song song_249, 2, 2
 	song song_250, 2, 2
@@ -353,6 +328,28 @@ gSongTable:: @ 845548C
 	song dummy_song_header, 0, 0
 	song dummy_song_header, 0, 0
 	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
 	song mus_littleroot_test, 0, 0
 	song mus_gsc_route38, 0, 0
 	song mus_caught, 0, 0
@@ -387,7 +384,7 @@ gSongTable:: @ 845548C
 	song mus_abandoned_ship, 0, 0
 	song mus_fortree, 0, 0
 	song mus_birch_lab, 0, 0
-	song mus_b_tower_rs, 0, 0
+	song mus_b_tower, 0, 0
 	song mus_encounter_swimmer, 0, 0
 	song mus_cave_of_origin, 0, 0
 	song mus_obtain_berry, 2, 2
@@ -471,154 +468,7 @@ gSongTable:: @ 845548C
 	song mus_vs_elite_four, 0, 0
 	song mus_vs_aqua_magma_leader, 0, 0
 	song mus_radio_tower_takeover, 0, 0
-	@ Emerald music below
-	song mus_abnormal_weather, 0, 0
-	song mus_b_frontier, 0, 0
-	song mus_b_arena, 0, 0
-	song mus_obtain_b_points, 2, 2
-	song mus_register_match_call, 2, 2
-	song mus_b_pyramid, 0, 0
-	song mus_b_pyramid_top, 0, 0
-	song mus_b_palace, 0, 0
-	song mus_rayquaza_appears, 0, 0
-	song mus_b_tower, 0, 0
-	song mus_obtain_symbol, 2, 2
-	song mus_b_dome, 0, 0
-	song mus_b_pike, 0, 0
-	song mus_b_factory, 0, 0
-	song mus_vs_rayquaza, 0, 0
-	song mus_vs_frontier_brain, 0, 0
-	song mus_vs_mew, 0, 0
-	song mus_b_dome_lobby, 0, 0
-	@ FRLG Music Below
-	song mus_rg_follow_me, 0, 0
-	song mus_rg_game_corner, 0, 0
-	song mus_rg_rocket_hideout, 0, 0
-	song mus_rg_gym, 0, 0
-	song mus_rg_jigglypuff, 2, 2
-	song mus_rg_intro_fight, 0, 0
-	song mus_rg_title, 0, 0
-	song mus_rg_cinnabar, 0, 0
-	song mus_rg_lavender, 0, 0
-	song mus_rg_heal, 0, 0
-	song mus_rg_cycling, 0, 0
-	song mus_rg_encounter_rocket, 0, 0
-	song mus_rg_encounter_girl, 0, 0
-	song mus_rg_encounter_boy, 0, 0
-	song mus_rg_hall_of_fame, 0, 0
-	song mus_rg_viridian_forest, 0, 0
-	song mus_rg_mt_moon, 0, 0
-	song mus_rg_poke_mansion, 0, 0
-	song mus_rg_credits, 0, 0
-	song mus_rg_route1, 0, 0
-	song mus_rg_route24, 0, 0
-	song mus_rg_route3, 0, 0
-	song mus_rg_route11, 0, 0
-	song mus_rg_victory_road, 0, 0
-	song mus_rg_vs_gym_leader, 0, 0
-	song mus_rg_vs_trainer, 0, 0
-	song mus_rg_vs_wild, 0, 0
-	song mus_rg_vs_champion, 0, 0
-	song mus_rg_pallet, 0, 0
-	song mus_rg_oak_lab, 0, 0
-	song mus_rg_oak, 0, 0
-	song mus_rg_poke_center, 0, 0
-	song mus_rg_ss_anne, 0, 0
-	song mus_rg_surf, 0, 0
-	song mus_rg_poke_tower, 0, 0
-	song mus_rg_silph, 0, 0
-	song mus_rg_fuchsia, 0, 0
-	song mus_rg_celadon, 0, 0
-	song mus_rg_victory_trainer, 0, 0
-	song mus_rg_victory_wild, 0, 0
-	song mus_rg_victory_gym_leader, 0, 0
-	song mus_rg_vermillion, 0, 0
-	song mus_rg_pewter, 0, 0
-	song mus_rg_encounter_rival, 0, 0
-	song mus_rg_rival_exit, 0, 0
-	song mus_rg_dex_rating, 2, 2
-	song mus_rg_obtain_key_item, 2, 2
-	song mus_rg_caught_intro, 2, 2
-	song mus_rg_photo, 2, 2
-	song mus_rg_game_freak, 0, 0
-	song mus_rg_caught, 0, 0
-	song mus_rg_new_game_instruct, 0, 0
-	song mus_rg_new_game_intro, 0, 0
-	song mus_rg_new_game_exit, 0, 0
-	song mus_rg_poke_jump, 0, 0
-	song mus_rg_union_room, 0, 0
-	song mus_rg_net_center, 0, 0
-	song mus_rg_mystery_gift, 0, 0
-	song mus_rg_berry_pick, 0, 0
-	song mus_rg_sevii_cave, 0, 0
-	song mus_rg_teachy_tv_show, 0, 0
-	song mus_rg_sevii_route, 0, 0
-	song mus_rg_sevii_dungeon, 0, 0
-	song mus_rg_sevii_123, 0, 0
-	song mus_rg_sevii_45, 0, 0
-	song mus_rg_sevii_67, 0, 0
-	song mus_rg_poke_flute, 2, 2
-	song mus_rg_vs_deoxys, 0, 0
-	song mus_rg_vs_mewtwo, 0, 0
-	song mus_rg_vs_legend, 0, 0
-	song mus_rg_encounter_gym_leader, 0, 0
-	song mus_rg_encounter_deoxys, 0, 0
-	song mus_rg_trainer_tower, 0, 0
-	song mus_rg_slow_pallet, 0, 0
-	song mus_rg_teachy_tv_menu, 0, 0
-	@ End FRLG music
-	song ph_trap_blend, 2, 2
-	song ph_trap_held, 2, 2
-	song ph_trap_solo, 2, 2
-	song ph_face_blend, 2, 2
-	song ph_face_held, 2, 2
-	song ph_face_solo, 2, 2
-	song ph_cloth_blend, 2, 2
-	song ph_cloth_held, 2, 2
-	song ph_cloth_solo, 2, 2
-	song ph_dress_blend, 2, 2
-	song ph_dress_held, 2, 2
-	song ph_dress_solo, 2, 2
-	song ph_fleece_blend, 2, 2
-	song ph_fleece_held, 2, 2
-	song ph_fleece_solo, 2, 2
-	song ph_kit_blend, 2, 2
-	song ph_kit_held, 2, 2
-	song ph_kit_solo, 2, 2
-	song ph_price_blend, 2, 2
-	song ph_price_held, 2, 2
-	song ph_price_solo, 2, 2
-	song ph_lot_blend, 2, 2
-	song ph_lot_held, 2, 2
-	song ph_lot_solo, 2, 2
-	song ph_goat_blend, 2, 2
-	song ph_goat_held, 2, 2
-	song ph_goat_solo, 2, 2
-	song ph_thought_blend, 2, 2
-	song ph_thought_held, 2, 2
-	song ph_thought_solo, 2, 2
-	song ph_choice_blend, 2, 2
-	song ph_choice_held, 2, 2
-	song ph_choice_solo, 2, 2
-	song ph_mouth_blend, 2, 2
-	song ph_mouth_held, 2, 2
-	song ph_mouth_solo, 2, 2
-	song ph_foot_blend, 2, 2
-	song ph_foot_held, 2, 2
-	song ph_foot_solo, 2, 2
-	song ph_goose_blend, 2, 2
-	song ph_goose_held, 2, 2
-	song ph_goose_solo, 2, 2
-	song ph_strut_blend, 2, 2
-	song ph_strut_held, 2, 2
-	song ph_strut_solo, 2, 2
-	song ph_cure_blend, 2, 2
-	song ph_cure_held, 2, 2
-	song ph_cure_solo, 2, 2
-	song ph_nurse_blend, 2, 2
-	song ph_nurse_held, 2, 2
-	song ph_nurse_solo, 2, 2
 
 	.align 2
-dummy_song_header:
+dummy_song_header:      @ 845632C
 	.byte 0, 0, 0, 0

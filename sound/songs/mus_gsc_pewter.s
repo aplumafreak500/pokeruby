@@ -3,24 +3,23 @@
 	.equ	mus_gsc_pewter_grp, voicegroup000
 	.equ	mus_gsc_pewter_pri, 0
 	.equ	mus_gsc_pewter_rev, reverb_set+50
-	.equ	mus_gsc_pewter_mvl, 80
+	.equ	mus_gsc_pewter_mvl, 127
 	.equ	mus_gsc_pewter_key, 0
 	.equ	mus_gsc_pewter_tbs, 1
-	.equ	mus_gsc_pewter_exg, 1
+	.equ	mus_gsc_pewter_exg, 0
 	.equ	mus_gsc_pewter_cmp, 1
 
 	.section .rodata
 	.global	mus_gsc_pewter
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_gsc_pewter_1:
 	.byte	KEYSH , mus_gsc_pewter_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 128*mus_gsc_pewter_tbs/2
 	.byte		VOICE , 1
-	.byte		VOL   , 127*mus_gsc_pewter_mvl/mxv
+	.byte		VOL   , 80*mus_gsc_pewter_mvl/mxv
 	.byte		N06   , En3 , v112
 	.byte	W24
 	.byte		N12   
@@ -29,7 +28,6 @@ mus_gsc_pewter_1:
 	.byte	W24
 	.byte		N06   
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		N24   
 	.byte	W36
 	.byte		N12   , Cn4 
@@ -38,7 +36,6 @@ mus_gsc_pewter_1:
 	.byte	W24
 	.byte		N06   , En3 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		N06   
 	.byte	W24
 	.byte		N12   
@@ -47,13 +44,11 @@ mus_gsc_pewter_1:
 	.byte	W24
 	.byte		N06   , Fn3 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte	W24
 	.byte		N48   
 	.byte	W72
 mus_gsc_pewter_1_B1:
-@ 004   ----------------------------------------
-mus_gsc_pewter_1_004:
+mus_gsc_pewter_1_000:
 	.byte		N06   , Gn3 , v112
 	.byte	W24
 	.byte		N12   
@@ -63,8 +58,7 @@ mus_gsc_pewter_1_004:
 	.byte		N06   
 	.byte	W12
 	.byte	PEND
-@ 005   ----------------------------------------
-mus_gsc_pewter_1_005:
+mus_gsc_pewter_1_001:
 	.byte		N24   , As3 , v112
 	.byte	W36
 	.byte		N12   , Gn3 
@@ -76,8 +70,7 @@ mus_gsc_pewter_1_005:
 	.byte		        As3 
 	.byte	W12
 	.byte	PEND
-@ 006   ----------------------------------------
-mus_gsc_pewter_1_006:
+mus_gsc_pewter_1_002:
 	.byte		N06   , An3 , v112
 	.byte	W24
 	.byte		N12   , Fn3 
@@ -87,8 +80,7 @@ mus_gsc_pewter_1_006:
 	.byte		        Cn4 
 	.byte	W12
 	.byte	PEND
-@ 007   ----------------------------------------
-mus_gsc_pewter_1_007:
+mus_gsc_pewter_1_003:
 	.byte	W12
 	.byte		N12   , An3 , v112
 	.byte	W24
@@ -99,8 +91,7 @@ mus_gsc_pewter_1_007:
 	.byte		N06   , An3 
 	.byte	W12
 	.byte	PEND
-@ 008   ----------------------------------------
-mus_gsc_pewter_1_008:
+mus_gsc_pewter_1_004:
 	.byte		N06   , Cn4 , v112
 	.byte	W24
 	.byte		N12   
@@ -110,7 +101,6 @@ mus_gsc_pewter_1_008:
 	.byte		N06   
 	.byte	W12
 	.byte	PEND
-@ 009   ----------------------------------------
 	.byte		N24   , Fn3 
 	.byte	W36
 	.byte		N06   , Bn3 , v080
@@ -121,8 +111,7 @@ mus_gsc_pewter_1_008:
 	.byte	W24
 	.byte		N06   , Bn3 
 	.byte	W12
-@ 010   ----------------------------------------
-mus_gsc_pewter_1_010:
+mus_gsc_pewter_1_005:
 	.byte		N06   , Gn3 , v112
 	.byte	W24
 	.byte		N12   , En3 
@@ -132,26 +121,19 @@ mus_gsc_pewter_1_010:
 	.byte		N06   , Fn3 
 	.byte	W12
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte	W24
 	.byte		N48   
 	.byte	W72
-@ 012   ----------------------------------------
+	.byte	PATT
+	 .word	mus_gsc_pewter_1_000
+	.byte	PATT
+	 .word	mus_gsc_pewter_1_001
+	.byte	PATT
+	 .word	mus_gsc_pewter_1_002
+	.byte	PATT
+	 .word	mus_gsc_pewter_1_003
 	.byte	PATT
 	 .word	mus_gsc_pewter_1_004
-@ 013   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_1_005
-@ 014   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_1_006
-@ 015   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_1_007
-@ 016   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_1_008
-@ 017   ----------------------------------------
 	.byte		N24   , Fn3 , v112
 	.byte	W36
 	.byte		N06   , Bn3 , v072
@@ -162,17 +144,14 @@ mus_gsc_pewter_1_010:
 	.byte	W24
 	.byte		N06   , Bn3 , v112
 	.byte	W12
-@ 018   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_1_010
-@ 019   ----------------------------------------
+	 .word	mus_gsc_pewter_1_005
 	.byte	W24
 	.byte		N48   , Fn3 , v112
 	.byte	W48
 	.byte		N24   , As3 
 	.byte	W24
-@ 020   ----------------------------------------
-mus_gsc_pewter_1_020:
+mus_gsc_pewter_1_006:
 	.byte		N12   , An3 , v112
 	.byte	W12
 	.byte		        Cn3 
@@ -188,7 +167,6 @@ mus_gsc_pewter_1_020:
 	.byte		        Cn4 
 	.byte	W12
 	.byte	PEND
-@ 021   ----------------------------------------
 	.byte	W12
 	.byte		N12   , An3 
 	.byte	W12
@@ -204,7 +182,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        An3 
 	.byte	W12
-@ 022   ----------------------------------------
 	.byte		        En3 
 	.byte	W12
 	.byte		        Dn3 
@@ -219,7 +196,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        Bn3 
 	.byte	W12
-@ 023   ----------------------------------------
 	.byte	W12
 	.byte		        Gn3 
 	.byte	W12
@@ -231,14 +207,12 @@ mus_gsc_pewter_1_020:
 	.byte	W24
 	.byte		        Ds5 
 	.byte	W24
-@ 024   ----------------------------------------
 	.byte		N36   , Fn3 
 	.byte	W36
 	.byte		N48   , An3 
 	.byte	W48
 	.byte		N12   , Dn4 
 	.byte	W12
-@ 025   ----------------------------------------
 	.byte	W12
 	.byte		N12   
 	.byte	W12
@@ -250,7 +224,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		N24   , Dn3 
 	.byte	W24
-@ 026   ----------------------------------------
 	.byte		N12   , Cn3 
 	.byte	W12
 	.byte		        Gn2 
@@ -265,7 +238,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        Gn3 
 	.byte	W12
-@ 027   ----------------------------------------
 	.byte	W12
 	.byte		N12   , En3 
 	.byte	W12
@@ -281,10 +253,8 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        Gn3 
 	.byte	W12
-@ 028   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_1_020
-@ 029   ----------------------------------------
+	 .word	mus_gsc_pewter_1_006
 	.byte	W12
 	.byte		N12   , An3 , v112
 	.byte	W12
@@ -300,7 +270,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        Fn4 
 	.byte	W12
-@ 030   ----------------------------------------
 	.byte		        En3 
 	.byte	W12
 	.byte		        Dn3 
@@ -315,7 +284,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		        As3 
 	.byte	W12
-@ 031   ----------------------------------------
 	.byte	W12
 	.byte		N12   , Dn4 
 	.byte	W24
@@ -325,7 +293,6 @@ mus_gsc_pewter_1_020:
 	.byte	W24
 	.byte		        En3 
 	.byte	W12
-@ 032   ----------------------------------------
 	.byte		N36   , Fn3 
 	.byte	W36
 	.byte		N06   , An3 
@@ -336,7 +303,6 @@ mus_gsc_pewter_1_020:
 	.byte	W12
 	.byte		N36   , Fn4 
 	.byte	W12
-@ 033   ----------------------------------------
 	.byte	W24
 	.byte		N12   , Dn4 
 	.byte	W24
@@ -346,7 +312,6 @@ mus_gsc_pewter_1_020:
 	.byte	W24
 	.byte		N36   , En4 
 	.byte	W12
-@ 034   ----------------------------------------
 	.byte	W24
 	.byte		N24   , Cn4 
 	.byte	W24
@@ -354,7 +319,6 @@ mus_gsc_pewter_1_020:
 	.byte	W24
 	.byte		        En3 
 	.byte	W24
-@ 035   ----------------------------------------
 	.byte		N06   , Fn3 
 	.byte	W24
 	.byte		N48   
@@ -363,24 +327,20 @@ mus_gsc_pewter_1_020:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_gsc_pewter_1_B1
-mus_gsc_pewter_1_B2:
-@ 036   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_gsc_pewter_2:
 	.byte	KEYSH , mus_gsc_pewter_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 1
-	.byte		VOL   , 127*mus_gsc_pewter_mvl/mxv
+	.byte		VOL   , 80*mus_gsc_pewter_mvl/mxv
 	.byte		N24   , Cn2 , v112
 	.byte	W36
 	.byte		N06   , Gn2 
 	.byte	W12
 	.byte		N24   
 	.byte	W48
-@ 001   ----------------------------------------
 	.byte		        Cn2 
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -391,8 +351,7 @@ mus_gsc_pewter_2:
 	.byte	W24
 	.byte		N06   , Gn2 
 	.byte	W12
-@ 002   ----------------------------------------
-mus_gsc_pewter_2_002:
+mus_gsc_pewter_2_000:
 	.byte		N24   , Cn2 , v112
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -402,13 +361,11 @@ mus_gsc_pewter_2_002:
 	.byte		N06   , Dn2 
 	.byte	W12
 	.byte	PEND
-@ 003   ----------------------------------------
 	.byte	W24
 	.byte		N48   
 	.byte	W72
 mus_gsc_pewter_2_B1:
-@ 004   ----------------------------------------
-mus_gsc_pewter_2_004:
+mus_gsc_pewter_2_001:
 	.byte		N24   , Cn2 , v112
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -416,8 +373,7 @@ mus_gsc_pewter_2_004:
 	.byte		N24   
 	.byte	W48
 	.byte	PEND
-@ 005   ----------------------------------------
-mus_gsc_pewter_2_005:
+mus_gsc_pewter_2_002:
 	.byte		N24   , Cs2 , v112
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -429,8 +385,7 @@ mus_gsc_pewter_2_005:
 	.byte		N06   , Gn2 
 	.byte	W12
 	.byte	PEND
-@ 006   ----------------------------------------
-mus_gsc_pewter_2_006:
+mus_gsc_pewter_2_003:
 	.byte		N24   , Dn2 , v112
 	.byte	W36
 	.byte		N06   , An2 
@@ -438,8 +393,7 @@ mus_gsc_pewter_2_006:
 	.byte		N24   
 	.byte	W48
 	.byte	PEND
-@ 007   ----------------------------------------
-mus_gsc_pewter_2_007:
+mus_gsc_pewter_2_004:
 	.byte		N24   , Dn2 , v112
 	.byte	W36
 	.byte		N06   , An2 
@@ -451,8 +405,7 @@ mus_gsc_pewter_2_007:
 	.byte		N06   , An2 
 	.byte	W12
 	.byte	PEND
-@ 008   ----------------------------------------
-mus_gsc_pewter_2_008:
+mus_gsc_pewter_2_005:
 	.byte		N24   , Fn2 , v112
 	.byte	W36
 	.byte		N06   , Cn3 
@@ -460,8 +413,7 @@ mus_gsc_pewter_2_008:
 	.byte		N24   
 	.byte	W48
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_gsc_pewter_2_009:
+mus_gsc_pewter_2_006:
 	.byte		N24   , Gn2 , v112
 	.byte	W36
 	.byte		N06   , Dn3 
@@ -473,42 +425,31 @@ mus_gsc_pewter_2_009:
 	.byte		N06   , Dn3 
 	.byte	W12
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_2_002
-@ 011   ----------------------------------------
+	 .word	mus_gsc_pewter_2_000
 	.byte	W24
 	.byte		N48   , Dn2 , v112
 	.byte	W72
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_2_004
-@ 013   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_2_005
-@ 014   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_2_006
-@ 015   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_2_007
-@ 016   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_2_008
-@ 017   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_2_009
-@ 018   ----------------------------------------
+	 .word	mus_gsc_pewter_2_001
 	.byte	PATT
 	 .word	mus_gsc_pewter_2_002
-@ 019   ----------------------------------------
+	.byte	PATT
+	 .word	mus_gsc_pewter_2_003
+	.byte	PATT
+	 .word	mus_gsc_pewter_2_004
+	.byte	PATT
+	 .word	mus_gsc_pewter_2_005
+	.byte	PATT
+	 .word	mus_gsc_pewter_2_006
+	.byte	PATT
+	 .word	mus_gsc_pewter_2_000
 	.byte	W24
 	.byte		N48   , Dn2 , v112
 	.byte	W48
 	.byte		N24   , En2 
 	.byte	W24
-@ 020   ----------------------------------------
-mus_gsc_pewter_2_020:
+mus_gsc_pewter_2_007:
 	.byte		N24   , Fn2 , v112
 	.byte	W36
 	.byte		N06   , Cn3 
@@ -520,7 +461,6 @@ mus_gsc_pewter_2_020:
 	.byte		        En2 
 	.byte	W12
 	.byte	PEND
-@ 021   ----------------------------------------
 	.byte		N24   , Fn2 
 	.byte	W36
 	.byte		N06   , Cn3 
@@ -531,8 +471,7 @@ mus_gsc_pewter_2_020:
 	.byte	W24
 	.byte		N12   , An2 
 	.byte	W12
-@ 022   ----------------------------------------
-mus_gsc_pewter_2_022:
+mus_gsc_pewter_2_008:
 	.byte		N24   , En2 , v112
 	.byte	W36
 	.byte		N06   , Bn2 
@@ -544,7 +483,6 @@ mus_gsc_pewter_2_022:
 	.byte		        Ds2 
 	.byte	W12
 	.byte	PEND
-@ 023   ----------------------------------------
 	.byte	W12
 	.byte		        En2 
 	.byte	W24
@@ -554,8 +492,7 @@ mus_gsc_pewter_2_022:
 	.byte	W24
 	.byte		        As2 
 	.byte	W24
-@ 024   ----------------------------------------
-mus_gsc_pewter_2_024:
+mus_gsc_pewter_2_009:
 	.byte		N24   , Dn2 , v112
 	.byte	W36
 	.byte		N06   , An2 
@@ -567,7 +504,6 @@ mus_gsc_pewter_2_024:
 	.byte		        Cs2 
 	.byte	W12
 	.byte	PEND
-@ 025   ----------------------------------------
 	.byte		N24   , Dn2 
 	.byte	W36
 	.byte		N06   , An2 
@@ -578,7 +514,6 @@ mus_gsc_pewter_2_024:
 	.byte	W12
 	.byte		N24   , Fn2 
 	.byte	W24
-@ 026   ----------------------------------------
 	.byte		        Cn2 
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -589,7 +524,6 @@ mus_gsc_pewter_2_024:
 	.byte	W12
 	.byte		        Bn1 
 	.byte	W12
-@ 027   ----------------------------------------
 	.byte	W12
 	.byte		        Cs2 
 	.byte	W12
@@ -605,10 +539,8 @@ mus_gsc_pewter_2_024:
 	.byte	W12
 	.byte		        En2 
 	.byte	W12
-@ 028   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_2_020
-@ 029   ----------------------------------------
+	 .word	mus_gsc_pewter_2_007
 	.byte		N24   , Fn2 , v112
 	.byte	W36
 	.byte		N06   , An2 
@@ -619,10 +551,8 @@ mus_gsc_pewter_2_024:
 	.byte	W24
 	.byte		N12   , Fn2 
 	.byte	W12
-@ 030   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_2_022
-@ 031   ----------------------------------------
+	 .word	mus_gsc_pewter_2_008
 	.byte	W12
 	.byte		N12   , En2 , v112
 	.byte	W24
@@ -632,10 +562,8 @@ mus_gsc_pewter_2_024:
 	.byte	W24
 	.byte		        Cs2 
 	.byte	W12
-@ 032   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_2_024
-@ 033   ----------------------------------------
+	 .word	mus_gsc_pewter_2_009
 	.byte		N24   , Dn2 , v112
 	.byte	W36
 	.byte		N06   , Gs2 
@@ -644,7 +572,6 @@ mus_gsc_pewter_2_024:
 	.byte	W36
 	.byte		N06   , Fn2 
 	.byte	W12
-@ 034   ----------------------------------------
 	.byte		N24   , Cn2 
 	.byte	W36
 	.byte		N06   , Gn2 
@@ -653,7 +580,6 @@ mus_gsc_pewter_2_024:
 	.byte	W36
 	.byte		N06   , Cn2 
 	.byte	W12
-@ 035   ----------------------------------------
 	.byte		        Dn2 
 	.byte	W24
 	.byte		N48   
@@ -662,17 +588,14 @@ mus_gsc_pewter_2_024:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_gsc_pewter_2_B1
-mus_gsc_pewter_2_B2:
-@ 036   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_gsc_pewter_3:
 	.byte	KEYSH , mus_gsc_pewter_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 1
-	.byte		VOL   , 127*mus_gsc_pewter_mvl/mxv
+	.byte		VOL   , 80*mus_gsc_pewter_mvl/mxv
 	.byte		N06   , Gn3 , v112
 	.byte	W24
 	.byte		N12   
@@ -681,7 +604,6 @@ mus_gsc_pewter_3:
 	.byte	W24
 	.byte		N06   
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		N24   
 	.byte	W36
 	.byte		N12   , En4 
@@ -690,7 +612,6 @@ mus_gsc_pewter_3:
 	.byte	W24
 	.byte		N06   , Gn3 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		N06   
 	.byte	W24
 	.byte		N12   
@@ -699,8 +620,7 @@ mus_gsc_pewter_3:
 	.byte	W24
 	.byte		N06   , Cn4 
 	.byte	W12
-@ 003   ----------------------------------------
-mus_gsc_pewter_3_003:
+mus_gsc_pewter_3_000:
 	.byte	W24
 	.byte		N48   , Cn4 , v112
 	.byte	W48
@@ -710,8 +630,7 @@ mus_gsc_pewter_3_003:
 	.byte	W12
 	.byte	PEND
 mus_gsc_pewter_3_B1:
-@ 004   ----------------------------------------
-mus_gsc_pewter_3_004:
+mus_gsc_pewter_3_001:
 	.byte		N12   , Gn4 , v112
 	.byte	W24
 	.byte		        Fn4 
@@ -719,8 +638,7 @@ mus_gsc_pewter_3_004:
 	.byte		        En4 
 	.byte	W48
 	.byte	PEND
-@ 005   ----------------------------------------
-mus_gsc_pewter_3_005:
+mus_gsc_pewter_3_002:
 	.byte	W12
 	.byte		N12   , En4 , v112
 	.byte	W12
@@ -735,8 +653,7 @@ mus_gsc_pewter_3_005:
 	.byte		        En4 
 	.byte	W12
 	.byte	PEND
-@ 006   ----------------------------------------
-mus_gsc_pewter_3_006:
+mus_gsc_pewter_3_003:
 	.byte		N12   , Fn4 , v112
 	.byte	W12
 	.byte		        Dn4 
@@ -748,8 +665,7 @@ mus_gsc_pewter_3_006:
 	.byte		        Fn4 
 	.byte	W12
 	.byte	PEND
-@ 007   ----------------------------------------
-mus_gsc_pewter_3_007:
+mus_gsc_pewter_3_004:
 	.byte	W12
 	.byte		N12   , Cn4 , v112
 	.byte	W24
@@ -762,8 +678,7 @@ mus_gsc_pewter_3_007:
 	.byte		        En4 
 	.byte	W12
 	.byte	PEND
-@ 008   ----------------------------------------
-mus_gsc_pewter_3_008:
+mus_gsc_pewter_3_005:
 	.byte		N12   , Fn4 , v112
 	.byte	W24
 	.byte		        En4 
@@ -771,8 +686,7 @@ mus_gsc_pewter_3_008:
 	.byte		        Dn4 
 	.byte	W48
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_gsc_pewter_3_009:
+mus_gsc_pewter_3_006:
 	.byte	W12
 	.byte		N12   , Dn4 , v112
 	.byte	W12
@@ -787,8 +701,7 @@ mus_gsc_pewter_3_009:
 	.byte		        Dn4 
 	.byte	W12
 	.byte	PEND
-@ 010   ----------------------------------------
-mus_gsc_pewter_3_010:
+mus_gsc_pewter_3_007:
 	.byte		N12   , En4 , v112
 	.byte	W12
 	.byte		        Cn4 
@@ -800,42 +713,31 @@ mus_gsc_pewter_3_010:
 	.byte		N06   , Cn4 
 	.byte	W12
 	.byte	PEND
-@ 011   ----------------------------------------
+	.byte	PATT
+	 .word	mus_gsc_pewter_3_000
+	.byte	PATT
+	 .word	mus_gsc_pewter_3_001
+	.byte	PATT
+	 .word	mus_gsc_pewter_3_002
 	.byte	PATT
 	 .word	mus_gsc_pewter_3_003
-@ 012   ----------------------------------------
 	.byte	PATT
 	 .word	mus_gsc_pewter_3_004
-@ 013   ----------------------------------------
 	.byte	PATT
 	 .word	mus_gsc_pewter_3_005
-@ 014   ----------------------------------------
 	.byte	PATT
 	 .word	mus_gsc_pewter_3_006
-@ 015   ----------------------------------------
 	.byte	PATT
 	 .word	mus_gsc_pewter_3_007
-@ 016   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_3_008
-@ 017   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_3_009
-@ 018   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_3_010
-@ 019   ----------------------------------------
 	.byte	W24
 	.byte		N48   , Cn4 , v112
 	.byte	W48
 	.byte		N24   , Dn4 
 	.byte	W24
-@ 020   ----------------------------------------
 	.byte		N72   , An4 
 	.byte	W72
 	.byte		N24   , Fn4 
 	.byte	W24
-@ 021   ----------------------------------------
 	.byte		N48   , Cn5 
 	.byte	W48
 	.byte		N12   , Dn5 
@@ -846,19 +748,16 @@ mus_gsc_pewter_3_010:
 	.byte	W12
 	.byte		        An4 
 	.byte	W12
-@ 022   ----------------------------------------
 	.byte		N72   , Gn4 
 	.byte	W72
 	.byte		N24   , En4 
 	.byte	W24
-@ 023   ----------------------------------------
 	.byte		N48   , Gn4 
 	.byte	W48
 	.byte		N24   
 	.byte	W24
 	.byte		        Fs4 
 	.byte	W24
-@ 024   ----------------------------------------
 	.byte		N60   , Dn4 
 	.byte	W60
 	.byte		N12   
@@ -867,7 +766,6 @@ mus_gsc_pewter_3_010:
 	.byte	W12
 	.byte		        Fn4 
 	.byte	W12
-@ 025   ----------------------------------------
 	.byte	W12
 	.byte		N12   
 	.byte	W12
@@ -877,24 +775,20 @@ mus_gsc_pewter_3_010:
 	.byte	W24
 	.byte		        Fn4 
 	.byte	W24
-@ 026   ----------------------------------------
 	.byte		N72   , En4 
 	.byte	W72
 	.byte		N24   , Cn4 
 	.byte	W24
-@ 027   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W48
 	.byte		N48   , As4 
 	.byte	W48
-@ 028   ----------------------------------------
 	.byte		N72   , An4 
 	.byte	W72
 	.byte		N12   , Bn4 
 	.byte	W12
 	.byte		        Cn5 
 	.byte	W12
-@ 029   ----------------------------------------
 	.byte		        Dn5 
 	.byte	W24
 	.byte		        Cn5 
@@ -903,7 +797,6 @@ mus_gsc_pewter_3_010:
 	.byte	W24
 	.byte		        An4 
 	.byte	W24
-@ 030   ----------------------------------------
 	.byte		N60   , Gn4 
 	.byte	W60
 	.byte		N12   
@@ -912,7 +805,6 @@ mus_gsc_pewter_3_010:
 	.byte	W12
 	.byte		        As4 
 	.byte	W12
-@ 031   ----------------------------------------
 	.byte	W12
 	.byte		        An4 
 	.byte	W24
@@ -922,7 +814,6 @@ mus_gsc_pewter_3_010:
 	.byte	W24
 	.byte		N72   , Fn4 
 	.byte	W12
-@ 032   ----------------------------------------
 	.byte	W60
 	.byte		N12   
 	.byte	W12
@@ -930,7 +821,6 @@ mus_gsc_pewter_3_010:
 	.byte	W12
 	.byte		N36   , Gs4 
 	.byte	W12
-@ 033   ----------------------------------------
 	.byte	W24
 	.byte		N12   , Gn4 
 	.byte	W24
@@ -940,9 +830,7 @@ mus_gsc_pewter_3_010:
 	.byte	W24
 	.byte		N84   , Gn4 
 	.byte	W12
-@ 034   ----------------------------------------
 	.byte	W96
-@ 035   ----------------------------------------
 	.byte		N06   , Cn4 
 	.byte	W24
 	.byte		N48   
@@ -951,17 +839,14 @@ mus_gsc_pewter_3_010:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_gsc_pewter_3_B1
-mus_gsc_pewter_3_B2:
-@ 036   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_gsc_pewter_4:
 	.byte	KEYSH , mus_gsc_pewter_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 127*mus_gsc_pewter_mvl/mxv
+	.byte		VOL   , 80*mus_gsc_pewter_mvl/mxv
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -976,8 +861,7 @@ mus_gsc_pewter_4:
 	.byte	W12
 	.byte		        As1 , v084
 	.byte	W12
-@ 001   ----------------------------------------
-mus_gsc_pewter_4_001:
+mus_gsc_pewter_4_000:
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -993,8 +877,7 @@ mus_gsc_pewter_4_001:
 	.byte		        As1 , v084
 	.byte	W12
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_gsc_pewter_4_002:
+mus_gsc_pewter_4_001:
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -1010,8 +893,7 @@ mus_gsc_pewter_4_002:
 	.byte		        As1 , v084
 	.byte	W12
 	.byte	PEND
-@ 003   ----------------------------------------
-mus_gsc_pewter_4_003:
+mus_gsc_pewter_4_002:
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -1028,37 +910,26 @@ mus_gsc_pewter_4_003:
 	.byte	W12
 	.byte	PEND
 mus_gsc_pewter_4_B1:
-@ 004   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 005   ----------------------------------------
 	.byte	PATT
 	 .word	mus_gsc_pewter_4_001
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 007   ----------------------------------------
+	 .word	mus_gsc_pewter_4_000
 	.byte	PATT
 	 .word	mus_gsc_pewter_4_001
-@ 008   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 009   ----------------------------------------
+	 .word	mus_gsc_pewter_4_000
 	.byte	PATT
 	 .word	mus_gsc_pewter_4_001
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 011   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_4_003
-@ 012   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 013   ----------------------------------------
+	 .word	mus_gsc_pewter_4_000
 	.byte	PATT
 	 .word	mus_gsc_pewter_4_001
-@ 014   ----------------------------------------
+	.byte	PATT
+	 .word	mus_gsc_pewter_4_002
+	.byte	PATT
+	 .word	mus_gsc_pewter_4_001
+	.byte	PATT
+	 .word	mus_gsc_pewter_4_000
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -1073,16 +944,12 @@ mus_gsc_pewter_4_B1:
 	.byte	W12
 	.byte		        As1 , v084
 	.byte	W12
-@ 015   ----------------------------------------
+	.byte	PATT
+	 .word	mus_gsc_pewter_4_000
 	.byte	PATT
 	 .word	mus_gsc_pewter_4_001
-@ 016   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_002
-@ 017   ----------------------------------------
-	.byte	PATT
-	 .word	mus_gsc_pewter_4_001
-@ 018   ----------------------------------------
+	 .word	mus_gsc_pewter_4_000
 	.byte		N12   , Fs2 , v056
 	.byte	W12
 	.byte		N12   
@@ -1097,11 +964,9 @@ mus_gsc_pewter_4_B1:
 	.byte	W12
 	.byte		        As1 , v084
 	.byte	W12
-@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_003
-@ 020   ----------------------------------------
-mus_gsc_pewter_4_020:
+	 .word	mus_gsc_pewter_4_002
+mus_gsc_pewter_4_003:
 	.byte		N12   , Cn1 , v084
 	.byte	W12
 	.byte		        As1 
@@ -1117,8 +982,7 @@ mus_gsc_pewter_4_020:
 	.byte		N24   , En1 
 	.byte	W24
 	.byte	PEND
-@ 021   ----------------------------------------
-mus_gsc_pewter_4_021:
+mus_gsc_pewter_4_004:
 	.byte		N12   , Cn1 , v084
 	.byte	W12
 	.byte		        As1 
@@ -1136,11 +1000,9 @@ mus_gsc_pewter_4_021:
 	.byte		        Cn1 
 	.byte	W12
 	.byte	PEND
-@ 022   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 023   ----------------------------------------
-mus_gsc_pewter_4_023:
+	 .word	mus_gsc_pewter_4_003
+mus_gsc_pewter_4_005:
 	.byte		N12   , Cn1 , v084
 	.byte	W12
 	.byte		        As1 
@@ -1158,25 +1020,18 @@ mus_gsc_pewter_4_023:
 	.byte		        As1 
 	.byte	W12
 	.byte	PEND
-@ 024   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 025   ----------------------------------------
+	 .word	mus_gsc_pewter_4_003
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_021
-@ 026   ----------------------------------------
+	 .word	mus_gsc_pewter_4_004
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 027   ----------------------------------------
+	 .word	mus_gsc_pewter_4_003
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_021
-@ 028   ----------------------------------------
+	 .word	mus_gsc_pewter_4_004
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 029   ----------------------------------------
+	 .word	mus_gsc_pewter_4_003
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_021
-@ 030   ----------------------------------------
+	 .word	mus_gsc_pewter_4_004
 	.byte		N12   , Cn1 , v084
 	.byte	W12
 	.byte		        As1 
@@ -1191,25 +1046,18 @@ mus_gsc_pewter_4_023:
 	.byte	W12
 	.byte		        En1 
 	.byte	W24
-@ 031   ----------------------------------------
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_023
-@ 032   ----------------------------------------
+	 .word	mus_gsc_pewter_4_005
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 033   ----------------------------------------
+	 .word	mus_gsc_pewter_4_003
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_021
-@ 034   ----------------------------------------
+	 .word	mus_gsc_pewter_4_004
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_020
-@ 035   ----------------------------------------
+	 .word	mus_gsc_pewter_4_003
 	.byte	PATT
-	 .word	mus_gsc_pewter_4_021
+	 .word	mus_gsc_pewter_4_004
 	.byte	GOTO
 	 .word	mus_gsc_pewter_4_B1
-mus_gsc_pewter_4_B2:
-@ 036   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

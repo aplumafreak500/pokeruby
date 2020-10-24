@@ -286,14 +286,14 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
             if (gTasks[taskId].tSeIndex > 0)
                 gTasks[taskId].tSeIndex--;
             else
-                gTasks[taskId].tSeIndex = 269;
+                gTasks[taskId].tSeIndex = SE_M_HYPER_BEAM2;
         }
         else
         {
             if (gTasks[taskId].tBgmIndex > 0)
                 gTasks[taskId].tBgmIndex--;
             else
-                gTasks[taskId].tBgmIndex = 211;
+                gTasks[taskId].tBgmIndex = (MUS_GSC_RADIO_TOWER_TAKEOVER - MUS_STOP);
         }
         return TRUE;
     }
@@ -301,14 +301,14 @@ bool8 Task_ProcessSoundCheckMenuInput(u8 taskId)
     {
         if (gTasks[taskId].tWindowSelected != 0)
         {
-            if (gTasks[taskId].tSeIndex < 269)
+            if (gTasks[taskId].tSeIndex < SE_M_HYPER_BEAM2)
                 gTasks[taskId].tSeIndex++;
             else
                 gTasks[taskId].tSeIndex = 0;
         }
         else
         {
-            if (gTasks[taskId].tBgmIndex < 211)
+            if (gTasks[taskId].tBgmIndex < (MUS_GSC_RADIO_TOWER_TAKEOVER - MUS_STOP))
                 gTasks[taskId].tBgmIndex++;
             else
                 gTasks[taskId].tBgmIndex = 0;
@@ -936,100 +936,7 @@ void sub_80BB1D4(void)
 	X(MUS_VS_RIVAL, "BATTLE35") \
 	X(MUS_VS_ELITE_FOUR, "BATTLE38") \
 	X(MUS_VS_AQUA_MAGMA_LEADER, "BATTLE30") \
-	X(BGM_RADIO_TOWER_OCCUPIED, "RADIO-TOWER") \
-	X(MUS_OOAME, "EMR-OOAME") \
-	X(MUS_B_FRONTIER, "B-FRONTIER") \
-	X(MUS_B_ARENA, "B-ARENA") \
-	X(MUS_ME_POINTGET, "ME-POINTGET") \
-	X(MUS_ME_TORE_EYE, "ME-TORE-EYE") \
-	X(MUS_PYRAMID, "PYRAMID") \
-	X(MUS_PYRAMID_TOP, "PYRAMID-TOP") \
-	X(MUS_B_PALACE, "B-PALACE") \
-	X(MUS_REKKUU_KOURIN, "REKKUU-KOURIN") \
-	X(MUS_SATTOWER, "SATTOWER") \
-	X(MUS_ME_SYMBOLGET, "ME-SYMBOLGET") \
-	X(MUS_B_DOME, "B-DOME") \
-	X(MUS_B_TUBE, "B-TUBE") \
-	X(MUS_B_FACTORY, "B-FACTORY") \
-	X(MUS_VS_REKKU, "VS-REKKU") \
-	X(MUS_VS_FRONT, "VS-FRONT") \
-	X(MUS_VS_MEW, "VS-MEW") \
-	X(MUS_B_DOME1, "B-DOME1") \
-	X(MUS_RG_ANNAI, "RG-ANNAI") \
-	X(MUS_RG_SLOT, "RG-SLOT") \
-	X(MUS_RG_AJITO, "RG-AJITO") \
-	X(MUS_RG_GYM, "RG-GYM") \
-	X(MUS_RG_PURIN, "RG-PURIN") \
-	X(MUS_RG_DEMO, "RG-DEMO") \
-	X(MUS_RG_TITLE, "RG-TITLE") \
-	X(MUS_RG_GUREN, "RG-GUREN") \
-	X(MUS_RG_SHION, "RG-SHION") \
-	X(MUS_RG_KAIHUKU, "RG-KAIHUKU") \
-	X(MUS_RG_CYCLING, "RG-CYCLING") \
-	X(MUS_RG_ROCKET, "RG-ROCKET") \
-	X(MUS_RG_SHOUJO, "RG-SHOUJO") \
-	X(MUS_RG_SHOUNEN, "RG-SHOUNEN") \
-	X(MUS_RG_DENDOU, "RG-DENDOU") \
-	X(MUS_RG_T_MORI, "RG-T-MORI") \
-	X(MUS_RG_OTSUKIMI, "RG-OTSUKIMI") \
-	X(MUS_RG_POKEYASHI, "RG-POKEYASHI") \
-	X(MUS_RG_ENDING, "RG-ENDING") \
-	X(MUS_RG_LOAD01, "RG-LOAD01") \
-	X(MUS_RG_OPENING, "RG-OPENING") \
-	X(MUS_RG_LOAD02, "RG-LOAD02") \
-	X(MUS_RG_LOAD03, "RG-LOAD03") \
-	X(MUS_RG_CHAMP_R, "RG-CHAMP-R") \
-	X(MUS_RG_VS_GYM, "RS-VS-GYM") \
-	X(MUS_RG_VS_TORE, "RG-VS-TORE") \
-	X(MUS_RG_VS_YASEI, "RG-VS-YASEI") \
-	X(MUS_RG_VS_LAST, "RG-VS-LAST") \
-	X(MUS_RG_MASARA, "RG-MASARA") \
-	X(MUS_RG_KENKYU, "RG-KENKYU") \
-	X(MUS_RG_OHKIDO, "RG-OHKIDO") \
-	X(MUS_RG_POKECEN, "RG-POKECEN") \
-	X(MUS_RG_SANTOAN, "RG-SANTOAN") \
-	X(MUS_RG_NAMINORI, "RG-NAMINORI") \
-	X(MUS_RG_P_TOWER, "RG-P-TOWER") \
-	X(MUS_RG_SHIRUHU, "RG-SHIRUHU") \
-	X(MUS_RG_HANADA, "RG-HANADA") \
-	X(MUS_RG_TAMAMUSI, "RG-TAMAMUSI") \
-	X(MUS_RG_WIN_TRE, "RG-WIN-TRE") \
-	X(MUS_RG_WIN_YASEI, "RG-WIN-YASEI") \
-	X(MUS_RG_WIN_GYM, "RG-WIN-GYM") \
-	X(MUS_RG_KUCHIBA, "RG-KUCHIBA") \
-	X(MUS_RG_NIBI, "RG-NIBI") \
-	X(MUS_RG_RIVAL1, "RG-RIVAL1") \
-	X(MUS_RG_RIVAL2, "RG-RIVAL2") \
-	X(MUS_RG_FAN2, "RG-FAN2") \
-	X(MUS_RG_FAN5, "RG-FAN5") \
-	X(MUS_RG_FAN6, "RG-FAN6") \
-	X(MUS_ME_RG_PHOTO, "ME-RG-PHOTO") \
-	X(MUS_RG_TITLEROG, "RG-TITLEROG") \
-	X(MUS_RG_GET_YASEI, "RG-GET-YASEI") \
-	X(MUS_RG_SOUSA, "RG-SOUSA") \
-	X(MUS_RG_SEKAIKAN, "RG-SEKAIKAN") \
-	X(MUS_RG_SEIBETU, "RG-SEIBETU") \
-	X(MUS_RG_JUMP, "RG-JUMP") \
-	X(MUS_RG_UNION, "RG-UNION") \
-	X(MUS_RG_NETWORK, "RG-NETWORK") \
-	X(MUS_RG_OKURIMONO, "RG-OKURIMONO") \
-	X(MUS_RG_KINOMIKUI, "RG-KINOMIKUI") \
-	X(MUS_RG_NANADUNGEON, "RG-NANADUNGEON") \
-	X(MUS_RG_OSHIE_TV, "RG-OSHIE-TV") \
-	X(MUS_RG_NANASHIMA, "RG-NANASHIMA") \
-	X(MUS_RG_NANAISEKI, "RG-NANAISEKI") \
-	X(MUS_RG_NANA123, "RG-NANA123") \
-	X(MUS_RG_NANA45, "RG-NANA45") \
-	X(MUS_RG_NANA67, "RG-NANA67") \
-	X(MUS_RG_POKEFUE, "RG-POKEFUE") \
-	X(MUS_RG_VS_DEO, "RG-VS-DEO") \
-	X(MUS_RG_VS_MYU2, "RG-VS-MYU2") \
-	X(MUS_RG_VS_DEN, "RG-VS-DEN") \
-	X(MUS_RG_EXEYE, "RG-EXEUE") \
-	X(MUS_RG_DEOEYE, "RG-DEOEYE") \
-	X(MUS_RG_T_TOWER, "RG-T-TOWER") \
-	X(MUS_RG_SLOWMASARA, "RG-SLOWMASARA") \
-	X(MUS_RG_TVNOIZE, "RG-TVNOIZE")
+	X(BGM_RADIO_TOWER_OCCUPIED, "RADIO-TOWER")
 
 #define SOUND_LIST_SE \
 	X(MUS_DUMMY, "STOP") \
@@ -1279,33 +1186,11 @@ void sub_80BB1D4(void)
 	X(SE_M_TEETER_DANCE, "W298") \
 	X(SE_M_STAT_DECREASE, "W287B") \
 	X(SE_M_HAZE, "W114") \
-	X(SE_M_HYPER_BEAM2, "W063B") \
-	X(SE_RG_W_DOOR, "RG-W-DOOR") \
-	X(SE_RG_CARD1, "RG-CARD1") \
-	X(SE_RG_CARD2, "RG-CARD2") \
-	X(SE_RG_CARD3, "RG-CARD3") \
-	X(SE_RG_BAG1, "RG-BAG1") \
-	X(SE_RG_BAG2, "RG-BAG2") \
-	X(SE_RG_GETTING, "RG-GETTING") \
-	X(SE_RG_SHOP, "RG-SHOP") \
-	X(SE_RG_KITEKI, "RG-KITEKI") \
-	X(SE_RG_HELP_OP, "RG-HELP-CL") \
-	X(SE_RG_HELP_CL, "RG-HELP-CL") \
-	X(SE_RG_HELP_NGM, "RG-HELP-NGM") \
-	X(SE_RG_DEOMOV, "RG-DEOMOV") \
-	X(SE_RG_EXCELLENT, "RG-EXCELLENT") \
-	X(SE_RG_NAWAMISS, "RG-NAWAMISS") \
-	X(SE_TOREEYE, "TOREEYE") \
-	X(SE_TOREOFF, "TOREOFF") \
-	X(SE_HANTEI1, "HANTEI1") \
-	X(SE_HANTEI2, "HANTEI2") \
-	X(SE_CURTAIN, "CURTAIN") \
-	X(SE_CURTAIN1, "CURTAIN1") \
-	X(SE_USSOKI, "USSOKI")
+	X(SE_M_HYPER_BEAM2, "W063B")
 
 // Create BGM list
 #define X(songId, name) static const u8 sBGMName_##songId[] = _(name);
-SOUND_LIST_BGM;
+SOUND_LIST_BGM
 #undef X
 
 #define X(songId, name) sBGMName_##songId,

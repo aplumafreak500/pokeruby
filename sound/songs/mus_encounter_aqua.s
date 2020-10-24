@@ -1,31 +1,29 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_encounter_aqua_grp, voicegroup065
+	.equ	mus_encounter_aqua_grp, voicegroup062
 	.equ	mus_encounter_aqua_pri, 0
 	.equ	mus_encounter_aqua_rev, reverb_set+50
-	.equ	mus_encounter_aqua_mvl, 86
+	.equ	mus_encounter_aqua_mvl, 127
 	.equ	mus_encounter_aqua_key, 0
 	.equ	mus_encounter_aqua_tbs, 1
-	.equ	mus_encounter_aqua_exg, 1
+	.equ	mus_encounter_aqua_exg, 0
 	.equ	mus_encounter_aqua_cmp, 1
 
 	.section .rodata
 	.global	mus_encounter_aqua
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_encounter_aqua_1:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 140*mus_encounter_aqua_tbs/2
 	.byte		VOICE , 127
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 68*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 46*mus_encounter_aqua_mvl/mxv
 	.byte	W12
-@ 001   ----------------------------------------
-mus_encounter_aqua_1_001:
+mus_encounter_aqua_1_000:
 	.byte		N03   , En4 , v112
 	.byte	W06
 	.byte		        En4 , v064
@@ -43,76 +41,55 @@ mus_encounter_aqua_1_001:
 	.byte		        En4 , v064
 	.byte	W18
 	.byte	PEND
-@ 002   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
+	 .word	mus_encounter_aqua_1_000
 mus_encounter_aqua_1_B1:
-@ 003   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 004   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 005   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 006   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 007   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 008   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 009   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 010   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 011   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 012   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 013   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 014   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 015   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 016   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 017   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
-@ 018   ----------------------------------------
+	 .word	mus_encounter_aqua_1_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_1_001
+	 .word	mus_encounter_aqua_1_000
 	.byte	GOTO
 	 .word	mus_encounter_aqua_1_B1
-mus_encounter_aqua_1_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_encounter_aqua_2:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 126
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 64*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
 	.byte	W12
-@ 001   ----------------------------------------
-mus_encounter_aqua_2_001:
+mus_encounter_aqua_2_000:
 	.byte	W12
 	.byte		N12   , Gn4 , v100
 	.byte	W24
@@ -123,8 +100,11 @@ mus_encounter_aqua_2_001:
 	.byte		N12   
 	.byte	W12
 	.byte	PEND
-@ 002   ----------------------------------------
-	.byte		VOL   , 15*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 10*mus_encounter_aqua_mvl/mxv
+	.byte	W12
+	.byte		N12   
+	.byte	W12
+	.byte		VOL   , 21*mus_encounter_aqua_mvl/mxv
 	.byte	W12
 	.byte		N12   
 	.byte	W12
@@ -132,84 +112,60 @@ mus_encounter_aqua_2_001:
 	.byte	W12
 	.byte		N12   
 	.byte	W12
-	.byte		VOL   , 48*mus_encounter_aqua_mvl/mxv
-	.byte	W12
-	.byte		N12   
-	.byte	W12
-	.byte		VOL   , 64*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
 	.byte	W12
 	.byte		N12   
 	.byte	W12
 mus_encounter_aqua_2_B1:
-@ 003   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 004   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 005   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 006   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 007   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 008   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 009   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 010   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 011   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 012   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 013   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 014   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 015   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 016   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 017   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
-@ 018   ----------------------------------------
+	 .word	mus_encounter_aqua_2_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_2_001
+	 .word	mus_encounter_aqua_2_000
 	.byte	GOTO
 	 .word	mus_encounter_aqua_2_B1
-mus_encounter_aqua_2_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_encounter_aqua_3:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 36
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
-	.byte		VOL   , 127*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 86*mus_encounter_aqua_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+1
 	.byte	W03
 	.byte		        c_v+0
 	.byte	W09
-@ 001   ----------------------------------------
 	.byte		N06   , As0 , v112
 	.byte	W18
 	.byte		N03   
@@ -230,7 +186,6 @@ mus_encounter_aqua_3:
 	.byte	W06
 	.byte		BEND  , c_v+3
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		        c_v+0
 	.byte		N06   , Fn0 , v112
 	.byte	W12
@@ -263,7 +218,6 @@ mus_encounter_aqua_3:
 	.byte		        Cn2 
 	.byte	W06
 mus_encounter_aqua_3_B1:
-@ 003   ----------------------------------------
 	.byte		PAN   , c_v+4
 	.byte		N06   , As0 , v112
 	.byte	W18
@@ -281,8 +235,7 @@ mus_encounter_aqua_3_B1:
 	.byte	W18
 	.byte		N03   , As0 , v096
 	.byte	W06
-@ 004   ----------------------------------------
-mus_encounter_aqua_3_004:
+mus_encounter_aqua_3_000:
 	.byte		N06   , As0 , v112
 	.byte	W18
 	.byte		N03   , As0 , v096
@@ -302,7 +255,6 @@ mus_encounter_aqua_3_004:
 	.byte		N03   , As0 , v096
 	.byte	W06
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte		N06   , Ds0 , v112
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -319,7 +271,6 @@ mus_encounter_aqua_3_004:
 	.byte	W18
 	.byte		N03   , Ds0 , v096
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		N06   , Ds0 , v112
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -342,7 +293,6 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        Gn0 , v096
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		        As0 , v112
 	.byte	W18
 	.byte		N03   , As0 , v096
@@ -361,7 +311,6 @@ mus_encounter_aqua_3_004:
 	.byte	W18
 	.byte		N03   , As0 , v096
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte		N06   , As0 , v112
 	.byte	W18
 	.byte		N03   , As0 , v096
@@ -382,7 +331,6 @@ mus_encounter_aqua_3_004:
 	.byte	W12
 	.byte		N03   , As0 , v096
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		N06   , Ds0 , v112
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -405,7 +353,6 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        As0 
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		N12   , Cn1 
 	.byte	W12
 	.byte		N06   , An1 
@@ -436,7 +383,6 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        Fn1 
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N06   , As0 
 	.byte	W18
@@ -456,7 +402,6 @@ mus_encounter_aqua_3_004:
 	.byte	W12
 	.byte		N03   , As0 , v096
 	.byte	W06
-@ 012   ----------------------------------------
 	.byte		N06   , As0 , v112
 	.byte	W18
 	.byte		N03   , As0 , v096
@@ -477,7 +422,6 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        Cs1 
 	.byte	W06
-@ 013   ----------------------------------------
 	.byte		        Ds0 
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -502,7 +446,6 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        Gn0 
 	.byte	W06
-@ 014   ----------------------------------------
 	.byte		        Ds0 
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -527,10 +470,8 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte		        Gs0 
 	.byte	W06
-@ 015   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_3_004
-@ 016   ----------------------------------------
+	 .word	mus_encounter_aqua_3_000
 	.byte		N06   , As0 , v112
 	.byte	W18
 	.byte		N03   , As0 , v096
@@ -551,7 +492,6 @@ mus_encounter_aqua_3_004:
 	.byte	W12
 	.byte		N03   , As0 , v096
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte		N06   , Ds0 , v112
 	.byte	W18
 	.byte		N03   , Ds0 , v096
@@ -570,7 +510,6 @@ mus_encounter_aqua_3_004:
 	.byte	W12
 	.byte		N03   , Ds0 , v096
 	.byte	W06
-@ 018   ----------------------------------------
 	.byte		N06   , Ds0 , v112
 	.byte	W06
 	.byte		        Ds1 
@@ -601,29 +540,23 @@ mus_encounter_aqua_3_004:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_aqua_3_B1
-mus_encounter_aqua_3_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_encounter_aqua_4:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 1
 	.byte		LFOS  , 44
-	.byte		VOL   , 96*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 65*mus_encounter_aqua_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
 mus_encounter_aqua_4_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 1
 	.byte		PAN   , c_v-33
-	.byte		VOL   , 52*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 35*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Cs3 
@@ -654,8 +587,7 @@ mus_encounter_aqua_4_B1:
 	.byte	W06
 	.byte		N12   , Gs4 
 	.byte	W12
-@ 004   ----------------------------------------
-mus_encounter_aqua_4_004:
+mus_encounter_aqua_4_000:
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Cs3 
@@ -687,8 +619,7 @@ mus_encounter_aqua_4_004:
 	.byte		N12   , Gs4 
 	.byte	W12
 	.byte	PEND
-@ 005   ----------------------------------------
-mus_encounter_aqua_4_005:
+mus_encounter_aqua_4_001:
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Cs3 
@@ -720,18 +651,14 @@ mus_encounter_aqua_4_005:
 	.byte		N12   , Gs4 
 	.byte	W12
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_4_005
-@ 007   ----------------------------------------
+	 .word	mus_encounter_aqua_4_001
 	.byte	PATT
-	 .word	mus_encounter_aqua_4_004
-@ 008   ----------------------------------------
+	 .word	mus_encounter_aqua_4_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_4_004
-@ 009   ----------------------------------------
+	 .word	mus_encounter_aqua_4_000
 	.byte		VOICE , 56
-	.byte		VOL   , 85*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 57*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Fn4 , v112
 	.byte	W06
 	.byte		N03   
@@ -740,7 +667,7 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		N03   , Fn4 
 	.byte	W06
-	.byte		VOL   , 92*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 62*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Gn4 
 	.byte	W06
 	.byte		N03   
@@ -749,7 +676,7 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		N03   , Gn4 
 	.byte	W06
-	.byte		VOL   , 94*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 63*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Gs4 
 	.byte	W06
 	.byte		N03   
@@ -758,7 +685,7 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		N03   , Gs4 
 	.byte	W06
-	.byte		VOL   , 111*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 75*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , An4 
 	.byte	W06
 	.byte		N03   
@@ -767,9 +694,8 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		N03   , An4 
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 86*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 58*mus_encounter_aqua_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N06   , Fn5 
 	.byte	W06
@@ -799,10 +725,9 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Fn4 
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		VOICE , 1
 	.byte		PAN   , c_v+12
-	.byte		VOL   , 80*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 54*mus_encounter_aqua_mvl/mxv
 	.byte		N06   
 	.byte	W06
 	.byte		        An4 
@@ -835,7 +760,6 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		N12   , Cs4 
 	.byte	W06
-@ 012   ----------------------------------------
 	.byte	W06
 	.byte		N06   , Fn3 
 	.byte	W06
@@ -861,7 +785,6 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Fn4 
 	.byte	W06
-@ 013   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W06
 	.byte		        Fn4 
@@ -875,7 +798,6 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Gn4 
 	.byte	W06
-@ 014   ----------------------------------------
 	.byte	W03
 	.byte		N03   , As4 
 	.byte	W09
@@ -897,7 +819,6 @@ mus_encounter_aqua_4_005:
 	.byte	W09
 	.byte		N06   , Cs5 
 	.byte	W12
-@ 015   ----------------------------------------
 	.byte		        Ds5 
 	.byte	W12
 	.byte		        Cs5 
@@ -918,7 +839,6 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Fn4 
 	.byte	W30
-@ 016   ----------------------------------------
 	.byte		N03   
 	.byte	W03
 	.byte		        As4 , v080
@@ -959,7 +879,6 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte	W03
 	.byte		N03   , Gn4 
 	.byte	W09
@@ -985,24 +904,20 @@ mus_encounter_aqua_4_005:
 	.byte	W06
 	.byte		        Cs4 
 	.byte	W06
-@ 018   ----------------------------------------
 	.byte		N48   , Gn4 
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_encounter_aqua_4_B1
-mus_encounter_aqua_4_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_encounter_aqua_5:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v-20
-	.byte		VOL   , 89*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 60*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Cn3 , v112
 	.byte	W03
 	.byte		        Ds3 
@@ -1011,7 +926,6 @@ mus_encounter_aqua_5:
 	.byte	W03
 	.byte		        An3 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		N03   , Cn4 
 	.byte	W03
@@ -1045,7 +959,6 @@ mus_encounter_aqua_5:
 	.byte	W06
 	.byte		N06   , Ds3 
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N48   , Fn3 
 	.byte	W48
 	.byte		N03   , Cn4 
@@ -1065,10 +978,9 @@ mus_encounter_aqua_5:
 	.byte		N03   , Ds4 
 	.byte	W06
 mus_encounter_aqua_5_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 1
 	.byte		PAN   , c_v-38
-	.byte		VOL   , 40*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 27*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        Fn2 
@@ -1099,8 +1011,7 @@ mus_encounter_aqua_5_B1:
 	.byte	W06
 	.byte		N12   , Gs3 
 	.byte	W12
-@ 004   ----------------------------------------
-mus_encounter_aqua_5_004:
+mus_encounter_aqua_5_000:
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        As2 
@@ -1132,7 +1043,6 @@ mus_encounter_aqua_5_004:
 	.byte		N12   , Gs3 
 	.byte	W12
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte		N03   , As3 
 	.byte	W06
 	.byte		        Ds2 
@@ -1163,10 +1073,8 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N12   , Gs3 
 	.byte	W12
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_5_004
-@ 007   ----------------------------------------
+	 .word	mus_encounter_aqua_5_000
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        Fn2 
@@ -1197,12 +1105,10 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N12   , Gs3 
 	.byte	W12
-@ 008   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_5_004
-@ 009   ----------------------------------------
+	 .word	mus_encounter_aqua_5_000
 	.byte		VOICE , 56
-	.byte		VOL   , 68*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 46*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Cs3 , v112
 	.byte	W06
 	.byte		N03   
@@ -1211,7 +1117,7 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N03   , Cs3 
 	.byte	W06
-	.byte		VOL   , 80*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 54*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Ds3 
 	.byte	W06
 	.byte		N03   
@@ -1220,7 +1126,7 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N03   , Ds3 
 	.byte	W06
-	.byte		VOL   , 89*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 60*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , Fn3 
 	.byte	W06
 	.byte		N03   
@@ -1229,7 +1135,7 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N03   , Fn3 
 	.byte	W06
-	.byte		VOL   , 99*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 67*mus_encounter_aqua_mvl/mxv
 	.byte		N03   
 	.byte	W06
 	.byte		N03   
@@ -1238,8 +1144,7 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N03   , Fn3 
 	.byte	W06
-@ 010   ----------------------------------------
-	.byte		VOL   , 64*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
 	.byte		PAN   , c_v-19
 	.byte		N06   
 	.byte	W06
@@ -1269,9 +1174,8 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		VOICE , 1
-	.byte		VOL   , 58*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Fn3 
 	.byte	W06
 	.byte		        Cs4 
@@ -1304,7 +1208,6 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
-@ 012   ----------------------------------------
 	.byte		        An2 
 	.byte	W06
 	.byte		        Cs3 
@@ -1337,7 +1240,6 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
-@ 013   ----------------------------------------
 	.byte		        As3 
 	.byte	W06
 	.byte		        Gs3 
@@ -1350,7 +1252,6 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
-@ 014   ----------------------------------------
 	.byte		        An4 
 	.byte	W18
 	.byte		N06   
@@ -1361,7 +1262,6 @@ mus_encounter_aqua_5_004:
 	.byte	W18
 	.byte		N06   
 	.byte	W24
-@ 015   ----------------------------------------
 	.byte		        Fn4 
 	.byte	W12
 	.byte		        As4 
@@ -1382,7 +1282,6 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        As3 
 	.byte	W30
-@ 016   ----------------------------------------
 	.byte	W48
 	.byte		        Fn4 
 	.byte	W06
@@ -1400,7 +1299,6 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte		        Fs4 
 	.byte	W18
 	.byte		N06   
@@ -1417,29 +1315,24 @@ mus_encounter_aqua_5_004:
 	.byte	W06
 	.byte		        As3 
 	.byte	W06
-@ 018   ----------------------------------------
 	.byte		N48   , Ds4 
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_encounter_aqua_5_B1
-mus_encounter_aqua_5_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_encounter_aqua_6:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 105*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 71*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Fn3 , v112
 	.byte	W06
 	.byte		        An3 
 	.byte	W06
-@ 001   ----------------------------------------
 	.byte		        As3 
 	.byte	W06
 	.byte		        As4 
@@ -1458,7 +1351,6 @@ mus_encounter_aqua_6:
 	.byte	W06
 	.byte		N06   , Ds4 
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N48   , Fn4 
 	.byte	W48
 	.byte		N03   , Gn4 
@@ -1478,58 +1370,38 @@ mus_encounter_aqua_6:
 	.byte		N03   , An4 
 	.byte	W06
 mus_encounter_aqua_6_B1:
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	W96
-@ 015   ----------------------------------------
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W96
-@ 017   ----------------------------------------
 	.byte	W96
-@ 018   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_encounter_aqua_6_B1
-mus_encounter_aqua_6_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_encounter_aqua_7:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 49*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 33*mus_encounter_aqua_mvl/mxv
 	.byte		BENDR , 12
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte	W06
 	.byte		N06   , Fn5 , v112
 	.byte	W06
@@ -1561,7 +1433,6 @@ mus_encounter_aqua_7:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N03   , Ds4 
 	.byte	W06
 	.byte		N03   
@@ -1595,10 +1466,9 @@ mus_encounter_aqua_7:
 	.byte		N03   , An4 
 	.byte	W06
 mus_encounter_aqua_7_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 85
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 58*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Fn4 , v112
 	.byte	W06
 	.byte		N03   , Fn3 
@@ -1625,7 +1495,6 @@ mus_encounter_aqua_7_B1:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte	W06
 	.byte		N03   , As2 
 	.byte	W06
@@ -1649,8 +1518,7 @@ mus_encounter_aqua_7_B1:
 	.byte	W12
 	.byte		        Cn4 
 	.byte	W06
-@ 005   ----------------------------------------
-mus_encounter_aqua_7_005:
+mus_encounter_aqua_7_000:
 	.byte		N78   , As3 , v112
 	.byte	W24
 	.byte		MOD   , 2
@@ -1660,10 +1528,9 @@ mus_encounter_aqua_7_005:
 	.byte		N06   , Gn3 
 	.byte	W06
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 65*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 44*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Ds4 
 	.byte	W06
 	.byte		N03   , Ds3 
@@ -1691,9 +1558,8 @@ mus_encounter_aqua_7_005:
 	.byte	W06
 	.byte		        As3 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		VOICE , 85
-	.byte		VOL   , 58*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Fn4 
 	.byte	W06
 	.byte		N03   , Fn3 
@@ -1720,7 +1586,6 @@ mus_encounter_aqua_7_005:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte	W06
 	.byte		        As2 
 	.byte	W06
@@ -1744,10 +1609,8 @@ mus_encounter_aqua_7_005:
 	.byte	W12
 	.byte		        Cn4 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_7_005
-@ 010   ----------------------------------------
+	 .word	mus_encounter_aqua_7_000
 	.byte		PAN   , c_v-62
 	.byte		N06   , Ds4 , v112
 	.byte	W06
@@ -1779,10 +1642,9 @@ mus_encounter_aqua_7_005:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		PAN   , c_v-62
-	.byte		VOL   , 58*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , As3 
 	.byte	W06
 	.byte		        Fn2 
@@ -1813,8 +1675,7 @@ mus_encounter_aqua_7_005:
 	.byte	W06
 	.byte		N12   , Gs3 
 	.byte	W12
-@ 012   ----------------------------------------
-mus_encounter_aqua_7_012:
+mus_encounter_aqua_7_001:
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        As2 
@@ -1846,8 +1707,7 @@ mus_encounter_aqua_7_012:
 	.byte		N12   , Gs3 
 	.byte	W12
 	.byte	PEND
-@ 013   ----------------------------------------
-mus_encounter_aqua_7_013:
+mus_encounter_aqua_7_002:
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        Ds2 
@@ -1879,10 +1739,8 @@ mus_encounter_aqua_7_013:
 	.byte		N12   , Gs3 
 	.byte	W12
 	.byte	PEND
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_7_012
-@ 015   ----------------------------------------
+	 .word	mus_encounter_aqua_7_001
 	.byte		N03   , As3 , v112
 	.byte	W06
 	.byte		        Fn2 
@@ -1913,35 +1771,28 @@ mus_encounter_aqua_7_013:
 	.byte	W06
 	.byte		N12   , Gs3 
 	.byte	W12
-@ 016   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_7_012
-@ 017   ----------------------------------------
+	 .word	mus_encounter_aqua_7_001
 	.byte	PATT
-	 .word	mus_encounter_aqua_7_013
-@ 018   ----------------------------------------
+	 .word	mus_encounter_aqua_7_002
 	.byte	PATT
-	 .word	mus_encounter_aqua_7_012
+	 .word	mus_encounter_aqua_7_001
 	.byte	GOTO
 	 .word	mus_encounter_aqua_7_B1
-mus_encounter_aqua_7_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_encounter_aqua_8:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 86
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 61*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 41*mus_encounter_aqua_mvl/mxv
 	.byte		BENDR , 12
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte	W06
 	.byte		N06   , Fn3 , v112
 	.byte	W06
@@ -1973,7 +1824,6 @@ mus_encounter_aqua_8:
 	.byte	W06
 	.byte		        An2 
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N03   , Cn3 
 	.byte	W06
 	.byte		N03   
@@ -2007,10 +1857,9 @@ mus_encounter_aqua_8:
 	.byte		N03   , An3 
 	.byte	W06
 mus_encounter_aqua_8_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 86
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 73*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 49*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        As3 
@@ -2037,7 +1886,6 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		        Cs4 
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte	W06
 	.byte		        An3 
 	.byte	W06
@@ -2061,46 +1909,45 @@ mus_encounter_aqua_8_B1:
 	.byte	W12
 	.byte		        Fn4 
 	.byte	W06
-@ 005   ----------------------------------------
 	.byte		N72   , Gn4 
 	.byte	W06
-	.byte		VOL   , 64*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
 	.byte	W02
-	.byte		        51*mus_encounter_aqua_mvl/mxv
-	.byte	W04
-	.byte		        43*mus_encounter_aqua_mvl/mxv
-	.byte	W02
-	.byte		        40*mus_encounter_aqua_mvl/mxv
-	.byte	W03
 	.byte		        34*mus_encounter_aqua_mvl/mxv
-	.byte	W03
+	.byte	W04
+	.byte		        29*mus_encounter_aqua_mvl/mxv
+	.byte	W02
 	.byte		        27*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        23*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        18*mus_encounter_aqua_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 2
 	.byte	W15
-	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 29*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        29*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        32*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        35*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        38*mus_encounter_aqua_mvl/mxv
 	.byte	W03
 	.byte		        43*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        48*mus_encounter_aqua_mvl/mxv
+	.byte		        50*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        52*mus_encounter_aqua_mvl/mxv
+	.byte		        56*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        57*mus_encounter_aqua_mvl/mxv
+	.byte		        59*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        64*mus_encounter_aqua_mvl/mxv
+	.byte		        63*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        74*mus_encounter_aqua_mvl/mxv
+	.byte		        71*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        83*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        88*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        94*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        105*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        74*mus_encounter_aqua_mvl/mxv
+	.byte		        50*mus_encounter_aqua_mvl/mxv
 	.byte		MOD   , 0
 	.byte		N06   , Gs4 
 	.byte	W12
@@ -2108,7 +1955,6 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		N03   , Ds4 
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		N06   , Gn4 
 	.byte	W12
 	.byte		        Fn4 
@@ -2136,10 +1982,9 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 73*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 49*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , As4 , v112
 	.byte	W06
 	.byte		N03   , As3 
@@ -2166,7 +2011,6 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		        Cs4 
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte	W06
 	.byte		        As3 
 	.byte	W06
@@ -2190,51 +2034,49 @@ mus_encounter_aqua_8_B1:
 	.byte	W12
 	.byte		        Cs5 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		N78   , Ds5 
 	.byte	W06
-	.byte		VOL   , 64*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
 	.byte	W02
-	.byte		        51*mus_encounter_aqua_mvl/mxv
-	.byte	W04
-	.byte		        43*mus_encounter_aqua_mvl/mxv
-	.byte	W02
-	.byte		        40*mus_encounter_aqua_mvl/mxv
-	.byte	W03
 	.byte		        34*mus_encounter_aqua_mvl/mxv
-	.byte	W03
+	.byte	W04
+	.byte		        29*mus_encounter_aqua_mvl/mxv
+	.byte	W02
 	.byte		        27*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        23*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        18*mus_encounter_aqua_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 2
 	.byte	W15
-	.byte		VOL   , 43*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 29*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        29*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        32*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        35*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        38*mus_encounter_aqua_mvl/mxv
 	.byte	W03
 	.byte		        43*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        48*mus_encounter_aqua_mvl/mxv
+	.byte		        50*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        52*mus_encounter_aqua_mvl/mxv
+	.byte		        56*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        57*mus_encounter_aqua_mvl/mxv
+	.byte		        59*mus_encounter_aqua_mvl/mxv
 	.byte	W03
-	.byte		        64*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        74*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        83*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        88*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        94*mus_encounter_aqua_mvl/mxv
-	.byte	W03
-	.byte		        105*mus_encounter_aqua_mvl/mxv
+	.byte		        63*mus_encounter_aqua_mvl/mxv
 	.byte	W03
 	.byte		        71*mus_encounter_aqua_mvl/mxv
+	.byte	W03
+	.byte		        48*mus_encounter_aqua_mvl/mxv
 	.byte		MOD   , 0
 	.byte	W18
 	.byte		N06   , Cs5 
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N06   , Cn5 
 	.byte	W06
@@ -2266,10 +2108,9 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		        An4 
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		VOICE , 81
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 60*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 40*mus_encounter_aqua_mvl/mxv
 	.byte		N03   , As4 
 	.byte	W06
 	.byte		        Cs3 
@@ -2300,8 +2141,7 @@ mus_encounter_aqua_8_B1:
 	.byte	W06
 	.byte		N12   , Gs4 
 	.byte	W12
-@ 012   ----------------------------------------
-mus_encounter_aqua_8_012:
+mus_encounter_aqua_8_000:
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Cs3 
@@ -2333,8 +2173,7 @@ mus_encounter_aqua_8_012:
 	.byte		N12   , Gs4 
 	.byte	W12
 	.byte	PEND
-@ 013   ----------------------------------------
-mus_encounter_aqua_8_013:
+mus_encounter_aqua_8_001:
 	.byte		N03   , As4 , v112
 	.byte	W06
 	.byte		        Cs3 
@@ -2366,37 +2205,28 @@ mus_encounter_aqua_8_013:
 	.byte		N12   , Gs4 
 	.byte	W12
 	.byte	PEND
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_8_013
-@ 015   ----------------------------------------
+	 .word	mus_encounter_aqua_8_001
 	.byte	PATT
-	 .word	mus_encounter_aqua_8_012
-@ 016   ----------------------------------------
+	 .word	mus_encounter_aqua_8_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_8_012
-@ 017   ----------------------------------------
+	 .word	mus_encounter_aqua_8_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_8_013
-@ 018   ----------------------------------------
+	 .word	mus_encounter_aqua_8_001
 	.byte	PATT
-	 .word	mus_encounter_aqua_8_013
+	 .word	mus_encounter_aqua_8_001
 	.byte	GOTO
 	 .word	mus_encounter_aqua_8_B1
-mus_encounter_aqua_8_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
+@********************** Track  9 **********************@
 
 mus_encounter_aqua_9:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 99*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 67*mus_encounter_aqua_mvl/mxv
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		        Cn1 , v088
@@ -2413,7 +2243,6 @@ mus_encounter_aqua_9:
 	.byte	W06
 	.byte		        En1 
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		        Cn1 
 	.byte	W06
 	.byte		        Dn1 , v048
@@ -2445,8 +2274,7 @@ mus_encounter_aqua_9:
 	.byte		        Dn1 , v112
 	.byte	W06
 mus_encounter_aqua_9_B1:
-@ 003   ----------------------------------------
-mus_encounter_aqua_9_003:
+mus_encounter_aqua_9_000:
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		        Cn1 , v088
@@ -2460,13 +2288,10 @@ mus_encounter_aqua_9_003:
 	.byte		        Cn1 , v112
 	.byte	W24
 	.byte	PEND
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 005   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 006   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte		N06   , Cn1 , v112
 	.byte	W18
 	.byte		        Cn1 , v088
@@ -2481,16 +2306,12 @@ mus_encounter_aqua_9_003:
 	.byte	W06
 	.byte		        Cn1 , v112
 	.byte	W24
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 008   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 009   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 010   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte		N06   , Cn1 , v112
 	.byte	W06
 	.byte		        Dn1 
@@ -2525,58 +2346,43 @@ mus_encounter_aqua_9_003:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 012   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 013   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 014   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 015   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 016   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 017   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
-@ 018   ----------------------------------------
+	 .word	mus_encounter_aqua_9_000
 	.byte	PATT
-	 .word	mus_encounter_aqua_9_003
+	 .word	mus_encounter_aqua_9_000
 	.byte	GOTO
 	 .word	mus_encounter_aqua_9_B1
-mus_encounter_aqua_9_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 10 (Midi-Chn.10) ****************@
+@********************** Track 10 **********************@
 
 mus_encounter_aqua_10:
 	.byte	KEYSH , mus_encounter_aqua_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 46*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 31*mus_encounter_aqua_mvl/mxv
 	.byte		BENDR , 12
 	.byte		BEND  , c_v+1
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
 mus_encounter_aqua_10_B1:
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte		VOICE , 83
 	.byte	W06
 	.byte		N03   , An3 , v112
@@ -2601,7 +2407,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W12
 	.byte		        Fn4 
 	.byte	W06
-@ 005   ----------------------------------------
 	.byte		N72   , Gn4 
 	.byte	W24
 	.byte		MOD   , 2
@@ -2613,7 +2418,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		N03   , Ds4 
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		N06   , Gn4 
 	.byte	W12
 	.byte		        Fn4 
@@ -2638,7 +2442,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		VOICE , 84
 	.byte		N06   , As4 , v112
 	.byte	W06
@@ -2666,7 +2469,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Cs4 
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte	W06
 	.byte		        As3 
 	.byte	W06
@@ -2690,7 +2492,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W12
 	.byte		        Cs5 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		N78   , Ds5 
 	.byte	W24
 	.byte		MOD   , 2
@@ -2699,7 +2500,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W18
 	.byte		N06   , Cs5 
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		        Cn5 
 	.byte	W06
 	.byte		N03   , Bn4 , v072
@@ -2730,9 +2530,8 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        An4 
 	.byte	W06
-@ 011   ----------------------------------------
 	.byte		VOICE , 87
-	.byte		VOL   , 40*mus_encounter_aqua_mvl/mxv
+	.byte		VOL   , 27*mus_encounter_aqua_mvl/mxv
 	.byte		N06   , Fn3 
 	.byte	W06
 	.byte		        An3 
@@ -2765,7 +2564,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		N12   , Cs3 
 	.byte	W06
-@ 012   ----------------------------------------
 	.byte	W06
 	.byte		N06   , Fn2 
 	.byte	W06
@@ -2791,7 +2589,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Fn3 
 	.byte	W06
-@ 013   ----------------------------------------
 	.byte		        Gn3 
 	.byte	W06
 	.byte		        Fn3 
@@ -2804,7 +2601,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Gn3 
 	.byte	W06
-@ 014   ----------------------------------------
 	.byte	W03
 	.byte		N03   , As3 
 	.byte	W09
@@ -2826,7 +2622,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W09
 	.byte		N06   , Cs4 
 	.byte	W12
-@ 015   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W12
 	.byte		        Cs4 
@@ -2847,7 +2642,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Fn3 
 	.byte	W30
-@ 016   ----------------------------------------
 	.byte		N03   
 	.byte	W03
 	.byte		        As3 , v080
@@ -2888,7 +2682,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Cn3 
 	.byte	W06
-@ 017   ----------------------------------------
 	.byte	W03
 	.byte		N03   , Gn3 
 	.byte	W09
@@ -2914,7 +2707,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W06
 	.byte		        Cs3 
 	.byte	W06
-@ 018   ----------------------------------------
 	.byte		N24   , Gn3 
 	.byte	W24
 	.byte		N03   , Fs3 , v064
@@ -2936,8 +2728,6 @@ mus_encounter_aqua_10_B1:
 	.byte	W03
 	.byte	GOTO
 	 .word	mus_encounter_aqua_10_B1
-mus_encounter_aqua_10_B2:
-@ 019   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

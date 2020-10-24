@@ -1,35 +1,31 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_poke_mart_grp, voicegroup050
+	.equ	mus_poke_mart_grp, voicegroup047
 	.equ	mus_poke_mart_pri, 0
 	.equ	mus_poke_mart_rev, reverb_set+50
-	.equ	mus_poke_mart_mvl, 85
+	.equ	mus_poke_mart_mvl, 127
 	.equ	mus_poke_mart_key, 0
 	.equ	mus_poke_mart_tbs, 1
-	.equ	mus_poke_mart_exg, 1
+	.equ	mus_poke_mart_exg, 0
 	.equ	mus_poke_mart_cmp, 1
 
 	.section .rodata
 	.global	mus_poke_mart
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_poke_mart_1:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 172*mus_poke_mart_tbs/2
 	.byte		VOICE , 1
 	.byte		LFOS  , 44
-	.byte		VOL   , 80*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 53*mus_poke_mart_mvl/mxv
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte		N06   , Bn5 , v112
 	.byte	W12
 	.byte		N03   , An5 , v088
@@ -66,7 +62,7 @@ mus_poke_mart_1:
 	.byte	W03
 	.byte		        Fn3 
 	.byte	W04
-	.byte		VOL   , 119*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 79*mus_poke_mart_mvl/mxv
 	.byte	W08
 	.byte		VOICE , 17
 	.byte		N04   , Fs3 , v112
@@ -76,9 +72,8 @@ mus_poke_mart_1:
 	.byte		        As3 
 	.byte	W08
 mus_poke_mart_1_B1:
-@ 004   ----------------------------------------
 	.byte		VOICE , 17
-	.byte		VOL   , 125*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 83*mus_poke_mart_mvl/mxv
 	.byte		N08   , Cs4 , v120
 	.byte	W08
 	.byte		        Cs4 , v032
@@ -99,7 +94,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte		N08   , Ds4 , v120
 	.byte	W16
 	.byte		        Dn4 , v112
@@ -128,7 +122,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N08   , Fs4 
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		        Cs4 
 	.byte	W08
 	.byte		        Cs4 , v032
@@ -149,7 +142,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W16
 	.byte		        Dn4 
@@ -178,7 +170,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 008   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -206,7 +197,6 @@ mus_poke_mart_1_B1:
 	.byte	W02
 	.byte		        Ds3 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte	W24
 	.byte		N24   , Gs3 , v112
 	.byte	W24
@@ -214,7 +204,6 @@ mus_poke_mart_1_B1:
 	.byte	W24
 	.byte		        Bn3 
 	.byte	W24
-@ 010   ----------------------------------------
 	.byte		N40   , Ds4 
 	.byte	W40
 	.byte		MOD   , 8
@@ -231,7 +220,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 011   ----------------------------------------
 	.byte		N10   , Cs4 
 	.byte	W10
 	.byte		N02   , Cn4 , v080
@@ -246,7 +234,7 @@ mus_poke_mart_1_B1:
 	.byte	W02
 	.byte		        En3 
 	.byte	W04
-	.byte		VOL   , 125*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 83*mus_poke_mart_mvl/mxv
 	.byte		N02   , Cs3 , v076
 	.byte	W02
 	.byte		        Ds3 
@@ -286,7 +274,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Ds4 
 	.byte	W08
-@ 012   ----------------------------------------
 	.byte		N20   , Cs4 
 	.byte	W20
 	.byte		N04   , Dn4 
@@ -299,7 +286,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 013   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W40
 	.byte		        En4 
@@ -312,7 +298,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Fs4 , v112
 	.byte	W08
-@ 014   ----------------------------------------
 	.byte		        Cs4 
 	.byte		N08   , Fs4 , v032
 	.byte	W08
@@ -330,7 +315,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 015   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W36
 	.byte		N04   , Gn4 
@@ -343,7 +327,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 016   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -356,7 +339,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N56   , Cs4 , v112
 	.byte	W56
-@ 017   ----------------------------------------
 	.byte		N08   , Cs4 , v032
 	.byte	W24
 	.byte		        Gs3 , v088
@@ -377,7 +359,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N04   , Bn3 
 	.byte	W08
-@ 018   ----------------------------------------
 	.byte		N40   , Ds4 
 	.byte	W40
 	.byte		N04   , En4 
@@ -392,18 +373,16 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 019   ----------------------------------------
 	.byte		        Cs4 
 	.byte	W72
 	.byte		VOICE , 17
-	.byte		VOL   , 119*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 79*mus_poke_mart_mvl/mxv
 	.byte		N08   , Bn3 
 	.byte	W08
 	.byte		        Bn3 , v032
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 020   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -422,7 +401,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N08   , As4 
 	.byte	W08
-@ 021   ----------------------------------------
 	.byte	W24
 	.byte		        Gn4 
 	.byte	W08
@@ -436,9 +414,8 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 , v032
 	.byte	W16
-@ 022   ----------------------------------------
 	.byte		VOICE , 1
-	.byte		VOL   , 117*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 78*mus_poke_mart_mvl/mxv
 	.byte		N20   , Cs4 , v112
 	.byte	W20
 	.byte		N04   , Dn4 
@@ -457,7 +434,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N32   , Cs4 , v112
 	.byte	W08
-@ 023   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Ds4 
 	.byte	W08
@@ -473,9 +449,8 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 024   ----------------------------------------
 	.byte		VOICE , 17
-	.byte		VOL   , 119*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 79*mus_poke_mart_mvl/mxv
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -494,7 +469,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N08   , As4 
 	.byte	W08
-@ 025   ----------------------------------------
 	.byte		        As4 , v032
 	.byte	W24
 	.byte		        Gn4 , v112
@@ -515,9 +489,8 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N04   , As4 
 	.byte	W08
-@ 026   ----------------------------------------
 	.byte		VOICE , 1
-	.byte		VOL   , 120*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 80*mus_poke_mart_mvl/mxv
 	.byte		N24   
 	.byte	W24
 	.byte		N08   , Bn4 
@@ -536,7 +509,6 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		N32   , As4 , v112
 	.byte	W08
-@ 027   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Bn4 
 	.byte	W08
@@ -552,78 +524,76 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        As4 , v112
 	.byte	W08
-@ 028   ----------------------------------------
 	.byte		VOICE , 17
-	.byte		VOL   , 65*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 43*mus_poke_mart_mvl/mxv
 	.byte		N92   , Bn5 
 	.byte	W04
-	.byte		VOL   , 63*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 42*mus_poke_mart_mvl/mxv
 	.byte	W03
-	.byte		        57*mus_poke_mart_mvl/mxv
+	.byte		        38*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        41*mus_poke_mart_mvl/mxv
+	.byte		        27*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        26*mus_poke_mart_mvl/mxv
+	.byte		        17*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        21*mus_poke_mart_mvl/mxv
+	.byte		        14*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        18*mus_poke_mart_mvl/mxv
+	.byte		        12*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        15*mus_poke_mart_mvl/mxv
+	.byte		        10*mus_poke_mart_mvl/mxv
 	.byte	W12
+	.byte		        12*mus_poke_mart_mvl/mxv
+	.byte	W04
+	.byte		        16*mus_poke_mart_mvl/mxv
+	.byte	W04
 	.byte		        18*mus_poke_mart_mvl/mxv
 	.byte	W04
 	.byte		        24*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        27*mus_poke_mart_mvl/mxv
+	.byte		        29*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        36*mus_poke_mart_mvl/mxv
+	.byte		        37*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        44*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        56*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W01
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W08
 	.byte		MOD   , 4
 	.byte	W20
 	.byte		N04   , As5 
 	.byte	W04
-@ 029   ----------------------------------------
 	.byte		MOD   , 0
 	.byte		N72   , Bn5 
 	.byte	W04
-	.byte		VOL   , 63*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 42*mus_poke_mart_mvl/mxv
 	.byte	W03
-	.byte		        57*mus_poke_mart_mvl/mxv
+	.byte		        38*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        41*mus_poke_mart_mvl/mxv
+	.byte		        27*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        26*mus_poke_mart_mvl/mxv
+	.byte		        17*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        21*mus_poke_mart_mvl/mxv
+	.byte		        14*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        18*mus_poke_mart_mvl/mxv
+	.byte		        12*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        15*mus_poke_mart_mvl/mxv
+	.byte		        10*mus_poke_mart_mvl/mxv
 	.byte	W12
+	.byte		        12*mus_poke_mart_mvl/mxv
+	.byte	W04
+	.byte		        16*mus_poke_mart_mvl/mxv
+	.byte	W04
 	.byte		        18*mus_poke_mart_mvl/mxv
 	.byte	W04
 	.byte		        24*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        27*mus_poke_mart_mvl/mxv
+	.byte		        29*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        36*mus_poke_mart_mvl/mxv
+	.byte		        37*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        44*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        56*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W01
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W08
 	.byte		MOD   , 4
 	.byte		N08   , Gs5 
@@ -632,39 +602,38 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Bn5 
 	.byte	W08
-@ 030   ----------------------------------------
 	.byte		MOD   , 0
 	.byte		N72   , As5 
 	.byte	W04
-	.byte		VOL   , 63*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 42*mus_poke_mart_mvl/mxv
 	.byte	W03
-	.byte		        57*mus_poke_mart_mvl/mxv
+	.byte		        38*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        41*mus_poke_mart_mvl/mxv
+	.byte		        27*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        26*mus_poke_mart_mvl/mxv
+	.byte		        17*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        21*mus_poke_mart_mvl/mxv
+	.byte		        14*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        18*mus_poke_mart_mvl/mxv
+	.byte		        12*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        15*mus_poke_mart_mvl/mxv
+	.byte		        10*mus_poke_mart_mvl/mxv
 	.byte	W12
+	.byte		        12*mus_poke_mart_mvl/mxv
+	.byte	W04
+	.byte		        16*mus_poke_mart_mvl/mxv
+	.byte	W04
 	.byte		        18*mus_poke_mart_mvl/mxv
 	.byte	W04
 	.byte		        24*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        27*mus_poke_mart_mvl/mxv
+	.byte		        29*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        36*mus_poke_mart_mvl/mxv
+	.byte		        37*mus_poke_mart_mvl/mxv
 	.byte	W04
-	.byte		        44*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        56*mus_poke_mart_mvl/mxv
-	.byte	W04
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W01
-	.byte		        65*mus_poke_mart_mvl/mxv
+	.byte		        43*mus_poke_mart_mvl/mxv
 	.byte	W08
 	.byte		MOD   , 4
 	.byte		N08   , Gs5 
@@ -673,12 +642,11 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte		        Gs5 
 	.byte	W08
-@ 031   ----------------------------------------
 	.byte		MOD   , 0
 	.byte		N24   , Fs5 
 	.byte	W24
 	.byte		VOICE , 1
-	.byte		VOL   , 113*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 75*mus_poke_mart_mvl/mxv
 	.byte		N08   , En5 , v084
 	.byte	W08
 	.byte		        Cs5 
@@ -699,28 +667,22 @@ mus_poke_mart_1_B1:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_1_B1
-mus_poke_mart_1_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_poke_mart_2:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 87
 	.byte		PAN   , c_v+0
 	.byte		XCMD  , xIECV , 12
 	.byte		        xIECL , 8
 	.byte		BENDR , 12
-	.byte		VOL   , 44*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 29*mus_poke_mart_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W72
 	.byte		N04   , Fs3 , v112
 	.byte	W08
@@ -729,7 +691,6 @@ mus_poke_mart_2:
 	.byte		        As3 
 	.byte	W08
 mus_poke_mart_2_B1:
-@ 004   ----------------------------------------
 	.byte		N08   , Cs4 , v120
 	.byte	W08
 	.byte		        Cs4 , v032
@@ -746,7 +707,6 @@ mus_poke_mart_2_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte		N08   , Ds4 , v120
 	.byte	W16
 	.byte		        Dn4 , v112
@@ -775,7 +735,6 @@ mus_poke_mart_2_B1:
 	.byte	W08
 	.byte		N08   , Fs4 
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		        Cs4 
 	.byte	W08
 	.byte		        Cs4 , v032
@@ -792,7 +751,6 @@ mus_poke_mart_2_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W16
 	.byte		        Dn4 
@@ -821,7 +779,6 @@ mus_poke_mart_2_B1:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 008   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -846,7 +803,6 @@ mus_poke_mart_2_B1:
 	.byte	W02
 	.byte		        Ds3 
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte	W24
 	.byte		N24   , Gs3 , v112
 	.byte	W24
@@ -854,8 +810,7 @@ mus_poke_mart_2_B1:
 	.byte	W24
 	.byte		        Bn3 
 	.byte	W24
-@ 010   ----------------------------------------
-mus_poke_mart_2_010:
+mus_poke_mart_2_000:
 	.byte		N40   , Ds4 , v112
 	.byte	W40
 	.byte		N04   , En4 
@@ -871,7 +826,6 @@ mus_poke_mart_2_010:
 	.byte		        Bn3 
 	.byte	W08
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte		N10   , Cs4 
 	.byte	W10
 	.byte		N02   , Cn4 , v080
@@ -925,7 +879,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Ds4 
 	.byte	W08
-@ 012   ----------------------------------------
 	.byte		N20   , Cs4 
 	.byte	W20
 	.byte		N04   , Dn4 
@@ -938,7 +891,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 013   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W40
 	.byte		        En4 
@@ -951,7 +903,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Fs4 , v112
 	.byte	W08
-@ 014   ----------------------------------------
 	.byte		        Cs4 
 	.byte		N08   , Fs4 , v032
 	.byte	W08
@@ -969,7 +920,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 015   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W36
 	.byte		N04   , Gn4 
@@ -982,7 +932,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 016   ----------------------------------------
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -995,7 +944,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N56   , Cs4 , v112
 	.byte	W56
-@ 017   ----------------------------------------
 	.byte		N08   , Cs4 , v032
 	.byte	W24
 	.byte		        Gs3 , v088
@@ -1016,10 +964,8 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N04   , Bn3 
 	.byte	W08
-@ 018   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_2_010
-@ 019   ----------------------------------------
+	 .word	mus_poke_mart_2_000
 	.byte		N08   , Cs4 , v112
 	.byte	W72
 	.byte		        Bn3 
@@ -1028,7 +974,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 020   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -1047,7 +992,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N08   , As4 
 	.byte	W08
-@ 021   ----------------------------------------
 	.byte	W24
 	.byte		        Gn4 
 	.byte	W08
@@ -1061,7 +1005,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 , v032
 	.byte	W16
-@ 022   ----------------------------------------
 	.byte		N20   , Cs4 , v112
 	.byte	W20
 	.byte		N04   , Dn4 
@@ -1080,7 +1023,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N32   , Cs4 , v112
 	.byte	W08
-@ 023   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Ds4 
 	.byte	W08
@@ -1096,7 +1038,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 024   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -1115,7 +1056,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        As4 
 	.byte	W08
-@ 025   ----------------------------------------
 	.byte		        As4 , v032
 	.byte	W24
 	.byte		        Gn4 , v112
@@ -1136,7 +1076,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N04   , As4 
 	.byte	W08
-@ 026   ----------------------------------------
 	.byte		N24   
 	.byte	W24
 	.byte		N08   , Bn4 
@@ -1155,7 +1094,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		N32   , As4 , v112
 	.byte	W08
-@ 027   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Bn4 
 	.byte	W08
@@ -1171,13 +1109,11 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        As4 , v112
 	.byte	W08
-@ 028   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte		N92   , Bn5 
 	.byte	W92
 	.byte		N04   , As5 
 	.byte	W04
-@ 029   ----------------------------------------
 	.byte		N72   , Bn5 
 	.byte	W72
 	.byte		N08   , Gs5 
@@ -1186,7 +1122,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Bn5 
 	.byte	W08
-@ 030   ----------------------------------------
 	.byte		N72   , As5 
 	.byte	W72
 	.byte		N08   , Gs5 
@@ -1195,7 +1130,6 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte		        Gs5 
 	.byte	W08
-@ 031   ----------------------------------------
 	.byte		N24   , Fs5 
 	.byte	W24
 	.byte		N08   , En6 
@@ -1218,30 +1152,23 @@ mus_poke_mart_2_010:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_2_B1
-mus_poke_mart_2_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_poke_mart_3:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 35
-	.byte		VOL   , 127*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 85*mus_poke_mart_mvl/mxv
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
 mus_poke_mart_3_B1:
-@ 004   ----------------------------------------
-mus_poke_mart_3_004:
+mus_poke_mart_3_000:
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1267,7 +1194,6 @@ mus_poke_mart_3_004:
 	.byte		N08   , Ds3 , v016
 	.byte	W20
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1296,7 +1222,6 @@ mus_poke_mart_3_004:
 	.byte	W04
 	.byte		N08   , Ds3 , v016
 	.byte	W20
-@ 006   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1321,7 +1246,6 @@ mus_poke_mart_3_004:
 	.byte	W04
 	.byte		N08   , Ds3 , v016
 	.byte	W20
-@ 007   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1350,7 +1274,6 @@ mus_poke_mart_3_004:
 	.byte	W04
 	.byte		N08   , Ds3 , v016
 	.byte	W20
-@ 008   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , En1 , v127
 	.byte	W08
@@ -1383,7 +1306,6 @@ mus_poke_mart_3_004:
 	.byte	W04
 	.byte		        Gs3 , v016
 	.byte	W04
-@ 009   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Cs1 , v127
 	.byte	W08
@@ -1412,8 +1334,7 @@ mus_poke_mart_3_004:
 	.byte	W04
 	.byte		N08   , En3 , v016
 	.byte	W20
-@ 010   ----------------------------------------
-mus_poke_mart_3_010:
+mus_poke_mart_3_001:
 	.byte		PAN   , c_v+0
 	.byte		N08   , Fs1 , v127
 	.byte	W08
@@ -1439,7 +1360,6 @@ mus_poke_mart_3_010:
 	.byte		N08   , Cs3 , v016
 	.byte	W20
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Fs1 , v127
 	.byte	W08
@@ -1478,10 +1398,8 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Cs4 , v032
 	.byte	W04
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_3_004
-@ 013   ----------------------------------------
+	 .word	mus_poke_mart_3_000
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1510,10 +1428,8 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		N08   , Ds3 , v016
 	.byte	W20
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_3_004
-@ 015   ----------------------------------------
+	 .word	mus_poke_mart_3_000
 	.byte		PAN   , c_v+0
 	.byte		N08   , Bn0 , v127
 	.byte	W08
@@ -1542,7 +1458,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		N08   , Ds3 , v016
 	.byte	W20
-@ 016   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , En1 , v127
 	.byte	W08
@@ -1575,7 +1490,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Gs3 , v016
 	.byte	W04
-@ 017   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Cs1 , v127
 	.byte	W08
@@ -1604,10 +1518,8 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		N08   , En3 , v016
 	.byte	W20
-@ 018   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_3_010
-@ 019   ----------------------------------------
+	 .word	mus_poke_mart_3_001
 	.byte		PAN   , c_v+0
 	.byte		N08   , Fs1 , v127
 	.byte	W08
@@ -1646,7 +1558,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Cs4 , v032
 	.byte	W04
-@ 020   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N08   , Ds1 , v127
 	.byte	W08
@@ -1662,7 +1573,6 @@ mus_poke_mart_3_010:
 	.byte	W16
 	.byte		        Ds1 , v124
 	.byte	W08
-@ 021   ----------------------------------------
 	.byte		        Ds1 , v032
 	.byte	W16
 	.byte		        Ds1 , v112
@@ -1683,7 +1593,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        As0 , v112
 	.byte	W08
-@ 022   ----------------------------------------
 	.byte		N16   , Gs1 , v127
 	.byte	W16
 	.byte		N08   , Bn1 , v112
@@ -1700,7 +1609,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        Ds2 , v032
 	.byte	W16
-@ 023   ----------------------------------------
 	.byte		N16   , Fs1 , v127
 	.byte	W16
 	.byte		N08   , Gs1 , v112
@@ -1717,7 +1625,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        Fs1 , v112
 	.byte	W08
-@ 024   ----------------------------------------
 	.byte		        Gn1 , v127
 	.byte	W08
 	.byte		        Gn1 , v032
@@ -1736,7 +1643,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        Ds1 , v124
 	.byte	W08
-@ 025   ----------------------------------------
 	.byte		        Ds1 , v032
 	.byte	W16
 	.byte		        As1 , v116
@@ -1757,7 +1663,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        Ds1 , v112
 	.byte	W08
-@ 026   ----------------------------------------
 	.byte		N16   , Gs1 , v127
 	.byte	W16
 	.byte		N08   , Bn1 , v112
@@ -1774,7 +1679,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		N24   , Ds2 
 	.byte	W24
-@ 027   ----------------------------------------
 	.byte		N16   , Fs1 , v127
 	.byte	W16
 	.byte		N08   , Gs1 , v112
@@ -1791,7 +1695,6 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte		        Fn1 , v112
 	.byte	W08
-@ 028   ----------------------------------------
 	.byte		        En1 , v127
 	.byte	W08
 	.byte		        En1 , v032
@@ -1824,7 +1727,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Bn0 , v032
 	.byte	W04
-@ 029   ----------------------------------------
 	.byte		N08   , Fn1 , v127
 	.byte	W08
 	.byte		        Fn1 , v032
@@ -1857,7 +1759,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Bn0 , v032
 	.byte	W04
-@ 030   ----------------------------------------
 	.byte		N08   , Fs1 , v127
 	.byte	W08
 	.byte		        Fs1 , v032
@@ -1890,7 +1791,6 @@ mus_poke_mart_3_010:
 	.byte	W04
 	.byte		        Cs1 , v032
 	.byte	W04
-@ 031   ----------------------------------------
 	.byte		N08   , Fs1 , v127
 	.byte	W08
 	.byte		        Fs1 , v032
@@ -1923,77 +1823,46 @@ mus_poke_mart_3_010:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_3_B1
-mus_poke_mart_3_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_poke_mart_4:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 46
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 65*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 43*mus_poke_mart_mvl/mxv
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
 mus_poke_mart_4_B1:
-@ 004   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+0
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	W96
-@ 015   ----------------------------------------
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W96
-@ 017   ----------------------------------------
 	.byte	W96
-@ 018   ----------------------------------------
 	.byte	W96
-@ 019   ----------------------------------------
 	.byte	W96
-@ 020   ----------------------------------------
 	.byte	W96
-@ 021   ----------------------------------------
 	.byte	W96
-@ 022   ----------------------------------------
 	.byte	W96
-@ 023   ----------------------------------------
 	.byte	W96
-@ 024   ----------------------------------------
 	.byte	W96
-@ 025   ----------------------------------------
 	.byte	W96
-@ 026   ----------------------------------------
 	.byte	W96
-@ 027   ----------------------------------------
 	.byte	W96
-@ 028   ----------------------------------------
 	.byte		N04   , Bn2 , v112
 	.byte	W08
 	.byte		        En3 
@@ -2018,7 +1887,6 @@ mus_poke_mart_4_B1:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 029   ----------------------------------------
 	.byte		        Gs3 
 	.byte	W08
 	.byte		        Fn3 
@@ -2043,7 +1911,6 @@ mus_poke_mart_4_B1:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 030   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W08
 	.byte		        Bn3 
@@ -2068,7 +1935,6 @@ mus_poke_mart_4_B1:
 	.byte	W08
 	.byte		        Fs4 
 	.byte	W08
-@ 031   ----------------------------------------
 	.byte		PAN   , c_v+63
 	.byte		BEND  , c_v+4
 	.byte	W24
@@ -2092,33 +1958,26 @@ mus_poke_mart_4_B1:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_4_B1
-mus_poke_mart_4_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_poke_mart_5:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		PAN   , c_v-64
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 81*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 54*mus_poke_mart_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W40
 	.byte		XCMD  , xIECV , 8
 	.byte		        xIECL , 12
 	.byte	W56
-@ 003   ----------------------------------------
 	.byte	W96
 mus_poke_mart_5_B1:
-@ 004   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Fs3 , v112
 	.byte	W08
@@ -2132,8 +1991,7 @@ mus_poke_mart_5_B1:
 	.byte	W04
 	.byte		N08   , Fs3 , v032
 	.byte	W20
-@ 005   ----------------------------------------
-mus_poke_mart_5_005:
+mus_poke_mart_5_000:
 	.byte	W24
 	.byte		N08   , Gn3 , v112
 	.byte	W08
@@ -2148,8 +2006,7 @@ mus_poke_mart_5_005:
 	.byte		        Gn3 , v032
 	.byte	W20
 	.byte	PEND
-@ 006   ----------------------------------------
-mus_poke_mart_5_006:
+mus_poke_mart_5_001:
 	.byte	W24
 	.byte		N08   , Gs3 , v112
 	.byte	W08
@@ -2164,8 +2021,7 @@ mus_poke_mart_5_006:
 	.byte		        Gs3 , v032
 	.byte	W20
 	.byte	PEND
-@ 007   ----------------------------------------
-mus_poke_mart_5_007:
+mus_poke_mart_5_002:
 	.byte	W24
 	.byte		N08   , An3 , v112
 	.byte	W08
@@ -2180,8 +2036,7 @@ mus_poke_mart_5_007:
 	.byte		        An3 , v032
 	.byte	W20
 	.byte	PEND
-@ 008   ----------------------------------------
-mus_poke_mart_5_008:
+mus_poke_mart_5_003:
 	.byte	W24
 	.byte		N08   , Bn3 , v112
 	.byte	W08
@@ -2204,7 +2059,6 @@ mus_poke_mart_5_008:
 	.byte		        Bn3 , v032
 	.byte	W04
 	.byte	PEND
-@ 009   ----------------------------------------
 	.byte	W24
 	.byte		N08   , Gs3 , v112
 	.byte	W08
@@ -2218,7 +2072,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        Gs3 , v032
 	.byte	W20
-@ 010   ----------------------------------------
 	.byte	W24
 	.byte		N08   , As3 , v112
 	.byte	W08
@@ -2232,8 +2085,7 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        As3 , v032
 	.byte	W20
-@ 011   ----------------------------------------
-	.byte		VOL   , 81*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 54*mus_poke_mart_mvl/mxv
 	.byte	W24
 	.byte		N04   , Cs4 , v112
 	.byte	W04
@@ -2259,8 +2111,7 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        Fs4 , v032
 	.byte	W04
-@ 012   ----------------------------------------
-	.byte		VOL   , 81*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 54*mus_poke_mart_mvl/mxv
 	.byte	W24
 	.byte		N08   , Fs3 , v112
 	.byte	W08
@@ -2274,19 +2125,14 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		N08   , Fs3 , v032
 	.byte	W20
-@ 013   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_5_005
-@ 014   ----------------------------------------
+	 .word	mus_poke_mart_5_000
 	.byte	PATT
-	 .word	mus_poke_mart_5_006
-@ 015   ----------------------------------------
+	 .word	mus_poke_mart_5_001
 	.byte	PATT
-	 .word	mus_poke_mart_5_007
-@ 016   ----------------------------------------
+	 .word	mus_poke_mart_5_002
 	.byte	PATT
-	 .word	mus_poke_mart_5_008
-@ 017   ----------------------------------------
+	 .word	mus_poke_mart_5_003
 	.byte	W24
 	.byte		N08   , Gs3 , v112
 	.byte	W08
@@ -2300,7 +2146,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        Gs3 , v032
 	.byte	W20
-@ 018   ----------------------------------------
 	.byte	W24
 	.byte		N08   , As3 , v112
 	.byte	W08
@@ -2314,7 +2159,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        As3 , v032
 	.byte	W20
-@ 019   ----------------------------------------
 	.byte	W24
 	.byte		        Cs4 , v112
 	.byte	W04
@@ -2340,7 +2184,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        Fs4 , v032
 	.byte	W04
-@ 020   ----------------------------------------
 	.byte		N08   , As3 , v112
 	.byte	W08
 	.byte		        As3 , v032
@@ -2363,7 +2206,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		N08   , Ds4 , v112
 	.byte	W08
-@ 021   ----------------------------------------
 	.byte		        Ds4 , v032
 	.byte	W24
 	.byte		        As3 , v112
@@ -2378,7 +2220,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Ds3 , v032
 	.byte	W16
-@ 022   ----------------------------------------
 	.byte		        Gs3 , v112
 	.byte	W08
 	.byte		        Gs3 , v032
@@ -2403,7 +2244,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 023   ----------------------------------------
 	.byte		        Ds4 
 	.byte	W08
 	.byte		        Ds4 , v032
@@ -2427,7 +2267,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Gs3 
 	.byte	W08
-@ 024   ----------------------------------------
 	.byte		        As3 
 	.byte	W08
 	.byte		        As3 , v032
@@ -2450,7 +2289,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		N08   , Ds4 , v112
 	.byte	W08
-@ 025   ----------------------------------------
 	.byte		        Ds4 , v032
 	.byte	W24
 	.byte		        As3 , v112
@@ -2477,7 +2315,6 @@ mus_poke_mart_5_008:
 	.byte	W04
 	.byte		        Cs4 , v032
 	.byte	W04
-@ 026   ----------------------------------------
 	.byte		N24   , Cs4 , v112
 	.byte	W12
 	.byte		MOD   , 8
@@ -2499,7 +2336,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		N32   , Cs4 , v112
 	.byte	W08
-@ 027   ----------------------------------------
 	.byte	W08
 	.byte		MOD   , 8
 	.byte	W16
@@ -2521,7 +2357,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Cs4 , v112
 	.byte	W08
-@ 028   ----------------------------------------
 	.byte		BEND  , c_v+1
 	.byte		N04   , Bn2 , v064
 	.byte	W08
@@ -2547,7 +2382,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 029   ----------------------------------------
 	.byte		        Gs3 
 	.byte	W08
 	.byte		        Fn3 
@@ -2572,7 +2406,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Bn3 
 	.byte	W08
-@ 030   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W08
 	.byte		        Bn3 
@@ -2597,7 +2430,6 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte		        Fs4 
 	.byte	W08
-@ 031   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte	W24
 	.byte		N08   , En6 , v056
@@ -2620,33 +2452,26 @@ mus_poke_mart_5_008:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_5_B1
-mus_poke_mart_5_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_poke_mart_6:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		PAN   , c_v+63
 	.byte		XCMD  , xIECV , 12
 	.byte		        xIECL , 8
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 48*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 32*mus_poke_mart_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
 mus_poke_mart_6_B1:
-@ 004   ----------------------------------------
-mus_poke_mart_6_004:
+mus_poke_mart_6_000:
 	.byte	W48
 	.byte		N08   , Ds5 , v112
 	.byte	W16
@@ -2659,14 +2484,10 @@ mus_poke_mart_6_004:
 	.byte		        Ds4 
 	.byte	W08
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_6_004
-@ 007   ----------------------------------------
+	 .word	mus_poke_mart_6_000
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W48
 	.byte		N08   , En5 , v112
 	.byte	W16
@@ -2678,7 +2499,6 @@ mus_poke_mart_6_004:
 	.byte	W08
 	.byte		        Cs5 
 	.byte	W08
-@ 009   ----------------------------------------
 	.byte		N48   , Bn4 
 	.byte	W24
 	.byte		MOD   , 5
@@ -2688,7 +2508,6 @@ mus_poke_mart_6_004:
 	.byte	W24
 	.byte		        Gs4 
 	.byte	W24
-@ 010   ----------------------------------------
 	.byte		N40   , Fs4 
 	.byte	W24
 	.byte		MOD   , 4
@@ -2702,7 +2521,6 @@ mus_poke_mart_6_004:
 	.byte	W24
 	.byte		MOD   , 4
 	.byte	W24
-@ 011   ----------------------------------------
 	.byte		        0
 	.byte		N08   , As4 
 	.byte	W08
@@ -2716,8 +2534,7 @@ mus_poke_mart_6_004:
 	.byte	W08
 	.byte		        Fs5 
 	.byte	W56
-@ 012   ----------------------------------------
-mus_poke_mart_6_012:
+mus_poke_mart_6_001:
 	.byte	W48
 	.byte		N08   , Bn5 , v112
 	.byte	W16
@@ -2730,14 +2547,10 @@ mus_poke_mart_6_012:
 	.byte		        Bn4 
 	.byte	W08
 	.byte	PEND
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_6_012
-@ 015   ----------------------------------------
+	 .word	mus_poke_mart_6_001
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W48
 	.byte		N08   , En6 , v112
 	.byte	W16
@@ -2749,7 +2562,6 @@ mus_poke_mart_6_012:
 	.byte	W08
 	.byte		        Cs6 
 	.byte	W08
-@ 017   ----------------------------------------
 	.byte		N48   , Gs5 
 	.byte	W24
 	.byte		MOD   , 4
@@ -2759,7 +2571,6 @@ mus_poke_mart_6_012:
 	.byte	W24
 	.byte		        Gs5 , v112
 	.byte	W24
-@ 018   ----------------------------------------
 	.byte		N40   , As5 
 	.byte	W24
 	.byte		MOD   , 4
@@ -2773,7 +2584,6 @@ mus_poke_mart_6_012:
 	.byte	W24
 	.byte		MOD   , 4
 	.byte	W24
-@ 019   ----------------------------------------
 	.byte		        0
 	.byte		N08   , As5 
 	.byte	W16
@@ -2785,9 +2595,7 @@ mus_poke_mart_6_012:
 	.byte	W08
 	.byte		        En6 
 	.byte	W48
-@ 020   ----------------------------------------
 	.byte	W96
-@ 021   ----------------------------------------
 	.byte		N04   , Ds5 
 	.byte	W08
 	.byte		        Ds6 
@@ -2806,13 +2614,9 @@ mus_poke_mart_6_012:
 	.byte	W16
 	.byte		        Ds5 
 	.byte	W08
-@ 022   ----------------------------------------
 	.byte	W96
-@ 023   ----------------------------------------
 	.byte	W96
-@ 024   ----------------------------------------
 	.byte	W96
-@ 025   ----------------------------------------
 	.byte		N08   
 	.byte	W08
 	.byte		N04   , Ds6 
@@ -2831,38 +2635,26 @@ mus_poke_mart_6_012:
 	.byte	W16
 	.byte		        Ds5 
 	.byte	W08
-@ 026   ----------------------------------------
 	.byte	W96
-@ 027   ----------------------------------------
 	.byte	W96
-@ 028   ----------------------------------------
 	.byte	W96
-@ 029   ----------------------------------------
 	.byte	W96
-@ 030   ----------------------------------------
 	.byte	W96
-@ 031   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_poke_mart_6_B1
-mus_poke_mart_6_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_poke_mart_7:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 1
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 68*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 45*mus_poke_mart_mvl/mxv
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte		N12   , Ds6 , v120
 	.byte	W09
 	.byte		PAN   , c_v+62
@@ -2936,76 +2728,45 @@ mus_poke_mart_7:
 	.byte		        Bn2 
 	.byte	W21
 mus_poke_mart_7_B1:
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W96
-@ 012   ----------------------------------------
 	.byte	W96
-@ 013   ----------------------------------------
 	.byte	W96
-@ 014   ----------------------------------------
 	.byte	W96
-@ 015   ----------------------------------------
 	.byte	W96
-@ 016   ----------------------------------------
 	.byte	W96
-@ 017   ----------------------------------------
 	.byte	W96
-@ 018   ----------------------------------------
 	.byte	W96
-@ 019   ----------------------------------------
 	.byte	W96
-@ 020   ----------------------------------------
 	.byte	W96
-@ 021   ----------------------------------------
 	.byte	W96
-@ 022   ----------------------------------------
 	.byte	W96
-@ 023   ----------------------------------------
 	.byte	W96
-@ 024   ----------------------------------------
 	.byte	W96
-@ 025   ----------------------------------------
 	.byte	W96
-@ 026   ----------------------------------------
 	.byte	W96
-@ 027   ----------------------------------------
 	.byte	W96
-@ 028   ----------------------------------------
 	.byte	W96
-@ 029   ----------------------------------------
 	.byte	W96
-@ 030   ----------------------------------------
 	.byte	W96
-@ 031   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_poke_mart_7_B1
-mus_poke_mart_7_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_poke_mart_8:
 	.byte	KEYSH , mus_poke_mart_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 122*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 81*mus_poke_mart_mvl/mxv
 	.byte		N04   , Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3031,7 +2792,6 @@ mus_poke_mart_8:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		        Cn1 
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3060,7 +2820,6 @@ mus_poke_mart_8:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
-@ 002   ----------------------------------------
 	.byte		        Cn1 
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3086,7 +2845,6 @@ mus_poke_mart_8:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
-@ 003   ----------------------------------------
 	.byte		        En1 
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3121,8 +2879,7 @@ mus_poke_mart_8:
 	.byte		N04   , Fs1 
 	.byte	W08
 mus_poke_mart_8_B1:
-@ 004   ----------------------------------------
-	.byte		VOL   , 110*mus_poke_mart_mvl/mxv
+	.byte		VOL   , 73*mus_poke_mart_mvl/mxv
 	.byte		N04   , Cn1 , v112
 	.byte		N48   , An2 
 	.byte	W24
@@ -3141,8 +2898,7 @@ mus_poke_mart_8_B1:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs2 , v080
 	.byte	W08
-@ 005   ----------------------------------------
-mus_poke_mart_8_005:
+mus_poke_mart_8_000:
 	.byte		N04   , Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3170,8 +2926,7 @@ mus_poke_mart_8_005:
 	.byte		N04   , Fs1 
 	.byte	W08
 	.byte	PEND
-@ 006   ----------------------------------------
-mus_poke_mart_8_006:
+mus_poke_mart_8_001:
 	.byte		N04   , Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3198,14 +2953,11 @@ mus_poke_mart_8_006:
 	.byte		N04   , Fs2 , v080
 	.byte	W08
 	.byte	PEND
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_8_005
-@ 008   ----------------------------------------
+	 .word	mus_poke_mart_8_000
 	.byte	PATT
-	 .word	mus_poke_mart_8_006
-@ 009   ----------------------------------------
-mus_poke_mart_8_009:
+	 .word	mus_poke_mart_8_001
+mus_poke_mart_8_002:
 	.byte		N04   , Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3234,8 +2986,7 @@ mus_poke_mart_8_009:
 	.byte		N04   , Fs1 
 	.byte	W08
 	.byte	PEND
-@ 010   ----------------------------------------
-mus_poke_mart_8_010:
+mus_poke_mart_8_003:
 	.byte		N04   , Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
@@ -3254,7 +3005,6 @@ mus_poke_mart_8_010:
 	.byte		N04   , Cn1 
 	.byte	W08
 	.byte	PEND
-@ 011   ----------------------------------------
 	.byte		N04   
 	.byte	W16
 	.byte		N04   
@@ -3274,7 +3024,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		N04   
 	.byte	W08
-@ 012   ----------------------------------------
 	.byte		        Cn1 
 	.byte		N48   , An2 
 	.byte	W24
@@ -3293,25 +3042,18 @@ mus_poke_mart_8_010:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs2 , v080
 	.byte	W08
-@ 013   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_8_009
-@ 014   ----------------------------------------
+	 .word	mus_poke_mart_8_002
 	.byte	PATT
-	 .word	mus_poke_mart_8_006
-@ 015   ----------------------------------------
+	 .word	mus_poke_mart_8_001
 	.byte	PATT
-	 .word	mus_poke_mart_8_009
-@ 016   ----------------------------------------
+	 .word	mus_poke_mart_8_002
 	.byte	PATT
-	 .word	mus_poke_mart_8_006
-@ 017   ----------------------------------------
+	 .word	mus_poke_mart_8_001
 	.byte	PATT
-	 .word	mus_poke_mart_8_009
-@ 018   ----------------------------------------
+	 .word	mus_poke_mart_8_002
 	.byte	PATT
-	 .word	mus_poke_mart_8_010
-@ 019   ----------------------------------------
+	 .word	mus_poke_mart_8_003
 	.byte		N04   , Cn1 , v112
 	.byte	W16
 	.byte		N04   
@@ -3336,7 +3078,6 @@ mus_poke_mart_8_010:
 	.byte		        Cn1 , v112
 	.byte		N04   , Fs1 
 	.byte	W08
-@ 020   ----------------------------------------
 	.byte		        En1 
 	.byte		N04   , Fs2 
 	.byte	W16
@@ -3355,7 +3096,6 @@ mus_poke_mart_8_010:
 	.byte		        Cn1 
 	.byte		N24   , As1 
 	.byte	W24
-@ 021   ----------------------------------------
 	.byte		N04   , Dn3 , v064
 	.byte	W08
 	.byte		N04   
@@ -3375,7 +3115,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		        En3 
 	.byte	W08
-@ 022   ----------------------------------------
 	.byte		        Fs2 , v112
 	.byte	W16
 	.byte		        Fs2 , v064
@@ -3392,7 +3131,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		        Fs2 , v112
 	.byte	W08
-@ 023   ----------------------------------------
 	.byte		        Fs2 , v080
 	.byte	W04
 	.byte		        Fs2 , v072
@@ -3413,7 +3151,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		        Fs2 , v080
 	.byte	W08
-@ 024   ----------------------------------------
 	.byte		        En1 , v112
 	.byte		N04   , Fs2 
 	.byte	W16
@@ -3433,7 +3170,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		N04   
 	.byte	W08
-@ 025   ----------------------------------------
 	.byte		        En1 
 	.byte	W04
 	.byte		        En1 , v080
@@ -3456,7 +3192,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		N04   
 	.byte	W08
-@ 026   ----------------------------------------
 	.byte		        Fs2 
 	.byte	W08
 	.byte		        Fs2 , v064
@@ -3475,7 +3210,6 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		        Fs2 , v112
 	.byte	W08
-@ 027   ----------------------------------------
 	.byte		        Fs2 , v068
 	.byte	W16
 	.byte		        Fs2 , v112
@@ -3496,8 +3230,7 @@ mus_poke_mart_8_010:
 	.byte	W16
 	.byte		N04   
 	.byte	W08
-@ 028   ----------------------------------------
-mus_poke_mart_8_028:
+mus_poke_mart_8_004:
 	.byte		N04   , Fs2 , v068
 	.byte	W16
 	.byte		        Fs2 , v112
@@ -3515,13 +3248,10 @@ mus_poke_mart_8_028:
 	.byte		        Fs2 , v112
 	.byte	W08
 	.byte	PEND
-@ 029   ----------------------------------------
 	.byte	PATT
-	 .word	mus_poke_mart_8_028
-@ 030   ----------------------------------------
+	 .word	mus_poke_mart_8_004
 	.byte	PATT
-	 .word	mus_poke_mart_8_028
-@ 031   ----------------------------------------
+	 .word	mus_poke_mart_8_004
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		        Fs2 
@@ -3550,8 +3280,6 @@ mus_poke_mart_8_028:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_poke_mart_8_B1
-mus_poke_mart_8_B2:
-@ 032   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

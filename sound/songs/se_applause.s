@@ -1,27 +1,26 @@
 	.include "MPlayDef.s"
 
-	.equ	se_applause_grp, voicegroup128
+	.equ	se_applause_grp, voicegroup111
 	.equ	se_applause_pri, 5
 	.equ	se_applause_rev, reverb_set+50
-	.equ	se_applause_mvl, 100
+	.equ	se_applause_mvl, 127
 	.equ	se_applause_key, 0
 	.equ	se_applause_tbs, 1
-	.equ	se_applause_exg, 1
+	.equ	se_applause_exg, 0
 	.equ	se_applause_cmp, 1
 
 	.section .rodata
 	.global	se_applause
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 se_applause_1:
 	.byte	KEYSH , se_applause_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_applause_tbs/2
 	.byte		VOICE , 60
 	.byte		BENDR , 12
-	.byte		VOL   , 32*se_applause_mvl/mxv
+	.byte		VOL   , 25*se_applause_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+0
 	.byte		TIE   , Bn2 , v127
@@ -30,52 +29,50 @@ se_applause_1:
 	.byte	W01
 	.byte		        c_v+5
 	.byte	W01
-	.byte		VOL   , 44*se_applause_mvl/mxv
+	.byte		VOL   , 34*se_applause_mvl/mxv
 	.byte	W01
 	.byte		PAN   , c_v+2
 	.byte	W02
 	.byte		        c_v+0
 	.byte	W01
-	.byte		VOL   , 59*se_applause_mvl/mxv
+	.byte		VOL   , 46*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W01
 	.byte		        c_v-4
 	.byte	W02
-	.byte		VOL   , 72*se_applause_mvl/mxv
+	.byte		VOL   , 56*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W02
-@ 001   ----------------------------------------
 	.byte		        c_v+0
 	.byte	W01
 	.byte		        c_v+2
 	.byte	W01
 	.byte		        c_v+5
 	.byte	W01
-	.byte		VOL   , 89*se_applause_mvl/mxv
+	.byte		VOL   , 70*se_applause_mvl/mxv
 	.byte	W01
 	.byte		PAN   , c_v+2
 	.byte	W02
 	.byte		        c_v+0
 	.byte	W01
-	.byte		VOL   , 102*se_applause_mvl/mxv
+	.byte		VOL   , 80*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W01
 	.byte		        c_v-4
 	.byte	W02
-	.byte		VOL   , 112*se_applause_mvl/mxv
+	.byte		VOL   , 88*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		        c_v+0
 	.byte	W01
 	.byte		        c_v+2
 	.byte	W01
-	.byte		VOL   , 122*se_applause_mvl/mxv
+	.byte		VOL   , 96*se_applause_mvl/mxv
 	.byte		PAN   , c_v+5
 	.byte	W02
 	.byte		        c_v+2
 	.byte	W02
-	.byte		VOL   , 127*se_applause_mvl/mxv
+	.byte		VOL   , 100*se_applause_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W01
 	.byte		        c_v-2
@@ -84,8 +81,7 @@ se_applause_1:
 	.byte	W02
 	.byte		        c_v-2
 	.byte	W02
-@ 003   ----------------------------------------
-se_applause_1_003:
+se_applause_1_000:
 	.byte		PAN   , c_v+0
 	.byte	W01
 	.byte		        c_v+2
@@ -103,107 +99,86 @@ se_applause_1_003:
 	.byte		        c_v-2
 	.byte	W02
 	.byte	PEND
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 005   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 006   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 007   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 008   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 009   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 010   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 011   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 012   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 013   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 014   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 015   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 016   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 017   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 018   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 019   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 020   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 021   ----------------------------------------
+	 .word	se_applause_1_000
 	.byte	PATT
-	 .word	se_applause_1_003
-@ 022   ----------------------------------------
-	.byte		VOL   , 122*se_applause_mvl/mxv
+	 .word	se_applause_1_000
+	.byte		VOL   , 96*se_applause_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W01
 	.byte		        c_v+2
 	.byte	W01
 	.byte		        c_v+5
 	.byte	W01
-	.byte		VOL   , 117*se_applause_mvl/mxv
+	.byte		VOL   , 92*se_applause_mvl/mxv
 	.byte	W01
 	.byte		PAN   , c_v+2
 	.byte	W02
 	.byte		        c_v+0
 	.byte	W01
-	.byte		VOL   , 107*se_applause_mvl/mxv
+	.byte		VOL   , 84*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W01
 	.byte		        c_v-4
 	.byte	W02
-	.byte		VOL   , 92*se_applause_mvl/mxv
+	.byte		VOL   , 72*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W02
-@ 023   ----------------------------------------
 	.byte		        c_v+0
 	.byte	W01
 	.byte		        c_v+2
 	.byte	W01
-	.byte		VOL   , 81*se_applause_mvl/mxv
+	.byte		VOL   , 63*se_applause_mvl/mxv
 	.byte		PAN   , c_v+5
 	.byte	W02
-	.byte		VOL   , 67*se_applause_mvl/mxv
+	.byte		VOL   , 52*se_applause_mvl/mxv
 	.byte		PAN   , c_v+2
 	.byte	W02
 	.byte		        c_v+0
 	.byte	W01
-	.byte		VOL   , 47*se_applause_mvl/mxv
+	.byte		VOL   , 37*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W01
 	.byte		        c_v-4
 	.byte	W01
-	.byte		VOL   , 28*se_applause_mvl/mxv
+	.byte		VOL   , 22*se_applause_mvl/mxv
 	.byte	W01
-	.byte		        16*se_applause_mvl/mxv
+	.byte		        12*se_applause_mvl/mxv
 	.byte		PAN   , c_v-2
 	.byte	W02
 	.byte		EOT   , Bn2 
-@ 024   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

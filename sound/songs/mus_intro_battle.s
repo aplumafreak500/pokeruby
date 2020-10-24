@@ -1,28 +1,27 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_intro_battle_grp, voicegroup088
+	.equ	mus_intro_battle_grp, voicegroup085
 	.equ	mus_intro_battle_pri, 0
 	.equ	mus_intro_battle_rev, reverb_set+50
-	.equ	mus_intro_battle_mvl, 88
+	.equ	mus_intro_battle_mvl, 127
 	.equ	mus_intro_battle_key, 0
 	.equ	mus_intro_battle_tbs, 1
-	.equ	mus_intro_battle_exg, 1
+	.equ	mus_intro_battle_exg, 0
 	.equ	mus_intro_battle_cmp, 1
 
 	.section .rodata
 	.global	mus_intro_battle
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_intro_battle_1:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 184*mus_intro_battle_tbs/2
 	.byte		VOICE , 46
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 107*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 74*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v-46
 	.byte		N04   , Fn2 , v112
 	.byte	W04
@@ -75,15 +74,11 @@ mus_intro_battle_1:
 	.byte	W04
 	.byte		        Dn6 
 	.byte	W04
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte		VOICE , 127
-	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 53*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N02   , Fs5 
 	.byte	W08
@@ -112,7 +107,6 @@ mus_intro_battle_1:
 	.byte	W08
 	.byte		N02   
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte		PAN   , c_v-61
 	.byte		N02   , Fs5 , v112
 	.byte	W08
@@ -140,15 +134,10 @@ mus_intro_battle_1:
 	.byte	W08
 	.byte		N02   
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W24
 	.byte	TEMPO , 158*mus_intro_battle_tbs/2
 	.byte	W24
@@ -156,27 +145,24 @@ mus_intro_battle_1:
 	.byte	W24
 	.byte	TEMPO , 138*mus_intro_battle_tbs/2
 	.byte	W24
-@ 011   ----------------------------------------
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_intro_battle_2:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 46
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v-7
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte		VOICE , 60
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
 	.byte		N03   , Ds4 , v112
 	.byte	W06
 	.byte		N06   , Dn4 
@@ -196,7 +182,6 @@ mus_intro_battle_2:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		        0
 	.byte		N03   , Ds4 
 	.byte	W06
@@ -219,7 +204,6 @@ mus_intro_battle_2:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		VOICE , 60
 	.byte		MOD   , 0
 	.byte		N03   , Ds4 
@@ -241,70 +225,68 @@ mus_intro_battle_2:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        0
 	.byte		N48   , Ds5 , v072
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        99*mus_intro_battle_mvl/mxv
+	.byte		        68*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        83*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        74*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        67*mus_intro_battle_mvl/mxv
-	.byte	W02
 	.byte		        57*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        45*mus_intro_battle_mvl/mxv
+	.byte		        51*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        46*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        39*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte		        31*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        20*mus_intro_battle_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
 	.byte		N48   , Ds3 , v104
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 104*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        87*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        67*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        47*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        35*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        25*mus_intro_battle_mvl/mxv
-	.byte	W07
-@ 005   ----------------------------------------
-	.byte		MOD   , 0
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
-	.byte		N48   , Cs4 , v108
-	.byte	W24
-	.byte		MOD   , 6
-	.byte		VOL   , 110*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        104*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        99*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        86*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        78*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 72*mus_intro_battle_mvl/mxv
 	.byte	W02
 	.byte		        60*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        37*mus_intro_battle_mvl/mxv
+	.byte		        46*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        24*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        17*mus_intro_battle_mvl/mxv
+	.byte	W07
+	.byte		MOD   , 0
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
+	.byte		N48   , Cs4 , v108
+	.byte	W24
+	.byte		MOD   , 6
+	.byte		VOL   , 76*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        72*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        68*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        59*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        54*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        41*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        25*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        20*mus_intro_battle_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 112*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 77*mus_intro_battle_mvl/mxv
 	.byte		N04   , Ds3 , v112
 	.byte	W08
 	.byte		N04   
@@ -317,7 +299,6 @@ mus_intro_battle_2:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		        Cs3 
 	.byte	W08
 	.byte		N04   
@@ -340,7 +321,6 @@ mus_intro_battle_2:
 	.byte	W16
 	.byte		        Dn3 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		        Cs4 
 	.byte	W08
 	.byte		N04   
@@ -363,8 +343,7 @@ mus_intro_battle_2:
 	.byte	W03
 	.byte		        Cs4 
 	.byte	W03
-@ 008   ----------------------------------------
-	.byte		VOL   , 113*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 78*mus_intro_battle_mvl/mxv
 	.byte		N03   , Ds4 
 	.byte	W06
 	.byte		N06   , Dn4 
@@ -384,7 +363,6 @@ mus_intro_battle_2:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		        0
 	.byte		N03   , Ds4 
 	.byte	W06
@@ -407,183 +385,168 @@ mus_intro_battle_2:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		        0
 	.byte		N96   , Ds5 , v100
 	.byte	W48
 	.byte		MOD   , 7
-	.byte		VOL   , 115*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 79*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_intro_battle_mvl/mxv
+	.byte		        72*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        96*mus_intro_battle_mvl/mxv
+	.byte		        66*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        86*mus_intro_battle_mvl/mxv
+	.byte		        59*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        80*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        70*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        61*mus_intro_battle_mvl/mxv
-	.byte	W03
 	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        52*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        45*mus_intro_battle_mvl/mxv
+	.byte		        48*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        42*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_intro_battle_mvl/mxv
+	.byte		        38*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        29*mus_intro_battle_mvl/mxv
-	.byte	W05
-	.byte		        25*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        31*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        19*mus_intro_battle_mvl/mxv
+	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        24*mus_intro_battle_mvl/mxv
 	.byte	W04
-@ 011   ----------------------------------------
+	.byte		        20*mus_intro_battle_mvl/mxv
+	.byte	W05
+	.byte		        17*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        13*mus_intro_battle_mvl/mxv
+	.byte	W04
 	.byte		PAN   , c_v+0
 	.byte		MOD   , 1
-	.byte		VOL   , 115*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 79*mus_intro_battle_mvl/mxv
 	.byte		N08   , As4 , v112
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_intro_battle_3:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 58
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 58*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 40*mus_intro_battle_mvl/mxv
 	.byte		N48   , As1 , v112
 	.byte	W02
-	.byte		VOL   , 61*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 42*mus_intro_battle_mvl/mxv
 	.byte	W03
+	.byte		        44*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        47*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        48*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        51*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        55*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        59*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        62*mus_intro_battle_mvl/mxv
+	.byte	W02
 	.byte		        64*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        68*mus_intro_battle_mvl/mxv
+	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        72*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        70*mus_intro_battle_mvl/mxv
-	.byte	W02
 	.byte		        74*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        77*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        80*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        86*mus_intro_battle_mvl/mxv
+	.byte		        81*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        90*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        93*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        97*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        104*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        107*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        112*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        116*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        117*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        93*mus_intro_battle_mvl/mxv
+	.byte		        64*mus_intro_battle_mvl/mxv
 	.byte		N48   , Fn1 
 	.byte	W02
-	.byte		VOL   , 96*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 66*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        100*mus_intro_battle_mvl/mxv
+	.byte		        69*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        100*mus_intro_battle_mvl/mxv
+	.byte		        69*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        104*mus_intro_battle_mvl/mxv
+	.byte		        72*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        107*mus_intro_battle_mvl/mxv
+	.byte		        74*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        110*mus_intro_battle_mvl/mxv
+	.byte		        76*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        113*mus_intro_battle_mvl/mxv
+	.byte		        78*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        116*mus_intro_battle_mvl/mxv
+	.byte		        80*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        120*mus_intro_battle_mvl/mxv
+	.byte		        83*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        122*mus_intro_battle_mvl/mxv
+	.byte		        84*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        125*mus_intro_battle_mvl/mxv
+	.byte		        86*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        126*mus_intro_battle_mvl/mxv
+	.byte		        87*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        127*mus_intro_battle_mvl/mxv
+	.byte		        88*mus_intro_battle_mvl/mxv
 	.byte	W10
-@ 001   ----------------------------------------
 	.byte	W96
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte		N96   , Ds2 
 	.byte	W24
-	.byte		VOL   , 116*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 80*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        107*mus_intro_battle_mvl/mxv
+	.byte		        74*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        103*mus_intro_battle_mvl/mxv
+	.byte		        71*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        100*mus_intro_battle_mvl/mxv
+	.byte		        69*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        96*mus_intro_battle_mvl/mxv
+	.byte		        66*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        93*mus_intro_battle_mvl/mxv
+	.byte		        64*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        86*mus_intro_battle_mvl/mxv
+	.byte		        59*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        76*mus_intro_battle_mvl/mxv
+	.byte		        52*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte		        46*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        58*mus_intro_battle_mvl/mxv
+	.byte		        40*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        51*mus_intro_battle_mvl/mxv
+	.byte		        35*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        45*mus_intro_battle_mvl/mxv
+	.byte		        31*mus_intro_battle_mvl/mxv
 	.byte	W07
-@ 011   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 127*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 88*mus_intro_battle_mvl/mxv
 	.byte		N08   
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_intro_battle_4:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 47
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
-	.byte		VOL   , 127*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 88*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v-32
 	.byte	W48
 	.byte		N06   , Fn2 , v127
@@ -596,7 +559,6 @@ mus_intro_battle_4:
 	.byte	W06
 	.byte		        As1 , v127
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		PAN   , c_v+25
 	.byte		N06   , Ds3 , v124
 	.byte	W12
@@ -615,7 +577,6 @@ mus_intro_battle_4:
 	.byte		PAN   , c_v+0
 	.byte		N12   , Ds1 , v124
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte		PAN   , c_v+25
 	.byte		N06   , Ds3 
 	.byte	W12
@@ -642,7 +603,6 @@ mus_intro_battle_4:
 	.byte	W06
 	.byte		        Ds2 , v112
 	.byte	W06
-@ 003   ----------------------------------------
 	.byte		PAN   , c_v+27
 	.byte		N06   , Ds3 , v124
 	.byte	W12
@@ -668,15 +628,12 @@ mus_intro_battle_4:
 	.byte	W06
 	.byte		N12   , As1 , v127
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N06   , Ds1 
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 81*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 56*mus_intro_battle_mvl/mxv
 	.byte		N04   , Cs5 , v112
 	.byte	W08
 	.byte		        An4 
@@ -701,8 +658,7 @@ mus_intro_battle_4:
 	.byte	W08
 	.byte		        Cs4 
 	.byte	W08
-@ 007   ----------------------------------------
-	.byte		VOL   , 127*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 88*mus_intro_battle_mvl/mxv
 	.byte		N04   , An3 
 	.byte	W08
 	.byte		        Cs4 
@@ -743,9 +699,8 @@ mus_intro_battle_4:
 	.byte	W04
 	.byte		        Dn4 
 	.byte	W04
-@ 008   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 127*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 88*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v+25
 	.byte		N06   , Ds2 , v127
 	.byte	W06
@@ -766,7 +721,6 @@ mus_intro_battle_4:
 	.byte		PAN   , c_v+0
 	.byte		N12   , Ds1 , v120
 	.byte	W24
-@ 009   ----------------------------------------
 	.byte		PAN   , c_v+25
 	.byte		N06   , Ds2 , v124
 	.byte	W06
@@ -791,141 +745,137 @@ mus_intro_battle_4:
 	.byte	W06
 	.byte		        As1 
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		PAN   , c_v-35
 	.byte		N96   , Ds1 , v124
 	.byte	W24
-	.byte		VOL   , 113*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 78*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        112*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        110*mus_intro_battle_mvl/mxv
-	.byte	W07
-	.byte		        107*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        104*mus_intro_battle_mvl/mxv
-	.byte	W06
-	.byte		        104*mus_intro_battle_mvl/mxv
-	.byte	W06
-	.byte		        100*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        100*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        97*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        96*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        93*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        90*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        87*mus_intro_battle_mvl/mxv
-	.byte	W06
-	.byte		        83*mus_intro_battle_mvl/mxv
+	.byte		        77*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        76*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        71*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        68*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        29*mus_intro_battle_mvl/mxv
 	.byte	W07
-@ 011   ----------------------------------------
+	.byte		        74*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        72*mus_intro_battle_mvl/mxv
+	.byte	W06
+	.byte		        72*mus_intro_battle_mvl/mxv
+	.byte	W06
+	.byte		        69*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        69*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        66*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        64*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        62*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        60*mus_intro_battle_mvl/mxv
+	.byte	W06
+	.byte		        57*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        52*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        49*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        47*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        20*mus_intro_battle_mvl/mxv
+	.byte	W07
 	.byte		VOICE , 1
-	.byte		VOL   , 93*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N08   , Ds6 , v120
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_intro_battle_5:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+8
-	.byte		VOL   , 3*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 2*mus_intro_battle_mvl/mxv
 	.byte		N48   , As4 , v112
 	.byte	W02
-	.byte		VOL   , 5*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 3*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        6*mus_intro_battle_mvl/mxv
+	.byte	W08
+	.byte		        6*mus_intro_battle_mvl/mxv
+	.byte	W08
+	.byte		        8*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        9*mus_intro_battle_mvl/mxv
-	.byte	W08
-	.byte		        9*mus_intro_battle_mvl/mxv
-	.byte	W08
-	.byte		        12*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        13*mus_intro_battle_mvl/mxv
 	.byte	W04
+	.byte		        11*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        13*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        15*mus_intro_battle_mvl/mxv
+	.byte	W01
 	.byte		        16*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        19*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        22*mus_intro_battle_mvl/mxv
+	.byte		        18*mus_intro_battle_mvl/mxv
 	.byte	W01
+	.byte		        20*mus_intro_battle_mvl/mxv
+	.byte	W03
 	.byte		        24*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        26*mus_intro_battle_mvl/mxv
 	.byte	W01
+	.byte		        27*mus_intro_battle_mvl/mxv
+	.byte	W03
 	.byte		        29*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        35*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        39*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        42*mus_intro_battle_mvl/mxv
 	.byte	W04
 	.byte		N36   , Fn5 
 	.byte	W02
-	.byte		VOL   , 38*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 26*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        39*mus_intro_battle_mvl/mxv
+	.byte		        27*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        42*mus_intro_battle_mvl/mxv
+	.byte		        29*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_intro_battle_mvl/mxv
+	.byte		        32*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        50*mus_intro_battle_mvl/mxv
+	.byte		        34*mus_intro_battle_mvl/mxv
 	.byte	W08
-	.byte		        52*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        52*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        55*mus_intro_battle_mvl/mxv
+	.byte		        38*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        58*mus_intro_battle_mvl/mxv
+	.byte		        40*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        61*mus_intro_battle_mvl/mxv
+	.byte		        42*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte		        46*mus_intro_battle_mvl/mxv
 	.byte		N03   , Dn5 
 	.byte	W01
-	.byte		VOL   , 71*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 49*mus_intro_battle_mvl/mxv
 	.byte	W02
 	.byte		N03   , As4 
 	.byte	W01
-	.byte		VOL   , 76*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 52*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        80*mus_intro_battle_mvl/mxv
+	.byte		        55*mus_intro_battle_mvl/mxv
 	.byte	W01
 	.byte		N03   , Gs4 
 	.byte	W02
-	.byte		VOL   , 86*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 59*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        96*mus_intro_battle_mvl/mxv
+	.byte		        66*mus_intro_battle_mvl/mxv
 	.byte		N03   , Fn4 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		PAN   , c_v-21
-	.byte		VOL   , 76*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 52*mus_intro_battle_mvl/mxv
 	.byte	W06
 	.byte		N03   , An3 
 	.byte	W06
@@ -945,7 +895,6 @@ mus_intro_battle_5:
 	.byte	W12
 	.byte		N12   , Gs4 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		N06   , Cs4 
 	.byte	W06
 	.byte		N03   , Cn4 
@@ -974,7 +923,6 @@ mus_intro_battle_5:
 	.byte	W06
 	.byte		N12   , An4 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		N06   , As3 
 	.byte	W06
 	.byte		N03   , An3 
@@ -1003,7 +951,6 @@ mus_intro_battle_5:
 	.byte	W06
 	.byte		        An4 
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte		PAN   , c_v-32
 	.byte		N06   , As4 
 	.byte	W06
@@ -1037,7 +984,6 @@ mus_intro_battle_5:
 	.byte	W06
 	.byte		        En4 
 	.byte	W06
-@ 005   ----------------------------------------
 	.byte		        Fs4 
 	.byte	W06
 	.byte		        Fn4 
@@ -1070,9 +1016,8 @@ mus_intro_battle_5:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 96*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 66*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v-21
 	.byte		N04   , An5 
 	.byte	W08
@@ -1098,7 +1043,6 @@ mus_intro_battle_5:
 	.byte	W08
 	.byte		        An4 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W08
 	.byte		        Bn4 
@@ -1115,9 +1059,8 @@ mus_intro_battle_5:
 	.byte	W09
 	.byte		N12   , Fn5 
 	.byte	W24
-@ 008   ----------------------------------------
 	.byte		PAN   , c_v-24
-	.byte		VOL   , 81*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 56*mus_intro_battle_mvl/mxv
 	.byte		N06   , As3 
 	.byte	W06
 	.byte		N03   , An3 
@@ -1142,7 +1085,6 @@ mus_intro_battle_5:
 	.byte	W12
 	.byte		N12   , Gn4 
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		N03   , Cs4 
 	.byte	W06
 	.byte		N06   , Cn4 
@@ -1163,10 +1105,9 @@ mus_intro_battle_5:
 	.byte	W12
 	.byte		        An4 
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		VOICE , 46
 	.byte		PAN   , c_v-32
-	.byte		VOL   , 96*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 66*mus_intro_battle_mvl/mxv
 	.byte		N06   , As5 
 	.byte	W06
 	.byte		        Gs5 
@@ -1201,92 +1142,89 @@ mus_intro_battle_5:
 	.byte	W06
 	.byte		        Fn4 , v076
 	.byte	W06
-@ 011   ----------------------------------------
-	.byte		VOL   , 96*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 66*mus_intro_battle_mvl/mxv
 	.byte		PAN   , c_v+31
 	.byte		N06   , Ds4 , v060
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_intro_battle_6:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
 	.byte		PAN   , c_v-63
-	.byte		VOL   , 9*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 6*mus_intro_battle_mvl/mxv
 	.byte		N48   , As2 , v112
 	.byte	W02
-	.byte		VOL   , 13*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 9*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        19*mus_intro_battle_mvl/mxv
+	.byte		        13*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        21*mus_intro_battle_mvl/mxv
+	.byte		        14*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        22*mus_intro_battle_mvl/mxv
+	.byte		        15*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        26*mus_intro_battle_mvl/mxv
+	.byte		        18*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte		        20*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        34*mus_intro_battle_mvl/mxv
+	.byte		        23*mus_intro_battle_mvl/mxv
 	.byte	W04
+	.byte		        24*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        28*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        31*mus_intro_battle_mvl/mxv
+	.byte	W03
 	.byte		        35*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_intro_battle_mvl/mxv
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        42*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        43*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte		N48   , Fn3 
+	.byte	W02
+	.byte		VOL   , 35*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        40*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        42*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        45*mus_intro_battle_mvl/mxv
 	.byte	W03
+	.byte		        49*mus_intro_battle_mvl/mxv
+	.byte	W04
 	.byte		        51*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        52*mus_intro_battle_mvl/mxv
 	.byte	W02
 	.byte		        55*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        61*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        63*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        47*mus_intro_battle_mvl/mxv
-	.byte		N48   , Fn3 
-	.byte	W02
-	.byte		VOL   , 51*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W04
 	.byte		        58*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        61*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        65*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        71*mus_intro_battle_mvl/mxv
+	.byte		        60*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        74*mus_intro_battle_mvl/mxv
+	.byte		        62*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        84*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        87*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        90*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        93*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        97*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        102*mus_intro_battle_mvl/mxv
-	.byte	W04
-@ 001   ----------------------------------------
 	.byte		        64*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        70*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        44*mus_intro_battle_mvl/mxv
 	.byte	W06
 	.byte		N06   , An3 
 	.byte	W06
@@ -1305,7 +1243,6 @@ mus_intro_battle_6:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As3 
 	.byte	W06
@@ -1326,7 +1263,6 @@ mus_intro_battle_6:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As3 
 	.byte	W12
@@ -1345,50 +1281,48 @@ mus_intro_battle_6:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        0
 	.byte		N48   , As4 
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 60*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 41*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        52*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        45*mus_intro_battle_mvl/mxv
+	.byte		        31*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        41*mus_intro_battle_mvl/mxv
+	.byte		        28*mus_intro_battle_mvl/mxv
 	.byte	W07
 	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N48   , As2 
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 61*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 42*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        52*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        44*mus_intro_battle_mvl/mxv
+	.byte		        30*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        37*mus_intro_battle_mvl/mxv
+	.byte		        25*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte		        22*mus_intro_battle_mvl/mxv
 	.byte	W04
-@ 005   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N48   , Fs3 
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 55*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 38*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        50*mus_intro_battle_mvl/mxv
+	.byte		        34*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        44*mus_intro_battle_mvl/mxv
+	.byte		        30*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        37*mus_intro_battle_mvl/mxv
+	.byte		        25*mus_intro_battle_mvl/mxv
 	.byte	W07
 	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N04   , Fs2 
 	.byte	W08
 	.byte		N04   
@@ -1401,7 +1335,6 @@ mus_intro_battle_6:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		        Gn2 
 	.byte	W08
 	.byte		N04   
@@ -1424,7 +1357,6 @@ mus_intro_battle_6:
 	.byte	W16
 	.byte		        Gs2 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		        Gn3 
 	.byte	W08
 	.byte		N04   
@@ -1447,7 +1379,6 @@ mus_intro_battle_6:
 	.byte	W03
 	.byte		        En3 
 	.byte	W03
-@ 008   ----------------------------------------
 	.byte		        As3 
 	.byte	W06
 	.byte		N06   , An3 
@@ -1467,7 +1398,6 @@ mus_intro_battle_6:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As3 
 	.byte	W06
@@ -1488,114 +1418,110 @@ mus_intro_battle_6:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		        0
 	.byte		N96   , Gn3 
 	.byte	W48
 	.byte		MOD   , 7
-	.byte		VOL   , 60*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 41*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        54*mus_intro_battle_mvl/mxv
+	.byte		        37*mus_intro_battle_mvl/mxv
 	.byte	W07
-	.byte		        51*mus_intro_battle_mvl/mxv
-	.byte	W05
-	.byte		        45*mus_intro_battle_mvl/mxv
-	.byte	W07
-	.byte		        39*mus_intro_battle_mvl/mxv
-	.byte	W05
 	.byte		        35*mus_intro_battle_mvl/mxv
-	.byte	W07
-	.byte		        32*mus_intro_battle_mvl/mxv
 	.byte	W05
-	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte		        31*mus_intro_battle_mvl/mxv
 	.byte	W07
-@ 011   ----------------------------------------
+	.byte		        27*mus_intro_battle_mvl/mxv
+	.byte	W05
+	.byte		        24*mus_intro_battle_mvl/mxv
+	.byte	W07
+	.byte		        22*mus_intro_battle_mvl/mxv
+	.byte	W05
+	.byte		        20*mus_intro_battle_mvl/mxv
+	.byte	W07
 	.byte		MOD   , 1
-	.byte		VOL   , 74*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 51*mus_intro_battle_mvl/mxv
 	.byte		N06   
 	.byte		N08   , Gn5 
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_intro_battle_7:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 9*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 6*mus_intro_battle_mvl/mxv
 	.byte		N48   , Dn4 , v112
 	.byte	W02
-	.byte		VOL   , 13*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 9*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        19*mus_intro_battle_mvl/mxv
+	.byte		        13*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        21*mus_intro_battle_mvl/mxv
+	.byte		        14*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        22*mus_intro_battle_mvl/mxv
+	.byte		        15*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        26*mus_intro_battle_mvl/mxv
+	.byte		        18*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte		        20*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        34*mus_intro_battle_mvl/mxv
+	.byte		        23*mus_intro_battle_mvl/mxv
 	.byte	W04
+	.byte		        24*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        28*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        31*mus_intro_battle_mvl/mxv
+	.byte	W03
 	.byte		        35*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_intro_battle_mvl/mxv
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        42*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        43*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte		N48   , As4 
+	.byte	W02
+	.byte		VOL   , 35*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        40*mus_intro_battle_mvl/mxv
+	.byte	W02
+	.byte		        42*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        45*mus_intro_battle_mvl/mxv
 	.byte	W03
+	.byte		        49*mus_intro_battle_mvl/mxv
+	.byte	W04
 	.byte		        51*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        52*mus_intro_battle_mvl/mxv
 	.byte	W02
 	.byte		        55*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        61*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        63*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        47*mus_intro_battle_mvl/mxv
-	.byte		N48   , As4 
-	.byte	W02
-	.byte		VOL   , 51*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W04
 	.byte		        58*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        61*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        65*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        71*mus_intro_battle_mvl/mxv
+	.byte		        60*mus_intro_battle_mvl/mxv
 	.byte	W04
-	.byte		        74*mus_intro_battle_mvl/mxv
+	.byte		        62*mus_intro_battle_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        84*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        87*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        90*mus_intro_battle_mvl/mxv
-	.byte	W02
-	.byte		        93*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        97*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        102*mus_intro_battle_mvl/mxv
-	.byte	W04
-@ 001   ----------------------------------------
 	.byte		        64*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        67*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        70*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        44*mus_intro_battle_mvl/mxv
 	.byte	W06
 	.byte		N06   , An2 
 	.byte	W06
@@ -1615,7 +1541,6 @@ mus_intro_battle_7:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As2 
 	.byte	W06
@@ -1636,7 +1561,6 @@ mus_intro_battle_7:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As2 
 	.byte	W12
@@ -1655,94 +1579,92 @@ mus_intro_battle_7:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        0
 	.byte		N48   , As3 
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 61*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 42*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        58*mus_intro_battle_mvl/mxv
+	.byte		        40*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W04
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        51*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        48*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        45*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        42*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        39*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        39*mus_intro_battle_mvl/mxv
-	.byte	W01
 	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W04
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        35*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        33*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        31*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        27*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        27*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        26*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N48   
 	.byte	W24
 	.byte		MOD   , 6
-	.byte		VOL   , 61*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 42*mus_intro_battle_mvl/mxv
 	.byte	W01
-	.byte		        60*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        57*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        50*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        47*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        45*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        42*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        38*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        34*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        32*mus_intro_battle_mvl/mxv
-	.byte	W03
-@ 005   ----------------------------------------
-	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
-	.byte		N48   , Bn3 
-	.byte	W24
-	.byte		MOD   , 6
-	.byte		VOL   , 63*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        60*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        57*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        55*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        52*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        48*mus_intro_battle_mvl/mxv
-	.byte	W03
-	.byte		        47*mus_intro_battle_mvl/mxv
-	.byte	W01
-	.byte		        44*mus_intro_battle_mvl/mxv
+	.byte		        41*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		        39*mus_intro_battle_mvl/mxv
 	.byte	W01
 	.byte		        38*mus_intro_battle_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_intro_battle_mvl/mxv
+	.byte		        36*mus_intro_battle_mvl/mxv
 	.byte	W01
+	.byte		        34*mus_intro_battle_mvl/mxv
+	.byte	W03
 	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        31*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        29*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        26*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        23*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        22*mus_intro_battle_mvl/mxv
 	.byte	W03
 	.byte		MOD   , 0
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
+	.byte		N48   , Bn3 
+	.byte	W24
+	.byte		MOD   , 6
+	.byte		VOL   , 43*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        41*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        39*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        38*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        36*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        33*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        32*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        30*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        27*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        26*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		        24*mus_intro_battle_mvl/mxv
+	.byte	W01
+	.byte		        22*mus_intro_battle_mvl/mxv
+	.byte	W03
+	.byte		MOD   , 0
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N04   , Cs3 
 	.byte	W08
 	.byte		N04   
@@ -1755,7 +1677,6 @@ mus_intro_battle_7:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		        Bn2 
 	.byte	W08
 	.byte		N04   
@@ -1778,7 +1699,6 @@ mus_intro_battle_7:
 	.byte	W16
 	.byte		        Cn3 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		BEND  , c_v-6
 	.byte		N04   , Bn3 
 	.byte	W08
@@ -1810,7 +1730,6 @@ mus_intro_battle_7:
 	.byte	W04
 	.byte		        Dn4 
 	.byte	W04
-@ 008   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte		N03   , As2 , v112
 	.byte	W06
@@ -1831,7 +1750,6 @@ mus_intro_battle_7:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		        0
 	.byte		N03   , As2 
 	.byte	W06
@@ -1852,27 +1770,24 @@ mus_intro_battle_7:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 010   ----------------------------------------
 	.byte		        0
 	.byte		N96   , As4 
 	.byte	W48
 	.byte		MOD   , 7
 	.byte	W48
-@ 011   ----------------------------------------
 	.byte		        1
-	.byte		VOL   , 64*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 44*mus_intro_battle_mvl/mxv
 	.byte		N06   , Ds1 
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_intro_battle_8:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 104*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 72*mus_intro_battle_mvl/mxv
 	.byte		N03   , En1 , v068
 	.byte	W03
 	.byte		N03   
@@ -1937,8 +1852,7 @@ mus_intro_battle_8:
 	.byte	W03
 	.byte		        En1 , v112
 	.byte	W03
-@ 001   ----------------------------------------
-mus_intro_battle_8_001:
+mus_intro_battle_8_000:
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -1982,7 +1896,6 @@ mus_intro_battle_8_001:
 	.byte		N03   
 	.byte	W03
 	.byte	PEND
-@ 002   ----------------------------------------
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -2025,7 +1938,6 @@ mus_intro_battle_8_001:
 	.byte	W03
 	.byte		        En1 , v064
 	.byte	W03
-@ 003   ----------------------------------------
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -2068,8 +1980,7 @@ mus_intro_battle_8_001:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 004   ----------------------------------------
-	.byte		VOL   , 91*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 63*mus_intro_battle_mvl/mxv
 	.byte		N04   , Fs1 , v112
 	.byte		N48   , An2 , v084
 	.byte	W08
@@ -2096,7 +2007,6 @@ mus_intro_battle_8_001:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte		        Fs1 , v112
 	.byte	W08
 	.byte		        Fs1 , v080
@@ -2122,8 +2032,7 @@ mus_intro_battle_8_001:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 006   ----------------------------------------
-	.byte		VOL   , 104*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 72*mus_intro_battle_mvl/mxv
 	.byte		N03   , En1 , v112
 	.byte	W03
 	.byte		        En1 , v064
@@ -2188,14 +2097,11 @@ mus_intro_battle_8_001:
 	.byte	W03
 	.byte		        En1 , v120
 	.byte	W03
-@ 007   ----------------------------------------
 	.byte	W48
 	.byte		N48   , An2 , v084
 	.byte	W48
-@ 008   ----------------------------------------
 	.byte	PATT
-	 .word	mus_intro_battle_8_001
-@ 009   ----------------------------------------
+	 .word	mus_intro_battle_8_000
 	.byte		N06   , En1 , v112
 	.byte	W12
 	.byte		N06   
@@ -2237,25 +2143,22 @@ mus_intro_battle_8_001:
 	.byte	W03
 	.byte		N03   
 	.byte	W03
-@ 010   ----------------------------------------
 	.byte		N48   , An2 , v084
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte	W12
 	.byte	FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
+@********************** Track  9 **********************@
 
 mus_intro_battle_9:
 	.byte	KEYSH , mus_intro_battle_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 81
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 94*mus_intro_battle_mvl/mxv
+	.byte		VOL   , 65*mus_intro_battle_mvl/mxv
 	.byte	W48
 	.byte		N06   , Fn2 , v092
 	.byte	W12
@@ -2267,7 +2170,6 @@ mus_intro_battle_9:
 	.byte	W06
 	.byte		N12   , Dn1 
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		N14   , Ds1 , v120
 	.byte	W12
 	.byte		N04   , Dn1 , v112
@@ -2284,7 +2186,6 @@ mus_intro_battle_9:
 	.byte	W12
 	.byte		N06   , Gs1 
 	.byte	W12
-@ 002   ----------------------------------------
 	.byte		N12   , Ds1 , v120
 	.byte	W12
 	.byte		N04   , Fs1 , v112
@@ -2305,7 +2206,6 @@ mus_intro_battle_9:
 	.byte	W06
 	.byte		        Fs1 
 	.byte	W06
-@ 003   ----------------------------------------
 	.byte		N12   , Ds1 , v120
 	.byte	W12
 	.byte		N04   , Fs1 , v112
@@ -2322,7 +2222,6 @@ mus_intro_battle_9:
 	.byte	W12
 	.byte		N06   , Dn2 
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		N04   , Ds1 
 	.byte	W08
 	.byte		        Ds1 , v084
@@ -2345,7 +2244,6 @@ mus_intro_battle_9:
 	.byte	W16
 	.byte		N08   , As1 
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte		N04   , Ds1 , v084
 	.byte	W08
 	.byte		N04   
@@ -2368,7 +2266,6 @@ mus_intro_battle_9:
 	.byte	W16
 	.byte		N08   , Ds2 
 	.byte	W08
-@ 006   ----------------------------------------
 	.byte		N04   , Gn1 
 	.byte	W16
 	.byte		        Gn1 , v096
@@ -2385,7 +2282,6 @@ mus_intro_battle_9:
 	.byte	W16
 	.byte		N06   , Dn2 
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte		N04   , Cs3 
 	.byte	W08
 	.byte		N04   
@@ -2402,7 +2298,6 @@ mus_intro_battle_9:
 	.byte	W03
 	.byte		N15   , An1 
 	.byte	W15
-@ 008   ----------------------------------------
 	.byte		N12   , Ds1 , v120
 	.byte	W12
 	.byte		N04   , Dn1 , v112
@@ -2419,7 +2314,6 @@ mus_intro_battle_9:
 	.byte	W12
 	.byte		N06   , Dn2 
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		N12   , Ds1 , v120
 	.byte	W12
 	.byte		N04   , Fs1 , v112
@@ -2434,9 +2328,7 @@ mus_intro_battle_9:
 	.byte	W12
 	.byte		N24   , Dn2 
 	.byte	W24
-@ 010   ----------------------------------------
 	.byte	W96
-@ 011   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N06   , Ds1 
 	.byte	W12

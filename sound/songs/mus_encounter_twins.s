@@ -1,28 +1,27 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_encounter_twins_grp, voicegroup095
+	.equ	mus_encounter_twins_grp, voicegroup092
 	.equ	mus_encounter_twins_pri, 0
 	.equ	mus_encounter_twins_rev, reverb_set+50
-	.equ	mus_encounter_twins_mvl, 75
+	.equ	mus_encounter_twins_mvl, 127
 	.equ	mus_encounter_twins_key, 0
 	.equ	mus_encounter_twins_tbs, 1
-	.equ	mus_encounter_twins_exg, 1
+	.equ	mus_encounter_twins_exg, 0
 	.equ	mus_encounter_twins_cmp, 1
 
 	.section .rodata
 	.global	mus_encounter_twins
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_encounter_twins_1:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 134*mus_encounter_twins_tbs/2
 	.byte		VOICE , 127
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 67*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_twins_mvl/mxv
 	.byte		N03   , En5 , v112
 	.byte	W12
 	.byte		        En5 , v060
@@ -39,7 +38,6 @@ mus_encounter_twins_1:
 	.byte	W12
 	.byte		        En5 , v064
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		        En5 , v112
 	.byte	W03
 	.byte		        En5 , v072
@@ -55,7 +53,6 @@ mus_encounter_twins_1:
 	.byte		        En5 , v112
 	.byte	W12
 mus_encounter_twins_1_B1:
-@ 002   ----------------------------------------
 	.byte		N03   , En5 , v112
 	.byte	W12
 	.byte		        En5 , v064
@@ -76,7 +73,6 @@ mus_encounter_twins_1_B1:
 	.byte	W12
 	.byte		        En5 , v064
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		        En5 , v112
 	.byte	W12
 	.byte		        En5 , v064
@@ -97,7 +93,6 @@ mus_encounter_twins_1_B1:
 	.byte	W06
 	.byte		        En5 , v088
 	.byte	W24
-@ 004   ----------------------------------------
 	.byte		        En5 , v112
 	.byte	W12
 	.byte		        En5 , v064
@@ -116,7 +111,6 @@ mus_encounter_twins_1_B1:
 	.byte	W12
 	.byte		        En5 , v096
 	.byte	W24
-@ 005   ----------------------------------------
 	.byte		        En5 , v112
 	.byte	W12
 	.byte		        En5 , v064
@@ -141,63 +135,51 @@ mus_encounter_twins_1_B1:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_encounter_twins_1_B1
-mus_encounter_twins_1_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_encounter_twins_2:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 126
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 67*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 39*mus_encounter_twins_mvl/mxv
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte	W24
 	.byte		N06   , Gn5 , v096
 	.byte	W72
 mus_encounter_twins_2_B1:
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W36
 	.byte		N06   , Gn5 , v080
 	.byte	W48
 	.byte		        Gn5 , v096
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte	W84
 	.byte		        Gn5 , v084
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte	W36
 	.byte		N06   
 	.byte	W60
 	.byte	GOTO
 	 .word	mus_encounter_twins_2_B1
-mus_encounter_twins_2_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_encounter_twins_3:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 38
 	.byte		BENDR , 12
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 127*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 75*mus_encounter_twins_mvl/mxv
 	.byte		BEND  , c_v-2
 	.byte	W03
 	.byte		        c_v+0
 	.byte	W92
 	.byte	W01
-@ 001   ----------------------------------------
 	.byte		N54   , Dn1 , v112
 	.byte	W06
 	.byte		BEND  , c_v+3
@@ -215,7 +197,6 @@ mus_encounter_twins_3:
 	.byte		        An1 
 	.byte	W12
 mus_encounter_twins_3_B1:
-@ 002   ----------------------------------------
 	.byte		N24   , Gn1 , v112
 	.byte	W06
 	.byte		BEND  , c_v+3
@@ -236,7 +217,6 @@ mus_encounter_twins_3_B1:
 	.byte	W12
 	.byte		N06   , En1 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		N24   , Fn1 
 	.byte	W06
 	.byte		BEND  , c_v+3
@@ -259,7 +239,6 @@ mus_encounter_twins_3_B1:
 	.byte	W12
 	.byte		N06   , Fs1 
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		N24   , Bn1 
 	.byte	W06
 	.byte		BEND  , c_v+3
@@ -284,7 +263,6 @@ mus_encounter_twins_3_B1:
 	.byte	W12
 	.byte		N06   , En1 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte		N24   , Fn1 
 	.byte	W06
 	.byte		BEND  , c_v+3
@@ -310,19 +288,16 @@ mus_encounter_twins_3_B1:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_encounter_twins_3_B1
-mus_encounter_twins_3_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_encounter_twins_4:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v-35
-	.byte		VOL   , 78*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 46*mus_encounter_twins_mvl/mxv
 	.byte		N06   , An3 , v112
 	.byte	W24
 	.byte		        Cn4 
@@ -339,7 +314,6 @@ mus_encounter_twins_4:
 	.byte	W03
 	.byte		        Fs3 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		N60   , An3 
 	.byte	W60
 	.byte		N06   , Bn2 
@@ -353,7 +327,6 @@ mus_encounter_twins_4:
 	.byte		        Cn3 
 	.byte	W03
 mus_encounter_twins_4_B1:
-@ 002   ----------------------------------------
 	.byte		N06   , Dn3 , v112
 	.byte	W12
 	.byte		N03   , Dn3 , v068
@@ -374,7 +347,6 @@ mus_encounter_twins_4_B1:
 	.byte	W03
 	.byte		N06   , Fs3 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		N03   
 	.byte	W12
 	.byte		N03   
@@ -403,7 +375,6 @@ mus_encounter_twins_4_B1:
 	.byte	W03
 	.byte		        Bn2 
 	.byte	W03
-@ 004   ----------------------------------------
 	.byte		N24   , Dn3 
 	.byte	W12
 	.byte		BEND  , c_v-5
@@ -422,7 +393,6 @@ mus_encounter_twins_4_B1:
 	.byte	W12
 	.byte		        Gn3 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W12
 	.byte		        Dn3 
@@ -453,33 +423,25 @@ mus_encounter_twins_4_B1:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_twins_4_B1
-mus_encounter_twins_4_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_encounter_twins_5:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		LFOS  , 44
-	.byte		VOL   , 94*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 55*mus_encounter_twins_mvl/mxv
 	.byte	W12
 	.byte		N03   , Cs5 , v112
 	.byte	W24
 	.byte		N03   
 	.byte	W60
-@ 001   ----------------------------------------
 	.byte	W96
 mus_encounter_twins_5_B1:
-@ 002   ----------------------------------------
 	.byte	W96
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W36
 	.byte		N03   , Cs4 , v112
 	.byte	W24
@@ -487,20 +449,17 @@ mus_encounter_twins_5_B1:
 	.byte	W36
 	.byte	GOTO
 	 .word	mus_encounter_twins_5_B1
-mus_encounter_twins_5_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_encounter_twins_6:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 24
 	.byte		LFOS  , 44
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 95*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 56*mus_encounter_twins_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N06   , Dn4 , v112
 	.byte	W12
@@ -525,7 +484,6 @@ mus_encounter_twins_6:
 	.byte	W03
 	.byte		        Cn4 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		N60   , Dn4 
 	.byte	W06
 	.byte		BEND  , c_v+8
@@ -547,7 +505,6 @@ mus_encounter_twins_6:
 	.byte		        An3 
 	.byte	W03
 mus_encounter_twins_6_B1:
-@ 002   ----------------------------------------
 	.byte		N24   , Bn3 , v112
 	.byte	W12
 	.byte		BEND  , c_v-5
@@ -570,7 +527,6 @@ mus_encounter_twins_6_B1:
 	.byte	W03
 	.byte		N36   , Cn4 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte		BEND  , c_v-5
 	.byte	W06
 	.byte		        c_v+0
@@ -597,7 +553,6 @@ mus_encounter_twins_6_B1:
 	.byte	W03
 	.byte		        Gn3 
 	.byte	W03
-@ 004   ----------------------------------------
 	.byte		N24   , Bn3 
 	.byte	W12
 	.byte		BEND  , c_v-5
@@ -616,7 +571,6 @@ mus_encounter_twins_6_B1:
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte		        Cn4 
 	.byte	W12
 	.byte		        An3 
@@ -648,23 +602,19 @@ mus_encounter_twins_6_B1:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_twins_6_B1
-mus_encounter_twins_6_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_encounter_twins_7:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 80
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
-	.byte		VOL   , 68*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 40*mus_encounter_twins_mvl/mxv
 	.byte		PAN   , c_v-62
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte		N03   , An3 , v112
 	.byte	W06
 	.byte		        Gn3 
@@ -676,7 +626,6 @@ mus_encounter_twins_7:
 	.byte		N36   , Dn3 
 	.byte	W72
 mus_encounter_twins_7_B1:
-@ 002   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N03   , Dn3 , v112
 	.byte	W12
@@ -700,8 +649,7 @@ mus_encounter_twins_7_B1:
 	.byte	W12
 	.byte		        Dn3 
 	.byte	W12
-@ 003   ----------------------------------------
-mus_encounter_twins_7_003:
+mus_encounter_twins_7_000:
 	.byte		N03   , Cn3 , v112
 	.byte	W12
 	.byte		        Fn3 
@@ -725,7 +673,6 @@ mus_encounter_twins_7_003:
 	.byte		        An2 
 	.byte	W12
 	.byte	PEND
-@ 004   ----------------------------------------
 	.byte		        Dn3 
 	.byte	W12
 	.byte		        Gn3 
@@ -748,28 +695,23 @@ mus_encounter_twins_7_003:
 	.byte	W12
 	.byte		        Dn3 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_twins_7_003
+	 .word	mus_encounter_twins_7_000
 	.byte	GOTO
 	 .word	mus_encounter_twins_7_B1
-mus_encounter_twins_7_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_encounter_twins_8:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 81
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 68*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 40*mus_encounter_twins_mvl/mxv
 	.byte	W96
-@ 001   ----------------------------------------
 	.byte		N03   , Fs4 , v112
 	.byte	W06
 	.byte		        En4 
@@ -781,8 +723,7 @@ mus_encounter_twins_8:
 	.byte		N36   , An3 
 	.byte	W72
 mus_encounter_twins_8_B1:
-@ 002   ----------------------------------------
-mus_encounter_twins_8_002:
+mus_encounter_twins_8_000:
 	.byte		PAN   , c_v+63
 	.byte		N03   , Gn3 , v112
 	.byte	W12
@@ -810,8 +751,7 @@ mus_encounter_twins_8_002:
 	.byte		        Bn3 
 	.byte	W12
 	.byte	PEND
-@ 003   ----------------------------------------
-mus_encounter_twins_8_003:
+mus_encounter_twins_8_001:
 	.byte		PAN   , c_v+63
 	.byte		N03   , An3 , v112
 	.byte	W12
@@ -839,25 +779,20 @@ mus_encounter_twins_8_003:
 	.byte		        Fs3 
 	.byte	W12
 	.byte	PEND
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_twins_8_002
-@ 005   ----------------------------------------
+	 .word	mus_encounter_twins_8_000
 	.byte	PATT
-	 .word	mus_encounter_twins_8_003
+	 .word	mus_encounter_twins_8_001
 	.byte	GOTO
 	 .word	mus_encounter_twins_8_B1
-mus_encounter_twins_8_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
+@********************** Track  9 **********************@
 
 mus_encounter_twins_9:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 99*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 58*mus_encounter_twins_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N06   , En3 , v112
 	.byte	W12
@@ -875,7 +810,6 @@ mus_encounter_twins_9:
 	.byte	W12
 	.byte		        Dn3 
 	.byte	W12
-@ 001   ----------------------------------------
 	.byte		        Dn3 , v080
 	.byte	W06
 	.byte		N06   
@@ -887,8 +821,7 @@ mus_encounter_twins_9:
 	.byte		        Dn3 , v112
 	.byte	W72
 mus_encounter_twins_9_B1:
-@ 002   ----------------------------------------
-mus_encounter_twins_9_002:
+mus_encounter_twins_9_000:
 	.byte		N06   , En3 , v112
 	.byte	W12
 	.byte		        En3 , v072
@@ -900,7 +833,6 @@ mus_encounter_twins_9_002:
 	.byte		N06   
 	.byte	W12
 	.byte	PEND
-@ 003   ----------------------------------------
 	.byte		        En3 
 	.byte	W12
 	.byte		        En3 , v072
@@ -909,10 +841,8 @@ mus_encounter_twins_9_002:
 	.byte	W36
 	.byte		N06   
 	.byte	W36
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_twins_9_002
-@ 005   ----------------------------------------
+	 .word	mus_encounter_twins_9_000
 	.byte		N06   , En3 , v112
 	.byte	W12
 	.byte		        En3 , v072
@@ -927,20 +857,17 @@ mus_encounter_twins_9_002:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_encounter_twins_9_B1
-mus_encounter_twins_9_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 10 (Midi-Chn.10) ****************@
+@********************** Track 10 **********************@
 
 mus_encounter_twins_10:
 	.byte	KEYSH , mus_encounter_twins_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		LFOS  , 44
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
-	.byte		VOL   , 46*mus_encounter_twins_mvl/mxv
+	.byte		VOL   , 27*mus_encounter_twins_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+2
 	.byte		N06   , Dn4 , v112
@@ -966,7 +893,6 @@ mus_encounter_twins_10:
 	.byte	W03
 	.byte		        Cn4 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		N60   , Dn4 
 	.byte	W60
 	.byte		N06   , Fs3 
@@ -980,7 +906,6 @@ mus_encounter_twins_10:
 	.byte		        An3 
 	.byte	W03
 mus_encounter_twins_10_B1:
-@ 002   ----------------------------------------
 	.byte		N06   , Bn3 , v112
 	.byte	W24
 	.byte		        Gn3 
@@ -999,7 +924,6 @@ mus_encounter_twins_10_B1:
 	.byte	W03
 	.byte		N18   , Cn4 
 	.byte	W12
-@ 003   ----------------------------------------
 	.byte	W24
 	.byte		N06   , An3 
 	.byte	W12
@@ -1019,7 +943,6 @@ mus_encounter_twins_10_B1:
 	.byte	W03
 	.byte		        Gn3 
 	.byte	W03
-@ 004   ----------------------------------------
 	.byte		N06   , Bn3 
 	.byte	W24
 	.byte		        Gn3 
@@ -1034,7 +957,6 @@ mus_encounter_twins_10_B1:
 	.byte	W12
 	.byte		        Dn4 
 	.byte	W12
-@ 005   ----------------------------------------
 	.byte		        Cn4 
 	.byte	W12
 	.byte		        An3 
@@ -1060,8 +982,6 @@ mus_encounter_twins_10_B1:
 	.byte	W24
 	.byte	GOTO
 	 .word	mus_encounter_twins_10_B1
-mus_encounter_twins_10_B2:
-@ 006   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

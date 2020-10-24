@@ -1,27 +1,26 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_slots_win_grp, voicegroup012
+	.equ	mus_slots_win_grp, voicegroup009
 	.equ	mus_slots_win_pri, 5
 	.equ	mus_slots_win_rev, reverb_set+50
-	.equ	mus_slots_win_mvl, 90
+	.equ	mus_slots_win_mvl, 127
 	.equ	mus_slots_win_key, 0
 	.equ	mus_slots_win_tbs, 1
-	.equ	mus_slots_win_exg, 1
+	.equ	mus_slots_win_exg, 0
 	.equ	mus_slots_win_cmp, 1
 
 	.section .rodata
 	.global	mus_slots_win
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_slots_win_1:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 144*mus_slots_win_tbs/2
 	.byte	W09
 	.byte		VOICE , 56
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		PAN   , c_v+6
 	.byte		N03   , Cs3 , v084
 	.byte	W03
@@ -33,7 +32,6 @@ mus_slots_win_1:
 	.byte	W03
 	.byte		        An3 
 	.byte	W03
-@ 001   ----------------------------------------
 	.byte		N06   , As3 , v112
 	.byte	W12
 	.byte		N03   
@@ -57,19 +55,16 @@ mus_slots_win_1:
 	.byte	W06
 	.byte		N12   , Fs4 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_slots_win_2:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		PAN   , c_v-16
 	.byte		N24   , Fs2 , v080
 	.byte	W24
@@ -85,19 +80,16 @@ mus_slots_win_2:
 	.byte	W12
 	.byte		        As3 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_slots_win_3:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		PAN   , c_v-4
 	.byte	W48
 	.byte		N03   , Ds2 , v120
@@ -114,21 +106,18 @@ mus_slots_win_3:
 	.byte	W06
 	.byte		N24   , Fs2 , v120
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_slots_win_4:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 90
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Fs5 , v040
 	.byte	W12
@@ -150,22 +139,19 @@ mus_slots_win_4:
 	.byte	W06
 	.byte		        Fs5 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_slots_win_5:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
 	.byte		BEND  , c_v+0
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 83
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		PAN   , c_v+48
 	.byte		N06   , Fs3 , v052
 	.byte	W12
@@ -190,19 +176,16 @@ mus_slots_win_5:
 	.byte	W06
 	.byte		N12   , As4 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_slots_win_6:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 88
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		N12   , Fs1 , v080
 	.byte	W24
 	.byte		N12   
@@ -215,19 +198,16 @@ mus_slots_win_6:
 	.byte	W06
 	.byte		N12   , Fs1 
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_slots_win_7:
 	.byte	KEYSH , mus_slots_win_key+0
-@ 000   ----------------------------------------
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 127*mus_slots_win_mvl/mxv
+	.byte		VOL   , 90*mus_slots_win_mvl/mxv
 	.byte		N06   , En1 , v100
 	.byte		N72   , Bn2 , v092
 	.byte	W24
@@ -252,7 +232,6 @@ mus_slots_win_7:
 	.byte		N09   , En1 , v100
 	.byte		N24   , Bn2 , v092
 	.byte	W24
-@ 002   ----------------------------------------
 	.byte	W24
 	.byte	FINE
 

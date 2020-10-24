@@ -1,29 +1,27 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_victory_trainer_grp, voicegroup058
+	.equ	mus_victory_trainer_grp, voicegroup055
 	.equ	mus_victory_trainer_pri, 0
 	.equ	mus_victory_trainer_rev, reverb_set+50
-	.equ	mus_victory_trainer_mvl, 91
+	.equ	mus_victory_trainer_mvl, 127
 	.equ	mus_victory_trainer_key, 0
 	.equ	mus_victory_trainer_tbs, 1
-	.equ	mus_victory_trainer_exg, 1
+	.equ	mus_victory_trainer_exg, 0
 	.equ	mus_victory_trainer_cmp, 1
 
 	.section .rodata
 	.global	mus_victory_trainer
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_victory_trainer_1:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 136*mus_victory_trainer_tbs/2
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		PAN   , c_v-16
-	.byte		VOL   , 125*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 89*mus_victory_trainer_mvl/mxv
 	.byte		N02   , Dn3 , v112
 	.byte	W02
 	.byte		        Ds3 
@@ -32,7 +30,6 @@ mus_victory_trainer_1:
 	.byte	W02
 	.byte		        Fn3 
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		N04   , Fs3 
 	.byte	W04
 	.byte		        Fs3 , v036
@@ -55,32 +52,32 @@ mus_victory_trainer_1:
 	.byte	W06
 	.byte		N08   , An3 , v112
 	.byte	W08
-	.byte		VOL   , 48*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 34*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Bn3 
 	.byte	W02
-	.byte		VOL   , 52*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 37*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte		        40*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        69*mus_victory_trainer_mvl/mxv
+	.byte		        49*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        76*mus_victory_trainer_mvl/mxv
+	.byte		        54*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        101*mus_victory_trainer_mvl/mxv
+	.byte		        72*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        109*mus_victory_trainer_mvl/mxv
+	.byte		        78*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        119*mus_victory_trainer_mvl/mxv
+	.byte		        85*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        127*mus_victory_trainer_mvl/mxv
+	.byte		        91*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        125*mus_victory_trainer_mvl/mxv
+	.byte		        89*mus_victory_trainer_mvl/mxv
 	.byte		PAN   , c_v-32
 	.byte		N08   , Gn4 , v096
 	.byte	W08
@@ -98,58 +95,44 @@ mus_victory_trainer_1:
 	.byte		        Fs4 
 	.byte	W04
 mus_victory_trainer_1_B1:
-@ 003   ----------------------------------------
 	.byte	W96
-@ 004   ----------------------------------------
 	.byte	W96
-@ 005   ----------------------------------------
 	.byte	W96
-@ 006   ----------------------------------------
 	.byte	W96
-@ 007   ----------------------------------------
 	.byte	W96
-@ 008   ----------------------------------------
 	.byte	W96
-@ 009   ----------------------------------------
 	.byte	W96
-@ 010   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_victory_trainer_1_B1
-mus_victory_trainer_1_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_victory_trainer_2:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 17
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 119*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 85*mus_victory_trainer_mvl/mxv
 	.byte	W08
-@ 002   ----------------------------------------
 	.byte	W84
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        83*mus_victory_trainer_mvl/mxv
+	.byte		        59*mus_victory_trainer_mvl/mxv
 	.byte		N08   , As3 , v096
 	.byte	W02
-	.byte		VOL   , 97*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        105*mus_victory_trainer_mvl/mxv
+	.byte		        75*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        114*mus_victory_trainer_mvl/mxv
+	.byte		        81*mus_victory_trainer_mvl/mxv
 	.byte	W02
 mus_victory_trainer_2_B1:
-@ 003   ----------------------------------------
-	.byte		VOL   , 77*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 55*mus_victory_trainer_mvl/mxv
 	.byte		PAN   , c_v-16
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn3 , v096
 	.byte	W04
 	.byte		        Bn3 , v036
@@ -164,34 +147,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        An3 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Bn3 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , En4 
 	.byte	W04
 	.byte		        En4 , v036
@@ -206,35 +189,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Ds4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , En4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 004   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Dn4 
 	.byte	W04
 	.byte		        Dn4 , v036
@@ -249,34 +231,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		N02   , Gn4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Fs4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Cn4 
 	.byte	W04
 	.byte		        Cn4 , v036
@@ -291,35 +273,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		N02   , Fn4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , En4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 005   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn3 
 	.byte	W04
 	.byte		        Bn3 , v036
@@ -334,34 +315,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        As3 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Bn3 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , En4 
 	.byte	W04
 	.byte		        En4 , v036
@@ -376,35 +357,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Ds4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , En4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 006   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Dn4 
 	.byte	W04
 	.byte		        Dn4 , v036
@@ -419,34 +399,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Gn4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Fs4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Gn4 
 	.byte	W04
 	.byte		        Gn4 , v036
@@ -461,35 +441,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Gn4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Fs4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 007   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn3 
 	.byte	W04
 	.byte		        Bn3 , v036
@@ -504,34 +483,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        An3 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Bn3 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , En4 
 	.byte	W04
 	.byte		        En4 , v036
@@ -546,35 +525,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Ds4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , En4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 008   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Dn4 
 	.byte	W04
 	.byte		        Dn4 , v036
@@ -589,34 +567,34 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Ds4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Dn4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N04   , En4 
 	.byte	W04
 	.byte		        En4 , v036
@@ -631,200 +609,194 @@ mus_victory_trainer_2_B1:
 	.byte	W02
 	.byte		        Fn4 , v096
 	.byte	W02
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N22   , En4 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-@ 009   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N02   , Ds4 
 	.byte	W02
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N44   , Dn4 
 	.byte	W02
-	.byte		VOL   , 34*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 24*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        35*mus_victory_trainer_mvl/mxv
+	.byte		        25*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        37*mus_victory_trainer_mvl/mxv
+	.byte		        26*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        28*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        29*mus_victory_trainer_mvl/mxv
+	.byte	W04
+	.byte		        32*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        34*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        36*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        40*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_victory_trainer_mvl/mxv
-	.byte	W04
-	.byte		        45*mus_victory_trainer_mvl/mxv
+	.byte		        42*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        51*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte		        54*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        59*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        72*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        76*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W06
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
 	.byte	W06
 	.byte		        0
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W02
-	.byte		VOL   , 62*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W02
-	.byte		VOL   , 73*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W02
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W08
 	.byte		N08   , Ds4 
 	.byte	W08
 	.byte		N04   , Dn4 
 	.byte	W08
-@ 010   ----------------------------------------
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W02
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N44   , Cs4 
 	.byte	W02
-	.byte		VOL   , 34*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 24*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        35*mus_victory_trainer_mvl/mxv
+	.byte		        25*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        37*mus_victory_trainer_mvl/mxv
+	.byte		        26*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        28*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        29*mus_victory_trainer_mvl/mxv
+	.byte	W04
+	.byte		        32*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        34*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        36*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        40*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_victory_trainer_mvl/mxv
-	.byte	W04
-	.byte		        45*mus_victory_trainer_mvl/mxv
+	.byte		        42*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        51*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte		        54*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        59*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        72*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        76*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W06
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
 	.byte	W06
 	.byte		        0
-	.byte		VOL   , 41*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 29*mus_victory_trainer_mvl/mxv
 	.byte		N24   , An3 
 	.byte	W02
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte		        38*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        58*mus_victory_trainer_mvl/mxv
+	.byte		        41*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 84*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N16   , Bn3 
 	.byte	W16
 	.byte		N08   , An3 
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_victory_trainer_2_B1
-mus_victory_trainer_2_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_victory_trainer_3:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 58
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 127*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 91*mus_victory_trainer_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N02   , As1 , v112
 	.byte	W02
@@ -834,7 +806,6 @@ mus_victory_trainer_3:
 	.byte	W02
 	.byte		        Cs2 
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		BEND  , c_v+0
 	.byte		N04   , Dn2 
 	.byte	W04
@@ -873,7 +844,6 @@ mus_victory_trainer_3:
 	.byte		        Fs1 
 	.byte	W04
 mus_victory_trainer_3_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 35
 	.byte		N04   , Gn1 , v112
 	.byte	W04
@@ -911,7 +881,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Gn1 , v036
 	.byte	W06
-@ 004   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -948,7 +917,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Gn1 , v036
 	.byte	W06
-@ 005   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -985,7 +953,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Gn1 , v036
 	.byte	W06
-@ 006   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -1030,7 +997,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Fs1 , v036
 	.byte	W06
-@ 007   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -1071,7 +1037,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , An2 , v036
 	.byte	W06
-@ 008   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -1112,7 +1077,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Cn3 , v036
 	.byte	W06
-@ 009   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -1145,7 +1109,6 @@ mus_victory_trainer_3_B1:
 	.byte	W02
 	.byte		N04   , Gn1 , v036
 	.byte	W06
-@ 010   ----------------------------------------
 	.byte		        Gn1 , v112
 	.byte	W04
 	.byte		        Gn1 , v036
@@ -1184,21 +1147,17 @@ mus_victory_trainer_3_B1:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_victory_trainer_3_B1
-mus_victory_trainer_3_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_victory_trainer_4:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		LFOS  , 44
 	.byte		PAN   , c_v+16
-	.byte		VOL   , 126*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 90*mus_victory_trainer_mvl/mxv
 	.byte		N02   , As3 , v112
 	.byte	W02
 	.byte		        Bn3 
@@ -1207,7 +1166,6 @@ mus_victory_trainer_4:
 	.byte	W02
 	.byte		        Cs4 
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		N04   , Dn4 
 	.byte	W04
 	.byte		        Dn4 , v036
@@ -1230,34 +1188,34 @@ mus_victory_trainer_4:
 	.byte	W04
 	.byte		N08   , Fs4 , v112
 	.byte	W08
-	.byte		VOL   , 48*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 34*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Gn4 
 	.byte	W02
-	.byte		VOL   , 52*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 37*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte		        40*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        69*mus_victory_trainer_mvl/mxv
+	.byte		        49*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        76*mus_victory_trainer_mvl/mxv
+	.byte		        54*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        94*mus_victory_trainer_mvl/mxv
+	.byte		        67*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		VOICE , 56
-	.byte		VOL   , 101*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 72*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        109*mus_victory_trainer_mvl/mxv
+	.byte		        78*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        119*mus_victory_trainer_mvl/mxv
+	.byte		        85*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        127*mus_victory_trainer_mvl/mxv
+	.byte		        91*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		PAN   , c_v+32
-	.byte		VOL   , 125*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 89*mus_victory_trainer_mvl/mxv
 	.byte		N08   , Dn5 , v096
 	.byte	W08
 	.byte		PAN   , c_v+0
@@ -1280,10 +1238,9 @@ mus_victory_trainer_4:
 	.byte		        Dn4 , v032
 	.byte	W02
 mus_victory_trainer_4_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 17
 	.byte		PAN   , c_v+16
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Gn4 , v112
 	.byte	W04
 	.byte		        Gn4 , v036
@@ -1298,32 +1255,32 @@ mus_victory_trainer_4_B1:
 	.byte	W02
 	.byte		        Fs4 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Gn4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , An4 
 	.byte	W04
 	.byte		        An4 , v036
@@ -1338,33 +1295,32 @@ mus_victory_trainer_4_B1:
 	.byte	W02
 	.byte		        Gs4 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , An4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
-@ 004   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn4 
 	.byte	W04
 	.byte		        Bn4 , v036
@@ -1379,32 +1335,32 @@ mus_victory_trainer_4_B1:
 	.byte	W02
 	.byte		        Ds5 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Dn5 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , An4 
 	.byte	W04
 	.byte		        An4 , v036
@@ -1419,34 +1375,33 @@ mus_victory_trainer_4_B1:
 	.byte	W02
 	.byte		        Cs5 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Cn5 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
-@ 005   ----------------------------------------
-mus_victory_trainer_4_005:
+mus_victory_trainer_4_000:
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Gn4 , v112
 	.byte	W04
 	.byte		        Gn4 , v036
@@ -1461,32 +1416,32 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Fs4 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Gn4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , An4 
 	.byte	W04
 	.byte		        An4 , v036
@@ -1501,34 +1456,33 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Gs4 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , An4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn4 
 	.byte	W04
 	.byte		        Bn4 , v036
@@ -1543,32 +1497,32 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Ds5 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Dn5 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn4 
 	.byte	W04
 	.byte		        Bn4 , v036
@@ -1583,36 +1537,34 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Ds5 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Dn5 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_4_005
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_4_000
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , As4 , v112
 	.byte	W04
 	.byte		        As4 , v036
@@ -1627,32 +1579,32 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Bn4 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , As4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Cn5 
 	.byte	W04
 	.byte		        Cn5 , v036
@@ -1667,67 +1619,66 @@ mus_victory_trainer_4_005:
 	.byte	W02
 	.byte		        Cs5 , v112
 	.byte	W02
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N22   , Cn5 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		N02   , Cn5 , v036
 	.byte	W02
-@ 009   ----------------------------------------
 	.byte		MOD   , 0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N02   , Cn5 , v112
 	.byte	W02
 	.byte		N44   , Bn4 
 	.byte	W04
-	.byte		VOL   , 66*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 47*mus_victory_trainer_mvl/mxv
 	.byte	W06
-	.byte		        69*mus_victory_trainer_mvl/mxv
+	.byte		        49*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        69*mus_victory_trainer_mvl/mxv
+	.byte		        49*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        72*mus_victory_trainer_mvl/mxv
+	.byte		        51*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        77*mus_victory_trainer_mvl/mxv
+	.byte		        55*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        88*mus_victory_trainer_mvl/mxv
+	.byte		        63*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        107*mus_victory_trainer_mvl/mxv
+	.byte		        76*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        119*mus_victory_trainer_mvl/mxv
+	.byte		        85*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        119*mus_victory_trainer_mvl/mxv
+	.byte		        85*mus_victory_trainer_mvl/mxv
 	.byte	W10
 	.byte		MOD   , 6
 	.byte	W06
 	.byte		        0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N02   
 	.byte	W08
 	.byte		N02   
@@ -1746,71 +1697,70 @@ mus_victory_trainer_4_005:
 	.byte	W04
 	.byte		        Bn4 , v036
 	.byte	W04
-@ 010   ----------------------------------------
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N02   , As4 , v112
 	.byte	W02
 	.byte		N44   , An4 
 	.byte	W04
-	.byte		VOL   , 66*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 47*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        69*mus_victory_trainer_mvl/mxv
+	.byte		        49*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        70*mus_victory_trainer_mvl/mxv
+	.byte		        50*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        51*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        54*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        57*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        60*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        64*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        65*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        72*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        76*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        78*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        81*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        84*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        91*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        101*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        107*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        109*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        114*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        118*mus_victory_trainer_mvl/mxv
 	.byte	W08
 	.byte		MOD   , 6
 	.byte	W06
 	.byte		        0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		N24   , En4 
 	.byte	W02
-	.byte		VOL   , 70*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        79*mus_victory_trainer_mvl/mxv
+	.byte		        56*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        80*mus_victory_trainer_mvl/mxv
+	.byte		        57*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        84*mus_victory_trainer_mvl/mxv
+	.byte		        60*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        90*mus_victory_trainer_mvl/mxv
+	.byte		        64*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        104*mus_victory_trainer_mvl/mxv
+	.byte		        74*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		MOD   , 6
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        122*mus_victory_trainer_mvl/mxv
+	.byte		        87*mus_victory_trainer_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
-	.byte		VOL   , 114*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 81*mus_victory_trainer_mvl/mxv
 	.byte		N04   , Bn3 , v064
 	.byte	W04
 	.byte		        Cn4 
@@ -1825,24 +1775,19 @@ mus_victory_trainer_4_005:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_victory_trainer_4_B1
-mus_victory_trainer_4_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_victory_trainer_5:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 75
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte	W08
-@ 002   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		LFOS  , 36
 	.byte	W48
@@ -1855,8 +1800,7 @@ mus_victory_trainer_5:
 	.byte		        Fs3 
 	.byte	W08
 mus_victory_trainer_5_B1:
-@ 003   ----------------------------------------
-	.byte		VOL   , 65*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 46*mus_victory_trainer_mvl/mxv
 	.byte		BEND  , c_v-5
 	.byte		N04   , Gn4 , v112
 	.byte	W08
@@ -1883,7 +1827,6 @@ mus_victory_trainer_5_B1:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 004   ----------------------------------------
 	.byte		        0
 	.byte		N04   , Bn4 
 	.byte	W08
@@ -1910,8 +1853,7 @@ mus_victory_trainer_5_B1:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 005   ----------------------------------------
-mus_victory_trainer_5_005:
+mus_victory_trainer_5_000:
 	.byte		MOD   , 0
 	.byte		N04   , Gn4 , v112
 	.byte	W08
@@ -1939,7 +1881,6 @@ mus_victory_trainer_5_005:
 	.byte		MOD   , 6
 	.byte	W12
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		        0
 	.byte		N04   , Bn4 
 	.byte	W16
@@ -1962,10 +1903,8 @@ mus_victory_trainer_5_005:
 	.byte	W12
 	.byte		MOD   , 6
 	.byte	W12
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_5_005
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_5_000
 	.byte		MOD   , 0
 	.byte		N04   , As4 , v112
 	.byte	W08
@@ -1993,7 +1932,6 @@ mus_victory_trainer_5_005:
 	.byte		LFOS  , 46
 	.byte		MOD   , 6
 	.byte	W12
-@ 009   ----------------------------------------
 	.byte		        0
 	.byte		BEND  , c_v+0
 	.byte		N02   , As5 
@@ -2022,7 +1960,6 @@ mus_victory_trainer_5_005:
 	.byte	W08
 	.byte		N04   , Bn5 
 	.byte	W08
-@ 010   ----------------------------------------
 	.byte		N02   , As5 
 	.byte	W02
 	.byte		N44   , An5 
@@ -2050,22 +1987,18 @@ mus_victory_trainer_5_005:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_victory_trainer_5_B1
-mus_victory_trainer_5_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_victory_trainer_6:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		PAN   , c_v-62
-	.byte		VOL   , 80*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 57*mus_victory_trainer_mvl/mxv
 	.byte		N02   , As2 , v112
 	.byte	W02
 	.byte		        Bn2 
@@ -2074,7 +2007,6 @@ mus_victory_trainer_6:
 	.byte	W02
 	.byte		        Cs3 
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		LFOS  , 41
 	.byte		N04   , Dn3 
 	.byte	W04
@@ -2098,59 +2030,58 @@ mus_victory_trainer_6:
 	.byte	W06
 	.byte		N08   , An2 , v112
 	.byte	W08
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Gn2 
 	.byte	W02
-	.byte		VOL   , 37*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 26*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        38*mus_victory_trainer_mvl/mxv
+	.byte		        27*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_victory_trainer_mvl/mxv
+	.byte		        29*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        48*mus_victory_trainer_mvl/mxv
+	.byte		        34*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        56*mus_victory_trainer_mvl/mxv
+	.byte		        40*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte		MOD   , 8
 	.byte	W02
-	.byte		VOL   , 73*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
+	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        83*mus_victory_trainer_mvl/mxv
+	.byte		        59*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        87*mus_victory_trainer_mvl/mxv
+	.byte		        62*mus_victory_trainer_mvl/mxv
 	.byte	W04
-	.byte		        21*mus_victory_trainer_mvl/mxv
+	.byte		        15*mus_victory_trainer_mvl/mxv
 	.byte		MOD   , 0
 	.byte		N24   , Bn2 
 	.byte	W04
-	.byte		VOL   , 24*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 17*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        30*mus_victory_trainer_mvl/mxv
+	.byte		        21*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        23*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        27*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        33*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        38*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        47*mus_victory_trainer_mvl/mxv
 	.byte		MOD   , 8
 	.byte	W02
-	.byte		VOL   , 55*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 39*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        62*mus_victory_trainer_mvl/mxv
+	.byte		        44*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        70*mus_victory_trainer_mvl/mxv
+	.byte		        50*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        86*mus_victory_trainer_mvl/mxv
+	.byte		        61*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        97*mus_victory_trainer_mvl/mxv
+	.byte		        69*mus_victory_trainer_mvl/mxv
 	.byte	W02
 mus_victory_trainer_6_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 80
-	.byte		VOL   , 44*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 31*mus_victory_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		MOD   , 0
 	.byte		N02   , Bn3 , v096
@@ -2201,7 +2132,6 @@ mus_victory_trainer_6_B1:
 	.byte	W04
 	.byte		        En4 , v032
 	.byte	W04
-@ 004   ----------------------------------------
 	.byte		        Dn4 , v096
 	.byte	W04
 	.byte		        Dn4 , v032
@@ -2250,8 +2180,7 @@ mus_victory_trainer_6_B1:
 	.byte	W04
 	.byte		        En4 , v032
 	.byte	W04
-@ 005   ----------------------------------------
-mus_victory_trainer_6_005:
+mus_victory_trainer_6_000:
 	.byte		N02   , Bn3 , v096
 	.byte	W04
 	.byte		        Bn3 , v032
@@ -2301,7 +2230,6 @@ mus_victory_trainer_6_005:
 	.byte		        En4 , v032
 	.byte	W04
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		        Dn5 , v096
 	.byte	W08
 	.byte		        Bn4 
@@ -2338,10 +2266,8 @@ mus_victory_trainer_6_005:
 	.byte	W04
 	.byte		        Cn4 
 	.byte	W04
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_6_005
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_6_000
 	.byte		N02   , As3 , v096
 	.byte	W04
 	.byte		        As3 , v032
@@ -2390,7 +2316,6 @@ mus_victory_trainer_6_005:
 	.byte	W04
 	.byte		        En4 , v032
 	.byte	W04
-@ 009   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+4
 	.byte		N04   , Bn3 , v084
@@ -2441,7 +2366,6 @@ mus_victory_trainer_6_005:
 	.byte	W04
 	.byte		        Gn3 
 	.byte	W04
-@ 010   ----------------------------------------
 	.byte		        Bn3 
 	.byte	W04
 	.byte		        Cs4 
@@ -2492,22 +2416,18 @@ mus_victory_trainer_6_005:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_victory_trainer_6_B1
-mus_victory_trainer_6_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_victory_trainer_7:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte		XCMD  , xIECV , 18
 	.byte		        xIECV , 16
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+63
-	.byte		VOL   , 80*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 57*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		N02   , Ds3 , v112
 	.byte	W02
@@ -2515,7 +2435,6 @@ mus_victory_trainer_7:
 	.byte	W02
 	.byte		        Fn3 
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		LFOS  , 41
 	.byte		N04   , Fs3 
 	.byte	W04
@@ -2541,38 +2460,37 @@ mus_victory_trainer_7:
 	.byte	W04
 	.byte		        An3 , v036
 	.byte	W04
-	.byte		VOL   , 33*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 23*mus_victory_trainer_mvl/mxv
 	.byte		N24   , Bn3 , v112
 	.byte	W02
-	.byte		VOL   , 34*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 24*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        41*mus_victory_trainer_mvl/mxv
+	.byte		        29*mus_victory_trainer_mvl/mxv
 	.byte	W04
-	.byte		        45*mus_victory_trainer_mvl/mxv
+	.byte		        32*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        37*mus_victory_trainer_mvl/mxv
+	.byte	W02
+	.byte		        43*mus_victory_trainer_mvl/mxv
+	.byte		MOD   , 8
+	.byte	W02
+	.byte		VOL   , 44*mus_victory_trainer_mvl/mxv
 	.byte	W02
 	.byte		        52*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		        61*mus_victory_trainer_mvl/mxv
-	.byte		MOD   , 8
+	.byte		        62*mus_victory_trainer_mvl/mxv
 	.byte	W02
-	.byte		VOL   , 62*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        73*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        87*mus_victory_trainer_mvl/mxv
-	.byte	W02
-	.byte		        91*mus_victory_trainer_mvl/mxv
-	.byte	W04
 	.byte		        65*mus_victory_trainer_mvl/mxv
+	.byte	W04
+	.byte		        46*mus_victory_trainer_mvl/mxv
 	.byte		MOD   , 0
 	.byte		N24   , Dn4 
 	.byte	W12
 	.byte		MOD   , 8
 	.byte	W12
 mus_victory_trainer_7_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 81
-	.byte		VOL   , 45*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 32*mus_victory_trainer_mvl/mxv
 	.byte		PAN   , c_v-63
 	.byte		MOD   , 0
 	.byte		N02   , Gn4 , v096
@@ -2624,7 +2542,6 @@ mus_victory_trainer_7_B1:
 	.byte	W04
 	.byte		        Cs5 , v032
 	.byte	W04
-@ 004   ----------------------------------------
 	.byte		PAN   , c_v-62
 	.byte		N02   , Gn4 , v096
 	.byte	W04
@@ -2675,8 +2592,7 @@ mus_victory_trainer_7_B1:
 	.byte	W04
 	.byte		        Cn5 , v032
 	.byte	W04
-@ 005   ----------------------------------------
-mus_victory_trainer_7_005:
+mus_victory_trainer_7_000:
 	.byte		PAN   , c_v-63
 	.byte		N02   , Gn4 , v096
 	.byte	W04
@@ -2728,7 +2644,6 @@ mus_victory_trainer_7_005:
 	.byte		        Cs5 , v032
 	.byte	W04
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte		PAN   , c_v-63
 	.byte		N02   , Fs5 , v096
 	.byte	W08
@@ -2767,10 +2682,8 @@ mus_victory_trainer_7_005:
 	.byte	W04
 	.byte		        An4 
 	.byte	W04
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_7_005
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_7_000
 	.byte		PAN   , c_v-63
 	.byte		N02   , Fn4 , v096
 	.byte	W04
@@ -2821,7 +2734,6 @@ mus_victory_trainer_7_005:
 	.byte	W04
 	.byte		        Cn5 , v032
 	.byte	W04
-@ 009   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N04   , Gn4 , v084
 	.byte	W04
@@ -2871,7 +2783,6 @@ mus_victory_trainer_7_005:
 	.byte	W04
 	.byte		        Fs4 
 	.byte	W04
-@ 010   ----------------------------------------
 	.byte		        Gn4 
 	.byte	W04
 	.byte		        Bn4 
@@ -2922,19 +2833,15 @@ mus_victory_trainer_7_005:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_victory_trainer_7_B1
-mus_victory_trainer_7_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 8 (Midi-Chn.8) ****************@
+@********************** Track  8 **********************@
 
 mus_victory_trainer_8:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 97*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 69*mus_victory_trainer_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N02   , Cn1 , v112
 	.byte	W02
@@ -2944,7 +2851,6 @@ mus_victory_trainer_8:
 	.byte	W02
 	.byte		N02   
 	.byte	W02
-@ 002   ----------------------------------------
 	.byte		        En1 , v112
 	.byte	W08
 	.byte		N02   
@@ -2966,8 +2872,7 @@ mus_victory_trainer_8:
 	.byte		N24   , An2 
 	.byte	W24
 mus_victory_trainer_8_B1:
-@ 003   ----------------------------------------
-mus_victory_trainer_8_003:
+mus_victory_trainer_8_000:
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		N04   
@@ -2991,7 +2896,6 @@ mus_victory_trainer_8_003:
 	.byte		N08   , As1 , v064
 	.byte	W08
 	.byte	PEND
-@ 004   ----------------------------------------
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		        En1 
@@ -3014,10 +2918,8 @@ mus_victory_trainer_8_003:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_8_003
-@ 006   ----------------------------------------
+	 .word	mus_victory_trainer_8_000
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		        En1 
@@ -3042,10 +2944,8 @@ mus_victory_trainer_8_003:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_8_003
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_8_000
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		N04   
@@ -3070,10 +2970,8 @@ mus_victory_trainer_8_003:
 	.byte	W08
 	.byte		        Dn1 
 	.byte	W08
-@ 009   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_8_003
-@ 010   ----------------------------------------
+	 .word	mus_victory_trainer_8_000
 	.byte		N04   , Cn1 , v112
 	.byte	W08
 	.byte		N04   
@@ -3098,22 +2996,17 @@ mus_victory_trainer_8_003:
 	.byte	W08
 	.byte	GOTO
 	 .word	mus_victory_trainer_8_B1
-mus_victory_trainer_8_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 9 (Midi-Chn.9) ****************@
+@********************** Track  9 **********************@
 
 mus_victory_trainer_9:
 	.byte	KEYSH , mus_victory_trainer_key+0
-@ 000   ----------------------------------------
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 59*mus_victory_trainer_mvl/mxv
+	.byte		VOL   , 42*mus_victory_trainer_mvl/mxv
 	.byte	W08
-@ 001   ----------------------------------------
 	.byte		VOICE , 127
 	.byte	W08
-@ 002   ----------------------------------------
 	.byte		N04   , Gn4 , v112
 	.byte	W08
 	.byte		N02   , Gn4 , v080
@@ -3139,7 +3032,6 @@ mus_victory_trainer_9:
 	.byte		PAN   , c_v-64
 	.byte	W16
 mus_victory_trainer_9_B1:
-@ 003   ----------------------------------------
 	.byte		VOICE , 127
 	.byte		PAN   , c_v+0
 	.byte		N04   , Gn5 , v112
@@ -3166,8 +3058,7 @@ mus_victory_trainer_9_B1:
 	.byte	W08
 	.byte		N04   
 	.byte	W08
-@ 004   ----------------------------------------
-mus_victory_trainer_9_004:
+mus_victory_trainer_9_000:
 	.byte		N04   , Gn5 , v112
 	.byte	W08
 	.byte		        Gn5 , v064
@@ -3193,10 +3084,8 @@ mus_victory_trainer_9_004:
 	.byte		N04   
 	.byte	W08
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_9_004
-@ 006   ----------------------------------------
+	 .word	mus_victory_trainer_9_000
 	.byte		N04   , Gn5 , v112
 	.byte	W08
 	.byte		        Gn5 , v064
@@ -3233,16 +3122,12 @@ mus_victory_trainer_9_004:
 	.byte	W04
 	.byte		N02   
 	.byte	W04
-@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_victory_trainer_9_004
-@ 008   ----------------------------------------
+	 .word	mus_victory_trainer_9_000
 	.byte	PATT
-	 .word	mus_victory_trainer_9_004
-@ 009   ----------------------------------------
+	 .word	mus_victory_trainer_9_000
 	.byte	PATT
-	 .word	mus_victory_trainer_9_004
-@ 010   ----------------------------------------
+	 .word	mus_victory_trainer_9_000
 	.byte		N04   , Gn5 , v112
 	.byte	W08
 	.byte		        Gn5 , v064
@@ -3275,8 +3160,6 @@ mus_victory_trainer_9_004:
 	.byte	W04
 	.byte	GOTO
 	 .word	mus_victory_trainer_9_B1
-mus_victory_trainer_9_B2:
-@ 011   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

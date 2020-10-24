@@ -1,26 +1,25 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_evolution_grp, voicegroup026
+	.equ	mus_evolution_grp, voicegroup023
 	.equ	mus_evolution_pri, 0
 	.equ	mus_evolution_rev, reverb_set+50
-	.equ	mus_evolution_mvl, 80
+	.equ	mus_evolution_mvl, 127
 	.equ	mus_evolution_key, 0
 	.equ	mus_evolution_tbs, 1
-	.equ	mus_evolution_exg, 1
+	.equ	mus_evolution_exg, 0
 	.equ	mus_evolution_cmp, 1
 
 	.section .rodata
 	.global	mus_evolution
 	.align	2
 
-@**************** Track 1 (Midi-Chn.1) ****************@
+@********************** Track  1 **********************@
 
 mus_evolution_1:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte	TEMPO , 120*mus_evolution_tbs/2
 	.byte		VOICE , 60
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		N06   , Gn3 , v080
 	.byte	W24
 	.byte		        Gn3 , v056
@@ -29,8 +28,7 @@ mus_evolution_1:
 	.byte	W24
 	.byte		        Gn3 , v064
 	.byte	W24
-@ 001   ----------------------------------------
-mus_evolution_1_001:
+mus_evolution_1_000:
 	.byte		N06   , Gn3 , v068
 	.byte	W24
 	.byte		        Gn3 , v072
@@ -42,8 +40,7 @@ mus_evolution_1_001:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_evolution_1_002:
+mus_evolution_1_001:
 	.byte		MOD   , 0
 	.byte		N06   , Gn3 , v080
 	.byte	W24
@@ -54,8 +51,7 @@ mus_evolution_1_002:
 	.byte		        Gn3 , v064
 	.byte	W24
 	.byte	PEND
-@ 003   ----------------------------------------
-mus_evolution_1_003:
+mus_evolution_1_002:
 	.byte		N06   , Gn3 , v068
 	.byte	W24
 	.byte		        Gn3 , v072
@@ -67,21 +63,16 @@ mus_evolution_1_003:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 004   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_1_002
-@ 005   ----------------------------------------
 	.byte	PATT
 	 .word	mus_evolution_1_001
-@ 006   ----------------------------------------
+	.byte	PATT
+	 .word	mus_evolution_1_000
+	.byte	PATT
+	 .word	mus_evolution_1_001
 	.byte	PATT
 	 .word	mus_evolution_1_002
-@ 007   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_1_003
 mus_evolution_1_B1:
-@ 008   ----------------------------------------
-mus_evolution_1_008:
+mus_evolution_1_003:
 	.byte		MOD   , 0
 	.byte		N06   , An3 , v080
 	.byte	W24
@@ -92,8 +83,7 @@ mus_evolution_1_008:
 	.byte		        An3 , v064
 	.byte	W24
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_evolution_1_009:
+mus_evolution_1_004:
 	.byte		N06   , An3 , v068
 	.byte	W24
 	.byte		        An3 , v072
@@ -105,11 +95,9 @@ mus_evolution_1_009:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_1_008
-@ 011   ----------------------------------------
-mus_evolution_1_011:
+	 .word	mus_evolution_1_003
+mus_evolution_1_005:
 	.byte		N06   , An3 , v068
 	.byte	W24
 	.byte		        An3 , v072
@@ -121,33 +109,26 @@ mus_evolution_1_011:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_1_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_1_003
 	.byte	PATT
-	 .word	mus_evolution_1_009
-@ 014   ----------------------------------------
+	 .word	mus_evolution_1_004
 	.byte	PATT
-	 .word	mus_evolution_1_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_1_003
 	.byte	PATT
-	 .word	mus_evolution_1_011
+	 .word	mus_evolution_1_005
 	.byte	GOTO
 	 .word	mus_evolution_1_B1
-mus_evolution_1_B2:
-@ 016   ----------------------------------------
 	.byte		MOD   , 0
 	.byte	FINE
 
-@**************** Track 2 (Midi-Chn.2) ****************@
+@********************** Track  2 **********************@
 
 mus_evolution_2:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 60
 	.byte		PAN   , c_v+16
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		N06   , Cn3 , v080
 	.byte	W24
 	.byte		        Dn3 , v056
@@ -156,8 +137,7 @@ mus_evolution_2:
 	.byte	W24
 	.byte		        Dn3 , v064
 	.byte	W24
-@ 001   ----------------------------------------
-mus_evolution_2_001:
+mus_evolution_2_000:
 	.byte		N06   , Cn3 , v068
 	.byte	W24
 	.byte		        Dn3 , v072
@@ -169,8 +149,7 @@ mus_evolution_2_001:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_evolution_2_002:
+mus_evolution_2_001:
 	.byte		MOD   , 0
 	.byte		N06   , Cn3 , v080
 	.byte	W24
@@ -181,8 +160,7 @@ mus_evolution_2_002:
 	.byte		        Dn3 , v064
 	.byte	W24
 	.byte	PEND
-@ 003   ----------------------------------------
-mus_evolution_2_003:
+mus_evolution_2_002:
 	.byte		N06   , Cn3 , v068
 	.byte	W24
 	.byte		        Dn3 , v072
@@ -194,21 +172,16 @@ mus_evolution_2_003:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 004   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_2_002
-@ 005   ----------------------------------------
 	.byte	PATT
 	 .word	mus_evolution_2_001
-@ 006   ----------------------------------------
+	.byte	PATT
+	 .word	mus_evolution_2_000
+	.byte	PATT
+	 .word	mus_evolution_2_001
 	.byte	PATT
 	 .word	mus_evolution_2_002
-@ 007   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_2_003
 mus_evolution_2_B1:
-@ 008   ----------------------------------------
-mus_evolution_2_008:
+mus_evolution_2_003:
 	.byte		MOD   , 0
 	.byte		N06   , Dn3 , v080
 	.byte	W24
@@ -219,8 +192,7 @@ mus_evolution_2_008:
 	.byte		        En3 , v064
 	.byte	W24
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_evolution_2_009:
+mus_evolution_2_004:
 	.byte		N06   , Dn3 , v068
 	.byte	W24
 	.byte		        En3 , v072
@@ -232,11 +204,9 @@ mus_evolution_2_009:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_2_008
-@ 011   ----------------------------------------
-mus_evolution_2_011:
+	 .word	mus_evolution_2_003
+mus_evolution_2_005:
 	.byte		N06   , Dn3 , v068
 	.byte	W24
 	.byte		        En3 , v072
@@ -248,32 +218,25 @@ mus_evolution_2_011:
 	.byte		MOD   , 6
 	.byte	W15
 	.byte	PEND
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_2_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_2_003
 	.byte	PATT
-	 .word	mus_evolution_2_009
-@ 014   ----------------------------------------
+	 .word	mus_evolution_2_004
 	.byte	PATT
-	 .word	mus_evolution_2_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_2_003
 	.byte	PATT
-	 .word	mus_evolution_2_011
+	 .word	mus_evolution_2_005
 	.byte	GOTO
 	 .word	mus_evolution_2_B1
-mus_evolution_2_B2:
-@ 016   ----------------------------------------
 	.byte		MOD   , 0
 	.byte	FINE
 
-@**************** Track 3 (Midi-Chn.3) ****************@
+@********************** Track  3 **********************@
 
 mus_evolution_3:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 81
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		N06   , Cn1 , v080
 	.byte	W24
 	.byte		        Dn1 
@@ -282,8 +245,7 @@ mus_evolution_3:
 	.byte	W24
 	.byte		        Dn1 
 	.byte	W24
-@ 001   ----------------------------------------
-mus_evolution_3_001:
+mus_evolution_3_000:
 	.byte		N06   , Cn1 , v080
 	.byte	W24
 	.byte		        Dn1 
@@ -293,7 +255,6 @@ mus_evolution_3_001:
 	.byte		N24   , Dn1 
 	.byte	W24
 	.byte	PEND
-@ 002   ----------------------------------------
 	.byte		N06   , Cn1 
 	.byte	W24
 	.byte		        Dn1 
@@ -302,11 +263,9 @@ mus_evolution_3_001:
 	.byte	W24
 	.byte		        Dn1 
 	.byte	W24
-@ 003   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_3_001
-@ 004   ----------------------------------------
-mus_evolution_3_004:
+	 .word	mus_evolution_3_000
+mus_evolution_3_001:
 	.byte		N03   , Cn2 , v080
 	.byte	W12
 	.byte		        Cn1 
@@ -332,18 +291,14 @@ mus_evolution_3_004:
 	.byte		        Gn1 
 	.byte	W06
 	.byte	PEND
-@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_3_004
-@ 006   ----------------------------------------
+	 .word	mus_evolution_3_001
 	.byte	PATT
-	 .word	mus_evolution_3_004
-@ 007   ----------------------------------------
+	 .word	mus_evolution_3_001
 	.byte	PATT
-	 .word	mus_evolution_3_004
+	 .word	mus_evolution_3_001
 mus_evolution_3_B1:
-@ 008   ----------------------------------------
-mus_evolution_3_008:
+mus_evolution_3_002:
 	.byte		N03   , Dn2 , v080
 	.byte	W12
 	.byte		        Dn1 
@@ -369,40 +324,30 @@ mus_evolution_3_008:
 	.byte		        An1 
 	.byte	W06
 	.byte	PEND
-@ 009   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 010   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 011   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 012   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 014   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_3_002
 	.byte	PATT
-	 .word	mus_evolution_3_008
+	 .word	mus_evolution_3_002
 	.byte	GOTO
 	 .word	mus_evolution_3_B1
-mus_evolution_3_B2:
-@ 016   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 4 (Midi-Chn.4) ****************@
+@********************** Track  4 **********************@
 
 mus_evolution_4:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		PAN   , c_v-6
 	.byte		N12   , Cn2 , v112
 	.byte	W24
@@ -412,7 +357,6 @@ mus_evolution_4:
 	.byte	W24
 	.byte		        Dn2 
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		        Cn2 
 	.byte	W24
 	.byte		        Dn2 
@@ -429,7 +373,6 @@ mus_evolution_4:
 	.byte	W06
 	.byte		        Dn2 , v120
 	.byte	W06
-@ 002   ----------------------------------------
 	.byte		N12   , Cn2 , v112
 	.byte	W24
 	.byte		        Dn2 
@@ -438,7 +381,6 @@ mus_evolution_4:
 	.byte	W24
 	.byte		        Dn2 
 	.byte	W24
-@ 003   ----------------------------------------
 	.byte		        Cn2 
 	.byte	W24
 	.byte		        Dn2 
@@ -453,8 +395,7 @@ mus_evolution_4:
 	.byte	W06
 	.byte		        Dn2 , v120
 	.byte	W06
-@ 004   ----------------------------------------
-mus_evolution_4_004:
+mus_evolution_4_000:
 	.byte		N12   , Cn2 , v112
 	.byte	W24
 	.byte		        Dn2 
@@ -466,8 +407,7 @@ mus_evolution_4_004:
 	.byte		N12   
 	.byte	W12
 	.byte	PEND
-@ 005   ----------------------------------------
-mus_evolution_4_005:
+mus_evolution_4_001:
 	.byte		N12   , Cn2 , v112
 	.byte	W24
 	.byte		        Dn2 
@@ -485,15 +425,12 @@ mus_evolution_4_005:
 	.byte		        Dn2 , v120
 	.byte	W06
 	.byte	PEND
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_4_004
-@ 007   ----------------------------------------
+	 .word	mus_evolution_4_000
 	.byte	PATT
-	 .word	mus_evolution_4_005
+	 .word	mus_evolution_4_001
 mus_evolution_4_B1:
-@ 008   ----------------------------------------
-mus_evolution_4_008:
+mus_evolution_4_002:
 	.byte		N12   , Dn2 , v112
 	.byte	W24
 	.byte		        En2 
@@ -505,8 +442,7 @@ mus_evolution_4_008:
 	.byte		N12   
 	.byte	W12
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_evolution_4_009:
+mus_evolution_4_003:
 	.byte		N12   , Dn2 , v112
 	.byte	W24
 	.byte		        En2 
@@ -524,11 +460,9 @@ mus_evolution_4_009:
 	.byte		        En2 , v120
 	.byte	W06
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_4_008
-@ 011   ----------------------------------------
-mus_evolution_4_011:
+	 .word	mus_evolution_4_002
+mus_evolution_4_004:
 	.byte		N15   , Dn2 , v112
 	.byte	W24
 	.byte		N12   , En2 
@@ -546,34 +480,27 @@ mus_evolution_4_011:
 	.byte		        En2 , v120
 	.byte	W06
 	.byte	PEND
-@ 012   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_4_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_4_002
 	.byte	PATT
-	 .word	mus_evolution_4_011
-@ 014   ----------------------------------------
+	 .word	mus_evolution_4_004
 	.byte	PATT
-	 .word	mus_evolution_4_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_4_002
 	.byte	PATT
-	 .word	mus_evolution_4_009
+	 .word	mus_evolution_4_003
 	.byte	GOTO
 	 .word	mus_evolution_4_B1
-mus_evolution_4_B2:
-@ 016   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 5 (Midi-Chn.5) ****************@
+@********************** Track  5 **********************@
 
 mus_evolution_5:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 83
 	.byte		PAN   , c_v-47
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		N06   , Cn3 , v056
 	.byte	W24
 	.byte		        Dn3 , v032
@@ -582,8 +509,7 @@ mus_evolution_5:
 	.byte	W24
 	.byte		        Dn3 , v040
 	.byte	W24
-@ 001   ----------------------------------------
-mus_evolution_5_001:
+mus_evolution_5_000:
 	.byte		N06   , Cn3 , v044
 	.byte	W24
 	.byte		        Dn3 , v048
@@ -593,8 +519,7 @@ mus_evolution_5_001:
 	.byte		N24   , Dn3 , v056
 	.byte	W24
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_evolution_5_002:
+mus_evolution_5_001:
 	.byte		N06   , Cn3 , v056
 	.byte	W24
 	.byte		        Dn3 , v032
@@ -604,24 +529,18 @@ mus_evolution_5_002:
 	.byte		        Dn3 , v040
 	.byte	W24
 	.byte	PEND
-@ 003   ----------------------------------------
+	.byte	PATT
+	 .word	mus_evolution_5_000
 	.byte	PATT
 	 .word	mus_evolution_5_001
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_5_002
-@ 005   ----------------------------------------
+	 .word	mus_evolution_5_000
 	.byte	PATT
 	 .word	mus_evolution_5_001
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_5_002
-@ 007   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_5_001
+	 .word	mus_evolution_5_000
 mus_evolution_5_B1:
-@ 008   ----------------------------------------
-mus_evolution_5_008:
+mus_evolution_5_002:
 	.byte		N06   , Dn3 , v056
 	.byte	W24
 	.byte		        En3 , v032
@@ -631,8 +550,7 @@ mus_evolution_5_008:
 	.byte		        En3 , v040
 	.byte	W24
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_evolution_5_009:
+mus_evolution_5_003:
 	.byte		N06   , Dn3 , v044
 	.byte	W24
 	.byte		        En3 , v048
@@ -642,40 +560,31 @@ mus_evolution_5_009:
 	.byte		N24   , En3 , v056
 	.byte	W24
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_5_008
-@ 011   ----------------------------------------
+	 .word	mus_evolution_5_002
 	.byte	PATT
-	 .word	mus_evolution_5_009
-@ 012   ----------------------------------------
+	 .word	mus_evolution_5_003
 	.byte	PATT
-	 .word	mus_evolution_5_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_5_002
 	.byte	PATT
-	 .word	mus_evolution_5_009
-@ 014   ----------------------------------------
+	 .word	mus_evolution_5_003
 	.byte	PATT
-	 .word	mus_evolution_5_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_5_002
 	.byte	PATT
-	 .word	mus_evolution_5_009
+	 .word	mus_evolution_5_003
 	.byte	GOTO
 	 .word	mus_evolution_5_B1
-mus_evolution_5_B2:
-@ 016   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 6 (Midi-Chn.6) ****************@
+@********************** Track  6 **********************@
 
 mus_evolution_6:
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 84
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
 	.byte		PAN   , c_v+48
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N06   , An2 , v056
 	.byte	W24
@@ -685,8 +594,7 @@ mus_evolution_6:
 	.byte	W24
 	.byte		        Bn2 , v040
 	.byte	W24
-@ 001   ----------------------------------------
-mus_evolution_6_001:
+mus_evolution_6_000:
 	.byte		N06   , An2 , v044
 	.byte	W24
 	.byte		        Bn2 , v048
@@ -696,8 +604,7 @@ mus_evolution_6_001:
 	.byte		N24   , Bn2 , v056
 	.byte	W24
 	.byte	PEND
-@ 002   ----------------------------------------
-mus_evolution_6_002:
+mus_evolution_6_001:
 	.byte		N06   , An2 , v056
 	.byte	W24
 	.byte		        Bn2 , v032
@@ -707,24 +614,18 @@ mus_evolution_6_002:
 	.byte		        Bn2 , v040
 	.byte	W24
 	.byte	PEND
-@ 003   ----------------------------------------
+	.byte	PATT
+	 .word	mus_evolution_6_000
 	.byte	PATT
 	 .word	mus_evolution_6_001
-@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_6_002
-@ 005   ----------------------------------------
+	 .word	mus_evolution_6_000
 	.byte	PATT
 	 .word	mus_evolution_6_001
-@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_6_002
-@ 007   ----------------------------------------
-	.byte	PATT
-	 .word	mus_evolution_6_001
+	 .word	mus_evolution_6_000
 mus_evolution_6_B1:
-@ 008   ----------------------------------------
-mus_evolution_6_008:
+mus_evolution_6_002:
 	.byte		N06   , Bn2 , v056
 	.byte	W24
 	.byte		        Cs3 , v032
@@ -734,8 +635,7 @@ mus_evolution_6_008:
 	.byte		        Cs3 , v040
 	.byte	W24
 	.byte	PEND
-@ 009   ----------------------------------------
-mus_evolution_6_009:
+mus_evolution_6_003:
 	.byte		N06   , Bn2 , v044
 	.byte	W24
 	.byte		        Cs3 , v048
@@ -745,36 +645,27 @@ mus_evolution_6_009:
 	.byte		N24   , Cs3 , v056
 	.byte	W24
 	.byte	PEND
-@ 010   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_6_008
-@ 011   ----------------------------------------
+	 .word	mus_evolution_6_002
 	.byte	PATT
-	 .word	mus_evolution_6_009
-@ 012   ----------------------------------------
+	 .word	mus_evolution_6_003
 	.byte	PATT
-	 .word	mus_evolution_6_008
-@ 013   ----------------------------------------
+	 .word	mus_evolution_6_002
 	.byte	PATT
-	 .word	mus_evolution_6_009
-@ 014   ----------------------------------------
+	 .word	mus_evolution_6_003
 	.byte	PATT
-	 .word	mus_evolution_6_008
-@ 015   ----------------------------------------
+	 .word	mus_evolution_6_002
 	.byte	PATT
-	 .word	mus_evolution_6_009
+	 .word	mus_evolution_6_003
 	.byte	GOTO
 	 .word	mus_evolution_6_B1
-mus_evolution_6_B2:
-@ 016   ----------------------------------------
 	.byte	FINE
 
-@**************** Track 7 (Midi-Chn.7) ****************@
+@********************** Track  7 **********************@
 
 mus_evolution_7:
-	.byte		VOL   , 127*mus_evolution_mvl/mxv
+	.byte		VOL   , 80*mus_evolution_mvl/mxv
 	.byte	KEYSH , mus_evolution_key+0
-@ 000   ----------------------------------------
 	.byte		VOICE , 0
 	.byte		PAN   , c_v+0
 	.byte		N06   , En1 , v112
@@ -785,7 +676,6 @@ mus_evolution_7:
 	.byte	W24
 	.byte		N06   
 	.byte	W24
-@ 001   ----------------------------------------
 	.byte		N06   
 	.byte	W24
 	.byte		N06   
@@ -822,7 +712,6 @@ mus_evolution_7:
 	.byte	W03
 	.byte		        En1 , v112
 	.byte	W03
-@ 002   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		        En1 , v080
@@ -841,7 +730,6 @@ mus_evolution_7:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
-@ 003   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		        En1 , v080
@@ -870,7 +758,6 @@ mus_evolution_7:
 	.byte	W03
 	.byte		        En1 , v120
 	.byte	W03
-@ 004   ----------------------------------------
 	.byte		N06   , En1 , v127
 	.byte	W12
 	.byte		        En1 , v100
@@ -889,7 +776,6 @@ mus_evolution_7:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
-@ 005   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		        En1 , v100
@@ -918,8 +804,7 @@ mus_evolution_7:
 	.byte	W03
 	.byte		        En1 , v120
 	.byte	W03
-@ 006   ----------------------------------------
-mus_evolution_7_006:
+mus_evolution_7_000:
 	.byte		N06   , En1 , v127
 	.byte	W06
 	.byte		        En1 , v036
@@ -953,8 +838,7 @@ mus_evolution_7_006:
 	.byte		N06   
 	.byte	W06
 	.byte	PEND
-@ 007   ----------------------------------------
-mus_evolution_7_007:
+mus_evolution_7_001:
 	.byte		N06   , En1 , v127
 	.byte	W06
 	.byte		        En1 , v036
@@ -997,34 +881,24 @@ mus_evolution_7_007:
 	.byte	W03
 	.byte	PEND
 mus_evolution_7_B1:
-@ 008   ----------------------------------------
 	.byte	PATT
-	 .word	mus_evolution_7_006
-@ 009   ----------------------------------------
+	 .word	mus_evolution_7_000
 	.byte	PATT
-	 .word	mus_evolution_7_007
-@ 010   ----------------------------------------
+	 .word	mus_evolution_7_001
 	.byte	PATT
-	 .word	mus_evolution_7_006
-@ 011   ----------------------------------------
+	 .word	mus_evolution_7_000
 	.byte	PATT
-	 .word	mus_evolution_7_007
-@ 012   ----------------------------------------
+	 .word	mus_evolution_7_001
 	.byte	PATT
-	 .word	mus_evolution_7_006
-@ 013   ----------------------------------------
+	 .word	mus_evolution_7_000
 	.byte	PATT
-	 .word	mus_evolution_7_007
-@ 014   ----------------------------------------
+	 .word	mus_evolution_7_001
 	.byte	PATT
-	 .word	mus_evolution_7_006
-@ 015   ----------------------------------------
+	 .word	mus_evolution_7_000
 	.byte	PATT
-	 .word	mus_evolution_7_007
+	 .word	mus_evolution_7_001
 	.byte	GOTO
 	 .word	mus_evolution_7_B1
-mus_evolution_7_B2:
-@ 016   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@
