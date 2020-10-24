@@ -1,22 +1,23 @@
 	.include "MPlayDef.s"
 
-	.equ	se_u_grp, voicegroup111
+	.equ	se_u_grp, voicegroup128
 	.equ	se_u_pri, 4
 	.equ	se_u_rev, reverb_set+50
 	.equ	se_u_mvl, 127
 	.equ	se_u_key, 0
 	.equ	se_u_tbs, 1
-	.equ	se_u_exg, 0
+	.equ	se_u_exg, 1
 	.equ	se_u_cmp, 1
 
 	.section .rodata
 	.global	se_u
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_u_1:
 	.byte	KEYSH , se_u_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 240*se_u_tbs/2
 	.byte		VOICE , 124
 	.byte		BENDR , 12
@@ -24,9 +25,13 @@ se_u_1:
 	.byte		BEND  , c_v+0
 	.byte		N72   , Cn3 , v127
 	.byte	W24
+@ 001   ----------------------------------------
 	.byte	W24
+@ 002   ----------------------------------------
 	.byte	W24
+@ 003   ----------------------------------------
 	.byte	W24
+@ 004   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

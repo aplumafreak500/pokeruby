@@ -1,27 +1,28 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_bind_grp, voicegroup111
+	.equ	se_m_bind_grp, voicegroup128
 	.equ	se_m_bind_pri, 4
 	.equ	se_m_bind_rev, reverb_set+50
-	.equ	se_m_bind_mvl, 127
+	.equ	se_m_bind_mvl, 100
 	.equ	se_m_bind_key, 0
 	.equ	se_m_bind_tbs, 1
-	.equ	se_m_bind_exg, 0
+	.equ	se_m_bind_exg, 1
 	.equ	se_m_bind_cmp, 1
 
 	.section .rodata
 	.global	se_m_bind
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_bind_1:
 	.byte	KEYSH , se_m_bind_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_m_bind_tbs/2
 	.byte		VOICE , 38
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 100*se_m_bind_mvl/mxv
+	.byte		VOL   , 127*se_m_bind_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N05   , Fs2 , v127
 	.byte	W01
@@ -63,6 +64,7 @@ se_m_bind_1:
 	.byte		PAN   , c_v+11
 	.byte		BEND  , c_v-28
 	.byte	W03
+@ 001   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

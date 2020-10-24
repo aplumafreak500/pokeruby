@@ -1,26 +1,27 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_double_slap_grp, voicegroup111
+	.equ	se_m_double_slap_grp, voicegroup128
 	.equ	se_m_double_slap_pri, 4
 	.equ	se_m_double_slap_rev, reverb_set+50
-	.equ	se_m_double_slap_mvl, 127
+	.equ	se_m_double_slap_mvl, 110
 	.equ	se_m_double_slap_key, 0
 	.equ	se_m_double_slap_tbs, 1
-	.equ	se_m_double_slap_exg, 0
+	.equ	se_m_double_slap_exg, 1
 	.equ	se_m_double_slap_cmp, 1
 
 	.section .rodata
 	.global	se_m_double_slap
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_double_slap_1:
 	.byte	KEYSH , se_m_double_slap_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_m_double_slap_tbs/2
 	.byte		VOICE , 2
 	.byte		BENDR , 12
-	.byte		VOL   , 110*se_m_double_slap_mvl/mxv
+	.byte		VOL   , 127*se_m_double_slap_mvl/mxv
 	.byte		PAN   , c_v+9
 	.byte		BEND  , c_v+0
 	.byte		N02   , Bn3 , v112
@@ -34,6 +35,7 @@ se_m_double_slap_1:
 	.byte		VOICE , 18
 	.byte		N02   , Cn6 , v096
 	.byte	W15
+@ 001   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

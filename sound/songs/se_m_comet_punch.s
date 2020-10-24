@@ -1,25 +1,26 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_comet_punch_grp, voicegroup111
+	.equ	se_m_comet_punch_grp, voicegroup128
 	.equ	se_m_comet_punch_pri, 4
 	.equ	se_m_comet_punch_rev, reverb_set+50
-	.equ	se_m_comet_punch_mvl, 127
+	.equ	se_m_comet_punch_mvl, 120
 	.equ	se_m_comet_punch_key, 0
 	.equ	se_m_comet_punch_tbs, 1
-	.equ	se_m_comet_punch_exg, 0
+	.equ	se_m_comet_punch_exg, 1
 	.equ	se_m_comet_punch_cmp, 1
 
 	.section .rodata
 	.global	se_m_comet_punch
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_comet_punch_1:
 	.byte	KEYSH , se_m_comet_punch_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_m_comet_punch_tbs/2
 	.byte		VOICE , 6
-	.byte		VOL   , 120*se_m_comet_punch_mvl/mxv
+	.byte		VOL   , 127*se_m_comet_punch_mvl/mxv
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+0
@@ -39,16 +40,18 @@ se_m_comet_punch_1:
 	.byte	W02
 	.byte		BEND  , c_v-32
 	.byte	W18
+@ 001   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  2 **********************@
+@**************** Track 2 (Midi-Chn.2) ****************@
 
 se_m_comet_punch_2:
 	.byte	KEYSH , se_m_comet_punch_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 5
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
-	.byte		VOL   , 120*se_m_comet_punch_mvl/mxv
+	.byte		VOL   , 127*se_m_comet_punch_mvl/mxv
 	.byte		PAN   , c_v+9
 	.byte		N03   , An2 , v052
 	.byte	W04
@@ -56,6 +59,7 @@ se_m_comet_punch_2:
 	.byte	W02
 	.byte		PAN   , c_v-8
 	.byte	W18
+@ 001   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

@@ -71,12 +71,12 @@ UnkDebug0:: @ 0x821F3B8
 gUnknown_Debug_821F424:: @ something to do with Battle debug menu, seems to be positions, min/max values, width(?), priority?
 @	       y?   x  ind max             min y    x   ind max min y    x  ind  max           min y    x  ind max min y   x  ind max min
 @	       --------------Pokemon---------- --------Level------- -----------Held Item--------- --------PID?------- ------Gender-----
-	.2byte 2,   1,  2,  NUM_SPECIES - 1, 1, 18,  10, 2,  100, 1, 24,  14, 2,  NUM_ITEMS - 1, 0, 46,  26, 2,  5, 0, 48,  28, 2,  2, 0 @ there has to be at least one Pokemon per team
-	.2byte 52,  1,  4,  NUM_SPECIES - 1, 0, 68,  10, 4,  100, 1, 74,  14, 4,  NUM_ITEMS - 1, 0, 96,  26, 4,  5, 0, 98,  28, 4,  2, 0
-	.2byte 102, 1,  6,  NUM_SPECIES - 1, 0, 118, 10, 6,  100, 1, 124, 14, 6,  NUM_ITEMS - 1, 0, 146, 26, 6,  5, 0, 148, 28, 6,  2, 0
-	.2byte 152, 1,  8,  NUM_SPECIES - 1, 0, 168, 10, 8,  100, 1, 174, 14, 8,  NUM_ITEMS - 1, 0, 196, 26, 8,  5, 0, 198, 28, 8,  2, 0
-	.2byte 202, 1,  10, NUM_SPECIES - 1, 0, 218, 10, 10, 100, 1, 224, 14, 10, NUM_ITEMS - 1, 0, 246, 26, 10, 5, 0, 248, 28, 10, 2, 0
-	.2byte 252, 1,  12, NUM_SPECIES - 1, 0, 268, 10, 12, 100, 1, 274, 14, 12, NUM_ITEMS - 1, 0, 296, 26, 12, 5, 0, 298, 28, 12, 2, 0
+	.2byte 2,   1,  2,  NUM_SPECIES - 1, 1, 18,  10, 2,  100, 1, 24,  14, 2,  ITEMS_COUNT - 1, 0, 46,  26, 2,  5, 0, 48,  28, 2,  2, 0 @ there has to be at least one Pokemon per team
+	.2byte 52,  1,  4,  NUM_SPECIES - 1, 0, 68,  10, 4,  100, 1, 74,  14, 4,  ITEMS_COUNT - 1, 0, 96,  26, 4,  5, 0, 98,  28, 4,  2, 0
+	.2byte 102, 1,  6,  NUM_SPECIES - 1, 0, 118, 10, 6,  100, 1, 124, 14, 6,  ITEMS_COUNT - 1, 0, 146, 26, 6,  5, 0, 148, 28, 6,  2, 0
+	.2byte 152, 1,  8,  NUM_SPECIES - 1, 0, 168, 10, 8,  100, 1, 174, 14, 8,  ITEMS_COUNT - 1, 0, 196, 26, 8,  5, 0, 198, 28, 8,  2, 0
+	.2byte 202, 1,  10, NUM_SPECIES - 1, 0, 218, 10, 10, 100, 1, 224, 14, 10, ITEMS_COUNT - 1, 0, 246, 26, 10, 5, 0, 248, 28, 10, 2, 0
+	.2byte 252, 1,  12, NUM_SPECIES - 1, 0, 268, 10, 12, 100, 1, 274, 14, 12, ITEMS_COUNT - 1, 0, 296, 26, 12, 5, 0, 298, 28, 12, 2, 0
 @	       idk, max/min is 9, maybe battle type?
 	.2byte 302, 6,  18, 9,               1
 	.2byte 308, 26, 18, 9,               1

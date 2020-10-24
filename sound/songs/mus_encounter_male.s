@@ -1,26 +1,27 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_encounter_male_grp, voicegroup025
+	.equ	mus_encounter_male_grp, voicegroup028
 	.equ	mus_encounter_male_pri, 0
 	.equ	mus_encounter_male_rev, reverb_set+50
-	.equ	mus_encounter_male_mvl, 127
+	.equ	mus_encounter_male_mvl, 80
 	.equ	mus_encounter_male_key, 0
 	.equ	mus_encounter_male_tbs, 1
-	.equ	mus_encounter_male_exg, 0
+	.equ	mus_encounter_male_exg, 1
 	.equ	mus_encounter_male_cmp, 1
 
 	.section .rodata
 	.global	mus_encounter_male
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 mus_encounter_male_1:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 138*mus_encounter_male_tbs/2
 	.byte		VOICE , 17
 	.byte		LFOS  , 40
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N06   , Ds5 , v056
 	.byte	W06
@@ -43,6 +44,7 @@ mus_encounter_male_1:
 	.byte		        As4 
 	.byte	W06
 mus_encounter_male_1_B1:
+@ 001   ----------------------------------------
 	.byte		N09   , Cn5 , v080
 	.byte	W18
 	.byte		        Ds5 
@@ -65,6 +67,7 @@ mus_encounter_male_1_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
+@ 002   ----------------------------------------
 	.byte		N09   , Gn4 
 	.byte	W18
 	.byte		        Gs4 
@@ -82,6 +85,7 @@ mus_encounter_male_1_B1:
 	.byte	W12
 	.byte		        Ds4 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N09   , Fs4 
 	.byte	W18
 	.byte		N18   , Cs5 
@@ -92,6 +96,7 @@ mus_encounter_male_1_B1:
 	.byte	W36
 	.byte		        0
 	.byte	W12
+@ 004   ----------------------------------------
 	.byte		N09   , Fs4 
 	.byte	W18
 	.byte		N18   , Cs5 
@@ -113,6 +118,7 @@ mus_encounter_male_1_B1:
 	.byte	W06
 	.byte		        As4 
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte		N12   , An4 
 	.byte	W18
 	.byte		        Gn4 
@@ -129,6 +135,7 @@ mus_encounter_male_1_B1:
 	.byte	W09
 	.byte		N03   , En4 
 	.byte	W03
+@ 006   ----------------------------------------
 	.byte		N09   , Fn4 
 	.byte	W18
 	.byte		N12   , Cn5 
@@ -154,6 +161,7 @@ mus_encounter_male_1_B1:
 	.byte	W06
 	.byte		        An4 
 	.byte	W06
+@ 007   ----------------------------------------
 	.byte		        As3 
 	.byte	W12
 	.byte		N03   , As4 
@@ -168,6 +176,7 @@ mus_encounter_male_1_B1:
 	.byte	W12
 	.byte		        As4 
 	.byte	W24
+@ 008   ----------------------------------------
 	.byte		N06   
 	.byte	W18
 	.byte		N06   
@@ -188,14 +197,17 @@ mus_encounter_male_1_B1:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_male_1_B1
+mus_encounter_male_1_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  2 **********************@
+@**************** Track 2 (Midi-Chn.2) ****************@
 
 mus_encounter_male_2:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 36
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte	W48
 	.byte		PAN   , c_v+8
 	.byte		N06   , Ds1 , v116
@@ -209,6 +221,7 @@ mus_encounter_male_2:
 	.byte		N03   
 	.byte	W06
 mus_encounter_male_2_B1:
+@ 001   ----------------------------------------
 	.byte		N06   , Ds1 , v116
 	.byte	W12
 	.byte		N06   
@@ -229,6 +242,7 @@ mus_encounter_male_2_B1:
 	.byte	W06
 	.byte		        Ds1 
 	.byte	W06
+@ 002   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		N06   
@@ -249,6 +263,7 @@ mus_encounter_male_2_B1:
 	.byte	W12
 	.byte		        Gs1 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N06   , Fs1 
 	.byte	W12
 	.byte		N06   
@@ -269,6 +284,7 @@ mus_encounter_male_2_B1:
 	.byte	W06
 	.byte		        Fs1 
 	.byte	W06
+@ 004   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		N06   
@@ -289,6 +305,7 @@ mus_encounter_male_2_B1:
 	.byte	W12
 	.byte		        Fs1 
 	.byte	W12
+@ 005   ----------------------------------------
 	.byte		N06   , Fn1 
 	.byte	W12
 	.byte		N06   
@@ -309,6 +326,7 @@ mus_encounter_male_2_B1:
 	.byte	W06
 	.byte		        Fn1 
 	.byte	W06
+@ 006   ----------------------------------------
 	.byte		N06   
 	.byte	W18
 	.byte		N06   
@@ -323,6 +341,7 @@ mus_encounter_male_2_B1:
 	.byte	W12
 	.byte		        Cn1 
 	.byte	W12
+@ 007   ----------------------------------------
 	.byte		N03   , As0 
 	.byte	W12
 	.byte		N03   
@@ -345,6 +364,7 @@ mus_encounter_male_2_B1:
 	.byte	W06
 	.byte		        As1 
 	.byte	W06
+@ 008   ----------------------------------------
 	.byte		N12   , As0 
 	.byte	W12
 	.byte		N03   , As1 
@@ -359,14 +379,17 @@ mus_encounter_male_2_B1:
 	.byte	W48
 	.byte	GOTO
 	 .word	mus_encounter_male_2_B1
+mus_encounter_male_2_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  3 **********************@
+@**************** Track 3 (Midi-Chn.3) ****************@
 
 mus_encounter_male_3:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		PAN   , c_v-49
 	.byte		BEND  , c_v+0
 	.byte		N06   , Gn4 , v068
@@ -382,78 +405,84 @@ mus_encounter_male_3:
 	.byte		        Gn4 
 	.byte	W48
 mus_encounter_male_3_B1:
+@ 001   ----------------------------------------
 	.byte	W96
+@ 002   ----------------------------------------
 	.byte	W72
 	.byte		PAN   , c_v-8
 	.byte		N09   , As2 , v112
 	.byte	W12
 	.byte		        Cn3 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N84   , Cs3 
 	.byte	W12
-	.byte		VOL   , 74*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 118*mus_encounter_male_mvl/mxv
 	.byte	W12
-	.byte		        68*mus_encounter_male_mvl/mxv
+	.byte		        108*mus_encounter_male_mvl/mxv
 	.byte	W12
-	.byte		        60*mus_encounter_male_mvl/mxv
+	.byte		        96*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        52*mus_encounter_male_mvl/mxv
+	.byte		        83*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        46*mus_encounter_male_mvl/mxv
+	.byte		        74*mus_encounter_male_mvl/mxv
 	.byte	W09
-	.byte		        51*mus_encounter_male_mvl/mxv
+	.byte		        81*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        56*mus_encounter_male_mvl/mxv
+	.byte		        89*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        61*mus_encounter_male_mvl/mxv
+	.byte		        97*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        68*mus_encounter_male_mvl/mxv
+	.byte		        108*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        75*mus_encounter_male_mvl/mxv
+	.byte		        120*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_encounter_male_mvl/mxv
+	.byte		        127*mus_encounter_male_mvl/mxv
 	.byte	W03
 	.byte		N03   , Bn2 
 	.byte	W03
 	.byte		        Cn3 
 	.byte	W03
+@ 004   ----------------------------------------
 	.byte		N09   , Cs3 
 	.byte	W18
 	.byte		N12   , Ds3 
 	.byte	W18
 	.byte		N56   , Cs3 
 	.byte	W21
-	.byte		VOL   , 77*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 123*mus_encounter_male_mvl/mxv
 	.byte	W09
-	.byte		        74*mus_encounter_male_mvl/mxv
+	.byte		        118*mus_encounter_male_mvl/mxv
 	.byte	W09
-	.byte		        63*mus_encounter_male_mvl/mxv
+	.byte		        101*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        48*mus_encounter_male_mvl/mxv
+	.byte		        77*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_encounter_male_mvl/mxv
+	.byte		        56*mus_encounter_male_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_encounter_male_mvl/mxv
+	.byte		        29*mus_encounter_male_mvl/mxv
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte	W48
-	.byte		        80*mus_encounter_male_mvl/mxv
+	.byte		        127*mus_encounter_male_mvl/mxv
 	.byte		N12   , Fn3 
 	.byte	W18
 	.byte		        Dn3 
 	.byte	W18
 	.byte		N09   , Cn3 
 	.byte	W12
+@ 006   ----------------------------------------
 	.byte		N09   
 	.byte	W18
 	.byte		N12   , An3 
 	.byte	W18
 	.byte		N18   , Fn3 
 	.byte	W09
-	.byte		VOL   , 74*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 118*mus_encounter_male_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_encounter_male_mvl/mxv
+	.byte		        81*mus_encounter_male_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_encounter_male_mvl/mxv
+	.byte		        127*mus_encounter_male_mvl/mxv
 	.byte		N03   , Cn3 
 	.byte	W12
 	.byte		N03   
@@ -462,7 +491,9 @@ mus_encounter_male_3_B1:
 	.byte	W12
 	.byte		        Cn3 
 	.byte	W12
+@ 007   ----------------------------------------
 	.byte	W96
+@ 008   ----------------------------------------
 	.byte		N06   , As2 
 	.byte	W18
 	.byte		N06   
@@ -475,14 +506,17 @@ mus_encounter_male_3_B1:
 	.byte	W48
 	.byte	GOTO
 	 .word	mus_encounter_male_3_B1
+mus_encounter_male_3_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  4 **********************@
+@**************** Track 4 (Midi-Chn.4) ****************@
 
 mus_encounter_male_4:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 80
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		XCMD  , xIECV , 13
 	.byte		        xIECL , 10
 	.byte		PAN   , c_v+0
@@ -499,6 +533,7 @@ mus_encounter_male_4:
 	.byte		        As5 
 	.byte	W48
 mus_encounter_male_4_B1:
+@ 001   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+0
 	.byte		N09   , Gn4 , v052
@@ -521,6 +556,7 @@ mus_encounter_male_4_B1:
 	.byte	W06
 	.byte		        Cn4 
 	.byte	W06
+@ 002   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+0
 	.byte		N09   , Ds4 , v052
@@ -539,6 +575,7 @@ mus_encounter_male_4_B1:
 	.byte	W12
 	.byte		        Cn4 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v-1
 	.byte		N09   , Cs4 , v052
@@ -561,6 +598,7 @@ mus_encounter_male_4_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
+@ 004   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		N09   , Cs4 , v052
 	.byte	W03
@@ -584,6 +622,7 @@ mus_encounter_male_4_B1:
 	.byte	W06
 	.byte		        Fs4 
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte		N12   , Fn3 , v072
 	.byte	W18
 	.byte		        Ds3 
@@ -596,6 +635,7 @@ mus_encounter_male_4_B1:
 	.byte	W18
 	.byte		N09   , An2 
 	.byte	W12
+@ 006   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+0
 	.byte		N09   , Cn4 , v052
@@ -614,6 +654,7 @@ mus_encounter_male_4_B1:
 	.byte	W12
 	.byte		        Ds3 
 	.byte	W12
+@ 007   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+0
 	.byte		N06   , Fn3 , v052
@@ -630,6 +671,7 @@ mus_encounter_male_4_B1:
 	.byte	W12
 	.byte		        Fn4 
 	.byte	W24
+@ 008   ----------------------------------------
 	.byte		VOICE , 7
 	.byte		PAN   , c_v-48
 	.byte		N06   , Fn4 , v060
@@ -644,14 +686,17 @@ mus_encounter_male_4_B1:
 	.byte	W48
 	.byte	GOTO
 	 .word	mus_encounter_male_4_B1
+mus_encounter_male_4_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  5 **********************@
+@**************** Track 5 (Midi-Chn.5) ****************@
 
 mus_encounter_male_5:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		XCMD  , xIECV , 13
 	.byte		        xIECL , 10
 	.byte		PAN   , c_v+48
@@ -668,6 +713,7 @@ mus_encounter_male_5:
 	.byte		        Ds4 
 	.byte	W48
 mus_encounter_male_5_B1:
+@ 001   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		PAN   , c_v+47
 	.byte		N03   , Ds3 , v060
@@ -698,6 +744,7 @@ mus_encounter_male_5_B1:
 	.byte	W12
 	.byte		N03   
 	.byte	W06
+@ 002   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		N03   , Ds3 
 	.byte	W06
@@ -727,6 +774,7 @@ mus_encounter_male_5_B1:
 	.byte	W12
 	.byte		        Fn3 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		N03   , Fs3 
 	.byte	W06
@@ -756,6 +804,7 @@ mus_encounter_male_5_B1:
 	.byte	W12
 	.byte		N03   
 	.byte	W06
+@ 004   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		N03   , Fs3 
 	.byte	W06
@@ -789,6 +838,7 @@ mus_encounter_male_5_B1:
 	.byte	W06
 	.byte		        Cs4 
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte		N12   , Cn4 , v072
 	.byte	W18
 	.byte		        As3 
@@ -801,6 +851,7 @@ mus_encounter_male_5_B1:
 	.byte	W18
 	.byte		N09   , Fn3 
 	.byte	W12
+@ 006   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		N03   , Fn2 , v060
 	.byte	W06
@@ -830,6 +881,7 @@ mus_encounter_male_5_B1:
 	.byte	W12
 	.byte		        An2 
 	.byte	W12
+@ 007   ----------------------------------------
 	.byte		N03   , As2 
 	.byte	W06
 	.byte		        Dn3 
@@ -865,6 +917,7 @@ mus_encounter_male_5_B1:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
+@ 008   ----------------------------------------
 	.byte		PAN   , c_v+48
 	.byte		N06   , Dn4 
 	.byte	W18
@@ -878,14 +931,17 @@ mus_encounter_male_5_B1:
 	.byte	W48
 	.byte	GOTO
 	 .word	mus_encounter_male_5_B1
+mus_encounter_male_5_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  6 **********************@
+@**************** Track 6 (Midi-Chn.6) ****************@
 
 mus_encounter_male_6:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 81
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W72
 	.byte		N06   , Ds4 , v048
@@ -897,6 +953,7 @@ mus_encounter_male_6:
 	.byte		        As4 
 	.byte	W06
 mus_encounter_male_6_B1:
+@ 001   ----------------------------------------
 	.byte		N09   , Cn5 , v048
 	.byte	W18
 	.byte		        Ds5 
@@ -919,6 +976,7 @@ mus_encounter_male_6_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
+@ 002   ----------------------------------------
 	.byte		N09   , Gn4 
 	.byte	W18
 	.byte		        Gs4 
@@ -936,6 +994,7 @@ mus_encounter_male_6_B1:
 	.byte	W12
 	.byte		        Ds4 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N09   , Fs4 
 	.byte	W18
 	.byte		N18   , Cs5 
@@ -946,6 +1005,7 @@ mus_encounter_male_6_B1:
 	.byte	W36
 	.byte		        0
 	.byte	W12
+@ 004   ----------------------------------------
 	.byte		N09   , Fs4 
 	.byte	W18
 	.byte		N18   , Cs5 
@@ -967,6 +1027,7 @@ mus_encounter_male_6_B1:
 	.byte	W06
 	.byte		        As4 
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte		N12   , An4 
 	.byte	W18
 	.byte		        Gn4 
@@ -983,6 +1044,7 @@ mus_encounter_male_6_B1:
 	.byte	W09
 	.byte		N03   , En4 
 	.byte	W03
+@ 006   ----------------------------------------
 	.byte		N09   , Fn4 
 	.byte	W18
 	.byte		N12   , Cn5 
@@ -1008,6 +1070,7 @@ mus_encounter_male_6_B1:
 	.byte	W06
 	.byte		        An4 
 	.byte	W06
+@ 007   ----------------------------------------
 	.byte		        As3 
 	.byte	W12
 	.byte		N03   , As4 
@@ -1022,6 +1085,7 @@ mus_encounter_male_6_B1:
 	.byte	W12
 	.byte		        As4 
 	.byte	W24
+@ 008   ----------------------------------------
 	.byte		N06   
 	.byte	W18
 	.byte		N06   
@@ -1042,14 +1106,17 @@ mus_encounter_male_6_B1:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_male_6_B1
+mus_encounter_male_6_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  7 **********************@
+@**************** Track 7 (Midi-Chn.7) ****************@
 
 mus_encounter_male_7:
 	.byte	KEYSH , mus_encounter_male_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 80*mus_encounter_male_mvl/mxv
+	.byte		VOL   , 127*mus_encounter_male_mvl/mxv
 	.byte		N48   , An2 , v080
 	.byte	W72
 	.byte		N06   , En1 , v064
@@ -1061,6 +1128,7 @@ mus_encounter_male_7:
 	.byte		        En1 , v104
 	.byte	W06
 mus_encounter_male_7_B1:
+@ 001   ----------------------------------------
 	.byte		N06   , Cn1 , v120
 	.byte		N96   , An2 , v080
 	.byte	W12
@@ -1086,7 +1154,8 @@ mus_encounter_male_7_B1:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
-mus_encounter_male_7_000:
+@ 002   ----------------------------------------
+mus_encounter_male_7_002:
 	.byte		N06   , Cn1 , v120
 	.byte	W12
 	.byte		        Fs1 , v060
@@ -1112,6 +1181,7 @@ mus_encounter_male_7_000:
 	.byte		N12   , As1 , v068
 	.byte	W12
 	.byte	PEND
+@ 003   ----------------------------------------
 	.byte		N06   , Cn1 , v120
 	.byte	W12
 	.byte		        Fs1 , v060
@@ -1136,8 +1206,10 @@ mus_encounter_male_7_000:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
+@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_male_7_000
+	 .word	mus_encounter_male_7_002
+@ 005   ----------------------------------------
 	.byte		N06   , Cn1 , v120
 	.byte		N48   , An2 , v080
 	.byte	W12
@@ -1163,8 +1235,10 @@ mus_encounter_male_7_000:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
+@ 006   ----------------------------------------
 	.byte	PATT
-	 .word	mus_encounter_male_7_000
+	 .word	mus_encounter_male_7_002
+@ 007   ----------------------------------------
 	.byte		N06   , En1 , v112
 	.byte		N96   , An2 , v080
 	.byte	W12
@@ -1190,6 +1264,7 @@ mus_encounter_male_7_000:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
+@ 008   ----------------------------------------
 	.byte		        En1 , v112
 	.byte	W06
 	.byte		N06   
@@ -1214,6 +1289,8 @@ mus_encounter_male_7_000:
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_encounter_male_7_B1
+mus_encounter_male_7_B2:
+@ 009   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

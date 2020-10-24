@@ -10757,21 +10757,21 @@ Move_FairyWind:
 	loadspritegfx 10135
 	monbg 3
 	setalpha 12, 8
-	playsewithpan SE_W202, -64
+	playsewithpan SE_M_GIGA_DRAIN, -64
 	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 20, 1
 	delay 5
-	playsewithpan SE_W202, -64
+	playsewithpan SE_M_GIGA_DRAIN, -64
 	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 5, 22, 0xFFEE, 1
 	delay 5
-	playsewithpan SE_W202, -64
+	playsewithpan SE_M_GIGA_DRAIN, -64
 	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0xFFF6, 22, 15, 1
 	createvisualtask AnimTask_ShakeMon2, 2, 1, 2, 0, 18, 1
 	createvisualtask AnimTask_ShakeMon2, 2, 3, 2, 0, 18, 1
 	delay 5
-	playsewithpan SE_W202, -64
+	playsewithpan SE_M_GIGA_DRAIN, -64
 	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 0xFFEC, 1
 	delay 5
-	playsewithpan SE_W202, -64
+	playsewithpan SE_M_GIGA_DRAIN, -64
 	createsprite FairyWindSpriteTemplate, 131, 20, 0xFFF6, 20, 0, 22, 12, 1
 	delay 5
 	waitforvisualfinish

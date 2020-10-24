@@ -1,29 +1,32 @@
 	.include "MPlayDef.s"
 
-	.equ	mus_route122_grp, voicegroup018
+	.equ	mus_route122_grp, voicegroup021
 	.equ	mus_route122_pri, 0
 	.equ	mus_route122_rev, reverb_set+50
-	.equ	mus_route122_mvl, 127
+	.equ	mus_route122_mvl, 80
 	.equ	mus_route122_key, 0
 	.equ	mus_route122_tbs, 1
-	.equ	mus_route122_exg, 0
+	.equ	mus_route122_exg, 1
 	.equ	mus_route122_cmp, 1
 
 	.section .rodata
 	.global	mus_route122
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 mus_route122_1:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 124*mus_route122_tbs/2
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W96
+@ 001   ----------------------------------------
 	.byte	W96
 mus_route122_1_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N12   , Gs3 , v116
 	.byte	W18
@@ -37,12 +40,14 @@ mus_route122_1_B1:
 	.byte	W12
 	.byte		        As3 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N12   , Gs3 
 	.byte	W18
 	.byte		N06   , Gn3 
 	.byte	W06
 	.byte		N48   , Ds3 
 	.byte	W72
+@ 004   ----------------------------------------
 	.byte		N12   , Gs3 
 	.byte	W18
 	.byte		N06   , Ds3 
@@ -55,13 +60,15 @@ mus_route122_1_B1:
 	.byte	W12
 	.byte		        As3 
 	.byte	W12
+@ 005   ----------------------------------------
 	.byte		N12   , Gs3 
 	.byte	W18
 	.byte		N06   , As3 
 	.byte	W06
 	.byte		N48   , Gn3 
 	.byte	W72
-mus_route122_1_000:
+@ 006   ----------------------------------------
+mus_route122_1_006:
 	.byte		N30   , Gs3 , v116
 	.byte	W36
 	.byte		N06   , Gn3 
@@ -75,8 +82,10 @@ mus_route122_1_000:
 	.byte		        Gn3 
 	.byte	W12
 	.byte	PEND
+@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_1_000
+	 .word	mus_route122_1_006
+@ 008   ----------------------------------------
 	.byte		N30   , Gs3 , v116
 	.byte	W36
 	.byte		N06   , Ds3 
@@ -89,10 +98,12 @@ mus_route122_1_000:
 	.byte	W18
 	.byte		N09   , Cs4 
 	.byte	W12
+@ 009   ----------------------------------------
 	.byte		N48   
 	.byte	W48
 	.byte		        Cn4 
 	.byte	W48
+@ 010   ----------------------------------------
 	.byte		VOICE , 56
 	.byte		N30   , As4 
 	.byte	W12
@@ -110,6 +121,7 @@ mus_route122_1_000:
 	.byte	W18
 	.byte		        Ds4 
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte		N32   , Fs4 
 	.byte	W12
 	.byte		MOD   , 5
@@ -126,80 +138,84 @@ mus_route122_1_000:
 	.byte	W18
 	.byte		        Fs4 
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte		N92   
 	.byte	W30
-	.byte		VOL   , 75*mus_route122_mvl/mxv
+	.byte		VOL   , 120*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 5
 	.byte	W02
-	.byte		VOL   , 70*mus_route122_mvl/mxv
+	.byte		VOL   , 112*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        61*mus_route122_mvl/mxv
+	.byte		        97*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        57*mus_route122_mvl/mxv
+	.byte		        91*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        48*mus_route122_mvl/mxv
+	.byte		        77*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        37*mus_route122_mvl/mxv
+	.byte		        59*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        21*mus_route122_mvl/mxv
+	.byte		        34*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        11*mus_route122_mvl/mxv
+	.byte		        18*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 0
 	.byte	W03
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+@ 013   ----------------------------------------
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N92   , Fn4 
 	.byte	W30
-	.byte		VOL   , 75*mus_route122_mvl/mxv
+	.byte		VOL   , 120*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 5
 	.byte	W02
-	.byte		VOL   , 70*mus_route122_mvl/mxv
+	.byte		VOL   , 112*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        61*mus_route122_mvl/mxv
+	.byte		        97*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        57*mus_route122_mvl/mxv
+	.byte		        91*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        48*mus_route122_mvl/mxv
+	.byte		        77*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        37*mus_route122_mvl/mxv
+	.byte		        59*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        21*mus_route122_mvl/mxv
+	.byte		        34*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        11*mus_route122_mvl/mxv
+	.byte		        18*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 0
 	.byte	W03
+@ 014   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Gs3 
 	.byte	W18
 	.byte		N06   , Ds3 
 	.byte	W06
 	.byte		N66   , Ds4 
 	.byte	W24
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        25*mus_route122_mvl/mxv
+	.byte		        40*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        7*mus_route122_mvl/mxv
+	.byte		        12*mus_route122_mvl/mxv
 	.byte	W12
-mus_route122_1_001:
+@ 015   ----------------------------------------
+mus_route122_1_015:
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+16
 	.byte		N12   , Gs3 , v116
 	.byte	W18
@@ -207,27 +223,28 @@ mus_route122_1_001:
 	.byte	W06
 	.byte		N66   , Ds4 
 	.byte	W24
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte		MOD   , 5
 	.byte	W05
-	.byte		VOL   , 68*mus_route122_mvl/mxv
+	.byte		VOL   , 108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        25*mus_route122_mvl/mxv
+	.byte		        40*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        7*mus_route122_mvl/mxv
+	.byte		        12*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		MOD   , 0
 	.byte	W06
 	.byte	PEND
-mus_route122_1_002:
+@ 016   ----------------------------------------
+mus_route122_1_016:
 	.byte		VOICE , 60
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N12   , Gs3 , v116
 	.byte	W18
@@ -235,24 +252,25 @@ mus_route122_1_002:
 	.byte	W06
 	.byte		N66   , Bn3 
 	.byte	W24
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        25*mus_route122_mvl/mxv
+	.byte		        40*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        7*mus_route122_mvl/mxv
+	.byte		        12*mus_route122_mvl/mxv
 	.byte	W12
 	.byte	PEND
-mus_route122_1_003:
+@ 017   ----------------------------------------
+mus_route122_1_017:
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+16
 	.byte		N12   , Gs3 , v116
 	.byte	W18
@@ -260,26 +278,27 @@ mus_route122_1_003:
 	.byte	W06
 	.byte		N66   , Bn3 
 	.byte	W24
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte		MOD   , 5
 	.byte	W05
-	.byte		VOL   , 68*mus_route122_mvl/mxv
+	.byte		VOL   , 108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        25*mus_route122_mvl/mxv
+	.byte		        40*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        7*mus_route122_mvl/mxv
+	.byte		        12*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		MOD   , 0
 	.byte	W06
 	.byte	PEND
+@ 018   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N12   , Gs3 
 	.byte	W18
@@ -287,28 +306,32 @@ mus_route122_1_003:
 	.byte	W06
 	.byte		N66   , Ds4 
 	.byte	W24
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        25*mus_route122_mvl/mxv
+	.byte		        40*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        7*mus_route122_mvl/mxv
+	.byte		        12*mus_route122_mvl/mxv
 	.byte	W12
+@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_1_001
+	 .word	mus_route122_1_015
+@ 020   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_1_002
+	 .word	mus_route122_1_016
+@ 021   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_1_003
+	 .word	mus_route122_1_017
+@ 022   ----------------------------------------
 	.byte		VOICE , 60
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N12   , As3 , v116
 	.byte	W18
@@ -322,123 +345,130 @@ mus_route122_1_003:
 	.byte	W12
 	.byte		        Gn3 
 	.byte	W12
+@ 023   ----------------------------------------
 	.byte		N12   , Gs3 
 	.byte	W18
 	.byte		N06   , Gn3 
 	.byte	W06
 	.byte		N30   , Ds3 
 	.byte	W12
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        70*mus_route122_mvl/mxv
+	.byte		        112*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        17*mus_route122_mvl/mxv
+	.byte		        27*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N09   
 	.byte	W12
 	.byte		        Gs3 
 	.byte	W12
 	.byte		        Ds4 
 	.byte	W12
+@ 024   ----------------------------------------
 	.byte		N92   
 	.byte	W09
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        70*mus_route122_mvl/mxv
+	.byte		        112*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        65*mus_route122_mvl/mxv
+	.byte		        104*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        71*mus_route122_mvl/mxv
+	.byte		        113*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        76*mus_route122_mvl/mxv
+	.byte		        121*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W15
+@ 025   ----------------------------------------
 	.byte		N90   , As3 
 	.byte	W44
 	.byte	W01
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        64*mus_route122_mvl/mxv
+	.byte		        102*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        45*mus_route122_mvl/mxv
+	.byte		        72*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        36*mus_route122_mvl/mxv
+	.byte		        58*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        24*mus_route122_mvl/mxv
+	.byte		        39*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        9*mus_route122_mvl/mxv
+	.byte		        15*mus_route122_mvl/mxv
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_route122_1_B1
+mus_route122_1_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  2 **********************@
+@**************** Track 2 (Midi-Chn.2) ****************@
 
 mus_route122_2:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 58
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N96   , Cs1 , v127
 	.byte	W05
-	.byte		VOL   , 58*mus_route122_mvl/mxv
+	.byte		VOL   , 93*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        55*mus_route122_mvl/mxv
+	.byte		        88*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        53*mus_route122_mvl/mxv
+	.byte		        85*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        52*mus_route122_mvl/mxv
+	.byte		        83*mus_route122_mvl/mxv
 	.byte	W12
-	.byte		        53*mus_route122_mvl/mxv
+	.byte		        85*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        56*mus_route122_mvl/mxv
+	.byte		        89*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        59*mus_route122_mvl/mxv
+	.byte		        94*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        78*mus_route122_mvl/mxv
+	.byte		        124*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W24
+@ 001   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N56   , Ds1 
 	.byte	W18
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        78*mus_route122_mvl/mxv
+	.byte		        124*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        52*mus_route122_mvl/mxv
+	.byte		        83*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        41*mus_route122_mvl/mxv
+	.byte		        66*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        23*mus_route122_mvl/mxv
+	.byte		        37*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W12
 	.byte		        Fn1 
@@ -446,45 +476,47 @@ mus_route122_2:
 	.byte		        Gn1 
 	.byte	W12
 mus_route122_2_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 58
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Gs1 , v127
 	.byte	W24
 	.byte		N32   , Ds1 
 	.byte	W18
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        55*mus_route122_mvl/mxv
+	.byte		        88*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        1*mus_route122_mvl/mxv
+	.byte		        2*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Gs1 
 	.byte	W12
 	.byte		N21   , Ds1 
 	.byte	W24
-mus_route122_2_000:
+@ 003   ----------------------------------------
+mus_route122_2_003:
 	.byte		N12   , Ds1 , v127
 	.byte	W18
 	.byte		N06   
 	.byte	W06
 	.byte		N32   , As1 
 	.byte	W18
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        55*mus_route122_mvl/mxv
+	.byte		        88*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        1*mus_route122_mvl/mxv
+	.byte		        2*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Ds1 
 	.byte	W12
 	.byte		        As1 
@@ -492,50 +524,55 @@ mus_route122_2_000:
 	.byte		        Ds1 
 	.byte	W12
 	.byte	PEND
+@ 004   ----------------------------------------
 	.byte		        Gs1 
 	.byte	W24
 	.byte		N32   , Ds1 
 	.byte	W18
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        55*mus_route122_mvl/mxv
+	.byte		        88*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        1*mus_route122_mvl/mxv
+	.byte		        2*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Gs1 
 	.byte	W12
 	.byte		N21   , Ds1 
 	.byte	W24
+@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_2_000
-mus_route122_2_001:
+	 .word	mus_route122_2_003
+@ 006   ----------------------------------------
+mus_route122_2_006:
 	.byte		N12   , Cs2 , v127
 	.byte	W24
 	.byte		N32   , Gs1 
 	.byte	W18
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        55*mus_route122_mvl/mxv
+	.byte		        88*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        1*mus_route122_mvl/mxv
+	.byte		        2*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N24   , Cs2 
 	.byte	W24
 	.byte		N12   , Gs1 
 	.byte	W12
 	.byte	PEND
+@ 007   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_2_001
+	 .word	mus_route122_2_006
+@ 008   ----------------------------------------
 	.byte		N12   , Gs1 , v127
 	.byte	W24
 	.byte		N30   , Ds1 
@@ -544,6 +581,7 @@ mus_route122_2_001:
 	.byte	W24
 	.byte		N12   , Gs1 
 	.byte	W12
+@ 009   ----------------------------------------
 	.byte		N15   , As1 
 	.byte	W18
 	.byte		        Gs1 
@@ -552,18 +590,19 @@ mus_route122_2_001:
 	.byte	W12
 	.byte		N42   , Fn1 
 	.byte	W30
-	.byte		VOL   , 69*mus_route122_mvl/mxv
+	.byte		VOL   , 110*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        47*mus_route122_mvl/mxv
+	.byte		        75*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        30*mus_route122_mvl/mxv
+	.byte		        48*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        20*mus_route122_mvl/mxv
+	.byte		        32*mus_route122_mvl/mxv
 	.byte	W06
+@ 010   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W48
 	.byte		N12   , Ds3 , v108
 	.byte	W18
@@ -571,6 +610,7 @@ mus_route122_2_001:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte	W48
 	.byte		        Cs3 
 	.byte	W18
@@ -578,55 +618,62 @@ mus_route122_2_001:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte	W48
 	.byte		VOICE , 56
 	.byte		N44   , Cs4 , v092
 	.byte	W18
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		MOD   , 5
 	.byte	W03
-	.byte		VOL   , 75*mus_route122_mvl/mxv
+	.byte		VOL   , 120*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        46*mus_route122_mvl/mxv
+	.byte		        74*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        39*mus_route122_mvl/mxv
+	.byte		        62*mus_route122_mvl/mxv
 	.byte	W04
 	.byte		MOD   , 0
 	.byte	W03
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+@ 013   ----------------------------------------
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N92   
 	.byte	W30
-	.byte		VOL   , 75*mus_route122_mvl/mxv
+	.byte		VOL   , 120*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 5
 	.byte	W02
-	.byte		VOL   , 70*mus_route122_mvl/mxv
+	.byte		VOL   , 112*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        61*mus_route122_mvl/mxv
+	.byte		        97*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        57*mus_route122_mvl/mxv
+	.byte		        91*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        48*mus_route122_mvl/mxv
+	.byte		        77*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        37*mus_route122_mvl/mxv
+	.byte		        59*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        21*mus_route122_mvl/mxv
+	.byte		        34*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        11*mus_route122_mvl/mxv
+	.byte		        18*mus_route122_mvl/mxv
 	.byte	W09
 	.byte		MOD   , 0
 	.byte	W03
+@ 014   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W96
+@ 015   ----------------------------------------
 	.byte	W96
+@ 016   ----------------------------------------
 	.byte	W96
+@ 017   ----------------------------------------
 	.byte	W96
+@ 018   ----------------------------------------
 	.byte		VOICE , 73
 	.byte	W48
 	.byte		PAN   , c_v-16
@@ -636,64 +683,70 @@ mus_route122_2_001:
 	.byte	W06
 	.byte		N72   , Gs4 
 	.byte	W24
-mus_route122_2_002:
+@ 019   ----------------------------------------
+mus_route122_2_019:
 	.byte		MOD   , 5
 	.byte	W18
-	.byte		VOL   , 73*mus_route122_mvl/mxv
+	.byte		VOL   , 116*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W02
-	.byte		        57*mus_route122_mvl/mxv
+	.byte		        91*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        53*mus_route122_mvl/mxv
+	.byte		        85*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        44*mus_route122_mvl/mxv
+	.byte		        70*mus_route122_mvl/mxv
 	.byte	W04
-	.byte		        34*mus_route122_mvl/mxv
+	.byte		        54*mus_route122_mvl/mxv
 	.byte	W02
-	.byte		        28*mus_route122_mvl/mxv
+	.byte		        45*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        17*mus_route122_mvl/mxv
+	.byte		        27*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        11*mus_route122_mvl/mxv
+	.byte		        18*mus_route122_mvl/mxv
 	.byte	W04
-	.byte		        3*mus_route122_mvl/mxv
+	.byte		        5*mus_route122_mvl/mxv
 	.byte		MOD   , 0
 	.byte	W48
 	.byte	PEND
+@ 020   ----------------------------------------
 	.byte	W48
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , En4 , v088
 	.byte	W18
 	.byte		N06   , Bn3 
 	.byte	W06
 	.byte		N72   , Gs4 
 	.byte	W24
+@ 021   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_2_002
+	 .word	mus_route122_2_019
+@ 022   ----------------------------------------
 	.byte	W96
+@ 023   ----------------------------------------
 	.byte	W48
 	.byte		VOICE , 58
-	.byte		VOL   , 58*mus_route122_mvl/mxv
+	.byte		VOL   , 93*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N48   , Ds1 , v127
 	.byte	W03
-	.byte		VOL   , 48*mus_route122_mvl/mxv
+	.byte		VOL   , 77*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        70*mus_route122_mvl/mxv
+	.byte		        112*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        75*mus_route122_mvl/mxv
+	.byte		        120*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W09
+@ 024   ----------------------------------------
 	.byte		N09   
 	.byte	W12
 	.byte		N09   
@@ -710,6 +763,7 @@ mus_route122_2_002:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 025   ----------------------------------------
 	.byte		N09   
 	.byte	W12
 	.byte		N09   
@@ -728,14 +782,17 @@ mus_route122_2_002:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_route122_2_B1
+mus_route122_2_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  3 **********************@
+@**************** Track 3 (Midi-Chn.3) ****************@
 
 mus_route122_3:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N06   , Cs2 , v092
 	.byte	W36
 	.byte		N06   
@@ -748,6 +805,7 @@ mus_route122_3:
 	.byte	W24
 	.byte		N06   
 	.byte	W12
+@ 001   ----------------------------------------
 	.byte		        Ds2 
 	.byte	W12
 	.byte		N06   
@@ -766,25 +824,27 @@ mus_route122_3:
 	.byte		        Gn2 
 	.byte	W12
 mus_route122_3_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W96
-	.byte		        65*mus_route122_mvl/mxv
+@ 003   ----------------------------------------
+	.byte		        104*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+16
 	.byte		N32   , Ds4 , v076
 	.byte	W03
-	.byte		VOL   , 60*mus_route122_mvl/mxv
+	.byte		VOL   , 96*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        58*mus_route122_mvl/mxv
+	.byte		        93*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        65*mus_route122_mvl/mxv
+	.byte		        104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        71*mus_route122_mvl/mxv
+	.byte		        113*mus_route122_mvl/mxv
 	.byte		MOD   , 5
 	.byte	W03
-	.byte		VOL   , 78*mus_route122_mvl/mxv
+	.byte		VOL   , 124*mus_route122_mvl/mxv
 	.byte	W15
 	.byte		MOD   , 0
 	.byte	W03
@@ -798,22 +858,24 @@ mus_route122_3_B1:
 	.byte	W24
 	.byte		N06   , Gn4 
 	.byte	W12
+@ 004   ----------------------------------------
 	.byte	W96
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+@ 005   ----------------------------------------
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte		N32   , Ds4 , v076
 	.byte	W03
-	.byte		VOL   , 60*mus_route122_mvl/mxv
+	.byte		VOL   , 96*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        58*mus_route122_mvl/mxv
+	.byte		        93*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        65*mus_route122_mvl/mxv
+	.byte		        104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        71*mus_route122_mvl/mxv
+	.byte		        113*mus_route122_mvl/mxv
 	.byte		MOD   , 5
 	.byte	W03
-	.byte		VOL   , 78*mus_route122_mvl/mxv
+	.byte		VOL   , 124*mus_route122_mvl/mxv
 	.byte	W15
 	.byte		MOD   , 0
 	.byte	W03
@@ -827,9 +889,13 @@ mus_route122_3_B1:
 	.byte	W24
 	.byte		N06   , Gn4 
 	.byte	W12
+@ 006   ----------------------------------------
 	.byte	W96
+@ 007   ----------------------------------------
 	.byte	W96
+@ 008   ----------------------------------------
 	.byte	W96
+@ 009   ----------------------------------------
 	.byte		VOICE , 47
 	.byte	W60
 	.byte		PAN   , c_v+0
@@ -839,6 +905,7 @@ mus_route122_3_B1:
 	.byte	W12
 	.byte		N12   
 	.byte	W12
+@ 010   ----------------------------------------
 	.byte		N21   
 	.byte	W48
 	.byte		N12   
@@ -847,6 +914,7 @@ mus_route122_3_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte		N24   , Cs2 
 	.byte	W48
 	.byte		N12   
@@ -855,6 +923,7 @@ mus_route122_3_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte		N24   , Ds2 
 	.byte	W48
 	.byte		VOICE , 60
@@ -864,29 +933,31 @@ mus_route122_3_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+@ 013   ----------------------------------------
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N92   
 	.byte	W30
-	.byte		VOL   , 75*mus_route122_mvl/mxv
+	.byte		VOL   , 120*mus_route122_mvl/mxv
 	.byte	W11
-	.byte		        70*mus_route122_mvl/mxv
+	.byte		        112*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        61*mus_route122_mvl/mxv
+	.byte		        97*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        57*mus_route122_mvl/mxv
+	.byte		        91*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        48*mus_route122_mvl/mxv
+	.byte		        77*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        37*mus_route122_mvl/mxv
+	.byte		        59*mus_route122_mvl/mxv
 	.byte	W05
-	.byte		        21*mus_route122_mvl/mxv
+	.byte		        34*mus_route122_mvl/mxv
 	.byte	W07
-	.byte		        11*mus_route122_mvl/mxv
+	.byte		        18*mus_route122_mvl/mxv
 	.byte	W12
+@ 014   ----------------------------------------
 	.byte		VOICE , 47
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Ds2 , v104
 	.byte	W36
 	.byte		N12   
@@ -897,7 +968,8 @@ mus_route122_3_B1:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
-mus_route122_3_000:
+@ 015   ----------------------------------------
+mus_route122_3_015:
 	.byte		N06   , Ds2 , v127
 	.byte	W06
 	.byte		        Ds2 , v104
@@ -911,7 +983,8 @@ mus_route122_3_000:
 	.byte		        Ds2 , v127
 	.byte	W12
 	.byte	PEND
-mus_route122_3_001:
+@ 016   ----------------------------------------
+mus_route122_3_016:
 	.byte		N12   , Fs2 , v104
 	.byte	W36
 	.byte		N12   
@@ -923,7 +996,8 @@ mus_route122_3_001:
 	.byte		N06   
 	.byte	W06
 	.byte	PEND
-mus_route122_3_002:
+@ 017   ----------------------------------------
+mus_route122_3_017:
 	.byte		N06   , Fs2 , v127
 	.byte	W06
 	.byte		        Fs2 , v104
@@ -937,7 +1011,8 @@ mus_route122_3_002:
 	.byte		        Fs2 , v127
 	.byte	W12
 	.byte	PEND
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+@ 018   ----------------------------------------
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Ds2 , v104
 	.byte	W36
 	.byte		N12   
@@ -948,15 +1023,21 @@ mus_route122_3_002:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
+@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_3_000
+	 .word	mus_route122_3_015
+@ 020   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_3_001
+	 .word	mus_route122_3_016
+@ 021   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_3_002
+	 .word	mus_route122_3_017
+@ 022   ----------------------------------------
 	.byte		N12   , Ds2 , v127
 	.byte	W96
+@ 023   ----------------------------------------
 	.byte	W96
+@ 024   ----------------------------------------
 	.byte		VOICE , 47
 	.byte		N06   , Ds2 , v124
 	.byte	W12
@@ -974,6 +1055,7 @@ mus_route122_3_002:
 	.byte	W06
 	.byte		        Ds2 , v108
 	.byte	W06
+@ 025   ----------------------------------------
 	.byte		        Ds2 , v124
 	.byte	W12
 	.byte		N06   
@@ -992,16 +1074,19 @@ mus_route122_3_002:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_route122_3_B1
+mus_route122_3_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  4 **********************@
+@**************** Track 4 (Midi-Chn.4) ****************@
 
 mus_route122_4:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 2
 	.byte		XCMD  , xIECV , 9
 	.byte		        xIECL , 8
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Fn4 , v036
 	.byte	W06
@@ -1038,6 +1123,7 @@ mus_route122_4:
 	.byte	W06
 	.byte		        As4 
 	.byte	W06
+@ 001   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds4 
 	.byte	W06
@@ -1075,8 +1161,9 @@ mus_route122_4:
 	.byte		        Cs5 , v044
 	.byte	W06
 mus_route122_4_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 2
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds5 , v036
 	.byte	W06
@@ -1113,7 +1200,8 @@ mus_route122_4_B1:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
-mus_route122_4_000:
+@ 003   ----------------------------------------
+mus_route122_4_003:
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds5 , v036
 	.byte	W06
@@ -1151,6 +1239,7 @@ mus_route122_4_000:
 	.byte		        As3 
 	.byte	W06
 	.byte	PEND
+@ 004   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds5 
 	.byte	W06
@@ -1187,8 +1276,10 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		        Ds4 
 	.byte	W06
+@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_4_000
+	 .word	mus_route122_4_003
+@ 006   ----------------------------------------
 	.byte		VOICE , 4
 	.byte		PAN   , c_v-48
 	.byte		N12   , Fn4 , v048
@@ -1199,17 +1290,18 @@ mus_route122_4_000:
 	.byte	W12
 	.byte		N44   , Fn4 
 	.byte	W21
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        15*mus_route122_mvl/mxv
+	.byte		        24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+@ 007   ----------------------------------------
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , En4 
 	.byte	W18
 	.byte		        Ds4 
@@ -1218,17 +1310,18 @@ mus_route122_4_000:
 	.byte	W12
 	.byte		N44   , En4 
 	.byte	W21
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        15*mus_route122_mvl/mxv
+	.byte		        24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+@ 008   ----------------------------------------
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Ds4 
 	.byte	W18
 	.byte		        Cs4 
@@ -1237,19 +1330,20 @@ mus_route122_4_000:
 	.byte	W12
 	.byte		N44   , Ds4 
 	.byte	W21
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        15*mus_route122_mvl/mxv
+	.byte		        24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
+@ 009   ----------------------------------------
 	.byte		VOICE , 4
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N06   , As2 , v044
 	.byte	W06
 	.byte		        Cs3 , v048
@@ -1282,37 +1376,40 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		        Fn4 , v048
 	.byte	W06
+@ 010   ----------------------------------------
 	.byte		PAN   , c_v-48
 	.byte		N30   , Gn4 , v052
 	.byte	W12
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        49*mus_route122_mvl/mxv
+	.byte		        78*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        26*mus_route122_mvl/mxv
+	.byte		        42*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , As2 
 	.byte	W18
 	.byte		N12   
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte		N32   , Cs4 
 	.byte	W12
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        49*mus_route122_mvl/mxv
+	.byte		        78*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        26*mus_route122_mvl/mxv
+	.byte		        42*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , As2 
 	.byte	W18
 	.byte		N12   
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte		N06   , Cs4 , v064
 	.byte	W06
@@ -1346,6 +1443,7 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		        Fs3 
 	.byte	W06
+@ 013   ----------------------------------------
 	.byte		N03   , Cs3 
 	.byte	W03
 	.byte		N03   
@@ -1395,29 +1493,31 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		        Cs5 , v020
 	.byte	W06
+@ 014   ----------------------------------------
 	.byte		N24   , Cn3 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W30
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W48
+@ 015   ----------------------------------------
 	.byte		N24   
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Gs4 , v052
 	.byte	W06
@@ -1431,30 +1531,32 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 016   ----------------------------------------
 	.byte		PAN   , c_v-48
 	.byte		N24   , Bn2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W30
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W48
+@ 017   ----------------------------------------
 	.byte		N24   
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Gs4 , v052
 	.byte	W06
@@ -1468,18 +1570,19 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 018   ----------------------------------------
 	.byte		PAN   , c_v-48
 	.byte		N24   , Cn3 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Gs3 , v072
 	.byte	W06
@@ -1493,19 +1596,20 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-	.byte		VOL   , 48*mus_route122_mvl/mxv
+@ 019   ----------------------------------------
+	.byte		VOL   , 77*mus_route122_mvl/mxv
 	.byte		PAN   , c_v-48
 	.byte		N48   , Ds3 , v084
 	.byte	W06
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        58*mus_route122_mvl/mxv
+	.byte		        93*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        74*mus_route122_mvl/mxv
+	.byte		        118*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W18
 	.byte		PAN   , c_v+0
 	.byte		N06   , Cn4 , v072
@@ -1516,19 +1620,20 @@ mus_route122_4_000:
 	.byte	W12
 	.byte		MOD   , 5
 	.byte	W12
+@ 020   ----------------------------------------
 	.byte		PAN   , c_v-48
 	.byte		MOD   , 0
 	.byte		N24   , Bn2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Gs3 , v072
 	.byte	W06
@@ -1542,19 +1647,20 @@ mus_route122_4_000:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-	.byte		VOL   , 48*mus_route122_mvl/mxv
+@ 021   ----------------------------------------
+	.byte		VOL   , 77*mus_route122_mvl/mxv
 	.byte		PAN   , c_v-48
 	.byte		N48   , En3 , v084
 	.byte	W06
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        58*mus_route122_mvl/mxv
+	.byte		        93*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        66*mus_route122_mvl/mxv
+	.byte		        105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        74*mus_route122_mvl/mxv
+	.byte		        118*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W18
 	.byte		PAN   , c_v+0
 	.byte		N06   , Gs3 , v072
@@ -1565,99 +1671,106 @@ mus_route122_4_000:
 	.byte	W12
 	.byte		MOD   , 5
 	.byte	W12
+@ 022   ----------------------------------------
 	.byte		        0
 	.byte		N48   , Ds3 , v052
 	.byte	W24
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        42*mus_route122_mvl/mxv
+	.byte		        67*mus_route122_mvl/mxv
+	.byte	W03
+	.byte		        47*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		        29*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        16*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        10*mus_route122_mvl/mxv
-	.byte	W03
-	.byte		        4*mus_route122_mvl/mxv
+	.byte		        7*mus_route122_mvl/mxv
 	.byte	W48
-	.byte		        80*mus_route122_mvl/mxv
+@ 023   ----------------------------------------
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N48   , Cn3 
 	.byte	W24
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        60*mus_route122_mvl/mxv
+	.byte		        96*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        42*mus_route122_mvl/mxv
+	.byte		        67*mus_route122_mvl/mxv
+	.byte	W03
+	.byte		        47*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		        29*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        16*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        10*mus_route122_mvl/mxv
-	.byte	W03
-	.byte		        4*mus_route122_mvl/mxv
+	.byte		        7*mus_route122_mvl/mxv
 	.byte	W12
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N09   , Gs2 , v064
 	.byte	W12
 	.byte		        Ds3 
 	.byte	W12
 	.byte		        Gs3 
 	.byte	W12
+@ 024   ----------------------------------------
 	.byte		N92   
 	.byte	W09
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        70*mus_route122_mvl/mxv
+	.byte		        112*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        68*mus_route122_mvl/mxv
+	.byte		        108*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        62*mus_route122_mvl/mxv
+	.byte		        99*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        65*mus_route122_mvl/mxv
+	.byte		        104*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        71*mus_route122_mvl/mxv
+	.byte		        113*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        76*mus_route122_mvl/mxv
+	.byte		        121*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W15
+@ 025   ----------------------------------------
 	.byte		N90   , Gn3 
 	.byte	W44
 	.byte	W01
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        69*mus_route122_mvl/mxv
+	.byte		        110*mus_route122_mvl/mxv
 	.byte	W09
-	.byte		        64*mus_route122_mvl/mxv
+	.byte		        102*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        54*mus_route122_mvl/mxv
+	.byte		        86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        45*mus_route122_mvl/mxv
+	.byte		        72*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        36*mus_route122_mvl/mxv
+	.byte		        58*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        24*mus_route122_mvl/mxv
+	.byte		        39*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        9*mus_route122_mvl/mxv
+	.byte		        15*mus_route122_mvl/mxv
 	.byte	W06
 	.byte	GOTO
 	 .word	mus_route122_4_B1
+mus_route122_4_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  5 **********************@
+@**************** Track 5 (Midi-Chn.5) ****************@
 
 mus_route122_5:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 5
 	.byte		XCMD  , xIECV , 9
 	.byte		        xIECL , 8
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N03   , Gs2 , v060
 	.byte	W36
 	.byte		N03   
@@ -1670,6 +1783,7 @@ mus_route122_5:
 	.byte	W24
 	.byte		N03   
 	.byte	W12
+@ 001   ----------------------------------------
 	.byte		        As2 
 	.byte	W12
 	.byte		N03   
@@ -1687,7 +1801,8 @@ mus_route122_5:
 	.byte		        Cs3 
 	.byte	W12
 mus_route122_5_B1:
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+@ 002   ----------------------------------------
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+0
 	.byte	W24
@@ -1695,20 +1810,24 @@ mus_route122_5_B1:
 	.byte	W48
 	.byte		N06   
 	.byte	W24
-mus_route122_5_000:
+@ 003   ----------------------------------------
+mus_route122_5_003:
 	.byte	W24
 	.byte		N06   , Gs3 , v060
 	.byte	W48
 	.byte		        Gn3 
 	.byte	W24
 	.byte	PEND
+@ 004   ----------------------------------------
 	.byte	W24
 	.byte		        Gs3 
 	.byte	W48
 	.byte		N06   
 	.byte	W24
+@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_5_000
+	 .word	mus_route122_5_003
+@ 006   ----------------------------------------
 	.byte		VOICE , 82
 	.byte		PAN   , c_v+48
 	.byte		N12   , Cs4 , v048
@@ -1722,22 +1841,23 @@ mus_route122_5_000:
 	.byte		VOICE , 86
 	.byte		N12   
 	.byte	W09
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N12   
 	.byte	W03
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N09   
 	.byte	W03
-	.byte		VOL   , 15*mus_route122_mvl/mxv
+	.byte		VOL   , 24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
+@ 007   ----------------------------------------
 	.byte		VOICE , 82
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W18
 	.byte		        Cn4 
@@ -1749,22 +1869,23 @@ mus_route122_5_000:
 	.byte		VOICE , 86
 	.byte		N12   
 	.byte	W09
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N12   
 	.byte	W03
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N09   
 	.byte	W03
-	.byte		VOL   , 15*mus_route122_mvl/mxv
+	.byte		VOL   , 24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
+@ 008   ----------------------------------------
 	.byte		VOICE , 82
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Cn4 
 	.byte	W18
 	.byte		        As3 
@@ -1776,23 +1897,24 @@ mus_route122_5_000:
 	.byte		VOICE , 86
 	.byte		N12   
 	.byte	W09
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N12   
 	.byte	W03
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
 	.byte		N09   
 	.byte	W03
-	.byte		VOL   , 15*mus_route122_mvl/mxv
+	.byte		VOL   , 24*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        6*mus_route122_mvl/mxv
+	.byte		        10*mus_route122_mvl/mxv
 	.byte	W06
+@ 009   ----------------------------------------
 	.byte		VOICE , 5
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		N06   , As2 , v028
 	.byte	W06
@@ -1824,37 +1946,40 @@ mus_route122_5_000:
 	.byte	W06
 	.byte		        Gs4 
 	.byte	W06
+@ 010   ----------------------------------------
 	.byte		PAN   , c_v+48
 	.byte		N30   , Ds4 , v052
 	.byte	W12
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        49*mus_route122_mvl/mxv
+	.byte		        78*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        26*mus_route122_mvl/mxv
+	.byte		        42*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Gn2 
 	.byte	W18
 	.byte		N12   
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte		N32   , As3 , v040
 	.byte	W12
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        49*mus_route122_mvl/mxv
+	.byte		        78*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        26*mus_route122_mvl/mxv
+	.byte		        42*mus_route122_mvl/mxv
 	.byte	W24
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		N12   , Fs2 , v052
 	.byte	W18
 	.byte		N12   
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte		PAN   , c_v+0
 	.byte	W06
 	.byte		N06   , Cs4 , v028
@@ -1887,6 +2012,7 @@ mus_route122_5_000:
 	.byte	W06
 	.byte		        Gs3 
 	.byte	W06
+@ 013   ----------------------------------------
 	.byte		        Fs3 
 	.byte	W06
 	.byte		        Cs3 
@@ -1913,32 +2039,34 @@ mus_route122_5_000:
 	.byte	W06
 	.byte		        Cs5 , v008
 	.byte	W24
-mus_route122_5_001:
+@ 014   ----------------------------------------
+mus_route122_5_014:
 	.byte		PAN   , c_v+48
 	.byte		N24   , Gs2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W30
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte	W48
 	.byte	PEND
+@ 015   ----------------------------------------
 	.byte		N24   
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds4 , v052
 	.byte	W06
@@ -1952,19 +2080,21 @@ mus_route122_5_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 016   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_5_001
+	 .word	mus_route122_5_014
+@ 017   ----------------------------------------
 	.byte		N24   , Gs2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , En4 , v052
 	.byte	W06
@@ -1978,18 +2108,19 @@ mus_route122_5_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 018   ----------------------------------------
 	.byte		PAN   , c_v+48
 	.byte		N24   , Gs2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Ds3 , v072
 	.byte	W06
@@ -2003,22 +2134,23 @@ mus_route122_5_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-	.byte		VOL   , 48*mus_route122_mvl/mxv
+@ 019   ----------------------------------------
+	.byte		VOL   , 77*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+48
 	.byte		N12   , Cn3 , v084
 	.byte	W06
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		VOICE , 6
-	.byte		VOL   , 58*mus_route122_mvl/mxv
+	.byte		VOL   , 93*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        74*mus_route122_mvl/mxv
+	.byte		        118*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		N12   
 	.byte	W12
@@ -2032,19 +2164,20 @@ mus_route122_5_001:
 	.byte	W12
 	.byte		MOD   , 5
 	.byte	W12
+@ 020   ----------------------------------------
 	.byte		PAN   , c_v+48
 	.byte		MOD   , 0
 	.byte		N24   , Gs2 , v080
 	.byte	W09
-	.byte		VOL   , 65*mus_route122_mvl/mxv
+	.byte		VOL   , 104*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        51*mus_route122_mvl/mxv
+	.byte		        81*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        35*mus_route122_mvl/mxv
+	.byte		        56*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W18
-	.byte		        80*mus_route122_mvl/mxv
+	.byte		        127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , En3 , v072
 	.byte	W06
@@ -2058,22 +2191,23 @@ mus_route122_5_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
-	.byte		VOL   , 48*mus_route122_mvl/mxv
+@ 021   ----------------------------------------
+	.byte		VOL   , 77*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+48
 	.byte		N12   , Bn2 , v084
 	.byte	W06
-	.byte		VOL   , 54*mus_route122_mvl/mxv
+	.byte		VOL   , 86*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		VOICE , 6
-	.byte		VOL   , 58*mus_route122_mvl/mxv
+	.byte		VOL   , 93*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 66*mus_route122_mvl/mxv
+	.byte		VOL   , 105*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        74*mus_route122_mvl/mxv
+	.byte		        118*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte	W06
 	.byte		N12   
 	.byte	W12
@@ -2087,53 +2221,56 @@ mus_route122_5_001:
 	.byte	W12
 	.byte		MOD   , 5
 	.byte	W12
+@ 022   ----------------------------------------
 	.byte		        0
 	.byte		N12   , Gn2 , v052
 	.byte	W12
 	.byte		VOICE , 6
 	.byte		N12   
 	.byte	W12
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 60*mus_route122_mvl/mxv
+	.byte		VOL   , 96*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        42*mus_route122_mvl/mxv
+	.byte		        67*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W03
-	.byte		VOL   , 29*mus_route122_mvl/mxv
+	.byte		VOL   , 47*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        10*mus_route122_mvl/mxv
+	.byte		        16*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        4*mus_route122_mvl/mxv
+	.byte		        7*mus_route122_mvl/mxv
 	.byte	W48
+@ 023   ----------------------------------------
 	.byte		VOICE , 5
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Gs2 
 	.byte	W12
 	.byte		VOICE , 6
 	.byte		N12   
 	.byte	W12
-	.byte		VOL   , 74*mus_route122_mvl/mxv
+	.byte		VOL   , 118*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W06
-	.byte		VOL   , 60*mus_route122_mvl/mxv
+	.byte		VOL   , 96*mus_route122_mvl/mxv
 	.byte	W06
-	.byte		        42*mus_route122_mvl/mxv
+	.byte		        67*mus_route122_mvl/mxv
 	.byte		N12   
 	.byte	W03
-	.byte		VOL   , 29*mus_route122_mvl/mxv
+	.byte		VOL   , 47*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        18*mus_route122_mvl/mxv
+	.byte		        29*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        10*mus_route122_mvl/mxv
+	.byte		        16*mus_route122_mvl/mxv
 	.byte	W03
-	.byte		        4*mus_route122_mvl/mxv
+	.byte		        7*mus_route122_mvl/mxv
 	.byte	W48
+@ 024   ----------------------------------------
 	.byte		VOICE , 5
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N03   , Gs2 , v072
 	.byte	W12
 	.byte		N03   
@@ -2150,6 +2287,7 @@ mus_route122_5_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 025   ----------------------------------------
 	.byte		        Gn2 
 	.byte	W12
 	.byte		N03   
@@ -2168,14 +2306,17 @@ mus_route122_5_001:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_route122_5_B1
+mus_route122_5_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  6 **********************@
+@**************** Track 6 (Midi-Chn.6) ****************@
 
 mus_route122_6:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 85
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N03   , Cs3 , v064
 	.byte	W36
 	.byte		VOICE , 84
@@ -2190,6 +2331,7 @@ mus_route122_6:
 	.byte	W24
 	.byte		N03   
 	.byte	W12
+@ 001   ----------------------------------------
 	.byte		        Ds3 
 	.byte	W12
 	.byte		N03   
@@ -2209,8 +2351,9 @@ mus_route122_6:
 	.byte		        Gn3 
 	.byte	W12
 mus_route122_6_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 81
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N12   , Gs2 , v064
 	.byte	W18
 	.byte		N06   , Ds2 
@@ -2225,6 +2368,7 @@ mus_route122_6_B1:
 	.byte	W12
 	.byte		        As2 
 	.byte	W12
+@ 003   ----------------------------------------
 	.byte		N12   , Gs2 
 	.byte	W18
 	.byte		N06   , Gn2 
@@ -2233,6 +2377,7 @@ mus_route122_6_B1:
 	.byte	W42
 	.byte		N06   , Ds2 , v032
 	.byte	W30
+@ 004   ----------------------------------------
 	.byte		N12   , Gs2 , v064
 	.byte	W18
 	.byte		N06   , Ds2 
@@ -2247,6 +2392,7 @@ mus_route122_6_B1:
 	.byte	W12
 	.byte		        As2 
 	.byte	W12
+@ 005   ----------------------------------------
 	.byte		N12   , Gs2 
 	.byte	W18
 	.byte		N06   , As2 
@@ -2255,6 +2401,7 @@ mus_route122_6_B1:
 	.byte	W42
 	.byte		N06   , Gn2 , v032
 	.byte	W30
+@ 006   ----------------------------------------
 	.byte		N24   , Cs3 , v064
 	.byte	W24
 	.byte		N06   , Cs3 , v032
@@ -2269,6 +2416,7 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		        Cs3 
 	.byte	W12
+@ 007   ----------------------------------------
 	.byte		N24   
 	.byte	W24
 	.byte		N06   , Cs3 , v032
@@ -2283,6 +2431,7 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		        Cs3 
 	.byte	W12
+@ 008   ----------------------------------------
 	.byte		N24   , Ds3 
 	.byte	W24
 	.byte		N06   , Ds3 , v032
@@ -2297,6 +2446,7 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		N09   
 	.byte	W12
+@ 009   ----------------------------------------
 	.byte		N42   , Gn3 
 	.byte	W42
 	.byte		N06   , Gn3 , v032
@@ -2305,6 +2455,7 @@ mus_route122_6_B1:
 	.byte	W36
 	.byte		N12   
 	.byte	W12
+@ 010   ----------------------------------------
 	.byte		N32   , Ds1 , v080
 	.byte	W48
 	.byte		N12   
@@ -2313,6 +2464,7 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 011   ----------------------------------------
 	.byte		N30   , Fs1 
 	.byte	W30
 	.byte		N12   , Fs1 , v032
@@ -2323,6 +2475,7 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 012   ----------------------------------------
 	.byte		N48   , Gs1 
 	.byte	W48
 	.byte		N12   , Gs1 , v032
@@ -2331,13 +2484,15 @@ mus_route122_6_B1:
 	.byte	W18
 	.byte		N12   
 	.byte	W12
+@ 013   ----------------------------------------
 	.byte		N48   , Cs1 
 	.byte	W48
 	.byte		N12   , Cs1 , v048
 	.byte	W12
 	.byte		        Cs1 , v032
 	.byte	W36
-mus_route122_6_000:
+@ 014   ----------------------------------------
+mus_route122_6_014:
 	.byte		N12   , Gs1 , v080
 	.byte	W36
 	.byte		N09   
@@ -2347,9 +2502,11 @@ mus_route122_6_000:
 	.byte		N09   
 	.byte	W12
 	.byte	PEND
+@ 015   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_000
-mus_route122_6_001:
+	 .word	mus_route122_6_014
+@ 016   ----------------------------------------
+mus_route122_6_016:
 	.byte		N12   , Bn1 , v080
 	.byte	W36
 	.byte		N09   
@@ -2359,21 +2516,29 @@ mus_route122_6_001:
 	.byte		N09   
 	.byte	W12
 	.byte	PEND
+@ 017   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_001
+	 .word	mus_route122_6_016
+@ 018   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_000
+	 .word	mus_route122_6_014
+@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_000
+	 .word	mus_route122_6_014
+@ 020   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_001
+	 .word	mus_route122_6_016
+@ 021   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_6_001
+	 .word	mus_route122_6_016
+@ 022   ----------------------------------------
 	.byte		N48   , Ds1 , v080
 	.byte	W48
 	.byte		N12   , Ds1 , v032
 	.byte	W48
+@ 023   ----------------------------------------
 	.byte	W96
+@ 024   ----------------------------------------
 	.byte		VOICE , 85
 	.byte		N03   , As2 , v080
 	.byte	W12
@@ -2393,6 +2558,7 @@ mus_route122_6_001:
 	.byte	W06
 	.byte		N03   
 	.byte	W06
+@ 025   ----------------------------------------
 	.byte		N03   
 	.byte	W12
 	.byte		N03   
@@ -2413,14 +2579,17 @@ mus_route122_6_001:
 	.byte	W12
 	.byte	GOTO
 	 .word	mus_route122_6_B1
+mus_route122_6_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  7 **********************@
+@**************** Track 7 (Midi-Chn.7) ****************@
 
 mus_route122_7:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte		N03   , Cs3 , v088
 	.byte	W36
@@ -2434,6 +2603,7 @@ mus_route122_7:
 	.byte	W24
 	.byte		N03   
 	.byte	W12
+@ 001   ----------------------------------------
 	.byte		        Ds3 
 	.byte	W12
 	.byte		N03   
@@ -2451,58 +2621,85 @@ mus_route122_7:
 	.byte		        Gn3 
 	.byte	W12
 mus_route122_7_B1:
+@ 002   ----------------------------------------
 	.byte		VOICE , 56
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		PAN   , c_v+0
 	.byte	W24
 	.byte		N06   , Cn4 , v088
 	.byte	W48
 	.byte		N06   
 	.byte	W24
-mus_route122_7_000:
+@ 003   ----------------------------------------
+mus_route122_7_003:
 	.byte	W24
 	.byte		N06   , As3 , v088
 	.byte	W48
 	.byte		N06   
 	.byte	W24
 	.byte	PEND
+@ 004   ----------------------------------------
 	.byte	W24
 	.byte		        Cn4 
 	.byte	W48
 	.byte		N06   
 	.byte	W24
+@ 005   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_7_000
+	 .word	mus_route122_7_003
+@ 006   ----------------------------------------
 	.byte	W96
+@ 007   ----------------------------------------
 	.byte	W96
+@ 008   ----------------------------------------
 	.byte	W96
+@ 009   ----------------------------------------
 	.byte	W96
+@ 010   ----------------------------------------
 	.byte	W96
+@ 011   ----------------------------------------
 	.byte	W96
+@ 012   ----------------------------------------
 	.byte	W96
+@ 013   ----------------------------------------
 	.byte	W96
+@ 014   ----------------------------------------
 	.byte	W96
+@ 015   ----------------------------------------
 	.byte	W96
+@ 016   ----------------------------------------
 	.byte	W96
+@ 017   ----------------------------------------
 	.byte	W96
+@ 018   ----------------------------------------
 	.byte	W96
+@ 019   ----------------------------------------
 	.byte	W96
+@ 020   ----------------------------------------
 	.byte	W96
+@ 021   ----------------------------------------
 	.byte	W96
+@ 022   ----------------------------------------
 	.byte	W96
+@ 023   ----------------------------------------
 	.byte	W96
+@ 024   ----------------------------------------
 	.byte	W96
+@ 025   ----------------------------------------
 	.byte	W96
 	.byte	GOTO
 	 .word	mus_route122_7_B1
+mus_route122_7_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  8 **********************@
+@**************** Track 8 (Midi-Chn.8) ****************@
 
 mus_route122_8:
 	.byte	KEYSH , mus_route122_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 0
-	.byte		VOL   , 80*mus_route122_mvl/mxv
+	.byte		VOL   , 127*mus_route122_mvl/mxv
 	.byte		N06   , En1 , v104
 	.byte	W36
 	.byte		N06   
@@ -2515,7 +2712,8 @@ mus_route122_8:
 	.byte	W24
 	.byte		N06   
 	.byte	W12
-mus_route122_8_000:
+@ 001   ----------------------------------------
+mus_route122_8_001:
 	.byte		N06   , En1 , v104
 	.byte	W12
 	.byte		N06   
@@ -2546,7 +2744,8 @@ mus_route122_8_000:
 	.byte	W03
 	.byte	PEND
 mus_route122_8_B1:
-mus_route122_8_001:
+@ 002   ----------------------------------------
+mus_route122_8_002:
 	.byte		N06   , En1 , v104
 	.byte		N48   , Bn2 , v084
 	.byte	W36
@@ -2561,6 +2760,7 @@ mus_route122_8_001:
 	.byte		N06   
 	.byte	W12
 	.byte	PEND
+@ 003   ----------------------------------------
 	.byte		N06   
 	.byte	W12
 	.byte		N06   
@@ -2577,8 +2777,10 @@ mus_route122_8_001:
 	.byte	W06
 	.byte		        En1 , v084
 	.byte	W06
+@ 004   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_001
+	 .word	mus_route122_8_002
+@ 005   ----------------------------------------
 	.byte		N06   , En1 , v104
 	.byte	W12
 	.byte		N06   
@@ -2599,6 +2801,7 @@ mus_route122_8_001:
 	.byte	W06
 	.byte		        En1 , v076
 	.byte	W06
+@ 006   ----------------------------------------
 	.byte		        En1 , v104
 	.byte		N96   , Bn2 , v084
 	.byte	W18
@@ -2622,7 +2825,8 @@ mus_route122_8_001:
 	.byte	W06
 	.byte		        En1 , v064
 	.byte	W06
-mus_route122_8_002:
+@ 007   ----------------------------------------
+mus_route122_8_007:
 	.byte		N06   , En1 , v104
 	.byte	W18
 	.byte		        En1 , v076
@@ -2656,6 +2860,7 @@ mus_route122_8_002:
 	.byte		N03   
 	.byte	W03
 	.byte	PEND
+@ 008   ----------------------------------------
 	.byte		N06   , En1 , v104
 	.byte	W18
 	.byte		        En1 , v076
@@ -2678,9 +2883,11 @@ mus_route122_8_002:
 	.byte	W06
 	.byte		        En1 , v064
 	.byte	W06
+@ 009   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_002
-mus_route122_8_003:
+	 .word	mus_route122_8_007
+@ 010   ----------------------------------------
+mus_route122_8_010:
 	.byte		N06   , En1 , v104
 	.byte		N48   , Bn2 , v084
 	.byte	W48
@@ -2693,8 +2900,10 @@ mus_route122_8_003:
 	.byte		N06   
 	.byte	W06
 	.byte	PEND
+@ 011   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_003
+	 .word	mus_route122_8_010
+@ 012   ----------------------------------------
 	.byte		N06   , En1 , v104
 	.byte		N48   , Bn2 , v084
 	.byte	W18
@@ -2712,6 +2921,7 @@ mus_route122_8_003:
 	.byte	W06
 	.byte		N06   
 	.byte	W06
+@ 013   ----------------------------------------
 	.byte		N03   
 	.byte	W03
 	.byte		        En1 , v080
@@ -2776,9 +2986,11 @@ mus_route122_8_003:
 	.byte	W03
 	.byte		        En1 , v104
 	.byte	W03
+@ 014   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_001
-mus_route122_8_004:
+	 .word	mus_route122_8_002
+@ 015   ----------------------------------------
+mus_route122_8_015:
 	.byte		N06   , En1 , v104
 	.byte	W36
 	.byte		N06   
@@ -2794,9 +3006,11 @@ mus_route122_8_004:
 	.byte		        En1 , v084
 	.byte	W06
 	.byte	PEND
+@ 016   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_001
-mus_route122_8_005:
+	 .word	mus_route122_8_002
+@ 017   ----------------------------------------
+mus_route122_8_017:
 	.byte		N06   , En1 , v104
 	.byte	W36
 	.byte		N06   
@@ -2816,17 +3030,23 @@ mus_route122_8_005:
 	.byte		        En1 , v076
 	.byte	W06
 	.byte	PEND
+@ 018   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_001
+	 .word	mus_route122_8_002
+@ 019   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_004
+	 .word	mus_route122_8_015
+@ 020   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_001
+	 .word	mus_route122_8_002
+@ 021   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_005
+	 .word	mus_route122_8_017
+@ 022   ----------------------------------------
 	.byte		N06   , En1 , v104
 	.byte		N48   , Bn2 , v096
 	.byte	W96
+@ 023   ----------------------------------------
 	.byte	W48
 	.byte		N03   , En1 , v116
 	.byte	W03
@@ -2860,6 +3080,7 @@ mus_route122_8_005:
 	.byte	W03
 	.byte		        En1 , v096
 	.byte	W03
+@ 024   ----------------------------------------
 	.byte		N06   , En1 , v104
 	.byte	W12
 	.byte		N06   
@@ -2876,10 +3097,13 @@ mus_route122_8_005:
 	.byte	W06
 	.byte		        En1 , v072
 	.byte	W06
+@ 025   ----------------------------------------
 	.byte	PATT
-	 .word	mus_route122_8_000
+	 .word	mus_route122_8_001
 	.byte	GOTO
 	 .word	mus_route122_8_B1
+mus_route122_8_B2:
+@ 026   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

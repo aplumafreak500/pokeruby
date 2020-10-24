@@ -249,30 +249,52 @@ gSongTable:: @ 845548C
 	song se_m_haze, 1, 1
 	song se_m_hyper_beam2, 1, 1
 	@ FRLG SFX below
-	song se_rg_w_door, 1, 1         @ Door
-	song se_rg_card1, 1, 1          @ Trainer Card 1
-	song se_rg_card2, 1, 1          @ Trainer Card 2
-	song se_rg_card3, 1, 1          @ Trainer Card 3
-	song se_rg_bag1, 1, 1           @ Bag Scroll
-	song se_rg_bag2, 1, 1           @ Bag Pocket Change
-	song se_rg_getting, 1, 1        
-	song se_rg_shop, 1, 1           @ Cash Register
-	song se_rg_kiteki, 1, 1         @ S.S. Anne Horn
-	song se_rg_help_op, 1, 1        @ Help Menu Open
-	song se_rg_help_cl, 1, 1        @ Help Menu Close
-	song se_rg_help_ng, 1, 1        @ Help Menu Error
-	song se_rg_deomov, 1, 1         @ Deoxys Moves
-	song se_rg_excellent, 1, 1
-	song se_rg_nawamiss, 1, 1
-	@ end FRLG SFX
-	song se_toreeye, 1, 1           @ Trainer's Eye Call
-	song se_toreoff, 1, 1           @ Trainer's Eye Hang Up
-	song se_hantei1, 1, 1           @ Battle Arena Time's Up 1
-	song se_hantei2, 1, 1           @ Battle Arena Time's Up 2
-	song se_curtain, 1, 1           @ Battle Pike Curtain Open
-	song se_curtain1, 1, 1          @ Battle Pike Curtain Close
-	song se_ussoki, 1, 1            @ Sudowoodo
+	song se_rg_door, 1, 1
+	song se_rg_card_flip, 1, 1
+	song se_rg_card_flipping, 1, 1
+	song se_rg_card_open, 1, 1
+	song se_rg_bag_cursor, 1, 1
+	song se_rg_bag_pocket, 1, 1
+	song se_rg_ball_click, 1, 1
+	song se_rg_shop, 1, 1
+	song se_rg_ss_anne_horn, 1, 1
+	song se_rg_help_open, 1, 1
+	song se_rg_help_close, 1, 1
+	song se_rg_help_error, 1, 1
+	song se_rg_deoxys_move, 1, 1
+	song se_rg_poke_jump_success, 1, 1
+	song se_rg_poke_jump_failure, 1, 1
+	@ Emerald SFX below
+	song se_pokenav_call, 1, 1
+	song se_pokenav_hang_up, 1, 1
+	song se_arena_timeup1, 1, 1
+	song se_arena_timeup2, 1, 1
+	song se_pike_curtain_close, 1, 1
+	song se_pike_curtain_open, 1, 1
+	song se_sudowoodo_shake, 1, 1
 	@ end Emerald SFX
+	song song_248, 2, 2
+	song song_249, 2, 2
+	song song_250, 2, 2
+	song song_251, 2, 2
+	song song_252, 2, 2
+	song song_253, 2, 2
+	song song_254, 2, 2
+	song song_255, 2, 2
+	song song_256, 2, 2
+	song song_257, 2, 2
+	song song_258, 2, 2
+	song song_259, 2, 2
+	song song_260, 2, 2
+	song song_261, 2, 2
+	song song_262, 2, 2
+	song song_263, 2, 2
+	song song_264, 2, 2
+	song song_265, 2, 2
+	song song_266, 2, 2
+	song song_267, 2, 2
+	song song_268, 2, 2
+	song song_269, 2, 2
 	song song_270, 2, 2
 	song song_271, 2, 2
 	song song_272, 2, 2
@@ -302,6 +324,35 @@ gSongTable:: @ 845548C
 	song song_296, 2, 2
 	song song_297, 2, 2
 	song song_298, 2, 2
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
+	song dummy_song_header, 0, 0
 	song mus_littleroot_test, 0, 0
 	song mus_gsc_route38, 0, 0
 	song mus_caught, 0, 0
@@ -336,7 +387,7 @@ gSongTable:: @ 845548C
 	song mus_abandoned_ship, 0, 0
 	song mus_fortree, 0, 0
 	song mus_birch_lab, 0, 0
-	song mus_b_tower, 0, 0
+	song mus_b_tower_rs, 0, 0
 	song mus_encounter_swimmer, 0, 0
 	song mus_cave_of_origin, 0, 0
 	song mus_obtain_berry, 2, 2
@@ -420,100 +471,102 @@ gSongTable:: @ 845548C
 	song mus_vs_elite_four, 0, 0
 	song mus_vs_aqua_magma_leader, 0, 0
 	song mus_radio_tower_takeover, 0, 0
-	song mus_ooame, 0, 0            @ The Flood (Emerald)
-	song mus_b_frontier, 0, 0       @ Battle Frontier
-	song mus_b_arena, 0, 0          @ Battle Arena
-	song mus_me_pointget, 2, 2      @ Obtained Battle Points!
-	song mus_me_tore_eye, 2, 2      @ Registered Trainer!
-	song mus_pyramid, 0, 0          @ Battle Pyramid
-	song mus_pyramid_top, 0, 0      @ Top of the Battle Pyramid
-	song mus_b_palace, 0, 0         @ Battle Palace
-	song mus_rekkuu_kourin, 0, 0    @ Rayquaza Enters
-	song mus_sattower, 0, 0         @ Battle Tower (Emerald)
-	song mus_me_symbolget, 2, 2     @ Obtained a Frontier Symbol!
-	song mus_b_dome, 0, 0           @ Battle Dome
-	song mus_b_tube, 0, 0           @ Battle Pike
-	song mus_b_factory, 0, 0        @ Battle Factory
-	song mus_vs_rekku, 0, 0         @ Battle! Legendary Pokémon
-	song mus_vs_front, 0, 0         @ Battle! Frontier Brain
-	song mus_vs_mew, 0, 0           @ Battle! Mew
-	song mus_b_dome1, 0, 0          @ Battle Dome Lobby
+	@ Emerald music below
+	song mus_abnormal_weather, 0, 0
+	song mus_b_frontier, 0, 0
+	song mus_b_arena, 0, 0
+	song mus_obtain_b_points, 2, 2
+	song mus_register_match_call, 2, 2
+	song mus_b_pyramid, 0, 0
+	song mus_b_pyramid_top, 0, 0
+	song mus_b_palace, 0, 0
+	song mus_rayquaza_appears, 0, 0
+	song mus_b_tower, 0, 0
+	song mus_obtain_symbol, 2, 2
+	song mus_b_dome, 0, 0
+	song mus_b_pike, 0, 0
+	song mus_b_factory, 0, 0
+	song mus_vs_rayquaza, 0, 0
+	song mus_vs_frontier_brain, 0, 0
+	song mus_vs_mew, 0, 0
+	song mus_b_dome_lobby, 0, 0
 	@ FRLG Music Below
-	song mus_rg_annai, 0, 0         @ Follow Me!
-	song mus_rg_slot, 0, 0          @ Game Corner
-	song mus_rg_ajito, 0, 0         @ Rocket Hideout
-	song mus_rg_gym, 0, 0           @ Gym
-	song mus_rg_purin, 2, 2         @ Jigglypuff's Song
-	song mus_rg_demo, 0, 0          @ Opening Movie
-	song mus_rg_title, 0, 0         @ Title Screen
-	song mus_rg_guren, 0, 0         @ Cinnabar Island
-	song mus_rg_shion, 0, 0         @ Lavender Town
-	song mus_rg_kaihuku, 0, 0       @ RBY Pokémon Center Healing
-	song mus_rg_cycling, 0, 0       @ Cycling
-	song mus_rg_rocket, 0, 0        @ Encounter! Team Rocket
-	song mus_rg_shoujo, 0, 0        @ Encounter! Girl
-	song mus_rg_shounen, 0, 0       @ Encounter! Boy
-	song mus_rg_dendou, 0, 0        @ You're the Champion!
-	song mus_rg_t_mori, 0, 0        @ Viridian Forest
-	song mus_rg_otsukimi, 0, 0      @ Mt. Moon
-	song mus_rg_pokeyashi, 0, 0     @ Pokémon Mansion
-	song mus_rg_ending, 0, 0        @ Credits
-	song mus_rg_load01, 0, 0        @ Route 1
-	song mus_rg_opening, 0, 0       @ Route 24/Intro
-	song mus_rg_load02, 0, 0        @ Route 3
-	song mus_rg_load03, 0, 0        @ Route 11
-	song mus_rg_champ_r, 0, 0       @ Victory Road/Indigo Plateau
-	song mus_rg_vs_gym, 0, 0        @ Battle! Gym Leader/Elite Four
-	song mus_rg_vs_tore, 0, 0       @ Battle! Trainer
-	song mus_rg_vs_yasei, 0, 0      @ Battle! Wild Pokémon
-	song mus_rg_vs_last, 0, 0       @ Battle! Champion
-	song mus_rg_masara, 0, 0        @ Pallet Town
-	song mus_rg_kenkyu, 0, 0        @ Professor Oak's Lab
-	song mus_rg_ohkido, 0, 0        @ Professor Oak's Theme
-	song mus_rg_pokecen, 0, 0       @ Pokémon Center
-	song mus_rg_santoan, 0, 0       @ S.S. Anne
-	song mus_rg_naminori, 0, 0      @ Surfing
-	song mus_rg_p_tower, 0, 0       @ Pokémon Tower
-	song mus_rg_shiruhu, 0, 0       @ Silph Co.
-	song mus_rg_hanada, 0, 0        @ Cerulean/Fuschia City
-	song mus_rg_tamamusi, 0, 0      @ Celadon City
-	song mus_rg_win_tre, 0, 0       @ Victory! Trainer
-	song mus_rg_win_yasei, 0, 0     @ Victory! Wild Pokémon
-	song mus_rg_win_gym, 0, 0       @ Victory! Gym Leader
-	song mus_rg_kuchiba, 0, 0       @ Vermillion City
-	song mus_rg_nibi, 0, 0          @ Viridian/Saffron/Pewter City
-	song mus_rg_rival1, 0, 0        @ Encounter! Rival
-	song mus_rg_rival2, 0, 0        @ Rival's Exit
-	song mus_rg_fan2, 2, 2          @ Fanfare 2
-	song mus_rg_fan5, 2, 2          @ Obtained a Starter!
-	song mus_rg_fan6, 2, 2          @ Pokémon Caught! (Used in Emerald)
-	song mus_me_rg_photo, 2, 2      @ Trainer Photo
-	song mus_rg_titlerog, 0, 0      @ Game Freak
-	song mus_rg_get_yasei, 0, 0     @ Pokémon Caught Victory Theme
-	song mus_rg_sousa, 0, 0         @ Starting Tutorial
-	song mus_rg_sekaikan, 0, 0      @ Starting Tutorial 2
-	song mus_rg_seibetu, 0, 0       @ Starting Tutorial 3
-	song mus_rg_jump, 0, 0          @ Jumping Minigame
-	song mus_rg_union, 0, 0         @ Union Room
-	song mus_rg_network, 0, 0       @ Network Center
-	song mus_rg_okurimono, 0, 0     @ Mystery Gift
-	song mus_rg_kinomikui, 0, 0
-	song mus_rg_nanadungeon, 0, 0   @ Sevii Caves/Altering Cave (Mt. Moon)
-	song mus_rg_oshie_tv, 0, 0      @ Follow Me!
-	song mus_rg_nanashima, 0, 0     @ Sevii Islands Routes (Lake of Rage)
-	song mus_rg_nanaiseki, 0, 0     @ Sevii Forests (Viridian Forest)
-	song mus_rg_nana123, 0, 0       @ Sevii Islands 1-3 (Viridian/Saffron/Pewter)
-	song mus_rg_nana45, 0, 0        @ Sevii Islands 4-5 (Azalea Town)
-	song mus_rg_nana67, 0, 0        @ Sevii Islands 6-7 (Violet City)
-	song mus_rg_pokefue, 2, 2       @ Poké Flute
-	song mus_rg_vs_deo, 0, 0        @ Battle! Deoxys
-	song mus_rg_vs_myu2, 0, 0       @ Battle! Mewtwo
-	song mus_rg_vs_den, 0, 0        @ Battle! Legendary Birds
-	song mus_rg_exeye, 0, 0         @ Encounter! Gym Leader
-	song mus_rg_deoeye, 0, 0        @ Encounter! Deoxys
-	song mus_rg_t_tower, 0, 0       @ Trainer Tower (Gym)
-	song mus_rg_slowmasara, 0, 0    @ Pallet Town (Hall of Fame remix)
-	song mus_rg_tvnoize, 0, 0       @ Teachy TV
+	song mus_rg_follow_me, 0, 0
+	song mus_rg_game_corner, 0, 0
+	song mus_rg_rocket_hideout, 0, 0
+	song mus_rg_gym, 0, 0
+	song mus_rg_jigglypuff, 2, 2
+	song mus_rg_intro_fight, 0, 0
+	song mus_rg_title, 0, 0
+	song mus_rg_cinnabar, 0, 0
+	song mus_rg_lavender, 0, 0
+	song mus_rg_heal, 0, 0
+	song mus_rg_cycling, 0, 0
+	song mus_rg_encounter_rocket, 0, 0
+	song mus_rg_encounter_girl, 0, 0
+	song mus_rg_encounter_boy, 0, 0
+	song mus_rg_hall_of_fame, 0, 0
+	song mus_rg_viridian_forest, 0, 0
+	song mus_rg_mt_moon, 0, 0
+	song mus_rg_poke_mansion, 0, 0
+	song mus_rg_credits, 0, 0
+	song mus_rg_route1, 0, 0
+	song mus_rg_route24, 0, 0
+	song mus_rg_route3, 0, 0
+	song mus_rg_route11, 0, 0
+	song mus_rg_victory_road, 0, 0
+	song mus_rg_vs_gym_leader, 0, 0
+	song mus_rg_vs_trainer, 0, 0
+	song mus_rg_vs_wild, 0, 0
+	song mus_rg_vs_champion, 0, 0
+	song mus_rg_pallet, 0, 0
+	song mus_rg_oak_lab, 0, 0
+	song mus_rg_oak, 0, 0
+	song mus_rg_poke_center, 0, 0
+	song mus_rg_ss_anne, 0, 0
+	song mus_rg_surf, 0, 0
+	song mus_rg_poke_tower, 0, 0
+	song mus_rg_silph, 0, 0
+	song mus_rg_fuchsia, 0, 0
+	song mus_rg_celadon, 0, 0
+	song mus_rg_victory_trainer, 0, 0
+	song mus_rg_victory_wild, 0, 0
+	song mus_rg_victory_gym_leader, 0, 0
+	song mus_rg_vermillion, 0, 0
+	song mus_rg_pewter, 0, 0
+	song mus_rg_encounter_rival, 0, 0
+	song mus_rg_rival_exit, 0, 0
+	song mus_rg_dex_rating, 2, 2
+	song mus_rg_obtain_key_item, 2, 2
+	song mus_rg_caught_intro, 2, 2
+	song mus_rg_photo, 2, 2
+	song mus_rg_game_freak, 0, 0
+	song mus_rg_caught, 0, 0
+	song mus_rg_new_game_instruct, 0, 0
+	song mus_rg_new_game_intro, 0, 0
+	song mus_rg_new_game_exit, 0, 0
+	song mus_rg_poke_jump, 0, 0
+	song mus_rg_union_room, 0, 0
+	song mus_rg_net_center, 0, 0
+	song mus_rg_mystery_gift, 0, 0
+	song mus_rg_berry_pick, 0, 0
+	song mus_rg_sevii_cave, 0, 0
+	song mus_rg_teachy_tv_show, 0, 0
+	song mus_rg_sevii_route, 0, 0
+	song mus_rg_sevii_dungeon, 0, 0
+	song mus_rg_sevii_123, 0, 0
+	song mus_rg_sevii_45, 0, 0
+	song mus_rg_sevii_67, 0, 0
+	song mus_rg_poke_flute, 2, 2
+	song mus_rg_vs_deoxys, 0, 0
+	song mus_rg_vs_mewtwo, 0, 0
+	song mus_rg_vs_legend, 0, 0
+	song mus_rg_encounter_gym_leader, 0, 0
+	song mus_rg_encounter_deoxys, 0, 0
+	song mus_rg_trainer_tower, 0, 0
+	song mus_rg_slow_pallet, 0, 0
+	song mus_rg_teachy_tv_menu, 0, 0
+	@ End FRLG music
 	song ph_trap_blend, 2, 2
 	song ph_trap_held, 2, 2
 	song ph_trap_solo, 2, 2
@@ -567,5 +620,5 @@ gSongTable:: @ 845548C
 	song ph_nurse_solo, 2, 2
 
 	.align 2
-dummy_song_header: @ 86B5D00
+dummy_song_header:
 	.byte 0, 0, 0, 0

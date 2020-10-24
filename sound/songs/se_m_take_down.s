@@ -1,27 +1,28 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_take_down_grp, voicegroup111
+	.equ	se_m_take_down_grp, voicegroup128
 	.equ	se_m_take_down_pri, 4
 	.equ	se_m_take_down_rev, reverb_set+50
-	.equ	se_m_take_down_mvl, 127
+	.equ	se_m_take_down_mvl, 105
 	.equ	se_m_take_down_key, 0
 	.equ	se_m_take_down_tbs, 1
-	.equ	se_m_take_down_exg, 0
+	.equ	se_m_take_down_exg, 1
 	.equ	se_m_take_down_cmp, 1
 
 	.section .rodata
 	.global	se_m_take_down
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_take_down_1:
 	.byte	KEYSH , se_m_take_down_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_m_take_down_tbs/2
 	.byte		VOICE , 2
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 105*se_m_take_down_mvl/mxv
+	.byte		VOL   , 127*se_m_take_down_mvl/mxv
 	.byte		BEND  , c_v-48
 	.byte		N10   , Gn0 , v127
 	.byte	W02
@@ -42,7 +43,7 @@ se_m_take_down_1:
 	.byte		PAN   , c_v+19
 	.byte	W03
 	.byte		        c_v+0
-	.byte		VOL   , 105*se_m_take_down_mvl/mxv
+	.byte		VOL   , 127*se_m_take_down_mvl/mxv
 	.byte		BEND  , c_v-32
 	.byte		N10   
 	.byte	W02
@@ -63,7 +64,7 @@ se_m_take_down_1:
 	.byte		PAN   , c_v-20
 	.byte	W03
 	.byte		        c_v+0
-	.byte		VOL   , 105*se_m_take_down_mvl/mxv
+	.byte		VOL   , 127*se_m_take_down_mvl/mxv
 	.byte		BEND  , c_v-16
 	.byte		N10   
 	.byte	W02
@@ -77,6 +78,7 @@ se_m_take_down_1:
 	.byte	W02
 	.byte		        c_v+63
 	.byte	W16
+@ 001   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

@@ -1,25 +1,26 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_fire_punch_grp, voicegroup111
+	.equ	se_m_fire_punch_grp, voicegroup128
 	.equ	se_m_fire_punch_pri, 4
 	.equ	se_m_fire_punch_rev, reverb_set+50
-	.equ	se_m_fire_punch_mvl, 127
+	.equ	se_m_fire_punch_mvl, 110
 	.equ	se_m_fire_punch_key, 0
 	.equ	se_m_fire_punch_tbs, 1
-	.equ	se_m_fire_punch_exg, 0
+	.equ	se_m_fire_punch_exg, 1
 	.equ	se_m_fire_punch_cmp, 1
 
 	.section .rodata
 	.global	se_m_fire_punch
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_fire_punch_1:
 	.byte	KEYSH , se_m_fire_punch_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 220*se_m_fire_punch_tbs/2
 	.byte		VOICE , 6
-	.byte		VOL   , 110*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 127*se_m_fire_punch_mvl/mxv
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+0
@@ -57,23 +58,24 @@ se_m_fire_punch_1:
 	.byte	W01
 	.byte		        c_v-29
 	.byte	W01
-	.byte		VOL   , 86*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 100*se_m_fire_punch_mvl/mxv
 	.byte		BEND  , c_v-39
 	.byte	W02
-	.byte		VOL   , 69*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 80*se_m_fire_punch_mvl/mxv
 	.byte		BEND  , c_v-45
 	.byte	W01
-	.byte		VOL   , 53*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 62*se_m_fire_punch_mvl/mxv
 	.byte		BEND  , c_v-56
 	.byte	W01
-	.byte		VOL   , 20*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 24*se_m_fire_punch_mvl/mxv
 	.byte		BEND  , c_v-64
 	.byte	W01
 	.byte		VOICE , 29
-	.byte		VOL   , 110*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 127*se_m_fire_punch_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N48   
 	.byte	W03
+@ 001   ----------------------------------------
 	.byte	W02
 	.byte		PAN   , c_v-8
 	.byte	W04
@@ -85,29 +87,32 @@ se_m_fire_punch_1:
 	.byte	W03
 	.byte		        c_v-3
 	.byte	W08
+@ 002   ----------------------------------------
 	.byte	W03
-	.byte		VOL   , 78*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 91*se_m_fire_punch_mvl/mxv
 	.byte	W04
-	.byte		        64*se_m_fire_punch_mvl/mxv
+	.byte		        74*se_m_fire_punch_mvl/mxv
 	.byte	W03
-	.byte		        51*se_m_fire_punch_mvl/mxv
+	.byte		        59*se_m_fire_punch_mvl/mxv
 	.byte	W04
-	.byte		        38*se_m_fire_punch_mvl/mxv
+	.byte		        44*se_m_fire_punch_mvl/mxv
 	.byte	W04
-	.byte		        25*se_m_fire_punch_mvl/mxv
+	.byte		        29*se_m_fire_punch_mvl/mxv
 	.byte	W03
-	.byte		        12*se_m_fire_punch_mvl/mxv
+	.byte		        14*se_m_fire_punch_mvl/mxv
 	.byte	W03
+@ 003   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  2 **********************@
+@**************** Track 2 (Midi-Chn.2) ****************@
 
 se_m_fire_punch_2:
 	.byte	KEYSH , se_m_fire_punch_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 5
 	.byte		XCMD  , xIECV , 10
 	.byte		        xIECL , 8
-	.byte		VOL   , 110*se_m_fire_punch_mvl/mxv
+	.byte		VOL   , 127*se_m_fire_punch_mvl/mxv
 	.byte		PAN   , c_v+9
 	.byte		N03   , Gs2 , v052
 	.byte	W06
@@ -117,8 +122,11 @@ se_m_fire_punch_2:
 	.byte		PAN   , c_v+0
 	.byte		N03   
 	.byte	W12
+@ 001   ----------------------------------------
 	.byte	W24
+@ 002   ----------------------------------------
 	.byte	W24
+@ 003   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

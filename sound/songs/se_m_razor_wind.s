@@ -1,27 +1,28 @@
 	.include "MPlayDef.s"
 
-	.equ	se_m_razor_wind_grp, voicegroup111
+	.equ	se_m_razor_wind_grp, voicegroup128
 	.equ	se_m_razor_wind_pri, 4
 	.equ	se_m_razor_wind_rev, reverb_set+50
-	.equ	se_m_razor_wind_mvl, 127
+	.equ	se_m_razor_wind_mvl, 110
 	.equ	se_m_razor_wind_key, 0
 	.equ	se_m_razor_wind_tbs, 1
-	.equ	se_m_razor_wind_exg, 0
+	.equ	se_m_razor_wind_exg, 1
 	.equ	se_m_razor_wind_cmp, 1
 
 	.section .rodata
 	.global	se_m_razor_wind
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_m_razor_wind_1:
 	.byte	KEYSH , se_m_razor_wind_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 220*se_m_razor_wind_tbs/2
 	.byte		VOICE , 18
 	.byte		BENDR , 12
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 110*se_m_razor_wind_mvl/mxv
+	.byte		VOL   , 127*se_m_razor_wind_mvl/mxv
 	.byte		PAN   , c_v+14
 	.byte		BEND  , c_v+0
 	.byte		N09   , Cn5 , v092
@@ -47,26 +48,31 @@ se_m_razor_wind_1:
 	.byte		PAN   , c_v+15
 	.byte		BEND  , c_v+39
 	.byte	W03
+@ 001   ----------------------------------------
 	.byte		PAN   , c_v-15
 	.byte		BEND  , c_v+54
 	.byte	W03
 	.byte		PAN   , c_v+0
 	.byte		BEND  , c_v+63
 	.byte	W21
+@ 002   ----------------------------------------
 	.byte	FINE
 
-@********************** Track  2 **********************@
+@**************** Track 2 (Midi-Chn.2) ****************@
 
 se_m_razor_wind_2:
 	.byte	KEYSH , se_m_razor_wind_key+0
+@ 000   ----------------------------------------
 	.byte		VOICE , 5
 	.byte		PAN   , c_v+0
-	.byte		VOL   , 110*se_m_razor_wind_mvl/mxv
+	.byte		VOL   , 127*se_m_razor_wind_mvl/mxv
 	.byte		N06   , Fn3 , v040
 	.byte	W09
 	.byte		N24   , Gn3 
 	.byte	W15
+@ 001   ----------------------------------------
 	.byte	W24
+@ 002   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@

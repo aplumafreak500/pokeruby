@@ -1,62 +1,75 @@
 	.include "MPlayDef.s"
 
-	.equ	se_roulette_ball2_grp, voicegroup111
+	.equ	se_roulette_ball2_grp, voicegroup128
 	.equ	se_roulette_ball2_pri, 2
 	.equ	se_roulette_ball2_rev, reverb_set+50
-	.equ	se_roulette_ball2_mvl, 127
+	.equ	se_roulette_ball2_mvl, 110
 	.equ	se_roulette_ball2_key, 0
 	.equ	se_roulette_ball2_tbs, 1
-	.equ	se_roulette_ball2_exg, 0
+	.equ	se_roulette_ball2_exg, 1
 	.equ	se_roulette_ball2_cmp, 1
 
 	.section .rodata
 	.global	se_roulette_ball2
 	.align	2
 
-@********************** Track  1 **********************@
+@**************** Track 1 (Midi-Chn.1) ****************@
 
 se_roulette_ball2_1:
 	.byte	KEYSH , se_roulette_ball2_key+0
+@ 000   ----------------------------------------
 	.byte	TEMPO , 150*se_roulette_ball2_tbs/2
 	.byte		VOICE , 63
 	.byte		BENDR , 6
-	.byte		VOL   , 110*se_roulette_ball2_mvl/mxv
+	.byte		VOL   , 127*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v+0
 	.byte		N72   , Dn3 , v127
 	.byte	W06
-	.byte		VOL   , 107*se_roulette_ball2_mvl/mxv
+@ 001   ----------------------------------------
+	.byte		VOL   , 124*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-3
 	.byte	W06
-	.byte		VOL   , 106*se_roulette_ball2_mvl/mxv
+@ 002   ----------------------------------------
+	.byte		VOL   , 123*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-5
 	.byte	W06
-	.byte		VOL   , 104*se_roulette_ball2_mvl/mxv
+@ 003   ----------------------------------------
+	.byte		VOL   , 121*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-7
 	.byte	W06
-	.byte		VOL   , 102*se_roulette_ball2_mvl/mxv
+@ 004   ----------------------------------------
+	.byte		VOL   , 118*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-10
 	.byte	W06
-	.byte		VOL   , 97*se_roulette_ball2_mvl/mxv
+@ 005   ----------------------------------------
+	.byte		VOL   , 112*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-12
 	.byte	W06
-	.byte		VOL   , 90*se_roulette_ball2_mvl/mxv
+@ 006   ----------------------------------------
+	.byte		VOL   , 104*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-14
 	.byte	W06
-	.byte		VOL   , 73*se_roulette_ball2_mvl/mxv
+@ 007   ----------------------------------------
+	.byte		VOL   , 85*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-19
 	.byte	W06
-	.byte		VOL   , 58*se_roulette_ball2_mvl/mxv
+@ 008   ----------------------------------------
+	.byte		VOL   , 67*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-24
 	.byte	W06
-	.byte		VOL   , 40*se_roulette_ball2_mvl/mxv
+@ 009   ----------------------------------------
+	.byte		VOL   , 47*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-29
 	.byte	W06
-	.byte		VOL   , 25*se_roulette_ball2_mvl/mxv
+@ 010   ----------------------------------------
+	.byte		VOL   , 29*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-35
 	.byte	W06
-	.byte		VOL   , 12*se_roulette_ball2_mvl/mxv
+@ 011   ----------------------------------------
+	.byte		VOL   , 14*se_roulette_ball2_mvl/mxv
 	.byte		BEND  , c_v-46
 	.byte	W06
+@ 012   ----------------------------------------
 	.byte	FINE
 
 @******************************************************@
