@@ -41,7 +41,7 @@ JSONPROC  := tools/jsonproc/jsonproc$(EXE)
 VERSION=\"$(shell git describe --always --abbrev=7)\"
 
 ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym DEBUG_FIX=$(DEBUG_FIX) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG) --defsym MODERN=$(MODERN)
-CPPFLAGS := -iquote include -Werror -Wno-trigraphs -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -D=DEBUG_FIX$(DEBUG_FIX) -D DEBUG=$(DEBUG) -D MODERN=$(MODERN)
+CPPFLAGS := -iquote include -Werror -Wno-trigraphs -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -D=DEBUG_FIX$(DEBUG_FIX) -D DEBUG=$(DEBUG) -D MODERN=$(MODERN) -D VERSION_NUMBER=$(VERSION)
 ifeq ($(MODERN),0)
 CPPFLAGS += -I tools/agbcc/include -nostdinc -undef
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
@@ -200,6 +200,7 @@ tidy:
 	$(RM) -r build
 
 $(ROM): %.gba: %.elf
+	@echo Output: $@
 	@$(OBJCOPY) -O binary --gap-fill 0xFF $< $@
 
 %.elf: $(LD_SCRIPT) $(ALL_OBJECTS)
