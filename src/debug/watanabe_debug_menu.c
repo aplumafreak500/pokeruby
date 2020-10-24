@@ -1598,7 +1598,7 @@ void debug_80C5208(void)
         gUnknown_Debug_2038A1C->unk64[i] = 0;
     }
 
-    gUnknown_Debug_2038A1C->unk64[0] = 0xfc;
+    gUnknown_Debug_2038A1C->unk64[0] = NATIONAL_DEX_TREECKO;
     gUnknown_Debug_2038A1C->unk64[3] = gSaveBlock2.playerTrainerId[0] | (gSaveBlock2.playerTrainerId[1] << 8) | (gSaveBlock2.playerTrainerId[2] << 16) | (gSaveBlock2.playerTrainerId[3] << 24);
     gUnknown_Debug_2038A1C->unk64[4] = (Random() << 16) | Random();
     gUnknown_Debug_2038A1C->unk64[1] = 1;
@@ -1623,79 +1623,79 @@ bool8 debug_80C527C(struct Pokemon *pokemon)
     return TRUE;
 }
 
-const u8 Str_83F8237[] = _("Kind");
-const struct WatanabeDebugMenuItemSubstruct _83F823C = {1, 387, 0x00, 0x03};
+const u8 Str_83F8237[] = _("Species");
+const struct WatanabeDebugMenuItemSubstruct _83F823C = {1, NATIONAL_DEX_VICTINI, 0x00, 0x03};
 
 const u8 Str_83F8248[] = _("Level");
-const struct WatanabeDebugMenuItemSubstruct _83F8250 = {1, 0x00000064, 0x00, 0x03};
+const struct WatanabeDebugMenuItemSubstruct _83F8250 = {1, 100, 0x00, 0x03};
 
-const u8 Str_83F825C[] = _("EXP Points");
+const u8 Str_83F825C[] = _("EXP");
 const struct WatanabeDebugMenuItemSubstruct _83F8268 = {1, 0x001E8480, 0x00, 0x07};
 
-const u8 Str_83F8274[] = _("ID");
+const u8 Str_83F8274[] = _("TID");
 const struct WatanabeDebugMenuItemSubstruct _83F8278 = {0, 0xFFFFFFFF, 0x00, 0x0A};
 
-const u8 Str_83F8284[] = _("Rnd Numbers");
+const u8 Str_83F8284[] = _("PID");
 const struct WatanabeDebugMenuItemSubstruct _83F8290 = {0, 0xFFFFFFFF, 0x00, 0x0A};
 
-const u8 Str_83F829C[] = _("Sex");
+const u8 Str_83F829C[] = _("Gender");
 const struct WatanabeDebugMenuItemSubstruct _83F82A0 = {0, 0x00000002, 0x00, 0xFF};
 
-const u8 Str_83F82AC[] = _("Character");
+const u8 Str_83F82AC[] = _("Nature");
 const struct WatanabeDebugMenuItemSubstruct _83F82B8 = {0, 0x00000018, 0x00, 0xFF};
 
-const u8 Str_83F82C4[] = _("Move1");
+const u8 Str_83F82C4[] = _("Move 1");
 const struct WatanabeDebugMenuItemSubstruct _83F82CC = {0, NUM_MOVES-1, 0x00, 0x03};
 
-const u8 Str_83F82D8[] = _("Move2");
+const u8 Str_83F82D8[] = _("Move 2");
 const struct WatanabeDebugMenuItemSubstruct _83F82E0 = {0, NUM_MOVES-1, 0x00, 0x03};
 
-const u8 Str_83F82EC[] = _("Move3");
+const u8 Str_83F82EC[] = _("Move 3");
 const struct WatanabeDebugMenuItemSubstruct _83F82F4 = {0, NUM_MOVES-1, 0x00, 0x03};
 
-const u8 Str_83F8300[] = _("Move4");
+const u8 Str_83F8300[] = _("Move 4");
 const struct WatanabeDebugMenuItemSubstruct _83F8308 = {0, NUM_MOVES-1, 0x00, 0x03};
 
-const u8 Str_83F8314[] = _("Hold");
+const u8 Str_83F8314[] = _("Held Item");
 const struct WatanabeDebugMenuItemSubstruct _83F831C = {0, ITEMS_COUNT-1, 0x00, 0x03};
 
-const u8 Str_83F8328[] = _("SP. Ability");
-const struct WatanabeDebugMenuItemSubstruct _83F8334 = {0, 0x00000001, 0x00, 0xFF};
+const u8 Str_83F8328[] = _("Ability");
+const struct WatanabeDebugMenuItemSubstruct _83F8334 = {0, 2, 0x00, 1};
 
-const u8 Str_83F8340[] = _("HPrnd");
+const u8 Str_83F8340[] = _("HP IV");
 const struct WatanabeDebugMenuItemSubstruct _83F8348 = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F8354[] = _("HPexp");
+const u8 Str_83F8354[] = _("HP EV");
 const struct WatanabeDebugMenuItemSubstruct _83F835C = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F8368[] = _("ATKrnd");
+const u8 Str_83F8368[] = _("ATK IV");
 const struct WatanabeDebugMenuItemSubstruct _83F8370 = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F837C[] = _("ATKexp");
+const u8 Str_83F837C[] = _("ATK EV");
 const struct WatanabeDebugMenuItemSubstruct _83F8384 = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F8390[] = _("DEFrnd");
+const u8 Str_83F8390[] = _("DEF IV");
 const struct WatanabeDebugMenuItemSubstruct _83F8398 = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F83A4[] = _("DEFexp");
+const u8 Str_83F83A4[] = _("DEF EV");
 const struct WatanabeDebugMenuItemSubstruct _83F83AC = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F83B8[] = _("SPDrnd");
+const u8 Str_83F83B8[] = _("SPD IV");
 const struct WatanabeDebugMenuItemSubstruct _83F83C0 = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F83CC[] = _("SPDexp");
+const u8 Str_83F83CC[] = _("SPD EV");
 const struct WatanabeDebugMenuItemSubstruct _83F83D4 = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F83E0[] = _("SP. ATK$rnd");
+const u8 Str_83F83E0[] = _("SpATK IV");
 const struct WatanabeDebugMenuItemSubstruct _83F83EC = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F83F8[] = _("SP. ATK$exp");
+const u8 Str_83F83F8[] = _("SpATK EV");
 const struct WatanabeDebugMenuItemSubstruct _83F8404 = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F8410[] = _("SP. DEF$rnd");
+const u8 Str_83F8410[] = _("SpDEF IV");
 const struct WatanabeDebugMenuItemSubstruct _83F841C = {0, 0x0000001F, 0x00, 0x02};
 
-const u8 Str_83F8428[] = _("SP. DEF$exp");
+const u8 Str_83F8428[] = _("SpDEF EV");
 const struct WatanabeDebugMenuItemSubstruct _83F8434 = {0, 0x000000FF, 0x00, 0x03};
 
 const u8 Str_83F8440[] = _("Cool");
@@ -1719,25 +1719,37 @@ const struct WatanabeDebugMenuItemSubstruct _83F84AC = {0, 0x000000FF, 0x00, 0x0
 const u8 Str_83F84B8[] = _("Tameness");
 const struct WatanabeDebugMenuItemSubstruct _83F84C4 = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F84D0[] = _("{PK}RUS");
+const u8 Str_83F84D0[] = _("{PK}RS");
 const struct WatanabeDebugMenuItemSubstruct _83F84D8 = {0, 0x000000FF, 0x00, 0x03};
 
-const u8 Str_83F84E4[] = _("EGG$");
+const u8 Str_83F84E4[] = _("Egg");
 const struct WatanabeDebugMenuItemSubstruct _83F84EC = {0, 0x00000001, 0x00, 0xFF};
 
 const u8 Str_83F84F8[] = _("Status");
 const struct WatanabeDebugMenuItemSubstruct _83F8500 = {0, 0x00000006, 0x00, 0xFF};
 
-const u8 gUnknown_Debug_083F850A[] = _("{COLOR RED}HP　　");
-const u8 gUnknown_Debug_083F8514[] = _("{COLOR RED}ATK　");
-const u8 gUnknown_Debug_083F851C[] = _("{COLOR RED}DEF　");
-const u8 gUnknown_Debug_083F8524[] = _("{COLOR RED}SPEED");
-const u8 gUnknown_Debug_083F852D[] = _("{COLOR RED}SP。ATK");
-const u8 gUnknown_Debug_083F8537[] = _("{COLOR RED}SP。DEF");
-const u8 gUnknown_Debug_083F8541[] = DTR("なし", "without");
+const u8 Str_VersionWatanabe[] = _("Version");
+const struct WatanabeDebugMenuItemSubstruct VersionWatanabeS = {0, VERSION_SHIELD, 0x00, 2};
+
+const u8 Str_LanguageWatanabe[] = _("Language");
+const struct WatanabeDebugMenuItemSubstruct LanguageWatanabeS = {0, NUM_LANGUAGES, 0x00, 2};
+
+const u8 Str_LocationWatanabe[] = _("Location");
+const struct WatanabeDebugMenuItemSubstruct LocationWatanabeS = {0, 99999, 0x00, 5};
+
+const u8 Str_MetLvWatanabe[] = _("Met Level");
+const struct WatanabeDebugMenuItemSubstruct MetLvWatanabeS = {0, 100, 0x00, 3};
+
+const u8 gUnknown_Debug_083F850A[] = _("{COLOR RED}HP $  ");
+const u8 gUnknown_Debug_083F8514[] = _("{COLOR RED}ATK $ ");
+const u8 gUnknown_Debug_083F851C[] = _("{COLOR RED}DEF $ ");
+const u8 gUnknown_Debug_083F8524[] = _("{COLOR RED}SPD  $");
+const u8 gUnknown_Debug_083F852D[] = _("{COLOR RED}SpATK ");
+const u8 gUnknown_Debug_083F8537[] = _("{COLOR RED}SpDEF ");
+const u8 gUnknown_Debug_083F8541[] = _("-");
 const u8 gUnknown_Debug_083F8544[] = _("♂");
 const u8 gUnknown_Debug_083F8546[] = _("♀");
-const u8 gUnknown_Debug_083F8548[] = _("ー");
+const u8 gUnknown_Debug_083F8548[] = _("-");
 const u8 gUnknown_Debug_083F854A[] = _("ON");
 const u8 gUnknown_Debug_083F854D[] = _("OFF");
 
@@ -1776,63 +1788,75 @@ const struct WatanabeDebugMenuItem gUnknown_Debug_083F8554[] = {
     {Str_83F84B8, {.type4 = &_83F84C4}},
     {Str_83F84D0, {.type4 = &_83F84D8}},
     {Str_83F84E4, {.type4 = &_83F84EC}},
-    {Str_83F84F8, {.type4 = &_83F8500}}
+    {Str_83F84F8, {.type4 = &_83F8500}},
+    {NULL, {0}}, // HP
+	{NULL, {0}}, // Atk
+	{NULL, {0}}, // Def
+	{NULL, {0}}, // Spd
+	{NULL, {0}}, // SpA
+	{NULL, {0}}, // SpD
+    {Str_VersionWatanabe, {.type4 = &VersionWatanabeS}},
+    {Str_LocationWatanabe, {.type4 = &LocationWatanabeS}},
+    {Str_LanguageWatanabe, {.type4 = &LanguageWatanabeS}},
+    {Str_MetLvWatanabe, {.type4 = &MetLvWatanabeS}}
 };
 
+// Species, Lv, EXP, TID, PID, Gender, Nature
 const u8 gUnknown_Debug_083F866C[] = {
-    0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0xFF
+    0, 1, 2, 3, 4, 5, 6, 0xFF
 };
 
+// Status, Friendship, Pokerus (Egg, Met Level)
 const u8 gUnknown_Debug_083F8674[] = {
-    0x22, 0x1F, 0x20, 0xFF
+    34, 31, 32, 33, 44, 0xFF
 };
 
+// Moves, Held Item, Ability
 const u8 gUnknown_Debug_083F8678[] = {
-    0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0xFF
+    7, 8, 9, 10, 11, 12, 0xFF
 };
 
+// HP/Atk/Def IVs/EVs
 const u8 gUnknown_Debug_083F867F[] = {
-    0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0xFE, 0xFF
+    13, 14, 15, 16, 17, 18, 0xFE, 0xFF
 };
 
+// Speed, SpA, SpD IVs/EVs
 const u8 gUnknown_Debug_083F8687[] = {
-    0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0xFD, 0xFF
+    19, 20, 21, 22, 23, 24, 0xFD, 0xFF
 };
 
+// Contest Stats
 const u8 gUnknown_Debug_083F868F[] = {
-    0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0xFF
+    25, 26, 27, 28, 29, 30, 0xFF
+};
+
+// Version, Location, Language
+const u8 WatanabeMenuitemsNew[] = {
+    41, 42, 43, 0xFF
 };
 
 const struct WatanabeDebugMenuItem gUnknown_Debug_083F8698[] = {
     {gUnknown_Debug_083F866C, {.type3 = 0x5}},
-    {gUnknown_Debug_083F8674, {.type3 = 0x3}},
+    {gUnknown_Debug_083F8674, {.type3 = 0x5}},
     {gUnknown_Debug_083F8678, {.type3 = 0x6}},
     {gUnknown_Debug_083F867F, {.type3 = 0x6}},
     {gUnknown_Debug_083F8687, {.type3 = 0x6}},
-    {gUnknown_Debug_083F868F, {.type3 = 0x6}}
+    {gUnknown_Debug_083F868F, {.type3 = 0x6}},
+    {WatanabeMenuitemsNew, {.type3 = 0x3}}
 };
 
-#if (ENGLISH && REVISION == 0)
-const u8 gUnknown_Debug_083F86C8[] = _("ふつう");
-const u8 gUnknown_Debug_083F86CC[] = _("ねむり");
-const u8 gUnknown_Debug_083F86D0[] = _("どく");
-const u8 gUnknown_Debug_083F86D4[] = _("やけど");
-const u8 gUnknown_Debug_083F86D8[] = _("こおり");
-const u8 gUnknown_Debug_083F86DC[] = _("まひ");
-const u8 gUnknown_Debug_083F86E0[] = _("どくどく");
-#else
-const u8 gUnknown_Debug_083F86C8[] = _("ーーー");
+const u8 gUnknown_Debug_083F86C8[] = _("---");
 const u8 gUnknown_Debug_083F86CC[] = _("SLP");
 const u8 gUnknown_Debug_083F86D0[] = _("PSN");
 const u8 gUnknown_Debug_083F86D4[] = _("BRN");
 const u8 gUnknown_Debug_083F86D8[] = _("FRZ");
 const u8 gUnknown_Debug_083F86DC[] = _("PAR");
-const u8 gUnknown_Debug_083F86E0[] = _("PSN2");
-#endif
+const u8 gUnknown_Debug_083F86E0[] = _("PSN2"); // Badly poisoned
 
 const struct WatanabeDebugMenuItem gUnknown_Debug_083F86E8[] = {
     {gUnknown_Debug_083F86C8, {.type3 = 0x0}},
-    {gUnknown_Debug_083F86CC, {.type3 = 0x1}},
+    {gUnknown_Debug_083F86CC, {.type3 = 0x3}},
     {gUnknown_Debug_083F86D0, {.type3 = 0x8}},
     {gUnknown_Debug_083F86D4, {.type3 = 0x10}},
     {gUnknown_Debug_083F86D8, {.type3 = 0x20}},
@@ -1840,13 +1864,9 @@ const struct WatanabeDebugMenuItem gUnknown_Debug_083F86E8[] = {
     {gUnknown_Debug_083F86E0, {.type3 = 0x80}}
 };
 
-#if (ENGLISH && REVISION == 0)
-const u8 gUnknown_Debug_083F8720[] = _("ポケモンを てもちに くわえました");
-const u8 gUnknown_Debug_083F872A[] = _("ポケモンを ボックスに くわえました");
-#else
 const u8 gUnknown_Debug_083F8720[] = _("PKMN{RIGHT_ARROW}LIST");
 const u8 gUnknown_Debug_083F872A[] = _("PKMN{RIGHT_ARROW}BOX");
-#endif
+
 void InitCreatePokemon(void)
 {
     u8 sp04[] = _("Create POKéMON   LR:Shift  START:Add");
@@ -1939,7 +1959,7 @@ void debug_80C53F0(u8 taskId)
         gUnknown_Debug_2038A1C->unk169 = 0;
         gTasks[taskId].func = debug_80C53C0;
     }
-    else if (gMain.newKeys & R_BUTTON && gUnknown_Debug_2038A1C->unk168 < 5)
+    else if (gMain.newKeys & R_BUTTON && gUnknown_Debug_2038A1C->unk168 < 6)
     {
         gUnknown_Debug_2038A1C->unk168++;
         gUnknown_Debug_2038A1C->unk169 = 0;
@@ -2075,19 +2095,27 @@ u8 debug_80C5738(u8 * a0, u8 a1, u8 a2)
             a0[12 + r5] = 0x01;
             a0[13 + r5] = a2;
             if (gUnknown_Debug_2038A1C->unk64[a1] != ITEM_NONE)
-                debug_80C689C(a0 + 14 + r5, ItemId_GetName(gUnknown_Debug_2038A1C->unk64[a1]), 9);
+                debug_80C689C(a0 + 14 + r5, ItemId_GetName(gUnknown_Debug_2038A1C->unk64[a1]), 12);
             else
-                debug_80C689C(a0 + 14 + r5, gUnknown_Debug_083F8541, 9);
+                debug_80C689C(a0 + 14 + r5, gUnknown_Debug_083F8541, 12);
             break;
         case 12:
             a0 += 12;
-            debug_80C689C(a0, gAbilityNames[GetAbilityBySpecies(NationalPokedexNumToSpecies(gUnknown_Debug_2038A1C->unk64[0]), gUnknown_Debug_2038A1C->unk64[a1], 0)], 12); // todo: allow DW ability in "Create PKMN"
+            debug_80C6678(a0, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
+            a0[r5] = CHAR_SPACE;
+            a0[r5+1] = EXT_CTRL_CODE_BEGIN;
+            a0[r5+2] = 0x01;
+            a0[r5+3] = a2;
+			debug_80C689C(a0+r5+4, gAbilityNames[GetAbilityBySpecies(NationalPokedexNumToSpecies(gUnknown_Debug_2038A1C->unk64[0]), gUnknown_Debug_2038A1C->unk64[a1], a1 == 2)], 12);
             break;
         case 34:
             debug_80C689C(a0 + 10, gUnknown_Debug_083F86E8[gUnknown_Debug_2038A1C->unk64[a1]].text, 4);
             break;
         case 1 ... 4:
         case 13 ... 32:
+		case 44:
+		// TODO
+		case 41 ... 43:
             debug_80C6678(a0 + 12, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
             break;
         case 33:
@@ -2261,7 +2289,13 @@ void debug_80C5FFC(void)
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_POKERUS, gUnknown_Debug_2038A1C->unk64 + 32);
 
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_HELD_ITEM, gUnknown_Debug_2038A1C->unk64 + 11);
-    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_ALT_ABILITY, gUnknown_Debug_2038A1C->unk64 + 12);
+	if (*(gUnknown_Debug_2038A1C->unk64 + 12) == 2) {
+		one = 1;
+		SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_HAS_HIDDEN_ABILITY, &one);
+	}
+	else {
+	    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_ALT_ABILITY, gUnknown_Debug_2038A1C->unk64 + 12);
+	}
 
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_STATUS, &gUnknown_Debug_083F86E8[gUnknown_Debug_2038A1C->unk64[34]].data.type3);
 
