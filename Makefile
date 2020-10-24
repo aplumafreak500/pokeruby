@@ -38,10 +38,17 @@ GBAFIX    := tools/gbafix/gbafix$(EXE)
 MAPJSON   := tools/mapjson/mapjson$(EXE)
 JSONPROC  := tools/jsonproc/jsonproc$(EXE)
 
-VERSION=\"$(shell git describe --always --abbrev=7)\"
+VERSION="\"$(shell git describe --always --abbrev=7)\""
+ifeq ($(GAME_LANGUAGE), ENGLISH)
+COMMIT_DATE="\"$(shell date -d "`git show --format='%cd' --date=iso-local --no-patch --no-notes`" +'%Y %m %d %H:%M')\""
+BUILD_DATE="\"$(shell date +'%Y %m %d %H:%M')\""
+else
+COMMIT_DATE=
+BUILD_DATE="\"$(shell date +'$Name: debug-Euro-%Y-%m-%d-A$')\""
+endif
 
 ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym DEBUG_FIX=$(DEBUG_FIX) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG) --defsym MODERN=$(MODERN)
-CPPFLAGS := -iquote include -Werror -Wno-trigraphs -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -D=DEBUG_FIX$(DEBUG_FIX) -D DEBUG=$(DEBUG) -D MODERN=$(MODERN) -D VERSION_NUMBER=$(VERSION)
+CPPFLAGS := -iquote include -Werror -Wno-trigraphs -D $(GAME_VERSION) -D REVISION=$(GAME_REVISION) -D $(GAME_LANGUAGE) -D=DEBUG_FIX$(DEBUG_FIX) -D DEBUG=$(DEBUG) -D MODERN=$(MODERN)
 ifeq ($(MODERN),0)
 CPPFLAGS += -I tools/agbcc/include -nostdinc -undef
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
@@ -105,6 +112,10 @@ ifeq ($(MODERN),0)
 %src/libs/libisagbprn.o:  CC1FLAGS := -mthumb-interwork
 endif
 
+# Files with dynamically set content
+%src/main.o: CPPFLAGS += -D DATE=$(BUILD_DATE)
+%src/debug/start_menu_debug.o: CPPFLAGS += -D VERSION_NUMBER=$(VERSION) -D COMMIT_DATE=$(COMMIT_DATE)
+%src/debug/luma_debug_menu.o: CPPFLAGS += -D VERSION_NUMBER=$(VERSION)
 
 #### Main Rules ####
 
@@ -147,8 +158,10 @@ MAKEFLAGS += --no-print-directory
 # Create build subdirectories
 $(shell mkdir -p $(SUBDIRS))
 
-# Refresh the git hash
+# Refresh the git hash and dates
 $(shell touch src/data/git.h)
+$(shell touch src/main.c)
+$(shell touch src/debug/start_menu_debug.c)
 
 AUTO_GEN_TARGETS :=
 
@@ -326,7 +339,6 @@ sound/direct_sound_samples/cries/cry_%.bin: sound/direct_sound_samples/cries/cry
 sound/%.bin: sound/%.aif
 	@echo $<
 	@$(AIF2PCM) $< $@
-
 sound/songs/%.s: sound/songs/%.mid
 	@echo $<
 	@cd $(@D) && ../../$(MID2AGB) $(<F)

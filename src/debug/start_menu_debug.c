@@ -1442,7 +1442,11 @@ u8 DebugMenu_8077C14(void)
 const u8 Str_839BFDC[] = DTR("　じかん　ふん　びょう", "  HOURS MINUTES SECONDS");
 
 #if ENGLISH
+#if defined(COMMIT_DATE)
+const u8 ContinousDateTime[] = COMMIT_DATE;
+#else
 const u8 ContinousDateTime[] = "2002 08 01 20:25";
+#endif
 #else
 static const struct DebugBuildDateInfo gDebugBuildDateInfo[] = {
     { 99, 10, 2, 23 },
