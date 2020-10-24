@@ -289,8 +289,7 @@ const u8 gUnknown_Debug_839BB64[] =
 
 #if ENGLISH
 const u8 gDebugCreatedString[] = _("Created");
-const u8 gDebugContinuousString[] = _("Continuous play\n"
-                                      "available from");
+const u8 gDebugContinuousString[] = _("Continuous play since");
 #else
 const u8 gDebugRomString[] = _("Debugging Version");
 #endif
@@ -409,13 +408,13 @@ void debug_sub_8076B68(void)
     Menu_PrintText(gDebugVersionString, 1, 1);
     Menu_PrintText(gDebugRTCString, 1, 3);
 #if ENGLISH
-    Menu_PrintText(gDebugCreatedString, 1, 7);
-    DebugMenu_DisplayBuildDate(3, 9);
-    Menu_PrintText(gDebugContinuousString, 1, 12);
-    DebugMenu_DisplayContinuousDate(3, 16);
+    Menu_PrintText(gDebugCreatedString, 1, 6);
+    DebugMenu_DisplayBuildDate(3, 8);
+    Menu_PrintText(gDebugContinuousString, 1, 11);
+    DebugMenu_DisplayContinuousDate(3, 13);
 #ifdef VERSION_NUMBER
-    // Move the Git string over to the right
-    Menu_PrintText(GitBuildString, 13, 15);
+    // Move the Git string down a bit
+    Menu_PrintText(GitBuildString, 1, 16);
 #endif
 #else
     Menu_PrintText(gDebugRomString, 1, 9);
