@@ -40,11 +40,11 @@ JSONPROC  := tools/jsonproc/jsonproc$(EXE)
 
 VERSION="\"$(shell git describe --always --abbrev=7)\""
 ifeq ($(GAME_LANGUAGE), ENGLISH)
-COMMIT_DATE="\"$(shell date -d "`git show --format='%cd' --date=iso-local --no-patch --no-notes`" +'%Y %m %d %H:%M')\""
-BUILD_DATE="\"$(shell date +'%Y %m %d %H:%M')\""
+COMMIT_DATE="\"$(shell date -u -d "`git show --format='%cd' --date=iso-local --no-patch --no-notes`" +'%Y %m %d %H:%M')\""
+BUILD_DATE="\"$(shell date -u +'%Y %m %d %H:%M')\""
 else
 COMMIT_DATE=
-BUILD_DATE="\"$(shell date +'$Name: debug-Euro-%Y-%m-%d-A$')\""
+BUILD_DATE="\"$(shell date -u +'$Name: debug-Euro-%Y-%m-%d-A$')\""
 endif
 
 ASFLAGS  := -mcpu=arm7tdmi -I include --defsym $(GAME_VERSION)=1 --defsym REVISION=$(GAME_REVISION) --defsym DEBUG_FIX=$(DEBUG_FIX) --defsym $(GAME_LANGUAGE)=1 --defsym DEBUG=$(DEBUG) --defsym MODERN=$(MODERN)
