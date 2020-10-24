@@ -60,12 +60,17 @@ struct PokemonSubstruct0
     u8 friendship;
     u8 metGame;
     u8 pokeball;
+    u16 metLocation;
+    u8 hasHiddenAbility:1;
+    u8 Form:7;
+    u8 padding;
 };
 
 struct PokemonSubstruct1
 {
     u16 moves[4];
     u8 pp[4];
+    u32 padding;
 };
 
 struct PokemonSubstruct2
@@ -82,6 +87,7 @@ struct PokemonSubstruct2
     u8 smart;
     u8 tough;
     u8 sheen;
+    u32 padding;
 };
 
 struct PokemonSubstruct3
@@ -121,17 +127,7 @@ struct PokemonSubstruct3
     /*0x0B*/ u32 giftRibbon6:1;
     /*0x0B*/ u32 giftRibbon7:1;
     /*0x0B*/ u32 fatefulEncounter:5; // unused in Ruby/Sapphire, but the high bit must be set for Mew/Deoxys to obey in FR/LG/Emerald
-};
-
-struct PokemonSubstruct4
-{
-    /*0x00*/ u16 metLocation;
-    /*0x02*/ u32 ribbon2;
-    /*0x06*/ u8 hasHiddenAbility:1;
-    /*0x06*/ u8 Form:7;
-    /*0x07*/ u8 padding;
-    /*0x08*/ u32 padding2;
-    
+    /*0x0C*/ u32 ribbon2;
 };
 
 union PokemonSubstruct
@@ -140,8 +136,7 @@ union PokemonSubstruct
     struct PokemonSubstruct1 type1;
     struct PokemonSubstruct2 type2;
     struct PokemonSubstruct3 type3;
-    struct PokemonSubstruct4 type4;
-    u16 raw[6];
+    u16 raw[8];
 };
 
 struct BoxPokemon
@@ -164,7 +159,7 @@ struct BoxPokemon
         union PokemonSubstruct substructs[5];
     } secure;
     /*0x5C*/ u32 padding;
-}; 
+};
 
 struct Pokemon
 {

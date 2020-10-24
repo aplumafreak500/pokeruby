@@ -20,9 +20,9 @@ extern u16 gMoveToLearn;
 static EWRAM_DATA u8 sLearningMoveTableID = 0;
 
 u8 gPlayerPartyCount;
-struct Pokemon gPlayerParty[6];
+struct Pokemon gPlayerParty[PARTY_SIZE];
 u8 gEnemyPartyCount;
-struct Pokemon gEnemyParty[6];
+struct Pokemon gEnemyParty[PARTY_SIZE];
 
 const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex Index (Summary No. for Hoenn Dex)
 {
@@ -1760,23 +1760,19 @@ u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     union PokemonSubstruct *substruct1 = GetSubstruct(boxMon, boxMon->personality, 1);
     union PokemonSubstruct *substruct2 = GetSubstruct(boxMon, boxMon->personality, 2);
     union PokemonSubstruct *substruct3 = GetSubstruct(boxMon, boxMon->personality, 3);
-    union PokemonSubstruct *substruct4 = GetSubstruct(boxMon, boxMon->personality, 4);
     s32 i;
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct0->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct1->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct2->raw[i];
 
-    for (i = 0; i < 6; i++)
+    for (i = 0; i < 8; i++)
         checksum += substruct3->raw[i];
-
-    for (i = 0; i < 6; i++)
-        checksum += substruct4->raw[i];
 
     return checksum;
 }
