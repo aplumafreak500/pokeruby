@@ -1735,7 +1735,7 @@ const u8 Str_LanguageWatanabe[] = _("Language");
 const struct WatanabeDebugMenuItemSubstruct LanguageWatanabeS = {0, NUM_LANGUAGES, 0x00, 2};
 
 const u8 Str_LocationWatanabe[] = _("Location");
-const struct WatanabeDebugMenuItemSubstruct LocationWatanabeS = {0, 99999, 0x00, 5};
+const struct WatanabeDebugMenuItemSubstruct LocationWatanabeS = {0, 0xffff, 0x00, 5};
 
 const u8 Str_MetLvWatanabe[] = _("Met Level");
 const struct WatanabeDebugMenuItemSubstruct MetLvWatanabeS = {0, 100, 0x00, 3};
@@ -2012,6 +2012,14 @@ void debug_80C5708(u8 taskId)
     }
 }
 
+static void debug_RefreshLocation(struct Pokemon* mon, u16 loc) {
+	SetMonData(mon, MON_DATA_MET_LOCATION, &loc);
+}
+
+extern const u8* VersionNameTable[];
+extern const u8* LanguageNameTable[];
+extern u8* GetLocationName(u16, u8, struct Pokemon*);
+
 u8 debug_80C5738(u8 * a0, u8 a1, u8 a2)
 {
     u16 i;
@@ -2066,6 +2074,11 @@ u8 debug_80C5738(u8 * a0, u8 a1, u8 a2)
             a0[13 + r5] = a2;
             debug_80C689C(a0 + 14 + r5, gSpeciesNames[NationalPokedexNumToSpecies(gUnknown_Debug_2038A1C->unk64[a1])], 10);
             break;
+        case 1 ... 4:
+        case 13 ... 32:
+		case 44:
+            debug_80C6678(a0 + 12, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
+            break;
         case 5:
             switch (gUnknown_Debug_2038A1C->unk64[a1])
             {
@@ -2079,6 +2092,9 @@ u8 debug_80C5738(u8 * a0, u8 a1, u8 a2)
                     debug_80C689C(a0 + 10, gUnknown_Debug_083F8544, 2);
                     break;
             }
+            break;
+        case 6:
+            debug_80C689C(a0 + 10, gNatureNames[gUnknown_Debug_2038A1C->unk64[a1]], 5);
             break;
         case 7 ... 10:
             debug_80C6678(a0 + 10, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
@@ -2108,25 +2124,43 @@ u8 debug_80C5738(u8 * a0, u8 a1, u8 a2)
             a0[r5+3] = a2;
 			debug_80C689C(a0+r5+4, gAbilityNames[GetAbilityBySpecies(NationalPokedexNumToSpecies(gUnknown_Debug_2038A1C->unk64[0]), gUnknown_Debug_2038A1C->unk64[a1], a1 == 2)], 12);
             break;
-        case 34:
-            debug_80C689C(a0 + 10, gUnknown_Debug_083F86E8[gUnknown_Debug_2038A1C->unk64[a1]].text, 4);
-            break;
-        case 1 ... 4:
-        case 13 ... 32:
-		case 44:
-		// TODO
-		case 41 ... 43:
-            debug_80C6678(a0 + 12, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
-            break;
         case 33:
             if (gUnknown_Debug_2038A1C->unk64[a1])
                 debug_80C689C(a0 + 10, gUnknown_Debug_083F854A, 4);
             else
                 debug_80C689C(a0 + 10, gUnknown_Debug_083F854D, 4);
             break;
-        case 6:
-            debug_80C689C(a0 + 10, gNatureNames[gUnknown_Debug_2038A1C->unk64[a1]], 5);
+        case 34:
+            debug_80C689C(a0 + 10, gUnknown_Debug_083F86E8[gUnknown_Debug_2038A1C->unk64[a1]].text, 4);
             break;
+		case 41:
+            a0 += 10;
+            debug_80C6678(a0, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
+            a0[r5] = CHAR_SPACE;
+            a0[r5+1] = EXT_CTRL_CODE_BEGIN;
+            a0[r5+2] = 0x01;
+            a0[r5+3] = a2;
+			debug_80C689C(a0+r5+4, VersionNameTable[gUnknown_Debug_2038A1C->unk64[a1]], 15);
+			break;
+		case 42:
+            a0 += 10;
+            debug_80C6678(a0, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
+			debug_RefreshLocation(&gUnknown_Debug_2038A1C->pokemon, gUnknown_Debug_2038A1C->unk64[a1]);
+            a0[r5] = CHAR_SPACE;
+            a0[r5+1] = EXT_CTRL_CODE_BEGIN;
+            a0[r5+2] = 0x01;
+            a0[r5+3] = a2;
+			debug_80C689C(a0+r5+4, GetLocationName(gUnknown_Debug_2038A1C->unk64[a1], gUnknown_Debug_2038A1C->unk64[41], &gUnknown_Debug_2038A1C->pokemon), 20);
+			break;
+		case 43:
+            a0 += 10;
+            debug_80C6678(a0, gUnknown_Debug_2038A1C->unk64[a1], r2, a2);
+            a0[r5] = CHAR_SPACE;
+            a0[r5+1] = EXT_CTRL_CODE_BEGIN;
+            a0[r5+2] = 0x01;
+            a0[r5+3] = a2;
+			debug_80C689C(a0+r5+4, LanguageNameTable[gUnknown_Debug_2038A1C->unk64[a1]], 12);
+			break;
     }
     return 0;
 }
@@ -2174,6 +2208,7 @@ void debug_80C5C94(void)
     ivs |= (gUnknown_Debug_2038A1C->unk64[21] & 0x1f) << 20;
     ivs |= (gUnknown_Debug_2038A1C->unk64[23] & 0x1f) << 25;
     CreateMon(&gUnknown_Debug_2038A1C->pokemon, NationalPokedexNumToSpecies(gUnknown_Debug_2038A1C->unk64[0]), gUnknown_Debug_2038A1C->unk64[1], ivs, TRUE, gUnknown_Debug_2038A1C->unk64[4], TRUE, gUnknown_Debug_2038A1C->unk64[3], 0);
+	SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MET_LOCATION, gUnknown_Debug_2038A1C->unk64 + 42);
     gUnknown_Debug_2038A1C->unk64[5] = (u8)(GetMonGender(&gUnknown_Debug_2038A1C->pokemon) + 2);
     gUnknown_Debug_2038A1C->unk64[6] = GetNature(&gUnknown_Debug_2038A1C->pokemon);
     gUnknown_Debug_2038A1C->unk64[7] = GetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MOVE1);
@@ -2238,14 +2273,9 @@ void debug_80C5EF4(void)
 void debug_80C5FFC(void)
 {
     u32 ivs;
-    u8 sp10[] = DTR("たまご", "EGG");
-#if (ENGLISH && REVISION == 0)
-    u8 sp14[] = _("デバッグポケ1");
-#else
-    u8 sp14[] = _("DebugーG");
-#endif
+    u8 sp10[] = _("たまご"); // We can't really translate this, because Eggs are expexted to have this as its nickname
+    u8 sp14[] = _("Debug-E");
     u8 one;
-    u16 ff;
 
     ivs = gUnknown_Debug_2038A1C->unk64[13] & 0x1f;
     ivs |= (gUnknown_Debug_2038A1C->unk64[15] & 0x1f) << 5;
@@ -2299,6 +2329,9 @@ void debug_80C5FFC(void)
 
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_STATUS, &gUnknown_Debug_083F86E8[gUnknown_Debug_2038A1C->unk64[34]].data.type3);
 
+	// Set language **before** Egg status, because Eggs are always Japanese
+	SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_LANGUAGE, gUnknown_Debug_2038A1C->unk64 + 43);
+
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_IS_EGG, gUnknown_Debug_2038A1C->unk64 + 33);
     if (gUnknown_Debug_2038A1C->unk64[33])
     {
@@ -2308,8 +2341,10 @@ void debug_80C5FFC(void)
     }
 
     SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_OT_NAME, sp14);
-    ff = 0xff;
-    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MET_LOCATION, &ff);
+
+    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MET_LEVEL, gUnknown_Debug_2038A1C->unk64 + 44);
+    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MET_GAME, gUnknown_Debug_2038A1C->unk64 + 41);
+    SetMonData(&gUnknown_Debug_2038A1C->pokemon, MON_DATA_MET_LOCATION, gUnknown_Debug_2038A1C->unk64 + 42);
     CalculateMonStats(&gUnknown_Debug_2038A1C->pokemon);
 }
 

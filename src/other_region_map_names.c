@@ -1,4 +1,6 @@
 #include "global.h"
+#include "region_map.h"
+#include "text.h"
 
 const u8 MapName_MysteryZone[] = _("Mystery Zone");
 const u8 MapName_Twinleaf[] = _("Twinleaf{NAME_END} Town");
@@ -145,8 +147,7 @@ extern const u8 gMapName_CeruleanCity[];
 extern const u8 gMapName_LavenderTown[];
 extern const u8 gMapName_VermilionCity[];
 extern const u8 gMapName_CeladonCity[];
-extern const u8 gMapName_FuchsiaCity[];
-extern const u8 gMapName_CinnabarIsland[];
+extern const u8 gMapName_FuchsiaCity[];extern const u8 gMapName_CinnabarIsland[];
 extern const u8 gMapName_IndigoPlateau[];
 extern const u8 gMapName_SaffronCity[];
 extern const u8 gMapName_Route1[];
@@ -327,6 +328,8 @@ const u8 MapName_WifiGift[] = _("Wi-Fi Gift");
 const u8 MapName_FanClub[] = _("Pokémon Fan Club");
 const u8 MapName_EventSite[] = _("Event Site");
 const u8 MapName_Concert[] = _("Concert Event");
+
+extern const u8 gMapName_LavaridgeTown[];
 
 const u8 *const Generation4LocationTable[] = {
 	MapName_MysteryZone,
@@ -736,22 +739,22 @@ const u8 *const Generation1LocationTable[] = {
 	gMapName_Route4,
 	gMapName_CeruleanCity, // plays different music
 	gMapName_Route5,
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_Route5,
 	gMapName_Route6,
-	NULL, // underground path TODO
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_Route7,
-	NULL, // underground path TODO
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_Route8,
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_Route10, // TODO: this or Route 9?
 	gMapName_RockTunnel,
 	gMapName_PowerPlant,
 	gMapName_Route11, // TODO: this or Route 12?
 	gMapName_Route12, // TODO: this or Route 13?
-	NULL, // sea cottage
+	MapName_Kanto, // sea cottage
 	gMapName_VermilionCity,
 	gMapName_VermilionCity,
 	gMapName_VermilionCity,
@@ -782,9 +785,9 @@ const u8 *const Generation1LocationTable[] = {
 	gMapName_IndigoPlateau,
 	gMapName_IndigoPlateau,
 	gMapName_IndigoPlateau,
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_PalletTown, // Blue's house
-	NULL, // underground path TODO
+	MapName_Kanto, // underground path TODO
 	gMapName_CeladonCity, // dpt store
 	gMapName_CeladonCity,
 	gMapName_CeladonCity,
@@ -900,28 +903,143 @@ const u8 *const Generation1LocationTable[] = {
 	gMapName_SaffronCity,
 	gMapName_SaffronCity,
 	gMapName_SaffronCity,
-	NULL, // unused
-	NULL, // unused
-	NULL, // cable club
-	NULL, // cable club
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // cable club
+	MapName_Kanto, // cable club
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
 	gMapName_IndigoPlateau,
 	gMapName_IndigoPlateau,
 	gMapName_IndigoPlateau,
-	NULL, // pkmn yellow beach house
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
-	NULL, // unused
-	NULL, // TODO: generation 3 in-game trade
+	MapName_Kanto, // pkmn yellow beach house
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // unused
+	MapName_Kanto, // TODO: generation 3 in-game trade
 	MapName_Dashes // TODO: generation 3 fateful encounter
 };
 
 // TODO: gen 2
 // TODO: gen 5, 6, 7
 
+extern u8 gOtherText_MetDistantLand[]; // "Orre"
+
+const u8 MapName_Unova[] = _("Unova");
+const u8 MapName_Kalos[] = _("Kalos");
+const u8 MapName_Aloha[] = _("Aloha");
+const u8 MapName_Galar[] = _("Galar");
+
+const u8* const RegionTable[VERSION_SHIELD+1] = {
+	MapName_Dashes,
+	MapName_Hoenn,
+	MapName_Hoenn,
+	MapName_Hoenn,
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Johto,
+	MapName_Johto,
+	MapName_Johto,
+	MapName_Sinnoh,
+	MapName_Sinnoh,
+	MapName_Sinnoh,
+	MapName_Dashes,
+	MapName_Dashes,
+	gOtherText_MetDistantLand,
+	MapName_Dashes,
+	MapName_Dashes,
+	MapName_Dashes,
+	MapName_Dashes,
+	MapName_Unova,
+	MapName_Unova,
+	MapName_Unova,
+	MapName_Unova,
+	MapName_Kalos,
+	MapName_Kalos,
+	MapName_Hoenn,
+	MapName_Hoenn,
+	MapName_Hoenn,
+	MapName_Kalos,
+	MapName_Aloha,
+	MapName_Aloha,
+	MapName_Aloha,
+	MapName_Aloha,
+	MapName_Dashes, // TODO Pokémon Go
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Johto,
+	MapName_Johto,
+	MapName_Johto,
+	MapName_Kanto,
+	MapName_Kanto,
+	MapName_Galar,
+	MapName_Galar
+};
+
+static const u8 Str_Fateful[] = _("Fateful Encounter");
+extern u8* DetermineOrreMetLocation(struct Pokemon *);
+
+const u8* GetLocationName(u16 loc, u8 ver, struct Pokemon* mon) {
+	switch (ver) {
+		case 0:
+		default:
+			return MapName_Dashes;
+			break;
+		case VERSION_SAPPHIRE ... VERSION_BUBBLE_BLUE:
+			if (loc == 255) return Str_Fateful; // Also used for Box
+			if (loc == 254) return MapName_Trade;
+			if (loc == 253) return gMapName_LavaridgeTown;
+			if (loc < 214) {
+				CopyLocationName(gStringVar1, loc);
+				return gStringVar1;
+			}
+			else {
+				if (ver > VERSION_EMERALD) return MapName_Kanto;
+				else return MapName_Hoenn;
+			}
+			break;
+		case VERSION_HEART_GOLD ... VERSION_PLATINUM:
+			switch (loc / 1000) {
+				case 0:
+					if (loc < 235) return Generation4LocationTable[loc];
+					else {
+						if (ver < VERSION_DIAMOND) return MapName_Johto;
+						else return MapName_Sinnoh;
+					}
+					break;
+				case 2:
+					if (loc < 2015) return Generation4LocationTable2[loc-2000];
+					else {
+						if (ver < VERSION_DIAMOND) return MapName_Johto;
+						else return MapName_Sinnoh;
+					}
+					break;
+				case 3:
+					if (loc < 3077) return Generation4LocationTable3[loc-3000];
+					else {
+						if (ver < VERSION_DIAMOND) return MapName_Johto;
+						else return MapName_Sinnoh;
+					}
+					break;
+				default:
+					if (ver < VERSION_DIAMOND) return MapName_Johto;
+					else return MapName_Sinnoh;
+					break;
+			}
+			break;
+			case VERSION_GAMECUBE:
+				return DetermineOrreMetLocation(mon);
+			case VERSION_VC_RED ... VERSION_VC_YELLOW:
+				if (loc == 255) return Str_Fateful;
+				return Generation1LocationTable[loc];
+	}
+	return MapName_Dashes;
+}
