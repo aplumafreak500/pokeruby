@@ -120,9 +120,8 @@ endif
 #### Main Rules ####
 
 ALL_BUILDS := ruby ruby_debug ruby_rev1 ruby_rev2 sapphire sapphire_debug sapphire_rev1 sapphire_rev2 ruby_de ruby_de_debug sapphire_de sapphire_de_debug
-MODERN_BUILDS := $(ALL_BUILDS:%=%_modern)
-
 ALL_BUILDS += ruby_rev1_debug ruby_rev2_debug sapphire_rev1_debug sapphire_rev2_debug
+MODERN_BUILDS := $(ALL_BUILDS:%=%_modern)
 
 # Available targets
 .PHONY: all clean mostlyclean tidy tools $(ALL_BUILDS)
@@ -269,7 +268,7 @@ ruby_debug_modern:        ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1 MODERN=1
 ruby_rev1_modern:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 MODERN=1
 ruby_rev2_modern:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 MODERN=1
 sapphire_modern:          ; @$(MAKE) GAME_VERSION=SAPPHIRE MODERN=1
-sappphire_debug_modern:   ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1 MODERN=1
+sapphire_debug_modern:   ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1 MODERN=1
 sapphire_rev1_modern:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 MODERN=1
 sapphire_rev2_modern:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 MODERN=1
 ruby_de_modern:           ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN MODERN=1
