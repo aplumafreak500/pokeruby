@@ -8,6 +8,10 @@
 #include "gba/m4a_internal.h"
 #include "event_data.h"
 #include "string_util.h"
+#include "save.h"
+#include "overworld.h"
+#include "fieldmap.h"
+#include "pokemon_storage_system.h"
 
 u8 debug_sub_new0();
 UNUSED u8 LumaDebugMenu_AddNewPKMN();
@@ -44,11 +48,14 @@ void LumaDebugMenu_DrawVarStatus(u16);
 void LumaDebugMenu_VarEditorHandleInput(u8);
 void LumaDebugMenu_ExitVarEditor(u8);
 u8 LumaDebugMenu_FixBadEggs();
-// u8 LumaDebugMenu_SaveSerializedGame();
+u8 LumaDebugMenu_SaveSerializedGame();
+u8 LumaDebugMenu_ClearPKMN();
+//u8 LumaDebugMenu_EditPokedex();
 
 extern u8 (*gMenuCallback)();
 extern u8 DebugScript_New0;
 extern u16 *gSpecialVars[];
+extern u8 gDifferentSaveFile;
 
 const u8 Str_AddNewPKMN[] = _("Add Victini to party");
 const u8 Str_FlagEdit[] = _("Change Flag");
@@ -56,6 +63,8 @@ const u8 Str_VarEdit[] = _("Change State");
 const u8 Str_SaveGame[] = _("SaveSerializedGame");
 const u8 Str_FixBadEggs[] = _("Fix Bad EGG");
 const u8 Str_MemoryEditor[] = _("View/edit memory region");
+const u8 Str_ClearPKMN[] = _("Clear {PKMN}");
+const u8 Str_EditPokedex[] = _("Edit {POKE}dex");
 const u8 Str_MemoryEditorBios[] = _("Bios");
 const u8 Str_MemoryEditorIO[] = _("AGB I/O");
 const u8 Str_MemoryEditorVram[] = _("VRAM");
@@ -101,24 +110,26 @@ const u8* const RamPointerStrings[] = {
 };
 
 const struct MenuAction LumaDebugMenuItems[] = {
-	{ Str_AddNewPKMN, LumaDebugMenu_CloseMenu },
-	{ Str_MemoryEditor, LumaDebugMenu_OpenMemoryEditorMenu },
-	{ Str_SaveGame, /* LumaDebugMenu_SaveSerializedGame*/ LumaDebugMenu_CloseMenu },
-	{ Str_FlagEdit, LumaDebugMenu_OpenFlagEditor },
-	{ Str_VarEdit, LumaDebugMenu_OpenVarEditor },
-	{ Str_FixBadEggs, LumaDebugMenu_FixBadEggs }
+	{Str_AddNewPKMN, LumaDebugMenu_CloseMenu},
+	{Str_MemoryEditor, LumaDebugMenu_OpenMemoryEditorMenu},
+	{Str_SaveGame, LumaDebugMenu_SaveSerializedGame},
+	{Str_FlagEdit, LumaDebugMenu_OpenFlagEditor},
+	{Str_VarEdit, LumaDebugMenu_OpenVarEditor},
+	{Str_FixBadEggs, LumaDebugMenu_FixBadEggs},
+	{Str_ClearPKMN, LumaDebugMenu_ClearPKMN},
+	{Str_EditPokedex, LumaDebugMenu_CloseMenu/*LumaDebugMenu_EditPokedex*/}
 };
 
 const struct MenuAction MemoryEditorItems[] = {
-	{ Str_MemoryEditorBios, MemoryEditor_Bios },
-	{ Str_MemoryEditorEwram, MemoryEditor_Ewram },
-	{ Str_MemoryEditorIwram, MemoryEditor_Iwram },
-	{ Str_MemoryEditorIO, MemoryEditor_IO },
-	{ Str_MemoryEditorVram, MemoryEditor_Vram },
-	{ Str_MemoryEditorPal, MemoryEditor_Pal },
-	{ Str_MemoryEditorOam, MemoryEditor_Oam },
-	{ Str_MemoryEditorRom, MemoryEditor_Rom },
-	{ Str_MemoryEditorFram, MemoryEditor_Fram },
+	{Str_MemoryEditorBios, MemoryEditor_Bios},
+	{Str_MemoryEditorEwram, MemoryEditor_Ewram},
+	{Str_MemoryEditorIwram, MemoryEditor_Iwram},
+	{Str_MemoryEditorIO, MemoryEditor_IO},
+	{Str_MemoryEditorVram, MemoryEditor_Vram},
+	{Str_MemoryEditorPal, MemoryEditor_Pal},
+	{Str_MemoryEditorOam, MemoryEditor_Oam},
+	{Str_MemoryEditorRom, MemoryEditor_Rom},
+	{Str_MemoryEditorFram, MemoryEditor_Fram},
 };
 
 bool8 InitLumaDebugMenu() {
@@ -440,6 +451,35 @@ u8 LumaDebugMenu_FixBadEggs() {
 		}
 	}
 	CloseMenu();
+	return 1;
+}
+
+u8 LumaDebugMenu_SaveSerializedGame() {
+	u8 ret;
+	CloseMenu();
+	save_serialize_map();
+	IncrementGameStat(GAME_STAT_SAVED_GAME);
+	if (gDifferentSaveFile) {
+		ret = Save_WriteData(SAVE_OVERWRITE_DIFFERENT_FILE);
+		gDifferentSaveFile = FALSE;
+	}
+	else {
+		ret = Save_WriteData(SAVE_NORMAL);
+	}
+	if (ret == SAVE_STATUS_OK) {
+		PlaySE(SE_SAVE);
+	}
+	else {
+		PlaySE(SE_BOO);
+	}
+	while(!IsSEPlaying());
+	return ret;
+}
+
+u8 LumaDebugMenu_ClearPKMN() {
+	CloseMenu();
+	ResetPokemonStorageSystem();
+	PlaySE(SE_EXP_MAX);
 	return 1;
 }
 
