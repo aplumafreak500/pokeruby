@@ -91,7 +91,9 @@ LIBDIRS := ../../tools/agbcc/lib
 else
 LIBDIRS := \
 	$(TOOLCHAIN)/lib/gcc/arm-none-eabi/$(GCC_VER)/thumb \
-	$(TOOLCHAIN)/arm-none-eabi/lib/thumb
+	$(TOOLCHAIN)/lib/gcc/arm-none-eabi/$(GCC_VER)/thumb/nofp \
+	$(TOOLCHAIN)/arm-none-eabi/lib/thumb \
+	$(TOOLCHAIN)/arm-none-eabi/lib/thumb/nofp
 endif
 LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc
 
