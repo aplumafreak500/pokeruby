@@ -141,6 +141,13 @@ static void Task_8071B64(u8 taskId);
 
 #if DEBUG
 
+#if (ENGLISH && REVISION == 0)
+u8 gUnknown_Debug_03004BD0;
+u8 gUnknown_Debug_Murakawa2;
+#else
+u32 gUnknown_Debug_03004BD0;
+#endif
+
 void debug_sub_8075D9C(void);
 
 u8 debug_sub_8075C30(void)
