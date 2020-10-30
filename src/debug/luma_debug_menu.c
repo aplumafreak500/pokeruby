@@ -134,9 +134,9 @@ const struct MenuAction MemoryEditorItems[] = {
 
 bool8 InitLumaDebugMenu() {
 	Menu_EraseScreen();
-	Menu_DrawStdWindowFrame(0, 0, 18, 13);
-	Menu_PrintItems(1, 1, 6, LumaDebugMenuItems);
-	InitMenu(0, 1, 1, 6, 0, 15);
+	Menu_DrawStdWindowFrame(0, 0, 18, 17);
+	Menu_PrintItems(1, 1, 8, LumaDebugMenuItems);
+	InitMenu(0, 1, 1, 8, 0, 17);
 	gMenuCallback = LumaDebugMenu_ProcessInput;
 	return 0;
 }
