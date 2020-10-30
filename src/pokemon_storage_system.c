@@ -717,14 +717,13 @@ void sub_809658C(void)
 
 void sub_80965F8(void)
 {
-    if (++gUnknown_02038478->curBox > 11)
+    if (++gUnknown_02038478->curBox > 7)
         gUnknown_02038478->curBox = 0;
-    sub_809665C();
-}
+    sub_809665C();}
 
 void sub_809662C(void)
 {
-    gUnknown_02038478->curBox = (gUnknown_02038478->curBox == 0 ? 11 : gUnknown_02038478->curBox - 1);
+    gUnknown_02038478->curBox = (gUnknown_02038478->curBox == 0 ? 7 : gUnknown_02038478->curBox - 1);
     sub_809665C();
 }
 
