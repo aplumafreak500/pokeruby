@@ -412,6 +412,7 @@ gMonFrontPicCoords:: @ 81E7C74
 	.byte 102, 13, 0, 0
 	.byte 136,  1, 0, 0
 	.byte  55,  6, 0, 0
+	.byte 102,  8, 0, 0
 	.byte  51, 20, 0, 0
 	.byte  52, 16, 0, 0
 	.byte  68, 16, 0, 0
