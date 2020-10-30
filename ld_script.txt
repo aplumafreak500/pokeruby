@@ -378,6 +378,7 @@ SECTIONS {
 		src/name_string_util.o(.text);
 		src/menu_cursor.o(.text);
 		src/debug/luma_debug_menu.o(.text);
+		src/other_region_map_names.o(.text);
 	} =0
 
 	script_data :
@@ -790,7 +791,7 @@ SECTIONS {
 		data/debug_mystery_event_scripts.o(.rodata);
 		src/debug/luma_debug_menu.o(.rodata);
 		data/FairyWindAnimData.o(.rodata);
-		src/data/other_region_map_names.o(.rodata);
+		src/other_region_map_names.o(.rodata);
 		src/libs/m4a_tables.o(.rodata);
 		data/sound_data.o(.rodata);
 	} =0

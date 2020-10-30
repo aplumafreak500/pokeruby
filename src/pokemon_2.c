@@ -1006,9 +1006,9 @@ u8 GetMonsStateToDoubles(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u8 GetAbilityBySpecies(u16 species, bool8 altAbility, bool8 hAbility)
+u8 GetAbilityBySpecies(u16 species, u8 altAbility, bool8 hAbility)
 {
-    if (hAbility)
+    if (hAbility || altAbility == 2)
         gLastUsedAbility = gBaseStats[species].hiddenAbility;
     else if (altAbility)
         gLastUsedAbility = gBaseStats[species].ability2;
