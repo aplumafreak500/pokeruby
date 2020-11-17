@@ -1,3 +1,4 @@
+#if DEBUG
 #include "global.h"
 #include "sprite.h"
 #include "palette.h"
@@ -1298,3 +1299,4 @@ void PrintCryNumber(void)
 {
     PrintSignedNumber(gSoundTestCryNum, 1, 17, 3);
 }
+#endif

@@ -1,3 +1,4 @@
+#if DEBUG
 #include "global.h"
 #include "matsuda_debug_menu.h"
 #include "battle.h"
@@ -997,3 +998,4 @@ u8 MatsudaDebugMenu_SetArtMuseumItems(void)
     CloseMenu();
     return 1;
 }
+#endif

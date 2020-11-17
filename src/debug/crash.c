@@ -1,3 +1,4 @@
+#if DEBUG
 #include "global.h"
 #include "main.h"
 #include "task.h"
@@ -53,3 +54,4 @@ static void CB2_CrashIdle(void)
     REG_BG3HOFS = 0;
     REG_BG3VOFS = 0;
 }
+#endif

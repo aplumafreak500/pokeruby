@@ -1,3 +1,4 @@
+#if DEBUG
 #include "global.h"
 #include "battle_tower.h"
 #include "menu.h"
@@ -71,3 +72,4 @@ static u8 sub_814A4B8(void)
     CloseMenu();
     return 1;
 }
+#endif

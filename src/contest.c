@@ -265,7 +265,9 @@ void sub_80B292C(void);
 void sub_80B2968(void);
 void SelectContestMoveBankTarget(u16);
 
+#if DEBUG
 EWRAM_DATA u8 gUnknown_0203856C = 0;
+#endif
 EWRAM_DATA struct ContestPokemon gContestMons[4] = {0};
 EWRAM_DATA s16 gContestMonConditions[4] = {0};
 EWRAM_DATA s16 gUnknown_02038678[4] = {0};

@@ -1,4 +1,6 @@
 #include "global.h"
+#include "../data/git.h"
+#if DEBUG
 #include "menu.h"
 #include "main.h"
 #include "script.h"
@@ -83,8 +85,6 @@ const u8 Str_ChangeFlagState[] = _("Edit flag state");
 const u8 Str_ChangeVarState[] = _("Edit var state");
 const u8 Str_ChangeFlagState2[] = _("LR: Edit");
 const u8 dsStr[] = _("DS Num");
-
-#include "../data/git.h"
 
 IWRAM_DATA s8 DS_Sound_Count;
 IWRAM_DATA u16 currentFlag;
@@ -642,3 +642,4 @@ const u8* const LanguageNameTable[NUM_LANGUAGES+1] = {
 	LanguageName_Chn,
 	LanguageName_Tia
 };
+#endif
