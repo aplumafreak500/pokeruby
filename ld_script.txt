@@ -50,10 +50,11 @@ SECTIONS {
 		*(SORT(.rodata*));
 	} =0
 
+	.ARM.exidx : { *(.ARM.exidx) }=0
+	.ARM.extab : { *(.ARM.extab) }=0
+
 	.comment 0 : { *(.comment) }
 	.ARM.attributes 0 : { *(.ARM.attributes) }
-	.ARM.exidx 0 : { *(.ARM.exidx) }
-	.ARM.extab 0 : { *(.ARM.extab) }
 
 	/* DWARF 2 sections */
 	.debug_ranges   0 : { *(.debug_ranges) }
