@@ -3,7 +3,7 @@
 
 #include "constants/species.h"
 
-u16 gEasyChatGroupWords_Pokemon[] = {
+const u16 gEasyChatGroupWords_Pokemon[] = {
     SPECIES_ARMALDO,
     SPECIES_BEAUTIFLY,
     SPECIES_MEDITITE,

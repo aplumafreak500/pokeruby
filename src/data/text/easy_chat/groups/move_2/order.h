@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_MOVE_2_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Move2[] = {
+const u16 gEasyChatGroupOrder_Move2[] = {
     51,
     151,
     332,
@@ -199,7 +199,7 @@ u16 gEasyChatGroupOrder_Move2[] = {
     192,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Move2[] = {
+const u16 gEasyChatGroupOrder_Move2[] = {
     194,
     195,
     282,

@@ -24,7 +24,7 @@
 #include "groups/trendy_saying/order.h"
 #include "groups/pokemon_2/order.h"
 
-const u16 * gEasyChatGroupOrders[] = {
+const u16* const gEasyChatGroupOrders[] = {
     gEasyChatGroupOrder_Pokemon,
     gEasyChatGroupOrder_Trainer,
     gEasyChatGroupOrder_Status,

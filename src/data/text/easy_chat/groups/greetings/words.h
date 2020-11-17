@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Greetings[] = _(
+const u8 gEasyChatGroupWords_Greetings[] = _(
                                        "THANKS$"
                                        "YES$"
                                        "HERE GOES$"
@@ -46,7 +46,7 @@ u8 gEasyChatGroupWords_Greetings[] = _(
                                        "COUNT ON$"
                                        );
 #elif GERMAN
-u8 gEasyChatGroupWords_Greetings[] = _(
+const u8 gEasyChatGroupWords_Greetings[] = _(
                                        "DANK$"
                                        "JA$"
                                        "HIER KOMMT$"

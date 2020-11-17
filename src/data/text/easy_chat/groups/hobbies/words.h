@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Hobbies[] = _(
+const u8 gEasyChatGroupWords_Hobbies[] = _(
                                      "IDOL$"
                                      "ANIME$"
                                      "SONG$"
@@ -58,7 +58,7 @@ u8 gEasyChatGroupWords_Hobbies[] = _(
                                      "LOOK$"
                                      );
 #elif GERMAN
-u8 gEasyChatGroupWords_Hobbies[] = _(
+const u8 gEasyChatGroupWords_Hobbies[] = _(
                                      "IDOL$"
                                      "ANIME$"
                                      "SONG$"

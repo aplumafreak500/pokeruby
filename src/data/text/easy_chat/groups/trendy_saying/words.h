@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_TrendySaying[] = _(
+const u8 gEasyChatGroupWords_TrendySaying[] = _(
                                           "KTHX, BYE.$"
                                           "YES, SIR!$"
                                           "AVANT GARDE$"
@@ -37,7 +37,7 @@ u8 gEasyChatGroupWords_TrendySaying[] = _(
                                           "UGLY$"
                                           );
 #elif GERMAN
-u8 gEasyChatGroupWords_TrendySaying[] = _(
+const u8 gEasyChatGroupWords_TrendySaying[] = _(
                                           "VOKUHILA$"
                                           "AYE, AYE!$"
                                           "AVANTGARDE$"

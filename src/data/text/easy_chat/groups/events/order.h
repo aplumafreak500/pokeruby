@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_EVENTS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Events[] = {
+const u16 gEasyChatGroupOrder_Events[] = {
     0,
     14,
     12,
@@ -27,7 +27,7 @@ u16 gEasyChatGroupOrder_Events[] = {
     7,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Events[] = {
+const u16 gEasyChatGroupOrder_Events[] = {
     0,
     2,
     21,

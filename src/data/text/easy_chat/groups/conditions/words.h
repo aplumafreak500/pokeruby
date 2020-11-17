@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_CONDITIONS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_CONDITIONS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Conditions[] = _(
+const u8 gEasyChatGroupWords_Conditions[] = _(
                                         "HOT$"
                                         "EXISTS$"
                                         "EXCESS$"
@@ -73,7 +73,7 @@ u8 gEasyChatGroupWords_Conditions[] = _(
                                         "BADLY$"
                                         );
 #elif GERMAN
-u8 gEasyChatGroupWords_Conditions[] = _(
+const u8 gEasyChatGroupWords_Conditions[] = _(
                                         "HEISS$"
                                         "EXISTIERT$"
                                         "ÜBERMÄSSIG$"

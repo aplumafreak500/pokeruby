@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_MISC_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_MISC_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Misc[] = _(
+const u8 gEasyChatGroupWords_Misc[] = _(
                                   "HIGHS$"
                                   "LOWS$"
                                   "UM$"
@@ -46,7 +46,7 @@ u8 gEasyChatGroupWords_Misc[] = _(
                                   "RIGHT$"
                                   );
 #elif GERMAN
-u8 gEasyChatGroupWords_Misc[] = _(
+const u8 gEasyChatGroupWords_Misc[] = _(
                                   "HÖHEN$"
                                   "TIEFEN$"
                                   "ÄH$"

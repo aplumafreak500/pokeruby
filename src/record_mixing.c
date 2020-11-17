@@ -34,13 +34,13 @@ u32 gUnknown_03005D2C;
 static u8 gUnknown_03000718;
 static u8 gUnknown_0300071C[4];
 
-void *recordMixingSecretBases = &gSaveBlock1.secretBases;
-void *recordMixingTvShows = &gSaveBlock1.tvShows;
-void *recordMixingPokeNews = &gSaveBlock1.pokeNews;
-void *recordMixingMauvilleMan = &gSaveBlock1.mauvilleMan;
-void *recordMixingEasyChatPairs = &gSaveBlock1.easyChatPairs;
-struct RecordMixingDayCareMail *gDayCareMailPlayerRecord = &gDayCareMailRecord;
-struct BattleTowerRecord *gBattleTowerPlayerRecord = &gSaveBlock2.battleTower.playerRecord;
+void* const recordMixingSecretBases = &gSaveBlock1.secretBases;
+void* const recordMixingTvShows = &gSaveBlock1.tvShows;
+void* const recordMixingPokeNews = &gSaveBlock1.pokeNews;
+void* const recordMixingMauvilleMan = &gSaveBlock1.mauvilleMan;
+void* const recordMixingEasyChatPairs = &gSaveBlock1.easyChatPairs;
+struct RecordMixingDayCareMail* const gDayCareMailPlayerRecord = &gDayCareMailRecord;
+struct BattleTowerRecord* const gBattleTowerPlayerRecord = &gSaveBlock2.battleTower.playerRecord;
 
 #define BUFFER_CHUNK_SIZE 200
 

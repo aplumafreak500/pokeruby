@@ -165,14 +165,14 @@ void debug_80C802C(u8 taskId);
 
 #define SPRITETAG_WATANABE 0x1000
 
-u8 byte_83F88EC[];
-u16 word_83F888C[];
+const u8 byte_83F88EC[];
+const u16 word_83F888C[];
 
-struct SpriteSheet stru_83F8828[] = {
+const struct SpriteSheet stru_83F8828[] = {
     {byte_83F88EC, 0x800, SPRITETAG_WATANABE},
     {}
 };
-struct SpritePalette stru_83F8838[] = {
+const struct SpritePalette stru_83F8838[] = {
     {word_83F888C, SPRITETAG_WATANABE},
     {}
 };
@@ -2566,32 +2566,32 @@ void debug_80C68CC(u16 a0, u8 a1, u8 a2, u8 a3)
     Menu_PrintText(sp00 + (u8)(4 - a3), a1, a2);
 }
 
-struct OamData gOamData_83F8848 = {
+const struct OamData gOamData_83F8848 = {
     .y = 0xa0
 };
 
-union AnimCmd gSpriteAnim_83F8850[] = {
+const union AnimCmd gSpriteAnim_83F8850[] = {
     ANIMCMD_FRAME(38, 30),
     ANIMCMD_END
 };
 
-union AnimCmd gSpriteAnim_83F8858[] = {
+const union AnimCmd gSpriteAnim_83F8858[] = {
     ANIMCMD_FRAME(39, 30),
     ANIMCMD_END
 };
 
-union AnimCmd gSpriteAnim_83F8860[] = {
+const union AnimCmd gSpriteAnim_83F8860[] = {
     ANIMCMD_FRAME(40, 30),
     ANIMCMD_END
 };
 
-const union AnimCmd *gSpriteAnimTable_83F8868[] = {
+const union AnimCmd* const gSpriteAnimTable_83F8868[] = {
     gSpriteAnim_83F8850,
     gSpriteAnim_83F8858,
     gSpriteAnim_83F8860
 };
 
-struct SpriteTemplate gSpriteTemplate_83F8874 = {
+const struct SpriteTemplate gSpriteTemplate_83F8874 = {
     SPRITETAG_WATANABE,
     SPRITETAG_WATANABE,
     &gOamData_83F8848,
@@ -2601,8 +2601,8 @@ struct SpriteTemplate gSpriteTemplate_83F8874 = {
     debug_80C7584
 };
 
-u16 word_83F888C[] = INCBIN_U16("graphics/debug/sprite_browser.gbapal");
-u8 byte_83F88EC[] = INCBIN_U8("graphics/debug/sprite_browser.4bpp");
+const u16 word_83F888C[] = INCBIN_U16("graphics/debug/sprite_browser.gbapal");
+const u8 byte_83F88EC[] = INCBIN_U8("graphics/debug/sprite_browser.4bpp");
 
 void InitSeePokemonGraphics(void)
 {

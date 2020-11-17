@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_GREETINGS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Greetings[] = {
+const u16 gEasyChatGroupOrder_Greetings[] = {
     12,
     25,
     32,
@@ -47,7 +47,7 @@ u16 gEasyChatGroupOrder_Greetings[] = {
     39,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Greetings[] = {
+const u16 gEasyChatGroupOrder_Greetings[] = {
     40,
     7,
     33,

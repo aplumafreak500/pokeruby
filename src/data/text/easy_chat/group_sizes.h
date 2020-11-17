@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUP_SIZES
 #define DATA_TEXT_EASY_CHAT_GROUP_SIZES
 
-u8 gEasyChatGroupSizes[] = {
+const u8 gEasyChatGroupSizes[] = {
     202, // POKEMON
      19, // TRAINER
     109, // STATUS
