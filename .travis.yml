@@ -63,24 +63,4 @@ matrix:
       script:
         - make tools CXX=g++-7
         - make -j2 ruby NONMATCHING=1
-    - os: linux
-      addons:
-        apt:
-          sources:
-              - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
-      env: _="Build German"
-      before_script:
-        - cp override-de.mk override.mk
-        - rsync -avhI data-de/ data/
-        - rsync -avhI graphics-de/ graphics/
-      script:
-        - make tools CXX=g++-7
-        - make -j2 ruby_de
-        - make -j2 sapphire_de
-        - make -j2 ruby_de_debug
-        - make -j2 sapphire_de_debug
-after_success:
-  - .travis/calcrom/webhook.sh pokeruby
 

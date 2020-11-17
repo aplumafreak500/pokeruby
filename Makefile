@@ -53,11 +53,8 @@ ifeq ($(MODERN),0)
 CPPFLAGS += -I tools/agbcc/include -nostdinc -undef
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
 else
-CC1FLAGS := -mthumb -mthumb-interwork -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -O2 -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast
-endif
-
-ifneq (,$(DINFO))
-CC1FLAGS += -g
+CC1FLAGS := -mthumb -mthumb-interwork -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -O2 -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast -g3
+ASFLAGS += -g3
 endif
 
 ifneq (,$(NONMATCHING))
@@ -97,11 +94,7 @@ LIBDIRS := \
 endif
 LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc
 
-ifeq ($(MODERN),0)
 LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
-else
-LD_SCRIPT := $(BUILD_DIR)/ld_script_modern.ld
-endif
 
 # Special configurations required for lib files
 ifeq ($(MODERN),0)
@@ -167,11 +160,6 @@ $(shell touch src/debug/start_menu_debug.c)
 AUTO_GEN_TARGETS :=
 
 all: $(ROM)
-ifeq ($(COMPARE),1)
-	@$(SHA1SUM) $(BUILD_NAME).sha1
-endif
-
-compare: ; @$(MAKE) COMPARE=1
 
 mostlyclean: tidy
 	find sound/direct_sound_samples \( -iname '*.bin' \) -exec rm {} +
@@ -259,10 +247,10 @@ ruby_de_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
 sapphire_de:       ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
 sapphire_de_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
 
-ruby_rev1_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1 COMPARE=0
-ruby_rev2_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1 COMPARE=0
-sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1 COMPARE=0
-sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1 COMPARE=0
+ruby_rev1_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
+ruby_rev2_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
+sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
+sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
 
 modern:                   ; @$(MAKE) GAME_VERSION=RUBY MODERN=1
 ruby_modern:              ; @$(MAKE) GAME_VERSION=RUBY MODERN=1
@@ -282,19 +270,6 @@ ruby_rev1_debug_modern: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1 MOD
 ruby_rev2_debug_modern: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1 MODERN=1
 sapphire_rev1_debug_modern: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1 MODERN=1
 sapphire_rev2_debug_modern: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1 MODERN=1
-
-compare_ruby:              ; @$(MAKE) GAME_VERSION=RUBY COMPARE=1
-compare_ruby_debug:        ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1 COMPARE=1
-compare_ruby_rev1:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 COMPARE=1
-compare_ruby_rev2:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 COMPARE=1
-compare_sapphire:          ; @$(MAKE) GAME_VERSION=SAPPHIRE COMPARE=1
-compare_sapphire_debug:    ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1 COMPARE=1
-compare_sapphire_rev1:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 COMPARE=1
-compare_sapphire_rev2:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 COMPARE=1
-compare_ruby_de:           ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN COMPARE=1
-compare_ruby_de_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=1
-compare_sapphire_de:       ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN COMPARE=1
-compare_sapphire_de_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=1
 
 #### Graphics Rules ####
 
