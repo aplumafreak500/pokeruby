@@ -53,8 +53,11 @@ ifeq ($(MODERN),0)
 CPPFLAGS += -I tools/agbcc/include -nostdinc -undef
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
 else
-CC1FLAGS := -mthumb -mthumb-interwork -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -O2 -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast -g3
+CC1FLAGS := -mthumb -mthumb-interwork -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -O2 -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast
+ifneq (,$(DINFO))
+CC1FLAGS += -g3
 ASFLAGS += -g3
+endif
 endif
 
 ifneq (,$(NONMATCHING))
@@ -92,7 +95,7 @@ LIBDIRS := \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb/nofp
 endif
-LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc
+LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc -q -n
 
 LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
 
