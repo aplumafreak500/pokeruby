@@ -52,8 +52,11 @@ SECTIONS {
 
 	.comment 0 : { *(.comment) }
 	.ARM.attributes 0 : { *(.ARM.attributes) }
+	.ARM.exidx 0 : { *(.ARM.exidx) }
+	.ARM.extab 0 : { *(.ARM.extab) }
 
 	/* DWARF 2 sections */
+	.debug_ranges   0 : { *(.debug_ranges) }
 	.debug_aranges  0 : { *(.debug_aranges) }
 	.debug_pubnames 0 : { *(.debug_pubnames) }
 	.debug_info     0 : { *(.debug_info) }
@@ -63,6 +66,7 @@ SECTIONS {
 	.debug_str      0 : { *(.debug_str) }
 	.debug_loc      0 : { *(.debug_loc) }
 	.debug_macinfo  0 : { *(.debug_macinfo) }
+	.debug_macro    0 : { *(.debug_macro) }
 
 	/* Discard everything not specifically mentioned above. */
 	/DISCARD/ :
