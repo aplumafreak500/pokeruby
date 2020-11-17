@@ -95,7 +95,7 @@ LIBDIRS := \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb/nofp
 endif
-LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc -q -n
+LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc -n
 
 LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
 
@@ -156,9 +156,11 @@ MAKEFLAGS += --no-print-directory
 $(shell mkdir -p $(SUBDIRS))
 
 # Refresh the git hash and dates
+ifeq ($(NODEP),)
 $(shell touch src/data/git.h)
 $(shell touch src/main.c)
 $(shell touch src/debug/start_menu_debug.c)
+endif
 
 AUTO_GEN_TARGETS :=
 
@@ -210,11 +212,12 @@ $(ROM): %.gba: %.elf
 
 %.elf: $(LD_SCRIPT) $(ALL_OBJECTS)
 	@echo Linking $@
-	cd $(BUILD_DIR) && $(LD) -T $(LD_SCRIPT:$(BUILD_DIR)/%=%) -Map ../../$(MAP) -o ../../$@ $(OBJS_REL) $(LDFLAGS)
+	@cd $(BUILD_DIR) && $(LD) -T $(LD_SCRIPT:$(BUILD_DIR)/%=%) -Map ../../$(MAP) -o ../../$@ $(OBJS_REL) $(LDFLAGS)
 	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
 
 $(LD_SCRIPT): $(LD_SCRIPT:$(BUILD_DIR)/%.ld=%.txt) $(BUILD_DIR)/sym_common.ld $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_bss.ld
-	sed -e "s#tools/#../../tools/#g" $< >$@
+	@echo $<
+	@sed -e "s#tools/#../../tools/#g" $< >$@
 
 $(BUILD_DIR)/sym_%.ld: sym_%.txt
 	@echo $<
