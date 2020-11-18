@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Adjectives[] = _(
+const u8 gEasyChatGroupWords_Adjectives[] = _(
                                         "WANDERING$"
                                         "RICKETY$"
                                         "ROCK-SOLID$"
@@ -40,7 +40,7 @@ u8 gEasyChatGroupWords_Adjectives[] = _(
                                         "ANTICIPATION$"
                                         );
 #elif GERMAN
-u8 gEasyChatGroupWords_Adjectives[] = _(
+const u8 gEasyChatGroupWords_Adjectives[] = _(
                                         "LATSCH$"
                                         "WACKEL$"
                                         "STEINHART$"

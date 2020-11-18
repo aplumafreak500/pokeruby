@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_EVENTS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_EVENTS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Events[] = _(
+const u8 gEasyChatGroupWords_Events[] = _(
                                     "APPEAL$"
                                     "EVENTS$"
                                     "STAY-AT-HOME$"
@@ -26,7 +26,7 @@ u8 gEasyChatGroupWords_Events[] = _(
                                     "RIBBON$"
                                     );
 #elif GERMAN
-u8 gEasyChatGroupWords_Events[] = _(
+const u8 gEasyChatGroupWords_Events[] = _(
                                     "AUSDRUCK$"
                                     "EVENTS$"
                                     "BABYSITTEN$"

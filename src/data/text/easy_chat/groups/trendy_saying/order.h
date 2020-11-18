@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_TRENDY_SAYING_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_TrendySaying[] = {
+const u16 gEasyChatGroupOrder_TrendySaying[] = {
     7,
     2,
     28,
@@ -38,7 +38,7 @@ u16 gEasyChatGroupOrder_TrendySaying[] = {
     31,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_TrendySaying[] = {
+const u16 gEasyChatGroupOrder_TrendySaying[] = {
     32,
     24,
     2,

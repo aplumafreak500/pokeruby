@@ -1,4 +1,6 @@
 #include "global.h"
+#include "../data/git.h"
+#if DEBUG
 #include "menu.h"
 #include "main.h"
 #include "script.h"
@@ -83,8 +85,6 @@ const u8 Str_ChangeFlagState[] = _("Edit flag state");
 const u8 Str_ChangeVarState[] = _("Edit var state");
 const u8 Str_ChangeFlagState2[] = _("LR: Edit");
 const u8 dsStr[] = _("DS Num");
-
-#include "../data/git.h"
 
 IWRAM_DATA s8 DS_Sound_Count;
 IWRAM_DATA u16 currentFlag;
@@ -518,3 +518,128 @@ void DS_Adjust_Task(u8 taskId) {
 	PrintSignedNumber(DS_Sound_Count, 7, 2, 3);
 }
 
+static const u8 VersionName_Invalid[] = _("-----");
+static const u8 VersionName_None[] = _("None");
+static const u8 VersionName_Sapphire[] = _("Sapphire");
+static const u8 VersionName_Ruby[] = _("Ruby");
+static const u8 VersionName_Emerald[] = _("Emerald");
+static const u8 VersionName_FR[] = _("Fire Red");
+static const u8 VersionName_LG[] = _("Leaf Green");
+static const u8 VersionName_BB[] = _("Blue$GBA");
+static const u8 VersionName_HG[] = _("Heart Gold");
+static const u8 VersionName_SS[] = _("Soul Silver");
+static const u8 VersionName_CDS[] = _("Crystal$DS");
+static const u8 VersionName_Diamond[] = _("Diamond");
+static const u8 VersionName_Pearl[] = _("Pearl");
+static const u8 VersionName_Platinum[] = _("Platinum");
+static const u8 VersionName_GC[] = _("XD / Colosseum");
+static const u8 VersionName_White[] = _("White");
+static const u8 VersionName_Black[] = _("Black");
+static const u8 VersionName_White2[] = _("White 2");
+static const u8 VersionName_Black2[] = _("Black 2");
+static const u8 VersionName_X[] = _("X");
+static const u8 VersionName_Y[] = _("Y");
+static const u8 VersionName_OR[] = _("Omega Ruby");
+static const u8 VersionName_AS[] = _("Alpha Sapphire");
+static const u8 VersionName_TE[] = _("Emerald$3DS");
+static const u8 VersionName_Z[] = _("Z");
+static const u8 VersionName_Sun[] = _("Sun");
+static const u8 VersionName_Moon[] = _("Moon");
+static const u8 VersionName_US[] = _("Ultra Sun");
+static const u8 VersionName_UM[] = _("Ultra Moon");
+static const u8 VersionName_Go[] = _("Pokémon Go");
+static const u8 VersionName_Red[] = _("Red");
+static const u8 VersionName_Blue[] = _("Blue");
+static const u8 VersionName_Green[] = _("Green");
+static const u8 VersionName_Yellow[] = _("Yellow");
+static const u8 VersionName_Gold[] = _("Gold");
+static const u8 VersionName_Silver[] = _("Silver");
+static const u8 VersionName_Crystal[] = _("Crystal");
+static const u8 VersionName_LGP[] = _("Let's Go Pikachu");
+static const u8 VersionName_LGE[] = _("Let's Go Eevee");
+static const u8 VersionName_Sword[] = _("Sword");
+static const u8 VersionName_Shield[] = _("Shield");
+static const u8 VersionName_SwShThird[] = _("Gen 8 Third Version");
+static const u8 VersionName_Gen8SinnohRemakeDia[] = _("Diamond$Switch");
+static const u8 VersionName_Gen8SinnohRemakePrl[] = _("Pearl$Switch");
+static const u8 VersionName_Gen8SinnohRemakePla[] = _("Platinum$Switch");
+static const u8 VersionName_Gen9First[] = _("Gen 9 First Version");
+static const u8 VersionName_Gen9Second[] = _("Gen 9 Second Version");
+static const u8 VersionName_Gen9Third[] = _("Gen 9 Third Version");
+
+static const u8 LanguageName_None[] = _("None");
+static const u8 LanguageName_Jap[] = _("Japanese");
+static const u8 LanguageName_Eng[] = _("English");
+static const u8 LanguageName_Fra[] = _("French");
+static const u8 LanguageName_Ita[] = _("Italian");
+static const u8 LanguageName_Ger[] = _("German");
+static const u8 LanguageName_Ntl[] = _("Dutch");
+static const u8 LanguageName_Spa[] = _("Spanish");
+static const u8 LanguageName_Kor[] = _("Korean");
+static const u8 LanguageName_Chn[] = _("Chinese T");
+static const u8 LanguageName_Tia[] = _("Chinese S");
+
+const u8* const VersionNameTable[VERSION_SHIELD+2] = {
+	VersionName_None,
+	VersionName_Sapphire,
+	VersionName_Ruby,
+	VersionName_Emerald,
+	VersionName_FR,
+	VersionName_LG,
+	VersionName_BB,
+	VersionName_HG,
+	VersionName_SS,
+	VersionName_CDS,
+	VersionName_Diamond,
+	VersionName_Pearl,
+	VersionName_Platinum,
+	VersionName_Invalid,
+	VersionName_Invalid,
+	VersionName_GC,
+	VersionName_Invalid,
+	VersionName_Invalid,
+	VersionName_Invalid,
+	VersionName_Invalid,
+	VersionName_White,
+	VersionName_Black,
+	VersionName_White2,
+	VersionName_Black2,
+	VersionName_X,
+	VersionName_Y,
+	VersionName_AS,
+	VersionName_OR,
+	VersionName_TE,
+	VersionName_Z,
+	VersionName_Sun,
+	VersionName_Moon,
+	VersionName_US,
+	VersionName_UM,
+	VersionName_Go,
+	VersionName_Red,
+	VersionName_Green,
+	VersionName_Blue,
+	VersionName_Yellow,
+	VersionName_Gold,
+	VersionName_Silver,
+	VersionName_Crystal,
+	VersionName_LGP,
+	VersionName_LGE,
+	VersionName_Sword,
+	VersionName_Shield,
+	VersionName_SwShThird
+};
+
+const u8* const LanguageNameTable[NUM_LANGUAGES+1] = {
+	LanguageName_None,
+	LanguageName_Jap,
+	LanguageName_Eng,
+	LanguageName_Fra,
+	LanguageName_Ita,
+	LanguageName_Ger,
+	LanguageName_Ntl,
+	LanguageName_Spa,
+	LanguageName_Kor,
+	LanguageName_Chn,
+	LanguageName_Tia
+};
+#endif

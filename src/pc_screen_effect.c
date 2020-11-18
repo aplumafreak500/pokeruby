@@ -11,22 +11,22 @@ static void sub_80C6130(struct Sprite *);
 static void HBlankIntrOn(IntrFunc);
 static void HBlankIntrOff(void);
 
-struct OamData gOamData_83D18D8 = {
+const struct OamData gOamData_83D18D8 = {
     .shape = ST_OAM_H_RECTANGLE,
     .size = 1
 };
 
-union AnimCmd gSpriteAnim_83D18E0[] = {
+const union AnimCmd gSpriteAnim_83D18E0[] = {
     ANIMCMD_FRAME(0, 5),
     ANIMCMD_END
 };
 
-const union AnimCmd *gSpriteAnimTable_83D18E8[] = {
+const union AnimCmd* const gSpriteAnimTable_83D18E8[] = {
     gSpriteAnim_83D18E0
 };
 
-u16 gUnknownPal_083D18EC[] = INCBIN_U16("graphics/unknown/unknown_3D18EC.gbapal");
-u8 gUnknownGfx_083D190C[] = INCBIN_U8("graphics/unknown/unknown_3D190C.4bpp");
+const u16 gUnknownPal_083D18EC[] = INCBIN_U16("graphics/unknown/unknown_3D18EC.gbapal");
+const u8 gUnknownGfx_083D190C[] = INCBIN_U8("graphics/unknown/unknown_3D190C.4bpp");
 
 EWRAM_DATA struct PCScreenEffectStruct *gUnknown_020387EC = NULL;
 

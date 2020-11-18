@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_POKEMON_2_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Pokemon2[] = {
+const u16 gEasyChatGroupOrder_Pokemon2[] = {
     63,
     142,
     190,
@@ -256,7 +256,7 @@ u16 gEasyChatGroupOrder_Pokemon2[] = {
     41,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Pokemon2[] = {
+const u16 gEasyChatGroupOrder_Pokemon2[] = {
     63,
     142,
     93,

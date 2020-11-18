@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_BATTLE_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Battle[] = {
+const u16 gEasyChatGroupOrder_Battle[] = {
     53,
     39,
     18,
@@ -68,7 +68,7 @@ u16 gEasyChatGroupOrder_Battle[] = {
     7,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Battle[] = {
+const u16 gEasyChatGroupOrder_Battle[] = {
     52,
     53,
     18,

@@ -160,23 +160,23 @@ const u8 gUnknown_083FB73A[][16] = {
 
 struct Unk201C800 * const gPokedexCryScreenPtr2 = (struct Unk201C800 *)(gSharedMem + 0x1c800);
 
-union AnimCmd gSpriteAnim_83FB760[] = {
+const union AnimCmd gSpriteAnim_83FB760[] = {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_END
 };
 
-const union AnimCmd * gSpriteAnimTable_83FB768[] = {
+const union AnimCmd* const gSpriteAnimTable_83FB768[] = {
     gSpriteAnim_83FB760
 };
 
-struct OamData gOamData_83FB76C = {
+const struct OamData gOamData_83FB76C = {
     .y = 160,
     .affineMode = ST_OAM_AFFINE_NORMAL,
     .size = 3,
     .priority = 1
 };
 
-struct SpriteTemplate gSpriteTemplate_83FB774 = {
+const struct SpriteTemplate gSpriteTemplate_83FB774 = {
     0x2000,
     0x2000,
     &gOamData_83FB76C,
@@ -186,12 +186,12 @@ struct SpriteTemplate gSpriteTemplate_83FB774 = {
     sub_811A534
 };
 
-struct SpriteSheet gCryMeterNeedleSpriteSheets[] = {
+const struct SpriteSheet gCryMeterNeedleSpriteSheets[] = {
     {CryMeterNeedleTiles, 0x800, 0x2000},
     {}
 };
 
-struct SpritePalette gCryMeterNeedleSpritePalettes[] = {
+const struct SpritePalette gCryMeterNeedleSpritePalettes[] = {
     {CryMeterNeedlePalette, 0x2000},
     {}
 };

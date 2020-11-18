@@ -1,3 +1,4 @@
+#if DEBUG
 #include "global.h"
 #include "mori_debug_menu.h"
 #include "data2.h"
@@ -203,3 +204,4 @@ s8 InitMoriDebugMenu(void)
     gMenuCallback = MoriDebugMenuProcessInput;
     return 0;
 }
+#endif

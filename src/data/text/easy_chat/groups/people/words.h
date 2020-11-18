@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_PEOPLE_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_PEOPLE_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_People[] = _(
+const u8 gEasyChatGroupWords_People[] = _(
                                     "OPPONENT$"
                                     "I$"
                                     "YOU$"
@@ -79,7 +79,7 @@ u8 gEasyChatGroupWords_People[] = _(
                                     "SOME$"
                                     );
 #elif GERMAN
-u8 gEasyChatGroupWords_People[] = _(
+const u8 gEasyChatGroupWords_People[] = _(
                                     "FEIND$"
                                     "ICH$"
                                     "DU$"

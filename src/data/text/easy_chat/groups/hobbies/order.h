@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_HOBBIES_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Hobbies[] = {
+const u16 gEasyChatGroupOrder_Hobbies[] = {
     43,
     1,
     45,
@@ -59,7 +59,7 @@ u16 gEasyChatGroupOrder_Hobbies[] = {
     20,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Hobbies[] = {
+const u16 gEasyChatGroupOrder_Hobbies[] = {
     43,
     32,
     1,

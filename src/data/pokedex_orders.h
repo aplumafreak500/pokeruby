@@ -385,6 +385,7 @@ static const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_VENONAT,
     NATIONAL_DEX_VENUSAUR,
     NATIONAL_DEX_VIBRAVA,
+    NATIONAL_DEX_VICTINI,
     NATIONAL_DEX_VICTREEBEL,
     NATIONAL_DEX_VIGOROTH,
     NATIONAL_DEX_VILEPLUME,
@@ -798,6 +799,7 @@ static const u16 gPokedexOrder_Alphabetical[] = {
     NATIONAL_DEX_WEEPINBELL, // Ultrigaria
     NATIONAL_DEX_URSARING, // Ursaring
     NATIONAL_DEX_VIBRAVA, // Vibrava
+    NATIONAL_DEX_VICTINI,
     NATIONAL_DEX_SEVIPER, // Vipitis
     NATIONAL_DEX_VOLBEAT, // Volbeat
     NATIONAL_DEX_MANECTRIC, // Voltenso
@@ -831,6 +833,7 @@ static const u16 gPokedexOrder_Alphabetical[] = {
 
 static const u16 gPokedexOrder_Weight[] =
 {
+    NATIONAL_DEX_VICTINI,
     NATIONAL_DEX_GASTLY,
     NATIONAL_DEX_HAUNTER,
     NATIONAL_DEX_HOPPIP,
@@ -1220,6 +1223,7 @@ static const u16 gPokedexOrder_Weight[] =
 };
 static const u16 gPokedexOrder_Height[] =
 {
+    NATIONAL_DEX_VICTINI,
     NATIONAL_DEX_DIGLETT,
     NATIONAL_DEX_AZURILL,
     NATIONAL_DEX_NATU,

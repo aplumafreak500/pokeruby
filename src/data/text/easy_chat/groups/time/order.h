@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_TIME_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Time[] = {
+const u16 gEasyChatGroupOrder_Time[] = {
     29,
     39,
     6,
@@ -50,7 +50,7 @@ u16 gEasyChatGroupOrder_Time[] = {
     12,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Time[] = {
+const u16 gEasyChatGroupOrder_Time[] = {
     29,
     18,
     33,

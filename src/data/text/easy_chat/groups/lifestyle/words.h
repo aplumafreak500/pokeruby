@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Lifestyle[] = _(
+const u8 gEasyChatGroupWords_Lifestyle[] = _(
                                        "CHORES$"
                                        "HOME$"
                                        "MONEY$"
@@ -49,7 +49,7 @@ u8 gEasyChatGroupWords_Lifestyle[] = _(
                                        "WORLD$"
                                        );
 #elif GERMAN
-u8 gEasyChatGroupWords_Lifestyle[] = _(
+const u8 gEasyChatGroupWords_Lifestyle[] = _(
                                        "PFLICHTEN$"
                                        "HEIM$"
                                        "GELD$"

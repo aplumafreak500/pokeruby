@@ -4,12 +4,12 @@
 #define EC_DUPLICATES(count) (0xFF00 + (count))
 #include "constants/species.h"
 
-u16 gEasyChatWordsAlphabetized[] = {
+const u16 gEasyChatWordsAlphabetized[] = {
 };
 
 #define EC_WBL_OFFSET_Others 0
 
-u16 gEasyChatWordsByLetter_Others[] = {
+const u16 gEasyChatWordsByLetter_Others[] = {
     EC_WORD_EXCL,
     EC_WORD_EXCL_EXCL,
     EC_WORD_DASH,
@@ -24,7 +24,7 @@ u16 gEasyChatWordsByLetter_Others[] = {
 
 #define EC_WBL_OFFSET_A ARRAY_COUNT(gEasyChatWordsByLetter_Others) + EC_WBL_OFFSET_Others
 
-u16 gEasyChatWordsByLetter_A[] = {
+const u16 gEasyChatWordsByLetter_A[] = {
     EC_WORD_A,
     EC_WORD_A_LITTLE,
     EC_WORD_A_LOT,
@@ -132,7 +132,7 @@ u16 gEasyChatWordsByLetter_A[] = {
 
 #define EC_WBL_OFFSET_B ARRAY_COUNT(gEasyChatWordsByLetter_A) + EC_WBL_OFFSET_A
 
-u16 gEasyChatWordsByLetter_B[] = {
+const u16 gEasyChatWordsByLetter_B[] = {
     EC_WORD_BABE,
     EC_WORD_BABY,
     EC_WORD_BACK,
@@ -220,7 +220,7 @@ u16 gEasyChatWordsByLetter_B[] = {
 
 #define EC_WBL_OFFSET_C ARRAY_COUNT(gEasyChatWordsByLetter_B) + EC_WBL_OFFSET_B
 
-u16 gEasyChatWordsByLetter_C[] = {
+const u16 gEasyChatWordsByLetter_C[] = {
     EC_POKEMON(CACNEA),
     EC_POKEMON(CACTURNE),
     EC_MOVE2(CALM_MIND),
@@ -340,7 +340,7 @@ u16 gEasyChatWordsByLetter_C[] = {
 
 #define EC_WBL_OFFSET_D ARRAY_COUNT(gEasyChatWordsByLetter_C) + EC_WBL_OFFSET_C
 
-u16 gEasyChatWordsByLetter_D[] = {
+const u16 gEasyChatWordsByLetter_D[] = {
     EC_WORD_DAILY,
     EC_WORD_DAMP,
     EC_WORD_DANCE,
@@ -434,7 +434,7 @@ u16 gEasyChatWordsByLetter_D[] = {
 
 #define EC_WBL_OFFSET_E ARRAY_COUNT(gEasyChatWordsByLetter_D) + EC_WBL_OFFSET_D
 
-u16 gEasyChatWordsByLetter_E[] = {
+const u16 gEasyChatWordsByLetter_E[] = {
     EC_WORD_EARLIER,
     EC_WORD_EARLY_BIRD,
     EC_MOVE(EARTHQUAKE),
@@ -496,7 +496,7 @@ u16 gEasyChatWordsByLetter_E[] = {
 
 #define EC_WBL_OFFSET_F ARRAY_COUNT(gEasyChatWordsByLetter_E) + EC_WBL_OFFSET_E
 
-u16 gEasyChatWordsByLetter_F[] = {
+const u16 gEasyChatWordsByLetter_F[] = {
     EC_WORD_FABULOUS,
     EC_MOVE(FACADE),
     EC_WORD_FAINT,
@@ -578,7 +578,7 @@ u16 gEasyChatWordsByLetter_F[] = {
 
 #define EC_WBL_OFFSET_G ARRAY_COUNT(gEasyChatWordsByLetter_F) + EC_WBL_OFFSET_F
 
-u16 gEasyChatWordsByLetter_G[] = {
+const u16 gEasyChatWordsByLetter_G[] = {
     EC_WORD_GAME,
     EC_POKEMON(GARDEVOIR),
     EC_POKEMON2(GASTLY),
@@ -669,7 +669,7 @@ u16 gEasyChatWordsByLetter_G[] = {
 
 #define EC_WBL_OFFSET_H ARRAY_COUNT(gEasyChatWordsByLetter_G) + EC_WBL_OFFSET_G
 
-u16 gEasyChatWordsByLetter_H[] = {
+const u16 gEasyChatWordsByLetter_H[] = {
     EC_WORD_HABIT,
     EC_WORD_HAH,
     EC_WORD_HAHAHA,
@@ -772,7 +772,7 @@ u16 gEasyChatWordsByLetter_H[] = {
 
 #define EC_WBL_OFFSET_I ARRAY_COUNT(gEasyChatWordsByLetter_H) + EC_WBL_OFFSET_H
 
-u16 gEasyChatWordsByLetter_I[] = {
+const u16 gEasyChatWordsByLetter_I[] = {
     EC_WORD_I,
     EC_WORD_I_AM,
     EC_WORD_I_CHOOSE_YOU,
@@ -823,7 +823,7 @@ u16 gEasyChatWordsByLetter_I[] = {
 
 #define EC_WBL_OFFSET_J ARRAY_COUNT(gEasyChatWordsByLetter_I) + EC_WBL_OFFSET_I
 
-u16 gEasyChatWordsByLetter_J[] = {
+const u16 gEasyChatWordsByLetter_J[] = {
     EC_DUPLICATES(2),
     EC_POKEMON(JIGGLYPUFF),
     EC_POKEMON2(JIGGLYPUFF),
@@ -840,7 +840,7 @@ u16 gEasyChatWordsByLetter_J[] = {
 
 #define EC_WBL_OFFSET_K ARRAY_COUNT(gEasyChatWordsByLetter_J) + EC_WBL_OFFSET_J
 
-u16 gEasyChatWordsByLetter_K[] = {
+const u16 gEasyChatWordsByLetter_K[] = {
     EC_POKEMON2(KABUTO),
     EC_POKEMON2(KABUTOPS),
     EC_DUPLICATES(2),
@@ -875,7 +875,7 @@ u16 gEasyChatWordsByLetter_K[] = {
 
 #define EC_WBL_OFFSET_L ARRAY_COUNT(gEasyChatWordsByLetter_K) + EC_WBL_OFFSET_K
 
-u16 gEasyChatWordsByLetter_L[] = {
+const u16 gEasyChatWordsByLetter_L[] = {
     EC_WORD_LACKING,
     EC_WORD_LACKS,
     EC_WORD_LADY,
@@ -960,7 +960,7 @@ u16 gEasyChatWordsByLetter_L[] = {
 
 #define EC_WBL_OFFSET_M ARRAY_COUNT(gEasyChatWordsByLetter_L) + EC_WBL_OFFSET_L
 
-u16 gEasyChatWordsByLetter_M[] = {
+const u16 gEasyChatWordsByLetter_M[] = {
     EC_MOVE2(MACH_PUNCH),
     EC_DUPLICATES(2),
     EC_POKEMON(MACHAMP),
@@ -1098,7 +1098,7 @@ u16 gEasyChatWordsByLetter_M[] = {
 
 #define EC_WBL_OFFSET_N ARRAY_COUNT(gEasyChatWordsByLetter_M) + EC_WBL_OFFSET_M
 
-u16 gEasyChatWordsByLetter_N[] = {
+const u16 gEasyChatWordsByLetter_N[] = {
     EC_WORD_NAME,
     EC_WORD_NAP,
     EC_DUPLICATES(2),
@@ -1155,7 +1155,7 @@ u16 gEasyChatWordsByLetter_N[] = {
 
 #define EC_WBL_OFFSET_O ARRAY_COUNT(gEasyChatWordsByLetter_N) + EC_WBL_OFFSET_N
 
-u16 gEasyChatWordsByLetter_O[] = {
+const u16 gEasyChatWordsByLetter_O[] = {
     EC_WORD_OBLIVIOUS,
     EC_MOVE(OCTAZOOKA),
     EC_POKEMON2(OCTILLERY),
@@ -1203,7 +1203,7 @@ u16 gEasyChatWordsByLetter_O[] = {
 
 #define EC_WBL_OFFSET_P ARRAY_COUNT(gEasyChatWordsByLetter_O) + EC_WBL_OFFSET_O
 
-u16 gEasyChatWordsByLetter_P[] = {
+const u16 gEasyChatWordsByLetter_P[] = {
     EC_MOVE(PAIN_SPLIT),
     EC_POKEMON2(PARAS),
     EC_POKEMON2(PARASECT),
@@ -1303,7 +1303,7 @@ u16 gEasyChatWordsByLetter_P[] = {
 
 #define EC_WBL_OFFSET_Q ARRAY_COUNT(gEasyChatWordsByLetter_P) + EC_WBL_OFFSET_P
 
-u16 gEasyChatWordsByLetter_Q[] = {
+const u16 gEasyChatWordsByLetter_Q[] = {
     EC_POKEMON2(QUAGSIRE),
     EC_WORD_QUESTION,
     EC_MOVE2(QUICK_ATTACK),
@@ -1314,7 +1314,7 @@ u16 gEasyChatWordsByLetter_Q[] = {
 
 #define EC_WBL_OFFSET_R ARRAY_COUNT(gEasyChatWordsByLetter_Q) + EC_WBL_OFFSET_Q
 
-u16 gEasyChatWordsByLetter_R[] = {
+const u16 gEasyChatWordsByLetter_R[] = {
     EC_WORD_RADIO,
     EC_MOVE(RAGE),
     EC_DUPLICATES(2),
@@ -1394,7 +1394,7 @@ u16 gEasyChatWordsByLetter_R[] = {
 
 #define EC_WBL_OFFSET_S ARRAY_COUNT(gEasyChatWordsByLetter_R) + EC_WBL_OFFSET_R
 
-u16 gEasyChatWordsByLetter_S[] = {
+const u16 gEasyChatWordsByLetter_S[] = {
     EC_POKEMON(SABLEYE),
     EC_MOVE(SACRED_FIRE),
     EC_WORD_SAD,
@@ -1652,7 +1652,7 @@ u16 gEasyChatWordsByLetter_S[] = {
 
 #define EC_WBL_OFFSET_T ARRAY_COUNT(gEasyChatWordsByLetter_S) + EC_WBL_OFFSET_S
 
-u16 gEasyChatWordsByLetter_T[] = {
+const u16 gEasyChatWordsByLetter_T[] = {
     EC_MOVE2(TACKLE),
     EC_MOVE2(TAIL_GLOW),
     EC_MOVE(TAIL_WHIP),
@@ -1787,7 +1787,7 @@ u16 gEasyChatWordsByLetter_T[] = {
 
 #define EC_WBL_OFFSET_U ARRAY_COUNT(gEasyChatWordsByLetter_T) + EC_WBL_OFFSET_T
 
-u16 gEasyChatWordsByLetter_U[] = {
+const u16 gEasyChatWordsByLetter_U[] = {
     EC_WORD_UGLY,
     EC_WORD_UH_HUH,
     EC_WORD_UH_OH,
@@ -1815,7 +1815,7 @@ u16 gEasyChatWordsByLetter_U[] = {
 
 #define EC_WBL_OFFSET_V ARRAY_COUNT(gEasyChatWordsByLetter_U) + EC_WBL_OFFSET_U
 
-u16 gEasyChatWordsByLetter_V[] = {
+const u16 gEasyChatWordsByLetter_V[] = {
     EC_WORD_VACATION,
     EC_POKEMON2(VAPOREON),
     EC_POKEMON2(VENOMOTH),
@@ -1849,7 +1849,7 @@ u16 gEasyChatWordsByLetter_V[] = {
 
 #define EC_WBL_OFFSET_W ARRAY_COUNT(gEasyChatWordsByLetter_V) + EC_WBL_OFFSET_V
 
-u16 gEasyChatWordsByLetter_W[] = {
+const u16 gEasyChatWordsByLetter_W[] = {
     EC_WORD_WAAAH,
     EC_WORD_WAHAHAHA,
     EC_POKEMON(WAILMER),
@@ -1961,7 +1961,7 @@ u16 gEasyChatWordsByLetter_W[] = {
 
 #define EC_WBL_OFFSET_X ARRAY_COUNT(gEasyChatWordsByLetter_W) + EC_WBL_OFFSET_W
 
-u16 gEasyChatWordsByLetter_X[] = {
+const u16 gEasyChatWordsByLetter_X[] = {
     EC_DUPLICATES(2),
     EC_POKEMON(XATU),
     EC_POKEMON2(XATU),
@@ -1969,7 +1969,7 @@ u16 gEasyChatWordsByLetter_X[] = {
 
 #define EC_WBL_OFFSET_Y ARRAY_COUNT(gEasyChatWordsByLetter_X) + EC_WBL_OFFSET_X
 
-u16 gEasyChatWordsByLetter_Y[] = {
+const u16 gEasyChatWordsByLetter_Y[] = {
     EC_WORD_YAHOO,
     EC_POKEMON2(YANMA),
     EC_MOVE(YAWN),
@@ -1993,7 +1993,7 @@ u16 gEasyChatWordsByLetter_Y[] = {
 
 #define EC_WBL_OFFSET_Z ARRAY_COUNT(gEasyChatWordsByLetter_Y) + EC_WBL_OFFSET_Y
 
-u16 gEasyChatWordsByLetter_Z[] = {
+const u16 gEasyChatWordsByLetter_Z[] = {
     EC_POKEMON(ZANGOOSE),
     EC_MOVE2(ZAP_CANNON),
     EC_POKEMON2(ZAPDOS),
@@ -2005,10 +2005,10 @@ u16 gEasyChatWordsByLetter_Z[] = {
 
 #define EC_WBL_OFFSET_End ARRAY_COUNT(gEasyChatWordsByLetter_Z) + EC_WBL_OFFSET_Z
 
-u16 gEasyChatWordsByLetter_End[] = {
+const u16 gEasyChatWordsByLetter_End[] = {
 };
 
-u16 gEasyChatWordsByLetter[] = {
+const u16 gEasyChatWordsByLetter[] = {
     EC_WBL_OFFSET_Others,
     EC_WBL_OFFSET_A,
     EC_WBL_OFFSET_B,

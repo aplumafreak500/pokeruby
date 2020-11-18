@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_FEELINGS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_FEELINGS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Feelings[] = _(
+const u8 gEasyChatGroupWords_Feelings[] = _(
                                       "MEET$"
                                       "PLAY$"
                                       "HURRIED$"
@@ -73,7 +73,7 @@ u8 gEasyChatGroupWords_Feelings[] = _(
                                       "UNDERSTANDS$"
                                       );
 #elif GERMAN
-u8 gEasyChatGroupWords_Feelings[] = _(
+const u8 gEasyChatGroupWords_Feelings[] = _(
                                       "WEINEN$"
                                       "SPIELEN$"
                                       "EILIG$"
