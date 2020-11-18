@@ -450,8 +450,7 @@ const struct RegionMapLocation gRegionMapEntries[] =
 	{ 0,  0, 1, 1, gMapName_AlteringCave},
 	{ 0,  0, 1, 1, gMapName_NavelRock},
 	{ 0, 0, 1, 1, gMapName_TrainerHill},
-	{ 0, 0, 1, 1, gMapName_BattleFrontier},
-    { 0,  0, 1, 1, gMapName_None},
+	{ 0, 0, 1, 1, gMapName_BattleFrontier}
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
