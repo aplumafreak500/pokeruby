@@ -4947,7 +4947,7 @@ static void _CreateInGameTradePokemon(u8 whichPlayerMon, u8 whichInGameTrade)
 
     struct MailStruct mail;
     u8 metLocation = 0xFE;
-    u8 isMail;
+    u8 isMail = 1;
     struct Pokemon *pokemon = &gEnemyParty[0];
 
     CreateMon(pokemon, inGameTrade->species, level, 32, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId, inGameTrade->hasHiddenAbility);
@@ -4969,6 +4969,7 @@ static void _CreateInGameTradePokemon(u8 whichPlayerMon, u8 whichInGameTrade)
     SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->stats[4]);
     SetMonData(pokemon, MON_DATA_SHEEN, &inGameTrade->sheen);
     SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+	SetMonData(pokemon, MON_DATA_HAS_NICKNAME, &isMail);
 
     isMail = FALSE;
     if (inGameTrade->heldItem != ITEM_NONE)

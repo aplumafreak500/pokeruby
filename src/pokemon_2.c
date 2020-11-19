@@ -307,6 +307,9 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     case MON_DATA_SANITY_BIT3:
         retVal = boxMon->isEgg;
         break;
+	case MON_DATA_HAS_NICKNAME:
+        retVal = boxMon->hasNickname;
+        break;
     case MON_DATA_OT_NAME:
     {
         retVal = 0;
@@ -679,6 +682,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const u8 *data)
         break;
     case MON_DATA_SANITY_BIT3:
         SET8(boxMon->isEgg);
+        break;
+    case MON_DATA_HAS_NICKNAME:
+        SET8(boxMon->hasNickname);
         break;
     case MON_DATA_OT_NAME:
     {

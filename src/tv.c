@@ -2074,7 +2074,11 @@ void ChangePokemonNickname(void)
 
 void ChangePokemonNickname_CB(void)
 {
+	u8 one = 1;
     SetMonData(&(gPlayerParty[gSpecialVar_0x8004]), MON_DATA_NICKNAME, gStringVar2);
+	if (!StringCompareWithoutExtCtrlCodes(gSpeciesNames[GetMonData(&(gPlayerParty[gSpecialVar_0x8004]), MON_DATA_SPECIES, NULL)], gStringVar2) {
+		SetMonData(&(gPlayerParty[gSpecialVar_0x8004]), MON_DATA_HAS_NICKNAME, &one);
+	}
     CB2_ReturnToFieldContinueScriptPlayMapMusic();
 }
 
@@ -3380,3 +3384,4 @@ void ResetTVShowState(void)
 {
     sTVShowState = 0;
 }
+

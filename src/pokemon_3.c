@@ -571,8 +571,10 @@ void DrawSpindaSpots(u16 species, u32 personality, u8 *dest, u8 a4)
 
 void EvolutionRenameMon(struct Pokemon *mon, u16 oldSpecies, u16 newSpecies)
 {
-#ifdef BUGFIX_EVO_NAME
     u8 language;
+	language = GetMonData(mon, MON_DATA_HAS_NICKNAME, NULL);
+	if (language) return;
+#ifdef BUGFIX_EVO_NAME
     GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
     language = GetMonData(mon, MON_DATA_LANGUAGE, &language);
     if (language == GAME_LANGUAGE && !StringCompareWithoutExtCtrlCodes(gSpeciesNames[oldSpecies], gStringVar1))

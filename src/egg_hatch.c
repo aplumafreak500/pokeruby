@@ -469,7 +469,11 @@ static void CB2_EggHatch_0(void)
 
 static void EggHatchSetMonNickname(void)
 {
+	u8 one = 1;
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar3);
+	if (!StringCompareWithoutExtCtrlCodes(gSpeciesNames[GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL)], gStringVar3)) {
+		SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HAS_NICKNAME, &one);
+	}
     SetMainCallback2(CB2_ReturnToField);
 }
 
