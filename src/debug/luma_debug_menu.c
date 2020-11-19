@@ -12,85 +12,90 @@
 #include "string_util.h"
 #include "save.h"
 #include "overworld.h"
+#include "constants/map_groups.h"
 #include "fieldmap.h"
+#include "field_fadetransition.h"
+#include "region_map.h"
 #include "pokemon_storage_system.h"
 
-u8 debug_sub_new0();
 UNUSED u8 LumaDebugMenu_AddNewPKMN();
-void DS_Adjust_Task(u8 taskId);
+static void DS_Adjust_Task(u8 taskId);
 static u8 LumaDebugMenu_ProcessInput();
-u8 LumaDebugMenu_CloseMenu();
+static u8 LumaDebugMenu_CloseMenu();
 u8 LumaDebugMenu_OpenMemoryEditorMenu();
-u8 LumaDebugMenu_OpenMemoryEditor(u32);
+static u8 LumaDebugMenu_OpenMemoryEditor(u32);
 static u8 MemoryEditorMenu_ProcessInput();
-u8 MemoryEditor_Bios();
-u8 MemoryEditor_Ewram();
-u8 MemoryEditor_Iwram();
-u8 MemoryEditor_IO();
-u8 MemoryEditor_Vram();
-u8 MemoryEditor_Pal();
-u8 MemoryEditor_Oam();
-u8 MemoryEditor_Rom();
-u8 MemoryEditor_Fram();
-UNUSED u8 MemoryEditor_Sram();
-UNUSED u8 MemoryEditor_Eeprom();
+static u8 MemoryEditor_Bios();
+static u8 MemoryEditor_Ewram();
+static u8 MemoryEditor_Iwram();
+static u8 MemoryEditor_IO();
+static u8 MemoryEditor_Vram();
+static u8 MemoryEditor_Pal();
+static u8 MemoryEditor_Oam();
+static u8 MemoryEditor_Rom();
+static u8 MemoryEditor_Fram();
+UNUSED static u8 MemoryEditor_Sram();
+UNUSED static u8 MemoryEditor_Eeprom();
 u8 LumaDebugMenu_OpenFlagEditor();
 u8 LumaDebugMenu_OpenVarEditor();
-void LumaDebugMenu_InitFlagEditor();
-void LumaDebugMenu_FlagEditorTask(u8);
-void LumaDebugMenu_DrawFlagStatus(u16);
-void LumaDebugMenu_FlagEditorHandleInput(u8);
-void LumaDebugMenu_ExitFlagEditor(u8);
-void LumaDebugMenu_BackToMainMenu();
-void LumaDebugMenu_MenuCB(u8);
-u8 LumaDebugMenu_ReloadMainMenu();
-void LumaDebugMenu_InitVarEditor();
-void LumaDebugMenu_VarEditorTask(u8);
-void LumaDebugMenu_DrawVarStatus(u16);
-void LumaDebugMenu_VarEditorHandleInput(u8);
-void LumaDebugMenu_ExitVarEditor(u8);
+static void LumaDebugMenu_InitFlagEditor();
+static void LumaDebugMenu_FlagEditorTask(u8);
+static void LumaDebugMenu_DrawFlagStatus(u16);
+static void LumaDebugMenu_FlagEditorHandleInput(u8);
+static void LumaDebugMenu_ExitFlagEditor(u8);
+static void LumaDebugMenu_BackToMainMenu();
+static void LumaDebugMenu_MenuCB(u8);
+static u8 LumaDebugMenu_ReloadMainMenu();
+static void LumaDebugMenu_InitVarEditor();
+static void LumaDebugMenu_VarEditorTask(u8);
+static void LumaDebugMenu_DrawVarStatus(u16);
+static void LumaDebugMenu_VarEditorHandleInput(u8);
+static void LumaDebugMenu_ExitVarEditor(u8);
 u8 LumaDebugMenu_FixBadEggs();
 u8 LumaDebugMenu_SaveSerializedGame();
 u8 LumaDebugMenu_ClearPKMN();
 //u8 LumaDebugMenu_EditPokedex();
+u8 LumaDebugMenu_Warp();
+static void LumaDebugMenu_WarpProcessInput(u8);
 
 extern u8 (*gMenuCallback)();
 extern u8 DebugScript_New0;
 extern u16 *gSpecialVars[];
 extern u8 gDifferentSaveFile;
 
-const u8 Str_AddNewPKMN[] = _("Add Victini to party");
-const u8 Str_FlagEdit[] = _("Change Flag");
-const u8 Str_VarEdit[] = _("Change State");
-const u8 Str_SaveGame[] = _("SaveSerializedGame");
-const u8 Str_FixBadEggs[] = _("Fix Bad EGG");
-const u8 Str_MemoryEditor[] = _("View/edit memory region");
-const u8 Str_ClearPKMN[] = _("Clear {PKMN}");
-const u8 Str_EditPokedex[] = _("Edit {POKE}dex");
-const u8 Str_MemoryEditorBios[] = _("Bios");
-const u8 Str_MemoryEditorIO[] = _("AGB I/O");
-const u8 Str_MemoryEditorVram[] = _("VRAM");
-const u8 Str_MemoryEditorIwram[] = _("IWRAM");
-const u8 Str_MemoryEditorEwram[] = _("EWRAM");
-const u8 Str_MemoryEditorPal[] = _("PRAM");
-const u8 Str_MemoryEditorOam[] = _("ORAM");
-const u8 Str_MemoryEditorRom[] = _("ROM");
-const u8 Str_MemoryEditorSram[] = _("SRAM");
-const u8 Str_MemoryEditorEeprom[] = _("EEPROM");
-const u8 Str_MemoryEditorFram[] = _("Flash RAM");
-const u8 Str_MemoryEditorBank[] = _("Bank no. $");
-const u8 Str_MemoryEditorOther[] = _("$");
+static const u8 Str_AddNewPKMN[] = _("Add Victini to party");
+static const u8 Str_FlagEdit[] = _("Change Flag");
+static const u8 Str_VarEdit[] = _("Change State");
+static const u8 Str_SaveGame[] = _("SaveSerializedGame");
+static const u8 Str_FixBadEggs[] = _("Fix Bad EGG");
+static const u8 Str_MemoryEditor[] = _("View/edit memory region");
+static const u8 Str_ClearPKMN[] = _("Clear {PKMN}");
+static const u8 Str_EditPokedex[] = _("Edit {POKE}dex");
+static const u8 Str_MemoryEditorBios[] = _("Bios");
+static const u8 Str_MemoryEditorIO[] = _("AGB I/O");
+static const u8 Str_MemoryEditorVram[] = _("VRAM");
+static const u8 Str_MemoryEditorIwram[] = _("IWRAM");
+static const u8 Str_MemoryEditorEwram[] = _("EWRAM");
+static const u8 Str_MemoryEditorPal[] = _("PRAM");
+static const u8 Str_MemoryEditorOam[] = _("ORAM");
+static const u8 Str_MemoryEditorRom[] = _("ROM");
+static const u8 Str_MemoryEditorSram[] = _("SRAM");
+static const u8 Str_MemoryEditorEeprom[] = _("EEPROM");
+static const u8 Str_MemoryEditorFram[] = _("Flash RAM");
+static const u8 Str_MemoryEditorBank[] = _("Bank no. $");
+static const u8 Str_MemoryEditorOther[] = _("$");
+static const u8 Str_Warp[] = _("Warp");
 
-const u8 Str_ChangeFlagState[] = _("Edit flag state");
-const u8 Str_ChangeVarState[] = _("Edit var state");
-const u8 Str_ChangeFlagState2[] = _("LR: Edit");
-const u8 dsStr[] = _("DS Num");
+static const u8 Str_ChangeFlagState[] = _("Edit flag state");
+static const u8 Str_ChangeVarState[] = _("Edit var state");
+static const u8 Str_ChangeFlagState2[] = _("LR: Edit");
+static const u8 dsStr[] = _("DS Num");
 
 IWRAM_DATA s8 DS_Sound_Count;
-IWRAM_DATA u16 currentFlag;
-IWRAM_DATA u16 currentVar;
+IWRAM_DATA static u16 currentFlag;
+IWRAM_DATA static u16 currentVar;
 
-const u8* const RamPointerStrings[] = {
+static const u8* const RamPointerStrings[] = {
 	Str_MemoryEditorBios,       // 0x00000000
 	Str_MemoryEditorOther,  // 0x01000000
 	Str_MemoryEditorEwram,      // 0x02000000
@@ -109,7 +114,7 @@ const u8* const RamPointerStrings[] = {
 	Str_MemoryEditorOther       // 0x0f000000
 };
 
-const struct MenuAction LumaDebugMenuItems[] = {
+static const struct MenuAction LumaDebugMenuItems[] = {
 	{Str_AddNewPKMN, LumaDebugMenu_CloseMenu},
 	{Str_MemoryEditor, LumaDebugMenu_OpenMemoryEditorMenu},
 	{Str_SaveGame, LumaDebugMenu_SaveSerializedGame},
@@ -117,10 +122,11 @@ const struct MenuAction LumaDebugMenuItems[] = {
 	{Str_VarEdit, LumaDebugMenu_OpenVarEditor},
 	{Str_FixBadEggs, LumaDebugMenu_FixBadEggs},
 	{Str_ClearPKMN, LumaDebugMenu_ClearPKMN},
-	{Str_EditPokedex, LumaDebugMenu_CloseMenu/*LumaDebugMenu_EditPokedex*/}
+	{Str_EditPokedex, LumaDebugMenu_CloseMenu/*LumaDebugMenu_EditPokedex*/},
+	{Str_Warp, LumaDebugMenu_Warp}
 };
 
-const struct MenuAction MemoryEditorItems[] = {
+static const struct MenuAction MemoryEditorItems[] = {
 	{Str_MemoryEditorBios, MemoryEditor_Bios},
 	{Str_MemoryEditorEwram, MemoryEditor_Ewram},
 	{Str_MemoryEditorIwram, MemoryEditor_Iwram},
@@ -134,9 +140,9 @@ const struct MenuAction MemoryEditorItems[] = {
 
 bool8 InitLumaDebugMenu() {
 	Menu_EraseScreen();
-	Menu_DrawStdWindowFrame(0, 0, 18, 17);
-	Menu_PrintItems(1, 1, 8, LumaDebugMenuItems);
-	InitMenu(0, 1, 1, 8, 0, 17);
+	Menu_DrawStdWindowFrame(0, 0, 17, 19);
+	Menu_PrintItems(1, 1, 9, LumaDebugMenuItems);
+	InitMenu(0, 1, 1, 9, 0, 16);
 	gMenuCallback = LumaDebugMenu_ProcessInput;
 	return 0;
 }
@@ -194,51 +200,51 @@ static u8 MemoryEditorMenu_ProcessInput() {
 	}
 }
 
-u8 MemoryEditor_Bios() {
+static u8 MemoryEditor_Bios() {
 	return LumaDebugMenu_OpenMemoryEditor(0x0000000);
 }
 
-u8 MemoryEditor_Ewram() {
+static u8 MemoryEditor_Ewram() {
 	return LumaDebugMenu_OpenMemoryEditor(0x2000000);
 }
 
-u8 MemoryEditor_Iwram() {
+static u8 MemoryEditor_Iwram() {
 	return LumaDebugMenu_OpenMemoryEditor(0x3000000);
 }
 
-u8 MemoryEditor_IO() {
+static u8 MemoryEditor_IO() {
 	return LumaDebugMenu_OpenMemoryEditor(0x4000000);
 }
 
-u8 MemoryEditor_Vram() {
+static u8 MemoryEditor_Vram() {
 	return LumaDebugMenu_OpenMemoryEditor(0x5000000); // TODO: verify this
 }
 
-u8 MemoryEditor_Pal() {
+static u8 MemoryEditor_Pal() {
 	return LumaDebugMenu_OpenMemoryEditor(0x6000000); // TODO: verify this
 }
 
-u8 MemoryEditor_Oam() {
+static u8 MemoryEditor_Oam() {
 	return LumaDebugMenu_OpenMemoryEditor(0x7000000); // TODO: verify this
 }
 
-u8 MemoryEditor_Rom() {
+static u8 MemoryEditor_Rom() {
 	return LumaDebugMenu_OpenMemoryEditor(0x8000000);
 }
 
-u8 MemoryEditor_Fram() {
+static u8 MemoryEditor_Fram() {
 	return LumaDebugMenu_OpenMemoryEditor(0xe000000);
 }
 
-UNUSED u8 MemoryEditor_Sram() {
+UNUSED static u8 MemoryEditor_Sram() {
 	return LumaDebugMenu_OpenMemoryEditor(0xe000000);
 }
 
-UNUSED u8 MemoryEditor_Eeprom() {
+UNUSED static u8 MemoryEditor_Eeprom() {
 	return LumaDebugMenu_OpenMemoryEditor(0xd000000);
 }
 
-u8 LumaDebugMenu_OpenMemoryEditor(u32 address) {
+static u8 LumaDebugMenu_OpenMemoryEditor(u32 address) {
 	// TODO
 	CloseMenu();
 	return 1;
@@ -258,14 +264,14 @@ u8 LumaDebugMenu_OpenVarEditor() {
 	return 1;
 }
 
-void LumaDebugMenu_InitFlagEditor() {
+static void LumaDebugMenu_InitFlagEditor() {
 	u8 taskId = CreateTask(LumaDebugMenu_FlagEditorTask, 80);
 	Menu_EraseScreen();
 	if (!currentFlag) currentFlag = 0x20;
 	gTasks[taskId].data[1] = currentFlag;
 }
 
-void LumaDebugMenu_FlagEditorTask(u8 taskId) {
+static void LumaDebugMenu_FlagEditorTask(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_DisplayDialogueFrame();
 	Menu_PrintText(Str_ChangeFlagState, 2, 15);
@@ -274,7 +280,7 @@ void LumaDebugMenu_FlagEditorTask(u8 taskId) {
 	task->func = LumaDebugMenu_FlagEditorHandleInput;
 }
 
-void LumaDebugMenu_DrawFlagStatus(u16 flag) {
+static void LumaDebugMenu_DrawFlagStatus(u16 flag) {
 	u8 flag_state;
 	Menu_BlankWindowRect(4, 17, 22, 18);
 	ConvertIntToHexStringN(gStringVar1, flag, STR_CONV_MODE_RIGHT_ALIGN, 4);
@@ -284,7 +290,7 @@ void LumaDebugMenu_DrawFlagStatus(u16 flag) {
 	Menu_PrintText(gStringVar1, 18, 17);
 }
 
-void LumaDebugMenu_FlagEditorHandleInput(u8 taskId) {
+static void LumaDebugMenu_FlagEditorHandleInput(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	if (gMain.newKeys & (A_BUTTON | B_BUTTON | START_BUTTON)) {
 		task->func = LumaDebugMenu_ExitFlagEditor;
@@ -316,7 +322,7 @@ void LumaDebugMenu_FlagEditorHandleInput(u8 taskId) {
 	// TODO: Select toggle hex/dec display
 }
 
-void LumaDebugMenu_ExitFlagEditor(u8 taskId) {
+static void LumaDebugMenu_ExitFlagEditor(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_EraseScreen();
 	ScriptContext2_Disable();
@@ -325,18 +331,18 @@ void LumaDebugMenu_ExitFlagEditor(u8 taskId) {
 	LumaDebugMenu_BackToMainMenu();
 }
 
-void LumaDebugMenu_BackToMainMenu() {
+static void LumaDebugMenu_BackToMainMenu() {
 	gMenuCallback = LumaDebugMenu_ReloadMainMenu;
 	ScriptContext2_Enable();
 	CreateTask(LumaDebugMenu_MenuCB, 80);
 }
 
-void LumaDebugMenu_MenuCB(u8 taskId) {
+static void LumaDebugMenu_MenuCB(u8 taskId) {
 	if (gMenuCallback() == TRUE)
 		DestroyTask(taskId);
 }
 
-u8 LumaDebugMenu_ReloadMainMenu() {
+static u8 LumaDebugMenu_ReloadMainMenu() {
 	InitMenuWindow(&gMenuTextWindowTemplate);
 	InitLumaDebugMenu();
 	return FALSE;
@@ -366,14 +372,14 @@ static bool8 DebugVarSet(u16 id, u16 value)
     return TRUE;
 }
 
-void LumaDebugMenu_InitVarEditor() {
+static void LumaDebugMenu_InitVarEditor() {
 	u8 taskId = CreateTask(LumaDebugMenu_VarEditorTask, 80);
 	Menu_EraseScreen();
 	if (!currentVar) currentVar = 0x4000;
 	gTasks[taskId].data[1] = currentVar;
 }
 
-void LumaDebugMenu_VarEditorTask(u8 taskId) {
+static void LumaDebugMenu_VarEditorTask(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_DisplayDialogueFrame();
 	Menu_PrintText(Str_ChangeVarState, 2, 15);
@@ -382,7 +388,7 @@ void LumaDebugMenu_VarEditorTask(u8 taskId) {
 	task->func = LumaDebugMenu_VarEditorHandleInput;
 }
 
-void LumaDebugMenu_DrawVarStatus(u16 var) {
+static void LumaDebugMenu_DrawVarStatus(u16 var) {
 	u16 var_state;
 	Menu_BlankWindowRect(4, 17, 22, 18);
 	ConvertIntToHexStringN(gStringVar1, var, STR_CONV_MODE_RIGHT_ALIGN, 4);
@@ -392,7 +398,7 @@ void LumaDebugMenu_DrawVarStatus(u16 var) {
 	Menu_PrintText(gStringVar1, 17, 17);
 }
 
-void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
+static void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	if (gMain.newKeys & START_BUTTON) {
 		task->func = LumaDebugMenu_ExitVarEditor;
@@ -432,7 +438,7 @@ void LumaDebugMenu_VarEditorHandleInput(u8 taskId) {
 	// TODO: Select toggle hex/dec display
 }
 
-void LumaDebugMenu_ExitVarEditor(u8 taskId) {
+static void LumaDebugMenu_ExitVarEditor(u8 taskId) {
 	struct Task *task = gTasks + taskId;
 	Menu_EraseScreen();
 	ScriptContext2_Disable();
@@ -483,6 +489,91 @@ u8 LumaDebugMenu_ClearPKMN() {
 	return 1;
 }
 
+static const u8 Str_WarpMenuText[] = _("{COLOR BLUE}{UP_ARROW}{DOWN_ARROW} - Map {LEFT_ARROW}{RIGHT_ARROW} - Bank\n");
+static const u8 Str_WarpMenuBank[] = _("Map Bank: {STR_VAR_1}");
+static const u8 Str_WarpMenuNum[] = _("Map Num: {STR_VAR_1}");
+static const u8 Str_WarpMenuText2[] = _("A/Start: Warp to map");
+
+static void LumaDebugMenu_WarpPrintMapName(u8 bank, u8 map, u8 x, u8 y) {
+	struct MapHeader* map_hdr = Overworld_GetMapHeaderByGroupAndId(bank, map);
+	CopyMapName(gStringVar1, map_hdr->regionMapSectionId);
+	Menu_PrintText(gStringVar1, x, y);
+}
+
+static void LumaDebugMenu_DrawWarpMenu(u8 taskid) {
+	Menu_PrintText(Str_WarpMenuText, 1, 1);
+	ConvertIntToDecimalStringN(gStringVar1, gTasks[taskid].data[1], STR_CONV_MODE_RIGHT_ALIGN, 3);
+	Menu_PrintText(Str_WarpMenuBank, 1, 3);
+	ConvertIntToDecimalStringN(gStringVar1, gTasks[taskid].data[2], STR_CONV_MODE_RIGHT_ALIGN, 3);
+	Menu_PrintText(Str_WarpMenuNum, 13, 3);
+	Menu_BlankWindowRect(1, 5, 14, 6);
+	LumaDebugMenu_WarpPrintMapName(gTasks[taskid].data[1], gTasks[taskid].data[2], 1, 5);
+	Menu_PrintText(Str_WarpMenuText2, 15, 5);
+	gTasks[taskid].func = LumaDebugMenu_WarpProcessInput;
+}
+
+u8 LumaDebugMenu_Warp() {
+	u8 taskid;
+	CloseMenu();
+	Menu_EraseScreen();
+	Menu_DrawStdWindowFrame(0, 0, 29, 7);
+	taskid = CreateTask(LumaDebugMenu_DrawWarpMenu, 80);
+	gTasks[taskid].data[1] = 0;
+	gTasks[taskid].data[2] = 0;
+	ScriptContext2_Enable();
+	return 1;
+}
+
+static void LumaDebugMenu_WarpProcessInput(u8 taskid) {
+	if (gMain.newKeys & B_BUTTON) {
+		Menu_EraseScreen();
+		PlaySE(SE_SELECT);
+		DestroyTask(taskid);
+		ScriptContext2_Disable();
+		return;
+	}
+	if (gMain.newKeys & (A_BUTTON | START_BUTTON)) {
+		Menu_EraseScreen();
+		PlaySE(SE_PIN);
+		DestroyTask(taskid);
+		Overworld_SetWarpDestination(gTasks[taskid].data[1], gTasks[taskid].data[2], -1, -1, -1);
+		sub_8080E88();
+		return;
+	}
+	if (gMain.newAndRepeatedKeys & DPAD_UP) {
+		gTasks[taskid].data[1]++;
+		if (gTasks[taskid].data[1] >= 256/*MAP_GROUPS_COUNT*/) {
+			gTasks[taskid].data[1] = 0;
+		}
+		PlaySE(SE_SELECT);
+		gTasks[taskid].func = LumaDebugMenu_DrawWarpMenu;
+	}
+	else if (gMain.newAndRepeatedKeys & DPAD_DOWN) {
+		gTasks[taskid].data[1]--;
+		if (gTasks[taskid].data[1] < 0) {
+			gTasks[taskid].data[1] = 255/*MAP_GROUPS_COUNT - 1*/;
+		}
+		PlaySE(SE_SELECT);
+		gTasks[taskid].func = LumaDebugMenu_DrawWarpMenu;
+	}
+	else if (gMain.newAndRepeatedKeys & DPAD_RIGHT) {
+		gTasks[taskid].data[2]++;
+		if (gTasks[taskid].data[2] > 255) {
+			gTasks[taskid].data[2] = 0;
+		}
+		PlaySE(SE_SELECT);
+		gTasks[taskid].func = LumaDebugMenu_DrawWarpMenu;
+	}
+	else if (gMain.newAndRepeatedKeys & DPAD_LEFT) {
+		gTasks[taskid].data[2]--;
+		if (gTasks[taskid].data[2] < 0) {
+			gTasks[taskid].data[2] = 255;
+		}
+		PlaySE(SE_SELECT);
+		gTasks[taskid].func = LumaDebugMenu_DrawWarpMenu;
+	}
+}
+
 // Sound test
 
 void DS_Adjust_Num(u8 taskId) {
@@ -494,7 +585,7 @@ void DS_Adjust_Num(u8 taskId) {
 	gTasks[taskId].func = DS_Adjust_Task;
 }
 
-void DS_Adjust_Task(u8 taskId) {
+static void DS_Adjust_Task(u8 taskId) {
 	if (gMain.newKeys & B_BUTTON) {
 		REG_DISPCNT = 0x7140;
 		REG_WIN0H = WIN_RANGE(17, 223);
