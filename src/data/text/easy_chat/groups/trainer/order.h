@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_TRAINER_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Trainer[] = {
+const u16 gEasyChatGroupOrder_Trainer[] = {
     7,
     8,
     5,
@@ -24,7 +24,7 @@ u16 gEasyChatGroupOrder_Trainer[] = {
     12,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Trainer[] = {
+const u16 gEasyChatGroupOrder_Trainer[] = {
     15,
     7,
     0,

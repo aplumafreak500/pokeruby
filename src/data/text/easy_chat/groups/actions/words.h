@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_ACTIONS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_ACTIONS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Actions[] = _(
+const u8 gEasyChatGroupWords_Actions[] = _(
                                      "MEETS$"
                                      "CONCEDE$"
                                      "GIVE$"
@@ -82,7 +82,7 @@ u8 gEasyChatGroupWords_Actions[] = _(
                                      "FAINTED$"
                                      );
 #elif GERMAN
-u8 gEasyChatGroupWords_Actions[] = _(
+const u8 gEasyChatGroupWords_Actions[] = _(
                                      "TRIFFT$"
                                      "RESIGNIEREN$"
                                      "GEBEN$"

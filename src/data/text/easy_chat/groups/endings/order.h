@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_ENDINGS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Endings[] = {
+const u16 gEasyChatGroupOrder_Endings[] = {
     32,
     39,
     63,
@@ -74,7 +74,7 @@ u16 gEasyChatGroupOrder_Endings[] = {
     10,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Endings[] = {
+const u16 gEasyChatGroupOrder_Endings[] = {
     58,
     42,
     66,

@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_LIFESTYLE_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Lifestyle[] = {
+const u16 gEasyChatGroupOrder_Lifestyle[] = {
     3,
     4,
     0,
@@ -50,7 +50,7 @@ u16 gEasyChatGroupOrder_Lifestyle[] = {
     44,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Lifestyle[] = {
+const u16 gEasyChatGroupOrder_Lifestyle[] = {
     13,
     4,
     22,

@@ -922,10 +922,13 @@ static void SummaryScreen_LoadPalettes(void)
     LoadPalette(gUnknownPalette_81E6692 + 3,  249, 2);
 }
 
+extern bool8 markingsLoaded;
+
 static void SummaryScreenExit(u8 taskId)
 {
     PlaySE(SE_SELECT);
     BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB(0, 0, 0));
+	markingsLoaded = FALSE;
     gTasks[taskId].func = SummaryScreen_DestroyTask;
 }
 
@@ -4382,6 +4385,7 @@ static void sub_80A1DCC(struct Pokemon *mon)
 {
     DestroySprite(gUnknown_020384F4);
     sub_80A1D84(mon);
+	markingsLoaded = TRUE;
 }
 
 static void sub_80A1DE8(struct Pokemon *mon)

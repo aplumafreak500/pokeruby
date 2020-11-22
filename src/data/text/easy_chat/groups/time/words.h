@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_TIME_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_TIME_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Time[] = _(
+const u8 gEasyChatGroupWords_Time[] = _(
                                   "FALL$"
                                   "MORNING$"
                                   "TOMORROW$"
@@ -49,7 +49,7 @@ u8 gEasyChatGroupWords_Time[] = _(
                                   "WEEK$"
                                   );
 #elif GERMAN
-u8 gEasyChatGroupWords_Time[] = _(
+const u8 gEasyChatGroupWords_Time[] = _(
                                   "HERBST$"
                                   "MORGEN$"
                                   "ÜBERMORGEN$"

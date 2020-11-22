@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_TRAINER_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_TRAINER_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Trainer[] = _(
+const u8 gEasyChatGroupWords_Trainer[] = _(
                                      "I CHOOSE YOU$"
                                      "GOTCHA$"
                                      "TRADE$"
@@ -23,7 +23,7 @@ u8 gEasyChatGroupWords_Trainer[] = _(
                                      "LEVEL$"
                                      );
 #elif GERMAN
-u8 gEasyChatGroupWords_Trainer[] = _(
+const u8 gEasyChatGroupWords_Trainer[] = _(
                                      "DU BIST DRAN$"
                                      "HAB DICH$"
                                      "TAUSCH$"

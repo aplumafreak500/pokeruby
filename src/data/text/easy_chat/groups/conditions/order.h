@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_CONDITIONS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Conditions[] = {
+const u16 gEasyChatGroupOrder_Conditions[] = {
     13,
     55,
     23,
@@ -74,7 +74,7 @@ u16 gEasyChatGroupOrder_Conditions[] = {
     64,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Conditions[] = {
+const u16 gEasyChatGroupOrder_Conditions[] = {
     46,
     13,
     55,

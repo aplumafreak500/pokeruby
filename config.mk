@@ -7,7 +7,6 @@ GAME_LANGUAGE ?= ENGLISH
 DEBUG         ?= 0
 MODERN        ?= 0
 DEBUG_FIX     ?= 0
-COMPARE       ?= 0
 
 # For gbafix
 MAKER_CODE  := 01
@@ -80,4 +79,3 @@ ifeq ($(MODERN), 0)
 else
   BUILD_NAME := $(BUILD_NAME)_modern
 endif
-

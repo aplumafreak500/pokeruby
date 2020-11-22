@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_FEELINGS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Feelings[] = {
+const u16 gEasyChatGroupOrder_Feelings[] = {
     40,
     39,
     24,
@@ -74,7 +74,7 @@ u16 gEasyChatGroupOrder_Feelings[] = {
     20,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Feelings[] = {
+const u16 gEasyChatGroupOrder_Feelings[] = {
     35,
     7,
     29,

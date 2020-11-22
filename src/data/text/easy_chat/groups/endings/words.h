@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_ENDINGS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_ENDINGS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Endings[] = _(
+const u8 gEasyChatGroupWords_Endings[] = _(
                                      "WILL$"
                                      "WILL BE HERE$"
                                      "OR$"
@@ -73,7 +73,7 @@ u8 gEasyChatGroupWords_Endings[] = _(
                                      "ANYWHERE$"
                                      );
 #elif GERMAN
-u8 gEasyChatGroupWords_Endings[] = _(
+const u8 gEasyChatGroupWords_Endings[] = _(
                                      "WERDEN$"
                                      "WIRD DA SEIN$"
                                      "ODER$"

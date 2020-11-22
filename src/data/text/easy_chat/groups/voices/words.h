@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_VOICES_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_VOICES_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Voices[] = _(
+const u8 gEasyChatGroupWords_Voices[] = _(
                                     "!$"
                                     "!!$"
                                     "?!$"
@@ -67,7 +67,7 @@ u8 gEasyChatGroupWords_Voices[] = _(
                                     "WAHAHAHA$"
                                     );
 #elif GERMAN
-u8 gEasyChatGroupWords_Voices[] = _(
+const u8 gEasyChatGroupWords_Voices[] = _(
                                     "!$"
                                     "!!!$"
                                     "?!$"

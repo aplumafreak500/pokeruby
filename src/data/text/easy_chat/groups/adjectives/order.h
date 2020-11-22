@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_ADJECTIVES_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Adjectives[] = {
+const u16 gEasyChatGroupOrder_Adjectives[] = {
     35,
     23,
     20,
@@ -41,7 +41,7 @@ u16 gEasyChatGroupOrder_Adjectives[] = {
     30,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Adjectives[] = {
+const u16 gEasyChatGroupOrder_Adjectives[] = {
     24,
     28,
     17,

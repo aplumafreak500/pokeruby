@@ -2,7 +2,7 @@
 #define DATA_TEXT_EASY_CHAT_GROUPS_STATUS_ORDER
 
 #if ENGLISH
-u16 gEasyChatGroupOrder_Status[] = {
+const u16 gEasyChatGroupOrder_Status[] = {
     13,
     9,
     5,
@@ -114,7 +114,7 @@ u16 gEasyChatGroupOrder_Status[] = {
     80,
 };
 #elif GERMAN
-u16 gEasyChatGroupOrder_Status[] = {
+const u16 gEasyChatGroupOrder_Status[] = {
     47,
     33,
     9,

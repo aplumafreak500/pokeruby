@@ -54,10 +54,10 @@ CPPFLAGS += -I tools/agbcc/include -nostdinc -undef
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -Wunused -Werror -O2 -fhex-asm
 else
 CC1FLAGS := -mthumb -mthumb-interwork -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -O2 -fno-toplevel-reorder -fno-aggressive-loop-optimizations -Wno-pointer-to-int-cast
-endif
-
 ifneq (,$(DINFO))
-CC1FLAGS += -g
+CC1FLAGS += -g3
+ASFLAGS += -g3
+endif
 endif
 
 ifneq (,$(NONMATCHING))
@@ -95,13 +95,9 @@ LIBDIRS := \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb \
 	$(TOOLCHAIN)/arm-none-eabi/lib/thumb/nofp
 endif
-LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc
+LDFLAGS := $(LIBDIRS:%=-L %) -lgcc -lc -n
 
-ifeq ($(MODERN),0)
 LD_SCRIPT := $(BUILD_DIR)/ld_script.ld
-else
-LD_SCRIPT := $(BUILD_DIR)/ld_script_modern.ld
-endif
 
 # Special configurations required for lib files
 ifeq ($(MODERN),0)
@@ -160,18 +156,15 @@ MAKEFLAGS += --no-print-directory
 $(shell mkdir -p $(SUBDIRS))
 
 # Refresh the git hash and dates
+ifeq ($(NODEP),)
 $(shell touch src/data/git.h)
 $(shell touch src/main.c)
 $(shell touch src/debug/start_menu_debug.c)
+endif
 
 AUTO_GEN_TARGETS :=
 
 all: $(ROM)
-ifeq ($(COMPARE),1)
-	@$(SHA1SUM) $(BUILD_NAME).sha1
-endif
-
-compare: ; @$(MAKE) COMPARE=1
 
 mostlyclean: tidy
 	find sound/direct_sound_samples \( -iname '*.bin' \) -exec rm {} +
@@ -219,11 +212,12 @@ $(ROM): %.gba: %.elf
 
 %.elf: $(LD_SCRIPT) $(ALL_OBJECTS)
 	@echo Linking $@
-	cd $(BUILD_DIR) && $(LD) -T $(LD_SCRIPT:$(BUILD_DIR)/%=%) -Map ../../$(MAP) -o ../../$@ $(OBJS_REL) $(LDFLAGS)
+	@cd $(BUILD_DIR) && $(LD) -T $(LD_SCRIPT:$(BUILD_DIR)/%=%) -Map ../../$(MAP) -o ../../$@ $(OBJS_REL) $(LDFLAGS)
 	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(GAME_REVISION) --silent
 
 $(LD_SCRIPT): $(LD_SCRIPT:$(BUILD_DIR)/%.ld=%.txt) $(BUILD_DIR)/sym_common.ld $(BUILD_DIR)/sym_ewram.ld $(BUILD_DIR)/sym_bss.ld
-	sed -e "s#tools/#../../tools/#g" $< >$@
+	@echo $<
+	@sed -e "s#tools/#../../tools/#g" $< >$@
 
 $(BUILD_DIR)/sym_%.ld: sym_%.txt
 	@echo $<
@@ -231,8 +225,7 @@ $(BUILD_DIR)/sym_%.ld: sym_%.txt
 
 $(C_OBJECTS): $(BUILD_DIR)/%.o: %.c $$(C_DEP)
 	@echo $<
-	@$(CPP) $(CPPFLAGS) $< -o $(BUILD_DIR)/$*.i
-	@$(PREPROC) $(BUILD_DIR)/$*.i charmap.txt | $(CC1) $(CC1FLAGS) -o $(BUILD_DIR)/$*.s
+	@$(CPP) $(CPPFLAGS) $< | $(PREPROC) - charmap.txt | $(CC1) $(CC1FLAGS) -o $(BUILD_DIR)/$*.s
 	@printf ".text\n\t.align\t2, 0\n" >> $(BUILD_DIR)/$*.s
 	@$(AS) $(ASFLAGS) -W -o $@ $(BUILD_DIR)/$*.s
 
@@ -259,10 +252,10 @@ ruby_de_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1
 sapphire_de:       ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN
 sapphire_de_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1
 
-ruby_rev1_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1 COMPARE=0
-ruby_rev2_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1 COMPARE=0
-sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1 COMPARE=0
-sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1 COMPARE=0
+ruby_rev1_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1
+ruby_rev2_debug: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1
+sapphire_rev1_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1
+sapphire_rev2_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1
 
 modern:                   ; @$(MAKE) GAME_VERSION=RUBY MODERN=1
 ruby_modern:              ; @$(MAKE) GAME_VERSION=RUBY MODERN=1
@@ -282,19 +275,6 @@ ruby_rev1_debug_modern: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 DEBUG=1 MOD
 ruby_rev2_debug_modern: ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 DEBUG=1 MODERN=1
 sapphire_rev1_debug_modern: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 DEBUG=1 MODERN=1
 sapphire_rev2_debug_modern: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 DEBUG=1 MODERN=1
-
-compare_ruby:              ; @$(MAKE) GAME_VERSION=RUBY COMPARE=1
-compare_ruby_debug:        ; @$(MAKE) GAME_VERSION=RUBY DEBUG=1 COMPARE=1
-compare_ruby_rev1:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=1 COMPARE=1
-compare_ruby_rev2:         ; @$(MAKE) GAME_VERSION=RUBY GAME_REVISION=2 COMPARE=1
-compare_sapphire:          ; @$(MAKE) GAME_VERSION=SAPPHIRE COMPARE=1
-compare_sapphire_debug:    ; @$(MAKE) GAME_VERSION=SAPPHIRE DEBUG=1 COMPARE=1
-compare_sapphire_rev1:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=1 COMPARE=1
-compare_sapphire_rev2:     ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_REVISION=2 COMPARE=1
-compare_ruby_de:           ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN COMPARE=1
-compare_ruby_de_debug:     ; @$(MAKE) GAME_VERSION=RUBY GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=1
-compare_sapphire_de:       ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN COMPARE=1
-compare_sapphire_de_debug: ; @$(MAKE) GAME_VERSION=SAPPHIRE GAME_LANGUAGE=GERMAN DEBUG=1 COMPARE=1
 
 #### Graphics Rules ####
 

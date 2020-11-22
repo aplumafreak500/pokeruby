@@ -1,7 +1,7 @@
 #ifndef DATA_TEXT_EASY_CHAT_GROUPS_STATUS_WORDS
 #define DATA_TEXT_EASY_CHAT_GROUPS_STATUS_WORDS
 #if ENGLISH
-u8 gEasyChatGroupWords_Status[] = _(
+const u8 gEasyChatGroupWords_Status[] = _(
                                     "DARK$"
                                     "STENCH$"
                                     "THICK FAT$"
@@ -113,7 +113,7 @@ u8 gEasyChatGroupWords_Status[] = _(
                                     "SHIELD DUST$"
                                     );
 #elif GERMAN
-u8 gEasyChatGroupWords_Status[] = _(
+const u8 gEasyChatGroupWords_Status[] = _(
                                     "UNLICHT$"
                                     "DUFTNOTE$"
                                     "SPECKSCHICHT$"
