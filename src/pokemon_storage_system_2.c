@@ -27,6 +27,7 @@ EWRAM_DATA u8 gUnknown_0203847C = 0;
 EWRAM_DATA u8 gUnknown_0203847D = 0;
 EWRAM_DATA u8 gUnknown_0203847E = 0;
 EWRAM_DATA u8 gUnknown_0203847F = 0;
+EWRAM_DATA u8 gUnknown_02039760[0xc00];
 
 // Static ROM declarations
 

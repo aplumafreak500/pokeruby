@@ -22,20 +22,21 @@
 
 extern u16 gBattleTypeFlags;
 extern u16 gBattleWeather;
-extern struct BattlePokemon gBattleMons[];
+extern struct BattlePokemon gBattleMons[4];
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;
 static EWRAM_DATA u8 gUnknown_020238C6 = 0;
 
-extern u32 gUnknown_020239FC;
-extern u8 gBattleBufferA[][0x200];
-extern u8 gBattleBufferB[][0x200];
+extern u8 gBattleBufferA[4][0x200];
+extern u8 gBattleBufferB[4][0x200];
 extern u8 gActiveBattler;
 extern u32 gBattleControllerExecFlags;
 extern u8 gBattlersCount;
-extern u16 gBattlerPartyIndexes[];
-extern u8 gBattlerPositions[];
+extern u16 gBattlerPartyIndexes[4];
+extern u8 gBattlerPositions[4];
+
+extern u32 gUnknown_020239FC;
 extern u16 gCurrentMove;
 extern u16 gChosenMove;
 extern u16 gLastUsedItem;

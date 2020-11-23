@@ -66,52 +66,109 @@ struct UnknownStruct8
 
 extern void sub_802BBD4();
 
+EWRAM_DATA struct Struct20238C8 gUnknown_020238C8;
+EWRAM_DATA u8 gDisplayedStringBattle[0x12c];
+EWRAM_DATA u16 gBattleTypeFlags;
+EWRAM_DATA u32 gUnknown_020239FC;
+EWRAM_DATA struct UnknownPokemonStruct2 gMultiPartnerParty[3];
+EWRAM_DATA u8 gUnknown_02023A04[0x10]; // Unused
+EWRAM_DATA u32 gUnknown_02023A14; // Unused
+#if DEBUG
+EWRAM_DATA u32 gUnknown_02023A14_4C; // Unused
+EWRAM_DATA u8 gUnknown_02023A14_50;
+// EWRAM_DATA u8 gUnknown_02023A14_51; // Unused
+EWRAM_DATA s16 gUnknown_Debug_2023A76[4][35];
+EWRAM_DATA s16 gUnknown_Debug_2023B02[4][6][4];
+EWRAM_DATA u8 gUnknown_Debug_2023B62[0x1a2];
+#endif
+EWRAM_DATA u8 gBattleBufferA[4][0x200];
+EWRAM_DATA u8 gBattleBufferB[4][0x200];
+EWRAM_DATA u8 gActiveBattler;
+EWRAM_DATA u32 gBattleControllerExecFlags;
+EWRAM_DATA u8 gBattlersCount;
+EWRAM_DATA u16 gBattlerPartyIndexes[4];
+EWRAM_DATA u8 gBattlerPositions[4];
+EWRAM_DATA u8 gActionsByTurnOrder[4];
+EWRAM_DATA u8 gBattlerByTurnOrder[4];
+EWRAM_DATA u8 gCurrentTurnActionNumber;
+EWRAM_DATA u8 gCurrentActionFuncId;
+EWRAM_DATA struct BattlePokemon gBattleMons[4];
+EWRAM_DATA u8 gBattlerSpriteIds[4];
+EWRAM_DATA u8 gCurrMovePos;
+EWRAM_DATA u8 gUnknown_02024BE5;
+EWRAM_DATA u16 gCurrentMove;
+EWRAM_DATA u16 gChosenMove;
+EWRAM_DATA u16 gRandomMove;
+EWRAM_DATA s32 gBattleMoveDamage;
+EWRAM_DATA s32 gHpDealt;
+EWRAM_DATA s32 gTakenDmg[4];
+EWRAM_DATA u16 gLastUsedItem;
+EWRAM_DATA u8 gLastUsedAbility;
+EWRAM_DATA u8 gBattlerAttacker;
+EWRAM_DATA u8 gBattlerTarget;
+EWRAM_DATA u8 gBank1;
+EWRAM_DATA u8 gEffectBattler;
+EWRAM_DATA u8 gPotentialItemEffectBattler;
+EWRAM_DATA u8 gAbsentBattlerFlags;
+EWRAM_DATA u8 gCritMultiplier;
+EWRAM_DATA u8 gMultiHitCounter;
+EWRAM_DATA u8* gBattlescriptCurrInstr;
+EWRAM_DATA u32 gUnknown_0202C14; // Unused
+EWRAM_DATA u8 gActionForBanks[4];
+EWRAM_DATA u8 * gSelectionBattleScripts[4];
+EWRAM_DATA u16 gUnknown_02024C2C[4];
+EWRAM_DATA u16 gLastMoves[4];
+EWRAM_DATA u16 gLastLandedMoves[4];
+EWRAM_DATA u16 gLastHitByType[4];
+EWRAM_DATA u16 gUnknown_02024C4C[4];
+EWRAM_DATA u16 gLockedMoves[4];
+EWRAM_DATA u8 gLastHitBy[4];
+EWRAM_DATA u16 gChosenMovesByBanks[4];
+EWRAM_DATA u8 gMoveResultFlags;
+EWRAM_DATA u32 gHitMarker;
+EWRAM_DATA u8 gUnknown_02024C70[4];
+EWRAM_DATA u8 gTakenDmgByBattler;
+EWRAM_DATA u8 gUnknown_02024C78;
+EWRAM_DATA u16 gSideStatuses[4];
+EWRAM_DATA struct SideTimer gSideTimers[2];
+EWRAM_DATA u32 gStatuses3[4];
+EWRAM_DATA struct DisableStruct gDisableStructs[4];
+EWRAM_DATA u16 gPauseCounterBattle;
+EWRAM_DATA u16 gPaydayMoney;
+EWRAM_DATA u16 gRandomTurnNumber;
+EWRAM_DATA u8 gBattleCommunication[8];
+// extern u8 gUnknown_02024D1F[];  // I don't actually know what type this is.
+EWRAM_DATA u8 gBattleOutcome;
+EWRAM_DATA struct ProtectStruct gProtectStructs[4];
+EWRAM_DATA struct SpecialStatus gSpecialStatuses[4];
+EWRAM_DATA u16 gBattleWeather;
+EWRAM_DATA struct WishFutureKnock gWishFutureKnock;
+EWRAM_DATA u8 gUnknown_02024DDC[12]; // Unused
+EWRAM_DATA u16 gUnknown_02024DE8;
+EWRAM_DATA u8 gSentPokesToOpponent[2];
+EWRAM_DATA u16 gDynamicBasePower;
+EWRAM_DATA u16 gExpShareExp;
+EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[3];
+EWRAM_DATA u32 gUnknown_02024DF8; // Unused
+EWRAM_DATA u8 gActionSelectionCursor[4];
+EWRAM_DATA u8 gMoveSelectionCursor[4];
+EWRAM_DATA u8 gUnknown_02024E68[4];
+EWRAM_DATA u8 gBankInMenu;
+EWRAM_DATA u8 gDoingBattleAnim;
+EWRAM_DATA u16 gUnknown_02024E6E; // Unused
+EWRAM_DATA u32 gTransformedPersonalities[4];
+EWRAM_DATA u16 gBattleMovePower;
+EWRAM_DATA u16 gMoveToLearn;
+EWRAM_DATA u8 gBattleMonForms[4];
+
 extern struct SpriteTemplate gUnknown_02024E8C;
 extern const u8 Str_821F7B8[];
-extern u8 gUnknown_02023A14_50;
 extern const u16 gBattleTextboxPalette[];
 extern const struct MonCoords gCastformFrontSpriteCoords[];
 extern const u8 Str_821F7EA[];
 extern const u8 gUnknown_Debug_821F7F3[];
 extern const u8 BattleText_YesNo[];
 extern u8 gStatStageRatios[][2];
-extern u8 gActionsByTurnOrder[4];
-extern struct UnknownPokemonStruct2 gMultiPartnerParty[];
-extern u8 gBattleBufferB[][0x200];
-extern u8 gActiveBattler;
-extern u32 gBattleControllerExecFlags;
-extern u8 gBattlersCount;
-extern u16 gBattlerPartyIndexes[];
-extern u8 gCurrentActionFuncId;
-extern u8 gBattlerByTurnOrder[];
-extern u8 gBattlerSpriteIds[];
-extern u16 gCurrentMove;  // This is mis-named. It is a species, not a move ID.
-extern u8 gLastUsedAbility;
-extern u8 gPotentialItemEffectBattler;
-extern u8 gAbsentBattlerFlags;
-extern u8 gMultiHitCounter;
-extern u8 gActionForBanks[];
-extern u16 gUnknown_02024C2C[];
-extern u16 gLastMoves[];
-extern u16 gLastLandedMoves[];
-extern u16 gLastHitByType[];
-extern u16 gUnknown_02024C4C[];
-extern u16 gLockedMoves[];
-extern u16 gChosenMovesByBanks[];
-extern u32 gHitMarker;
-extern u8 gUnknown_02024C70[];
-extern u16 gSideStatuses[];
-extern u32 gStatuses3[];
-//extern u8 gDisableStructs[][0x1C];
-extern u16 gPauseCounterBattle;
-extern u16 gPaydayMoney;
-extern u16 gRandomTurnNumber;
-extern u8 gBattleCommunication[];
-extern u8 gUnknown_02024D1F[];  // I don't actually know what type this is.
-extern u8 gBattleOutcome;
-extern u16 gUnknown_02024DE8;
-extern u8 gActionSelectionCursor[];
-extern u8 gMoveSelectionCursor[];
 extern u8 gUnknown_02038470[];
 MainCallback gPreBattleCallback1;
 u8 gUnknown_03004344;
@@ -121,24 +178,12 @@ u8 gLeveledUpInBattle;
 void (*gBattlerControllerFuncs[MAX_BATTLERS_COUNT])(void);
 u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT];
 u8 gUnknown_0300434C[MAX_BATTLERS_COUNT];
-extern u16 gBattleTypeFlags;
 extern u8 gReservedSpritePaletteCount;
 extern u16 gTrainerBattleOpponent;
-extern struct BattleEnigmaBerry gEnigmaBerries[];
 extern u16 gBlockRecvBuffer[MAX_LINK_PLAYERS][BLOCK_BUFFER_SIZE / 2];
-extern u8 gBattleMonForms[];
-extern u8 gBattlerAttacker;
-extern u8 gBattlerTarget;
-extern u16 gBattleWeather;
-extern s32 gBattleMoveDamage;
-extern struct BattlePokemon gBattleMons[];
-extern u8 gMoveResultFlags;
 extern u8 BattleScript_FocusPunchSetUp[];
-extern u16 gDynamicBasePower;
-extern u8 gCurrentTurnActionNumber;
 extern void (* const gUnknown_081FA640[])(void);
 extern void (* const gUnknown_081FA678[])(void);
-extern u8* gBattlescriptCurrInstr;
 extern u8 BattleScript_LinkBattleWonOrLost[];
 extern u8 BattleScript_PayDayMoneyAndPickUpItems[];
 extern u8 gUnknown_081D8E0D[];
@@ -151,21 +196,16 @@ extern u8 BattleScript_WildMonFled[];
 extern u8 BattleScript_ActionSwitch[];
 extern u8 BattleScript_PrintFailedToRunString[];
 extern const BattleCmdFunc gBattleScriptingCommandsTable[];
-extern u8 gCritMultiplier;
-extern u8 gCurrMovePos;
-extern u8 gUnknown_02024BE5;
-extern u16 gChosenMove;
 extern u8* gBattleScriptsForMoveEffects[];
-extern u16 gLastUsedItem;
 extern u8 * const gBattlescriptsForBallThrow[];
 extern u8 * const gBattlescriptsForRunningByItem[];
 extern u8 * const gBattlescriptsForUsingItem[];
 extern u8 * const gBattlescriptsForSafariActions[];
 extern u8 gBattleTextBuff2[];
 extern u8 gNumSafariBalls;
-extern u8 gUnknown_081FA70C[][3];
-extern u8 gUnknown_081FA71B[];
-extern u8 gUnknown_081FA71F[];
+extern const u8 gUnknown_081FA70C[][3];
+extern const u8 gUnknown_081FA71B[];
+extern const u8 gUnknown_081FA71F[];
 struct BattleResults gBattleResults;
 
 void BattleMainCB1(void);
@@ -561,7 +601,7 @@ void CB2_HandleStartBattle(void)
         gBattleCommunication[2] = 0;
         break;
     case 9:
-        if (battle_load_something(gUnknown_02024D1F, gUnknown_02024D1F + 1) != 0)
+        if (battle_load_something(gBattleCommunication + 1, gBattleCommunication + 2) != 0)
         {
             gPreBattleCallback1 = gMain.callback1;
             gMain.callback1 = BattleMainCB1;
@@ -944,7 +984,7 @@ void sub_800F298(void)
         gBattleCommunication[2] = 0;
         break;
     case 7:
-        if (battle_load_something(gUnknown_02024D1F, gUnknown_02024D1F + 1) != 0)
+        if (battle_load_something(gBattleCommunication + 1, gBattleCommunication + 2) != 0)
         {
             gPreBattleCallback1 = gMain.callback1;
             gMain.callback1 = BattleMainCB1;
@@ -1364,7 +1404,6 @@ void c2_081284E0(void)
 
 #if DEBUG
 
-extern u8 gUnknown_Debug_2023B62[];
 extern const u8 Str_821F7BD[];
 extern const u8 Str_821F7DA[];
 
@@ -1391,8 +1430,6 @@ void debug_sub_8012D10(u8);
 u32 debug_sub_8013294(u8, void *, u32);
 void debug_sub_80132C8(u8, void *, u32);
 
-extern s16 gUnknown_Debug_2023A76[][35];
-extern s16 gUnknown_Debug_2023B02[][6][4];
 u8 gUnknown_Debug_03004360;
 struct Window gUnknown_Debug_03004370;
 u8 gUnknown_Debug_030043A0;
@@ -4209,7 +4246,6 @@ enum
     STATE_SELECTION_SCRIPT_MAY_RUN
 };
 
-extern u8 * gSelectionBattleScripts[];
 extern u8 BattleScript_ActionSelectionItemsCantBeUsed[];
 extern u8 BattleScript_PrintFullBox[];
 extern u8 BattleScript_PrintCantRunFromTrainer[];
