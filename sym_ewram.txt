@@ -85,8 +85,9 @@ gCurrentTurnActionNumber = .; /* 2024A7E */
 gCurrentActionFuncId = .; /* 2024A7F */
     . += 0x1;
 
-gBattleMons = .; /* 2024A80 */
+/* gBattleMons = .; /* 2024A80 */
     . += 0x160;
+*/
 
 gBattlerSpriteIds = .; /* 2024BE0 */
     . += 0x4;

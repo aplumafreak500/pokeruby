@@ -66,6 +66,8 @@ struct UnknownStruct8
 
 extern void sub_802BBD4();
 
+
+EWRAM_DATA struct BattlePokemon gBattleMons[4];
 extern struct SpriteTemplate gUnknown_02024E8C;
 extern const u8 Str_821F7B8[];
 extern u8 gUnknown_02023A14_50;
@@ -131,7 +133,6 @@ extern u8 gBattlerAttacker;
 extern u8 gBattlerTarget;
 extern u16 gBattleWeather;
 extern s32 gBattleMoveDamage;
-extern struct BattlePokemon gBattleMons[];
 extern u8 gMoveResultFlags;
 extern u8 BattleScript_FocusPunchSetUp[];
 extern u16 gDynamicBasePower;
