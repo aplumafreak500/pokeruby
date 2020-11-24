@@ -195,10 +195,9 @@ EWRAM_DATA u8 gStringVar2[0x100] = {0};
 EWRAM_DATA u8 gStringVar3[0x100] = {0};
 EWRAM_DATA u8 gStringVar4[0x100] = {0};
 
-EWRAM_DATA u8 gTileBuffer[0x100];
-
 extern u16 gBattleTypeFlags;
 extern u8 gIsLinkContest;
+extern u8 gTileBuffer[];
 
 vu16 *const gBGControlRegs[] =
 {

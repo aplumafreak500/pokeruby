@@ -111,7 +111,6 @@ EWRAM_DATA u8 gUnknown_0202E8F5 = 0;
 EWRAM_DATA u8 gUnknown_0202E8F6 = 0;
 EWRAM_DATA u16 gUnknown_0202E8F8 = 0;
 EWRAM_DATA u8 gPartyMenuType = 0;
-EWRAM_DATA u8 gUnknown_02039460[0x300];
 
 const u16 TMHMMoves[] =
 {
@@ -176,8 +175,8 @@ const u16 TMHMMoves[] =
 };
 
 //FIXME
-u8* const unrefTileBuffer = gTileBuffer;
-//asm(".4byte gTileBuffer\n");
+//const u8 *unrefTileBuffer = gTileBuffer;
+asm(".4byte gTileBuffer\n");
 
 static const u8 MenuGfx_HoldIcons[] = INCBIN_U8("graphics/interface/hold_icons.4bpp");
 static const u16 MenuPal_HoldIcons[] = INCBIN_U16("graphics/interface/hold_icons.gbapal");
@@ -480,6 +479,7 @@ extern u16 gMoveToLearn;
 
 extern u16 gUnknown_08E9A300[];
 extern struct Coords8 const gUnknown_08376738[12][6];
+extern u8 gUnknown_02039460[];
 extern struct Window gUnknown_03004210;
 
 extern const u8 gPartyMenuMisc_Gfx[];
@@ -3282,7 +3282,7 @@ void PartyMenuDoPrintLevel(u8 monIndex, u8 menuLayout, u8 level)
 
     var1 = 0;
     CpuFastSet(&var1, gUnknown_02039460, 0x1000020);
-    Text_InitWindow8004E3C((struct WindowTemplate *)&gWindowTemplate_81E6CAC, gTileBuffer, gStringVar1);
+    Text_InitWindow8004E3C((struct WindowTemplate *)&gWindowTemplate_81E6CAC, gUnknown_02039460 - 0x100 /*gTileBuffer*/, gStringVar1);
     CpuFastSet(gUnknown_02039460, OBJ_VRAM1 + 0x200 + (monIndex * 0x400), 32);
 }
 
@@ -3362,7 +3362,7 @@ void PartyMenuDoPrintHP(u8 monIndex, u8 b, u16 currentHP, u16 maxHP)
     var = 0;
 
     CpuFastSet(&var, gUnknown_02039460, 0x1000040);
-    Text_InitWindow8004E3C((struct WindowTemplate *)&gWindowTemplate_81E6CAC, gTileBuffer, gStringVar1);
+    Text_InitWindow8004E3C((struct WindowTemplate *)&gWindowTemplate_81E6CAC, gUnknown_02039460 - 0x100 /*gTileBuffer*/, gStringVar1);
     CpuFastSet(gUnknown_02039460, OBJ_VRAM1 + 0x300 + (monIndex * 0x400), 64);
 }
 
