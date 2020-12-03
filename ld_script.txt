@@ -8,8 +8,8 @@ SECTIONS {
 	ewram (NOLOAD) :
 	ALIGN(4)
 	{
-		INCLUDE "sym_ewram.ld"
 		*(SORT(ewram_data));
+		INCLUDE "sym_ewram.ld"
 		. = 0x40000;
 	}
 
