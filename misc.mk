@@ -85,14 +85,14 @@ $(INTROGFXDIR)/intro3_misc.4bpp: $(INTROGFXDIR)/intro3_star.4bpp $(INTROGFXDIR)/
 	@cat $(INTROGFXDIR)/intro3_star.4bpp $(INTROGFXDIR)/intro3_attackgfx.4bpp $(INTROGFXDIR)/intro3_explosion.4bpp >$@
 
 $(INTROGFXDIR)/copyright.4bpp: GFX_OPTS := -num_tiles 43
-
+$(INTROGFXDIR)/copyright_eu.4bpp: GFX_OPTS := -num_tiles 47
 
 #### Title Screen ####
 
 TITLEGFXDIR := graphics/title_screen
 
 $(TITLEGFXDIR)/press_start.4bpp: GFX_OPTS := -num_tiles 41
-
+$(TITLEGFXDIR)/press_start_de.4bpp: GFX_OPTS := -num_tiles 41
 
 #### Interface ####
 
@@ -104,18 +104,24 @@ $(MENUGFXDIR)/menu.gbapal: $(MENUGFXDIR)/menu_0.gbapal $(MENUGFXDIR)/menu_1.gbap
 $(MENUGFXDIR)/wordgroup_frame.4bpp: GFX_OPTS := -num_tiles 65
 
 $(MENUGFXDIR)/party_menu_misc.4bpp: GFX_OPTS := -num_tiles 116
+$(MENUGFXDIR)/party_menu_misc_de.4bpp: GFX_OPTS := -num_tiles 116
 
 $(MENUGFXDIR)/status_screen.4bpp: GFX_OPTS := -num_tiles 217
+$(MENUGFXDIR)/status_screen_de.4bpp: GFX_OPTS := -num_tiles 217
 
 $(MENUGFXDIR)/hp_numbers.4bpp: $(MENUGFXDIR)/hpbar_anim.4bpp $(MENUGFXDIR)/numbers1.4bpp $(MENUGFXDIR)/numbers2.4bpp
 	@cat $(MENUGFXDIR)/hpbar_anim.4bpp $(MENUGFXDIR)/numbers1.4bpp $(MENUGFXDIR)/numbers2.4bpp >$@
 
+$(MENUGFXDIR)/check_berry_de.4bpp: GFX_OPTS := -num_tiles 97
 
 #### Battle Interface ####
 
 BATTLEINTERFACEDIR := graphics/battle_interface
 
 $(BATTLEINTERFACEDIR)/healthbox_elements.4bpp: $(BATTLEINTERFACEDIR)/hpbar.4bpp $(BATTLEINTERFACEDIR)/expbar.4bpp $(BATTLEINTERFACEDIR)/status_psn.4bpp $(BATTLEINTERFACEDIR)/status_par.4bpp $(BATTLEINTERFACEDIR)/status_slp.4bpp $(BATTLEINTERFACEDIR)/status_frz.4bpp $(BATTLEINTERFACEDIR)/status_brn.4bpp $(BATTLEINTERFACEDIR)/misc.4bpp $(BATTLEINTERFACEDIR)/hpbar_anim.4bpp $(BATTLEINTERFACEDIR)/misc_frameend.4bpp
+	cat $^ > $@
+
+$(BATTLEINTERFACEDIR)/healthbox_elements_de.4bpp: $(BATTLEINTERFACEDIR)/hpbar_de.4bpp $(BATTLEINTERFACEDIR)/expbar.4bpp $(BATTLEINTERFACEDIR)/status_psn_de.4bpp $(BATTLEINTERFACEDIR)/status_par_de.4bpp $(BATTLEINTERFACEDIR)/status_slp_de.4bpp $(BATTLEINTERFACEDIR)/status_frz_de.4bpp $(BATTLEINTERFACEDIR)/status_brn_de.4bpp $(BATTLEINTERFACEDIR)/misc.4bpp $(BATTLEINTERFACEDIR)/hpbar_anim.4bpp $(BATTLEINTERFACEDIR)/misc_frameend.4bpp
 	cat $^ > $@
 
 #### PokeNav ####
@@ -194,7 +200,7 @@ $(BATTRANSGFXDIR)/vs_frame.4bpp: GFX_OPTS := -num_tiles 16
 CONTESTGFXDIR := graphics/contest
 
 $(CONTESTGFXDIR)/nextturn.4bpp: GFX_OPTS := -num_tiles 8
-
+$(CONTESTGFXDIR)/nextturn_de.4bpp: GFX_OPTS := -num_tiles 8
 
 #### Picture Frame ####
 
@@ -211,6 +217,9 @@ types := normal fight flying poison ground rock bug ghost steel mystery fire wat
 contest_types := cool beauty cute smart tough
 
 $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%.4bpp)
+	@cat $^ >$@
+
+$(TYPESGFXDIR)/move_types_de.4bpp: $(types:%=$(TYPESGFXDIR)/%_de.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%_de.4bpp)
 	@cat $^ >$@
 
 $(TYPESGFXDIR)/move_types.gbapal: $(TYPESGFXDIR)/move_types_1.gbapal $(TYPESGFXDIR)/move_types_2.gbapal $(TYPESGFXDIR)/move_types_3.gbapal

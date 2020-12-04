@@ -296,16 +296,25 @@ const u8 unused_basic_frame_bin[] = INCBIN_U8("graphics/unused/basic_frame.bin.l
 
 const u8 gUnknown_08D1212C[] = INCBIN_U8("graphics/battle_interface/window.gbapal");
 const u8 gUnknown_08D1214C[] = INCBIN_U8("graphics/battle_interface/hpbar.gbapal");
-
+#ifdef ENGLISH
 const u8 gHealthboxElementsGfxTable[][32] = INCBIN_U8("graphics/battle_interface/healthbox_elements.4bpp");
+#elif defined(GERMAN)
+const u8 gHealthboxElementsGfxTable[][32] = INCBIN_U8("graphics/battle_interface/healthbox_elements_de.4bpp");
+#endif
 
 const u8 Tiles_D129AC[] = INCBIN_U8("graphics/battle_interface/ball_display.4bpp");
 
 // extra stuff
 const u8 unused_gfx_ball_display_unused_extra[] = INCBIN_U8("graphics/battle_interface/ball_display_unused_extra.4bpp");
+#ifdef ENGLISH
 const u8 unused_gfx_status2[] = INCBIN_U8("graphics/battle_interface/status2.4bpp");// these three duplicate sets of graphics are for the opponent pokemon and are also for use in double battles. they use dynamic palettes so coloring them is an extreme headache and wont be done for now.
 const u8 unused_gfx_status3[] = INCBIN_U8("graphics/battle_interface/status3.4bpp");
 const u8 unused_gfx_status4[] = INCBIN_U8("graphics/battle_interface/status4.4bpp");
+#elif defined(GERMAN)
+const u8 unused_gfx_status2[] = INCBIN_U8("graphics/battle_interface/status2_de.4bpp");
+const u8 unused_gfx_status3[] = INCBIN_U8("graphics/battle_interface/status3_de.4bpp");
+const u8 unused_gfx_status4[] = INCBIN_U8("graphics/battle_interface/status4_de.4bpp");
+#endif
 const u8 unused_gfx_unknown_D12FEC[] = INCBIN_U8("graphics/unknown/unknown_D12FEC.4bpp");
 const u8 unused_gfx_unknown_D1300C[] = INCBIN_U8("graphics/unknown/unknown_D1300C.4bpp");
 
@@ -365,7 +374,11 @@ const u8 unused_unknown_D177D8[] = INCBIN_U8("graphics/unknown/unknown_D177D8.bi
 
 const u8 gUnknown_08D17C3C[] = INCBIN_U8("graphics/unknown/unknown_D17C3C.bin.lz");
 
+#ifdef ENGLISH
 const u8 gContestMiscGfx[] = INCBIN_U8("graphics/contest/misc.4bpp.lz");
+#elif GERMAN
+const u8 gContestMiscGfx[] = INCBIN_U8("graphics/contest/misc_de.4bpp.lz");
+#endif
 
 const u8 gContestAudienceGfx[] = INCBIN_U8("graphics/contest/audience.4bpp.lz");
 const u8 unused_gfx_faces_4bpp[] = INCBIN_U8("graphics/contest/faces.4bpp.lz");
@@ -376,11 +389,19 @@ const u8 gContest3Pal[] = INCBIN_U8("graphics/contest/judge_symbols.gbapal.lz");
 
 const u8 gTiles_8D1975C[] = INCBIN_U8("graphics/contest/heart.4bpp");
 
+#ifdef ENGLISH
 const u8 gUnknown_08D1977C[] = INCBIN_U8("graphics/contest/misc_2.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gUnknown_08D1977C[] = INCBIN_U8("graphics/contest/misc_2_de.4bpp.lz");
+#endif
 
 const u8 gUnknown_08D1A250[] = INCBIN_U8("graphics/contest/misc_2_tilemap_1.bin.lz");
 
+#ifdef ENGLISH
 const u8 gUnknown_08D1A364[] = INCBIN_U8("graphics/contest/misc_2_tilemap_2.bin.lz");
+#elif defined(GERMAN)
+const u8 gUnknown_08D1A364[] = INCBIN_U8("graphics/contest/misc_2_tilemap_2_de.bin.lz");
+#endif
 
 const u8 gUnknown_08D1A490[] = INCBIN_U8("graphics/contest/misc_2_tilemap_3.bin.lz");
 
@@ -505,7 +526,11 @@ const u8 gBattleAnimSpritePalette_187[] = INCBIN_U8("graphics/battle_anims/sprit
 const u8 gBattleAnimSpriteSheet_186[] = INCBIN_U8("graphics/battle_anims/sprites/186.4bpp.lz");
 const u8 gBattleAnimSpritePalette_186[] = INCBIN_U8("graphics/battle_anims/sprites/186.gbapal.lz");
 
+#ifdef ENGLISH
 const u8 gBattleWindowLargeGfx[] = INCBIN_U8("graphics/battle_interface/window.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gBattleWindowLargeGfx[] = INCBIN_U8("graphics/battle_interface/window_de.4bpp.lz");
+#endif
 const u8 gBattleWindowSmallGfx[] = INCBIN_U8("graphics/battle_interface/window2.4bpp.lz");
 const u8 gBattleWindowSmall2Gfx[] = INCBIN_U8("graphics/battle_interface/window3.4bpp.lz");
 const u8 gBattleWindowSmall3Gfx[] = INCBIN_U8("graphics/battle_interface/window4.4bpp.lz");
@@ -811,15 +836,25 @@ const u8 gBattleAnimBackgroundPalette_15[] = INCBIN_U8("graphics/battle_anims/ba
 const u8 gBattleAnimBackgroundTilemap_15[] = INCBIN_U8("graphics/battle_anims/backgrounds/15.bin.lz");
 const u8 gBattleAnimSpriteSheet_262[] = INCBIN_U8("graphics/battle_anims/sprites/262.4bpp.lz");
 const u8 gBattleAnimSpritePalette_262[] = INCBIN_U8("graphics/battle_anims/sprites/262.gbapal.lz");
+#ifdef ENGLISH
 const u8 gContestNextTurnGfx[] = INCBIN_U8("graphics/contest/nextturn.4bpp.lz");
 const u8 gContestNextTurnNumbersGfx[] = INCBIN_U8("graphics/contest/nextturn_numbers.4bpp");
 const u8 gContestNextTurnRandomGfx[] = INCBIN_U8("graphics/contest/nextturn_random.4bpp");
+#elif defined(GERMAN)
+const u8 gContestNextTurnGfx[] = INCBIN_U8("graphics/contest/nextturn_de.4bpp.lz");
+const u8 gContestNextTurnNumbersGfx[] = INCBIN_U8("graphics/contest/nextturn_numbers_de.4bpp");
+const u8 gContestNextTurnRandomGfx[] = INCBIN_U8("graphics/contest/nextturn_random_de.4bpp");
+#endif
 const u8 gBattleAnimSpriteSheet_264[] = INCBIN_U8("graphics/battle_anims/sprites/264.4bpp.lz");
 const u8 gBattleAnimSpritePalette_264[] = INCBIN_U8("graphics/battle_anims/sprites/264.gbapal.lz");
 const u8 gBattleAnimSpritePalette_265[] = INCBIN_U8("graphics/battle_anims/sprites/265.gbapal.lz");
 const u8 gBattleAnimSpritePalette_067[] = INCBIN_U8("graphics/battle_anims/sprites/067.gbapal.lz");
 const u8 gBattleAnimSpritePalette_068[] = INCBIN_U8("graphics/battle_anims/sprites/068.gbapal.lz");
+#ifdef ENGLISH
 const u8 gContestApplauseGfx[] = INCBIN_U8("graphics/contest/applause.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gContestApplauseGfx[] = INCBIN_U8("graphics/contest/applause_de.4bpp.lz");
+#endif
 const u8 gContestApplauseMeterGfx[] = INCBIN_U8("graphics/contest/applause_meter.4bpp");
 const u8 gContestPal[] = INCBIN_U8("graphics/contest/nextturn.gbapal");
 const u8 gBattleAnimSpriteSheet_272[] = INCBIN_U8("graphics/battle_anims/sprites/272.4bpp.lz");
@@ -847,7 +882,11 @@ const u8 gBattleAnimSpritePalette_287[] = INCBIN_U8("graphics/battle_anims/sprit
 const u8 gBattleAnimBackgroundPalette_24[] = INCBIN_U8("graphics/battle_anims/backgrounds/24.gbapal.lz");
 const u8 unused_unknown_E6BC04[] = INCBIN_U8("graphics/unknown/unknown_E6BC04.bin.lz");
 const u8 gUnknown_08E6C100[] = INCBIN_U8("graphics/berry_blender/center.8bpp.lz");
+#ifdef ENGLISH
 const u8 gUnknown_08E6C920[] = INCBIN_U8("graphics/berry_blender/outer.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gUnknown_08E6C920[] = INCBIN_U8("graphics/berry_blender/outer_de.4bpp.lz");
+#endif
 const u8 gUnknown_08E6D354[] = INCBIN_U8("graphics/berry_blender/outer_map.bin.lz");
 const u8 gBattleAnimBackgroundPalette_16[] = INCBIN_U8("graphics/battle_anims/backgrounds/16.gbapal.lz");
 const u8 gBattleAnimBackgroundImage_16[] = INCBIN_U8("graphics/battle_anims/backgrounds/16.4bpp.lz");
@@ -887,37 +926,72 @@ const u8 gUnknown_08E70F0C[] = INCBIN_U8("graphics/unknown/unknown_E70F0C.bin.lz
 const u8 gBattleAnimSpritePalette_286[] = INCBIN_U8("graphics/battle_anims/sprites/286.gbapal.lz");
 const u8 gBattleAnimSpriteSheet_188[] = INCBIN_U8("graphics/battle_anims/sprites/188.4bpp.lz");
 const u8 gBattleAnimSpritePalette_188[] = INCBIN_U8("graphics/battle_anims/sprites/188.gbapal.lz");
+#ifdef ENGLISH
 const u8 gPartyMenuMisc_Gfx[] = INCBIN_U8("graphics/interface/party_menu_misc.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gPartyMenuMisc_Gfx[] = INCBIN_U8("graphics/interface/party_menu_misc_de.4bpp.lz");
+#endif
 const u8 gPartyMenuMisc_Pal[] = INCBIN_U8("graphics/interface/party_menu_misc.gbapal.lz");
 const u8 gPartyMenuMisc_Tilemap[] = INCBIN_U8("graphics/interface/party_menu_misc.bin.lz");
+#ifdef ENGLISH
 const u8 gPartyMenuHpBar_Gfx[] = INCBIN_U8("graphics/interface/party_menu_hpbar.4bpp.lz");
 const u8 gPartyMenuOrderText_Gfx[] = INCBIN_U8("graphics/interface/party_menu_ordertext.4bpp.lz");
 const u8 gMoveTypes_Gfx[] = INCBIN_U8("graphics/types/move_types.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gPartyMenuHpBar_Gfx[] = INCBIN_U8("graphics/interface/party_menu_hpbar_de.4bpp.lz");
+const u8 gPartyMenuOrderText_Gfx[] = INCBIN_U8("graphics/interface/party_menu_ordertext_de.4bpp.lz");
+const u8 gMoveTypes_Gfx[] = INCBIN_U8("graphics/types/move_types_de.4bpp.lz");
+#endif
 const u8 gMoveTypes_Pal[] = INCBIN_U8("graphics/types/move_types.gbapal.lz");
 const u8 gMenuSummaryGfx[] = INCBIN_U8("graphics/interface/summary_frames.4bpp.lz");// the arrows appear to be unused.
 
 const u8 gMenuSummaryPal[] = INCBIN_U8("graphics/interface/summary_frames.gbapal.lz");
+#ifdef ENGLISH
 const u8 gStatusGfx_Icons[] = INCBIN_U8("graphics/interface/status_icons.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gStatusGfx_Icons[] = INCBIN_U8("graphics/interface/status_icons_de.4bpp.lz");
+#endif
 const u8 gStatusPal_Icons[] = INCBIN_U8("graphics/interface/status_icons.gbapal.lz");
+#ifdef ENGLISH
 const u8 gStatusScreen_Gfx[] = INCBIN_U8("graphics/interface/status_screen.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gStatusScreen_Gfx[] = INCBIN_U8("graphics/interface/status_screen_de.4bpp.lz");
+#endif
 const u8 gStatusScreen_Pal[] = INCBIN_U8("graphics/interface/status_screen.gbapal.lz");
+#ifdef ENGLISH
 const u8 gUnknown_08E73508[] = INCBIN_U8("graphics/interface/status_screen.bin");
 const u8 gStatusScreen_Tilemap[] = INCBIN_U8("graphics/interface/status_screen_pokemon_skills.bin.lz");
 const u8 gUnknown_08E73E88[] = INCBIN_U8("graphics/interface/status_screen_battle_moves.bin");
 const u8 gUnknown_08E74688[] = INCBIN_U8("graphics/interface/status_screen_contest_moves.bin");
-const u8 gUnknown_08E74E88[] = INCBIN_U8("graphics/interface/pokemon_info.bin.lz");
+const u8 gUnknown_08E74E88[] = INCBIN_U8("graphics/interface/pokemon_info_de.bin.lz");
+#elif defined(GERMAN)
+const u8 gUnknown_08E73508[] = INCBIN_U8("graphics/interface/status_screen_de.bin");
+const u8 gStatusScreen_Tilemap[] = INCBIN_U8("graphics/interface/status_screen_pokemon_skills_de.bin.lz");
+const u8 gUnknown_08E73E88[] = INCBIN_U8("graphics/interface/status_screen_battle_moves_de.bin");
+const u8 gUnknown_08E74688[] = INCBIN_U8("graphics/interface/status_screen_contest_moves_de.bin");
+const u8 gUnknown_08E74E88[] = INCBIN_U8("graphics/interface/pokemon_info_de.bin.lz");
+#endif
 const u8 gBagMaleTiles[] = INCBIN_U8("graphics/misc/bag_male.4bpp.lz");
 const u8 gBagFemaleTiles[] = INCBIN_U8("graphics/misc/bag_female.4bpp.lz");
 const u8 gBagPalette[] = INCBIN_U8("graphics/misc/bag.gbapal.lz");
+#ifdef ENGLISH
 const u8 gBagScreen_Gfx[] = INCBIN_U8("graphics/interface/bag_screen.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gBagScreen_Gfx[] = INCBIN_U8("graphics/interface/bag_screen_de.4bpp.lz");
+#endif
 const u8 gBagScreenMale_Pal[] = INCBIN_U8("graphics/interface/bag_screen_male.gbapal.lz");
 const u8 gBagScreenFemale_Pal[] = INCBIN_U8("graphics/interface/bag_screen_female.gbapal.lz");
 const u8 gBagScreen_Tilemap[] = INCBIN_U8("graphics/interface/bag_screen.bin");
 const u8 gBuyMenuFrame_Gfx[] = INCBIN_U8("graphics/interface/mart_frame.4bpp.lz");
 const u8 gMenuMoneyPal[] = INCBIN_U8("graphics/interface/money.gbapal.lz");
 const u8 gBuyMenuFrame_Tilemap[] = INCBIN_U8("graphics/interface/mart_frame.bin.lz");
+#ifdef ENGLISH
 const u8 gMenuMoneyGfx[] = INCBIN_U8("graphics/interface/money.4bpp.lz");
 const u8 gMenuPokeblock_Gfx[] = INCBIN_U8("graphics/interface/pokeblock_case_frame.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gMenuMoneyGfx[] = INCBIN_U8("graphics/interface/money_de.4bpp.lz");
+const u8 gMenuPokeblock_Gfx[] = INCBIN_U8("graphics/interface/pokeblock_case_frame_de.4bpp.lz");
+#endif
 const u8 gMenuPokeblock_Pal[] = INCBIN_U8("graphics/interface/pokeblock_case_frame.gbapal.lz");
 const u8 gMenuPokeblockDevice_Gfx[] = INCBIN_U8("graphics/interface/pokeblock_device.4bpp.lz");
 const u8 gMenuPokeblockDevice_Pal[] = INCBIN_U8("graphics/interface/pokeblock_device.gbapal.lz");
@@ -938,7 +1012,11 @@ const u8 gPokeblockBlack_Pal[] = INCBIN_U8("graphics/pokeblock/black.gbapal.lz")
 const u8 gPokeblockWhite_Pal[] = INCBIN_U8("graphics/pokeblock/white.gbapal.lz");
 const u8 gPokeblockGold_Pal[] = INCBIN_U8("graphics/pokeblock/gold.gbapal.lz");
 const u8 gUnknown_08E782FC[] = INCBIN_U8("graphics/interface/pokeblock_feeding_bg_map.bin.lz");
+#ifdef ENGLISH
 const u8 gBerryCheck_Gfx[] = INCBIN_U8("graphics/interface/check_berry.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gBerryCheck_Gfx[] = INCBIN_U8("graphics/interface/check_berry_de.4bpp.lz");
+#endif
 const u8 gBerryCheck_Pal[] = INCBIN_U8("graphics/interface/check_berry.gbapal.lz");
 const u8 gUnknown_08E788E4[] = INCBIN_U8("graphics/interface/berry_tag.bin.lz");
 const u8 gUnknown_08E78A84[] = INCBIN_U8("graphics/interface/berry_tag_title.bin.lz");
@@ -1304,14 +1382,25 @@ const u16 gTextWindowFrame20_Pal[] = INCBIN_U16("graphics/text_window/20.gbapal"
 
 const u8 gUnknown_08E9C6DC[] = INCBIN_U8("graphics/unknown/unknown_E9C6DC.bin.lz");
 
+#if defined(EUROPE)
+const u8 gIntroCopyright_Gfx[] = INCBIN_U8("graphics/intro/copyright_eu.4bpp.lz");
+const u16 gIntroCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
+const u8 gIntroCopyright_Tilemap[] = INCBIN_U8("graphics/intro/copyright_eu.bin");
+#elif defined(ENGLISH)
 const u8 gIntroCopyright_Gfx[] = INCBIN_U8("graphics/intro/copyright.4bpp.lz");
 const u16 gIntroCopyright_Pal[] = INCBIN_U16("graphics/intro/copyright.gbapal");
 const u8 gIntroCopyright_Tilemap[] = INCBIN_U8("graphics/intro/copyright.bin");
+#endif
 
 const u8 gInterviewOutlineCursorTiles[] = INCBIN_U8("graphics/misc/interview_outline_cursor.4bpp");
+#ifdef ENGLISH
 const u8 gTitleScreenPressStart_Gfx[] = INCBIN_U8("graphics/title_screen/press_start.4bpp.lz");
+#elif defined(GERMAN)
+const u8 gTitleScreenPressStart_Gfx[] = INCBIN_U8("graphics/title_screen/press_start_de.4bpp.lz");
+#endif
 const u8 gTitleScreenLogoShinePalette[] = INCBIN_U8("graphics/title_screen/logo_shine.gbapal");
 
+#ifdef ENGLISH
 #ifdef SAPPHIRE
 const u8 gUnknown_08E9D8CC[] = INCBIN_U8("graphics/title_screen/pokemon_sapphire.8bpp.lz");
 const u8 gVersionTiles[] = INCBIN_U8("graphics/title_screen/sapphireversion.8bpp.lz");
@@ -1322,6 +1411,17 @@ const u8 gUnknown_08E9D8CC[] = INCBIN_U8("graphics/title_screen/pokemon_ruby.8bp
 const u8 gVersionTiles[] = INCBIN_U8("graphics/title_screen/rubyversion.8bpp.lz");
 const u16 gUnknown_08E9F624[] = INCBIN_U16("graphics/title_screen/logo_ruby.gbapal");
 #endif // SAPPHIRE
+#elif defined(GERMAN)
+#ifdef SAPPHIRE
+const u8 gUnknown_08E9D8CC[] = INCBIN_U8("graphics/title_screen/pokemon_saphir.8bpp.lz");
+const u8 gVersionTiles[] = INCBIN_U8("graphics/title_screen/saphiredition.8bpp.lz");
+const u16 gUnknown_08E9F624[] = INCBIN_U16("graphics/title_screen/logo_saphir.gbapal");
+#else
+const u8 gUnknown_08E9D8CC[] = INCBIN_U8("graphics/title_screen/pokemon_rubin.8bpp.lz");
+const u8 gVersionTiles[] = INCBIN_U8("graphics/title_screen/rubinedition.8bpp.lz");
+const u16 gUnknown_08E9F624[] = INCBIN_U16("graphics/title_screen/logo_rubin.gbapal");
+#endif // SAPPHIRE
+#endif
 
 const u8 gUnknown_08E9F7E4[] = INCBIN_U8("graphics/unknown/unknown_E9F7E4.bin.lz");
 const u16 gPokenavArrowsPalette[] = INCBIN_U16("graphics/pokenav/arrows.gbapal");
@@ -1360,7 +1460,7 @@ const u8 gDecoration10000_Gfx[] = INCBIN_U8("graphics/misc/decoration_10000.4bpp
         const u8 gFont3LatinGlyphs[] = INCBIN_U8("graphics/fonts/font3_lat.4bpp");
     #endif
 #else
-    const u8 gFont3LatinGlyphs[] = INCBIN_U8("graphics/fonts/font3_lat.4bpp");
+    const u8 gFont3LatinGlyphs[] = INCBIN_U8("graphics/fonts/font3_lat_de.4bpp");
 #endif
 
 #ifdef ENGLISH

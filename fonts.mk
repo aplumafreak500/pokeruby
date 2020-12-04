@@ -22,6 +22,9 @@ graphics/fonts/font3_lat.4bpp: graphics/fonts/font3_lat.png
 graphics/fonts/font3_lat_rev1.4bpp: graphics/fonts/font3_lat_rev1.png
 	$(RSFONT) $< $@ 254 1
 
+graphics/fonts/font3_lat_de.4bpp: graphics/fonts/font3_lat_de.png
+	$(RSFONT) $< $@ 254 1
+
 graphics/fonts/font4_lat.4bpp: graphics/fonts/font4_lat.png
 	$(RSFONT) $< $@ 220 0
 
