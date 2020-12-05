@@ -2077,7 +2077,11 @@ S_RunningShoesManual:: @ 81B6E5A
 	.endif
 	.include "data/scripts/pokeblocks.inc"
 
+	.ifdef ENGLISH
 	.include "data/text/trainers.inc"
+	.else
+	.include "data/text_de/trainers.inc"
+	.endif
 
 S_RepelWoreOff:: @ 81C33E6
 	msgbox Text_RepelWoreOff, MSGBOX_SIGN
