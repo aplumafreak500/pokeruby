@@ -735,7 +735,7 @@ UnknownString_819C21F: @ 819C21F
 	.include "data/maps_de/Route102/text.inc"
 	.include "data/maps_de/Route103/text.inc"
 	.include "data/maps_de/Route104/text.inc"
-	.include "data/maps/Route105/text.inc" @ Used but empty
+	.include "data/maps/Route105/text.inc"
 	.include "data/maps_de/Route106/text.inc"
 	.include "data/maps/Route107/text.inc"
 	.include "data/maps/Route108/text.inc"
@@ -876,7 +876,7 @@ UnknownString_819C21F: @ 819C21F
 	.include "data/maps_de/MossdeepCity_SpaceCenter_1F/text.inc"
 	.include "data/maps_de/MossdeepCity_SpaceCenter_2F/text.inc"
 	.include "data/maps_de/MossdeepCity_GameCorner_1F/text.inc"
-	.include "data/maps/MossdeepCity_GameCorner_B1F/text.inc" @ unused
+	.include "data/maps/MossdeepCity_GameCorner_B1F/text.inc"
 	.include "data/maps_de/SootopolisCity_Gym_1F/text.inc"
 	.include "data/maps/SootopolisCity_Gym_B1F/text.inc"
 	.include "data/maps_de/SootopolisCity_PokemonCenter_1F/text.inc"
@@ -1613,18 +1613,43 @@ Common_EventScript_Return:: @ 81A14DC
 
 	.include "data/scripts/debug.inc"
 	.include "data/scripts/berry_tree.inc"
+	.ifdef ENGLISH
 	.include "data/text/berry_tree.inc"
 	.include "data/text/secret_base_trainers.inc"
+	.else
+	.include "data/text_de/berry_tree.inc"
+	.include "data/text_de/secret_base_trainers.inc"
+	.endif
 	.include "data/scripts/secret_base.inc"
+	.ifdef ENGLISH
 	.include "data/text/secret_power_tm.inc"
+	.else
+	.include "data/text_de/secret_power_tm.inc"
+	.endif
 	.include "data/scripts/secret_power_tm.inc"
+	.ifdef ENGLISH
 	.include "data/text/secret_base.inc"
+	.else
+	.include "data/text_de/secret_base.inc"
+	.endif
 	.include "data/scripts/cable_club.inc"
+	.ifdef ENGLISH
 	.include "data/text/cable_club.inc"
+	.else
+	.include "data/text_de/cable_club.inc"
+	.endif
 	.include "data/scripts/contest_hall.inc"
+	.ifdef ENGLISH
 	.include "data/text/contest_hall.inc"
+	.else
+	.include "data/text_de/contest_hall.inc"
+	.endif
 	.include "data/scripts/tv.inc"
+	.ifdef ENGLISH
 	.include "data/text/tv.inc"
+	.else
+	.include "data/text_de/tv.inc"
+	.endif
 
 BattleTower_Lobby_EventScript_1ADE46:: @ 81ADE46
 FallarborTown_ContestLobby_EventScript_1ADE46:: @ 81ADE46
@@ -1999,14 +2024,23 @@ BattleTower_Lobby_EventScript_1AE30F:: @ 81AE30F
 	.include "data/item_ball_scripts.inc"
 
 	.include "data/scripts/mystery_event_club.inc"
+	.ifdef ENGLISH
 	.include "data/text/mystery_event_club.inc"
+	.else
+	.include "data/text_de/mystery_event_club.inc"
+	.endif
 
 	.include "data/scripts/day_care.inc"
+	.ifdef ENGLISH
 	.include "data/text/day_care.inc"
+	.else
+	.include "data/text_de/day_care.inc"
+	.endif
 
 	.include "data/scripts/magma_chimney.inc"
 	.include "data/scripts/magma_summit.inc"
 
+	.ifdef ENGLISH
 	.include "data/text/aqua_chimney.inc"
 	.include "data/text/magma_chimney.inc"
 	.include "data/text/aqua_awakening.inc"
@@ -2015,6 +2049,16 @@ BattleTower_Lobby_EventScript_1AE30F:: @ 81AE30F
 	.include "data/text/magma_settled.inc"
 	.include "data/text/aqua_summit.inc"
 	.include "data/text/magma_summit.inc"
+	.else
+	.include "data/text_de/aqua_chimney.inc"
+	.include "data/text_de/magma_chimney.inc"
+	.include "data/text_de/aqua_awakening.inc"
+	.include "data/text_de/magma_awakening.inc"
+	.include "data/text_de/aqua_settled.inc"
+	.include "data/text_de/magma_settled.inc"
+	.include "data/text_de/aqua_summit.inc"
+	.include "data/text_de/magma_summit.inc"
+	.endif
 
 gUnknown_081B694A:: @ 81B694A
 	animateflash 1
@@ -2027,7 +2071,11 @@ S_RunningShoesManual:: @ 81B6E5A
 	msgbox UnknownString_81728E3, MSGBOX_SIGN
 	end
 
+	.ifdef ENGLISH
 	.include "data/text/pokeblocks.inc"
+	.else
+	.include "data/text_de/pokeblocks.inc"
+	.endif
 	.include "data/scripts/pokeblocks.inc"
 
 	.include "data/text/trainers.inc"
@@ -2037,10 +2085,18 @@ S_RepelWoreOff:: @ 81C33E6
 	end
 
 Text_RepelWoreOff: @ 81C33EF
+	.ifdef ENGLISH
 	.string "REPEL's effect wore off...$"
+	.else
+	.string "SCHUTZ wirkt nicht mehr...$"
+	.endif
 
 	.include "data/scripts/safari_zone.inc"
+	.ifdef ENGLISH
 	.include "data/text/safari_zone.inc"
+	.else
+	.include "data/text_de/safari_zone.inc"
+	.endif
 
 MauvilleCity_GameCorner_EventScript_1C407E:: @ 81C407E
 	checkitem ITEM_COIN_CASE, 1
@@ -2071,6 +2127,7 @@ MauvilleCity_GameCorner_EventScript_1C40DA:: @ 81C40DA
 	waitstate
 	end
 
+	.ifdef ENGLISH
 	.include "data/text/roulette.inc"
 	.include "data/text/barboach.inc"
 	.include "data/text/pokedex_rating.inc"
@@ -2080,6 +2137,17 @@ MauvilleCity_GameCorner_EventScript_1C40DA:: @ 81C40DA
 	.include "data/text/berries.inc"
 	.include "data/text/shoal_cave.inc"
 	.include "data/text/check_furniture.inc"
+	.else
+	.include "data/text_de/roulette.inc"
+	.include "data/text_de/barboach.inc"
+	.include "data/text_de/pokedex_rating.inc"
+	.include "data/text_de/lottery_corner.inc"
+	.include "data/text_de/eon_ticket.inc"
+	.include "data/text_de/braille.inc"
+	.include "data/text_de/berries.inc"
+	.include "data/text_de/shoal_cave.inc"
+	.include "data/text_de/check_furniture.inc"
+	.endif
 	.include "data/scripts/cave_hole.inc"
 
 @ 81C6BF9
@@ -2134,5 +2202,10 @@ Text_1C6C62: @ 81C6C62
 	.align 2
 	.string "$"
 
+	.ifdef ENGLISH
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+	.else
+	.include "data/text_de/save.inc"
+	.include "data/text_de/birch_speech.inc"
+	.endif
