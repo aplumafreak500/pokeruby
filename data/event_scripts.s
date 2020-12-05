@@ -1554,7 +1554,7 @@ gText_NurseJoy_Pokerus:: @ 81A1275
 	.string "Sind deine POKéMON infiziert, wachsen\n"
 	.string "sie besonders gut.$"
 
-	.include "data/text/surf.inc"
+	.include "data/text_de/surf.inc"
 
 SealedChamber_InnerRoom_Text_1A138B:: @ 81A138B
 	.string "Das hörte sich an, als würde irgendwo\n"
@@ -1581,7 +1581,6 @@ OldaleTown_PokemonCenter_2F_Text_1A145C:: @ 81A145C
 FallarborTown_House1_Text_1A1498:: @ 81A1498
 	.string "{PLAYER} übergibt\n"
 	.string "{STR_VAR_1}.$"
-	
 	.endif
 
 Event_NoRegisteredItem:: @ 81A14AF
