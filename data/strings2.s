@@ -767,7 +767,7 @@ gOtherText_FourQuestions:: @ 842C7D6
 	.string "????$"
 
 @ 842C7DB
-	.include "data/text/easy_chat/group_name_strings.inc"
+	.include "data/text_de/easy_chat/group_name_strings.inc"
 
 gOtherText_ThreeQuestions:: @ 842C890
 	.string "???$"
@@ -1005,7 +1005,7 @@ gOtherText_LinkStandby:: @ 842CEAF
 	.string "Verbindung...$"
 
 @ 842CEBF
-	.include "data/text/landmarks.inc"
+	.include "data/text_de/landmarks.inc"
 
 gOtherText_Terminator4:: @ 842D0E6
 	.string ", $"

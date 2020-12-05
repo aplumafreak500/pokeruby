@@ -1081,5 +1081,5 @@ gTVWorldOfMastersText3:: @ 81ABDF2
 	.string "Das war's für heute.\n"
 	.string "Bis zum nächsten Mal.$"
 
-	.include "data/text/gabby_and_ty.inc"
-	.include "data/text/pokemon_news.inc"
+	.include "data/text_de/gabby_and_ty.inc"
+	.include "data/text_de/pokemon_news.inc"

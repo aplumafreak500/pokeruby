@@ -277,16 +277,28 @@ gSpriteAffineAnimTable_81F971C:: @ 81F971C
 	.include "data/type_effectiveness.inc"
 
 @ 81F9870
+	.ifdef ENGLISH
 	.include "data/text/type_names.inc"
+	.else
+	.include "data/text_de/type_names.inc"
+	.endif
 
 @ 81F98F0
 	.include "data/trainer_money.inc"
 
+	.ifdef ENGLISH
 @ 81F99CC
 	.include "data/text/ability_descriptions.inc"
 
 @ 81FA248
 	.include "data/text/ability_names.inc"
+	.else
+@ 81F99CC
+	.include "data/text_de/ability_descriptions.inc"
+
+@ 81FA248
+	.include "data/text_de/ability_names.inc"
+	.endif
 
 	.align 2
 gUnknown_081FA640:: @ 81FA640
