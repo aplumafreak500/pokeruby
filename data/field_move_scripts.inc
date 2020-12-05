@@ -45,6 +45,7 @@ Cut_ChoseNo: @ 81B0E3C
 	releaseall
 	end
 
+	.ifdef ENGLISH
 UseCutPromptText: @ 81B0E3F
 	.string "This tree looks like it can be CUT down.\p"
 	.string "Would you like to CUT it?$"
@@ -54,6 +55,20 @@ UsedCutRockSmashText: @ 81B0E82
 
 CannotUseCutText: @ 81B0E8E
 	.string "This tree looks like it can be CUT down.$"
+	.else
+UseCutPromptText: @ 81B0E3F
+	.string "Du kannst den ZERSCHNEIDER hier\n"
+	.string "einsetzen!\p"
+	.string "Möchtest du den ZERSCHNEIDER\n"
+	.string "einsetzen?$"
+
+UsedCutRockSmashText: @ 81B0E82
+	.string "{STR_VAR_1} setzt {STR_VAR_2} ein.$"
+
+CannotUseCutText: @ 81B0E8E
+	.string "Der ZERSCHNEIDER kann hier eingesetzt\n"
+	.string "werden.$"
+	.endif
 
 S_BreakableRock:: @ 81B0EB7
 	lockall
@@ -113,6 +128,7 @@ RockSmash_ChoseNo: @ 81B0F48
 	releaseall
 	end
 
+	.ifdef ENGLISH
 UseRockSmashPromptText: @ 81B0F4B
 	.string "This rock appears to be breakable.\n"
 	.string "Would you like to use ROCK SMASH?$"
@@ -120,6 +136,15 @@ UseRockSmashPromptText: @ 81B0F4B
 CannotUseRockSmashText: @ 81B0F90
 	.string "It's a rugged rock, but a POKéMON\n"
 	.string "may be able to smash it.$"
+	.else
+UseRockSmashPromptText: @ 81B0F4B
+	.string "Dieser Fels sieht zerbrechlich aus.\n"
+	.string "Soll ZERTRÜMMERER eingesetzt werden?$"
+
+CannotUseRockSmashText: @ 81B0F90
+	.string "Ein großer Felsen. Ein POKéMON könnte\n"
+	.string "ihn vielleicht zertrümmern.$"
+	.endif
 
 S_PushableBoulder:: @ 81B0FCB
 	lockall
@@ -166,6 +191,7 @@ Strength_ChoseNo: @ 81B103A
 	releaseall
 	end
 
+	.ifdef ENGLISH
 UseStrengthPromptText: @ 81B103D
 	.string "It's a big boulder, but a POKéMON\n"
 	.string "may be able to push it aside.\p"
@@ -183,6 +209,25 @@ CannotUseStrengthText: @ 81B10E7
 AlreadyUsedStrengthText: @ 81B1127
 	.string "STRENGTH made it possible to move\n"
 	.string "boulders around.$"
+	.else
+UseStrengthPromptText: @ 81B103D
+	.string "Ein POKéMON kann diesen Felsen\n"
+	.string "vielleicht bewegen.\p"
+	.string "Möchtest du STÄRKE einsetzen?$"
+
+UsedStrengthText: @ 81B109D
+	.string "{STR_VAR_1} setzt STÄRKE ein.\p"
+	.string "STÄRKE von {STR_VAR_1} ermöglicht es,\n"
+	.string "den Felsen zu bewegen.$"
+
+CannotUseStrengthText: @ 81B10E7
+	.string "Ein POKéMON kann diesen Felsen\n"
+	.string "vielleicht bewegen.$"
+
+AlreadyUsedStrengthText: @ 81B1127
+	.string "STÄRKE ermöglicht es, Felsen zu\n"
+	.string "bewegen.$"
+	.endif
 
 S_UseWaterfall:: @ 81B115A
 	lockall
@@ -206,6 +251,7 @@ Waterfall_Done:  @ 81B119D
 	releaseall
 	end
 
+	.ifdef ENGLISH
 CannotUseWaterfallText: @ 81B119F
 	.string "A wall of water is crashing down with\n"
 	.string "a mighty roar.$"
@@ -216,6 +262,18 @@ UseWaterfallPromptText: @ 81B11D4
 
 UsedWaterfallText: @ 81B120D
 	.string "{STR_VAR_1} used WATERFALL.$"
+	.else
+CannotUseWaterfallText: @ 81B119F
+	.string "Das Wasser fällt steil wie eine Wand\n"
+	.string "brüllend in die Tiefe.$"
+
+UseWaterfallPromptText: @ 81B11D4
+	.string "Ein riesiger Wasserfall.\n"
+	.string "Möchtest du KASKADE einsetzen?$"
+
+UsedWaterfallText: @ 81B120D
+	.string "{STR_VAR_1} setzt KASKADE ein.$"
+	.endif
 
 UseDiveScript:: @ 81B1220
 	lockall
@@ -269,6 +327,7 @@ UnderwaterDive_Done: @ 81B12BE
 	releaseall
 	end
 
+	.ifdef ENGLISH
 CannotUseDiveText: @ 81B12C0
 	.string "The sea is deep here. A POKéMON may be\n"
 	.string "able to go underwater here.$"
@@ -291,10 +350,39 @@ UnderwaterUseDivePromptText: @ 81B138E
 SurfacingBlockedText: @ 81B13CE
 	.string "There is something in the way above.\n"
 	.string "DIVE can't be used here.$"
+	.else
+CannotUseDiveText: @ 81B12C0
+	.string "Das Wasser ist hier tief. Ein POKéMON\n"
+	.string "könnte hier vielleicht tauchen.$"
+
+UseDivePromptText: @ 81B1303
+	.string "Das Meer ist an dieser Stelle sehr tief.\n"
+	.string "Möchtest du TAUCHER einsetzen?$"
+
+UsedDiveText: @ 81B1335
+	.string "{STR_VAR_1} setzt TAUCHER ein.$"
+
+UnderwaterCannotUseDiveText: @ 81B1343
+	.string "Licht schimmert von oben herab. Ein\n"
+	.string "POKéMON könnte hier auftauchen.$"
+
+UnderwaterUseDivePromptText: @ 81B138E
+	.string "Licht schimmert von oben herab.\n"
+	.string "Möchtest du TAUCHER einsetzen?$"
+
+SurfacingBlockedText: @ 81B13CE
+	.string "An der Oberfläche ist irgendetwas im\n"
+	.string "Weg. TAUCHER kann nicht\l"
+	.string "eingesetzt werden.$"
+	.endif
 
 SweetScentNothingHereScript:: @ 81B140C
 	msgbox SweetScentNothingHereText, MSGBOX_SIGN
 	end
 
 SweetScentNothingHereText: @ 81B1415
+	.ifdef ENGLISH
 	.string "There appears to be nothing here...$"
+	.else
+	.string "Hier scheint nichts zu sein...$"
+	.endif
