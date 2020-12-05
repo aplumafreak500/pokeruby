@@ -26,21 +26,6 @@ else
 endif
 endif
 
-# Revision
-ifeq ($(GAME_REVISION), 0)
-  BUILD_NAME := $(BUILD_NAME)
-else
-ifeq ($(GAME_REVISION), 1)
-  BUILD_NAME := $(BUILD_NAME)_rev1
-else
-ifeq ($(GAME_REVISION), 2)
-  BUILD_NAME := $(BUILD_NAME)_rev2
-else
-  $(error unknown revision $(GAME_REVISION))
-endif
-endif
-endif
-
 # Language
 ifeq ($(GAME_LANGUAGE), ENGLISH)
   BUILD_NAME := $(BUILD_NAME)
@@ -55,6 +40,21 @@ ifeq ($(GAME_LANGUAGE), PAL)
   GAME_CODE  := $(GAME_CODE)P
 else
   $(error unknown language $(GAME_LANGUAGE))
+endif
+endif
+endif
+
+# Revision
+ifeq ($(GAME_REVISION), 0)
+  BUILD_NAME := $(BUILD_NAME)
+else
+ifeq ($(GAME_REVISION), 1)
+  BUILD_NAME := $(BUILD_NAME)_rev1
+else
+ifeq ($(GAME_REVISION), 2)
+  BUILD_NAME := $(BUILD_NAME)_rev2
+else
+  $(error unknown revision $(GAME_REVISION))
 endif
 endif
 endif
