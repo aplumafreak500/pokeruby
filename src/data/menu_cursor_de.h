@@ -1,22 +1,22 @@
 #ifndef GUARD_DATA_MENU_CURSOR_H
 #define GUARD_DATA_MENU_CURSOR_H
 
-const u8 OutlineCursorTiles_00[] = INCBIN_U8("graphics/interface/outline_cursor_00.4bpp");
-const u8 OutlineCursorTiles_01[] = INCBIN_U8("graphics/interface/outline_cursor_01.4bpp");
-const u8 OutlineCursorTiles_02[] = INCBIN_U8("graphics/interface/outline_cursor_02.4bpp");
-const u8 OutlineCursorTiles_03[] = INCBIN_U8("graphics/interface/outline_cursor_03.4bpp");
-const u8 OutlineCursorTiles_04[] = INCBIN_U8("graphics/interface/outline_cursor_04.4bpp");
-const u8 OutlineCursorTiles_05[] = INCBIN_U8("graphics/interface/outline_cursor_05.4bpp");
-const u8 OutlineCursorTiles_06[] = INCBIN_U8("graphics/interface/outline_cursor_06.4bpp");
-const u8 OutlineCursorTiles_07[] = INCBIN_U8("graphics/interface/outline_cursor_07.4bpp");
-const u8 OutlineCursorTiles_08[] = INCBIN_U8("graphics/interface/outline_cursor_08.4bpp");
-const u8 OutlineCursorTiles_09[] = INCBIN_U8("graphics/interface/outline_cursor_09.4bpp");
-const u8 OutlineCursorTiles_10[] = INCBIN_U8("graphics/interface/outline_cursor_10.4bpp");
-const u8 OutlineCursorTiles_11[] = INCBIN_U8("graphics/interface/outline_cursor_11.4bpp");
-const u8 OutlineCursorTiles_12[] = INCBIN_U8("graphics/interface/outline_cursor_12.4bpp");
-const u8 OutlineCursorTiles_13[] = INCBIN_U8("graphics/interface/outline_cursor_13.4bpp");
-const u8 OutlineCursorTiles_14[] = INCBIN_U8("graphics/interface/outline_cursor_14.4bpp");
-const u8 OutlineCursorTiles_15[] = INCBIN_U8("graphics/interface/outline_cursor_15.4bpp");
+const u8 OutlineCursorTiles_00[] = INCBIN_U8("graphics/interface/outline_cursor_eu_00.4bpp");
+const u8 OutlineCursorTiles_01[] = INCBIN_U8("graphics/interface/outline_cursor_eu_01.4bpp");
+const u8 OutlineCursorTiles_02[] = INCBIN_U8("graphics/interface/outline_cursor_eu_02.4bpp");
+const u8 OutlineCursorTiles_03[] = INCBIN_U8("graphics/interface/outline_cursor_eu_03.4bpp");
+const u8 OutlineCursorTiles_04[] = INCBIN_U8("graphics/interface/outline_cursor_eu_04.4bpp");
+const u8 OutlineCursorTiles_05[] = INCBIN_U8("graphics/interface/outline_cursor_eu_05.4bpp");
+const u8 OutlineCursorTiles_06[] = INCBIN_U8("graphics/interface/outline_cursor_eu_06.4bpp");
+const u8 OutlineCursorTiles_07[] = INCBIN_U8("graphics/interface/outline_cursor_eu_07.4bpp");
+const u8 OutlineCursorTiles_08[] = INCBIN_U8("graphics/interface/outline_cursor_eu_08.4bpp");
+const u8 OutlineCursorTiles_09[] = INCBIN_U8("graphics/interface/outline_cursor_eu_09.4bpp");
+const u8 OutlineCursorTiles_10[] = INCBIN_U8("graphics/interface/outline_cursor_eu_10.4bpp");
+const u8 OutlineCursorTiles_11[] = INCBIN_U8("graphics/interface/outline_cursor_eu_11.4bpp");
+const u8 OutlineCursorTiles_12[] = INCBIN_U8("graphics/interface/outline_cursor_eu_12.4bpp");
+const u8 OutlineCursorTiles_13[] = INCBIN_U8("graphics/interface/outline_cursor_eu_13.4bpp");
+const u8 OutlineCursorTiles_14[] = INCBIN_U8("graphics/interface/outline_cursor_eu_14.4bpp");
+const u8 OutlineCursorTiles_15[] = INCBIN_U8("graphics/interface/outline_cursor_eu_15.4bpp");
 
 const struct OamData gOamData_842F11C = {
     .objMode = ST_OAM_OBJ_NORMAL,

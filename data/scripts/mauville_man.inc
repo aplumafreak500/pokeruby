@@ -112,7 +112,11 @@ teach_new_word:
 @ Trader
 @-------------------------------------------------------------------------------
 
+	.ifdef ENGLISH
 	.include "data/text/trader.inc"
+	.else
+	.include "data/text_de/trader.inc"
+	.endif
 
 SpeakToTrader:
 	lock
@@ -208,7 +212,11 @@ decorations_full:
 @ Storyteller
 @-------------------------------------------------------------------------------
 
+	.ifdef ENGLISH
 	.include "data/text/storyteller.inc"
+	.else
+	.include "data/text_de/storyteller.inc"
+	.endif
 
 SpeakToStoryteller:
 	setvar VAR_0x8008, 0
@@ -292,7 +300,11 @@ cant_record_story:
 @ Giddy
 @-------------------------------------------------------------------------------
 
+	.ifdef ENGLISH
 	.include "data/text/giddy.inc"
+	.else
+	.include "data/text_de/giddy.inc"
+	.endif
 
 SpeakToGiddy:
 	lock
@@ -346,5 +358,10 @@ bye_bye:
 	release
 	end
 
+	.ifdef ENGLISH
 	.include "data/text/bard.inc"
 	.include "data/text/hipster.inc"
+	.else
+	.include "data/text_de/bard.inc"
+	.include "data/text_de/hipster.inc"
+	.endif

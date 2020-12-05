@@ -3,8 +3,10 @@
 PSSGFXDIR := graphics/pokemon_storage
 
 $(PSSGFXDIR)/header.4bpp: GFX_OPTS := -num_tiles 47
+$(PSSGFXDIR)/header_de.4bpp: GFX_OPTS := -num_tiles 47
 
 $(PSSGFXDIR)/misc1.4bpp: GFX_OPTS := -num_tiles 91
+$(PSSGFXDIR)/misc1_de.4bpp: GFX_OPTS := -num_tiles 91
 
 $(PSSGFXDIR)/forest_frame.4bpp: GFX_OPTS := -num_tiles 49
 $(PSSGFXDIR)/forest.4bpp: $(PSSGFXDIR)/forest_frame.4bpp $(PSSGFXDIR)/forest_bg.4bpp
@@ -85,14 +87,14 @@ $(INTROGFXDIR)/intro3_misc.4bpp: $(INTROGFXDIR)/intro3_star.4bpp $(INTROGFXDIR)/
 	@cat $(INTROGFXDIR)/intro3_star.4bpp $(INTROGFXDIR)/intro3_attackgfx.4bpp $(INTROGFXDIR)/intro3_explosion.4bpp >$@
 
 $(INTROGFXDIR)/copyright.4bpp: GFX_OPTS := -num_tiles 43
-
+$(INTROGFXDIR)/copyright_eu.4bpp: GFX_OPTS := -num_tiles 47
 
 #### Title Screen ####
 
 TITLEGFXDIR := graphics/title_screen
 
 $(TITLEGFXDIR)/press_start.4bpp: GFX_OPTS := -num_tiles 41
-
+$(TITLEGFXDIR)/press_start_de.4bpp: GFX_OPTS := -num_tiles 41
 
 #### Interface ####
 
@@ -102,21 +104,28 @@ $(MENUGFXDIR)/menu.gbapal: $(MENUGFXDIR)/menu_0.gbapal $(MENUGFXDIR)/menu_1.gbap
 	@cat $(MENUGFXDIR)/menu_0.gbapal $(MENUGFXDIR)/menu_1.gbapal >$@
 
 $(MENUGFXDIR)/wordgroup_frame.4bpp: GFX_OPTS := -num_tiles 65
+$(MENUGFXDIR)/wordgroup_frame_de.4bpp: GFX_OPTS := -num_tiles 76
 
 $(MENUGFXDIR)/party_menu_misc.4bpp: GFX_OPTS := -num_tiles 116
+$(MENUGFXDIR)/party_menu_misc_de.4bpp: GFX_OPTS := -num_tiles 116
 
 $(MENUGFXDIR)/status_screen.4bpp: GFX_OPTS := -num_tiles 217
+$(MENUGFXDIR)/status_screen_de.4bpp: GFX_OPTS := -num_tiles 217
 
 $(MENUGFXDIR)/hp_numbers.4bpp: $(MENUGFXDIR)/hpbar_anim.4bpp $(MENUGFXDIR)/numbers1.4bpp $(MENUGFXDIR)/numbers2.4bpp
 	@cat $(MENUGFXDIR)/hpbar_anim.4bpp $(MENUGFXDIR)/numbers1.4bpp $(MENUGFXDIR)/numbers2.4bpp >$@
 
+$(MENUGFXDIR)/check_berry_de.4bpp: GFX_OPTS := -num_tiles 97
 
 #### Battle Interface ####
 
 BATTLEINTERFACEDIR := graphics/battle_interface
 
 $(BATTLEINTERFACEDIR)/healthbox_elements.4bpp: $(BATTLEINTERFACEDIR)/hpbar.4bpp $(BATTLEINTERFACEDIR)/expbar.4bpp $(BATTLEINTERFACEDIR)/status_psn.4bpp $(BATTLEINTERFACEDIR)/status_par.4bpp $(BATTLEINTERFACEDIR)/status_slp.4bpp $(BATTLEINTERFACEDIR)/status_frz.4bpp $(BATTLEINTERFACEDIR)/status_brn.4bpp $(BATTLEINTERFACEDIR)/misc.4bpp $(BATTLEINTERFACEDIR)/hpbar_anim.4bpp $(BATTLEINTERFACEDIR)/misc_frameend.4bpp
-	cat $^ > $@
+	@cat $^ > $@
+
+$(BATTLEINTERFACEDIR)/healthbox_elements_de.4bpp: $(BATTLEINTERFACEDIR)/hpbar_de.4bpp $(BATTLEINTERFACEDIR)/expbar.4bpp $(BATTLEINTERFACEDIR)/status_psn_de.4bpp $(BATTLEINTERFACEDIR)/status_par_de.4bpp $(BATTLEINTERFACEDIR)/status_slp_de.4bpp $(BATTLEINTERFACEDIR)/status_frz_de.4bpp $(BATTLEINTERFACEDIR)/status_brn_de.4bpp $(BATTLEINTERFACEDIR)/misc.4bpp $(BATTLEINTERFACEDIR)/hpbar_anim.4bpp $(BATTLEINTERFACEDIR)/misc_frameend.4bpp
+	@cat $^ > $@
 
 #### PokeNav ####
 
@@ -127,12 +136,18 @@ $(PKNAVGFXDIR)/region_map.8bpp: GFX_OPTS := -num_tiles 233
 $(PKNAVGFXDIR)/outline.4bpp: GFX_OPTS := -num_tiles 43
 
 $(PKNAVGFXDIR)/menu_options.4bpp: $(PKNAVGFXDIR)/menu_hoennmap.4bpp $(PKNAVGFXDIR)/menu_condition.4bpp $(PKNAVGFXDIR)/menu_eyes.4bpp $(PKNAVGFXDIR)/menu_ribbons.4bpp $(PKNAVGFXDIR)/menu_off.4bpp
-	@cat $(PKNAVGFXDIR)/menu_hoennmap.4bpp $(PKNAVGFXDIR)/menu_condition.4bpp $(PKNAVGFXDIR)/menu_eyes.4bpp $(PKNAVGFXDIR)/menu_ribbons.4bpp $(PKNAVGFXDIR)/menu_off.4bpp >$@
+	@cat $^ > $@
+
+$(PKNAVGFXDIR)/menu_options_de.4bpp: $(PKNAVGFXDIR)/menu_hoennmap_de.4bpp $(PKNAVGFXDIR)/menu_condition_de.4bpp $(PKNAVGFXDIR)/menu_eyes_de.4bpp $(PKNAVGFXDIR)/menu_ribbons_de.4bpp $(PKNAVGFXDIR)/menu_off_de.4bpp
+	@cat $^ > $@
 
 $(PKNAVGFXDIR)/condition_menu_misc.4bpp: GFX_OPTS := -num_tiles 41
 
 $(PKNAVGFXDIR)/condition_search.4bpp: $(PKNAVGFXDIR)/condition_search_cool.4bpp $(PKNAVGFXDIR)/condition_search_beauty.4bpp $(PKNAVGFXDIR)/condition_search_cute.4bpp $(PKNAVGFXDIR)/condition_search_smart.4bpp $(PKNAVGFXDIR)/condition_search_tough.4bpp $(PKNAVGFXDIR)/condition_search_cancel.4bpp
-	@cat $(PKNAVGFXDIR)/condition_search_cool.4bpp $(PKNAVGFXDIR)/condition_search_beauty.4bpp $(PKNAVGFXDIR)/condition_search_cute.4bpp $(PKNAVGFXDIR)/condition_search_smart.4bpp $(PKNAVGFXDIR)/condition_search_tough.4bpp $(PKNAVGFXDIR)/condition_search_cancel.4bpp >$@
+	@cat $^ > $@
+
+$(PKNAVGFXDIR)/condition_search_de.4bpp: $(PKNAVGFXDIR)/condition_search_cool_de.4bpp $(PKNAVGFXDIR)/condition_search_beauty_de.4bpp $(PKNAVGFXDIR)/condition_search_cute_de.4bpp $(PKNAVGFXDIR)/condition_search_smart_de.4bpp $(PKNAVGFXDIR)/condition_search_tough_de.4bpp $(PKNAVGFXDIR)/condition_search_cancel_de.4bpp
+	@cat $^ > $@
 
 
 #### Trade ####
@@ -142,7 +157,7 @@ TRADEGFXDIR := graphics/trade
 $(TRADEGFXDIR)/gba_affine.8bpp: GFX_OPTS := -num_tiles 129
 
 $(TRADEGFXDIR)/menu.4bpp: GFX_OPTS := -num_tiles 148
-
+$(TRADEGFXDIR)/menu_de.4bpp: GFX_OPTS := -num_tiles 148
 
 #### Casino ####
 
@@ -194,7 +209,7 @@ $(BATTRANSGFXDIR)/vs_frame.4bpp: GFX_OPTS := -num_tiles 16
 CONTESTGFXDIR := graphics/contest
 
 $(CONTESTGFXDIR)/nextturn.4bpp: GFX_OPTS := -num_tiles 8
-
+$(CONTESTGFXDIR)/nextturn_de.4bpp: GFX_OPTS := -num_tiles 8
 
 #### Picture Frame ####
 
@@ -213,17 +228,21 @@ contest_types := cool beauty cute smart tough
 $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%.4bpp)
 	@cat $^ >$@
 
+$(TYPESGFXDIR)/move_types_de.4bpp: $(types:%=$(TYPESGFXDIR)/%_de.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%_de.4bpp)
+	@cat $^ >$@
+
 $(TYPESGFXDIR)/move_types.gbapal: $(TYPESGFXDIR)/move_types_1.gbapal $(TYPESGFXDIR)/move_types_2.gbapal $(TYPESGFXDIR)/move_types_3.gbapal $(TYPESGFXDIR)/move_types_4.gbapal
 	@cat $(TYPESGFXDIR)/move_types_1.gbapal $(TYPESGFXDIR)/move_types_2.gbapal $(TYPESGFXDIR)/move_types_3.gbapal $(TYPESGFXDIR)/move_types_4.gbapal >$@
-
 
 #### Miscellaneous ####
 
 MISCGFXDIR := graphics/misc
 
 $(MISCGFXDIR)/hof.4bpp: GFX_OPTS := -num_tiles 37
+$(MISCGFXDIR)/hof_de.4bpp: GFX_OPTS := -num_tiles 37
 
 $(MISCGFXDIR)/end_copyright.4bpp: GFX_OPTS := -num_tiles 90
+$(MISCGFXDIR)/end_copyright_de.4bpp: GFX_OPTS := -num_tiles 92
 
 $(MISCGFXDIR)/birch_help.4bpp: $(MISCGFXDIR)/birch_bag.4bpp $(MISCGFXDIR)/birch_grass.4bpp
 	@cat $(MISCGFXDIR)/birch_bag.4bpp $(MISCGFXDIR)/birch_grass.4bpp >$@

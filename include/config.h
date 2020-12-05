@@ -28,31 +28,35 @@
 #endif
 
 #if GERMAN || ITALIAN || SPANISH || FRENCH || DUTCH || PAL
-#define EUROPEAN 1
+#define EUROPE
 #endif
 
-#if (ENGLISH && REVISION >= 2) || (EUROPEAN && REVISION >= 1)
+#if !defined(ENGLISH) && PAL
+#define ENGLISH 1
+#endif
+
+#if (ENGLISH && REVISION >= 2) || (defined(EUROPE) && REVISION >= 1)
 #define BUGFIX_BERRY
 #endif
 
-#if (ENGLISH && REVISION >= 1) || EUROPEAN
+#if (ENGLISH && REVISION >= 1) || defined(EUROPE)
 #define BUGFIX_GLYPHWIDTH
 #define BUGFIX_SAVEFAILEDSCREEN1
 #endif
 
-#if (ENGLISH && REVISION >= 3) || EUROPEAN
+#if (ENGLISH && REVISION >= 3) || defined(EUROPE)
 #define BUGFIX_SAVEFAILEDSCREEN2
 // European editions of Ruby/Sapphire and all editions of Emerald have this fix.
 #define BUGFIX_TRAINERAPPROACH
 #endif
 
-#if (ENGLISH && REVISION >= 1) || EUROPEAN
+#if (ENGLISH && REVISION >= 1) || defined(EUROPE)
 #define BUGFIX_EVO_NAME
 #endif
 
-#ifdef ENGLISH
+#if ENGLISH && !defined(EUROPE)
 #define UNITS_IMPERIAL
-#elif EUROPEAN
+#else
 #define UNITS_METRIC
 #endif
 
