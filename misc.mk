@@ -3,8 +3,10 @@
 PSSGFXDIR := graphics/pokemon_storage
 
 $(PSSGFXDIR)/header.4bpp: GFX_OPTS := -num_tiles 47
+$(PSSGFXDIR)/header_de.4bpp: GFX_OPTS := -num_tiles 47
 
 $(PSSGFXDIR)/misc1.4bpp: GFX_OPTS := -num_tiles 91
+$(PSSGFXDIR)/misc1_de.4bpp: GFX_OPTS := -num_tiles 91
 
 $(PSSGFXDIR)/forest_frame.4bpp: GFX_OPTS := -num_tiles 49
 $(PSSGFXDIR)/forest.4bpp: $(PSSGFXDIR)/forest_frame.4bpp $(PSSGFXDIR)/forest_bg.4bpp
@@ -102,6 +104,7 @@ $(MENUGFXDIR)/menu.gbapal: $(MENUGFXDIR)/menu_0.gbapal $(MENUGFXDIR)/menu_1.gbap
 	@cat $(MENUGFXDIR)/menu_0.gbapal $(MENUGFXDIR)/menu_1.gbapal >$@
 
 $(MENUGFXDIR)/wordgroup_frame.4bpp: GFX_OPTS := -num_tiles 65
+$(MENUGFXDIR)/wordgroup_frame_de.4bpp: GFX_OPTS := -num_tiles 76
 
 $(MENUGFXDIR)/party_menu_misc.4bpp: GFX_OPTS := -num_tiles 116
 $(MENUGFXDIR)/party_menu_misc_de.4bpp: GFX_OPTS := -num_tiles 116
@@ -133,12 +136,18 @@ $(PKNAVGFXDIR)/region_map.8bpp: GFX_OPTS := -num_tiles 233
 $(PKNAVGFXDIR)/outline.4bpp: GFX_OPTS := -num_tiles 43
 
 $(PKNAVGFXDIR)/menu_options.4bpp: $(PKNAVGFXDIR)/menu_hoennmap.4bpp $(PKNAVGFXDIR)/menu_condition.4bpp $(PKNAVGFXDIR)/menu_eyes.4bpp $(PKNAVGFXDIR)/menu_ribbons.4bpp $(PKNAVGFXDIR)/menu_off.4bpp
-	@cat $(PKNAVGFXDIR)/menu_hoennmap.4bpp $(PKNAVGFXDIR)/menu_condition.4bpp $(PKNAVGFXDIR)/menu_eyes.4bpp $(PKNAVGFXDIR)/menu_ribbons.4bpp $(PKNAVGFXDIR)/menu_off.4bpp >$@
+	@cat $^ > $@
+
+$(PKNAVGFXDIR)/menu_options_de.4bpp: $(PKNAVGFXDIR)/menu_hoennmap_de.4bpp $(PKNAVGFXDIR)/menu_condition_de.4bpp $(PKNAVGFXDIR)/menu_eyes_de.4bpp $(PKNAVGFXDIR)/menu_ribbons_de.4bpp $(PKNAVGFXDIR)/menu_off_de.4bpp
+	@cat $^ > $@
 
 $(PKNAVGFXDIR)/condition_menu_misc.4bpp: GFX_OPTS := -num_tiles 41
 
 $(PKNAVGFXDIR)/condition_search.4bpp: $(PKNAVGFXDIR)/condition_search_cool.4bpp $(PKNAVGFXDIR)/condition_search_beauty.4bpp $(PKNAVGFXDIR)/condition_search_cute.4bpp $(PKNAVGFXDIR)/condition_search_smart.4bpp $(PKNAVGFXDIR)/condition_search_tough.4bpp $(PKNAVGFXDIR)/condition_search_cancel.4bpp
-	@cat $(PKNAVGFXDIR)/condition_search_cool.4bpp $(PKNAVGFXDIR)/condition_search_beauty.4bpp $(PKNAVGFXDIR)/condition_search_cute.4bpp $(PKNAVGFXDIR)/condition_search_smart.4bpp $(PKNAVGFXDIR)/condition_search_tough.4bpp $(PKNAVGFXDIR)/condition_search_cancel.4bpp >$@
+	@cat $^ > $@
+
+$(PKNAVGFXDIR)/condition_search_de.4bpp: $(PKNAVGFXDIR)/condition_search_cool_de.4bpp $(PKNAVGFXDIR)/condition_search_beauty_de.4bpp $(PKNAVGFXDIR)/condition_search_cute_de.4bpp $(PKNAVGFXDIR)/condition_search_smart_de.4bpp $(PKNAVGFXDIR)/condition_search_tough_de.4bpp $(PKNAVGFXDIR)/condition_search_cancel_de.4bpp
+	@cat $^ > $@
 
 
 #### Trade ####
@@ -148,7 +157,7 @@ TRADEGFXDIR := graphics/trade
 $(TRADEGFXDIR)/gba_affine.8bpp: GFX_OPTS := -num_tiles 129
 
 $(TRADEGFXDIR)/menu.4bpp: GFX_OPTS := -num_tiles 148
-
+$(TRADEGFXDIR)/menu_de.4bpp: GFX_OPTS := -num_tiles 148
 
 #### Casino ####
 
@@ -231,8 +240,10 @@ $(TYPESGFXDIR)/move_types.gbapal: $(TYPESGFXDIR)/move_types_1.gbapal $(TYPESGFXD
 MISCGFXDIR := graphics/misc
 
 $(MISCGFXDIR)/hof.4bpp: GFX_OPTS := -num_tiles 37
+$(MISCGFXDIR)/hof_de.4bpp: GFX_OPTS := -num_tiles 37
 
 $(MISCGFXDIR)/end_copyright.4bpp: GFX_OPTS := -num_tiles 90
+$(MISCGFXDIR)/end_copyright_de.4bpp: GFX_OPTS := -num_tiles 92
 
 $(MISCGFXDIR)/birch_help.4bpp: $(MISCGFXDIR)/birch_bag.4bpp $(MISCGFXDIR)/birch_grass.4bpp
 	@cat $(MISCGFXDIR)/birch_bag.4bpp $(MISCGFXDIR)/birch_grass.4bpp >$@

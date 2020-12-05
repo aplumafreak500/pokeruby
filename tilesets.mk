@@ -13,6 +13,7 @@ $(TILESETDIR)/secondary/pacifidlog/tiles.4bpp: GFX_OPTS := -num_tiles 504
 $(TILESETDIR)/secondary/sootopolis/tiles.4bpp: GFX_OPTS := -num_tiles 180
 $(TILESETDIR)/primary/building/tiles.4bpp: GFX_OPTS := -num_tiles 502
 $(TILESETDIR)/secondary/shop/tiles.4bpp: GFX_OPTS := -num_tiles 502
+$(TILESETDIR)/secondary/shop/tiles_de.4bpp: GFX_OPTS := -num_tiles 503
 $(TILESETDIR)/secondary/pokemon_center/tiles.4bpp: GFX_OPTS := -num_tiles 478
 $(TILESETDIR)/secondary/cave/tiles.4bpp: GFX_OPTS := -num_tiles 420
 $(TILESETDIR)/secondary/pokemon_school/tiles.4bpp: GFX_OPTS := -num_tiles 278
